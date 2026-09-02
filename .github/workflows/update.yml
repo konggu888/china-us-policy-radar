@@ -19,14 +19,53 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Collect OSINT
-        run: python scripts/collect_news.py
-      - name: Enrich dashboard indicators
-        run: python scripts/enrich_dashboard.py
+
+      - name: Collect and diagnose
+        shell: bash
+        run: |
+          set +e
+          python scripts/collect_news.py
+          collect_rc=$?
+
+          enrich_rc=0
+          if [ "$collect_rc" -eq 0 ]; then
+            python scripts/enrich_dashboard.py
+            enrich_rc=$?
+          fi
+
+          python - "$collect_rc" "$enrich_rc" <<'PY'
+          import json, sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          path = Path('data/dashboard.json')
+          try:
+              dash = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+          except Exception:
+              dash = {}
+
+          collect_rc = int(sys.argv[1])
+          enrich_rc = int(sys.argv[2])
+          ok = collect_rc == 0 and enrich_rc == 0
+          now = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+          dash['updated'] = now
+          dash['collection_status'] = 'success' if ok else 'failed'
+          dash['collection_message'] = (
+              '自动采集与指标更新成功' if ok else
+              f'自动采集失败：collect_news.py={collect_rc}, enrich_dashboard.py={enrich_rc}'
+          )
+          dash['collection_time_utc'] = now
+          path.parent.mkdir(parents=True, exist_ok=True)
+          path.write_text(json.dumps(dash, ensure_ascii=False, indent=2), encoding='utf-8')
+          PY
+
+          exit $(( collect_rc != 0 || enrich_rc != 0 ))
+
       - name: Commit data
+        if: ${{ always() }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/*.json
-          git diff --cached --quiet || git commit -m 'chore: update intelligence feed and indicators'
+          git diff --cached --quiet || git commit -m 'chore: update intelligence feed and diagnostics'
           git push
