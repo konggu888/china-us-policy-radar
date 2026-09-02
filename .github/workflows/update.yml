@@ -26,10 +26,12 @@ jobs:
           set +e
           python scripts/collect_news.py
           collect_rc=$?
-
+          policy_collect_rc=0
           enrich_rc=0
           policy_rc=0
           if [ "$collect_rc" -eq 0 ]; then
+            python scripts/collect_policy_sources.py
+            policy_collect_rc=$?
             python scripts/enrich_dashboard.py
             enrich_rc=$?
             if [ "$enrich_rc" -eq 0 ]; then
@@ -38,7 +40,7 @@ jobs:
             fi
           fi
 
-          python - "$collect_rc" "$enrich_rc" "$policy_rc" <<'PY'
+          python - "$collect_rc" "$policy_collect_rc" "$enrich_rc" "$policy_rc" <<'PY'
           import json, sys
           from datetime import datetime, timezone
           from pathlib import Path
@@ -47,18 +49,15 @@ jobs:
               dash = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
           except Exception:
               dash = {}
-          collect_rc = int(sys.argv[1]); enrich_rc = int(sys.argv[2]); policy_rc = int(sys.argv[3])
-          ok = collect_rc == 0 and enrich_rc == 0 and policy_rc == 0
-          now = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
-          dash['updated'] = now
-          dash['collection_status'] = 'success' if ok else 'failed'
-          dash['collection_message'] = ('自动采集、指标与中国政策雷达更新成功' if ok else f'自动更新失败：collect_news.py={collect_rc}, enrich_dashboard.py={enrich_rc}, enrich_policy.py={policy_rc}')
-          dash['collection_time_utc'] = now
-          path.parent.mkdir(parents=True, exist_ok=True)
-          path.write_text(json.dumps(dash, ensure_ascii=False, indent=2), encoding='utf-8')
+          rc=[int(x) for x in sys.argv[1:]]
+          ok=all(x==0 for x in rc)
+          now=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+          dash['updated']=now; dash['collection_status']='success' if ok else 'failed'
+          dash['collection_message']=('自动采集、官方政策源、指标与中国政策雷达更新成功' if ok else f'自动更新失败：collect_news.py={rc[0]}, collect_policy_sources.py={rc[1]}, enrich_dashboard.py={rc[2]}, enrich_policy.py={rc[3]}')
+          dash['collection_time_utc']=now
+          path.parent.mkdir(parents=True,exist_ok=True); path.write_text(json.dumps(dash,ensure_ascii=False,indent=2),encoding='utf-8')
           PY
-
-          exit $(( collect_rc != 0 || enrich_rc != 0 || policy_rc != 0 ))
+          exit $(( collect_rc != 0 || policy_collect_rc != 0 || enrich_rc != 0 || policy_rc != 0 ))
 
       - name: Commit data
         if: ${{ always() }}
@@ -66,5 +65,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/*.json
-          git diff --cached --quiet || git commit -m 'chore: update intelligence feed, policy radar and diagnostics'
+          git diff --cached --quiet || git commit -m 'chore: update intelligence feed, policy sources and radar'
           git push
