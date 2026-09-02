@@ -1,0 +1,20 @@
+{
+  "policy": "official-first",
+  "tiers": [
+    {"id":"official","name":"官方一手","description":"政府、部委、央行、军方、统计机构等直接发布的信息"},
+    {"id":"institution","name":"国际机构","description":"联合国、IMF、World Bank、WTO、IEA、OECD、BIS、IAEA等"},
+    {"id":"major_media","name":"权威媒体","description":"Reuters、AP、AFP、FT、Bloomberg、WSJ等主流国际媒体"},
+    {"id":"media","name":"其他媒体","description":"其他公开媒体与OSINT来源"}
+  ],
+  "official_sources": {
+    "china": ["国务院/中国政府网","外交部","国防部","中国人民银行","国家统计局","国家发展改革委","工业和信息化部","商务部","海关总署","国家能源局","国家网信办","科技部","财政部"],
+    "us": ["White House","State Department","Department of Defense","Department of the Treasury","Federal Reserve","Department of Commerce","USTR","Department of Energy","EIA","BLS","BEA","NIST","Congress"],
+    "international": ["United Nations","WTO","IMF","World Bank","IEA","OECD","BIS","IAEA"]
+  },
+  "methodology": [
+    "GDELT作为公开信息发现层，并按文章实际域名识别来源等级。",
+    "官方来源优先；官方来源代表发布方立场或统计口径，不自动视为独立事实确认。",
+    "同标题跨来源层级出现时标记双源/多源交叉；没有独立来源时标记单一来源。",
+    "系统不宣称覆盖所有官方发布，只对可被公开索引并成功采集的来源进行监测。"
+  ]
+}
