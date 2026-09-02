@@ -1,10 +1,12 @@
 import json, re, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'data'/'news.json'
-UA='China-US-Global-Intelligence-Radar/1.0'
+HISTORY=ROOT/'data'/'history.json'
+UA='China-US-Global-Intelligence-Radar/1.1'
 QUERIES={
  'china':'China economy OR China military OR China security OR China policy',
  'us':'United States economy OR US military OR US security OR US policy',
@@ -40,15 +42,25 @@ def gdelt(q,region):
     except Exception:return []
 
 items=[]
-for region,q in QUERIES.items():items += gdelt(q,'global' if region=='competition' else region)
+for region,q in QUERIES.items(): items += gdelt(q,'global' if region=='competition' else region)
 seen=set();uniq=[]
 for x in items:
     key=re.sub(r'[^a-z0-9]','',x['title'].lower())
-    if key and key not in seen:seen.add(key);uniq.append(x)
+    if key and key not in seen: seen.add(key); uniq.append(x)
 uniq=uniq[:160]
+now=datetime.now(timezone.utc)
 for i,x in enumerate(uniq):
-    # deterministic radar placement from item index; frontend treats x/y as percentages
-    x['x']=8+(i*37)%84;x['y']=8+(i*61)%84;x['updated']=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+    x['x']=8+(i*37)%84; x['y']=8+(i*61)%84; x['updated']=now.strftime('%Y-%m-%d %H:%M UTC')
 OUT.parent.mkdir(parents=True,exist_ok=True)
 OUT.write_text(json.dumps(uniq,ensure_ascii=False,indent=2),encoding='utf-8')
-print(f'wrote {len(uniq)} items')
+
+# Keep a compact 30-day daily trend for the dashboard.
+counts=Counter(x['risk'] for x in uniq)
+region_counts={r:sum(1 for x in uniq if x['region']==r) for r in ('china','us','global')}
+entry={'date':now.strftime('%Y-%m-%d'),'total':len(uniq),'critical':counts.get('极高',0),'high':counts.get('高',0),'medium':counts.get('中',0),'low':counts.get('低',0),**{f'{r}_items':v for r,v in region_counts.items()}}
+try: history=json.loads(HISTORY.read_text(encoding='utf-8')) if HISTORY.exists() else []
+except Exception: history=[]
+history=[h for h in history if h.get('date')!=entry['date']]+[entry]
+history=history[-30:]
+HISTORY.write_text(json.dumps(history,ensure_ascii=False,indent=2),encoding='utf-8')
+print(f'wrote {len(uniq)} items and {len(history)} history points')
