@@ -4,6 +4,10 @@ on:
   schedule:
     # 每 30 分钟自动采集（UTC；避开整点，降低 GitHub Actions 高峰延迟）
     - cron: '7,37 * * * *'
+  # 代码/配置变化时立即运行一次；data/*.json 自动提交不会触发，避免循环
+  push:
+    paths-ignore:
+      - 'data/**'
   workflow_dispatch:
 
 permissions:
@@ -50,10 +54,12 @@ jobs:
           rc=[int(x) for x in sys.argv[1:]]
           ok=all(x==0 for x in rc)
           now=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
-          dash['updated']=now; dash['collection_status']='success' if ok else 'failed'
+          dash['updated']=now
+          dash['collection_status']='success' if ok else 'failed'
           dash['collection_message']=('自动采集、官方政策源、指标与中国政策雷达更新成功' if ok else f'自动更新失败：collect_news.py={rc[0]}, collect_policy_sources.py={rc[1]}, enrich_dashboard.py={rc[2]}, enrich_policy.py={rc[3]}')
           dash['collection_time_utc']=now
-          path.parent.mkdir(parents=True,exist_ok=True); path.write_text(json.dumps(dash,ensure_ascii=False,indent=2),encoding='utf-8')
+          path.parent.mkdir(parents=True,exist_ok=True)
+          path.write_text(json.dumps(dash,ensure_ascii=False,indent=2),encoding='utf-8')
           PY
           exit $(( collect_rc != 0 || policy_collect_rc != 0 || enrich_rc != 0 || policy_rc != 0 ))
 
