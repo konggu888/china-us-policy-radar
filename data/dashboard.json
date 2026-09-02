@@ -1,6 +1,185 @@
 {
-  "updated": "等待首次自动采集",
-  "collection_status": "pending",
-  "collection_message": "等待北京时间 00:00 / 14:45 自动采集任务运行",
-  "collection_time_utc": null
+  "updated": "2026-09-02 11:45 UTC",
+  "market": [
+    {
+      "symbol": "CNY=X",
+      "value": 6.71,
+      "change_pct": -0.24,
+      "time": "2026-09-02",
+      "name": "USD/CNY"
+    },
+    {
+      "symbol": "000001.SS",
+      "value": 3941.3862,
+      "change_pct": -0.97,
+      "time": "2026-09-02",
+      "name": "上证指数"
+    },
+    {
+      "symbol": "^GSPC",
+      "value": 7631.4702,
+      "change_pct": -0.71,
+      "time": "2026-09-01",
+      "name": "标普500"
+    },
+    {
+      "symbol": "^TNX",
+      "value": 4.796,
+      "change_pct": 0.8,
+      "time": "2026-09-01",
+      "name": "美国10年期收益率"
+    },
+    {
+      "symbol": "BZ=F",
+      "value": 94.13,
+      "change_pct": -0.55,
+      "time": "2026-09-02",
+      "name": "布伦特原油"
+    },
+    {
+      "symbol": "GC=F",
+      "value": 4376.7002,
+      "change_pct": 0.66,
+      "time": "2026-09-02",
+      "name": "黄金"
+    },
+    {
+      "symbol": "^VIX",
+      "value": 16.43,
+      "change_pct": 0.55,
+      "time": "2026-09-02",
+      "name": "VIX"
+    }
+  ],
+  "globalization_temperature": {
+    "score": 50,
+    "label": "冷热交织",
+    "method": "公开政策/贸易/投资/制裁/出口管制信号的相对温度；不是官方指标。"
+  },
+  "policy_direction": {
+    "china": [],
+    "us": [],
+    "global": []
+  },
+  "policy_language": [
+    {
+      "keyword": "稳增长",
+      "count": 0
+    },
+    {
+      "keyword": "扩大内需",
+      "count": 0
+    },
+    {
+      "keyword": "人工智能",
+      "count": 0
+    },
+    {
+      "keyword": "产业升级",
+      "count": 0
+    },
+    {
+      "keyword": "开放",
+      "count": 0
+    },
+    {
+      "keyword": "安全",
+      "count": 0
+    },
+    {
+      "keyword": "贸易",
+      "count": 0
+    }
+  ],
+  "policy_source_matrix": [
+    {
+      "name": "中国政府网",
+      "type": "官方一手"
+    },
+    {
+      "name": "国家发改委",
+      "type": "官方一手"
+    },
+    {
+      "name": "中国人民银行",
+      "type": "官方一手"
+    },
+    {
+      "name": "金融监管总局",
+      "type": "官方一手"
+    },
+    {
+      "name": "中国证监会",
+      "type": "官方一手"
+    },
+    {
+      "name": "国家外汇局",
+      "type": "官方一手"
+    },
+    {
+      "name": "工业和信息化部",
+      "type": "官方一手"
+    },
+    {
+      "name": "科技部",
+      "type": "官方一手"
+    },
+    {
+      "name": "国家能源局",
+      "type": "官方一手"
+    },
+    {
+      "name": "商务部",
+      "type": "官方一手"
+    },
+    {
+      "name": "海关总署",
+      "type": "官方一手"
+    },
+    {
+      "name": "外交部",
+      "type": "官方一手"
+    },
+    {
+      "name": "国防部",
+      "type": "官方一手"
+    },
+    {
+      "name": "国家统计局",
+      "type": "官方一手"
+    },
+    {
+      "name": "财政部",
+      "type": "官方一手"
+    }
+  ],
+  "policy_chain": {
+    "steps": [
+      "政策原文",
+      "财政/金融支持",
+      "企业与行业行动",
+      "商品/价格/订单",
+      "海关/统计数据",
+      "效果验证"
+    ],
+    "note": "系统先发现政策，再要求后续数据验证；不会把政策发布直接等同于政策效果。"
+  },
+  "policy_comparison": [
+    {
+      "side": "中国",
+      "total": 0,
+      "top_categories": [],
+      "risk_high": 0
+    },
+    {
+      "side": "美国",
+      "total": 0,
+      "top_categories": [],
+      "risk_high": 0
+    }
+  ],
+  "today_focus": [],
+  "collection_status": "success",
+  "collection_message": "自动采集、官方政策源、指标与中国政策雷达更新成功",
+  "collection_time_utc": "2026-09-02 11:45 UTC"
 }
