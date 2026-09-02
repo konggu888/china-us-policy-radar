@@ -1,58 +1,58 @@
 {
-  "updated": "2026-09-02 16:31 UTC",
+  "updated": "2026-09-02 16:51 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.7093,
-      "change_pct": -0.25,
+      "value": 6.7072,
+      "change_pct": -0.28,
       "time": "2026-09-02",
       "name": "USD/CNY"
     },
     {
       "symbol": "000001.SS",
-      "value": 3941.3862,
-      "change_pct": -0.97,
+      "value": 3979.8879,
+      "change_pct": -0.16,
       "time": "2026-09-02",
       "name": "上证指数"
     },
     {
       "symbol": "^GSPC",
-      "value": 7631.4702,
-      "change_pct": -0.71,
-      "time": "2026-09-01",
+      "value": 7664.7402,
+      "change_pct": 0.44,
+      "time": "2026-09-02",
       "name": "标普500"
     },
     {
       "symbol": "^TNX",
-      "value": 4.796,
-      "change_pct": 0.8,
+      "value": 4.798,
+      "change_pct": 0.04,
       "time": "2026-09-02",
       "name": "美国10年期收益率"
     },
     {
       "symbol": "BZ=F",
-      "value": 93.88,
-      "change_pct": -0.81,
+      "value": 95.75,
+      "change_pct": 1.16,
       "time": "2026-09-02",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4379.7002,
-      "change_pct": 0.73,
+      "value": 4412.8999,
+      "change_pct": 1.49,
       "time": "2026-09-02",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 16.12,
-      "change_pct": -1.35,
+      "value": 15.39,
+      "change_pct": -5.81,
       "time": "2026-09-02",
       "name": "VIX"
     }
   ],
   "globalization_temperature": {
-    "score": 52,
+    "score": 56,
     "label": "冷热交织",
     "method": "公开政策/贸易/投资/制裁/出口管制信号的相对温度；不是官方指标。"
   },
@@ -60,18 +60,43 @@
     "china": [
       [
         "全球政策",
-        5
+        18
       ],
       [
         "经济",
-        1
+        8
       ],
       [
-        "贸易 / 供应链",
+        "产业",
         1
       ]
     ],
-    "us": [],
+    "us": [
+      [
+        "全球政策",
+        20
+      ],
+      [
+        "外交",
+        10
+      ],
+      [
+        "政治",
+        7
+      ],
+      [
+        "贸易 / 供应链",
+        7
+      ],
+      [
+        "金融",
+        2
+      ],
+      [
+        "经济",
+        2
+      ]
+    ],
     "global": []
   },
   "policy_language": [
@@ -81,19 +106,19 @@
     },
     {
       "keyword": "扩大内需",
-      "count": 0
+      "count": 3
     },
     {
       "keyword": "人工智能",
-      "count": 0
+      "count": 20
     },
     {
       "keyword": "产业升级",
-      "count": 0
+      "count": 2
     },
     {
       "keyword": "开放",
-      "count": 0
+      "count": 2
     },
     {
       "keyword": "安全",
@@ -101,7 +126,7 @@
     },
     {
       "keyword": "贸易",
-      "count": 1
+      "count": 11
     }
   ],
   "policy_source_matrix": [
@@ -180,18 +205,18 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 7,
+      "total": 27,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 5
-        },
-        {
-          "name": "贸易 / 供应链",
-          "count": 1
+          "count": 18
         },
         {
           "name": "经济",
+          "count": 8
+        },
+        {
+          "name": "产业",
           "count": 1
         }
       ],
@@ -199,102 +224,143 @@
     },
     {
       "side": "美国",
-      "total": 0,
-      "top_categories": [],
-      "risk_high": 0
+      "total": 54,
+      "top_categories": [
+        {
+          "name": "全球政策",
+          "count": 20
+        },
+        {
+          "name": "外交",
+          "count": 10
+        },
+        {
+          "name": "政治",
+          "count": 7
+        },
+        {
+          "name": "贸易 / 供应链",
+          "count": 7
+        },
+        {
+          "name": "产业",
+          "count": 2
+        },
+        {
+          "name": "金融",
+          "count": 2
+        }
+      ],
+      "risk_high": 1
     }
   ],
   "today_focus": [
     {
-      "title": "人民币市场汇价 （ 9月2日 ）- 新华网",
-      "url": "http://www.xinhuanet.com/20260902/5c14464ac5ef406faab114804537c3f5/c.html",
-      "risk": "低",
-      "category": "全球政策",
-      "region": "china",
-      "source": "xinhuanet.com",
+      "title": "Presidential Message on National Childhood Cancer Awareness Month",
+      "url": "https://www.whitehouse.gov/briefings-statements/2026/09/presidential-message-on-national-childhood-cancer-awareness-month/",
+      "risk": "高",
+      "category": "政治",
+      "region": "us",
+      "source": "White House",
       "verification": "单一官方",
       "impact_industry": [
-        "全球政策"
+        "政治"
       ]
     },
     {
-      "title": "中国驻泰使馆 ： 中国公民赴泰仍可30天免签 - 新华网",
-      "url": "http://www.xinhuanet.com/20260902/6d1dd716d6424c3a93d8a6b1a5f0deae/c.html",
-      "risk": "低",
-      "category": "全球政策",
-      "region": "china",
-      "source": "xinhuanet.com",
+      "title": "Fact Sheet: President Donald J. Trump Announces Historic Oil Agreement to Secure American Energy Dominance and Drive Venezuela’s Economic Recovery",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-announces-historic-oil-agreement-to-secure-american-energy-dominance-and-drive-venezuelas-economic-recovery/",
+      "risk": "中",
+      "category": "能源 / 资源",
+      "region": "us",
+      "source": "White House",
       "verification": "单一官方",
       "impact_industry": [
-        "全球政策"
+        "能源 / 资源"
       ]
     },
     {
-      "title": "英国30年期国债收益率升至1998年以来高点 - 新华网",
-      "url": "http://www.xinhuanet.com/20260902/9daa999ad8064a848b55b5c9e4266fd2/c.html",
-      "risk": "低",
-      "category": "全球政策",
-      "region": "china",
-      "source": "xinhuanet.com",
+      "title": "Treasury and State Departments Deliver Additional Sanctions Relief on Syria",
+      "url": "https://home.treasury.gov/news/press-releases/sb0612/",
+      "risk": "中",
+      "category": "中美博弈",
+      "region": "us",
+      "source": "US Treasury",
       "verification": "单一官方",
       "impact_industry": [
-        "全球政策"
+        "中美博弈"
       ]
     },
     {
-      "title": "IMF总裁 ： 全球经济前景仍面临高不确定性 - 新华网",
-      "url": "http://www.xinhuanet.com/20260902/fce81e188ed948478227de39fa942fcd/c.html",
-      "risk": "低",
-      "category": "经济",
-      "region": "china",
-      "source": "xinhuanet.com",
+      "title": "Treasury Increases Sanctions on Hizballah and Targets Network Smuggling Millions in Cash for Hizballah",
+      "url": "https://home.treasury.gov/news/press-releases/sb0611/",
+      "risk": "中",
+      "category": "中美博弈",
+      "region": "us",
+      "source": "US Treasury",
       "verification": "单一官方",
       "impact_industry": [
-        "经济"
+        "中美博弈"
       ]
     },
     {
-      "title": "云南前7个月对东盟进出口货值创新高 - 新华网",
-      "url": "http://www.xinhuanet.com/20260901/a29711dc130e4665aa8c295f6d3f318a/c.html",
-      "risk": "低",
+      "title": "Media Credentialing Opens for the G20 Trade Ministerial in Milwaukee, Wisconsin",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/august/media-credentialing-opens-g20-trade-ministerial-milwaukee-wisconsin",
+      "risk": "中",
       "category": "贸易 / 供应链",
-      "region": "china",
-      "source": "xinhuanet.com",
+      "region": "us",
+      "source": "USTR",
       "verification": "单一官方",
       "impact_industry": [
         "贸易 / 供应链"
       ]
     },
     {
-      "title": "人民币市场汇价 （ 9月1日 ）- 新华网",
-      "url": "http://www.xinhuanet.com/20260901/d48b9e3afaa8454589f99dbac5e3bf6c/c.html",
-      "risk": "低",
-      "category": "全球政策",
-      "region": "china",
-      "source": "xinhuanet.com",
+      "title": "On the Road in Iowa: America First Trade is Raising Wages, Reshoring Jobs, and Restoring America’s Global Competitiveness",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/august/road-iowa-america-first-trade-raising-wages-reshoring-jobs-and-restoring-americas-global",
+      "risk": "中",
+      "category": "贸易 / 供应链",
+      "region": "us",
+      "source": "USTR",
       "verification": "单一官方",
       "impact_industry": [
-        "全球政策"
+        "科技 / AI",
+        "贸易 / 供应链"
       ]
     },
     {
-      "title": "报告显示 ： 2019年以来我国乡村信息基础设施实现跨越发展 - 新华网",
-      "url": "http://www.xinhuanet.com/20260831/8366fc0db7d141b3bd95ebdc5310fc32/c.html",
-      "risk": "低",
-      "category": "全球政策",
-      "region": "china",
-      "source": "xinhuanet.com",
+      "title": "American Steelworkers, Manufacturers, and Farmers Praise President Trump’s Tariff Action to Combat Forced Labor in Global Supply Chains",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/american-steelworkers-manufacturers-and-farmers-praise-president-trumps-tariff-action-combat-forced",
+      "risk": "中",
+      "category": "贸易 / 供应链",
+      "region": "us",
+      "source": "USTR",
       "verification": "单一官方",
       "impact_industry": [
-        "全球政策"
+        "科技 / AI",
+        "贸易 / 供应链"
+      ]
+    },
+    {
+      "title": "Ambassador Greer Issues Statement on the European Union Creating Uncertainty in our Transatlantic Trade Relationship",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/ambassador-greer-issues-statement-european-union-creating-uncertainty-our-transatlantic-trade",
+      "risk": "中",
+      "category": "外交",
+      "region": "us",
+      "source": "USTR",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI",
+        "贸易 / 供应链"
       ]
     }
   ],
   "collection_status": "failed",
-  "collection_message": "采集健康度：总数据 0 条；直连官方源 0 条；GDELT 0 条。GDELT 无数据时自动保留直连源结果。",
-  "collection_time_utc": "2026-09-02 16:31 UTC",
+  "collection_message": "全量分类采集：当前 0 条；本轮发现 0 条；13类覆盖=0/13；中国/美国/全球=0/0/0。",
+  "collection_time_utc": "2026-09-02 16:51 UTC",
   "source_health": {},
   "collection_pipeline_rc": [
+    1,
     1,
     0,
     0,
