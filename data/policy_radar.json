@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02 12:25 UTC",
+  "updated": "2026-09-02 16:51 UTC",
   "source_matrix": [
     {
       "agency": "中国政府网",
@@ -102,7 +102,7 @@
     },
     {
       "keyword": "扩大内需",
-      "count": 0,
+      "count": 3,
       "recent": 0,
       "signal": "常态",
       "method": "公开标题/文本中的关键词频次，属于描述性信号，不代表政策意图。"
@@ -123,7 +123,7 @@
     },
     {
       "keyword": "产业升级",
-      "count": 0,
+      "count": 2,
       "recent": 0,
       "signal": "常态",
       "method": "公开标题/文本中的关键词频次，属于描述性信号，不代表政策意图。"
@@ -158,7 +158,7 @@
     },
     {
       "keyword": "贸易限制",
-      "count": 0,
+      "count": 5,
       "recent": 0,
       "signal": "常态",
       "method": "公开标题/文本中的关键词频次，属于描述性信号，不代表政策意图。"
@@ -166,50 +166,50 @@
   ],
   "policy_areas": [
     {
-      "name": "货币/金融",
-      "signals": 2,
+      "name": "AI/半导体",
+      "signals": 20,
+      "high_risk": 0,
+      "latest": ""
+    },
+    {
+      "name": "宏观/财政",
+      "signals": 10,
       "high_risk": 0,
       "latest": "20260902T0"
     },
     {
-      "name": "宏观/财政",
-      "signals": 1,
+      "name": "外交/国防/安全",
+      "signals": 10,
+      "high_risk": 0,
+      "latest": ""
+    },
+    {
+      "name": "货币/金融",
+      "signals": 7,
       "high_risk": 0,
       "latest": "20260902T0"
     },
     {
       "name": "外贸/外资",
-      "signals": 1,
-      "high_risk": 0,
-      "latest": "20260901T1"
-    },
-    {
-      "name": "房地产/消费",
-      "signals": 0,
+      "signals": 7,
       "high_risk": 0,
       "latest": ""
     },
     {
       "name": "产业/制造",
-      "signals": 0,
+      "signals": 6,
       "high_risk": 0,
-      "latest": ""
+      "latest": "Thu, 02 Apr 2026 07:00:00 GMT"
     },
     {
-      "name": "AI/半导体",
-      "signals": 0,
+      "name": "房地产/消费",
+      "signals": 3,
       "high_risk": 0,
       "latest": ""
     },
     {
       "name": "能源/资源",
-      "signals": 0,
-      "high_risk": 0,
-      "latest": ""
-    },
-    {
-      "name": "外交/国防/安全",
-      "signals": 0,
+      "signals": 1,
       "high_risk": 0,
       "latest": ""
     }
@@ -235,57 +235,15 @@
   },
   "policy_items": [
     {
-      "title": "人民币市场汇价 （ 9月2日 ）- 新华网",
-      "url": "http://www.xinhuanet.com/20260902/5c14464ac5ef406faab114804537c3f5/c.html",
-      "date": "20260902T0",
-      "agency": "xinhuanet.com",
-      "category": "全球政策",
+      "title": "中国车企能否推动钢铁行业走向更绿色？",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE4wR2ZDUDR5dXktSVU4OFl2aHdyUVV0NElYUDJwTWotTVlLNVh5TG01eFNVbWxoSUtHNTMtc3Fjdk5kUW81eERFNHhrQ2t4QQ?oc=5",
+      "date": "Thu, 02 Apr 2026 07:00:00 GMT",
+      "agency": "Dialogue Earth",
+      "category": "产业",
       "risk": "低",
-      "verification": "单一官方",
+      "verification": "单一来源",
       "impact_industry": [
-        "全球政策"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "中国驻泰使馆 ： 中国公民赴泰仍可30天免签 - 新华网",
-      "url": "http://www.xinhuanet.com/20260902/6d1dd716d6424c3a93d8a6b1a5f0deae/c.html",
-      "date": "20260902T0",
-      "agency": "xinhuanet.com",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "全球政策"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "英国30年期国债收益率升至1998年以来高点 - 新华网",
-      "url": "http://www.xinhuanet.com/20260902/9daa999ad8064a848b55b5c9e4266fd2/c.html",
-      "date": "20260902T0",
-      "agency": "xinhuanet.com",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "全球政策"
+        "产业"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
@@ -304,7 +262,7 @@
       "agency": "xinhuanet.com",
       "category": "经济",
       "risk": "低",
-      "verification": "单一官方",
+      "verification": "单一来源",
       "impact_industry": [
         "经济"
       ],
@@ -319,31 +277,31 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "云南前7个月对东盟进出口货值创新高 - 新华网",
-      "url": "http://www.xinhuanet.com/20260901/a29711dc130e4665aa8c295f6d3f318a/c.html",
-      "date": "20260901T1",
-      "agency": "xinhuanet.com",
-      "category": "贸易 / 供应链",
-      "risk": "低",
+      "title": "Presidential Message on National Childhood Cancer Awareness Month",
+      "url": "https://www.whitehouse.gov/briefings-statements/2026/09/presidential-message-on-national-childhood-cancer-awareness-month/",
+      "date": "",
+      "agency": "White House",
+      "category": "政治",
+      "risk": "高",
       "verification": "单一官方",
       "impact_industry": [
-        "贸易 / 供应链"
+        "政治"
       ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
+      "short_term": "关注市场预期、政策执行与相关行业价格/订单变化",
+      "long_term": "观察产业链、资本流向、贸易结构与政策持续性",
       "watch_data": [
         "官方后续文件",
         "行业数据",
         "价格/订单",
         "企业公告"
       ],
-      "policy_level": "常规跟踪"
+      "policy_level": "高优先级"
     },
     {
-      "title": "人民币市场汇价 （ 9月1日 ）- 新华网",
-      "url": "http://www.xinhuanet.com/20260901/d48b9e3afaa8454589f99dbac5e3bf6c/c.html",
-      "date": "20260901T0",
-      "agency": "xinhuanet.com",
+      "title": "Briefings & Statements",
+      "url": "https://www.whitehouse.gov/briefings-statements/",
+      "date": "",
+      "agency": "White House",
       "category": "全球政策",
       "risk": "低",
       "verification": "单一官方",
@@ -361,15 +319,546 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "报告显示 ： 2019年以来我国乡村信息基础设施实现跨越发展 - 新华网",
-      "url": "http://www.xinhuanet.com/20260831/8366fc0db7d141b3bd95ebdc5310fc32/c.html",
-      "date": "20260901T0",
-      "agency": "xinhuanet.com",
+      "title": "Presidential Message on National Recovery Month",
+      "url": "https://www.whitehouse.gov/briefings-statements/2026/09/presidential-message-on-national-recovery-month/",
+      "date": "",
+      "agency": "White House",
+      "category": "政治",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "政治"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Ten Times Extreme Liberal Democrats in Congress Put Their Dangerous Agenda Ahead of the American People",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/09/ten-times-extreme-liberal-democrats-in-congress-put-their-dangerous-agenda-ahead-of-the-american-people/",
+      "date": "",
+      "agency": "White House",
+      "category": "政治",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "政治"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Fact Sheet: President Donald J. Trump Announces Deal with Nine Additional Pharmaceutical Manufacturers to Lower Drug Prices for Americans",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-announces-deal-with-nine-additional-pharmaceutical-manufacturers-to-lower-drug-prices-for-americans/",
+      "date": "",
+      "agency": "White House",
+      "category": "政治",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "政治"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "President Trump and VP Vance Deliver Manufacturing Renaissance to Michigan",
+      "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-and-vp-vance-deliver-manufacturing-renaissance-to-michigan/",
+      "date": "",
+      "agency": "White House",
+      "category": "产业",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI",
+        "产业"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "President Trump Was Right: America Controls the Strait of Hormuz",
+      "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
+      "date": "",
+      "agency": "White House",
+      "category": "政治",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Fact Sheet: President Donald J. Trump Establishes a Commission to Design the United States Space Academy",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-establishes-a-commission-to-design-the-united-states-space-academy/",
+      "date": "",
+      "agency": "White House",
+      "category": "政治",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "政治"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Establishing the United States Space Academy",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/08/establishing-the-united-states-space-academy/",
+      "date": "",
+      "agency": "White House",
       "category": "全球政策",
       "risk": "低",
       "verification": "单一官方",
       "impact_industry": [
         "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Honoring the American History of the Great Lakes and Renaming Lake Ontario as Lake America",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/08/honoring-the-american-history-of-the-great-lakes-and-renaming-lake-ontario-as-lake-america-3a36/",
+      "date": "",
+      "agency": "White House",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Skip to main content (Press Enter).",
+      "url": "https://www.defense.gov/News/Releases/#skip-target",
+      "date": "",
+      "agency": "US Defense Department",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Daily Treasury Par Yield Curve Rates",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI",
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Daily Treasury Par Real Yield Curve Rates",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_real_yield_curve&field_tdr_date_value=2026",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI",
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Daily Treasury Bill Rates",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_bill_rates&field_tdr_date_value=2026",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI",
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Daily Treasury Long-Term Rates",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_long_term_rate&field_tdr_date_value=2026",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI",
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Daily Treasury Real Long-Term Rates",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_real_long_term&field_tdr_date_value=2026",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI",
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "TIC Press Releases",
+      "url": "https://home.treasury.gov/data/tic-press-releases-by-topic/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "View all Featured Stories",
+      "url": "https://home.treasury.gov/news/featured-stories/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Remarks and Statements",
+      "url": "https://home.treasury.gov/news/press-releases/statements-remarks",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "G20 Chair’s Statement",
+      "url": "https://home.treasury.gov/news/press-releases/sb0620/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Preliminary Annual Report on U.S. Portfolio Holdings of Foreign Securities at Year-End 2025",
+      "url": "https://home.treasury.gov/news/press-releases/sb0618/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "READOUT: Secretary of the Treasury Scott Bessent's Meeting with Bank of Japan Governor Kazuo Ueda",
+      "url": "https://home.treasury.gov/news/press-releases/sb0619/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Iran’s Access to UAE Banks Targeted Under Operation Economic Outcast",
+      "url": "https://home.treasury.gov/news/press-releases/sb0617/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Treasury Takes Action Against Violent Far-Left Terrorist Networks",
+      "url": "https://home.treasury.gov/news/press-releases/sb0616/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Treasury Announces the Quantum-Readiness Task Force",
+      "url": "https://home.treasury.gov/news/press-releases/sb0615/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "科技 / AI",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Remarks from Secretary of the Treasury Scott Bessent on Operation Economic Outcast against Iran",
+      "url": "https://home.treasury.gov/news/press-releases/sb0614/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "经济",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
+      "url": "https://home.treasury.gov/news/press-releases/sb0613/",
+      "date": "",
+      "agency": "US Treasury",
+      "category": "经济",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Industry & Manufacturing",
+      "url": "https://ustr.gov/issue-areas/industry-manufacturing",
+      "date": "",
+      "agency": "USTR",
+      "category": "产业",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "产业"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
