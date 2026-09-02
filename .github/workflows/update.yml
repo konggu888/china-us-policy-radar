@@ -2,7 +2,10 @@ name: Update Intelligence Radar
 
 on:
   schedule:
-    - cron: '17 0 * * *'
+    # 每天新加坡时间 00:00（UTC 16:00 前一天）
+    - cron: '0 16 * * *'
+    # 每天新加坡时间 14:45（UTC 06:45）
+    - cron: '45 6 * * *'
   workflow_dispatch:
 
 permissions:
