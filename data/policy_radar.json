@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02 11:45 UTC",
+  "updated": "2026-09-02 12:25 UTC",
   "source_matrix": [
     {
       "agency": "中国政府网",
@@ -166,16 +166,22 @@
   ],
   "policy_areas": [
     {
-      "name": "宏观/财政",
-      "signals": 0,
+      "name": "货币/金融",
+      "signals": 2,
       "high_risk": 0,
-      "latest": ""
+      "latest": "20260902T0"
     },
     {
-      "name": "货币/金融",
-      "signals": 0,
+      "name": "宏观/财政",
+      "signals": 1,
       "high_risk": 0,
-      "latest": ""
+      "latest": "20260902T0"
+    },
+    {
+      "name": "外贸/外资",
+      "signals": 1,
+      "high_risk": 0,
+      "latest": "20260901T1"
     },
     {
       "name": "房地产/消费",
@@ -197,12 +203,6 @@
     },
     {
       "name": "能源/资源",
-      "signals": 0,
-      "high_risk": 0,
-      "latest": ""
-    },
-    {
-      "name": "外贸/外资",
       "signals": 0,
       "high_risk": 0,
       "latest": ""
@@ -233,7 +233,155 @@
     ],
     "rule": "只有出现后续独立数据或企业/行业行动，才提高“执行效果”可信度；政策发布本身不等于政策有效。"
   },
-  "policy_items": [],
+  "policy_items": [
+    {
+      "title": "人民币市场汇价 （ 9月2日 ）- 新华网",
+      "url": "http://www.xinhuanet.com/20260902/5c14464ac5ef406faab114804537c3f5/c.html",
+      "date": "20260902T0",
+      "agency": "xinhuanet.com",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "中国驻泰使馆 ： 中国公民赴泰仍可30天免签 - 新华网",
+      "url": "http://www.xinhuanet.com/20260902/6d1dd716d6424c3a93d8a6b1a5f0deae/c.html",
+      "date": "20260902T0",
+      "agency": "xinhuanet.com",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "英国30年期国债收益率升至1998年以来高点 - 新华网",
+      "url": "http://www.xinhuanet.com/20260902/9daa999ad8064a848b55b5c9e4266fd2/c.html",
+      "date": "20260902T0",
+      "agency": "xinhuanet.com",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "IMF总裁 ： 全球经济前景仍面临高不确定性 - 新华网",
+      "url": "http://www.xinhuanet.com/20260902/fce81e188ed948478227de39fa942fcd/c.html",
+      "date": "20260902T0",
+      "agency": "xinhuanet.com",
+      "category": "经济",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "经济"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "云南前7个月对东盟进出口货值创新高 - 新华网",
+      "url": "http://www.xinhuanet.com/20260901/a29711dc130e4665aa8c295f6d3f318a/c.html",
+      "date": "20260901T1",
+      "agency": "xinhuanet.com",
+      "category": "贸易 / 供应链",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "贸易 / 供应链"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "人民币市场汇价 （ 9月1日 ）- 新华网",
+      "url": "http://www.xinhuanet.com/20260901/d48b9e3afaa8454589f99dbac5e3bf6c/c.html",
+      "date": "20260901T0",
+      "agency": "xinhuanet.com",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "报告显示 ： 2019年以来我国乡村信息基础设施实现跨越发展 - 新华网",
+      "url": "http://www.xinhuanet.com/20260831/8366fc0db7d141b3bd95ebdc5310fc32/c.html",
+      "date": "20260901T0",
+      "agency": "xinhuanet.com",
+      "category": "全球政策",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "全球政策"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    }
+  ],
   "analysis_schema": [
     "发生了什么",
     "原始政策",
