@@ -2,9 +2,7 @@ name: Update Intelligence Radar
 
 on:
   schedule:
-    # 每 30 分钟自动采集（UTC；避开整点，降低 GitHub Actions 高峰延迟）
     - cron: '7,37 * * * *'
-  # 代码/配置变化时立即运行一次；data/*.json 自动提交不会触发，避免循环
   push:
     paths-ignore:
       - 'data/**'
@@ -43,23 +41,29 @@ jobs:
           fi
 
           python - "$collect_rc" "$policy_collect_rc" "$enrich_rc" "$policy_rc" <<'PY'
-          import json, sys
-          from datetime import datetime, timezone
+          import json,sys
+          from datetime import datetime,timezone
           from pathlib import Path
-          path = Path('data/dashboard.json')
-          try:
-              dash = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
-          except Exception:
-              dash = {}
+          path=Path('data/dashboard.json')
+          health=Path('data/collection_health.json')
+          try: dash=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+          except Exception: dash={}
+          try: h=json.loads(health.read_text(encoding='utf-8')) if health.exists() else {}
+          except Exception: h={}
           rc=[int(x) for x in sys.argv[1:]]
-          ok=all(x==0 for x in rc)
+          pipeline_ok=all(x==0 for x in rc)
+          total=int(h.get('total_collected',0)); direct=int(h.get('direct_source_count',0)); gdelt=int(h.get('gdelt_count',0))
+          status='success' if pipeline_ok and total>0 else ('partial' if pipeline_ok and total==0 else 'failed')
           now=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
           dash['updated']=now
-          dash['collection_status']='success' if ok else 'failed'
-          dash['collection_message']=('自动采集、官方政策源、指标与中国政策雷达更新成功' if ok else f'自动更新失败：collect_news.py={rc[0]}, collect_policy_sources.py={rc[1]}, enrich_dashboard.py={rc[2]}, enrich_policy.py={rc[3]}')
+          dash['collection_status']=status
+          dash['collection_message']=f'采集健康度：总数据 {total} 条；直连官方源 {direct} 条；GDELT {gdelt} 条。GDELT 无数据时自动保留直连源结果。'
           dash['collection_time_utc']=now
+          dash['source_health']=h.get('sources',{})
+          dash['collection_pipeline_rc']=rc
           path.parent.mkdir(parents=True,exist_ok=True)
           path.write_text(json.dumps(dash,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(dash['collection_message'])
           PY
           exit $(( collect_rc != 0 || policy_collect_rc != 0 || enrich_rc != 0 || policy_rc != 0 ))
 
