@@ -4,6 +4,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const title=n=>n.titleZh||n.title||'';
 const rank=a=>a.slice().sort((x,y)=>(y.importance_score||0)-(x.importance_score||0));
 const grade=n=>n.importance_level==='S'?'s':n.importance_level==='A'?'a':'b';
+const css=document.createElement('style');css.textContent='.event-list{display:grid;gap:8px;margin-top:10px}.event-news{padding:9px 10px;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:rgba(255,255,255,.025)}.event-news a{display:block}.event-news small{display:block;margin-top:4px;opacity:.65}.focus-item h3,.policy-item h4{line-height:1.45}.focus-item p{line-height:1.45}';document.head.appendChild(css);
 function render(){
  if(typeof data==='undefined')return;
  const make=a=>a.map(n=>`<article class="policy-item"><span class="grade ${grade(n)}">${esc(n.importance_level||'B')}</span><small>${esc(n.time||'')}</small><h4>${n.url?`<a href="${n.url}" target="_blank" rel="noopener">${esc(title(n))}</a>`:esc(title(n))}</h4><p>${esc(n.cat||'')} · ${esc(n.sourceOrg||n.source||'')} · 重要度 ${n.importance_score||0}</p><span class="policy-stars">${'★'.repeat(n.importance_level==='S'?5:n.importance_level==='A'?4:3)}</span></article>`).join('')||'<div class="item">暂无重点信息。</div>';
