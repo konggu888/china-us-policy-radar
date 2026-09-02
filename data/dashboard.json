@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02 12:25 UTC",
+  "updated": "2026-09-02 16:31 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -290,7 +290,14 @@
       ]
     }
   ],
-  "collection_status": "success",
-  "collection_message": "自动采集、官方政策源、指标与中国政策雷达更新成功",
-  "collection_time_utc": "2026-09-02 12:25 UTC"
+  "collection_status": "failed",
+  "collection_message": "采集健康度：总数据 0 条；直连官方源 0 条；GDELT 0 条。GDELT 无数据时自动保留直连源结果。",
+  "collection_time_utc": "2026-09-02 16:31 UTC",
+  "source_health": {},
+  "collection_pipeline_rc": [
+    1,
+    0,
+    0,
+    0
+  ]
 }
