@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>中美全球情报雷达</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">STRATEGIC INTELLIGENCE RADAR</div>
+      <h1>中美 · 全球风险情报雷达</h1>
+      <p>金融经济 · 军事 · 内政 · 安全 · 中美竞争 · 全球化 · 地缘风险 · 能源安全</p>
+    </div>
+    <div class="status"><span class="dot"></span><span id="updated">正在读取数据…</span></div>
+  </header>
+
+  <main>
+    <section class="kpis" id="kpis"></section>
+
+    <section class="layout">
+      <aside class="panel filters">
+        <div class="panel-title">情报筛选</div>
+        <label>区域<select id="region"><option value="all">全部</option><option value="china">中国</option><option value="us">美国</option><option value="global">全球</option></select></label>
+        <label>领域<select id="category"><option value="all">全部领域</option><option>金融经济</option><option>军事</option><option>内政</option><option>安全</option><option>中美竞争</option><option>全球化</option><option>地缘风险</option><option>能源安全</option></select></label>
+        <label>风险级别<select id="risk"><option value="all">全部</option><option value="critical">极高</option><option value="high">高</option><option value="medium">中</option><option value="low">低</option></select></label>
+        <input id="search" type="search" placeholder="搜索关键词…" />
+        <div class="legend"><span class="critical">● 极高</span><span class="high">● 高</span><span class="medium">● 中</span><span class="low">● 低</span></div>
+      </aside>
+
+      <section class="panel radar-panel">
+        <div class="panel-title">全球风险态势</div>
+        <div id="radar" class="radar"><div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div><div class="radar-cross"></div><div id="blips"></div></div>
+        <div id="hotspots" class="hotspots"></div>
+      </section>
+
+      <section class="panel feed-panel">
+        <div class="panel-title row"><span>最新情报</span><span id="count"></span></div>
+        <div id="feed"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>Open-source intelligence（OSINT）聚合仪表盘。风险分级为规则化辅助判断，不代表事实结论。</footer>
+  <script src="app.js"></script>
+</body>
+</html>
