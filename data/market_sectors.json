@@ -1,14 +1,14 @@
 {
-  "updated": "2026-09-03 07:59 UTC",
+  "updated": "2026-09-03 09:54 UTC",
   "method": "US sector ETF proxy + A-share major index observations; returns are market observations, not investment advice",
   "sectors": {
     "科技": {
       "ticker": "XLK",
       "latest": 183.6,
       "daily_pct": -0.02,
-      "weekly_pct": 0.42,
-      "monthly_pct": -1.77,
-      "quarterly_pct": -6.44,
+      "weekly_pct": 1.02,
+      "monthly_pct": 3.12,
+      "quarterly_pct": -7.37,
       "six_month_pct": 33.53,
       "asof": "2026-09-02",
       "weekly_rank": 2
@@ -83,9 +83,9 @@
       "ticker": "XLB",
       "latest": 52.95,
       "daily_pct": 1.69,
-      "weekly_pct": -1.34,
-      "monthly_pct": 1.83,
-      "quarterly_pct": 2.56,
+      "weekly_pct": -1.18,
+      "monthly_pct": 3.8,
+      "quarterly_pct": 2.78,
       "six_month_pct": 1.94,
       "asof": "2026-09-02",
       "weekly_rank": 7
@@ -129,9 +129,9 @@
       "ticker": "000001.SS",
       "latest": 3942.0879,
       "daily_pct": 0.02,
-      "weekly_pct": -0.37,
-      "monthly_pct": 1.64,
-      "quarterly_pct": -2.13,
+      "weekly_pct": 0.76,
+      "monthly_pct": 3.13,
+      "quarterly_pct": -2.85,
       "six_month_pct": -4.38,
       "asof": "2026-09-03",
       "weekly_rank": 1
@@ -174,10 +174,11 @@
     "医疗",
     "通信服务"
   ],
-  "a_share_weekly_risers": [],
+  "a_share_weekly_risers": [
+    "上证指数"
+  ],
   "a_share_weekly_fallers": [
     "沪深300",
-    "深证成指",
-    "上证指数"
+    "深证成指"
   ]
 }
