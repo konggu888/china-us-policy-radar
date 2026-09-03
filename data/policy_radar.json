@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03 09:54 UTC",
+  "updated": "2026-09-03 14:38 UTC",
   "source_matrix": [
     {
       "agency": "中国政府网",
@@ -167,7 +167,7 @@
   "policy_areas": [
     {
       "name": "货币/金融",
-      "signals": 43,
+      "signals": 44,
       "high_risk": 1,
       "latest": "Wed, 5 Aug 2026 20:05:00 GMT"
     },
@@ -179,13 +179,13 @@
     },
     {
       "name": "能源/资源",
-      "signals": 12,
+      "signals": 14,
       "high_risk": 0,
       "latest": "Wed, 26 Aug 2026  09:00:00 EST"
     },
     {
       "name": "外交/国防/安全",
-      "signals": 11,
+      "signals": 12,
       "high_risk": 0,
       "latest": ""
     },
@@ -193,7 +193,7 @@
       "name": "宏观/财政",
       "signals": 10,
       "high_risk": 0,
-      "latest": "Wed,  2 Sep 2026 10:03:08 -0400"
+      "latest": "Thu,  3 Sep 2026 08:31:10 -0400"
     },
     {
       "name": "外贸/外资",
@@ -403,15 +403,16 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Major Economic Indicators Latest Numbers",
-      "url": "https://www.bls.gov/bls/",
-      "date": "Wed,  2 Sep 2026 10:03:08 -0400",
-      "agency": "BLS",
-      "category": "经济",
-      "risk": "低",
+      "title": "The U.S.-Canada natural gas and electricity trade value rose in 2025",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=",
+      "date": "Wed, 05 Aug 2026  09:00:00 EST",
+      "agency": "EIA",
+      "category": "能源 / 资源",
+      "risk": "中",
       "verification": "单一官方",
       "impact_industry": [
-        "经济"
+        "能源 / 资源",
+        "贸易 / 供应链"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
@@ -616,7 +617,7 @@
     },
     {
       "title": "U.S. LNG exports rose 23% in the first half of 2026 because of higher capacity",
-      "url": "https://www.eia.gov/todayinenergy/detail.php?id=",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68064",
       "date": "Tue, 01 Sep 2026 09:00:00 EST",
       "agency": "EIA",
       "category": "能源 / 资源",
@@ -703,6 +704,27 @@
       "title": "Federal Reserve Board issues enforcement action with Iuka Bancshares, Inc. and The Iuka State Bank",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260730b.htm",
       "date": "Thu, 30 Jul 2026 15:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Waller, The Economic Outlook and Some Comments on My Policy Communication",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20260903a.htm",
+      "date": "Thu, 3 Sep 2026 12:30:00 GMT",
       "agency": "Federal Reserve",
       "category": "金融",
       "risk": "低",
@@ -829,27 +851,6 @@
       "title": "Agencies issue joint statement on handling of highly sensitive information during bank examinations",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260716a.htm",
       "date": "Thu, 16 Jul 2026 18:00:00 GMT",
-      "agency": "Federal Reserve",
-      "category": "金融",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "金融"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Federal Reserve Board issues enforcement action with former chief lending officer of Heritage State Bank",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260716a.htm",
-      "date": "Thu, 16 Jul 2026 15:00:00 GMT",
       "agency": "Federal Reserve",
       "category": "金融",
       "risk": "低",
