@@ -8,14 +8,16 @@ CATS=['政治','金融','经济','产业','科技 / AI','国防','内政','国�
 AI_BATCH=120
 STRATEGIC_TERMS=('制裁','关税','出口管制','芯片','半导体','人工智能','军方','军事','导弹','海军','国防','国家安全','央行','利率','金融','汇率','贸易','供应链','能源','石油','天然气','稀土','投资','财政','监管','法案','总统令','行政令','外交','台海','乌克兰','台湾','sanction','tariff','export control','chip','semiconductor','artificial intelligence','military','defense','security','central bank','rate','trade','supply chain','energy','oil','gas','rare earth','investment','regulation','executive order','diplomacy')
 
+def load_current():
+ try:return json.loads(NEWS.read_text(encoding='utf-8'))
+ except Exception:return []
+
 def load_news():
- rows=[]
- try: rows+=json.loads(NEWS.read_text(encoding='utf-8'))
- except Exception: pass
+ rows=load_current()
  if ARCH.exists():
   for p in ARCH.glob('*.json'):
-   try: rows+=json.loads(p.read_text(encoding='utf-8'))
-   except Exception: pass
+   try:rows+=json.loads(p.read_text(encoding='utf-8'))
+   except Exception:pass
  seen=set();out=[]
  for n in rows:
   k=n.get('url') or n.get('title')
@@ -31,7 +33,7 @@ def dt(n):
 def call(prompt,max_tokens=1800):
  if not KEY:return None
  body={'model':MODEL,'messages':[{'role':'system','content':'你是全球战略政策情报分析员。只根据提供的公开情报判断，不把推测写成事实；明确区分官方立场、媒体报道和分析判断。输出合法JSON。分类必须以事件实际主体和政策对象为准，绝不能因为新闻媒体来自哪个国家就改变事件归属。'},{'role':'user','content':prompt}],'stream':False,'max_tokens':max_tokens,'response_format':{'type':'json_object'}}
- req=urllib.request.Request('https://api.deepseek.com/chat/completions',data=json.dumps(body,ensure_ascii=False).encode(),headers={'Authorization':'Bearer '+KEY,'Content-Type':'application/json','User-Agent':'China-US-Global-Intelligence-Radar/AI-4.0'})
+ req=urllib.request.Request('https://api.deepseek.com/chat/completions',data=json.dumps(body,ensure_ascii=False).encode(),headers={'Authorization':'Bearer '+KEY,'Content-Type':'application/json','User-Agent':'China-US-Global-Intelligence-Radar/AI-4.1'})
  try:
   raw=urllib.request.urlopen(req,timeout=120).read().decode('utf-8');return json.loads(json.loads(raw)['choices'][0]['message']['content'])
  except Exception as e: print('DeepSeek error:',type(e).__name__);return None
@@ -104,7 +106,8 @@ def make_summary(rows,days,label,market):
  return call(prompt,4200)
 
 def main():
- period=sys.argv[1] if len(sys.argv)>1 else 'daily';rows=load_news();classified=classify(rows);market={}
+ period=sys.argv[1] if len(sys.argv)>1 else 'daily'
+ current=load_current();classified=classify(current);rows=load_news();market={}
  try:market=json.loads((DATA/'market_sectors.json').read_text(encoding='utf-8'))
  except Exception:pass
  days={'daily':1,'weekly':7,'monthly':30,'quarterly':92,'half_year':180}.get(period,1)
