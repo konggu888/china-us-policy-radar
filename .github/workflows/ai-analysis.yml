@@ -1,12 +1,14 @@
 name: AI Strategic Intelligence Analysis
 
 on:
+  # DeepSeek peak hours are 01:00-04:00 and 06:00-10:00 UTC on weekdays.
+  # Run at 04:20-04:55 UTC (12:20-12:55 Beijing) to use off-peak pricing.
   schedule:
-    - cron: '20 1 * * *'       # daily 09:20 Beijing
-    - cron: '30 1 * * 1'       # weekly Monday
-    - cron: '40 1 1 * *'       # monthly
-    - cron: '50 1 1 1,4,7,10 *' # quarterly
-    - cron: '55 1 1 1,7 *'     # half-year
+    - cron: '20 4 * * *'       # daily 12:20 Beijing
+    - cron: '30 4 * * 1'       # weekly Monday
+    - cron: '40 4 1 * *'       # monthly
+    - cron: '50 4 1 1,4,7,10 *' # quarterly
+    - cron: '55 4 1 1,7 *'     # half-year
   workflow_dispatch:
     inputs:
       period:
@@ -25,7 +27,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run DeepSeek analysis
+      - name: Run DeepSeek cost-optimized analysis
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_MODEL: deepseek-v4-flash
