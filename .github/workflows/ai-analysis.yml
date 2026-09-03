@@ -9,6 +9,7 @@ on:
       - 'home.js'
       - 'ui-enhancements.js'
   schedule:
+    - cron: '15,45 * * * *'
     - cron: '20 4 * * *'
     - cron: '30 4 * * 1'
     - cron: '40 4 1 * *'
@@ -17,9 +18,9 @@ on:
   workflow_dispatch:
     inputs:
       period:
-        description: 'daily / weekly / monthly / quarterly / half_year'
+        description: 'classify / daily / weekly / monthly / quarterly / half_year'
         required: true
-        default: 'daily'
+        default: 'classify'
 
 permissions:
   contents: write
@@ -32,31 +33,35 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run DeepSeek cost-optimized analysis
+      - name: Run DeepSeek persistent classification and scheduled summaries
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_MODEL: deepseek-v4-flash
         run: |
           set -e
-          if [ -n "$DEEPSEEK_API_KEY" ]; then
-            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-              python scripts/ai_intelligence.py "${{ github.event.inputs.period }}"
-            else
-              python scripts/ai_intelligence.py daily
-              day=$(date -u +%u); dom=$(date -u +%d); month=$(date -u +%m)
-              if [ "$day" = "1" ]; then python scripts/ai_intelligence.py weekly; fi
-              if [ "$dom" = "01" ]; then python scripts/ai_intelligence.py monthly; fi
-              case "$month-$dom" in 01-01|04-01|07-01|10-01) python scripts/ai_intelligence.py quarterly ;; esac
-              case "$month-$dom" in 01-01|07-01) python scripts/ai_intelligence.py half_year ;; esac
-            fi
-          else
-            echo 'DEEPSEEK_API_KEY is not configured; skipping AI calls safely.'
+          if [ -z "$DEEPSEEK_API_KEY" ]; then
+            echo 'DEEPSEEK_API_KEY is not configured; no DeepSeek API call was made.'
+            python scripts/ai_intelligence.py classify
+            exit 0
           fi
-      - name: Commit AI intelligence
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python scripts/ai_intelligence.py "${{ github.event.inputs.period }}"
+          else
+            # Classification runs every 30 minutes. The script selects only new, high-value items
+            # and persists ai_* labels, so already classified stories are not billed again.
+            python scripts/ai_intelligence.py classify
+            hour=$(date -u +%H); minute=$(date -u +%M); day=$(date -u +%u); dom=$(date -u +%d); month=$(date -u +%m)
+            if [ "$hour" = "04" ] && [ "$minute" = "20" ]; then python scripts/ai_intelligence.py daily; fi
+            if [ "$hour" = "04" ] && [ "$minute" = "30" ] && [ "$day" = "1" ]; then python scripts/ai_intelligence.py weekly; fi
+            if [ "$hour" = "04" ] && [ "$minute" = "40" ] && [ "$dom" = "01" ]; then python scripts/ai_intelligence.py monthly; fi
+            if [ "$hour" = "04" ] && [ "$minute" = "50" ]; then case "$month-$dom" in 01-01|04-01|07-01|10-01) python scripts/ai_intelligence.py quarterly ;; esac; fi
+            if [ "$hour" = "04" ] && [ "$minute" = "55" ]; then case "$month-$dom" in 01-01|07-01) python scripts/ai_intelligence.py half_year ;; esac; fi
+          fi
+      - name: Commit AI intelligence and health
         if: ${{ always() }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/ai_summaries.json data/news.json
+          git add data/ai_summaries.json data/news.json data/ai_health.json
           git diff --cached --quiet || git commit -m 'chore: update AI strategic intelligence'
           git push
