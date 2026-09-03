@@ -1,14 +1,19 @@
 name: AI Strategic Intelligence Analysis
 
 on:
-  # DeepSeek peak hours are 01:00-04:00 and 06:00-10:00 UTC on weekdays.
-  # Run at 04:20-04:55 UTC (12:20-12:55 Beijing) to use off-peak pricing.
+  push:
+    paths:
+      - 'scripts/ai_intelligence.py'
+      - 'scripts/market_sectors.py'
+      - 'scripts/enrich_dashboard.py'
+      - 'home.js'
+      - 'ui-enhancements.js'
   schedule:
-    - cron: '20 4 * * *'       # daily 12:20 Beijing
-    - cron: '30 4 * * 1'       # weekly Monday
-    - cron: '40 4 1 * *'       # monthly
-    - cron: '50 4 1 1,4,7,10 *' # quarterly
-    - cron: '55 4 1 1,7 *'     # half-year
+    - cron: '20 4 * * *'
+    - cron: '30 4 * * 1'
+    - cron: '40 4 1 * *'
+    - cron: '50 4 1 1,4,7,10 *'
+    - cron: '55 4 1 1,7 *'
   workflow_dispatch:
     inputs:
       period:
