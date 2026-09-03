@@ -6,6 +6,7 @@ on:
     - cron: '30 1 * * 1'       # weekly Monday
     - cron: '40 1 1 * *'       # monthly
     - cron: '50 1 1 1,4,7,10 *' # quarterly
+    - cron: '55 1 1 1,7 *'     # half-year
   workflow_dispatch:
     inputs:
       period:
@@ -31,15 +32,16 @@ jobs:
         run: |
           set -e
           if [ -n "$DEEPSEEK_API_KEY" ]; then
-            python scripts/ai_intelligence.py daily
-            day=$(date -u +%u)
-            dom=$(date -u +%d)
-            month=$(date -u +%m)
-            if [ "$day" = "1" ]; then python scripts/ai_intelligence.py weekly; fi
-            if [ "$dom" = "01" ]; then python scripts/ai_intelligence.py monthly; fi
-            case "$month-$dom" in
-              01-01|04-01|07-01|10-01) python scripts/ai_intelligence.py quarterly ;;
-            esac
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              python scripts/ai_intelligence.py "${{ github.event.inputs.period }}"
+            else
+              python scripts/ai_intelligence.py daily
+              day=$(date -u +%u); dom=$(date -u +%d); month=$(date -u +%m)
+              if [ "$day" = "1" ]; then python scripts/ai_intelligence.py weekly; fi
+              if [ "$dom" = "01" ]; then python scripts/ai_intelligence.py monthly; fi
+              case "$month-$dom" in 01-01|04-01|07-01|10-01) python scripts/ai_intelligence.py quarterly ;; esac
+              case "$month-$dom" in 01-01|07-01) python scripts/ai_intelligence.py half_year ;; esac
+            fi
           else
             echo 'DEEPSEEK_API_KEY is not configured; skipping AI calls safely.'
           fi
