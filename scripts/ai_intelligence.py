@@ -1,3 +1,4 @@
+# DeepSeek integration verification trigger: classification is persistent and cost-optimized.
 import json, os, re, sys, urllib.request
 from collections import Counter
 from datetime import datetime, timezone, timedelta
@@ -65,13 +66,11 @@ def select_todo(rows):
 
 def classify(rows):
  todo=select_todo(rows)
- if not todo:
-  return 0
+ if not todo:return 0
  evidence=[{'id':i,'title':n.get('titleZh') or n.get('title',''),'original':n.get('title',''),'collector_region_hint':n.get('region'),'collector_category_hint':n.get('cat'),'source':n.get('sourceOrg') or n.get('source'),'sourceTier':n.get('sourceTier'),'official':n.get('official',False),'url':n.get('url')} for i,n in enumerate(todo)]
  prompt='''对以下情报逐条进行AI初筛。AI必须最终决定：category（13类中1类）、risk（低/中/高/极高）、region（china/us/global）、importance（1-100）、action（是否明确政策/监管/军事/财政/贸易/经济行动）、reason（不超过30字），英文标题同时给titleZh。\n\n核心要求：collector_region_hint和collector_category_hint只是采集提示，绝不是答案。region必须按事件实际主体、政策实施者、政策对象和主要影响地区判断，绝不能按媒体所在国家判断。\n例：美国政府出台对华芯片限制=us；中国政府回应美国限制=china；中美双方同时采取措施=global；中国媒体报道美国政策=us；美国媒体报道中国房地产=china；WTO/IMF/联合国/G20等国际制度或多国共同政策=global；单纯国际媒体报道某国事件不等于global。\ncategory与region独立：美联储降息=金融+us；WTO贸易规则=贸易 / 供应链或全球政策+global；中美关税互相加征=中美博弈+global。\n不要改变URL。输出{"items":[...]}。13类：'''+','.join(CATS)+'\n数据：'+json.dumps(evidence,ensure_ascii=False)
  ans=call(prompt,7000)
- if not ans or not isinstance(ans.get('items'),list):
-  return 0
+ if not ans or not isinstance(ans.get('items'),list):return 0
  changed=0
  for x in ans['items']:
   try:n=todo[int(x['id'])]
