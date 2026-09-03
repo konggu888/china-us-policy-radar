@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-03 05:12 UTC",
+  "updated": "2026-09-03 06:23 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.7174,
+      "value": 6.7173,
       "change_pct": -0.04,
       "time": "2026-09-03",
       "name": "USD/CNY"
     },
     {
       "symbol": "000001.SS",
-      "value": 3958.1882,
-      "change_pct": 0.43,
+      "value": 3951.1941,
+      "change_pct": 0.25,
       "time": "2026-09-03",
       "name": "上证指数"
     },
@@ -31,15 +31,15 @@
     },
     {
       "symbol": "BZ=F",
-      "value": 95.02,
-      "change_pct": -0.64,
+      "value": 94.4,
+      "change_pct": -1.29,
       "time": "2026-09-03",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4482.7002,
-      "change_pct": 2.67,
+      "value": 4473.5,
+      "change_pct": 2.46,
       "time": "2026-09-03",
       "name": "黄金"
     },
@@ -52,8 +52,8 @@
     }
   ],
   "globalization_temperature": {
-    "score": 56,
-    "label": "冷热交织",
+    "score": 62,
+    "label": "开放信号偏强",
     "method": "公开政策/贸易/投资/制裁/出口管制信号的相对温度；不是官方指标。"
   },
   "policy_direction": {
@@ -67,14 +67,26 @@
         7
       ],
       [
+        "产业",
+        1
+      ],
+      [
         "外交",
         1
       ]
     ],
     "us": [
       [
+        "金融",
+        37
+      ],
+      [
         "全球政策",
         21
+      ],
+      [
+        "能源 / 资源",
+        12
       ],
       [
         "外交",
@@ -87,17 +99,14 @@
       [
         "贸易 / 供应链",
         7
-      ],
-      [
-        "金融",
-        2
-      ],
-      [
-        "经济",
-        2
       ]
     ],
-    "global": []
+    "global": [
+      [
+        "全球政策",
+        15
+      ]
+    ]
   },
   "policy_language": [
     {
@@ -110,7 +119,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 20
+      "count": 26
     },
     {
       "keyword": "产业升级",
@@ -118,7 +127,7 @@
     },
     {
       "keyword": "开放",
-      "count": 2
+      "count": 4
     },
     {
       "keyword": "安全",
@@ -205,7 +214,7 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 26,
+      "total": 27,
       "top_categories": [
         {
           "name": "全球政策",
@@ -216,6 +225,10 @@
           "count": 7
         },
         {
+          "name": "产业",
+          "count": 1
+        },
+        {
           "name": "外交",
           "count": 1
         }
@@ -224,11 +237,19 @@
     },
     {
       "side": "美国",
-      "total": 58,
+      "total": 104,
       "top_categories": [
+        {
+          "name": "金融",
+          "count": 37
+        },
         {
           "name": "全球政策",
           "count": 21
+        },
+        {
+          "name": "能源 / 资源",
+          "count": 12
         },
         {
           "name": "外交",
@@ -241,17 +262,9 @@
         {
           "name": "贸易 / 供应链",
           "count": 7
-        },
-        {
-          "name": "能源 / 资源",
-          "count": 2
-        },
-        {
-          "name": "产业",
-          "count": 2
         }
       ],
-      "risk_high": 1
+      "risk_high": 2
     }
   ],
   "today_focus": [
@@ -354,7 +367,7 @@
     },
     {
       "title": "USTR Announces Fiscal Year 2027 WTO Tariff-Rate Quota Allocations for Raw Cane Sugar, Refined Sugar, and Sugar-Containing Products",
-      "titleZh": "美国贸易代表办公室公布 2027 财年原蔗糖、精制糖和含糖产品的 WTO 关税配额分配",
+      "titleZh": "USTR公布2027财年原蔗糖、精制糖和含糖产品的世贸组织关税配额分配",
       "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/ustr-announces-fiscal-year-2027-wto-tariff-rate-quota-allocations-raw-cane-sugar-refined-sugar-and",
       "risk": "中",
       "category": "贸易 / 供应链",
@@ -392,7 +405,7 @@
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "failed",
   "collection_message": "长期情报库：当前工作集 0 条；本轮发现 0 条；13类覆盖=0/13；中国/美国/全球=0/0/0；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-09-03 05:12 UTC",
+  "collection_time_utc": "2026-09-03 06:23 UTC",
   "source_health": {},
   "collection_pipeline_rc": [
     1,

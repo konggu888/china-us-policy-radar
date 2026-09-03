@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03 05:12 UTC",
+  "updated": "2026-09-03 06:23 UTC",
   "source_matrix": [
     {
       "agency": "中国政府网",
@@ -116,9 +116,9 @@
     },
     {
       "keyword": "人工智能+",
-      "count": 0,
-      "recent": 0,
-      "signal": "常态",
+      "count": 2,
+      "recent": 2,
+      "signal": "升温",
       "method": "公开标题/文本中的关键词频次，属于描述性信号，不代表政策意图。"
     },
     {
@@ -166,10 +166,22 @@
   ],
   "policy_areas": [
     {
+      "name": "货币/金融",
+      "signals": 42,
+      "high_risk": 1,
+      "latest": "Wed, 5 Aug 2026 20:05:00 GMT"
+    },
+    {
       "name": "AI/半导体",
-      "signals": 20,
+      "signals": 25,
       "high_risk": 0,
-      "latest": ""
+      "latest": "Tue, 14 Jul 2026 16:40:00 GMT"
+    },
+    {
+      "name": "能源/资源",
+      "signals": 12,
+      "high_risk": 0,
+      "latest": "Wed, 26 Aug 2026  09:00:00 EST"
     },
     {
       "name": "外交/国防/安全",
@@ -179,15 +191,9 @@
     },
     {
       "name": "宏观/财政",
-      "signals": 9,
+      "signals": 10,
       "high_risk": 0,
-      "latest": "20260902T0"
-    },
-    {
-      "name": "货币/金融",
-      "signals": 7,
-      "high_risk": 0,
-      "latest": "20260902T0"
+      "latest": "Wed,  2 Sep 2026 10:03:08 -0400"
     },
     {
       "name": "外贸/外资",
@@ -197,19 +203,13 @@
     },
     {
       "name": "产业/制造",
-      "signals": 5,
+      "signals": 6,
       "high_risk": 0,
-      "latest": ""
+      "latest": "Thu, 02 Apr 2026 07:00:00 GMT"
     },
     {
       "name": "房地产/消费",
       "signals": 3,
-      "high_risk": 0,
-      "latest": ""
-    },
-    {
-      "name": "能源/资源",
-      "signals": 2,
       "high_risk": 0,
       "latest": ""
     }
@@ -235,13 +235,181 @@
   },
   "policy_items": [
     {
-      "title": "IMF总裁 ： 全球经济前景仍面临高不确定性 - 新华网",
-      "url": "http://www.xinhuanet.com/20260902/fce81e188ed948478227de39fa942fcd/c.html",
-      "date": "20260902T0",
-      "agency": "xinhuanet.com",
+      "title": "Cook, Outlook for the U.S. and Alaskan Economies",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260805a.htm",
+      "date": "Wed, 5 Aug 2026 20:05:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+      "date": "Wed, 29 Jul 2026 18:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Eight petroleum liquids pipeline projects have been completed since the start of 2025",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68024",
+      "date": "Wed, 26 Aug 2026  09:00:00 EST",
+      "agency": "EIA",
+      "category": "能源 / 资源",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "能源 / 资源"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Cook, Welcome Remarks",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
+      "date": "Wed, 24 Jun 2026 18:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
+      "date": "Wed, 19 Aug 2026 18:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Longer wells boost Permian crude oil and natural gas production",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=67984",
+      "date": "Wed, 19 Aug 2026  09:00:00 EST",
+      "agency": "EIA",
+      "category": "能源 / 资源",
+      "risk": "中",
+      "verification": "单一官方",
+      "impact_industry": [
+        "能源 / 资源"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Cook, Economic Outlook",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260715a.htm",
+      "date": "Wed, 15 Jul 2026 17:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "United States on track for record natural gas production in 2026",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=67944",
+      "date": "Wed, 12 Aug 2026  09:00:00 EST",
+      "agency": "EIA",
+      "category": "能源 / 资源",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "能源 / 资源"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Major Economic Indicators Latest Numbers",
+      "url": "https://www.bls.gov/bls/",
+      "date": "Wed,  2 Sep 2026 10:03:08 -0400",
+      "agency": "BLS",
       "category": "经济",
       "risk": "低",
-      "verification": "单一来源",
+      "verification": "单一官方",
       "impact_industry": [
         "经济"
       ],
@@ -256,222 +424,11 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Presidential Message on National Childhood Cancer Awareness Month",
-      "url": "https://www.whitehouse.gov/briefings-statements/2026/09/presidential-message-on-national-childhood-cancer-awareness-month/",
-      "date": "",
-      "agency": "White House",
-      "category": "政治",
-      "risk": "高",
-      "verification": "单一官方",
-      "impact_industry": [
-        "政治"
-      ],
-      "short_term": "关注市场预期、政策执行与相关行业价格/订单变化",
-      "long_term": "观察产业链、资本流向、贸易结构与政策持续性",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "高优先级"
-    },
-    {
-      "title": "Briefings & Statements",
-      "url": "https://www.whitehouse.gov/briefings-statements/",
-      "date": "",
-      "agency": "White House",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "全球政策"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Congressional Bill H.R. 6500 Signed into Law",
-      "url": "https://www.whitehouse.gov/briefings-statements/2026/09/congressional-bill-h-r-6500-signed-into-law/",
-      "date": "",
-      "agency": "White House",
-      "category": "政治",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "政治"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "G20 Innovation Ministerial Concludes with Consensus Statement",
-      "url": "https://www.whitehouse.gov/releases/2026/09/g20-innovation-ministerial-concludes-with-consensus-statement/",
-      "date": "",
-      "agency": "White House",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "全球政策"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Presidential Message on National Preparedness Month",
-      "url": "https://www.whitehouse.gov/briefings-statements/2026/09/presidential-message-on-national-preparedness-month-6e71/",
-      "date": "",
-      "agency": "White House",
-      "category": "政治",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "政治"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Presidential Message on National Recovery Month",
-      "url": "https://www.whitehouse.gov/briefings-statements/2026/09/presidential-message-on-national-recovery-month/",
-      "date": "",
-      "agency": "White House",
-      "category": "政治",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "政治"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Ten Times Extreme Liberal Democrats in Congress Put Their Dangerous Agenda Ahead of the American People",
-      "url": "https://www.whitehouse.gov/fact-sheets/2026/09/ten-times-extreme-liberal-democrats-in-congress-put-their-dangerous-agenda-ahead-of-the-american-people/",
-      "date": "",
-      "agency": "White House",
-      "category": "政治",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "政治"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Fact Sheet: President Donald J. Trump Announces Deal with Nine Additional Pharmaceutical Manufacturers to Lower Drug Prices for Americans",
-      "url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-announces-deal-with-nine-additional-pharmaceutical-manufacturers-to-lower-drug-prices-for-americans/",
-      "date": "",
-      "agency": "White House",
-      "category": "政治",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "政治"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "President Trump and VP Vance Deliver Manufacturing Renaissance to Michigan",
-      "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-and-vp-vance-deliver-manufacturing-renaissance-to-michigan/",
-      "date": "",
-      "agency": "White House",
-      "category": "产业",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "科技 / AI",
-        "产业"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Skip to main content (Press Enter).",
-      "url": "https://www.defense.gov/News/Releases/#skip-target",
-      "date": "",
-      "agency": "US Defense Department",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "科技 / AI"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Daily Treasury Par Yield Curve Rates",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
+      "title": "Bowman, Opening Remarks on Sound Practices for Artificial Intelligence",
+      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260707a.htm",
+      "date": "Tue, 7 Jul 2026 11:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
       "risk": "低",
       "verification": "单一官方",
       "impact_industry": [
@@ -489,203 +446,10 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Daily Treasury Par Real Yield Curve Rates",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_real_yield_curve&field_tdr_date_value=2026",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "科技 / AI",
-        "金融"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Daily Treasury Bill Rates",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_bill_rates&field_tdr_date_value=2026",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "科技 / AI",
-        "金融"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Daily Treasury Long-Term Rates",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_long_term_rate&field_tdr_date_value=2026",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "科技 / AI",
-        "金融"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Daily Treasury Real Long-Term Rates",
-      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_real_long_term&field_tdr_date_value=2026",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "科技 / AI",
-        "金融"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "TIC Press Releases",
-      "url": "https://home.treasury.gov/data/tic-press-releases-by-topic/",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "全球政策"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "View all Featured Stories",
-      "url": "https://home.treasury.gov/news/featured-stories/",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "全球政策"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Remarks and Statements",
-      "url": "https://home.treasury.gov/news/press-releases/statements-remarks",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "全球政策"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "G20 Chair’s Statement",
-      "url": "https://home.treasury.gov/news/press-releases/sb0620/",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "科技 / AI"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "Preliminary Annual Report on U.S. Portfolio Holdings of Foreign Securities at Year-End 2025",
-      "url": "https://home.treasury.gov/news/press-releases/sb0618/",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
-      "risk": "低",
-      "verification": "单一官方",
-      "impact_industry": [
-        "全球政策"
-      ],
-      "short_term": "主要观察政策落地和市场情绪变化",
-      "long_term": "观察后续政策是否形成连续措施",
-      "watch_data": [
-        "官方后续文件",
-        "行业数据",
-        "价格/订单",
-        "企业公告"
-      ],
-      "policy_level": "常规跟踪"
-    },
-    {
-      "title": "READOUT: Secretary of the Treasury Scott Bessent's Meeting with Bank of Japan Governor Kazuo Ueda",
-      "url": "https://home.treasury.gov/news/press-releases/sb0619/",
-      "date": "",
-      "agency": "US Treasury",
+      "title": "Federal Reserve Board announces approval of the application by Coastal Bend Bancshares, Inc.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260804c.htm",
+      "date": "Tue, 4 Aug 2026 20:30:00 GMT",
+      "agency": "Federal Reserve",
       "category": "金融",
       "risk": "低",
       "verification": "单一官方",
@@ -703,10 +467,10 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Iran’s Access to UAE Banks Targeted Under Operation Economic Outcast",
-      "url": "https://home.treasury.gov/news/press-releases/sb0617/",
-      "date": "",
-      "agency": "US Treasury",
+      "title": "Federal Reserve Board announces approval of the application by FS Bancorp, Inc.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260804b.htm",
+      "date": "Tue, 4 Aug 2026 20:30:00 GMT",
+      "agency": "Federal Reserve",
       "category": "金融",
       "risk": "低",
       "verification": "单一官方",
@@ -724,15 +488,15 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Treasury Takes Action Against Violent Far-Left Terrorist Networks",
-      "url": "https://home.treasury.gov/news/press-releases/sb0616/",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "全球政策",
+      "title": "Federal Reserve Board announces approval of the application by Banco Santander, S.A. and Santander Holdings USA, Inc.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260804a.htm",
+      "date": "Tue, 4 Aug 2026 20:30:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
       "risk": "低",
       "verification": "单一官方",
       "impact_industry": [
-        "科技 / AI"
+        "金融"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
@@ -745,15 +509,15 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Treasury Announces the Quantum-Readiness Task Force",
-      "url": "https://home.treasury.gov/news/press-releases/sb0615/",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "科技 / AI",
+      "title": "Minutes of the Board's discount rate meetings on July 20 and July 29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260825a.htm",
+      "date": "Tue, 25 Aug 2026 18:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
       "risk": "低",
       "verification": "单一官方",
       "impact_industry": [
-        "科技 / AI"
+        "金融"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
@@ -766,15 +530,15 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Remarks from Secretary of the Treasury Scott Bessent on Operation Economic Outcast against Iran",
-      "url": "https://home.treasury.gov/news/press-releases/sb0614/",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "经济",
+      "title": "Bowman, Responsible Innovation and Financial Inclusion",
+      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260714a.htm",
+      "date": "Tue, 14 Jul 2026 18:55:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
       "risk": "低",
       "verification": "单一官方",
       "impact_industry": [
-        "科技 / AI"
+        "金融"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
@@ -787,15 +551,15 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
-      "url": "https://home.treasury.gov/news/press-releases/sb0613/",
-      "date": "",
-      "agency": "US Treasury",
-      "category": "经济",
+      "title": "Minutes of the Board's discount rate meetings on June 8 and June 17, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260714a.htm",
+      "date": "Tue, 14 Jul 2026 18:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
       "risk": "低",
       "verification": "单一官方",
       "impact_industry": [
-        "科技 / AI"
+        "金融"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
@@ -808,15 +572,16 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Industry & Manufacturing",
-      "url": "https://ustr.gov/issue-areas/industry-manufacturing",
-      "date": "",
-      "agency": "USTR",
-      "category": "产业",
+      "title": "Barr, Will Artificial Intelligence Broadly Raise Living Standards or Drive Income and Wealth Inequality?",
+      "url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
+      "date": "Tue, 14 Jul 2026 16:40:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
       "risk": "低",
       "verification": "单一官方",
       "impact_industry": [
-        "产业"
+        "科技 / AI",
+        "金融"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
@@ -829,15 +594,15 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Speeches and Remarks",
-      "url": "https://ustr.gov/about-us/policy-offices/press-office/speeches-and-remarks",
-      "date": "",
-      "agency": "USTR",
-      "category": "全球政策",
+      "title": "Barr, Unlocking Opportunities for Workers and Entrepreneurs with a Criminal Record",
+      "url": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
+      "date": "Tue, 1 Sep 2026 13:05:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
       "risk": "低",
       "verification": "单一官方",
       "impact_industry": [
-        "全球政策"
+        "金融"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
@@ -850,15 +615,247 @@
       "policy_level": "常规跟踪"
     },
     {
-      "title": "Reports and Publications",
-      "url": "https://ustr.gov/about-us/policy-offices/press-office/reports-and-publications",
-      "date": "",
-      "agency": "USTR",
-      "category": "全球政策",
+      "title": "U.S. LNG exports rose 23% in the first half of 2026 because of higher capacity",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=",
+      "date": "Tue, 01 Sep 2026 09:00:00 EST",
+      "agency": "EIA",
+      "category": "能源 / 资源",
       "risk": "低",
       "verification": "单一官方",
       "impact_industry": [
-        "全球政策"
+        "能源 / 资源",
+        "贸易 / 供应链"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve announces the leadership and objectives of its task forces to advance the conduct of monetary policy",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260709a.htm",
+      "date": "Thu, 9 Jul 2026 19:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement action with TS Banking Group, Inc. and TS Contrarian Bancshares, Inc.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260709a.htm",
+      "date": "Thu, 9 Jul 2026 15:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement actions with former employee of Regions Bank and former employee of First Interstate Bank",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260730a.htm",
+      "date": "Thu, 30 Jul 2026 15:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement action with Iuka Bancshares, Inc. and The Iuka State Bank",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260730b.htm",
+      "date": "Thu, 30 Jul 2026 15:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement action with former employee of Banco Popular de Puerto Rico",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260827a.htm",
+      "date": "Thu, 27 Aug 2026 15:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve Board announces approval of application by National Westminster Bank Plc",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260820a.htm",
+      "date": "Thu, 20 Aug 2026 20:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement actions with former employee of Regions Bank and former employee of United Community Bank",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260820a.htm",
+      "date": "Thu, 20 Aug 2026 15:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement action with SouthPoint Bancshares, Inc. and announces termination of enforcement action with Deutsche Bank AG, DB USA Corporation, and Deutsche Bank AG New York Branch",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260820b.htm",
+      "date": "Thu, 20 Aug 2026 15:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Jefferson, Navigating Economic Shocks: A Monetary Policymaker’s Perspective",
+      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260716a.htm",
+      "date": "Thu, 16 Jul 2026 23:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Agencies issue joint statement on handling of highly sensitive information during bank examinations",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260716a.htm",
+      "date": "Thu, 16 Jul 2026 18:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
+      ],
+      "short_term": "主要观察政策落地和市场情绪变化",
+      "long_term": "观察后续政策是否形成连续措施",
+      "watch_data": [
+        "官方后续文件",
+        "行业数据",
+        "价格/订单",
+        "企业公告"
+      ],
+      "policy_level": "常规跟踪"
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement action with former chief lending officer of Heritage State Bank",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260716a.htm",
+      "date": "Thu, 16 Jul 2026 15:00:00 GMT",
+      "agency": "Federal Reserve",
+      "category": "金融",
+      "risk": "低",
+      "verification": "单一官方",
+      "impact_industry": [
+        "金融"
       ],
       "short_term": "主要观察政策落地和市场情绪变化",
       "long_term": "观察后续政策是否形成连续措施",
