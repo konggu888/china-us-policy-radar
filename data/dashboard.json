@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03 06:23 UTC",
+  "updated": "2026-09-03 07:59 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -10,10 +10,45 @@
     },
     {
       "symbol": "000001.SS",
-      "value": 3951.1941,
-      "change_pct": 0.25,
+      "value": 3942.0879,
+      "change_pct": 0.02,
       "time": "2026-09-03",
       "name": "上证指数"
+    },
+    {
+      "symbol": "399001.SZ",
+      "value": 13625.1221,
+      "change_pct": 0.1,
+      "time": "2026-09-03",
+      "name": "深证成指"
+    },
+    {
+      "symbol": "000300.SS",
+      "value": 4552.5786,
+      "change_pct": 0.0,
+      "time": "2026-09-03",
+      "name": "沪深300"
+    },
+    {
+      "symbol": "000905.SS",
+      "value": 7755.3613,
+      "change_pct": 0.0,
+      "time": "2026-09-03",
+      "name": "中证500"
+    },
+    {
+      "symbol": "399006.SZ",
+      "value": 3312.541,
+      "change_pct": 0.0,
+      "time": "2026-09-03",
+      "name": "创业板指"
+    },
+    {
+      "symbol": "000688.SS",
+      "value": 1611.1652,
+      "change_pct": 0.0,
+      "time": "2026-09-03",
+      "name": "科创50"
     },
     {
       "symbol": "^GSPC",
@@ -31,26 +66,387 @@
     },
     {
       "symbol": "BZ=F",
-      "value": 94.4,
-      "change_pct": -1.29,
+      "value": 94.94,
+      "change_pct": -0.72,
       "time": "2026-09-03",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4473.5,
-      "change_pct": 2.46,
+      "value": 4473.2002,
+      "change_pct": 2.45,
       "time": "2026-09-03",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 15.2,
-      "change_pct": -6.98,
-      "time": "2026-09-02",
+      "value": 15.16,
+      "change_pct": -0.26,
+      "time": "2026-09-03",
       "name": "VIX"
     }
   ],
+  "us_sector_market": {
+    "科技": {
+      "ticker": "XLK",
+      "latest": 183.6,
+      "daily_pct": -0.02,
+      "weekly_pct": 0.42,
+      "monthly_pct": -1.77,
+      "quarterly_pct": -6.44,
+      "six_month_pct": 33.53,
+      "asof": "2026-09-02",
+      "weekly_rank": 2
+    },
+    "金融": {
+      "ticker": "XLF",
+      "latest": 57.66,
+      "daily_pct": 0.8,
+      "weekly_pct": -1.03,
+      "monthly_pct": -0.38,
+      "quarterly_pct": 13.35,
+      "six_month_pct": 12.6,
+      "asof": "2026-09-02",
+      "weekly_rank": 6
+    },
+    "能源": {
+      "ticker": "XLE",
+      "latest": 65.1,
+      "daily_pct": 0.51,
+      "weekly_pct": 4.28,
+      "monthly_pct": 11.24,
+      "quarterly_pct": 10.88,
+      "six_month_pct": 15.18,
+      "asof": "2026-09-02",
+      "weekly_rank": 1
+    },
+    "工业": {
+      "ticker": "XLI",
+      "latest": 172.78,
+      "daily_pct": 0.03,
+      "weekly_pct": -4.19,
+      "monthly_pct": -7.31,
+      "quarterly_pct": -0.73,
+      "six_month_pct": -1.52,
+      "asof": "2026-09-02",
+      "weekly_rank": 11
+    },
+    "可选消费": {
+      "ticker": "XLY",
+      "latest": 114.86,
+      "daily_pct": 0.24,
+      "weekly_pct": -1.96,
+      "monthly_pct": -2.9,
+      "quarterly_pct": -1.6,
+      "six_month_pct": 0.44,
+      "asof": "2026-09-02",
+      "weekly_rank": 9
+    },
+    "必选消费": {
+      "ticker": "XLP",
+      "latest": 85.53,
+      "daily_pct": 0.33,
+      "weekly_pct": -0.86,
+      "monthly_pct": 0.19,
+      "quarterly_pct": 4.1,
+      "six_month_pct": -2.52,
+      "asof": "2026-09-02",
+      "weekly_rank": 5
+    },
+    "医疗": {
+      "ticker": "XLV",
+      "latest": 172.95,
+      "daily_pct": 0.75,
+      "weekly_pct": -0.34,
+      "monthly_pct": 6.69,
+      "quarterly_pct": 17.21,
+      "six_month_pct": 10.34,
+      "asof": "2026-09-02",
+      "weekly_rank": 4
+    },
+    "材料": {
+      "ticker": "XLB",
+      "latest": 52.95,
+      "daily_pct": 1.69,
+      "weekly_pct": -1.34,
+      "monthly_pct": 1.83,
+      "quarterly_pct": 2.56,
+      "six_month_pct": 1.94,
+      "asof": "2026-09-02",
+      "weekly_rank": 7
+    },
+    "房地产": {
+      "ticker": "XLRE",
+      "latest": 43.73,
+      "daily_pct": -0.7,
+      "weekly_pct": -3.02,
+      "monthly_pct": -3.19,
+      "quarterly_pct": 0.51,
+      "six_month_pct": 0.07,
+      "asof": "2026-09-02",
+      "weekly_rank": 10
+    },
+    "通信服务": {
+      "ticker": "XLC",
+      "latest": 112.42,
+      "daily_pct": 1.39,
+      "weekly_pct": -0.17,
+      "monthly_pct": 0.34,
+      "quarterly_pct": 0.3,
+      "six_month_pct": -4.7,
+      "asof": "2026-09-02",
+      "weekly_rank": 3
+    },
+    "公用事业": {
+      "ticker": "XLU",
+      "latest": 42.67,
+      "daily_pct": 0.26,
+      "weekly_pct": -1.93,
+      "monthly_pct": -3.26,
+      "quarterly_pct": -2.38,
+      "six_month_pct": -9.35,
+      "asof": "2026-09-02",
+      "weekly_rank": 8
+    }
+  },
+  "a_share_market": {
+    "上证指数": {
+      "ticker": "000001.SS",
+      "latest": 3942.0879,
+      "daily_pct": 0.02,
+      "weekly_pct": -0.37,
+      "monthly_pct": 1.64,
+      "quarterly_pct": -2.13,
+      "six_month_pct": -4.38,
+      "asof": "2026-09-03",
+      "weekly_rank": 1
+    },
+    "深证成指": {
+      "ticker": "399001.SZ",
+      "latest": 13625.1221,
+      "daily_pct": 0.1,
+      "weekly_pct": -3.02,
+      "monthly_pct": -3.67,
+      "quarterly_pct": -11.03,
+      "six_month_pct": -2.83,
+      "asof": "2026-09-03",
+      "weekly_rank": 2
+    },
+    "沪深300": {
+      "ticker": "000300.SS",
+      "latest": 4552.5786,
+      "daily_pct": 0.52,
+      "weekly_pct": -3.04,
+      "monthly_pct": -7.87,
+      "quarterly_pct": -3.89,
+      "six_month_pct": -2.22,
+      "asof": "2026-09-03",
+      "weekly_rank": 3
+    }
+  },
+  "market_highlights": {
+    "us_sector_risers": [
+      {
+        "name": "能源",
+        "ticker": "XLE",
+        "latest": 65.1,
+        "daily_pct": 0.51,
+        "weekly_pct": 4.28,
+        "monthly_pct": 11.24,
+        "quarterly_pct": 10.88,
+        "six_month_pct": 15.18,
+        "asof": "2026-09-02",
+        "weekly_rank": 1
+      },
+      {
+        "name": "科技",
+        "ticker": "XLK",
+        "latest": 183.6,
+        "daily_pct": -0.02,
+        "weekly_pct": 0.42,
+        "monthly_pct": -1.77,
+        "quarterly_pct": -6.44,
+        "six_month_pct": 33.53,
+        "asof": "2026-09-02",
+        "weekly_rank": 2
+      },
+      {
+        "name": "通信服务",
+        "ticker": "XLC",
+        "latest": 112.42,
+        "daily_pct": 1.39,
+        "weekly_pct": -0.17,
+        "monthly_pct": 0.34,
+        "quarterly_pct": 0.3,
+        "six_month_pct": -4.7,
+        "asof": "2026-09-02",
+        "weekly_rank": 3
+      },
+      {
+        "name": "医疗",
+        "ticker": "XLV",
+        "latest": 172.95,
+        "daily_pct": 0.75,
+        "weekly_pct": -0.34,
+        "monthly_pct": 6.69,
+        "quarterly_pct": 17.21,
+        "six_month_pct": 10.34,
+        "asof": "2026-09-02",
+        "weekly_rank": 4
+      },
+      {
+        "name": "必选消费",
+        "ticker": "XLP",
+        "latest": 85.53,
+        "daily_pct": 0.33,
+        "weekly_pct": -0.86,
+        "monthly_pct": 0.19,
+        "quarterly_pct": 4.1,
+        "six_month_pct": -2.52,
+        "asof": "2026-09-02",
+        "weekly_rank": 5
+      }
+    ],
+    "us_sector_fallers": [
+      {
+        "name": "工业",
+        "ticker": "XLI",
+        "latest": 172.78,
+        "daily_pct": 0.03,
+        "weekly_pct": -4.19,
+        "monthly_pct": -7.31,
+        "quarterly_pct": -0.73,
+        "six_month_pct": -1.52,
+        "asof": "2026-09-02",
+        "weekly_rank": 11
+      },
+      {
+        "name": "房地产",
+        "ticker": "XLRE",
+        "latest": 43.73,
+        "daily_pct": -0.7,
+        "weekly_pct": -3.02,
+        "monthly_pct": -3.19,
+        "quarterly_pct": 0.51,
+        "six_month_pct": 0.07,
+        "asof": "2026-09-02",
+        "weekly_rank": 10
+      },
+      {
+        "name": "可选消费",
+        "ticker": "XLY",
+        "latest": 114.86,
+        "daily_pct": 0.24,
+        "weekly_pct": -1.96,
+        "monthly_pct": -2.9,
+        "quarterly_pct": -1.6,
+        "six_month_pct": 0.44,
+        "asof": "2026-09-02",
+        "weekly_rank": 9
+      },
+      {
+        "name": "公用事业",
+        "ticker": "XLU",
+        "latest": 42.67,
+        "daily_pct": 0.26,
+        "weekly_pct": -1.93,
+        "monthly_pct": -3.26,
+        "quarterly_pct": -2.38,
+        "six_month_pct": -9.35,
+        "asof": "2026-09-02",
+        "weekly_rank": 8
+      },
+      {
+        "name": "材料",
+        "ticker": "XLB",
+        "latest": 52.95,
+        "daily_pct": 1.69,
+        "weekly_pct": -1.34,
+        "monthly_pct": 1.83,
+        "quarterly_pct": 2.56,
+        "six_month_pct": 1.94,
+        "asof": "2026-09-02",
+        "weekly_rank": 7
+      }
+    ],
+    "a_share_risers": [
+      {
+        "name": "上证指数",
+        "ticker": "000001.SS",
+        "latest": 3942.0879,
+        "daily_pct": 0.02,
+        "weekly_pct": -0.37,
+        "monthly_pct": 1.64,
+        "quarterly_pct": -2.13,
+        "six_month_pct": -4.38,
+        "asof": "2026-09-03",
+        "weekly_rank": 1
+      },
+      {
+        "name": "深证成指",
+        "ticker": "399001.SZ",
+        "latest": 13625.1221,
+        "daily_pct": 0.1,
+        "weekly_pct": -3.02,
+        "monthly_pct": -3.67,
+        "quarterly_pct": -11.03,
+        "six_month_pct": -2.83,
+        "asof": "2026-09-03",
+        "weekly_rank": 2
+      },
+      {
+        "name": "沪深300",
+        "ticker": "000300.SS",
+        "latest": 4552.5786,
+        "daily_pct": 0.52,
+        "weekly_pct": -3.04,
+        "monthly_pct": -7.87,
+        "quarterly_pct": -3.89,
+        "six_month_pct": -2.22,
+        "asof": "2026-09-03",
+        "weekly_rank": 3
+      }
+    ],
+    "a_share_fallers": [
+      {
+        "name": "沪深300",
+        "ticker": "000300.SS",
+        "latest": 4552.5786,
+        "daily_pct": 0.52,
+        "weekly_pct": -3.04,
+        "monthly_pct": -7.87,
+        "quarterly_pct": -3.89,
+        "six_month_pct": -2.22,
+        "asof": "2026-09-03",
+        "weekly_rank": 3
+      },
+      {
+        "name": "深证成指",
+        "ticker": "399001.SZ",
+        "latest": 13625.1221,
+        "daily_pct": 0.1,
+        "weekly_pct": -3.02,
+        "monthly_pct": -3.67,
+        "quarterly_pct": -11.03,
+        "six_month_pct": -2.83,
+        "asof": "2026-09-03",
+        "weekly_rank": 2
+      },
+      {
+        "name": "上证指数",
+        "ticker": "000001.SS",
+        "latest": 3942.0879,
+        "daily_pct": 0.02,
+        "weekly_pct": -0.37,
+        "monthly_pct": 1.64,
+        "quarterly_pct": -2.13,
+        "six_month_pct": -4.38,
+        "asof": "2026-09-03",
+        "weekly_rank": 1
+      }
+    ],
+    "asof": "2026-09-03 07:59 UTC"
+  },
   "globalization_temperature": {
     "score": 62,
     "label": "开放信号偏强",
@@ -104,7 +500,7 @@
     "global": [
       [
         "全球政策",
-        15
+        16
       ]
     ]
   },
@@ -269,6 +665,22 @@
   ],
   "today_focus": [
     {
+      "title": "Treasury Increases Sanctions on Hizballah and Targets Network Smuggling Millions in Cash for Hizballah",
+      "titleZh": "财政部加大对真主党的制裁力度，打击为真主党走私数百万美元现金的网络",
+      "url": "https://home.treasury.gov/news/press-releases/sb0611/",
+      "risk": "中",
+      "category": "中美博弈",
+      "region": "us",
+      "source": "US Treasury",
+      "verification": "单一官方",
+      "impact_industry": [
+        "中美博弈"
+      ],
+      "importance_score": 76,
+      "importance_level": "A",
+      "importance_reason": "涉及战略安全或关键链条；包含明确政策/行动信号；可能影响市场、产业或供应链"
+    },
+    {
       "title": "Ambassador Greer Signs the U.S.-Jordan Agreement on Reciprocal Trade",
       "titleZh": "格里尔大使签署美国-约旦互惠贸易协定",
       "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/ambassador-greer-signs-us-jordan-agreement-reciprocal-trade",
@@ -286,7 +698,7 @@
     },
     {
       "title": "On the Road in Colorado and Utah: Ambassador Greer Highlights How Tariffs are Delivering for American Ranchers, Workers, and Manufacturers",
-      "titleZh": "在科罗拉多州和犹他州的路上：格里尔大使强调关税如何为美国牧场主、工人和制造商带来好处",
+      "titleZh": "在科罗拉多州和犹他州的道路上：格里尔大使强调了关税如何为美国牧场主、工人和制造商提供服务",
       "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/road-colorado-and-utah-ambassador-greer-highlights-how-tariffs-are-delivering-american-ranchers",
       "risk": "中",
       "category": "外交",
@@ -302,7 +714,7 @@
     },
     {
       "title": "Ambassador Greer Issues Statement on President Trump Imposing Section 338 Tariffs on Canada",
-      "titleZh": "格里尔大使就特朗普总统对加拿大征收 338 条款关税发表声明",
+      "titleZh": "格里尔大使就特朗普总统对加拿大征收第338条关税发表声明",
       "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/ambassador-greer-issues-statement-president-trump-imposing-section-338-tariffs-canada",
       "risk": "中",
       "category": "外交",
@@ -317,24 +729,8 @@
       "importance_reason": "涉及战略安全或关键链条；包含明确政策/行动信号；可能影响市场、产业或供应链"
     },
     {
-      "title": "President Trump Secures the Biggest Oil Deal in World History",
-      "titleZh": "特朗普总统达成世界历史上最大的石油协议",
-      "url": "https://www.whitehouse.gov/releases/2026/09/president-trump-secures-the-biggest-oil-deal-in-world-history/",
-      "risk": "中",
-      "category": "能源 / 资源",
-      "region": "us",
-      "source": "White House",
-      "verification": "单一官方",
-      "impact_industry": [
-        "能源 / 资源"
-      ],
-      "importance_score": 68,
-      "importance_level": "A",
-      "importance_reason": "涉及战略安全或关键链条；包含明确政策/行动信号；可能影响市场、产业或供应链"
-    },
-    {
       "title": "Fact Sheet: President Donald J. Trump Announces Historic Oil Agreement to Secure American Energy Dominance and Drive Venezuela’s Economic Recovery",
-      "titleZh": "情况说明书：唐纳德·J·特朗普总统宣布历史性石油协议，以确保美国能源主导地位并推动委内瑞拉经济复苏",
+      "titleZh": "概况介绍：唐纳德· J ·特朗普总统宣布达成历史性的石油协议，以确保美国的能源主导地位并推动委内瑞拉的经济复苏",
       "url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-announces-historic-oil-agreement-to-secure-american-energy-dominance-and-drive-venezuelas-economic-recovery/",
       "risk": "中",
       "category": "能源 / 资源",
@@ -350,7 +746,7 @@
     },
     {
       "title": "American Steelworkers, Manufacturers, and Farmers Praise President Trump’s Tariff Action to Combat Forced Labor in Global Supply Chains",
-      "titleZh": "美国钢铁工人、制造商和农民赞扬特朗普总统打击全球供应链强迫劳动的关税行动",
+      "titleZh": "美国钢铁工人、制造商和农民赞扬特朗普总统为打击全球供应链中的强迫劳动而采取的关税行动",
       "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/american-steelworkers-manufacturers-and-farmers-praise-president-trumps-tariff-action-combat-forced",
       "risk": "中",
       "category": "贸易 / 供应链",
@@ -367,7 +763,7 @@
     },
     {
       "title": "USTR Announces Fiscal Year 2027 WTO Tariff-Rate Quota Allocations for Raw Cane Sugar, Refined Sugar, and Sugar-Containing Products",
-      "titleZh": "USTR公布2027财年原蔗糖、精制糖和含糖产品的世贸组织关税配额分配",
+      "titleZh": "美国贸易代表办公室宣布2027财年世贸组织对原蔗糖、精制糖和含糖产品的关税配额分配",
       "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/ustr-announces-fiscal-year-2027-wto-tariff-rate-quota-allocations-raw-cane-sugar-refined-sugar-and",
       "risk": "中",
       "category": "贸易 / 供应链",
@@ -385,7 +781,7 @@
     },
     {
       "title": "American Farmers, Loggers, and Industry Leaders Applaud President Trump’s Bold Tariff Action Regarding Brazil’s Unreasonable Acts, Policies, and Practices",
-      "titleZh": "美国农民、伐木者和行业领袖赞扬特朗普总统针对巴西不合理行为、政策和做法采取的大胆关税行动",
+      "titleZh": "美国农民、伐木工人和行业领袖对特朗普总统就巴西不合理行为、政策和做法采取的大胆关税行动表示赞赏",
       "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/american-farmers-loggers-and-industry-leaders-applaud-president-trumps-bold-tariff-action-regarding",
       "risk": "中",
       "category": "贸易 / 供应链",
@@ -405,7 +801,7 @@
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "failed",
   "collection_message": "长期情报库：当前工作集 0 条；本轮发现 0 条；13类覆盖=0/13；中国/美国/全球=0/0/0；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-09-03 06:23 UTC",
+  "collection_time_utc": "2026-09-03 07:59 UTC",
   "source_health": {},
   "collection_pipeline_rc": [
     1,
