@@ -37,7 +37,7 @@
   "OfficialPage:EIA": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 12
+    "count": 13
   },
   "OfficialPage:BLS": {
     "method": "direct_first_party_html",
@@ -137,7 +137,7 @@
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
     "status": "ok",
-    "count": 12
+    "count": 13
   },
   "OfficialFeed:IAEA": {
     "method": "direct_first_party_rss",
@@ -162,7 +162,7 @@
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 51
+    "count": 54
   },
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
@@ -172,12 +172,12 @@
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 30
+    "count": 26
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 27
+    "count": 29
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,12 +194,12 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-09-04 11:39 UTC",
+  "updated": "2026-09-04 17:06 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 707,
-  "new_discovery_count": 289,
-  "official_direct_count": 269,
-  "official_in_working_set": 302,
+  "total_collected": 774,
+  "new_discovery_count": 292,
+  "official_direct_count": 271,
+  "official_in_working_set": 309,
   "category_counts": {
     "政治": 3,
     "金融": 13,
@@ -213,12 +213,12 @@
     "贸易 / 供应链": 0,
     "能源 / 资源": 1,
     "中美博弈": 0,
-    "全球政策": 672
+    "全球政策": 739
   },
   "region_counts": {
-    "china": 208,
-    "us": 227,
-    "global": 272
+    "china": 219,
+    "us": 237,
+    "global": 318
   },
   "sources": {
     "OfficialPage:White House": {
@@ -259,7 +259,7 @@
     "OfficialPage:EIA": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 12
+      "count": 13
     },
     "OfficialPage:BLS": {
       "method": "direct_first_party_html",
@@ -359,7 +359,7 @@
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
       "status": "ok",
-      "count": 12
+      "count": 13
     },
     "OfficialFeed:IAEA": {
       "method": "direct_first_party_rss",
@@ -384,7 +384,7 @@
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 51
+      "count": 54
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
@@ -394,12 +394,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 30
+      "count": 26
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 27
+      "count": 29
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
