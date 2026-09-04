@@ -56,9 +56,16 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             python scripts/ai_intelligence.py "${{ github.event.inputs.period }}"
           elif [ "${{ github.event_name }}" = "workflow_run" ]; then
-            # A successful collection run immediately gets a fresh daily strategic summary.
             python scripts/ai_intelligence.py classify
             python scripts/ai_intelligence.py daily
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            # Bootstrap all requested horizons immediately after this workflow configuration changes.
+            python scripts/ai_intelligence.py classify
+            python scripts/ai_intelligence.py daily
+            python scripts/ai_intelligence.py weekly
+            python scripts/ai_intelligence.py monthly
+            python scripts/ai_intelligence.py quarterly
+            python scripts/ai_intelligence.py half_year
           else
             python scripts/ai_intelligence.py classify
             hour=$(date -u +%H); minute=$(date -u +%M); day=$(date -u +%u); dom=$(date -u +%d); month=$(date -u +%m)
