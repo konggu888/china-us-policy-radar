@@ -27,25 +27,15 @@ jobs:
         shell: bash
         run: |
           set +e
-          # The broad collector is the active collection engine. The old collector
-          # had a variable-name collision and is intentionally not run in production.
           legacy_rc=0
-          python scripts/collect_broad_sources.py
-          broad_rc=$?
-          python scripts/translate_titles.py
-          translate_rc=$?
-          python scripts/collect_policy_sources.py
-          policy_collect_rc=$?
-          python scripts/market_sectors.py
-          market_rc=$?
-          python scripts/enrich_dashboard.py
-          enrich_rc=$?
-          python scripts/enrich_policy.py
-          policy_rc=$?
-          python scripts/enrich_priority.py
-          priority_rc=$?
-          python scripts/archive_news.py
-          archive_rc=$?
+          python scripts/collect_broad_sources.py; broad_rc=$?
+          python scripts/translate_titles.py; translate_rc=$?
+          python scripts/collect_policy_sources.py; policy_collect_rc=$?
+          python scripts/market_sectors.py; market_rc=$?
+          python scripts/enrich_dashboard.py; enrich_rc=$?
+          python scripts/enrich_policy.py; policy_rc=$?
+          python scripts/enrich_priority.py; priority_rc=$?
+          python scripts/archive_news.py; archive_rc=$?
           python - "$legacy_rc" "$broad_rc" "$translate_rc" "$policy_collect_rc" "$market_rc" "$enrich_rc" "$policy_rc" "$priority_rc" "$archive_rc" <<'PY'
           import json,sys
           from datetime import datetime,timezone
@@ -76,8 +66,12 @@ jobs:
           git diff --cached --quiet || git commit -m 'chore: update long-term intelligence archive'
           for attempt in 1 2 3; do
             git fetch origin main
-            git rebase origin/main && git push origin HEAD:main && exit 0
+            if git rebase origin/main; then
+              git push origin HEAD:main && exit 0
+            fi
             git rebase --abort || true
+            git reset --hard origin/main
+            git clean -fd
             sleep $((attempt * 5))
           done
           echo 'Failed to push after 3 attempts because main changed concurrently.'
