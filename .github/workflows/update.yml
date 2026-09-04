@@ -36,7 +36,8 @@ jobs:
           python scripts/enrich_policy.py; policy_rc=$?
           python scripts/enrich_priority.py; priority_rc=$?
           python scripts/archive_news.py; archive_rc=$?
-          python - "$legacy_rc" "$broad_rc" "$translate_rc" "$policy_collect_rc" "$market_rc" "$enrich_rc" "$policy_rc" "$priority_rc" "$archive_rc" <<'PY'
+          python scripts/build_timeline.py; timeline_rc=$?
+          python - "$legacy_rc" "$broad_rc" "$translate_rc" "$policy_collect_rc" "$market_rc" "$enrich_rc" "$policy_rc" "$priority_rc" "$archive_rc" "$timeline_rc" <<'PY'
           import json,sys
           from datetime import datetime,timezone
           from pathlib import Path
@@ -48,13 +49,13 @@ jobs:
           rc=[int(x) for x in sys.argv[1:]]
           total=int(h.get('total_collected',0)); new=int(h.get('new_discovery_count',0)); cats=h.get('category_counts',{}); regs=h.get('region_counts',{})
           covered=sum(1 for v in cats.values() if v>0)
-          status='success' if rc[1]==0 and rc[4]==0 and rc[5]==0 and rc[6]==0 and rc[7]==0 and rc[8]==0 and total>0 and covered>=10 else ('partial' if total>0 else 'failed')
+          status='success' if rc[1]==0 and rc[4]==0 and rc[5]==0 and rc[6]==0 and rc[7]==0 and rc[8]==0 and rc[9]==0 and total>0 and covered>=10 else ('partial' if total>0 else 'failed')
           now=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
           d.update(updated=now,collection_status=status,collection_message=f'长期情报库：当前工作集 {total} 条；本轮发现 {new} 条；13类覆盖={covered}/13；中国/美国/全球={regs.get("china",0)}/{regs.get("us",0)}/{regs.get("global",0)}；历史库按月归档，支持7/30/180日分析。',collection_time_utc=now,source_health=h.get('sources',{}),collection_pipeline_rc=rc)
           dp.write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf-8')
           print(d['collection_message'])
           PY
-          exit $(( broad_rc != 0 || market_rc != 0 || enrich_rc != 0 || policy_rc != 0 || priority_rc != 0 || archive_rc != 0 ))
+          exit $(( broad_rc != 0 || market_rc != 0 || enrich_rc != 0 || policy_rc != 0 || priority_rc != 0 || archive_rc != 0 || timeline_rc != 0 ))
       - name: Commit data and archive
         if: ${{ always() }}
         shell: bash
@@ -78,6 +79,7 @@ jobs:
             python scripts/enrich_policy.py
             python scripts/enrich_priority.py
             python scripts/archive_news.py
+            python scripts/build_timeline.py
           done
           echo 'Failed to push after 3 regenerated attempts.'
           exit 1
