@@ -62,17 +62,22 @@ jobs:
           set -e
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/*.json data/archive/*.json
-          git diff --cached --quiet || git commit -m 'chore: update long-term intelligence archive'
           for attempt in 1 2 3; do
+            git add data/*.json data/archive/*.json
+            git diff --cached --quiet || git commit -m 'chore: update long-term intelligence archive'
             git fetch origin main
-            if git rebase origin/main; then
-              git push origin HEAD:main && exit 0
-            fi
-            git rebase --abort || true
+            if git push origin HEAD:main; then exit 0; fi
+            echo "main changed concurrently; regenerating data on latest main (attempt $attempt)"
             git reset --hard origin/main
             git clean -fd
-            sleep $((attempt * 5))
+            python scripts/collect_broad_sources.py
+            python scripts/translate_titles.py
+            python scripts/collect_policy_sources.py
+            python scripts/market_sectors.py
+            python scripts/enrich_dashboard.py
+            python scripts/enrich_policy.py
+            python scripts/enrich_priority.py
+            python scripts/archive_news.py
           done
-          echo 'Failed to push after 3 attempts because main changed concurrently.'
+          echo 'Failed to push after 3 regenerated attempts.'
           exit 1
