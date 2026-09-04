@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04 10:08 UTC",
+  "updated": "2026-09-04 11:53 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -66,22 +66,22 @@
     },
     {
       "symbol": "BZ=F",
-      "value": 95.57,
-      "change_pct": 0.05,
+      "value": 95.16,
+      "change_pct": -0.38,
       "time": "2026-09-04",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4513.3999,
-      "change_pct": 0.48,
+      "value": 4512.6001,
+      "change_pct": 0.47,
       "time": "2026-09-04",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 14.23,
-      "change_pct": -0.63,
+      "value": 14.13,
+      "change_pct": -1.33,
       "time": "2026-09-04",
       "name": "VIX"
     }
@@ -231,6 +231,17 @@
       "six_month_pct": -2.88,
       "asof": "2026-09-04",
       "weekly_rank": 2
+    },
+    "沪深300": {
+      "ticker": "000300.SS",
+      "latest": 4548.0498,
+      "daily_pct": 0.42,
+      "weekly_pct": -3.14,
+      "monthly_pct": -7.96,
+      "quarterly_pct": -3.98,
+      "six_month_pct": -1.19,
+      "asof": "2026-09-04",
+      "weekly_rank": 3
     }
   },
   "market_highlights": {
@@ -382,9 +393,33 @@
         "six_month_pct": -2.88,
         "asof": "2026-09-04",
         "weekly_rank": 2
+      },
+      {
+        "name": "沪深300",
+        "ticker": "000300.SS",
+        "latest": 4548.0498,
+        "daily_pct": 0.42,
+        "weekly_pct": -3.14,
+        "monthly_pct": -7.96,
+        "quarterly_pct": -3.98,
+        "six_month_pct": -1.19,
+        "asof": "2026-09-04",
+        "weekly_rank": 3
       }
     ],
     "a_share_fallers": [
+      {
+        "name": "沪深300",
+        "ticker": "000300.SS",
+        "latest": 4548.0498,
+        "daily_pct": 0.42,
+        "weekly_pct": -3.14,
+        "monthly_pct": -7.96,
+        "quarterly_pct": -3.98,
+        "six_month_pct": -1.19,
+        "asof": "2026-09-04",
+        "weekly_rank": 3
+      },
       {
         "name": "深证成指",
         "ticker": "399001.SZ",
@@ -410,7 +445,7 @@
         "weekly_rank": 1
       }
     ],
-    "asof": "2026-09-04 10:08 UTC"
+    "asof": "2026-09-04 11:53 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -421,7 +456,7 @@
     "china": [
       [
         "全球政策",
-        190
+        196
       ],
       [
         "经济",
@@ -443,7 +478,7 @@
     "us": [
       [
         "全球政策",
-        202
+        204
       ],
       [
         "金融",
@@ -469,7 +504,7 @@
     "global": [
       [
         "全球政策",
-        263
+        272
       ]
     ]
   },
@@ -484,7 +519,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 116
+      "count": 119
     },
     {
       "keyword": "产业升级",
@@ -492,7 +527,7 @@
     },
     {
       "keyword": "开放",
-      "count": 12
+      "count": 13
     },
     {
       "keyword": "安全",
@@ -500,7 +535,7 @@
     },
     {
       "keyword": "贸易",
-      "count": 57
+      "count": 58
     }
   ],
   "policy_source_matrix": [
@@ -579,11 +614,11 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 202,
+      "total": 208,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 190
+          "count": 196
         },
         {
           "name": "经济",
@@ -606,11 +641,11 @@
     },
     {
       "side": "美国",
-      "total": 225,
+      "total": 227,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 202
+          "count": 204
         },
         {
           "name": "金融",
@@ -633,13 +668,29 @@
           "count": 2
         }
       ],
-      "risk_high": 15
+      "risk_high": 16
     }
   ],
   "today_focus": [
     {
+      "title": "Treasury Increases Sanctions on Hizballah and Targets Network Smuggling Millions in Cash for Hizballah",
+      "titleZh": "财政部加大对真主党的制裁力度，打击为真主党走私数百万美元现金的网络",
+      "url": "https://home.treasury.gov/news/press-releases/sb0611/",
+      "risk": "高",
+      "category": "国家安全",
+      "region": "us",
+      "source": "US Treasury",
+      "verification": "单一官方",
+      "impact_industry": [
+        "国家安全"
+      ],
+      "importance_score": 84,
+      "importance_level": "S",
+      "importance_reason": "风险信号较强；涉及战略安全或关键链条；包含明确政策/行动信号"
+    },
+    {
       "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-      "titleZh": "特朗普总统是对的：美国控制霍尔木兹海峡",
+      "titleZh": "特朗普总统说得对：美国控制霍尔木兹海峡",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
       "risk": "极高",
       "category": "国防",
@@ -656,7 +707,7 @@
     },
     {
       "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
-      "titleZh": "财政部在经济诺曼底登陆日发起针对伊朗政权的史无前例的行动",
+      "titleZh": "财政部在经济D日发起前所未有的反对伊朗政权的运动",
       "url": "https://home.treasury.gov/news/press-releases/sb0613/",
       "risk": "极高",
       "category": "金融",
@@ -672,24 +723,8 @@
       "importance_reason": "风险信号较强；可能影响市场、产业或供应链；一手/机构来源优先"
     },
     {
-      "title": "Treasury Increases Sanctions on Hizballah and Targets Network Smuggling Millions in Cash for Hizballah",
-      "titleZh": "财政部加大对真主党的制裁力度，并打击为真主党走私数百万现金的网络",
-      "url": "https://home.treasury.gov/news/press-releases/sb0611/",
-      "risk": "高",
-      "category": "国家安全",
-      "region": "us",
-      "source": "US Treasury",
-      "verification": "单一官方",
-      "impact_industry": [
-        "国家安全"
-      ],
-      "importance_score": 74,
-      "importance_level": "A",
-      "importance_reason": "风险信号较强；涉及战略安全或关键链条；包含明确政策/行动信号"
-    },
-    {
       "title": "Treasury Takes Action Against Violent Far-Left Terrorist Networks",
-      "titleZh": "财政部对暴力极左恐怖网络采取行动",
+      "titleZh": "财政部采取行动打击暴力极左恐怖网络",
       "url": "https://home.treasury.gov/news/press-releases/sb0616/",
       "risk": "高",
       "category": "国家安全",
@@ -705,7 +740,7 @@
     },
     {
       "title": "Iran’s Access to UAE Banks Targeted Under Operation Economic Outcast",
-      "titleZh": "伊朗进入阿联酋银行是“经济弃儿”行动的目标",
+      "titleZh": "伊朗进入阿联酋银行的目标是“经济抛弃”行动",
       "url": "https://home.treasury.gov/news/press-releases/sb0617/",
       "risk": "高",
       "category": "金融",
@@ -721,7 +756,7 @@
     },
     {
       "title": "Remarks from Secretary of the Treasury Scott Bessent on Operation Economic Outcast against Iran",
-      "titleZh": "财政部长斯科特·贝森特关于针对伊朗的经济排斥行动的讲话",
+      "titleZh": "美国财政部长斯科特·贝森特（ Scott Bessent ）关于针对伊朗的经济抛弃行动的讲话",
       "url": "https://home.treasury.gov/news/press-releases/sb0614/",
       "risk": "高",
       "category": "政治",
@@ -769,5 +804,216 @@
     }
   ],
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
-  "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。"
+  "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
+  "collection_status": "success",
+  "collection_message": "长期情报库：当前工作集 707 条；本轮发现 289 条；13类覆盖=10/13；中国/美国/全球=208/227/272；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-09-04 11:53 UTC",
+  "source_health": {
+    "OfficialPage:White House": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 11
+    },
+    "OfficialPage:US State Department": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:US Defense Department": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 5
+    },
+    "OfficialPage:US Treasury": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 5
+    },
+    "OfficialPage:US Commerce": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:USTR": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 50
+    },
+    "OfficialPage:Federal Reserve": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 19
+    },
+    "OfficialPage:EIA": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 12
+    },
+    "OfficialPage:BLS": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:BEA": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 8
+    },
+    "OfficialPage:China State Council": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:China MFA": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 0
+    },
+    "OfficialPage:China NDRC": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 18
+    },
+    "OfficialPage:China PBOC": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 11
+    },
+    "OfficialPage:China MIIT": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 0
+    },
+    "OfficialPage:China MOFCOM": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:China NBS": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 13
+    },
+    "OfficialPage:China MOD": {
+      "method": "direct_first_party_html",
+      "status": "error:URLError",
+      "count": 0
+    },
+    "OfficialPage:UN News": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 34
+    },
+    "OfficialPage:WTO News": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 3
+    },
+    "OfficialPage:IMF News": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:World Bank News": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 17
+    },
+    "OfficialPage:IAEA News": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:OECD News": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialFeed:Federal Reserve": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 20
+    },
+    "OfficialFeed:Federal Reserve speeches": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 15
+    },
+    "OfficialFeed:BLS": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 1
+    },
+    "OfficialFeed:EIA": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 12
+    },
+    "OfficialFeed:IAEA": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 15
+    },
+    "Search:china:en-US": {
+      "method": "GoogleNews/Bing RSS fallback",
+      "status": "ok:GoogleNews",
+      "count": 60
+    },
+    "Search:us:en-US": {
+      "method": "GoogleNews/Bing RSS fallback",
+      "status": "ok:GoogleNews",
+      "count": 60
+    },
+    "Search:global:en-US": {
+      "method": "GoogleNews/Bing RSS fallback",
+      "status": "ok:GoogleNews",
+      "count": 58
+    },
+    "Search:china:zh-CN": {
+      "method": "GoogleNews/Bing RSS fallback",
+      "status": "ok:GoogleNews",
+      "count": 51
+    },
+    "MediaFeed:BBC Asia": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 16
+    },
+    "MediaFeed:BBC US": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 30
+    },
+    "MediaFeed:BBC World": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 27
+    },
+    "MediaFeed:DW World": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 0
+    },
+    "MediaFeed:Al Jazeera": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 25
+    },
+    "MediaFeed:NPR World": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 10
+    }
+  },
+  "collection_pipeline_rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
 }
