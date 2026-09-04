@@ -6,6 +6,7 @@ on:
       - 'scripts/ai_intelligence.py'
       - 'scripts/market_sectors.py'
       - 'scripts/enrich_dashboard.py'
+      - 'scripts/build_timeline.py'
       - 'home.js'
       - 'ui-enhancements.js'
   schedule:
@@ -15,6 +16,9 @@ on:
     - cron: '40 4 1 * *'
     - cron: '50 4 1 1,4,7,10 *'
     - cron: '55 4 1 1,7 *'
+  workflow_run:
+    workflows: ['Update Intelligence Radar']
+    types: [completed]
   workflow_dispatch:
     inputs:
       period:
@@ -25,15 +29,20 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: intelligence-radar-ai
+  cancel-in-progress: false
+
 jobs:
   ai:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run DeepSeek persistent classification and scheduled summaries
+      - name: Run DeepSeek classification and summaries
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_MODEL: deepseek-v4-flash
@@ -46,9 +55,11 @@ jobs:
           fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             python scripts/ai_intelligence.py "${{ github.event.inputs.period }}"
+          elif [ "${{ github.event_name }}" = "workflow_run" ]; then
+            # A successful collection run immediately gets a fresh daily strategic summary.
+            python scripts/ai_intelligence.py classify
+            python scripts/ai_intelligence.py daily
           else
-            # Classification runs every 30 minutes. The script selects only new, high-value items
-            # and persists ai_* labels, so already classified stories are not billed again.
             python scripts/ai_intelligence.py classify
             hour=$(date -u +%H); minute=$(date -u +%M); day=$(date -u +%u); dom=$(date -u +%d); month=$(date -u +%m)
             if [ "$hour" = "04" ] && [ "$minute" = "20" ]; then python scripts/ai_intelligence.py daily; fi
@@ -59,9 +70,19 @@ jobs:
           fi
       - name: Commit AI intelligence and health
         if: ${{ always() }}
+        shell: bash
         run: |
+          set -e
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/ai_summaries.json data/news.json data/ai_health.json
-          git diff --cached --quiet || git commit -m 'chore: update AI strategic intelligence'
-          git push
+          for attempt in 1 2 3; do
+            git add data/ai_summaries.json data/news.json data/ai_health.json
+            git diff --cached --quiet || git commit -m 'chore: update AI strategic intelligence'
+            git fetch origin main
+            if git push origin HEAD:main; then exit 0; fi
+            git reset --hard origin/main
+            git clean -fd
+            sleep $((attempt * 5))
+          done
+          echo 'Failed to push AI results after 3 attempts.'
+          exit 1
