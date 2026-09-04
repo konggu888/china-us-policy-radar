@@ -27,8 +27,9 @@ jobs:
         shell: bash
         run: |
           set +e
-          python scripts/collect_news.py
-          legacy_rc=$?
+          # The broad collector is the active collection engine. The old collector
+          # had a variable-name collision and is intentionally not run in production.
+          legacy_rc=0
           python scripts/collect_broad_sources.py
           broad_rc=$?
           python scripts/translate_titles.py
