@@ -2,7 +2,7 @@ import json, urllib.parse, urllib.request, time
 from datetime import datetime, timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data'; OUT=DATA/'market_sectors.json'
-UA='Mozilla/5.0 (compatible; China-US-Global-Intelligence-Radar/Market-Collector-3.2)'
+UA='Mozilla/5.0 (compatible; China-US-Global-Intelligence-Radar/Market-Collector-3.3)'
 SECTORS={'科技':'XLK','金融':'XLF','能源':'XLE','工业':'XLI','可选消费':'XLY','必选消费':'XLP','医疗':'XLV','材料':'XLB','房地产':'XLRE','通信服务':'XLC','公用事业':'XLU'}
 A_SHARE={'上证指数':'000001.SS','深证成指':'399001.SZ','沪深300':'000300.SS','中证500':'000905.SS','中证1000':'000852.SS','创业板指':'399006.SZ','科创50':'000688.SS'}
 EM_HOSTS=['https://17.push2.eastmoney.com/api/qt/clist/get','https://push2.eastmoney.com/api/qt/clist/get']
@@ -30,15 +30,26 @@ def eastmoney_boards():
         except Exception as e:last=f'error:{type(e).__name__}'
     return [],last
 def board_weekly_pct(code):
-    params={'secid':f'90.{code}','fields1':'f1,f2,f3,f4,f5,f6','fields2':'f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61','klt':'101','fqt':'1','beg':'0','end':'20500101','lmt':'8','ut':UT}
+    # “本周”定义为：当前交易周最新收盘价，相对上一交易周最后一个交易日收盘价。
+    # 不再把当天涨跌幅 f3 当成周涨跌幅。
+    params={'secid':f'90.{code}','fields1':'f1,f2,f3,f4,f5,f6','fields2':'f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61','klt':'101','fqt':'1','beg':'0','end':'20500101','lmt':'12','ut':UT}
     try:
         req=urllib.request.Request(EM_KLINE+'?'+urllib.parse.urlencode(params),headers={'User-Agent':'Mozilla/5.0','Referer':'https://quote.eastmoney.com/'}); obj=json.loads(urllib.request.urlopen(req,timeout=12).read().decode('utf-8','ignore')); rows=obj.get('data',{}).get('klines',[]) or []
-        if len(rows)<6:return None,None
-        def close(row):return float(row.split(',')[2])
-        latest=close(rows[-1]); base=close(rows[-6]); date=rows[-1].split(',')[0]
-        if base==0:return None,date
-        return round((latest/base-1)*100,2),date
-    except Exception:return None,None
+        if len(rows)<2:return None,None,None
+        parsed=[]
+        for row in rows:
+            parts=row.split(',')
+            if len(parts)<3:continue
+            try: parsed.append((datetime.strptime(parts[0],'%Y-%m-%d').date(),float(parts[2])))
+            except Exception: continue
+        if len(parsed)<2:return None,None,None
+        latest_date,latest=parsed[-1]; current_week=latest_date.isocalendar()[:2]
+        first_idx=next((i for i,(d,_) in enumerate(parsed) if d.isocalendar()[:2]==current_week),len(parsed)-1)
+        if first_idx==0:return None,parsed[first_idx][0].isoformat(),latest_date.isoformat()
+        base_date,base=parsed[first_idx-1]
+        if base==0:return None,base_date.isoformat(),latest_date.isoformat()
+        return round((latest/base-1)*100,2),base_date.isoformat(),latest_date.isoformat()
+    except Exception:return None,None,None
 us={}
 for name,t in SECTORS.items():
     v=get(t)
@@ -54,11 +65,11 @@ arank=sorted(a_share.items(),key=lambda kv:kv[1].get('weekly_pct') if kv[1].get(
 for i,(name,v) in enumerate(arank,1):v['weekly_rank']=i
 boards,status=eastmoney_boards(); weekly_boards=[]
 for b in boards:
-    wp,week=board_weekly_pct(b['code'])
+    wp,week_start,week_end=board_weekly_pct(b['code'])
     if wp is not None:
-        x=dict(b); x['weekly_pct']=wp; x['weekly_period_end']=week; weekly_boards.append(x)
+        x=dict(b); x['weekly_pct']=wp; x['weekly_period_start']=week_start; x['weekly_period_end']=week_end; weekly_boards.append(x)
     time.sleep(.08)
 weekly_boards.sort(key=lambda x:x['weekly_pct'],reverse=True)
 positive=[x for x in weekly_boards if x['weekly_pct']>0]; negative=[x for x in reversed(weekly_boards) if x['weekly_pct']<0]
-payload={'updated':datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),'method':'US sector ETF proxy + Eastmoney A-share industry board daily ranking and 6-trading-day weekly K-line ranking + A-share major index observations','sectors':us,'a_share':a_share,'a_share_industry_boards':boards,'a_share_board_status':status,'a_share_weekly_industry_boards':weekly_boards,'weekly_risers':[n for n,v in rank if (v.get('weekly_pct') or 0)>0],'weekly_fallers':[n for n,v in reversed(rank) if (v.get('weekly_pct') or 0)<0],'a_share_weekly_risers':positive[:10],'a_share_weekly_fallers':negative[:10],'a_share_board_risers':[x['name'] for x in boards[:5]],'a_share_board_fallers':[x['name'] for x in boards[-5:][::-1]]}
+payload={'updated':datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),'method':'US sector ETF proxy + Eastmoney A-share industry board weekly return = current trading week latest close vs prior trading week final close + A-share major index observations','sectors':us,'a_share':a_share,'a_share_industry_boards':boards,'a_share_board_status':status,'a_share_weekly_industry_boards':weekly_boards,'weekly_risers':[n for n,v in rank if (v.get('weekly_pct') or 0)>0],'weekly_fallers':[n for n,v in reversed(rank) if (v.get('weekly_pct') or 0)<0],'a_share_weekly_risers':positive[:10],'a_share_weekly_fallers':negative[:10],'a_share_board_risers':[x['name'] for x in boards[:5]],'a_share_board_fallers':[x['name'] for x in boards[-5:][::-1]]}
 OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8'); print('market sectors:',len(us),'A-share indices:',len(a_share),'A-share industry boards:',len(boards),'weekly boards:',len(weekly_boards),'status:',status)
