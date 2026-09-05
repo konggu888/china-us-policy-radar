@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05 11:02 UTC",
+  "updated": "2026-09-05 13:58 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -445,7 +445,7 @@
         "weekly_rank": 1
       }
     ],
-    "asof": "2026-09-05 11:02 UTC"
+    "asof": "2026-09-05 13:58 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -456,7 +456,7 @@
     "china": [
       [
         "全球政策",
-        242
+        244
       ],
       [
         "经济",
@@ -478,7 +478,7 @@
     "us": [
       [
         "全球政策",
-        235
+        237
       ],
       [
         "金融",
@@ -504,7 +504,7 @@
     "global": [
       [
         "全球政策",
-        425
+        446
       ],
       [
         "科技 / AI",
@@ -523,7 +523,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 161
+      "count": 170
     },
     {
       "keyword": "产业升级",
@@ -535,11 +535,11 @@
     },
     {
       "keyword": "安全",
-      "count": 45
+      "count": 47
     },
     {
       "keyword": "贸易",
-      "count": 78
+      "count": 79
     }
   ],
   "policy_source_matrix": [
@@ -618,11 +618,11 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 254,
+      "total": 256,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 242
+          "count": 244
         },
         {
           "name": "经济",
@@ -641,15 +641,15 @@
           "count": 1
         }
       ],
-      "risk_high": 10
+      "risk_high": 11
     },
     {
       "side": "美国",
-      "total": 260,
+      "total": 262,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 235
+          "count": 237
         },
         {
           "name": "金融",
@@ -810,8 +810,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 940 条；本轮发现 299 条；13类覆盖=10/13；中国/美国/全球=254/260/426；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-09-05 11:02 UTC",
+  "collection_message": "长期情报库：当前工作集 965 条；本轮发现 297 条；13类覆盖=10/13；中国/美国/全球=256/262/447；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-09-05 13:58 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -971,7 +971,7 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 59
+      "count": 57
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
