@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05 21:16 UTC",
+  "updated": "2026-09-05 22:59 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -445,7 +445,7 @@
         "weekly_rank": 1
       }
     ],
-    "asof": "2026-09-05 21:16 UTC"
+    "asof": "2026-09-05 22:59 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -456,7 +456,7 @@
     "china": [
       [
         "全球政策",
-        253
+        257
       ],
       [
         "经济",
@@ -478,7 +478,7 @@
     "us": [
       [
         "全球政策",
-        238
+        242
       ],
       [
         "金融",
@@ -504,7 +504,7 @@
     "global": [
       [
         "全球政策",
-        492
+        498
       ],
       [
         "科技 / AI",
@@ -523,7 +523,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 179
+      "count": 185
     },
     {
       "keyword": "产业升级",
@@ -535,11 +535,11 @@
     },
     {
       "keyword": "安全",
-      "count": 50
+      "count": 51
     },
     {
       "keyword": "贸易",
-      "count": 83
+      "count": 85
     }
   ],
   "policy_source_matrix": [
@@ -618,11 +618,11 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 265,
+      "total": 269,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 253
+          "count": 257
         },
         {
           "name": "经济",
@@ -641,15 +641,15 @@
           "count": 1
         }
       ],
-      "risk_high": 11
+      "risk_high": 12
     },
     {
       "side": "美国",
-      "total": 263,
+      "total": 267,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 238
+          "count": 242
         },
         {
           "name": "金融",
@@ -672,7 +672,7 @@
           "count": 2
         }
       ],
-      "risk_high": 18
+      "risk_high": 19
     }
   ],
   "today_focus": [
@@ -810,8 +810,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 1021 条；本轮发现 16 条；13类覆盖=10/13；中国/美国/全球=265/263/493；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-09-05 21:16 UTC",
+  "collection_message": "长期情报库：当前工作集 1035 条；本轮发现 297 条；13类覆盖=10/13；中国/美国/全球=269/267/499；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-09-05 22:59 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -960,23 +960,23 @@
     },
     "Search:china:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:BingNews",
-      "count": 4
+      "status": "ok:GoogleNews",
+      "count": 60
     },
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "error:HTTPError",
-      "count": 0
+      "status": "ok:GoogleNews",
+      "count": 60
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:BingNews",
-      "count": 7
+      "status": "ok:GoogleNews",
+      "count": 57
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:BingNews",
-      "count": 1
+      "status": "ok:GoogleNews",
+      "count": 60
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
@@ -986,12 +986,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 31
+      "count": 32
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 32
+      "count": 34
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
