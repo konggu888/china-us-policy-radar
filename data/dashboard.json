@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06 17:09 UTC",
+  "updated": "2026-09-06 19:12 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -445,7 +445,7 @@
         "weekly_rank": 1
       }
     ],
-    "asof": "2026-09-06 17:09 UTC"
+    "asof": "2026-09-06 19:12 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -478,7 +478,7 @@
     "us": [
       [
         "全球政策",
-        243
+        244
       ],
       [
         "金融",
@@ -504,7 +504,7 @@
     "global": [
       [
         "全球政策",
-        573
+        580
       ],
       [
         "科技 / AI",
@@ -531,11 +531,11 @@
     },
     {
       "keyword": "开放",
-      "count": 20
+      "count": 21
     },
     {
       "keyword": "安全",
-      "count": 54
+      "count": 53
     },
     {
       "keyword": "贸易",
@@ -645,11 +645,11 @@
     },
     {
       "side": "美国",
-      "total": 268,
+      "total": 269,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 243
+          "count": 244
         },
         {
           "name": "金融",
@@ -672,29 +672,13 @@
           "count": 2
         }
       ],
-      "risk_high": 19
+      "risk_high": 20
     }
   ],
   "today_focus": [
     {
-      "title": "Treasury Increases Sanctions on Hizballah and Targets Network Smuggling Millions in Cash for Hizballah",
-      "titleZh": "财政部加大对真主党的制裁力度，打击为真主党走私数百万美元现金的网络",
-      "url": "https://home.treasury.gov/news/press-releases/sb0611/",
-      "risk": "高",
-      "category": "国家安全",
-      "region": "us",
-      "source": "US Treasury",
-      "verification": "单一官方",
-      "impact_industry": [
-        "国家安全"
-      ],
-      "importance_score": 84,
-      "importance_level": "S",
-      "importance_reason": "风险信号较强；涉及战略安全或关键链条；包含明确政策/行动信号"
-    },
-    {
       "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-      "titleZh": "特朗普总统说得对：美国控制霍尔木兹海峡",
+      "titleZh": "特朗普总统是对的：美国控制霍尔木兹海峡",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
       "risk": "极高",
       "category": "国防",
@@ -711,7 +695,7 @@
     },
     {
       "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
-      "titleZh": "财政部在经济D日发起前所未有的反对伊朗政权的运动",
+      "titleZh": "财政部在经济诺曼底登陆日发起针对伊朗政权的史无前例的行动",
       "url": "https://home.treasury.gov/news/press-releases/sb0613/",
       "risk": "极高",
       "category": "金融",
@@ -727,8 +711,24 @@
       "importance_reason": "风险信号较强；可能影响市场、产业或供应链；一手/机构来源优先"
     },
     {
+      "title": "Treasury Increases Sanctions on Hizballah and Targets Network Smuggling Millions in Cash for Hizballah",
+      "titleZh": "财政部加大对真主党的制裁力度，并打击为真主党走私数百万现金的网络",
+      "url": "https://home.treasury.gov/news/press-releases/sb0611/",
+      "risk": "高",
+      "category": "国家安全",
+      "region": "us",
+      "source": "US Treasury",
+      "verification": "单一官方",
+      "impact_industry": [
+        "国家安全"
+      ],
+      "importance_score": 74,
+      "importance_level": "A",
+      "importance_reason": "风险信号较强；涉及战略安全或关键链条；包含明确政策/行动信号"
+    },
+    {
       "title": "Treasury Takes Action Against Violent Far-Left Terrorist Networks",
-      "titleZh": "财政部采取行动打击暴力极左恐怖网络",
+      "titleZh": "财政部对暴力极左恐怖网络采取行动",
       "url": "https://home.treasury.gov/news/press-releases/sb0616/",
       "risk": "高",
       "category": "国家安全",
@@ -744,7 +744,7 @@
     },
     {
       "title": "Iran’s Access to UAE Banks Targeted Under Operation Economic Outcast",
-      "titleZh": "伊朗进入阿联酋银行的目标是“经济抛弃”行动",
+      "titleZh": "伊朗进入阿联酋银行是“经济弃儿”行动的目标",
       "url": "https://home.treasury.gov/news/press-releases/sb0617/",
       "risk": "高",
       "category": "金融",
@@ -760,7 +760,7 @@
     },
     {
       "title": "Remarks from Secretary of the Treasury Scott Bessent on Operation Economic Outcast against Iran",
-      "titleZh": "美国财政部长斯科特·贝森特（ Scott Bessent ）关于针对伊朗的经济抛弃行动的讲话",
+      "titleZh": "财政部长斯科特·贝森特关于针对伊朗的经济排斥行动的讲话",
       "url": "https://home.treasury.gov/news/press-releases/sb0614/",
       "risk": "高",
       "category": "政治",
@@ -810,8 +810,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 1127 条；本轮发现 296 条；13类覆盖=10/13；中国/美国/全球=285/268/574；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-09-06 17:09 UTC",
+  "collection_message": "长期情报库：当前工作集 1135 条；本轮发现 296 条；13类覆盖=10/13；中国/美国/全球=285/269/581；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-09-06 19:12 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
