@@ -92,7 +92,7 @@
   "OfficialPage:UN News": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 37
+    "count": 36
   },
   "OfficialPage:WTO News": {
     "method": "direct_first_party_html",
@@ -146,28 +146,28 @@
   },
   "Search:china:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:BingNews",
-    "count": 6
+    "status": "ok:GoogleNews",
+    "count": 60
   },
   "Search:us:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "error:HTTPError",
-    "count": 0
+    "status": "ok:GoogleNews",
+    "count": 60
   },
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:BingNews",
-    "count": 7
+    "status": "ok:GoogleNews",
+    "count": 56
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:BingNews",
-    "count": 1
+    "status": "ok:GoogleNews",
+    "count": 60
   },
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 18
+    "count": 19
   },
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
@@ -177,7 +177,7 @@
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 34
+    "count": 31
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,11 +194,11 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-09-06 00:49 UTC",
+  "updated": "2026-09-06 05:46 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 1057,
-  "new_discovery_count": 16,
-  "official_direct_count": 274,
+  "total_collected": 1075,
+  "new_discovery_count": 296,
+  "official_direct_count": 273,
   "official_in_working_set": 323,
   "category_counts": {
     "政治": 3,
@@ -213,12 +213,12 @@
     "贸易 / 供应链": 0,
     "能源 / 资源": 2,
     "中美博弈": 0,
-    "全球政策": 1019
+    "全球政策": 1037
   },
   "region_counts": {
-    "china": 276,
+    "china": 282,
     "us": 267,
-    "global": 514
+    "global": 526
   },
   "sources": {
     "OfficialPage:White House": {
@@ -314,7 +314,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 37
+      "count": 36
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -368,28 +368,28 @@
     },
     "Search:china:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:BingNews",
-      "count": 6
+      "status": "ok:GoogleNews",
+      "count": 60
     },
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "error:HTTPError",
-      "count": 0
+      "status": "ok:GoogleNews",
+      "count": 60
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:BingNews",
-      "count": 7
+      "status": "ok:GoogleNews",
+      "count": 56
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:BingNews",
-      "count": 1
+      "status": "ok:GoogleNews",
+      "count": 60
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 18
+      "count": 19
     },
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
@@ -399,7 +399,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 34
+      "count": 31
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
