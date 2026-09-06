@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05 22:59 UTC",
+  "updated": "2026-09-06 00:58 UTC",
   "method": "US sector ETF proxy + Eastmoney A-share industry board weekly return = current trading week latest close vs prior trading week final close + A-share major index observations",
   "sectors": {
     "科技": {
@@ -1164,6 +1164,32 @@
   "a_share_board_status": "ok",
   "a_share_weekly_industry_boards": [
     {
+      "code": "BK1296",
+      "name": "视频媒体",
+      "change_pct": 5.46,
+      "price": 1027.28,
+      "change": 53.18,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "芒果超媒",
+      "weekly_pct": 50.18,
+      "weekly_period_start": "2026-08-28",
+      "weekly_period_end": "2026-09-04"
+    },
+    {
+      "code": "BK1556",
+      "name": "教育运营及其他",
+      "change_pct": 6.08,
+      "price": 1071.15,
+      "change": 61.35,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "ST豆神",
+      "weekly_pct": 20.13,
+      "weekly_period_start": "2026-08-28",
+      "weekly_period_end": "2026-09-04"
+    },
+    {
       "code": "BK1508",
       "name": "畜禽饲料",
       "change_pct": 8.46,
@@ -1203,15 +1229,41 @@
       "weekly_period_end": "2026-09-04"
     },
     {
-      "code": "BK1510",
-      "name": "其他养殖",
-      "change_pct": 4.61,
-      "price": 1000.19,
-      "change": 44.06,
-      "up_count": 3,
+      "code": "BK1501",
+      "name": "动物保健Ⅲ",
+      "change_pct": 4.27,
+      "price": 4617.04,
+      "change": 188.95,
+      "up_count": 10,
+      "down_count": 2,
+      "leader": "绿康生化",
+      "weekly_pct": 4.65,
+      "weekly_period_start": "2026-08-28",
+      "weekly_period_end": "2026-09-04"
+    },
+    {
+      "code": "BK0433",
+      "name": "农林牧渔",
+      "change_pct": 3.61,
+      "price": 15468.25,
+      "change": 538.73,
+      "up_count": 104,
+      "down_count": 10,
+      "leader": "亚盛集团",
+      "weekly_pct": 2.59,
+      "weekly_period_start": "2026-08-28",
+      "weekly_period_end": "2026-09-04"
+    },
+    {
+      "code": "BK1509",
+      "name": "水产饲料",
+      "change_pct": 4.25,
+      "price": 6202.88,
+      "change": 253.16,
+      "up_count": 4,
       "down_count": 0,
-      "leader": "天山生物",
-      "weekly_pct": -1.77,
+      "leader": "天马科技",
+      "weekly_pct": 2.06,
       "weekly_period_start": "2026-08-28",
       "weekly_period_end": "2026-09-04"
     },
@@ -1245,6 +1297,32 @@
   ],
   "a_share_weekly_risers": [
     {
+      "code": "BK1296",
+      "name": "视频媒体",
+      "change_pct": 5.46,
+      "price": 1027.28,
+      "change": 53.18,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "芒果超媒",
+      "weekly_pct": 50.18,
+      "weekly_period_start": "2026-08-28",
+      "weekly_period_end": "2026-09-04"
+    },
+    {
+      "code": "BK1556",
+      "name": "教育运营及其他",
+      "change_pct": 6.08,
+      "price": 1071.15,
+      "change": 61.35,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "ST豆神",
+      "weekly_pct": 20.13,
+      "weekly_period_start": "2026-08-28",
+      "weekly_period_end": "2026-09-04"
+    },
+    {
       "code": "BK1508",
       "name": "畜禽饲料",
       "change_pct": 8.46,
@@ -1282,6 +1360,45 @@
       "weekly_pct": 5.3,
       "weekly_period_start": "2026-08-28",
       "weekly_period_end": "2026-09-04"
+    },
+    {
+      "code": "BK1501",
+      "name": "动物保健Ⅲ",
+      "change_pct": 4.27,
+      "price": 4617.04,
+      "change": 188.95,
+      "up_count": 10,
+      "down_count": 2,
+      "leader": "绿康生化",
+      "weekly_pct": 4.65,
+      "weekly_period_start": "2026-08-28",
+      "weekly_period_end": "2026-09-04"
+    },
+    {
+      "code": "BK0433",
+      "name": "农林牧渔",
+      "change_pct": 3.61,
+      "price": 15468.25,
+      "change": 538.73,
+      "up_count": 104,
+      "down_count": 10,
+      "leader": "亚盛集团",
+      "weekly_pct": 2.59,
+      "weekly_period_start": "2026-08-28",
+      "weekly_period_end": "2026-09-04"
+    },
+    {
+      "code": "BK1509",
+      "name": "水产饲料",
+      "change_pct": 4.25,
+      "price": 6202.88,
+      "change": 253.16,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "天马科技",
+      "weekly_pct": 2.06,
+      "weekly_period_start": "2026-08-28",
+      "weekly_period_end": "2026-09-04"
     }
   ],
   "a_share_weekly_fallers": [
@@ -1295,19 +1412,6 @@
       "down_count": 0,
       "leader": "珠江股份",
       "weekly_pct": -2.66,
-      "weekly_period_start": "2026-08-28",
-      "weekly_period_end": "2026-09-04"
-    },
-    {
-      "code": "BK1510",
-      "name": "其他养殖",
-      "change_pct": 4.61,
-      "price": 1000.19,
-      "change": 44.06,
-      "up_count": 3,
-      "down_count": 0,
-      "leader": "天山生物",
-      "weekly_pct": -1.77,
       "weekly_period_start": "2026-08-28",
       "weekly_period_end": "2026-09-04"
     }
