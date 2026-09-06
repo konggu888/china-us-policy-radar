@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06 05:55 UTC",
+  "updated": "2026-09-06 10:55 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -445,7 +445,7 @@
         "weekly_rank": 1
       }
     ],
-    "asof": "2026-09-06 05:55 UTC"
+    "asof": "2026-09-06 10:55 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -456,7 +456,7 @@
     "china": [
       [
         "全球政策",
-        270
+        271
       ],
       [
         "经济",
@@ -504,7 +504,7 @@
     "global": [
       [
         "全球政策",
-        525
+        537
       ],
       [
         "科技 / AI",
@@ -531,15 +531,15 @@
     },
     {
       "keyword": "开放",
-      "count": 17
+      "count": 18
     },
     {
       "keyword": "安全",
-      "count": 52
+      "count": 51
     },
     {
       "keyword": "贸易",
-      "count": 90
+      "count": 91
     }
   ],
   "policy_source_matrix": [
@@ -618,11 +618,11 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 282,
+      "total": 283,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 270
+          "count": 271
         },
         {
           "name": "经济",
@@ -810,8 +810,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 1075 条；本轮发现 296 条；13类覆盖=10/13；中国/美国/全球=282/267/526；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-09-06 05:55 UTC",
+  "collection_message": "长期情报库：当前工作集 1088 条；本轮发现 297 条；13类覆盖=10/13；中国/美国/全球=283/267/538；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-09-06 10:55 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -971,7 +971,7 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 56
+      "count": 57
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -991,7 +991,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 31
+      "count": 29
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
