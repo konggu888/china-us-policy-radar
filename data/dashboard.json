@@ -1,51 +1,51 @@
 {
-  "updated": "2026-09-09 06:46 UTC",
+  "updated": "2026-09-09 11:58 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.7067,
-      "change_pct": -0.06,
+      "value": 6.6952,
+      "change_pct": -0.23,
       "time": "2026-09-09",
       "name": "USD/CNY"
     },
     {
       "symbol": "000001.SS",
-      "value": 3952.8333,
-      "change_pct": 0.31,
+      "value": 3951.5068,
+      "change_pct": 0.28,
       "time": "2026-09-09",
       "name": "上证指数"
     },
     {
       "symbol": "399001.SZ",
-      "value": 13733.4766,
-      "change_pct": 0.22,
+      "value": 13723.3223,
+      "change_pct": 0.15,
       "time": "2026-09-09",
       "name": "深证成指"
     },
     {
       "symbol": "000300.SS",
-      "value": 4575.9087,
+      "value": 4572.5996,
       "change_pct": 0.0,
       "time": "2026-09-09",
       "name": "沪深300"
     },
     {
       "symbol": "000905.SS",
-      "value": 7774.2979,
+      "value": 7768.1055,
       "change_pct": 0.0,
       "time": "2026-09-09",
       "name": "中证500"
     },
     {
       "symbol": "399006.SZ",
-      "value": 3361.5444,
+      "value": 3354.969,
       "change_pct": 0.0,
       "time": "2026-09-09",
       "name": "创业板指"
     },
     {
       "symbol": "000688.SS",
-      "value": 1583.5452,
+      "value": 1580.0588,
       "change_pct": 0.0,
       "time": "2026-09-09",
       "name": "科创50"
@@ -66,23 +66,23 @@
     },
     {
       "symbol": "BZ=F",
-      "value": 99.5,
-      "change_pct": 1.61,
+      "value": 100.82,
+      "change_pct": 2.96,
       "time": "2026-09-09",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4447.5,
-      "change_pct": 1.22,
+      "value": 4449.1001,
+      "change_pct": 1.26,
       "time": "2026-09-09",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 15.72,
-      "change_pct": 2.75,
-      "time": "2026-09-08",
+      "value": 16.38,
+      "change_pct": 4.2,
+      "time": "2026-09-09",
       "name": "VIX"
     }
   ],
@@ -212,10 +212,10 @@
   "a_share_market": {
     "上证指数": {
       "ticker": "000001.SS",
-      "latest": 3951.6665,
+      "latest": 3951.5068,
       "daily_pct": 0.28,
       "weekly_pct": 0.26,
-      "monthly_pct": 0.45,
+      "monthly_pct": 0.44,
       "quarterly_pct": -0.89,
       "six_month_pct": -3.54,
       "asof": "2026-09-09",
@@ -223,23 +223,23 @@
     },
     "深证成指": {
       "ticker": "399001.SZ",
-      "latest": 13726.2734,
-      "daily_pct": 0.17,
-      "weekly_pct": 0.84,
-      "monthly_pct": -3.74,
-      "quarterly_pct": -7.58,
-      "six_month_pct": -2.43,
+      "latest": 13723.3223,
+      "daily_pct": 0.15,
+      "weekly_pct": 0.82,
+      "monthly_pct": -3.76,
+      "quarterly_pct": -7.6,
+      "six_month_pct": -2.45,
       "asof": "2026-09-09",
       "weekly_rank": 1
     },
     "沪深300": {
       "ticker": "000300.SS",
-      "latest": 4573.7056,
-      "daily_pct": 0.98,
-      "weekly_pct": -2.59,
-      "monthly_pct": -7.44,
-      "quarterly_pct": -3.44,
-      "six_month_pct": -0.9,
+      "latest": 4572.5996,
+      "daily_pct": 0.96,
+      "weekly_pct": -2.61,
+      "monthly_pct": -7.47,
+      "quarterly_pct": -3.46,
+      "six_month_pct": -0.93,
       "asof": "2026-09-09",
       "weekly_rank": 3
     }
@@ -373,22 +373,22 @@
       {
         "name": "深证成指",
         "ticker": "399001.SZ",
-        "latest": 13726.2734,
-        "daily_pct": 0.17,
-        "weekly_pct": 0.84,
-        "monthly_pct": -3.74,
-        "quarterly_pct": -7.58,
-        "six_month_pct": -2.43,
+        "latest": 13723.3223,
+        "daily_pct": 0.15,
+        "weekly_pct": 0.82,
+        "monthly_pct": -3.76,
+        "quarterly_pct": -7.6,
+        "six_month_pct": -2.45,
         "asof": "2026-09-09",
         "weekly_rank": 1
       },
       {
         "name": "上证指数",
         "ticker": "000001.SS",
-        "latest": 3951.6665,
+        "latest": 3951.5068,
         "daily_pct": 0.28,
         "weekly_pct": 0.26,
-        "monthly_pct": 0.45,
+        "monthly_pct": 0.44,
         "quarterly_pct": -0.89,
         "six_month_pct": -3.54,
         "asof": "2026-09-09",
@@ -397,12 +397,12 @@
       {
         "name": "沪深300",
         "ticker": "000300.SS",
-        "latest": 4573.7056,
-        "daily_pct": 0.98,
-        "weekly_pct": -2.59,
-        "monthly_pct": -7.44,
-        "quarterly_pct": -3.44,
-        "six_month_pct": -0.9,
+        "latest": 4572.5996,
+        "daily_pct": 0.96,
+        "weekly_pct": -2.61,
+        "monthly_pct": -7.47,
+        "quarterly_pct": -3.46,
+        "six_month_pct": -0.93,
         "asof": "2026-09-09",
         "weekly_rank": 3
       }
@@ -411,22 +411,22 @@
       {
         "name": "沪深300",
         "ticker": "000300.SS",
-        "latest": 4573.7056,
-        "daily_pct": 0.98,
-        "weekly_pct": -2.59,
-        "monthly_pct": -7.44,
-        "quarterly_pct": -3.44,
-        "six_month_pct": -0.9,
+        "latest": 4572.5996,
+        "daily_pct": 0.96,
+        "weekly_pct": -2.61,
+        "monthly_pct": -7.47,
+        "quarterly_pct": -3.46,
+        "six_month_pct": -0.93,
         "asof": "2026-09-09",
         "weekly_rank": 3
       },
       {
         "name": "上证指数",
         "ticker": "000001.SS",
-        "latest": 3951.6665,
+        "latest": 3951.5068,
         "daily_pct": 0.28,
         "weekly_pct": 0.26,
-        "monthly_pct": 0.45,
+        "monthly_pct": 0.44,
         "quarterly_pct": -0.89,
         "six_month_pct": -3.54,
         "asof": "2026-09-09",
@@ -435,17 +435,17 @@
       {
         "name": "深证成指",
         "ticker": "399001.SZ",
-        "latest": 13726.2734,
-        "daily_pct": 0.17,
-        "weekly_pct": 0.84,
-        "monthly_pct": -3.74,
-        "quarterly_pct": -7.58,
-        "six_month_pct": -2.43,
+        "latest": 13723.3223,
+        "daily_pct": 0.15,
+        "weekly_pct": 0.82,
+        "monthly_pct": -3.76,
+        "quarterly_pct": -7.6,
+        "six_month_pct": -2.45,
         "asof": "2026-09-09",
         "weekly_rank": 1
       }
     ],
-    "asof": "2026-09-09 06:46 UTC"
+    "asof": "2026-09-09 11:58 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -456,7 +456,7 @@
     "china": [
       [
         "全球政策",
-        306
+        309
       ],
       [
         "经济",
@@ -478,11 +478,15 @@
     "us": [
       [
         "全球政策",
-        282
+        289
       ],
       [
         "金融",
         11
+      ],
+      [
+        "能源 / 资源",
+        4
       ],
       [
         "政治",
@@ -495,16 +499,12 @@
       [
         "国家安全",
         3
-      ],
-      [
-        "内政",
-        2
       ]
     ],
     "global": [
       [
         "全球政策",
-        896
+        924
       ],
       [
         "科技 / AI",
@@ -523,7 +523,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 298
+      "count": 305
     },
     {
       "keyword": "产业升级",
@@ -531,7 +531,7 @@
     },
     {
       "keyword": "开放",
-      "count": 37
+      "count": 39
     },
     {
       "keyword": "安全",
@@ -539,7 +539,7 @@
     },
     {
       "keyword": "贸易",
-      "count": 114
+      "count": 118
     }
   ],
   "policy_source_matrix": [
@@ -618,11 +618,11 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 318,
+      "total": 321,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 306
+          "count": 309
         },
         {
           "name": "经济",
@@ -645,15 +645,19 @@
     },
     {
       "side": "美国",
-      "total": 307,
+      "total": 317,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 282
+          "count": 289
         },
         {
           "name": "金融",
           "count": 11
+        },
+        {
+          "name": "能源 / 资源",
+          "count": 4
         },
         {
           "name": "国家安全",
@@ -666,19 +670,15 @@
         {
           "name": "国防",
           "count": 3
-        },
-        {
-          "name": "内政",
-          "count": 2
         }
       ],
-      "risk_high": 23
+      "risk_high": 27
     }
   ],
   "today_focus": [
     {
       "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-      "titleZh": "特朗普总统是对的：美国控制着霍尔木兹海峡",
+      "titleZh": "特朗普总统是对的：美国控制霍尔木兹海峡",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
       "risk": "极高",
       "category": "国防",
@@ -692,6 +692,22 @@
       "importance_score": 81,
       "importance_level": "S",
       "importance_reason": "风险信号较强；涉及战略安全或关键链条；可能影响市场、产业或供应链"
+    },
+    {
+      "title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
+      "titleZh": "",
+      "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
+      "risk": "高",
+      "category": "能源 / 资源",
+      "region": "us",
+      "source": "US Energy",
+      "verification": "单一官方",
+      "impact_industry": [
+        "能源 / 资源"
+      ],
+      "importance_score": 80,
+      "importance_level": "S",
+      "importance_reason": "风险信号较强；涉及战略安全或关键链条；包含明确政策/行动信号"
     },
     {
       "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
@@ -743,6 +759,38 @@
       "importance_reason": "风险信号较强；涉及战略安全或关键链条；可能影响市场、产业或供应链"
     },
     {
+      "title": "Hydrocarbons and Geothermal Energy Office Awards $1 . 2 Million to Strengthen America Geothermal Energy Workforce",
+      "titleZh": "",
+      "url": "https://www.energy.gov/hgeo/articles/hydrocarbons-and-geothermal-energy-office-awards-12-million-strengthen-americas",
+      "risk": "高",
+      "category": "能源 / 资源",
+      "region": "us",
+      "source": "US Energy",
+      "verification": "单一官方",
+      "impact_industry": [
+        "能源 / 资源"
+      ],
+      "importance_score": 68,
+      "importance_level": "A",
+      "importance_reason": "风险信号较强；涉及战略安全或关键链条；可能影响市场、产业或供应链"
+    },
+    {
+      "title": "Nuclear | Department of Energy",
+      "titleZh": "",
+      "url": "https://www.energy.gov/topics/nuclear",
+      "risk": "高",
+      "category": "能源 / 资源",
+      "region": "us",
+      "source": "US Energy",
+      "verification": "单一官方",
+      "impact_industry": [
+        "能源 / 资源"
+      ],
+      "importance_score": 68,
+      "importance_level": "A",
+      "importance_reason": "风险信号较强；涉及战略安全或关键链条；可能影响市场、产业或供应链"
+    },
+    {
       "title": "Iran’s Access to UAE Banks Targeted Under Operation Economic Outcast",
       "titleZh": "伊朗进入阿联酋银行是“经济弃儿”行动的目标",
       "url": "https://home.treasury.gov/news/press-releases/sb0617/",
@@ -757,61 +805,13 @@
       "importance_score": 68,
       "importance_level": "A",
       "importance_reason": "风险信号较强；包含明确政策/行动信号；一手/机构来源优先"
-    },
-    {
-      "title": "Remarks from Secretary of the Treasury Scott Bessent on Operation Economic Outcast against Iran",
-      "titleZh": "财政部长斯科特·贝森特关于针对伊朗的经济排斥行动的讲话",
-      "url": "https://home.treasury.gov/news/press-releases/sb0614/",
-      "risk": "高",
-      "category": "政治",
-      "region": "us",
-      "source": "US Treasury",
-      "verification": "单一官方",
-      "impact_industry": [
-        "科技 / AI"
-      ],
-      "importance_score": 65,
-      "importance_level": "A",
-      "importance_reason": "风险信号较强；可能影响市场、产业或供应链；一手/机构来源优先"
-    },
-    {
-      "title": "West Bank: UN rights report warns of forcible displacement from three refugee camps",
-      "titleZh": "West Bank: UN rights report warns of forcible displacement from three refugee camps",
-      "url": "https://news.un.org/en/story/2026/09/1168282",
-      "risk": "高",
-      "category": "全球政策",
-      "region": "global",
-      "source": "UN News",
-      "verification": "单一官方",
-      "impact_industry": [
-        "金融"
-      ],
-      "importance_score": 64,
-      "importance_level": "A",
-      "importance_reason": "风险信号较强；包含明确政策/行动信号；一手/机构来源优先"
-    },
-    {
-      "title": "IAEA Hosts Workshop for International Financial Institutions on Nuclear Financing",
-      "titleZh": "IAEA Hosts Workshop for International Financial Institutions on Nuclear Financing",
-      "url": "http://www.iaea.org/newscenter/news/iaea-hosts-workshop-for-international-financial-institutions-on-nuclear-financing",
-      "risk": "高",
-      "category": "全球政策",
-      "region": "global",
-      "source": "IAEA",
-      "verification": "单一官方",
-      "impact_industry": [
-        "全球政策"
-      ],
-      "importance_score": 62,
-      "importance_level": "A",
-      "importance_reason": "风险信号较强；可能影响市场、产业或供应链；一手/机构来源优先"
     }
   ],
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 1522 条；本轮发现 299 条；13类覆盖=10/13；中国/美国/全球=318/307/897；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-09-09 06:46 UTC",
+  "collection_message": "长期情报库：当前工作集 1560 条；本轮发现 299 条；13类覆盖=10/13；中国/美国/全球=321/314/925；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-09-09 11:58 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -876,7 +876,7 @@
     "OfficialPage:China NDRC": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 20
+      "count": 21
     },
     "OfficialPage:China PBOC": {
       "method": "direct_first_party_html",
@@ -986,12 +986,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 25
+      "count": 22
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 30
+      "count": 27
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
