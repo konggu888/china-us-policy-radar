@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10 04:38 UTC",
+  "updated": "2026-09-10 09:25 UTC",
   "method": "US sector ETF proxy + Eastmoney A-share industry board weekly return = current trading week latest close vs prior trading week final close + A-share major index observations",
   "sectors": {
     "科技": {
@@ -127,41 +127,1082 @@
   "a_share": {
     "上证指数": {
       "ticker": "000001.SS",
-      "latest": 3937.7793,
-      "daily_pct": -0.35,
-      "weekly_pct": -0.11,
-      "monthly_pct": -0.23,
-      "quarterly_pct": -2.33,
-      "six_month_pct": -4.5,
+      "latest": 3934.4036,
+      "daily_pct": -0.43,
+      "weekly_pct": -0.19,
+      "monthly_pct": -0.31,
+      "quarterly_pct": -2.41,
+      "six_month_pct": -4.58,
       "asof": "2026-09-10",
       "weekly_rank": 2
     },
     "深证成指": {
       "ticker": "399001.SZ",
-      "latest": 13647.4883,
-      "daily_pct": -0.55,
-      "weekly_pct": 0.16,
-      "monthly_pct": -5.32,
-      "quarterly_pct": -8.79,
-      "six_month_pct": -4.92,
+      "latest": 13617.6699,
+      "daily_pct": -0.77,
+      "weekly_pct": -0.05,
+      "monthly_pct": -5.53,
+      "quarterly_pct": -8.99,
+      "six_month_pct": -5.13,
       "asof": "2026-09-10",
       "weekly_rank": 1
     },
     "沪深300": {
       "ticker": "000300.SS",
-      "latest": 4553.5229,
-      "daily_pct": 0.54,
-      "weekly_pct": -3.02,
-      "monthly_pct": -7.85,
-      "quarterly_pct": -3.87,
-      "six_month_pct": -2.59,
+      "latest": 4548.3896,
+      "daily_pct": 0.43,
+      "weekly_pct": -3.13,
+      "monthly_pct": -7.96,
+      "quarterly_pct": -3.97,
+      "six_month_pct": -2.7,
       "asof": "2026-09-10",
       "weekly_rank": 3
     }
   },
-  "a_share_industry_boards": [],
-  "a_share_board_status": "error:HTTPError",
-  "a_share_weekly_industry_boards": [],
+  "a_share_industry_boards": [
+    {
+      "code": "BK1556",
+      "name": "教育运营及其他",
+      "change_pct": 6.02,
+      "price": 1319.09,
+      "change": 74.95,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "ST豆神"
+    },
+    {
+      "code": "BK1452",
+      "name": "卫浴电器",
+      "change_pct": 4.87,
+      "price": 1456.28,
+      "change": 67.59,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "万和电气"
+    },
+    {
+      "code": "BK1356",
+      "name": "其他饰品",
+      "change_pct": 4.72,
+      "price": 556.77,
+      "change": 25.11,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "ST新华锦"
+    },
+    {
+      "code": "BK1462",
+      "name": "玻纤制造",
+      "change_pct": 3.77,
+      "price": 16059.95,
+      "change": 583.38,
+      "up_count": 8,
+      "down_count": 0,
+      "leader": "九鼎新材"
+    },
+    {
+      "code": "BK0546",
+      "name": "玻璃玻纤",
+      "change_pct": 2.53,
+      "price": 66961.31,
+      "change": 1653.26,
+      "up_count": 13,
+      "down_count": 4,
+      "leader": "凯盛新能"
+    },
+    {
+      "code": "BK1383",
+      "name": "航海装备Ⅲ",
+      "change_pct": 2.52,
+      "price": 5538.41,
+      "change": 136.17,
+      "up_count": 9,
+      "down_count": 0,
+      "leader": "国瑞科技"
+    },
+    {
+      "code": "BK1230",
+      "name": "航海装备Ⅱ",
+      "change_pct": 2.52,
+      "price": 5538.41,
+      "change": 136.17,
+      "up_count": 9,
+      "down_count": 0,
+      "leader": "国瑞科技"
+    },
+    {
+      "code": "BK1373",
+      "name": "电能综合服务",
+      "change_pct": 2.26,
+      "price": 3411.92,
+      "change": 75.25,
+      "up_count": 10,
+      "down_count": 4,
+      "leader": "乐山电力"
+    },
+    {
+      "code": "BK1380",
+      "name": "水力发电",
+      "change_pct": 2.23,
+      "price": 4087.97,
+      "change": 89.23,
+      "up_count": 8,
+      "down_count": 3,
+      "leader": "闽东电力"
+    },
+    {
+      "code": "BK1359",
+      "name": "金融控股",
+      "change_pct": 2.12,
+      "price": 2115.69,
+      "change": 43.86,
+      "up_count": 8,
+      "down_count": 1,
+      "leader": "新力金融"
+    },
+    {
+      "code": "BK1469",
+      "name": "涂料",
+      "change_pct": 1.97,
+      "price": 1039.83,
+      "change": 20.1,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "*ST亚士"
+    },
+    {
+      "code": "BK1340",
+      "name": "印制电路板",
+      "change_pct": 1.95,
+      "price": 13218.33,
+      "change": 252.63,
+      "up_count": 33,
+      "down_count": 15,
+      "leader": "金安国纪"
+    },
+    {
+      "code": "BK1609",
+      "name": "城商行Ⅲ",
+      "change_pct": 1.93,
+      "price": 1715.35,
+      "change": 32.49,
+      "up_count": 17,
+      "down_count": 0,
+      "leader": "宁波银行"
+    },
+    {
+      "code": "BK1489",
+      "name": "快递",
+      "change_pct": 1.91,
+      "price": 5267.44,
+      "change": 98.7,
+      "up_count": 3,
+      "down_count": 1,
+      "leader": "圆通速递"
+    },
+    {
+      "code": "BK1611",
+      "name": "国有大型银行Ⅲ",
+      "change_pct": 1.51,
+      "price": 3363.16,
+      "change": 50.16,
+      "up_count": 6,
+      "down_count": 0,
+      "leader": "交通银行"
+    },
+    {
+      "code": "BK1283",
+      "name": "银行",
+      "change_pct": 1.47,
+      "price": 4446.64,
+      "change": 64.24,
+      "up_count": 42,
+      "down_count": 0,
+      "leader": "宁波银行"
+    },
+    {
+      "code": "BK0475",
+      "name": "银行Ⅱ",
+      "change_pct": 1.47,
+      "price": 4446.64,
+      "change": 64.24,
+      "up_count": 42,
+      "down_count": 0,
+      "leader": "宁波银行"
+    },
+    {
+      "code": "BK1461",
+      "name": "玻璃制造",
+      "change_pct": 1.43,
+      "price": 1874.09,
+      "change": 26.44,
+      "up_count": 5,
+      "down_count": 4,
+      "leader": "凯盛新能"
+    },
+    {
+      "code": "BK1240",
+      "name": "厨卫电器",
+      "change_pct": 1.41,
+      "price": 5932.5,
+      "change": 82.22,
+      "up_count": 4,
+      "down_count": 5,
+      "leader": "万和电气"
+    },
+    {
+      "code": "BK1314",
+      "name": "风电整机",
+      "change_pct": 1.35,
+      "price": 1377.54,
+      "change": 18.39,
+      "up_count": 4,
+      "down_count": 1,
+      "leader": "电气风电"
+    },
+    {
+      "code": "BK0459",
+      "name": "元件",
+      "change_pct": 1.3,
+      "price": 60948.98,
+      "change": 780.51,
+      "up_count": 38,
+      "down_count": 29,
+      "leader": "金安国纪"
+    },
+    {
+      "code": "BK1377",
+      "name": "火力发电",
+      "change_pct": 1.24,
+      "price": 2439.55,
+      "change": 29.88,
+      "up_count": 22,
+      "down_count": 10,
+      "leader": "华银电力"
+    },
+    {
+      "code": "BK1361",
+      "name": "期货",
+      "change_pct": 1.22,
+      "price": 524.7,
+      "change": 6.34,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "南华期货"
+    },
+    {
+      "code": "BK1375",
+      "name": "光伏发电",
+      "change_pct": 1.19,
+      "price": 3263.55,
+      "change": 38.26,
+      "up_count": 8,
+      "down_count": 5,
+      "leader": "芯能科技"
+    },
+    {
+      "code": "BK1612",
+      "name": "农商行Ⅲ",
+      "change_pct": 1.17,
+      "price": 484.19,
+      "change": 5.62,
+      "up_count": 10,
+      "down_count": 0,
+      "leader": "无锡银行"
+    },
+    {
+      "code": "BK1524",
+      "name": "汽车综合服务",
+      "change_pct": 1.15,
+      "price": 1190.91,
+      "change": 13.51,
+      "up_count": 1,
+      "down_count": 2,
+      "leader": "阿尔特"
+    },
+    {
+      "code": "BK0738",
+      "name": "多元金融",
+      "change_pct": 1.05,
+      "price": 602.77,
+      "change": 6.25,
+      "up_count": 19,
+      "down_count": 6,
+      "leader": "新力金融"
+    },
+    {
+      "code": "BK0428",
+      "name": "电力",
+      "change_pct": 0.97,
+      "price": 19763.49,
+      "change": 189.83,
+      "up_count": 67,
+      "down_count": 40,
+      "leader": "闽东电力"
+    },
+    {
+      "code": "BK1610",
+      "name": "股份制银行Ⅲ",
+      "change_pct": 0.88,
+      "price": 2438.72,
+      "change": 21.21,
+      "up_count": 9,
+      "down_count": 0,
+      "leader": "招商银行"
+    },
+    {
+      "code": "BK1203",
+      "name": "非银金融",
+      "change_pct": 0.87,
+      "price": 2489.21,
+      "change": 21.39,
+      "up_count": 67,
+      "down_count": 12,
+      "leader": "新力金融"
+    },
+    {
+      "code": "BK0427",
+      "name": "公用事业",
+      "change_pct": 0.86,
+      "price": 9731.15,
+      "change": 83.2,
+      "up_count": 80,
+      "down_count": 57,
+      "leader": "闽东电力"
+    },
+    {
+      "code": "BK1366",
+      "name": "证券Ⅲ",
+      "change_pct": 0.83,
+      "price": 142100.47,
+      "change": 1167.24,
+      "up_count": 44,
+      "down_count": 5,
+      "leader": "哈投股份"
+    },
+    {
+      "code": "BK0473",
+      "name": "证券Ⅱ",
+      "change_pct": 0.83,
+      "price": 142100.47,
+      "change": 1167.24,
+      "up_count": 44,
+      "down_count": 5,
+      "leader": "哈投股份"
+    },
+    {
+      "code": "BK1032",
+      "name": "风电设备",
+      "change_pct": 0.81,
+      "price": 1226.26,
+      "change": 9.85,
+      "up_count": 17,
+      "down_count": 14,
+      "leader": "天顺风能"
+    },
+    {
+      "code": "BK1374",
+      "name": "风力发电",
+      "change_pct": 0.76,
+      "price": 2016.97,
+      "change": 15.27,
+      "up_count": 10,
+      "down_count": 4,
+      "leader": "绿发电力"
+    },
+    {
+      "code": "BK1313",
+      "name": "风电零部件",
+      "change_pct": 0.71,
+      "price": 1856.94,
+      "change": 13.0,
+      "up_count": 13,
+      "down_count": 13,
+      "leader": "天顺风能"
+    },
+    {
+      "code": "BK1363",
+      "name": "信托",
+      "change_pct": 0.66,
+      "price": 1932.41,
+      "change": 12.76,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "陕国投Ａ"
+    },
+    {
+      "code": "BK1492",
+      "name": "焦炭Ⅲ",
+      "change_pct": 0.65,
+      "price": 878.78,
+      "change": 5.71,
+      "up_count": 4,
+      "down_count": 3,
+      "leader": "云煤能源"
+    },
+    {
+      "code": "BK1249",
+      "name": "焦炭Ⅱ",
+      "change_pct": 0.65,
+      "price": 878.78,
+      "change": 5.71,
+      "up_count": 4,
+      "down_count": 3,
+      "leader": "云煤能源"
+    },
+    {
+      "code": "BK1470",
+      "name": "房屋建设Ⅲ",
+      "change_pct": 0.65,
+      "price": 1970.22,
+      "change": 12.69,
+      "up_count": 2,
+      "down_count": 5,
+      "leader": "重庆建工"
+    },
+    {
+      "code": "BK1246",
+      "name": "房屋建设Ⅱ",
+      "change_pct": 0.65,
+      "price": 1970.22,
+      "change": 12.69,
+      "up_count": 2,
+      "down_count": 5,
+      "leader": "重庆建工"
+    },
+    {
+      "code": "BK1381",
+      "name": "燃气Ⅲ",
+      "change_pct": 0.47,
+      "price": 2011.68,
+      "change": 9.49,
+      "up_count": 13,
+      "down_count": 17,
+      "leader": "水发燃气"
+    },
+    {
+      "code": "BK1028",
+      "name": "燃气Ⅱ",
+      "change_pct": 0.47,
+      "price": 2011.68,
+      "change": 9.49,
+      "up_count": 13,
+      "down_count": 17,
+      "leader": "水发燃气"
+    },
+    {
+      "code": "BK1365",
+      "name": "租赁",
+      "change_pct": 0.44,
+      "price": 2982.59,
+      "change": 13.01,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "渤海租赁"
+    },
+    {
+      "code": "BK1562",
+      "name": "人工景区",
+      "change_pct": 0.43,
+      "price": 3035.03,
+      "change": 13.05,
+      "up_count": 2,
+      "down_count": 3,
+      "leader": "云南旅游"
+    },
+    {
+      "code": "BK1376",
+      "name": "核力发电",
+      "change_pct": 0.32,
+      "price": 623.91,
+      "change": 2.02,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "中国核电"
+    },
+    {
+      "code": "BK1587",
+      "name": "电信运营商",
+      "change_pct": 0.32,
+      "price": 1013.38,
+      "change": 3.26,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "XD中国电"
+    },
+    {
+      "code": "BK1358",
+      "name": "保险Ⅲ",
+      "change_pct": 0.31,
+      "price": 1401.47,
+      "change": 4.27,
+      "up_count": 4,
+      "down_count": 1,
+      "leader": "中国太保"
+    },
+    {
+      "code": "BK0474",
+      "name": "保险Ⅱ",
+      "change_pct": 0.31,
+      "price": 1401.47,
+      "change": 4.27,
+      "up_count": 4,
+      "down_count": 1,
+      "leader": "中国太保"
+    },
+    {
+      "code": "BK1538",
+      "name": "瓷砖地板",
+      "change_pct": 0.3,
+      "price": 1493.38,
+      "change": 4.54,
+      "up_count": 5,
+      "down_count": 7,
+      "leader": "蒙娜丽莎"
+    },
+    {
+      "code": "BK1454",
+      "name": "其他黑色家电",
+      "change_pct": 0.28,
+      "price": 2810.91,
+      "change": 7.83,
+      "up_count": 2,
+      "down_count": 3,
+      "leader": "创维数字"
+    },
+    {
+      "code": "BK1463",
+      "name": "水泥制品",
+      "change_pct": 0.25,
+      "price": 2102.32,
+      "change": 5.22,
+      "up_count": 3,
+      "down_count": 6,
+      "leader": "海南瑞泽"
+    },
+    {
+      "code": "BK1481",
+      "name": "港口",
+      "change_pct": 0.24,
+      "price": 1689.06,
+      "change": 4.1,
+      "up_count": 11,
+      "down_count": 5,
+      "leader": "南 京 港"
+    },
+    {
+      "code": "BK1326",
+      "name": "半导体设备",
+      "change_pct": 0.21,
+      "price": 46881.45,
+      "change": 97.74,
+      "up_count": 9,
+      "down_count": 16,
+      "leader": "富乐德"
+    },
+    {
+      "code": "BK1563",
+      "name": "自然景区",
+      "change_pct": 0.2,
+      "price": 3154.02,
+      "change": 6.4,
+      "up_count": 4,
+      "down_count": 9,
+      "leader": "桂林旅游"
+    },
+    {
+      "code": "BK1328",
+      "name": "集成电路封测",
+      "change_pct": 0.2,
+      "price": 8522.79,
+      "change": 17.1,
+      "up_count": 4,
+      "down_count": 9,
+      "leader": "气派科技"
+    },
+    {
+      "code": "BK1465",
+      "name": "防水材料",
+      "change_pct": 0.17,
+      "price": 6764.97,
+      "change": 11.32,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "凯伦股份"
+    },
+    {
+      "code": "BK1483",
+      "name": "高速公路",
+      "change_pct": 0.13,
+      "price": 2720.11,
+      "change": 3.45,
+      "up_count": 8,
+      "down_count": 10,
+      "leader": "招商公路"
+    },
+    {
+      "code": "BK1360",
+      "name": "金融信息服务",
+      "change_pct": 0.11,
+      "price": 5314.13,
+      "change": 5.82,
+      "up_count": 1,
+      "down_count": 2,
+      "leader": "翠微股份"
+    },
+    {
+      "code": "BK1491",
+      "name": "端到端供应链服务",
+      "change_pct": 0.09,
+      "price": 1634.48,
+      "change": 1.4,
+      "up_count": 2,
+      "down_count": 5,
+      "leader": "新宁物流"
+    },
+    {
+      "code": "BK1016",
+      "name": "汽车服务",
+      "change_pct": 0.06,
+      "price": 968.93,
+      "change": 0.62,
+      "up_count": 3,
+      "down_count": 6,
+      "leader": "阿尔特"
+    },
+    {
+      "code": "BK1208",
+      "name": "建筑材料",
+      "change_pct": 0.06,
+      "price": 3715.59,
+      "change": 2.37,
+      "up_count": 24,
+      "down_count": 51,
+      "leader": "凯盛新能"
+    },
+    {
+      "code": "BK1272",
+      "name": "旅游及景区",
+      "change_pct": 0.02,
+      "price": 3210.05,
+      "change": 0.59,
+      "up_count": 8,
+      "down_count": 19,
+      "leader": "桂林旅游"
+    },
+    {
+      "code": "BK1474",
+      "name": "钢结构",
+      "change_pct": 0.01,
+      "price": 2810.07,
+      "change": 0.23,
+      "up_count": 4,
+      "down_count": 6,
+      "leader": "ST富煌"
+    },
+    {
+      "code": "BK1450",
+      "name": "空调",
+      "change_pct": 0.0,
+      "price": 15665.49,
+      "change": 0.54,
+      "up_count": 3,
+      "down_count": 1,
+      "leader": "海信家电"
+    },
+    {
+      "code": "BK0740",
+      "name": "教育",
+      "change_pct": -0.08,
+      "price": 639.59,
+      "change": -0.51,
+      "up_count": 5,
+      "down_count": 11,
+      "leader": "ST豆神"
+    },
+    {
+      "code": "BK1364",
+      "name": "资产管理",
+      "change_pct": -0.08,
+      "price": 3573.65,
+      "change": -3.03,
+      "up_count": 1,
+      "down_count": 3,
+      "leader": "华金资本"
+    },
+    {
+      "code": "BK1591",
+      "name": "通信网络设备及器件",
+      "change_pct": -0.12,
+      "price": 14967.69,
+      "change": -17.49,
+      "up_count": 14,
+      "down_count": 23,
+      "leader": "鼎信通讯"
+    },
+    {
+      "code": "BK1477",
+      "name": "其他专业工程",
+      "change_pct": -0.15,
+      "price": 3406.73,
+      "change": -4.96,
+      "up_count": 5,
+      "down_count": 13,
+      "leader": "再升科技"
+    },
+    {
+      "code": "BK1327",
+      "name": "分立器件",
+      "change_pct": -0.16,
+      "price": 15291.19,
+      "change": -24.55,
+      "up_count": 4,
+      "down_count": 13,
+      "leader": "宏微科技"
+    },
+    {
+      "code": "BK0424",
+      "name": "水泥",
+      "change_pct": -0.19,
+      "price": 26467.27,
+      "change": -49.98,
+      "up_count": 5,
+      "down_count": 17,
+      "leader": "福建水泥"
+    },
+    {
+      "code": "BK1385",
+      "name": "航天装备Ⅲ",
+      "change_pct": -0.2,
+      "price": 4595.49,
+      "change": -9.33,
+      "up_count": 5,
+      "down_count": 4,
+      "leader": "航天环宇"
+    },
+    {
+      "code": "BK1232",
+      "name": "航天装备Ⅱ",
+      "change_pct": -0.2,
+      "price": 4595.49,
+      "change": -9.33,
+      "up_count": 5,
+      "down_count": 4,
+      "leader": "航天环宇"
+    },
+    {
+      "code": "BK0421",
+      "name": "铁路公路",
+      "change_pct": -0.21,
+      "price": 8631.1,
+      "change": -17.95,
+      "up_count": 12,
+      "down_count": 19,
+      "leader": "招商公路"
+    },
+    {
+      "code": "BK1248",
+      "name": "专业工程",
+      "change_pct": -0.21,
+      "price": 3661.09,
+      "change": -7.69,
+      "up_count": 12,
+      "down_count": 26,
+      "leader": "再升科技"
+    },
+    {
+      "code": "BK1485",
+      "name": "铁路运输",
+      "change_pct": -0.26,
+      "price": 1487.57,
+      "change": -3.84,
+      "up_count": 2,
+      "down_count": 4,
+      "leader": "广深铁路"
+    },
+    {
+      "code": "BK1476",
+      "name": "化学工程",
+      "change_pct": -0.27,
+      "price": 2513.65,
+      "change": -6.71,
+      "up_count": 3,
+      "down_count": 3,
+      "leader": "东华科技"
+    },
+    {
+      "code": "BK1368",
+      "name": "钢铁管材",
+      "change_pct": -0.27,
+      "price": 600.42,
+      "change": -1.63,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "新兴铸管"
+    },
+    {
+      "code": "BK1574",
+      "name": "油气开采Ⅲ",
+      "change_pct": -0.27,
+      "price": 3582.06,
+      "change": -9.81,
+      "up_count": 2,
+      "down_count": 3,
+      "leader": "中国海油"
+    },
+    {
+      "code": "BK1276",
+      "name": "油气开采Ⅱ",
+      "change_pct": -0.27,
+      "price": 3582.06,
+      "change": -9.81,
+      "up_count": 2,
+      "down_count": 3,
+      "leader": "中国海油"
+    },
+    {
+      "code": "BK1344",
+      "name": "产业地产",
+      "change_pct": -0.31,
+      "price": 2317.82,
+      "change": -7.12,
+      "up_count": 4,
+      "down_count": 7,
+      "leader": "中新集团"
+    },
+    {
+      "code": "BK1451",
+      "name": "厨房电器",
+      "change_pct": -0.33,
+      "price": 8573.88,
+      "change": -28.01,
+      "up_count": 2,
+      "down_count": 4,
+      "leader": "老板电器"
+    },
+    {
+      "code": "BK1339",
+      "name": "被动元件",
+      "change_pct": -0.35,
+      "price": 12582.11,
+      "change": -43.97,
+      "up_count": 5,
+      "down_count": 14,
+      "leader": "胜业电气"
+    },
+    {
+      "code": "BK1241",
+      "name": "黑色家电",
+      "change_pct": -0.37,
+      "price": 4165.54,
+      "change": -15.38,
+      "up_count": 2,
+      "down_count": 7,
+      "leader": "创维数字"
+    },
+    {
+      "code": "BK1378",
+      "name": "其他能源发电",
+      "change_pct": -0.39,
+      "price": 1501.75,
+      "change": -5.95,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "长青集团"
+    },
+    {
+      "code": "BK1480",
+      "name": "机场",
+      "change_pct": -0.41,
+      "price": 1806.73,
+      "change": -7.36,
+      "up_count": 0,
+      "down_count": 3,
+      "leader": "深圳机场"
+    },
+    {
+      "code": "BK1369",
+      "name": "长材",
+      "change_pct": -0.46,
+      "price": 536.16,
+      "change": -2.48,
+      "up_count": 1,
+      "down_count": 2,
+      "leader": "凌钢股份"
+    },
+    {
+      "code": "BK1325",
+      "name": "半导体材料",
+      "change_pct": -0.47,
+      "price": 12479.13,
+      "change": -58.83,
+      "up_count": 8,
+      "down_count": 22,
+      "leader": "强一股份"
+    },
+    {
+      "code": "BK1464",
+      "name": "水泥制造",
+      "change_pct": -0.47,
+      "price": 2086.59,
+      "change": -9.84,
+      "up_count": 2,
+      "down_count": 11,
+      "leader": "福建水泥"
+    },
+    {
+      "code": "BK1520",
+      "name": "综合乘用车",
+      "change_pct": -0.47,
+      "price": 2494.16,
+      "change": -11.77,
+      "up_count": 1,
+      "down_count": 5,
+      "leader": "上汽集团"
+    },
+    {
+      "code": "BK1210",
+      "name": "交通运输",
+      "change_pct": -0.47,
+      "price": 2517.84,
+      "change": -12.0,
+      "up_count": 40,
+      "down_count": 86,
+      "leader": "新宁物流"
+    },
+    {
+      "code": "BK1523",
+      "name": "汽车经销商",
+      "change_pct": -0.48,
+      "price": 1421.05,
+      "change": -6.83,
+      "up_count": 2,
+      "down_count": 4,
+      "leader": "上海物贸"
+    },
+    {
+      "code": "BK1561",
+      "name": "旅游综合",
+      "change_pct": -0.48,
+      "price": 1821.48,
+      "change": -8.77,
+      "up_count": 2,
+      "down_count": 7,
+      "leader": "*ST西旅"
+    },
+    {
+      "code": "BK1560",
+      "name": "酒店",
+      "change_pct": -0.5,
+      "price": 2452.2,
+      "change": -12.22,
+      "up_count": 2,
+      "down_count": 4,
+      "leader": "锦江酒店"
+    },
+    {
+      "code": "BK0420",
+      "name": "航空机场",
+      "change_pct": -0.51,
+      "price": 4066.53,
+      "change": -20.73,
+      "up_count": 1,
+      "down_count": 11,
+      "leader": "吉祥航空"
+    },
+    {
+      "code": "BK1490",
+      "name": "原材料供应链服务",
+      "change_pct": -0.51,
+      "price": 2973.84,
+      "change": -15.16,
+      "up_count": 3,
+      "down_count": 9,
+      "leader": "建发股份"
+    },
+    {
+      "code": "BK1329",
+      "name": "集成电路制造",
+      "change_pct": -0.51,
+      "price": 3563.23,
+      "change": -18.38,
+      "up_count": 2,
+      "down_count": 4,
+      "leader": "盛合晶微"
+    },
+    {
+      "code": "BK1301",
+      "name": "游戏Ⅲ",
+      "change_pct": -0.53,
+      "price": 1328.08,
+      "change": -7.1,
+      "up_count": 2,
+      "down_count": 20,
+      "leader": "游族网络"
+    },
+    {
+      "code": "BK1046",
+      "name": "游戏Ⅱ",
+      "change_pct": -0.53,
+      "price": 1328.08,
+      "change": -7.1,
+      "up_count": 2,
+      "down_count": 20,
+      "leader": "游族网络"
+    },
+    {
+      "code": "BK0450",
+      "name": "航运港口",
+      "change_pct": -0.54,
+      "price": 12948.11,
+      "change": -69.8,
+      "up_count": 16,
+      "down_count": 20,
+      "leader": "海峡股份"
+    }
+  ],
+  "a_share_board_status": "ok",
+  "a_share_weekly_industry_boards": [
+    {
+      "code": "BK1556",
+      "name": "教育运营及其他",
+      "change_pct": 6.02,
+      "price": 1319.09,
+      "change": 74.95,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "ST豆神",
+      "weekly_pct": 23.15,
+      "weekly_period_start": "2026-09-04",
+      "weekly_period_end": "2026-09-10"
+    },
+    {
+      "code": "BK1340",
+      "name": "印制电路板",
+      "change_pct": 1.95,
+      "price": 13218.33,
+      "change": 252.63,
+      "up_count": 33,
+      "down_count": 15,
+      "leader": "金安国纪",
+      "weekly_pct": 13.53,
+      "weekly_period_start": "2026-09-04",
+      "weekly_period_end": "2026-09-10"
+    },
+    {
+      "code": "BK1469",
+      "name": "涂料",
+      "change_pct": 1.97,
+      "price": 1039.83,
+      "change": 20.1,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "*ST亚士",
+      "weekly_pct": -5.76,
+      "weekly_period_start": "2026-09-04",
+      "weekly_period_end": "2026-09-10"
+    }
+  ],
   "weekly_risers": [
     "科技",
     "公用事业",
@@ -177,8 +1218,61 @@
     "金融",
     "通信服务"
   ],
-  "a_share_weekly_risers": [],
-  "a_share_weekly_fallers": [],
-  "a_share_board_risers": [],
-  "a_share_board_fallers": []
+  "a_share_weekly_risers": [
+    {
+      "code": "BK1556",
+      "name": "教育运营及其他",
+      "change_pct": 6.02,
+      "price": 1319.09,
+      "change": 74.95,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "ST豆神",
+      "weekly_pct": 23.15,
+      "weekly_period_start": "2026-09-04",
+      "weekly_period_end": "2026-09-10"
+    },
+    {
+      "code": "BK1340",
+      "name": "印制电路板",
+      "change_pct": 1.95,
+      "price": 13218.33,
+      "change": 252.63,
+      "up_count": 33,
+      "down_count": 15,
+      "leader": "金安国纪",
+      "weekly_pct": 13.53,
+      "weekly_period_start": "2026-09-04",
+      "weekly_period_end": "2026-09-10"
+    }
+  ],
+  "a_share_weekly_fallers": [
+    {
+      "code": "BK1469",
+      "name": "涂料",
+      "change_pct": 1.97,
+      "price": 1039.83,
+      "change": 20.1,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "*ST亚士",
+      "weekly_pct": -5.76,
+      "weekly_period_start": "2026-09-04",
+      "weekly_period_end": "2026-09-10"
+    }
+  ],
+  "a_share_board_risers": [
+    "教育运营及其他",
+    "卫浴电器",
+    "其他饰品",
+    "玻纤制造",
+    "玻璃玻纤"
+  ],
+  "a_share_board_fallers": [
+    "航运港口",
+    "游戏Ⅱ",
+    "游戏Ⅲ",
+    "集成电路制造",
+    "原材料供应链服务"
+  ]
 }
