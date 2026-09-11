@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11 21:03 UTC",
+  "updated": "2026-09-11 23:21 UTC",
   "method": "US sector ETF proxy + Eastmoney A-share industry board weekly return = current trading week latest close vs prior trading week final close + A-share major index observations",
   "sectors": {
     "科技": {
@@ -1162,60 +1162,7 @@
     }
   ],
   "a_share_board_status": "ok",
-  "a_share_weekly_industry_boards": [
-    {
-      "code": "BK1340",
-      "name": "印制电路板",
-      "change_pct": 3.28,
-      "price": 13652.15,
-      "change": 433.82,
-      "up_count": 36,
-      "down_count": 12,
-      "leader": "协和电子",
-      "weekly_pct": 17.26,
-      "weekly_period_start": "2026-09-04",
-      "weekly_period_end": "2026-09-11"
-    },
-    {
-      "code": "BK1462",
-      "name": "玻纤制造",
-      "change_pct": 4.67,
-      "price": 16809.98,
-      "change": 750.03,
-      "up_count": 8,
-      "down_count": 0,
-      "leader": "九鼎新材",
-      "weekly_pct": 13.75,
-      "weekly_period_start": "2026-09-04",
-      "weekly_period_end": "2026-09-11"
-    },
-    {
-      "code": "BK1592",
-      "name": "通信线缆及配套",
-      "change_pct": 5.84,
-      "price": 27073.48,
-      "change": 1493.62,
-      "up_count": 12,
-      "down_count": 1,
-      "leader": "神宇股份",
-      "weekly_pct": 12.58,
-      "weekly_period_start": "2026-09-04",
-      "weekly_period_end": "2026-09-11"
-    },
-    {
-      "code": "BK1339",
-      "name": "被动元件",
-      "change_pct": 2.39,
-      "price": 12882.65,
-      "change": 300.54,
-      "up_count": 14,
-      "down_count": 5,
-      "leader": "风华高科",
-      "weekly_pct": 6.01,
-      "weekly_period_start": "2026-09-04",
-      "weekly_period_end": "2026-09-11"
-    }
-  ],
+  "a_share_weekly_industry_boards": [],
   "weekly_risers": [
     "科技",
     "能源"
@@ -1231,60 +1178,7 @@
     "工业",
     "通信服务"
   ],
-  "a_share_weekly_risers": [
-    {
-      "code": "BK1340",
-      "name": "印制电路板",
-      "change_pct": 3.28,
-      "price": 13652.15,
-      "change": 433.82,
-      "up_count": 36,
-      "down_count": 12,
-      "leader": "协和电子",
-      "weekly_pct": 17.26,
-      "weekly_period_start": "2026-09-04",
-      "weekly_period_end": "2026-09-11"
-    },
-    {
-      "code": "BK1462",
-      "name": "玻纤制造",
-      "change_pct": 4.67,
-      "price": 16809.98,
-      "change": 750.03,
-      "up_count": 8,
-      "down_count": 0,
-      "leader": "九鼎新材",
-      "weekly_pct": 13.75,
-      "weekly_period_start": "2026-09-04",
-      "weekly_period_end": "2026-09-11"
-    },
-    {
-      "code": "BK1592",
-      "name": "通信线缆及配套",
-      "change_pct": 5.84,
-      "price": 27073.48,
-      "change": 1493.62,
-      "up_count": 12,
-      "down_count": 1,
-      "leader": "神宇股份",
-      "weekly_pct": 12.58,
-      "weekly_period_start": "2026-09-04",
-      "weekly_period_end": "2026-09-11"
-    },
-    {
-      "code": "BK1339",
-      "name": "被动元件",
-      "change_pct": 2.39,
-      "price": 12882.65,
-      "change": 300.54,
-      "up_count": 14,
-      "down_count": 5,
-      "leader": "风华高科",
-      "weekly_pct": 6.01,
-      "weekly_period_start": "2026-09-04",
-      "weekly_period_end": "2026-09-11"
-    }
-  ],
+  "a_share_weekly_risers": [],
   "a_share_weekly_fallers": [],
   "a_share_board_risers": [
     "通信线缆及配套",
