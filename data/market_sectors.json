@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17 07:44 UTC",
+  "updated": "2026-09-17 12:56 UTC",
   "method": "US sector ETF proxy + Eastmoney A-share industry board weekly return = current trading week latest close vs prior trading week final close + A-share major index observations",
   "sectors": {
     "科技": {
@@ -1153,6 +1153,45 @@
   "a_share_board_status": "ok",
   "a_share_weekly_industry_boards": [
     {
+      "code": "BK1341",
+      "name": "房产租赁经纪",
+      "change_pct": 5.28,
+      "price": 1450.6,
+      "change": 72.77,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "世联行",
+      "weekly_pct": 5.54,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1510",
+      "name": "其他养殖",
+      "change_pct": 5.13,
+      "price": 979.59,
+      "change": 47.8,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "华英农业",
+      "weekly_pct": 5.14,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1531",
+      "name": "商用载客车",
+      "change_pct": 3.05,
+      "price": 3289.35,
+      "change": 97.51,
+      "up_count": 4,
+      "down_count": 1,
+      "leader": "安凯客车",
+      "weekly_pct": 2.27,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
       "code": "BK1296",
       "name": "视频媒体",
       "change_pct": 6.58,
@@ -1166,15 +1205,15 @@
       "weekly_period_end": "2026-09-17"
     },
     {
-      "code": "BK1523",
-      "name": "汽车经销商",
-      "change_pct": 3.96,
-      "price": 1413.47,
-      "change": 53.82,
+      "code": "BK1404",
+      "name": "农用机械",
+      "change_pct": 2.82,
+      "price": 1748.21,
+      "change": 48.03,
       "up_count": 6,
-      "down_count": 0,
-      "leader": "上海物贸",
-      "weekly_pct": 1.41,
+      "down_count": 4,
+      "leader": "花溪科技",
+      "weekly_pct": 0.05,
       "weekly_period_start": "2026-09-11",
       "weekly_period_end": "2026-09-17"
     },
@@ -1192,6 +1231,19 @@
       "weekly_period_end": "2026-09-17"
     },
     {
+      "code": "BK1556",
+      "name": "教育运营及其他",
+      "change_pct": 3.11,
+      "price": 1276.77,
+      "change": 38.53,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "ST豆神",
+      "weekly_pct": -2.34,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
       "code": "BK1261",
       "name": "种植业",
       "change_pct": 5.06,
@@ -1201,32 +1253,6 @@
       "down_count": 0,
       "leader": "敦煌种业",
       "weekly_pct": -4.6,
-      "weekly_period_start": "2026-09-11",
-      "weekly_period_end": "2026-09-17"
-    },
-    {
-      "code": "BK1562",
-      "name": "人工景区",
-      "change_pct": 2.91,
-      "price": 2764.27,
-      "change": 78.09,
-      "up_count": 5,
-      "down_count": 0,
-      "leader": "大连圣亚",
-      "weekly_pct": -6.11,
-      "weekly_period_start": "2026-09-11",
-      "weekly_period_end": "2026-09-17"
-    },
-    {
-      "code": "BK1516",
-      "name": "其他种植业",
-      "change_pct": 3.13,
-      "price": 1114.76,
-      "change": 33.8,
-      "up_count": 5,
-      "down_count": 0,
-      "leader": "亚盛集团",
-      "weekly_pct": -9.41,
       "weekly_period_start": "2026-09-11",
       "weekly_period_end": "2026-09-17"
     }
@@ -1248,6 +1274,45 @@
   ],
   "a_share_weekly_risers": [
     {
+      "code": "BK1341",
+      "name": "房产租赁经纪",
+      "change_pct": 5.28,
+      "price": 1450.6,
+      "change": 72.77,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "世联行",
+      "weekly_pct": 5.54,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1510",
+      "name": "其他养殖",
+      "change_pct": 5.13,
+      "price": 979.59,
+      "change": 47.8,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "华英农业",
+      "weekly_pct": 5.14,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1531",
+      "name": "商用载客车",
+      "change_pct": 3.05,
+      "price": 3289.35,
+      "change": 97.51,
+      "up_count": 4,
+      "down_count": 1,
+      "leader": "安凯客车",
+      "weekly_pct": 2.27,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
       "code": "BK1296",
       "name": "视频媒体",
       "change_pct": 6.58,
@@ -1261,46 +1326,20 @@
       "weekly_period_end": "2026-09-17"
     },
     {
-      "code": "BK1523",
-      "name": "汽车经销商",
-      "change_pct": 3.96,
-      "price": 1413.47,
-      "change": 53.82,
+      "code": "BK1404",
+      "name": "农用机械",
+      "change_pct": 2.82,
+      "price": 1748.21,
+      "change": 48.03,
       "up_count": 6,
-      "down_count": 0,
-      "leader": "上海物贸",
-      "weekly_pct": 1.41,
+      "down_count": 4,
+      "leader": "花溪科技",
+      "weekly_pct": 0.05,
       "weekly_period_start": "2026-09-11",
       "weekly_period_end": "2026-09-17"
     }
   ],
   "a_share_weekly_fallers": [
-    {
-      "code": "BK1516",
-      "name": "其他种植业",
-      "change_pct": 3.13,
-      "price": 1114.76,
-      "change": 33.8,
-      "up_count": 5,
-      "down_count": 0,
-      "leader": "亚盛集团",
-      "weekly_pct": -9.41,
-      "weekly_period_start": "2026-09-11",
-      "weekly_period_end": "2026-09-17"
-    },
-    {
-      "code": "BK1562",
-      "name": "人工景区",
-      "change_pct": 2.91,
-      "price": 2764.27,
-      "change": 78.09,
-      "up_count": 5,
-      "down_count": 0,
-      "leader": "大连圣亚",
-      "weekly_pct": -6.11,
-      "weekly_period_start": "2026-09-11",
-      "weekly_period_end": "2026-09-17"
-    },
     {
       "code": "BK1261",
       "name": "种植业",
@@ -1311,6 +1350,19 @@
       "down_count": 0,
       "leader": "敦煌种业",
       "weekly_pct": -4.6,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1556",
+      "name": "教育运营及其他",
+      "change_pct": 3.11,
+      "price": 1276.77,
+      "change": 38.53,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "ST豆神",
+      "weekly_pct": -2.34,
       "weekly_period_start": "2026-09-11",
       "weekly_period_end": "2026-09-17"
     },
