@@ -1,4 +1,4 @@
-import json, urllib.parse, urllib.request, time, re
+import json, urllib.parse, urllib.request, time, re, sys
 from datetime import datetime, timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data'; OUT=DATA/'market_sectors.json'
@@ -30,17 +30,14 @@ def tencent_index(ticker):
     if not code:return None
     try:
         s=fetch('https://qt.gtimg.cn/q='+code,10,'https://gu.qq.com/')
-        # v_sh000001="1~上证指数~000001~...~最新~...~涨跌额~涨跌幅~...~日期~时间~..."
         m=re.search(r'="(.*?)"',s)
         if not m:return None
-        p=m.group(1).split('~')
-        latest=float(p[3]); prev=float(p[4]); change_pct=(latest/prev-1)*100 if prev else None
+        p=m.group(1).split('~'); latest=float(p[3]); prev=float(p[4]); change_pct=(latest/prev-1)*100 if prev else None
         date=p[30] if len(p)>30 and re.fullmatch(r'\d{4}/\d{2}/\d{2}',p[30] or '') else datetime.now(timezone.utc).strftime('%Y-%m-%d')
         return {'ticker':ticker,'latest':latest,'daily_pct':round(change_pct,2) if change_pct is not None else None,'weekly_pct':None,'monthly_pct':None,'quarterly_pct':None,'six_month_pct':None,'asof':date.replace('/','-'),'provider':'Tencent quote fallback','fallback':True}
     except Exception:return None
 
-def get(ticker):
-    return yahoo(ticker) or tencent_index(ticker)
+def get(ticker):return yahoo(ticker) or tencent_index(ticker)
 
 def eastmoney_boards():
     params={'pn':'1','pz':'100','po':'1','np':'1','ut':UT,'fltt':'2','invt':'2','fid':'f3','fs':'m:90+t:2+f:!50','fields':'f12,f14,f2,f3,f4,f104,f105,f128'}; last='error:HTTPError'
@@ -60,8 +57,7 @@ def eastmoney_boards():
 def board_weekly_pct(code):
     params={'secid':f'90.{code}','fields1':'f1,f2,f3,f4,f5,f6','fields2':'f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61','klt':'101','fqt':'1','beg':'0','end':'20500101','lmt':'20','ut':UT}
     try:
-        obj=json.loads(fetch(EM_KLINE+'?'+urllib.parse.urlencode(params),12,'https://quote.eastmoney.com/')); rows=obj.get('data',{}).get('klines',[]) or []
-        parsed=[]
+        obj=json.loads(fetch(EM_KLINE+'?'+urllib.parse.urlencode(params),12,'https://quote.eastmoney.com/')); rows=obj.get('data',{}).get('klines',[]) or []; parsed=[]
         for row in rows:
             parts=row.split(',')
             if len(parts)>=3:
@@ -70,8 +66,7 @@ def board_weekly_pct(code):
         if len(parsed)<2:return None,None,None
         latest_date,latest=parsed[-1]; current_week=latest_date.isocalendar()[:2]; first_idx=next((i for i,(d,_) in enumerate(parsed) if d.isocalendar()[:2]==current_week),len(parsed)-1)
         if first_idx==0:return None,parsed[first_idx][0].isoformat(),latest_date.isoformat()
-        base_date,base=parsed[first_idx-1]
-        return (round((latest/base-1)*100,2) if base else None),base_date.isoformat(),latest_date.isoformat()
+        base_date,base=parsed[first_idx-1]; return (round((latest/base-1)*100,2) if base else None),base_date.isoformat(),latest_date.isoformat()
     except Exception:return None,None,None
 
 us={}
@@ -84,7 +79,6 @@ for name,t in A_SHARE.items():
     v=get(t)
     if v:a_share[name]=v
     time.sleep(.08)
-# Tencent supplies the current quote when Yahoo is unavailable; keep the previous weekly/monthly value if possible.
 try:old=json.loads(OUT.read_text(encoding='utf-8'))
 except Exception:old={}
 old_a=old.get('a_share',{}) if isinstance(old,dict) else {}
@@ -105,5 +99,7 @@ for b in boards:
 weekly_boards.sort(key=lambda x:x['weekly_pct'],reverse=True)
 positive=[x for x in weekly_boards if x['weekly_pct']>0];negative=[x for x in weekly_boards if x['weekly_pct']<0]
 now=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
-payload={'updated':now,'method':'Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required','providers':{'us_sector':'Yahoo Finance public chart endpoint','a_share_index':'Yahoo Finance -> Tencent quote fallback','a_share_industry':'Eastmoney public quote/K-line endpoints'},'sectors':us,'a_share':a_share,'a_share_industry_boards':boards,'a_share_board_status':status,'a_share_weekly_industry_boards':weekly_boards,'weekly_risers':[n for n,v in rank if (v.get('weekly_pct') or 0)>0],'weekly_fallers':[n for n,v in reversed(rank) if (v.get('weekly_pct') or 0)<0],'a_share_weekly_risers':positive[:10],'a_share_weekly_fallers':list(reversed(negative[-10:])), 'a_share_board_risers':[x['name'] for x in boards[:5]],'a_share_board_fallers':[x['name'] for x in boards[-5:][::-1]],'health':{'us_sector_count':len(us),'a_share_index_count':len(a_share),'a_share_board_count':len(boards),'weekly_board_count':len(weekly_boards),'status':'ok' if len(a_share)>=5 and len(us)>=8 else 'partial'}}
-OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8');print('market sectors:',len(us),'A-share indices:',len(a_share),'A-share industry boards:',len(boards),'weekly boards:',len(weekly_boards),'status:',payload['health']['status'])
+health_status='ok' if len(a_share)>=5 and len(us)>=8 else 'partial'
+payload={'updated':now,'method':'Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required','providers':{'us_sector':'Yahoo Finance public chart endpoint','a_share_index':'Yahoo Finance -> Tencent quote fallback','a_share_industry':'Eastmoney public quote/K-line endpoints'},'sectors':us,'a_share':a_share,'a_share_industry_boards':boards,'a_share_board_status':status,'a_share_weekly_industry_boards':weekly_boards,'weekly_risers':[n for n,v in rank if (v.get('weekly_pct') or 0)>0],'weekly_fallers':[n for n,v in reversed(rank) if (v.get('weekly_pct') or 0)<0],'a_share_weekly_risers':positive[:10],'a_share_weekly_fallers':list(reversed(negative[-10:])), 'a_share_board_risers':[x['name'] for x in boards[:5]],'a_share_board_fallers':[x['name'] for x in boards[-5:][::-1]],'health':{'us_sector_count':len(us),'a_share_index_count':len(a_share),'a_share_board_count':len(boards),'weekly_board_count':len(weekly_boards),'status':health_status}}
+OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8');print('market sectors:',len(us),'A-share indices:',len(a_share),'A-share industry boards:',len(boards),'weekly boards:',len(weekly_boards),'status:',health_status)
+sys.exit(0 if health_status=='ok' else 1)
