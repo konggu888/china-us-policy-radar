@@ -76,13 +76,13 @@
   },
   "OfficialPage:China MOFCOM": {
     "method": "direct_first_party_html",
-    "status": "error:TimeoutError",
+    "status": "error:HTTPError",
     "count": 0
   },
   "OfficialPage:China NBS": {
     "method": "direct_first_party_html",
-    "status": "ok",
-    "count": 12
+    "status": "error:URLError",
+    "count": 0
   },
   "OfficialPage:China MOD": {
     "method": "direct_first_party_html",
@@ -172,7 +172,7 @@
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 24
+    "count": 26
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
@@ -194,12 +194,12 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-09-17 01:39 UTC",
+  "updated": "2026-09-17 07:33 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 2686,
+  "total_collected": 2710,
   "new_discovery_count": 297,
-  "official_direct_count": 267,
-  "official_in_working_set": 492,
+  "official_direct_count": 255,
+  "official_in_working_set": 493,
   "category_counts": {
     "政治": 3,
     "金融": 13,
@@ -213,12 +213,12 @@
     "贸易 / 供应链": 0,
     "能源 / 资源": 7,
     "中美博弈": 0,
-    "全球政策": 2643
+    "全球政策": 2667
   },
   "region_counts": {
-    "china": 436,
-    "us": 462,
-    "global": 1788
+    "china": 443,
+    "us": 463,
+    "global": 1804
   },
   "sources": {
     "OfficialPage:White House": {
@@ -298,13 +298,13 @@
     },
     "OfficialPage:China MOFCOM": {
       "method": "direct_first_party_html",
-      "status": "error:TimeoutError",
+      "status": "error:HTTPError",
       "count": 0
     },
     "OfficialPage:China NBS": {
       "method": "direct_first_party_html",
-      "status": "ok",
-      "count": 12
+      "status": "error:URLError",
+      "count": 0
     },
     "OfficialPage:China MOD": {
       "method": "direct_first_party_html",
@@ -394,7 +394,7 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 24
+      "count": 26
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
