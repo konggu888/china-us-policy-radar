@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17 20:41 UTC",
+  "updated": "2026-09-17 23:11 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -231,9 +231,1128 @@
       "weekly_rank": 7
     }
   },
-  "a_share_industry_boards": [],
-  "a_share_board_status": "error:HTTPError",
-  "a_share_weekly_industry_boards": [],
+  "a_share_industry_boards": [
+    {
+      "code": "BK1518",
+      "name": "种子",
+      "change_pct": 7.86,
+      "price": 4952.7,
+      "change": 360.99,
+      "up_count": 10,
+      "down_count": 0,
+      "leader": "敦煌种业"
+    },
+    {
+      "code": "BK1296",
+      "name": "视频媒体",
+      "change_pct": 6.58,
+      "price": 876.93,
+      "change": 54.14,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "芒果超媒"
+    },
+    {
+      "code": "BK1341",
+      "name": "房产租赁经纪",
+      "change_pct": 5.28,
+      "price": 1450.6,
+      "change": 72.77,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "世联行"
+    },
+    {
+      "code": "BK1510",
+      "name": "其他养殖",
+      "change_pct": 5.13,
+      "price": 979.59,
+      "change": 47.8,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "华英农业"
+    },
+    {
+      "code": "BK1261",
+      "name": "种植业",
+      "change_pct": 5.06,
+      "price": 2849.12,
+      "change": 137.25,
+      "up_count": 21,
+      "down_count": 0,
+      "leader": "敦煌种业"
+    },
+    {
+      "code": "BK1523",
+      "name": "汽车经销商",
+      "change_pct": 3.96,
+      "price": 1413.47,
+      "change": 53.82,
+      "up_count": 6,
+      "down_count": 0,
+      "leader": "上海物贸"
+    },
+    {
+      "code": "BK1547",
+      "name": "跨境电商",
+      "change_pct": 3.47,
+      "price": 2734.53,
+      "change": 91.76,
+      "up_count": 7,
+      "down_count": 1,
+      "leader": "跨境通"
+    },
+    {
+      "code": "BK1489",
+      "name": "快递",
+      "change_pct": 3.32,
+      "price": 5310.64,
+      "change": 170.59,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "申通快递"
+    },
+    {
+      "code": "BK1342",
+      "name": "房地产综合服务",
+      "change_pct": 3.26,
+      "price": 1324.87,
+      "change": 41.88,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "珠江股份"
+    },
+    {
+      "code": "BK1351",
+      "name": "印染",
+      "change_pct": 3.13,
+      "price": 1517.63,
+      "change": 46.03,
+      "up_count": 3,
+      "down_count": 1,
+      "leader": "华纺股份"
+    },
+    {
+      "code": "BK1516",
+      "name": "其他种植业",
+      "change_pct": 3.13,
+      "price": 1114.76,
+      "change": 33.8,
+      "up_count": 5,
+      "down_count": 0,
+      "leader": "亚盛集团"
+    },
+    {
+      "code": "BK1016",
+      "name": "汽车服务",
+      "change_pct": 3.13,
+      "price": 959.64,
+      "change": 29.08,
+      "up_count": 9,
+      "down_count": 0,
+      "leader": "上海物贸"
+    },
+    {
+      "code": "BK1556",
+      "name": "教育运营及其他",
+      "change_pct": 3.11,
+      "price": 1276.77,
+      "change": 38.53,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "ST豆神"
+    },
+    {
+      "code": "BK1531",
+      "name": "商用载客车",
+      "change_pct": 3.05,
+      "price": 3289.35,
+      "change": 97.51,
+      "up_count": 4,
+      "down_count": 1,
+      "leader": "安凯客车"
+    },
+    {
+      "code": "BK1562",
+      "name": "人工景区",
+      "change_pct": 2.91,
+      "price": 2764.27,
+      "change": 78.09,
+      "up_count": 5,
+      "down_count": 0,
+      "leader": "大连圣亚"
+    },
+    {
+      "code": "BK1404",
+      "name": "农用机械",
+      "change_pct": 2.82,
+      "price": 1748.21,
+      "change": 48.03,
+      "up_count": 6,
+      "down_count": 4,
+      "leader": "花溪科技"
+    },
+    {
+      "code": "BK1548",
+      "name": "综合电商",
+      "change_pct": 2.62,
+      "price": 1011.84,
+      "change": 25.87,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "国联股份"
+    },
+    {
+      "code": "BK1557",
+      "name": "培训教育",
+      "change_pct": 2.39,
+      "price": 4903.35,
+      "change": 114.58,
+      "up_count": 11,
+      "down_count": 1,
+      "leader": "*ST开元"
+    },
+    {
+      "code": "BK1268",
+      "name": "互联网电商",
+      "change_pct": 2.34,
+      "price": 2849.32,
+      "change": 65.13,
+      "up_count": 15,
+      "down_count": 3,
+      "leader": "跨境通"
+    },
+    {
+      "code": "BK1429",
+      "name": "食品及饲料添加剂",
+      "change_pct": 2.29,
+      "price": 2133.35,
+      "change": 47.74,
+      "up_count": 19,
+      "down_count": 6,
+      "leader": "华宝股份"
+    },
+    {
+      "code": "BK1482",
+      "name": "航运",
+      "change_pct": 2.21,
+      "price": 1686.94,
+      "change": 36.53,
+      "up_count": 14,
+      "down_count": 4,
+      "leader": "招商轮船"
+    },
+    {
+      "code": "BK1504",
+      "name": "粮油加工",
+      "change_pct": 2.21,
+      "price": 1543.69,
+      "change": 33.31,
+      "up_count": 6,
+      "down_count": 2,
+      "leader": "金健米业"
+    },
+    {
+      "code": "BK1289",
+      "name": "大众出版",
+      "change_pct": 2.18,
+      "price": 1753.29,
+      "change": 37.41,
+      "up_count": 14,
+      "down_count": 3,
+      "leader": "内蒙新华"
+    },
+    {
+      "code": "BK1458",
+      "name": "个护小家电",
+      "change_pct": 2.08,
+      "price": 826.58,
+      "change": 16.83,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "飞科电器"
+    },
+    {
+      "code": "BK1218",
+      "name": "出版",
+      "change_pct": 2.03,
+      "price": 1956.93,
+      "change": 38.87,
+      "up_count": 19,
+      "down_count": 8,
+      "leader": "内蒙新华"
+    },
+    {
+      "code": "BK1313",
+      "name": "风电零部件",
+      "change_pct": 2.03,
+      "price": 1968.84,
+      "change": 39.09,
+      "up_count": 17,
+      "down_count": 9,
+      "leader": "锡华科技"
+    },
+    {
+      "code": "BK1517",
+      "name": "食用菌",
+      "change_pct": 2.01,
+      "price": 1283.68,
+      "change": 25.3,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "华绿生物"
+    },
+    {
+      "code": "BK0740",
+      "name": "教育",
+      "change_pct": 2.0,
+      "price": 633.14,
+      "change": 12.44,
+      "up_count": 13,
+      "down_count": 3,
+      "leader": "ST豆神"
+    },
+    {
+      "code": "BK1515",
+      "name": "粮食种植",
+      "change_pct": 1.99,
+      "price": 968.7,
+      "change": 18.93,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "苏垦农发"
+    },
+    {
+      "code": "BK1600",
+      "name": "医疗研发外包",
+      "change_pct": 1.98,
+      "price": 8698.3,
+      "change": 169.22,
+      "up_count": 27,
+      "down_count": 2,
+      "leader": "百花医药"
+    },
+    {
+      "code": "BK1354",
+      "name": "鞋帽及其他",
+      "change_pct": 1.97,
+      "price": 678.61,
+      "change": 13.12,
+      "up_count": 9,
+      "down_count": 2,
+      "leader": "天创时尚"
+    },
+    {
+      "code": "BK1462",
+      "name": "玻纤制造",
+      "change_pct": 1.87,
+      "price": 17558.17,
+      "change": 321.63,
+      "up_count": 6,
+      "down_count": 2,
+      "leader": "长海股份"
+    },
+    {
+      "code": "BK1596",
+      "name": "其他生物制品",
+      "change_pct": 1.83,
+      "price": 7721.83,
+      "change": 138.94,
+      "up_count": 33,
+      "down_count": 6,
+      "leader": "近岸蛋白"
+    },
+    {
+      "code": "BK1292",
+      "name": "广告媒体",
+      "change_pct": 1.8,
+      "price": 2264.36,
+      "change": 40.06,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "华媒控股"
+    },
+    {
+      "code": "BK1290",
+      "name": "教育出版",
+      "change_pct": 1.77,
+      "price": 2142.19,
+      "change": 37.17,
+      "up_count": 5,
+      "down_count": 5,
+      "leader": "龙版传媒"
+    },
+    {
+      "code": "BK1032",
+      "name": "风电设备",
+      "change_pct": 1.73,
+      "price": 1287.06,
+      "change": 21.86,
+      "up_count": 18,
+      "down_count": 13,
+      "leader": "锡华科技"
+    },
+    {
+      "code": "BK1519",
+      "name": "电动乘用车",
+      "change_pct": 1.72,
+      "price": 4053.66,
+      "change": 68.61,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "赛力斯"
+    },
+    {
+      "code": "BK1505",
+      "name": "其他农产品加工",
+      "change_pct": 1.71,
+      "price": 2479.98,
+      "change": 41.7,
+      "up_count": 11,
+      "down_count": 2,
+      "leader": "*ST广糖"
+    },
+    {
+      "code": "BK0546",
+      "name": "玻璃玻纤",
+      "change_pct": 1.7,
+      "price": 70205.43,
+      "change": 1172.05,
+      "up_count": 12,
+      "down_count": 5,
+      "leader": "三峡新材"
+    },
+    {
+      "code": "BK1543",
+      "name": "娱乐用品",
+      "change_pct": 1.67,
+      "price": 2586.65,
+      "change": 42.45,
+      "up_count": 12,
+      "down_count": 4,
+      "leader": "天元宠物"
+    },
+    {
+      "code": "BK1221",
+      "name": "数字媒体",
+      "change_pct": 1.65,
+      "price": 6694.73,
+      "change": 108.39,
+      "up_count": 13,
+      "down_count": 2,
+      "leader": "川网传媒"
+    },
+    {
+      "code": "BK0433",
+      "name": "农林牧渔",
+      "change_pct": 1.61,
+      "price": 14874.69,
+      "change": 235.98,
+      "up_count": 83,
+      "down_count": 28,
+      "leader": "金健米业"
+    },
+    {
+      "code": "BK1529",
+      "name": "汽车电子电气系统",
+      "change_pct": 1.6,
+      "price": 3510.17,
+      "change": 55.37,
+      "up_count": 29,
+      "down_count": 13,
+      "leader": "天海电子"
+    },
+    {
+      "code": "BK1045",
+      "name": "房地产服务",
+      "change_pct": 1.59,
+      "price": 1104.77,
+      "change": 17.34,
+      "up_count": 12,
+      "down_count": 3,
+      "leader": "世联行"
+    },
+    {
+      "code": "BK1266",
+      "name": "文娱用品",
+      "change_pct": 1.58,
+      "price": 3241.83,
+      "change": 50.52,
+      "up_count": 16,
+      "down_count": 5,
+      "leader": "天元宠物"
+    },
+    {
+      "code": "BK1262",
+      "name": "乘用车",
+      "change_pct": 1.57,
+      "price": 3487.49,
+      "change": 54.03,
+      "up_count": 5,
+      "down_count": 3,
+      "leader": "海马汽车"
+    },
+    {
+      "code": "BK1294",
+      "name": "门户网站",
+      "change_pct": 1.57,
+      "price": 3174.37,
+      "change": 48.93,
+      "up_count": 7,
+      "down_count": 2,
+      "leader": "川网传媒"
+    },
+    {
+      "code": "BK1256",
+      "name": "农产品加工",
+      "change_pct": 1.55,
+      "price": 2355.51,
+      "change": 36.0,
+      "up_count": 20,
+      "down_count": 6,
+      "leader": "金健米业"
+    },
+    {
+      "code": "BK1461",
+      "name": "玻璃制造",
+      "change_pct": 1.55,
+      "price": 1892.23,
+      "change": 28.85,
+      "up_count": 6,
+      "down_count": 3,
+      "leader": "三峡新材"
+    },
+    {
+      "code": "BK1335",
+      "name": "面板",
+      "change_pct": 1.55,
+      "price": 3386.01,
+      "change": 51.57,
+      "up_count": 26,
+      "down_count": 13,
+      "leader": "秋田微"
+    },
+    {
+      "code": "BK1264",
+      "name": "商用车",
+      "change_pct": 1.54,
+      "price": 2463.01,
+      "change": 37.37,
+      "up_count": 12,
+      "down_count": 2,
+      "leader": "安凯客车"
+    },
+    {
+      "code": "BK1044",
+      "name": "生物制品",
+      "change_pct": 1.49,
+      "price": 979.58,
+      "change": 14.4,
+      "up_count": 48,
+      "down_count": 9,
+      "leader": "近岸蛋白"
+    },
+    {
+      "code": "BK1520",
+      "name": "综合乘用车",
+      "change_pct": 1.49,
+      "price": 2528.44,
+      "change": 37.0,
+      "up_count": 2,
+      "down_count": 3,
+      "leader": "海马汽车"
+    },
+    {
+      "code": "BK1526",
+      "name": "底盘与发动机系统",
+      "change_pct": 1.48,
+      "price": 4013.35,
+      "change": 58.56,
+      "up_count": 84,
+      "down_count": 28,
+      "leader": "山子高科"
+    },
+    {
+      "code": "BK1395",
+      "name": "机床工具",
+      "change_pct": 1.47,
+      "price": 1804.0,
+      "change": 26.09,
+      "up_count": 15,
+      "down_count": 4,
+      "leader": "宇环数控"
+    },
+    {
+      "code": "BK1220",
+      "name": "广告营销",
+      "change_pct": 1.46,
+      "price": 4635.81,
+      "change": 66.73,
+      "up_count": 23,
+      "down_count": 6,
+      "leader": "旗天科技"
+    },
+    {
+      "code": "BK1524",
+      "name": "汽车综合服务",
+      "change_pct": 1.46,
+      "price": 1169.06,
+      "change": 16.79,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "阿尔特"
+    },
+    {
+      "code": "BK1291",
+      "name": "电视广播Ⅲ",
+      "change_pct": 1.45,
+      "price": 1218.38,
+      "change": 17.43,
+      "up_count": 13,
+      "down_count": 0,
+      "leader": "流金科技"
+    },
+    {
+      "code": "BK1219",
+      "name": "电视广播Ⅱ",
+      "change_pct": 1.45,
+      "price": 1218.38,
+      "change": 17.43,
+      "up_count": 13,
+      "down_count": 0,
+      "leader": "流金科技"
+    },
+    {
+      "code": "BK1293",
+      "name": "营销代理",
+      "change_pct": 1.42,
+      "price": 4417.02,
+      "change": 61.95,
+      "up_count": 21,
+      "down_count": 5,
+      "leader": "旗天科技"
+    },
+    {
+      "code": "BK1582",
+      "name": "烘焙食品",
+      "change_pct": 1.39,
+      "price": 695.82,
+      "change": 9.57,
+      "up_count": 7,
+      "down_count": 2,
+      "leader": "元祖股份"
+    },
+    {
+      "code": "BK1595",
+      "name": "原料药",
+      "change_pct": 1.39,
+      "price": 3836.54,
+      "change": 52.45,
+      "up_count": 37,
+      "down_count": 9,
+      "leader": "键凯科技"
+    },
+    {
+      "code": "BK1211",
+      "name": "汽车",
+      "change_pct": 1.35,
+      "price": 3818.43,
+      "change": 50.75,
+      "up_count": 235,
+      "down_count": 87,
+      "leader": "安凯客车"
+    },
+    {
+      "code": "BK0727",
+      "name": "医疗服务",
+      "change_pct": 1.34,
+      "price": 1431.34,
+      "change": 18.89,
+      "up_count": 40,
+      "down_count": 12,
+      "leader": "百花医药"
+    },
+    {
+      "code": "BK0481",
+      "name": "汽车零部件",
+      "change_pct": 1.33,
+      "price": 42332.6,
+      "change": 555.41,
+      "up_count": 195,
+      "down_count": 76,
+      "leader": "山子高科"
+    },
+    {
+      "code": "BK1599",
+      "name": "其他医疗服务",
+      "change_pct": 1.32,
+      "price": 4189.73,
+      "change": 54.63,
+      "up_count": 3,
+      "down_count": 2,
+      "leader": "南华生物"
+    },
+    {
+      "code": "BK1522",
+      "name": "其他运输设备",
+      "change_pct": 1.32,
+      "price": 1997.54,
+      "change": 25.98,
+      "up_count": 10,
+      "down_count": 1,
+      "leader": "ST中路B"
+    },
+    {
+      "code": "BK1319",
+      "name": "硅料硅片",
+      "change_pct": 1.32,
+      "price": 1849.19,
+      "change": 24.05,
+      "up_count": 2,
+      "down_count": 3,
+      "leader": "华民股份"
+    },
+    {
+      "code": "BK1542",
+      "name": "文化用品",
+      "change_pct": 1.31,
+      "price": 2684.44,
+      "change": 34.72,
+      "up_count": 4,
+      "down_count": 1,
+      "leader": "创源股份"
+    },
+    {
+      "code": "BK0486",
+      "name": "传媒",
+      "change_pct": 1.3,
+      "price": 9776.63,
+      "change": 125.45,
+      "up_count": 97,
+      "down_count": 27,
+      "leader": "内蒙新华"
+    },
+    {
+      "code": "BK1525",
+      "name": "车身附件及饰件",
+      "change_pct": 1.3,
+      "price": 4683.68,
+      "change": 60.06,
+      "up_count": 29,
+      "down_count": 14,
+      "leader": "金杯汽车"
+    },
+    {
+      "code": "BK1603",
+      "name": "体外诊断",
+      "change_pct": 1.27,
+      "price": 3263.14,
+      "change": 40.98,
+      "up_count": 37,
+      "down_count": 2,
+      "leader": "康为世纪"
+    },
+    {
+      "code": "BK1299",
+      "name": "影视动漫制作",
+      "change_pct": 1.26,
+      "price": 3675.39,
+      "change": 45.83,
+      "up_count": 12,
+      "down_count": 2,
+      "leader": "中视传媒"
+    },
+    {
+      "code": "BK1222",
+      "name": "影视院线",
+      "change_pct": 1.25,
+      "price": 3552.29,
+      "change": 44.02,
+      "up_count": 15,
+      "down_count": 3,
+      "leader": "中视传媒"
+    },
+    {
+      "code": "BK1506",
+      "name": "农业综合Ⅲ",
+      "change_pct": 1.24,
+      "price": 2250.94,
+      "change": 27.5,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "大禹节水"
+    },
+    {
+      "code": "BK1257",
+      "name": "农业综合Ⅱ",
+      "change_pct": 1.24,
+      "price": 2250.94,
+      "change": 27.5,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "大禹节水"
+    },
+    {
+      "code": "BK1300",
+      "name": "院线",
+      "change_pct": 1.23,
+      "price": 601.62,
+      "change": 7.29,
+      "up_count": 3,
+      "down_count": 1,
+      "leader": "幸福蓝海"
+    },
+    {
+      "code": "BK1492",
+      "name": "焦炭Ⅲ",
+      "change_pct": 1.2,
+      "price": 827.84,
+      "change": 9.81,
+      "up_count": 2,
+      "down_count": 4,
+      "leader": "云煤能源"
+    },
+    {
+      "code": "BK1249",
+      "name": "焦炭Ⅱ",
+      "change_pct": 1.2,
+      "price": 827.84,
+      "change": 9.81,
+      "up_count": 2,
+      "down_count": 4,
+      "leader": "云煤能源"
+    },
+    {
+      "code": "BK1457",
+      "name": "厨房小家电",
+      "change_pct": 1.16,
+      "price": 2007.11,
+      "change": 23.09,
+      "up_count": 8,
+      "down_count": 2,
+      "leader": "利仁科技"
+    },
+    {
+      "code": "BK1400",
+      "name": "制冷空调设备",
+      "change_pct": 1.16,
+      "price": 4366.4,
+      "change": 50.06,
+      "up_count": 13,
+      "down_count": 6,
+      "leader": "同飞股份"
+    },
+    {
+      "code": "BK1244",
+      "name": "小家电",
+      "change_pct": 1.15,
+      "price": 2094.4,
+      "change": 23.79,
+      "up_count": 18,
+      "down_count": 5,
+      "leader": "欧圣电气"
+    },
+    {
+      "code": "BK1352",
+      "name": "非运动服装",
+      "change_pct": 1.14,
+      "price": 2081.69,
+      "change": 23.53,
+      "up_count": 25,
+      "down_count": 12,
+      "leader": "龙头股份"
+    },
+    {
+      "code": "BK1443",
+      "name": "橡胶助剂",
+      "change_pct": 1.14,
+      "price": 4535.83,
+      "change": 51.24,
+      "up_count": 1,
+      "down_count": 1,
+      "leader": "彤程新材"
+    },
+    {
+      "code": "BK0450",
+      "name": "航运港口",
+      "change_pct": 1.14,
+      "price": 12589.46,
+      "change": 141.94,
+      "up_count": 22,
+      "down_count": 11,
+      "leader": "招商轮船"
+    },
+    {
+      "code": "BK1546",
+      "name": "电商服务",
+      "change_pct": 1.14,
+      "price": 2248.1,
+      "change": 25.23,
+      "up_count": 7,
+      "down_count": 1,
+      "leader": "凯淳股份"
+    },
+    {
+      "code": "BK0465",
+      "name": "化学制药",
+      "change_pct": 1.12,
+      "price": 35122.35,
+      "change": 389.77,
+      "up_count": 124,
+      "down_count": 32,
+      "leader": "金石亚药"
+    },
+    {
+      "code": "BK1602",
+      "name": "诊断服务",
+      "change_pct": 1.1,
+      "price": 5566.45,
+      "change": 60.6,
+      "up_count": 3,
+      "down_count": 1,
+      "leader": "兰卫医学"
+    },
+    {
+      "code": "BK1585",
+      "name": "乳品",
+      "change_pct": 1.09,
+      "price": 2180.51,
+      "change": 23.48,
+      "up_count": 18,
+      "down_count": 1,
+      "leader": "骑士乳业"
+    },
+    {
+      "code": "BK1225",
+      "name": "服装家纺",
+      "change_pct": 1.07,
+      "price": 2383.47,
+      "change": 25.22,
+      "up_count": 39,
+      "down_count": 19,
+      "leader": "龙头股份"
+    },
+    {
+      "code": "BK1509",
+      "name": "水产饲料",
+      "change_pct": 1.06,
+      "price": 6078.37,
+      "change": 63.58,
+      "up_count": 2,
+      "down_count": 2,
+      "leader": "天马科技"
+    },
+    {
+      "code": "BK1402",
+      "name": "楼宇设备",
+      "change_pct": 1.05,
+      "price": 2295.77,
+      "change": 23.81,
+      "up_count": 9,
+      "down_count": 6,
+      "leader": "快意电梯"
+    },
+    {
+      "code": "BK1272",
+      "name": "旅游及景区",
+      "change_pct": 1.04,
+      "price": 2925.98,
+      "change": 30.21,
+      "up_count": 22,
+      "down_count": 4,
+      "leader": "大连圣亚"
+    },
+    {
+      "code": "BK1578",
+      "name": "其他酒类",
+      "change_pct": 1.03,
+      "price": 1611.94,
+      "change": 16.38,
+      "up_count": 9,
+      "down_count": 2,
+      "leader": "会稽山"
+    },
+    {
+      "code": "BK1514",
+      "name": "水产养殖",
+      "change_pct": 1.02,
+      "price": 663.29,
+      "change": 6.69,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "大湖股份"
+    },
+    {
+      "code": "BK1538",
+      "name": "瓷砖地板",
+      "change_pct": 1.02,
+      "price": 1479.65,
+      "change": 14.92,
+      "up_count": 8,
+      "down_count": 4,
+      "leader": "爱丽家居"
+    },
+    {
+      "code": "BK1594",
+      "name": "化学制剂",
+      "change_pct": 1.01,
+      "price": 3696.96,
+      "change": 37.14,
+      "up_count": 87,
+      "down_count": 23,
+      "leader": "金石亚药"
+    },
+    {
+      "code": "BK1527",
+      "name": "轮胎轮毂",
+      "change_pct": 1.0,
+      "price": 2626.02,
+      "change": 25.94,
+      "up_count": 13,
+      "down_count": 6,
+      "leader": "兆丰股份"
+    },
+    {
+      "code": "BK1545",
+      "name": "特种纸",
+      "change_pct": 0.98,
+      "price": 2434.57,
+      "change": 23.59,
+      "up_count": 9,
+      "down_count": 5,
+      "leader": "恒丰纸业"
+    },
+    {
+      "code": "BK1528",
+      "name": "其他汽车零部件",
+      "change_pct": 0.96,
+      "price": 4551.91,
+      "change": 43.16,
+      "up_count": 40,
+      "down_count": 15,
+      "leader": "天汽模"
+    }
+  ],
+  "a_share_board_status": "ok",
+  "a_share_weekly_industry_boards": [
+    {
+      "code": "BK1341",
+      "name": "房产租赁经纪",
+      "change_pct": 5.28,
+      "price": 1450.6,
+      "change": 72.77,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "世联行",
+      "weekly_pct": 5.54,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1510",
+      "name": "其他养殖",
+      "change_pct": 5.13,
+      "price": 979.59,
+      "change": 47.8,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "华英农业",
+      "weekly_pct": 5.14,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1351",
+      "name": "印染",
+      "change_pct": 3.13,
+      "price": 1517.63,
+      "change": 46.03,
+      "up_count": 3,
+      "down_count": 1,
+      "leader": "华纺股份",
+      "weekly_pct": 3.19,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1296",
+      "name": "视频媒体",
+      "change_pct": 6.58,
+      "price": 876.93,
+      "change": 54.14,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "芒果超媒",
+      "weekly_pct": 2.08,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1523",
+      "name": "汽车经销商",
+      "change_pct": 3.96,
+      "price": 1413.47,
+      "change": 53.82,
+      "up_count": 6,
+      "down_count": 0,
+      "leader": "上海物贸",
+      "weekly_pct": 1.41,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1557",
+      "name": "培训教育",
+      "change_pct": 2.39,
+      "price": 4903.35,
+      "change": 114.58,
+      "up_count": 11,
+      "down_count": 1,
+      "leader": "*ST开元",
+      "weekly_pct": 0.78,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1404",
+      "name": "农用机械",
+      "change_pct": 2.82,
+      "price": 1748.21,
+      "change": 48.03,
+      "up_count": 6,
+      "down_count": 4,
+      "leader": "花溪科技",
+      "weekly_pct": 0.05,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1518",
+      "name": "种子",
+      "change_pct": 7.86,
+      "price": 4952.7,
+      "change": 360.99,
+      "up_count": 10,
+      "down_count": 0,
+      "leader": "敦煌种业",
+      "weekly_pct": -1.73,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1562",
+      "name": "人工景区",
+      "change_pct": 2.91,
+      "price": 2764.27,
+      "change": 78.09,
+      "up_count": 5,
+      "down_count": 0,
+      "leader": "大连圣亚",
+      "weekly_pct": -6.11,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    }
+  ],
   "weekly_risers": [
     "医疗",
     "科技",
@@ -249,15 +1368,146 @@
     "房地产",
     "材料"
   ],
-  "a_share_weekly_risers": [],
-  "a_share_weekly_fallers": [],
-  "a_share_board_risers": [],
-  "a_share_board_fallers": [],
+  "a_share_weekly_risers": [
+    {
+      "code": "BK1341",
+      "name": "房产租赁经纪",
+      "change_pct": 5.28,
+      "price": 1450.6,
+      "change": 72.77,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "世联行",
+      "weekly_pct": 5.54,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1510",
+      "name": "其他养殖",
+      "change_pct": 5.13,
+      "price": 979.59,
+      "change": 47.8,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "华英农业",
+      "weekly_pct": 5.14,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1351",
+      "name": "印染",
+      "change_pct": 3.13,
+      "price": 1517.63,
+      "change": 46.03,
+      "up_count": 3,
+      "down_count": 1,
+      "leader": "华纺股份",
+      "weekly_pct": 3.19,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1296",
+      "name": "视频媒体",
+      "change_pct": 6.58,
+      "price": 876.93,
+      "change": 54.14,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "芒果超媒",
+      "weekly_pct": 2.08,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1523",
+      "name": "汽车经销商",
+      "change_pct": 3.96,
+      "price": 1413.47,
+      "change": 53.82,
+      "up_count": 6,
+      "down_count": 0,
+      "leader": "上海物贸",
+      "weekly_pct": 1.41,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1557",
+      "name": "培训教育",
+      "change_pct": 2.39,
+      "price": 4903.35,
+      "change": 114.58,
+      "up_count": 11,
+      "down_count": 1,
+      "leader": "*ST开元",
+      "weekly_pct": 0.78,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1404",
+      "name": "农用机械",
+      "change_pct": 2.82,
+      "price": 1748.21,
+      "change": 48.03,
+      "up_count": 6,
+      "down_count": 4,
+      "leader": "花溪科技",
+      "weekly_pct": 0.05,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    }
+  ],
+  "a_share_weekly_fallers": [
+    {
+      "code": "BK1562",
+      "name": "人工景区",
+      "change_pct": 2.91,
+      "price": 2764.27,
+      "change": 78.09,
+      "up_count": 5,
+      "down_count": 0,
+      "leader": "大连圣亚",
+      "weekly_pct": -6.11,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    },
+    {
+      "code": "BK1518",
+      "name": "种子",
+      "change_pct": 7.86,
+      "price": 4952.7,
+      "change": 360.99,
+      "up_count": 10,
+      "down_count": 0,
+      "leader": "敦煌种业",
+      "weekly_pct": -1.73,
+      "weekly_period_start": "2026-09-11",
+      "weekly_period_end": "2026-09-17"
+    }
+  ],
+  "a_share_board_risers": [
+    "种子",
+    "视频媒体",
+    "房产租赁经纪",
+    "其他养殖",
+    "种植业"
+  ],
+  "a_share_board_fallers": [
+    "其他汽车零部件",
+    "特种纸",
+    "轮胎轮毂",
+    "化学制剂",
+    "瓷砖地板"
+  ],
   "health": {
     "us_sector_count": 11,
     "a_share_index_count": 7,
-    "a_share_board_count": 0,
-    "weekly_board_count": 0,
+    "a_share_board_count": 100,
+    "weekly_board_count": 9,
     "status": "ok"
   }
 }
