@@ -91,7 +91,7 @@ function renderEvidenceTimeline(sc){
 function renderCalibrationAudit(){
   const box=document.getElementById('calibrationAudit'); if(!box)return;
   const rows=window.__calibrationAudit||[];
-  box.innerHTML=rows.length?rows.slice(0,12).map(x=>'<div class="card"><b>'+esc(x.trigger||'')+'</b><div class="muted mini">样本 '+x.sampleSize+' · 历史明显偏离率 '+(x.historicalSignalRate??'—')+' · 因子 '+x.baseFactor+' → '+x.appliedFactor+' · '+esc(x.direction)+'</div><div class="muted mini">'+esc(x.reason||'')+' · 约束 '+esc(x.guardrail||'')+'</div></div>').join(''):'<div class="muted mini">暂无已应用的校准变更。</div>';
+  box.innerHTML=rows.length?rows.slice(0,12).map(x=>'<div class="card"><b>'+esc(x.trigger||'')+'</b><div class="muted mini">样本 '+x.sampleSize+' · 历史明显偏离率 '+(x.historicalSignalRate??'—')+' · 因子 '+x.baseFactor+' → '+x.appliedFactor+' · '+esc(x.direction)+'</div><div class="muted mini">'+esc((x.reasons&&x.reasons.length)?x.reasons.join(', '):(x.reason||''))+' · '+esc(x.status||'')+' · 回滚 '+(x.rollbackAvailable?'可用':'无历史版本')+'</div></div>').join(''):'<div class="muted mini">暂无已应用的校准变更。</div>';
 }
 function renderTriggerCalibration(){
   const box=document.getElementById('triggerCalibration'); if(!box)return;
