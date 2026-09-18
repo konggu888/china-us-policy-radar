@@ -1,0 +1,3075 @@
+{
+  "schema_version": "2.0",
+  "generatedAt": "2026-09-18T23:41:00+08:00",
+  "version": "2.0.0-mock",
+  "globalEvents": [
+    {
+      "id": "evt-eu-port-001",
+      "title": "欧盟港口/贸易扰动（Mock）",
+      "summary": "欧盟港口/贸易扰动（Mock）",
+      "category": "LOGISTICS",
+      "importance": "HIGH",
+      "actor": {
+        "type": "REGION",
+        "country": "EU",
+        "name": "EU"
+      },
+      "affectedCountries": [
+        "EU",
+        "CN",
+        "US"
+      ],
+      "source": {
+        "provider": "mock",
+        "publishedAt": "2026-09-18T12:00:00Z",
+        "fetchedAt": "2026-09-18T23:41:00+08:00",
+        "credibility": 0.85
+      },
+      "status": "DEVELOPING",
+      "triggerRole": "PRIMARY_TRIGGER",
+      "impact": {
+        "china": -0.2,
+        "us": -0.15,
+        "globalTrade": -0.6,
+        "logistics": -0.7,
+        "finance": -0.2,
+        "energy": -0.2,
+        "technology": -0.1
+      },
+      "channels": [
+        {
+          "id": "ch-port",
+          "name": "SHIPPING",
+          "intensity": 0.85,
+          "description": "港口与航运成本传导"
+        }
+      ],
+      "tags": [
+        "EU",
+        "LOGISTICS"
+      ]
+    },
+    {
+      "id": "evt-middle-east-001",
+      "title": "中东航道风险上升（Mock）",
+      "summary": "中东航道风险上升（Mock）",
+      "category": "GEOPOLITICS",
+      "importance": "CRITICAL",
+      "actor": {
+        "type": "REGION",
+        "country": "ME",
+        "name": "ME"
+      },
+      "affectedCountries": [
+        "ME",
+        "CN",
+        "US"
+      ],
+      "source": {
+        "provider": "mock",
+        "publishedAt": "2026-09-18T12:00:00Z",
+        "fetchedAt": "2026-09-18T23:41:00+08:00",
+        "credibility": 0.85
+      },
+      "status": "DEVELOPING",
+      "triggerRole": "CATALYST",
+      "impact": {
+        "china": -0.2,
+        "us": -0.15,
+        "globalTrade": -0.6,
+        "logistics": -0.7,
+        "finance": -0.2,
+        "energy": -0.2,
+        "technology": -0.1
+      },
+      "channels": [
+        {
+          "id": "ch-energy",
+          "name": "ENERGY",
+          "intensity": 0.8,
+          "description": "能源价格与运输风险传导"
+        },
+        {
+          "id": "ch-shipping",
+          "name": "SHIPPING",
+          "intensity": 0.9,
+          "description": "航线与保险成本传导"
+        }
+      ],
+      "tags": [
+        "ME",
+        "GEOPOLITICS"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "id": "resp-cn-r1",
+      "round": 1,
+      "actor": "CN",
+      "responseType": "POLICY",
+      "title": "中国第1轮应对",
+      "description": "扩大供应链替代、贸易伙伴与能源运输缓冲。",
+      "triggerEventIds": [
+        "evt-eu-port-001",
+        "evt-middle-east-001"
+      ],
+      "expectedTargets": [
+        "供应链",
+        "贸易",
+        "能源"
+      ],
+      "intensity": 0.55,
+      "expectedTiming": "T7D",
+      "impacts": {
+        "trade": 0.15,
+        "currency": -0.05,
+        "equities": 0,
+        "bonds": 0.05,
+        "commodities": 0.1,
+        "crypto": 0,
+        "logistics": 0.2
+      },
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "resp-us-r2",
+      "round": 2,
+      "actor": "US",
+      "responseType": "POLICY",
+      "title": "美国第2轮加码/施压",
+      "description": "可能通过贸易、技术或投资规则工具增加压力。",
+      "triggerEventIds": [
+        "evt-eu-port-001",
+        "evt-middle-east-001"
+      ],
+      "expectedTargets": [
+        "技术",
+        "资本",
+        "贸易"
+      ],
+      "intensity": 0.55,
+      "expectedTiming": "T15D",
+      "impacts": {
+        "trade": -0.25,
+        "currency": -0.1,
+        "equities": -0.15,
+        "bonds": 0.1,
+        "commodities": 0.15,
+        "crypto": 0,
+        "logistics": -0.1
+      },
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "resp-cn-r3",
+      "round": 3,
+      "actor": "CN",
+      "responseType": "DIPLOMACY",
+      "title": "中国第3轮多剧本",
+      "description": "A硬碰撞、B结构性谈判、C第三方迂回。",
+      "triggerEventIds": [
+        "evt-eu-port-001",
+        "evt-middle-east-001"
+      ],
+      "expectedTargets": [
+        "贸易",
+        "产业",
+        "第三方市场"
+      ],
+      "intensity": 0.65,
+      "expectedTiming": "T30D",
+      "impacts": {
+        "trade": 0.05,
+        "currency": 0,
+        "equities": 0,
+        "bonds": 0.05,
+        "commodities": 0.1,
+        "crypto": 0,
+        "logistics": 0.15
+      },
+      "confidence": "MEDIUM"
+    }
+  ],
+  "time_horizons": [
+    {
+      "id": "T1D",
+      "label": "超短期 1天",
+      "startOffsetDays": 0,
+      "endOffsetDays": 1
+    },
+    {
+      "id": "T7D",
+      "label": "短期 1周",
+      "startOffsetDays": 1,
+      "endOffsetDays": 7
+    },
+    {
+      "id": "T15D",
+      "label": "短期 15天",
+      "startOffsetDays": 7,
+      "endOffsetDays": 15
+    },
+    {
+      "id": "T30D",
+      "label": "中短期 30天",
+      "startOffsetDays": 15,
+      "endOffsetDays": 30
+    },
+    {
+      "id": "T180D",
+      "label": "中长期 6个月",
+      "startOffsetDays": 30,
+      "endOffsetDays": 180
+    },
+    {
+      "id": "T365D",
+      "label": "长期 1年",
+      "startOffsetDays": 180,
+      "endOffsetDays": 365
+    }
+  ],
+  "state": {
+    "globalRisk": 0.68,
+    "tradeRisk": 0.72,
+    "logisticsRisk": 0.84,
+    "financialRisk": 0.45,
+    "geopoliticalRisk": 0.66
+  },
+  "dashboard": {
+    "headline": "全球第三方事件 → 中美多轮博弈 → 多时间窗口行动矩阵（Mock）",
+    "triggerEvents": [
+      "evt-eu-port-001",
+      "evt-middle-east-001"
+    ],
+    "activeScenarios": [
+      "scenario-a",
+      "scenario-b",
+      "scenario-c"
+    ],
+    "immediateActions": [
+      "复核USD/CNY与流动性敞口",
+      "核算关税与物流成本",
+      "检查Wise/SEPA/离岸账户通道状态",
+      "建立现金流预警线"
+    ],
+    "warnings": [
+      "第三方转口必须进行原产地、海关、出口管制与制裁合规审查",
+      "情景为条件路径，不是确定性预测"
+    ]
+  },
+  "scenarioTree": {
+    "id": "tree-mock-001",
+    "rootEventId": "evt-eu-port-001",
+    "title": "全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本",
+    "rounds": [
+      {
+        "round": 1,
+        "actor": "CN",
+        "title": "中国第1轮应对",
+        "responseIds": [
+          "resp-cn-r1"
+        ]
+      },
+      {
+        "round": 2,
+        "actor": "US",
+        "title": "美国第2轮加码/施压",
+        "responseIds": [
+          "resp-us-r2"
+        ]
+      },
+      {
+        "round": 3,
+        "actor": "CN",
+        "title": "中国第3轮多剧本",
+        "responseIds": [
+          "resp-cn-r3"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "scenario-a",
+        "type": "HARD_DECOUPLING",
+        "code": "A",
+        "title": "全面脱钩 / 硬碰撞",
+        "description": "新增强制措施扩大到贸易、技术或资本渠道。",
+        "prerequisites": [
+          "至少一个第三方或中美事件被确认",
+          "存在可验证的政策响应"
+        ],
+        "triggers": [
+          {
+            "condition": "新增强制措施扩大到贸易、技术或资本渠道。",
+            "direction": "OCCUR"
+          }
+        ],
+        "chain": [
+          {
+            "id": "scenario-a-1",
+            "order": 1,
+            "actor": "CN",
+            "action": "第1轮应对",
+            "mechanism": "降低直接冲击并调整供应链",
+            "consequence": "其他参与方重新评估政策工具",
+            "nextNodeIds": [
+              "scenario-a-2"
+            ],
+            "affectedDomains": [
+              "TRADE",
+              "INVESTMENT"
+            ]
+          },
+          {
+            "id": "scenario-a-2",
+            "order": 2,
+            "actor": "US",
+            "action": "第2轮加码/施压",
+            "mechanism": "通过贸易、技术、资本或规则工具改变成本",
+            "consequence": "进入第3轮路径选择",
+            "nextNodeIds": [
+              "scenario-a-3"
+            ],
+            "affectedDomains": [
+              "TRADE",
+              "INVESTMENT"
+            ]
+          },
+          {
+            "id": "scenario-a-3",
+            "order": 3,
+            "actor": "CN",
+            "action": "全面脱钩 / 硬碰撞",
+            "mechanism": "新增强制措施扩大到贸易、技术或资本渠道。",
+            "consequence": "进入对应时间窗口并持续验证触发器",
+            "nextNodeIds": [],
+            "affectedDomains": [
+              "TRADE",
+              "INVESTMENT",
+              "LIFE"
+            ]
+          }
+        ],
+        "confidence": "MEDIUM",
+        "sensitivity": 0.6,
+        "horizons": [
+          {
+            "horizon": "T1D",
+            "label": "超短期 1天",
+            "startOffsetDays": 0,
+            "endOffsetDays": 1,
+            "keySignals": [
+              {
+                "id": "scenario-a-T1D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-a-T1D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.75,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "NEGATIVE",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-a-inv-do-T1D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-inv-dont-T1D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-inv-watch-T1D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-a-trade-do-T1D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-trade-dont-T1D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-trade-watch-T1D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-a-life-do-T1D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-life-dont-T1D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-life-watch-T1D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T7D",
+            "label": "短期 1周",
+            "startOffsetDays": 1,
+            "endOffsetDays": 7,
+            "keySignals": [
+              {
+                "id": "scenario-a-T7D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-a-T7D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.75,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "NEGATIVE",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-a-inv-do-T7D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-inv-dont-T7D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-inv-watch-T7D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-a-trade-do-T7D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-trade-dont-T7D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-trade-watch-T7D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-a-life-do-T7D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-life-dont-T7D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-life-watch-T7D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T15D",
+            "label": "短期 15天",
+            "startOffsetDays": 7,
+            "endOffsetDays": 15,
+            "keySignals": [
+              {
+                "id": "scenario-a-T15D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-a-T15D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.75,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "NEGATIVE",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-a-inv-do-T15D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-inv-dont-T15D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-inv-watch-T15D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-a-trade-do-T15D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-trade-dont-T15D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-trade-watch-T15D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-a-life-do-T15D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-life-dont-T15D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-life-watch-T15D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T30D",
+            "label": "中短期 30天",
+            "startOffsetDays": 15,
+            "endOffsetDays": 30,
+            "keySignals": [
+              {
+                "id": "scenario-a-T30D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-a-T30D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.75,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "NEGATIVE",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-a-inv-do-T30D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-inv-dont-T30D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-inv-watch-T30D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-a-trade-do-T30D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-trade-dont-T30D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-trade-watch-T30D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-a-life-do-T30D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-life-dont-T30D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-life-watch-T30D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T180D",
+            "label": "中长期 6个月",
+            "startOffsetDays": 30,
+            "endOffsetDays": 180,
+            "keySignals": [
+              {
+                "id": "scenario-a-T180D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-a-T180D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.75,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "NEGATIVE",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-a-inv-do-T180D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-inv-dont-T180D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-inv-watch-T180D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-a-trade-do-T180D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-trade-dont-T180D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-trade-watch-T180D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-a-life-do-T180D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-life-dont-T180D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-life-watch-T180D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T365D",
+            "label": "长期 1年",
+            "startOffsetDays": 180,
+            "endOffsetDays": 365,
+            "keySignals": [
+              {
+                "id": "scenario-a-T365D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-a-T365D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.75,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "NEGATIVE",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-a-inv-do-T365D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-inv-dont-T365D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-inv-watch-T365D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-a-trade-do-T365D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-trade-dont-T365D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-trade-watch-T365D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-a-life-do-T365D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-a-life-dont-T365D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-a-life-watch-T365D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "scenario-b",
+        "type": "STRUCTURAL_NEGOTIATION",
+        "code": "B",
+        "title": "结构性谈判 / 局部缓和",
+        "description": "竞争继续，但出现可核验的沟通、豁免、延期或执行强度下降。",
+        "prerequisites": [
+          "至少一个第三方或中美事件被确认",
+          "存在可验证的政策响应"
+        ],
+        "triggers": [
+          {
+            "condition": "竞争继续，但出现可核验的沟通、豁免、延期或执行强度下降。",
+            "direction": "OCCUR"
+          }
+        ],
+        "chain": [
+          {
+            "id": "scenario-b-1",
+            "order": 1,
+            "actor": "CN",
+            "action": "第1轮应对",
+            "mechanism": "降低直接冲击并调整供应链",
+            "consequence": "其他参与方重新评估政策工具",
+            "nextNodeIds": [
+              "scenario-b-2"
+            ],
+            "affectedDomains": [
+              "TRADE",
+              "INVESTMENT"
+            ]
+          },
+          {
+            "id": "scenario-b-2",
+            "order": 2,
+            "actor": "US",
+            "action": "第2轮加码/施压",
+            "mechanism": "通过贸易、技术、资本或规则工具改变成本",
+            "consequence": "进入第3轮路径选择",
+            "nextNodeIds": [
+              "scenario-b-3"
+            ],
+            "affectedDomains": [
+              "TRADE",
+              "INVESTMENT"
+            ]
+          },
+          {
+            "id": "scenario-b-3",
+            "order": 3,
+            "actor": "CN",
+            "action": "结构性谈判 / 局部缓和",
+            "mechanism": "竞争继续，但出现可核验的沟通、豁免、延期或执行强度下降。",
+            "consequence": "进入对应时间窗口并持续验证触发器",
+            "nextNodeIds": [],
+            "affectedDomains": [
+              "TRADE",
+              "INVESTMENT",
+              "LIFE"
+            ]
+          }
+        ],
+        "confidence": "MEDIUM",
+        "sensitivity": 0.5,
+        "horizons": [
+          {
+            "horizon": "T1D",
+            "label": "超短期 1天",
+            "startOffsetDays": 0,
+            "endOffsetDays": 1,
+            "keySignals": [
+              {
+                "id": "scenario-b-T1D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-b-T1D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "STABLE",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-b-inv-do-T1D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-inv-dont-T1D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-inv-watch-T1D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-b-trade-do-T1D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-trade-dont-T1D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-trade-watch-T1D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-b-life-do-T1D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-life-dont-T1D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-life-watch-T1D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T7D",
+            "label": "短期 1周",
+            "startOffsetDays": 1,
+            "endOffsetDays": 7,
+            "keySignals": [
+              {
+                "id": "scenario-b-T7D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-b-T7D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "STABLE",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-b-inv-do-T7D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-inv-dont-T7D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-inv-watch-T7D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-b-trade-do-T7D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-trade-dont-T7D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-trade-watch-T7D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-b-life-do-T7D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-life-dont-T7D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-life-watch-T7D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T15D",
+            "label": "短期 15天",
+            "startOffsetDays": 7,
+            "endOffsetDays": 15,
+            "keySignals": [
+              {
+                "id": "scenario-b-T15D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-b-T15D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "STABLE",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-b-inv-do-T15D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-inv-dont-T15D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-inv-watch-T15D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-b-trade-do-T15D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-trade-dont-T15D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-trade-watch-T15D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-b-life-do-T15D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-life-dont-T15D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-life-watch-T15D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T30D",
+            "label": "中短期 30天",
+            "startOffsetDays": 15,
+            "endOffsetDays": 30,
+            "keySignals": [
+              {
+                "id": "scenario-b-T30D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-b-T30D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "STABLE",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-b-inv-do-T30D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-inv-dont-T30D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-inv-watch-T30D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-b-trade-do-T30D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-trade-dont-T30D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-trade-watch-T30D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-b-life-do-T30D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-life-dont-T30D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-life-watch-T30D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T180D",
+            "label": "中长期 6个月",
+            "startOffsetDays": 30,
+            "endOffsetDays": 180,
+            "keySignals": [
+              {
+                "id": "scenario-b-T180D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-b-T180D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "STABLE",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-b-inv-do-T180D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-inv-dont-T180D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-inv-watch-T180D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-b-trade-do-T180D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-trade-dont-T180D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-trade-watch-T180D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-b-life-do-T180D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-life-dont-T180D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-life-watch-T180D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T365D",
+            "label": "长期 1年",
+            "startOffsetDays": 180,
+            "endOffsetDays": 365,
+            "keySignals": [
+              {
+                "id": "scenario-b-T365D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-b-T365D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "STABLE",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.55,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-b-inv-do-T365D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-inv-dont-T365D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-inv-watch-T365D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-b-trade-do-T365D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-trade-dont-T365D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-trade-watch-T365D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-b-life-do-T365D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-b-life-dont-T365D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-b-life-watch-T365D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "scenario-c",
+        "type": "THIRD_PARTY_DIVERSION",
+        "code": "C",
+        "title": "第三方迂回 / 市场转移",
+        "description": "贸易、生产或资金流通过第三方市场重新配置，同时合规要求提高。",
+        "prerequisites": [
+          "至少一个第三方或中美事件被确认",
+          "存在可验证的政策响应"
+        ],
+        "triggers": [
+          {
+            "condition": "贸易、生产或资金流通过第三方市场重新配置，同时合规要求提高。",
+            "direction": "OCCUR"
+          }
+        ],
+        "chain": [
+          {
+            "id": "scenario-c-1",
+            "order": 1,
+            "actor": "CN",
+            "action": "第1轮应对",
+            "mechanism": "降低直接冲击并调整供应链",
+            "consequence": "其他参与方重新评估政策工具",
+            "nextNodeIds": [
+              "scenario-c-2"
+            ],
+            "affectedDomains": [
+              "TRADE",
+              "INVESTMENT"
+            ]
+          },
+          {
+            "id": "scenario-c-2",
+            "order": 2,
+            "actor": "US",
+            "action": "第2轮加码/施压",
+            "mechanism": "通过贸易、技术、资本或规则工具改变成本",
+            "consequence": "进入第3轮路径选择",
+            "nextNodeIds": [
+              "scenario-c-3"
+            ],
+            "affectedDomains": [
+              "TRADE",
+              "INVESTMENT"
+            ]
+          },
+          {
+            "id": "scenario-c-3",
+            "order": 3,
+            "actor": "CN",
+            "action": "第三方迂回 / 市场转移",
+            "mechanism": "贸易、生产或资金流通过第三方市场重新配置，同时合规要求提高。",
+            "consequence": "进入对应时间窗口并持续验证触发器",
+            "nextNodeIds": [],
+            "affectedDomains": [
+              "TRADE",
+              "INVESTMENT",
+              "LIFE"
+            ]
+          }
+        ],
+        "confidence": "MEDIUM",
+        "sensitivity": 0.58,
+        "horizons": [
+          {
+            "horizon": "T1D",
+            "label": "超短期 1天",
+            "startOffsetDays": 0,
+            "endOffsetDays": 1,
+            "keySignals": [
+              {
+                "id": "scenario-c-T1D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-c-T1D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.65,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-c-inv-do-T1D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-inv-dont-T1D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-inv-watch-T1D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-c-trade-do-T1D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-trade-dont-T1D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-trade-watch-T1D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-c-life-do-T1D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-life-dont-T1D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-life-watch-T1D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T7D",
+            "label": "短期 1周",
+            "startOffsetDays": 1,
+            "endOffsetDays": 7,
+            "keySignals": [
+              {
+                "id": "scenario-c-T7D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-c-T7D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.65,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-c-inv-do-T7D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-inv-dont-T7D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-inv-watch-T7D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-c-trade-do-T7D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-trade-dont-T7D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-trade-watch-T7D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-c-life-do-T7D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-life-dont-T7D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-life-watch-T7D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T15D",
+            "label": "短期 15天",
+            "startOffsetDays": 7,
+            "endOffsetDays": 15,
+            "keySignals": [
+              {
+                "id": "scenario-c-T15D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-c-T15D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.65,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-c-inv-do-T15D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-inv-dont-T15D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-inv-watch-T15D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-c-trade-do-T15D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-trade-dont-T15D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-trade-watch-T15D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-c-life-do-T15D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-life-dont-T15D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-life-watch-T15D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T30D",
+            "label": "中短期 30天",
+            "startOffsetDays": 15,
+            "endOffsetDays": 30,
+            "keySignals": [
+              {
+                "id": "scenario-c-T30D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-c-T30D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.65,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-c-inv-do-T30D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-inv-dont-T30D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-inv-watch-T30D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-c-trade-do-T30D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-trade-dont-T30D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-trade-watch-T30D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-c-life-do-T30D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-life-dont-T30D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-life-watch-T30D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T180D",
+            "label": "中长期 6个月",
+            "startOffsetDays": 30,
+            "endOffsetDays": 180,
+            "keySignals": [
+              {
+                "id": "scenario-c-T180D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-c-T180D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.65,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-c-inv-do-T180D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-inv-dont-T180D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-inv-watch-T180D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-c-trade-do-T180D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-trade-dont-T180D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-trade-watch-T180D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-c-life-do-T180D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-life-dont-T180D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-life-watch-T180D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "horizon": "T365D",
+            "label": "长期 1年",
+            "startOffsetDays": 180,
+            "endOffsetDays": 365,
+            "keySignals": [
+              {
+                "id": "scenario-c-T365D-fx",
+                "name": "USD/CNY",
+                "metric": "汇率与波动",
+                "direction": "VOLATILE",
+                "importance": "HIGH"
+              },
+              {
+                "id": "scenario-c-T365D-shipping",
+                "name": "贸易/航运成本",
+                "metric": "关税、运费、交付周期",
+                "direction": "UP",
+                "importance": "HIGH"
+              }
+            ],
+            "impacts": [
+              {
+                "domain": "INVESTMENT",
+                "direction": "MIXED",
+                "intensity": 0.5,
+                "explanation": "汇率、风险溢价与跨资产波动需要同步观察。"
+              },
+              {
+                "domain": "TRADE",
+                "direction": "MIXED",
+                "intensity": 0.65,
+                "explanation": "关税、物流、原产地与供应链重构成本需要更新。"
+              },
+              {
+                "domain": "LIFE",
+                "direction": "MIXED",
+                "intensity": 0.35,
+                "explanation": "现金流、支付、司法辖区和出行依赖需要保留冗余。"
+              }
+            ],
+            "actions": {
+              "investment": {
+                "domain": "INVESTMENT",
+                "do": [
+                  {
+                    "id": "scenario-c-inv-do-T365D",
+                    "polarity": "DO",
+                    "title": "复核USD/CNY与流动性敞口",
+                    "action": "按当前窗口核算汇率、现金及外币收支敏感度。",
+                    "rationale": "汇率和流动性是外部冲击的直接传导渠道.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-inv-dont-T365D",
+                    "polarity": "DONT",
+                    "title": "不要因单一新闻集中调整资产",
+                    "action": "不把单一事件直接转换为大额、不可逆配置动作。",
+                    "rationale": "情景存在分支，短期价格不能单独证明长期路径.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-inv-watch-T365D",
+                    "polarity": "WATCH",
+                    "title": "观察黄金/美债/股票/加密联动",
+                    "action": "记录黄金、美债、股票、美元与加密资产的同步或背离。",
+                    "rationale": "用于观察风险偏好变化，不单独证明资金迁徙.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "trade": {
+                "domain": "TRADE",
+                "do": [
+                  {
+                    "id": "scenario-c-trade-do-T365D",
+                    "polarity": "DO",
+                    "title": "更新关税与物流成本",
+                    "action": "重新计算关税、运费、保险、交付周期和库存安全边际。",
+                    "rationale": "第三方事件可成为贸易与物流催化剂.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-trade-dont-T365D",
+                    "polarity": "DONT",
+                    "title": "不要未经合规审查进行第三方转口",
+                    "action": "先核验原产地、海关、出口管制和制裁要求。",
+                    "rationale": "转口可能增加合规与追溯风险.",
+                    "urgency": "HIGH"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-trade-watch-T365D",
+                    "polarity": "WATCH",
+                    "title": "监控Wise/SEPA/离岸账户通道",
+                    "action": "记录支付通道可用性、限额、审核和合规要求变化。",
+                    "rationale": "支付是跨境贸易链的重要节点.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              },
+              "life": {
+                "domain": "LIFE",
+                "do": [
+                  {
+                    "id": "scenario-c-life-do-T365D",
+                    "polarity": "DO",
+                    "title": "设置现金流预警线",
+                    "action": "按本窗口固定支出、收入和跨境支付依赖设置缓冲。",
+                    "rationale": "外部冲击可能造成收入或支付延迟.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "dont": [
+                  {
+                    "id": "scenario-c-life-dont-T365D",
+                    "polarity": "DONT",
+                    "title": "不要形成单一司法辖区依赖",
+                    "action": "避免全部生活资金、关键文件或支付渠道集中在单一节点。",
+                    "rationale": "降低单点故障风险.",
+                    "urgency": "MEDIUM"
+                  }
+                ],
+                "watch": [
+                  {
+                    "id": "scenario-c-life-watch-T365D",
+                    "polarity": "WATCH",
+                    "title": "观察海外资产隔离与身份/出行政策",
+                    "action": "检查资产所在司法辖区、保险、签证、航线与身份文件。",
+                    "rationale": "长期跨境风险也来自司法与出行规则.",
+                    "urgency": "MEDIUM"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "legacy": {
+    "events": [],
+    "scenarios": [],
+    "signals": [],
+    "action_framework": {}
+  }
+}
