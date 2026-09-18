@@ -421,7 +421,7 @@ function runScenarioTask(task){
  window.__scenarioRows=normalizedRows;
  const ranked=normalizedRows.map((x,i)=>({x,i,score:liveScore(x)})).sort((a,b)=>b.score-a.score);
  const best=ranked[0];
- const idx=best&&best.score>0?best.i:normalizedRows.findIndex(x=>String(x.code)===model.code);
+ const idx=best&&best.score>0?best.i:-1;
  if(idx>=0){
   selectSandboxScenario(normalizedRows[idx].id);
   const selected=normalizedRows[idx];
