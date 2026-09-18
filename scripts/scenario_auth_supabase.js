@@ -12,17 +12,13 @@ function authLoad(){
 function authPanel(){
   if(!document.getElementById('accountPanel')){
   const p=document.createElement('section'); p.id='accountPanel'; p.className='panel';
-  p.innerHTML='<div class="title">👤 账号与云端同步</div><div id="authBox"><div class="controls"><label>邮箱<input id="authEmail" type="email" autocomplete="email" placeholder="你的邮箱"></label><label>密码<input id="authPassword" type="password" autocomplete="current-password" placeholder="至少 6 位"></label></div><div style="margin-top:10px"><button id="authLogin">登录</button> <button id="authSignup">注册</button> <button id="authResend">重新发送验证邮件</button> <button id="authReset">忘记密码</button></div><div id="authStatus" class="status">登录后，历史推演会自动保存到你的账号；不再需要同步密钥。</div></div>';
+  p.innerHTML='<div class="title">👤 账号与云端同步</div><div id="authBox"><div class="controls"><label>账号（邮箱格式，仅作为登录名）<input id="authEmail" type="email" autocomplete="username" placeholder="你的账号邮箱"></label><label>密码<input id="authPassword" type="password" autocomplete="current-password" placeholder="至少 6 位"></label></div><div style="margin-top:10px"><button id="authLogin" type="button">登录</button> <button id="authSignup" type="button">注册</button></div><div id="authStatus" class="status">注册后直接使用账号和密码登录；不发送验证邮件。</div></div>';
   document.querySelector('header.hero').after(p);
   }
   const loginBtn=document.getElementById('authLogin');
   const signupBtn=document.getElementById('authSignup');
-  const resendBtn=document.getElementById('authResend');
-  const resetBtn=document.getElementById('authReset');
   if(loginBtn)loginBtn.onclick=login;
   if(signupBtn)signupBtn.onclick=signup;
-  if(resendBtn)resendBtn.onclick=resendVerification;
-  if(resetBtn)resetBtn.onclick=resetPassword;
 }
 function msg(t){const e=document.getElementById('authStatus');if(e)e.textContent=t;}
 async function login(){
@@ -35,48 +31,22 @@ async function signup(){
  const btn=document.getElementById('authSignup'); if(btn?.dataset.busy==='1')return msg('正在注册，请不要重复点击。');
  if(btn)btn.dataset.busy='1';
  const email=document.getElementById('authEmail').value.trim(), password=document.getElementById('authPassword').value;
- if(!sb)return msg('登录服务正在加载，请稍等 1-2 秒后再试。');
- if(!email)return msg('请输入邮箱。');
- if(password.length<6)return msg('注册需要至少 6 位密码。');
- msg('正在注册，请稍候……');
+ if(!sb){if(btn)btn.dataset.busy='0';return msg('登录服务正在加载，请稍等 1-2 秒后再试。');}
+ if(!email){if(btn)btn.dataset.busy='0';return msg('请输入账号。');}
+ if(password.length<6){if(btn)btn.dataset.busy='0';return msg('注册需要至少 6 位密码。');}
+ msg('正在创建账号，请稍候……');
  try{
-   let {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:(/github\.io$/i.test(location.hostname)?location.origin+location.pathname:'https://konggu888.github.io/china-us-policy-radar/scenario.html')}});
-   if(error&&/only request this after 1 seconds/i.test(error.message||'')){
-     msg('注册服务刚刚触发了安全限流，1.2 秒后自动重试一次……');
-     await new Promise(r=>setTimeout(r,1200));
-     ({data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}}));
-   }
+   const {data,error}=await sb.auth.signUp({email,password});
    if(error){msg('注册失败：'+error.message);return;}
-   msg(data?.session?'注册成功，正在登录并同步历史推演……':'注册成功，请查收邮箱完成验证。若未收到或旧邮件回跳地址错误，可点击“重新发送验证邮件”。');
-   if(!data?.session){
-     const box=document.getElementById('authBox');
-     if(box&&!document.getElementById('authResend')){
-
-     }
+   if(data?.session){
+     msg('注册成功，已直接登录，正在同步历史推演……');
+     await cloudPull();
+   }else{
+     msg('账号已创建，但当前 Supabase 仍要求邮箱确认。请在 Supabase 后台关闭“Confirm email”后再注册。');
    }
-   if(data?.session) await cloudPull();
  }catch(e){msg('注册请求失败：'+(e?.message||'请检查网络后重试。'));}
+ finally{if(btn)btn.dataset.busy='0';}
 }
-async function resendVerification(){
- const email=document.getElementById('authEmail')?.value.trim();
- if(!sb)return msg('登录服务正在加载，请稍等后再试。');
- if(!email)return msg('请先输入注册时使用的邮箱。');
- const b=document.getElementById('authResend'); if(b?.dataset.busy==='1')return;
- if(b)b.dataset.busy='1';
- msg('正在重新发送验证邮件……');
- try{
-   const {error}=await sb.auth.resend({type:'signup',email,options:{emailRedirectTo:(/github\\.io$/i.test(location.hostname)?location.origin+location.pathname:'https://konggu888.github.io/china-us-policy-radar/scenario.html')}});
-   msg(error?'重新发送失败：'+error.message:'新的验证邮件已发送，请使用最新一封邮件。');
- }catch(e){msg('重新发送失败：'+(e?.message||'请检查网络后重试。'));}
- finally{if(b)b.dataset.busy='0';}
-}
-async function resetPassword(){
- const email=document.getElementById('authEmail').value.trim();
- if(!email)return msg('请先输入邮箱。');
- const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:location.href});
- msg(error?('发送失败：'+error.message):'密码重置邮件已发送，请查收邮箱。');
-}
-function currentUser(){return sb?.auth?.getUser?sb.auth.getUser():Promise.resolve({data:{user:null}});}
 async function cloudPull(){
  const {data:{user}}=await currentUser(); if(!user)return;
  const {data,error}=await sb.from('scenario_tasks').select('id,event,goal,horizon,mode,created_at,updated_at,last_run_at,payload').eq('user_id',user.id).order('updated_at',{ascending:false}).limit(50);
@@ -247,13 +217,13 @@ function initAuth(){
  authPanel();
  const hash=location.hash||'';
  const search=location.search||'';
- if(/type=recovery/i.test(hash)||/code=/i.test(search)){msg('验证链接已打开，正在确认账号状态……');}
+ 
 
  sb.auth.onAuthStateChange(async(_event,session)=>{
    renderAuthState(session?.user||null);
    if(session?.user){await cloudPull();patchSandboxHooks();}
  });
- sb.auth.getSession().then(async({data:{session}})=>{renderAuthState(session?.user||null);if(session?.user){await cloudPull();patchSandboxHooks(); if(loadTaskArchive()[0]) await renderUserTriggerCalibration(loadTaskArchive()[0].id); msg('邮箱验证/登录状态已确认，云端历史推演已同步。');}});
+ sb.auth.getSession().then(async({data:{session}})=>{renderAuthState(session?.user||null);if(session?.user){await cloudPull();patchSandboxHooks(); if(loadTaskArchive()[0]) await renderUserTriggerCalibration(loadTaskArchive()[0].id); msg('登录状态已确认，云端历史推演已同步。');}});
 }
 authLoad();
 })();
