@@ -166,20 +166,13 @@ function renderScenarioChangeExplanation(sc){
 }
 function renderEvidenceGraph(sc){
  const box=document.getElementById('evidenceGraph'); if(!box||!sc)return;
- const g=window.__scenarioState?.scenarioSnapshot?.evidenceGraph;
+ const g=window.__scenarioState?.scenarioSnapshot?.evidenceGraph, tv=window.__scenarioState?.scenarioSnapshot?.timeWindowValidation||[];
  if(!g){box.innerHTML='';return;}
- const sid='scenario:'+String(sc.code||sc.id);
- const edges=(g.edges||[]).filter(e=>e.to===sid||e.from===sid);
- const ids=new Set(edges.flatMap(e=>[e.from,e.to]));
- const nodes=(g.nodes||[]).filter(n=>ids.has(n.id));
- const eventNodes=nodes.filter(n=>n.kind==='EVENT').slice(0,14);
- const details=(id)=>{
-   const n=(g.nodes||[]).find(x=>x.id===id); if(!n)return '';
-   const related=(g.edges||[]).filter(e=>e.from===id||e.to===id).slice(0,12);
-   const linked=related.map(e=>{const other=(g.nodes||[]).find(x=>x.id===(e.from===id?e.to:e.from));return '<div class="mini">'+e.relation+' → '+(other?.label||'')+'</div>';}).join('');
-   return '<div><b>'+n.kind+' · '+(n.label||'')+'</b>'+linked+'</div>';
- };
- box.innerHTML='<div class="card"><b>🕸️ 交互式证据图谱</b><div class="mini muted">点击事件查看关联来源、生命周期、后续关系和当前情景。关系用于审计，不表示因果或概率。</div><div id="evidenceGraphNodes" class="observation-list">'+eventNodes.map(n=>'<button type="button" class="tag evidence-node" data-evidence-node="'+String(n.id).replace(/"/g,'&quot;')+'">'+(n.label||'').slice(0,72)+'</button>').join('')+'</div><div id="evidenceGraphDetail" class="mini muted">选择一个事件查看关联关系。</div></div>';
+ const sid='scenario:'+String(sc.code||sc.id), edges=(g.edges||[]).filter(e=>e.to===sid||e.from===sid);
+ const ids=new Set(edges.flatMap(e=>[e.from,e.to])), nodes=(g.nodes||[]).filter(n=>ids.has(n.id)), eventNodes=nodes.filter(n=>n.kind==='EVENT').slice(0,14);
+ const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+ const details=id=>{const n=(g.nodes||[]).find(x=>x.id===id);if(!n)return '';const related=(g.edges||[]).filter(e=>e.from===id||e.to===id).slice(0,12);const linked=related.map(e=>{const o=(g.nodes||[]).find(x=>x.id===(e.from===id?e.to:e.from));return '<div class="mini">'+esc(e.relation)+' → '+esc(o?.label||'')+'</div>';}).join('');const eid=String(id).replace(/^event:/,'');const matches=tv.flatMap(s=>s.details||[]).filter(x=>String(x.driverId)===eid||String(x.driverId)===id);const labels={T1D:'1天',T3D:'3天',T7D:'7天',T30D:'30天',T90D:'90天',T1Y:'1年'};const timeline=matches.map(x=>'<div class="timeline-row"><b>'+esc(labels[x.window]||x.window)+'</b><span>'+esc(x.status)+'</span><span>后续 '+Number(x.followupEventCount||0)+'</span><span>同类 '+Number(x.sameCategoryFollowupCount||0)+'</span><span>独立来源 '+Number(x.independentSourceCount||0)+'</span></div>').join('');return '<div><b>'+esc(n.kind)+' · '+esc(n.label||'')+'</b>'+linked+(timeline?'<div class="mini" style="margin-top:8px"><b>时间窗口</b></div><div class="timeline-list">'+timeline+'</div>':'<div class="mini">暂无该事件的时间窗口记录。</div>')+'</div>';};
+ box.innerHTML='<div class="card"><b>🕸️ 证据演化图谱</b><div class="mini muted">点击事件查看关系与时间窗口验证；只展示已观察数据，不回填未来窗口。</div><div id="evidenceGraphNodes" class="observation-list">'+eventNodes.map(n=>'<button type="button" class="tag evidence-node" data-evidence-node="'+esc(n.id)+'">'+esc((n.label||'').slice(0,72))+'</button>').join('')+'</div><div id="evidenceGraphDetail" class="mini muted">选择一个事件查看关联关系与时间演化。</div></div>';
  box.querySelectorAll('[data-evidence-node]').forEach(btn=>btn.addEventListener('click',()=>{const d=box.querySelector('#evidenceGraphDetail');if(d)d.innerHTML=details(btn.dataset.evidenceNode);}));
 }
 function renderEvidenceLifecycle(sc){
