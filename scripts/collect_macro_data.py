@@ -192,8 +192,42 @@ def nbs_structured():
                     records.append({'indicatorId':iid,'indicator':label,'category':cat['name'],'period':period.get('code',''),'value':nfloat(val),'unit':ind.get('du_name',ind.get('du','')),'source':'国家统计局国家数据','sourceUrl':NBS_BASE+'/dg/website/page.html#/pc/national/monthData'})
     return {'status':'OK' if records else 'MISSING','fetchedAt':datetime.now(timezone.utc).isoformat(),'records':records,'matchedCategories':matched,'method':'国家统计局新版国家数据公开接口；按指标名称发现并读取月度全国序列，未命中的指标保持缺失。'}
 
+
+
+def pbc_latest():
+    out={'source':'中国人民银行','fetchedAt':datetime.now(timezone.utc).isoformat(),'records':[],'errors':[]}
+    try:
+        page=fetch('https://www.pbc.gov.cn/')
+        links=re.findall(r'href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',page,re.S|re.I)
+        cand=[]
+        for href,title in links:
+            txt=re.sub(r'<[^>]+>',' ',title); txt=re.sub(r'\\s+',' ',txt).strip()
+            if '贷款市场报价利率' in txt or 'LPR' in txt:
+                cand.append((urllib.parse.urljoin('https://www.pbc.gov.cn/',href),txt))
+        if cand:
+            url,title=cand[0]
+            body=fetch(url); plain=re.sub(r'<[^>]+>',' ',body); plain=re.sub(r'\\s+',' ',plain)
+            m=re.search(r'([12]年期LPR[^0-9]{0,20})([0-9]+(?:\\.[0-9]+)?)%',plain)
+            n=re.search(r'5年期以上LPR[^0-9]{0,20}([0-9]+(?:\\.[0-9]+)?)%',plain)
+            if m: out['records'].append({'indicator':'LPR_1Y_pct','value':nfloat(m.group(2)),'sourceUrl':url,'publishedAt':title})
+            if n: out['records'].append({'indicator':'LPR_5Y_PCT','value':nfloat(n.group(1)),'sourceUrl':url,'publishedAt':title})
+        else: out['errors'].append('LPR link not found')
+    except Exception as e: out['errors'].append('LPR:'+str(e))
+    try:
+        html=fetch('https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do')
+        plain=re.sub(r'<[^>]+> ',' ',html)
+        plain=re.sub(r'<[^>]+>',' ',plain); plain=re.sub(r'\\s+',' ',plain)
+        m=re.search(r'(20\\d{2}-\\d{2}-\\d{2})\\s+([0-9]+(?:\\.[0-9]+)?)',plain)
+        if m: out['records'].append({'indicator':'USD/CNY_PBOC_MID','value':nfloat(m.group(2))/100,'observedAt':m.group(1),'source':'SAFE/PBOC RMB central parity','sourceUrl':'https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do'})
+    except Exception as e: out['errors'].append('RMB_MID:'+str(e))
+    out['status']='OK' if out['records'] else 'MISSING'
+    return out
+
 def main():
     errors=[]
+    try: pbc=pbc_latest()
+    except Exception as e:
+        pbc={'status':'MISSING','records':[],'errors':[str(e)]}; errors.append('PBC:'+str(e))
     try: nbs=nbs_structured()
     except Exception as e:
         nbs={'status':'MISSING','error':str(e),'records':[]}; errors.append('NBS_STRUCTURED:'+str(e))
@@ -203,7 +237,7 @@ def main():
     us,us_errors=collect_us()
     if us_errors: errors.extend('FRED '+k+':'+v for k,v in us_errors.items())
     market_count=update_market_snapshots()
-    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'china':cn,'chinaStructured':nbs,'unitedStates':{'source':'FRED','series':us,'errors':us_errors,'apiMode':'public fredgraph CSV; no API key'},'marketSnapshotCount':market_count,'quality':{'chinaStatus':'OK' if cn.get('values') else 'MISSING','usSeriesCount':len(us),'marketVariableCount':market_count,'errors':len(errors)}}
+    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'china':cn,'chinaStructured':nbs,'pbc':pbc,'unitedStates':{'source':'FRED','series':us,'errors':us_errors,'apiMode':'public fredgraph CSV; no API key'},'marketSnapshotCount':market_count,'quality':{'chinaStatus':'OK' if cn.get('values') else 'MISSING','usSeriesCount':len(us),'marketVariableCount':market_count,'errors':len(errors)}}
     MACRO_OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
     print('macro: China',len(cn.get('values',{})),'US',len(us),'market',market_count,'errors',len(errors))
     # Do not fail the entire pipeline for a single upstream series; fail only if both macro sides and markets are empty.
