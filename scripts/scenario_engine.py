@@ -100,6 +100,32 @@ def _is_duplicate_title(norm,seen_norms):
             if overlap>=0.88:return True
     return False
 
+def _event_fingerprint(n):
+    """Stable event identity: normalized title plus category/region, avoiding URL-only identity."""
+    title=_norm_title(n.get("titleZh") or n.get("title") or "")
+    cat=_norm_title(n.get("category") or n.get("cat") or "全球政策")
+    region=_norm_title(n.get("region") or n.get("ai_region") or "global")
+    return "|".join(x for x in (title,cat,region) if x)
+
+def _source_identity(n):
+    src=str(n.get("sourceOrg") or n.get("source") or "未知来源").strip().lower()
+    url=str(n.get("url") or "").strip().lower()
+    host=re.sub(r"^https?://","",url).split("/")[0]
+    return src or host or "未知来源"
+
+def _corroboration(events):
+    """Count independent sources without letting repost volume multiply one event."""
+    by={}
+    for e in events:
+        k=e.get("dedupeKey") or e.get("id")
+        if not k: continue
+        by.setdefault(k,{"sources":set(),"tiers":set(),"count":0})
+        s=e.get("source",{})
+        by[k]["sources"].add(s.get("provider") or "未知来源")
+        by[k]["tiers"].add(s.get("tier") or "UNKNOWN")
+        by[k]["count"]+=1
+    return by
+
 def _event_lifecycle(age,status,tier):
     if status=="RESOLVED": return "RESOLVED"
     if status=="DEVELOPING": return "DEVELOPING"
@@ -117,7 +143,7 @@ def build_global_events(rows,limit=20):
     out=[]; seen=set(); seen_norms=[]; now=datetime.now(timezone.utc).isoformat()
     for n in events(rows,limit=limit):
         region=n.get("region") or "global"; cc=_country_for_region(region)
-        norm=_norm_title(n.get("titleZh") or n.get("title") or "")
+        norm=_event_fingerprint(n)
         if _is_duplicate_title(norm,seen_norms):continue
         seen_norms.append(norm)
         # Third-party events are first-class triggers, not discarded as unrelated noise.
@@ -148,9 +174,17 @@ def build_global_events(rows,limit=20):
             "triggerRole":role,
             "impact":{"china":0,"us":0,"globalTrade":0,"logistics":0,"finance":0,"energy":0,"technology":0},
             "channels":channels,
-            "tags":[str(region),ec],"dedupeKey":norm
+            "tags":[str(region),ec],"dedupeKey":norm,"sourceIdentity":_source_identity(n)
         })
-    return out
+    corr=_corroboration(out)
+    for e in out:
+        c=corr.get(e.get("dedupeKey"),{"sources":set(),"tiers":set(),"count":1})
+        independent=len(c["sources"])
+        source_bonus=min(0.25,0.08*max(0,independent-1))
+        e["corroboration"]={"independentSourceCount":independent,"reportCount":c["count"],"tierCount":len(c["tiers"])}
+        e["source"]["corroborationBonus"]=round(source_bonus,3)
+        e["source"]["evidenceWeight"]=round(min(1.0,float(e["source"].get("evidenceWeight",0))+source_bonus),3)
+    return out[:limit]
 
 def _action_matrix(prefix, horizon):
     h=horizon[0]
@@ -222,7 +256,7 @@ def build_scenario_snapshot(scenarios,global_events=None):
     """Compact audit snapshot for UI/history consumers; no probabilities are implied."""
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "eventEvidence": [{"id":e.get("id"),"title":e.get("title"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"dedupeKey":e.get("dedupeKey"),"lifecycle":e.get("source",{}).get("lifecycle"),"evidenceWeight":e.get("source",{}).get("evidenceWeight")} for e in (global_events or [])],
+        "eventEvidence": [{"id":e.get("id"),"title":e.get("title"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"dedupeKey":e.get("dedupeKey"),"lifecycle":e.get("source",{}).get("lifecycle"),"evidenceWeight":e.get("source",{}).get("evidenceWeight"),"corroboration":e.get("corroboration")} for e in (global_events or [])],
         "scenarios": [
             {
                 "id": s.get("id"), "code": s.get("code"),
