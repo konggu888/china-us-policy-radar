@@ -35,11 +35,15 @@ def census_country(country_code):
 
 def main():
     errors=[]; us={}; third={}
-    try: us=census_china()
+    try:
+        us=census_china()
+    except Exception as e:
+        errors.append('US_CENSUS:'+str(e))
     for name,code in THIRD_COUNTRIES.items():
-        try: third[name]=census_country(code)
-        except Exception as e: errors.append('THIRD_'+name+':'+str(e))
-    except Exception as e: errors.append('US_CENSUS:'+str(e))
+        try:
+            third[name]=census_country(code)
+        except Exception as e:
+            errors.append('THIRD_'+name+':'+str(e))
     payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'usChina':us,'thirdCountry':third,'chinaCustoms':{'status':'MISSING','reason':'未在本轮写入未经验证的抓取接口；保留缺失状态，避免用二手数据冒充海关原始数据。','sourceUrl':'https://online.customs.gov.cn/'},'quality':{'errors':len(errors),'usChinaStatus':'OK' if us else 'MISSING'}}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
     try:
