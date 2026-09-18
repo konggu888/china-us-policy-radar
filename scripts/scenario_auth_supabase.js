@@ -65,8 +65,6 @@ window.saveScenarioRun=async function(task,scenario){
  const {error}=await sb.from('scenario_task_runs').insert(row);
  if(error)console.warn('scenario run save failed',error.message);
 };
-const oldArchive=window.archiveTask;
-window.archiveTask=async function(task){const row=oldArchive(task); await window.syncTaskToServer(row); return row;};
 function renderAuthState(user){
  const box=document.getElementById('authBox'); if(!box)return;
  if(user) box.innerHTML='<div class="status">已登录：<b>'+esc(user.email||'账号')+'</b>。历史推演自动云端保存。 <button id="authLogout">退出登录</button></div><div class="mini muted">账号跨设备同步，不再需要保存同步密钥。</div>';
