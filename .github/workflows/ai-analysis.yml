@@ -30,7 +30,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: intelligence-radar-ai
+  group: intelligence-radar-pipeline
   cancel-in-progress: false
 
 jobs:
@@ -87,7 +87,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           for attempt in 1 2 3; do
-            git add data/ai_summaries.json data/news.json data/ai_health.json data/scenario_state.json
+            git add data/ai_summaries.json data/ai_health.json data/scenario_state.json
             git diff --cached --quiet || git commit -m 'chore: update AI strategic intelligence'
             git fetch origin main
             if git push origin HEAD:main; then exit 0; fi
