@@ -202,7 +202,19 @@ function renderSandboxScenario(sc,index){if(!sc)return;const hs=sc.horizons||[];
  if(dt){
    const tree=sc.dynamicResponseTree||{};
    const rounds=tree.rounds||[];
-   dt.innerHTML='<div class="card" style="margin:10px 0"><b>🌳 多轮动态博弈树</b><div class="mini muted" style="margin:6px 0 9px">每一轮保留多个政策工具分支；这是条件路径，不是结果预测。正式政策、执行细则和后续证据会改变分支状态。</div>'+rounds.map(r=>'<div style="margin:8px 0"><b>第'+esc(r.round)+'轮 · '+esc(r.actor)+'</b><div class="observation-list">'+(r.branches||[]).map(b=>'<span class="tag">'+esc(b.toolName||'')+' · '+esc(b.status||'')+'</span>').join('')+'</div></div>').join('')+'</div>';
+   const statusLabel={OBSERVED:'已观察',SUPPORTED:'证据支持',UNRESOLVED:'待验证'};
+   const modeLabel={ESCALATE:'升级',DEESCALATE:'缓和',THIRD_PARTY_SHIFT:'第三方转向',NEGOTIATE:'谈判/豁免'};
+   dt.innerHTML='<div class="card" style="margin:10px 0"><b>🌳 多轮动态博弈树 v3</b><div class="mini muted" style="margin:6px 0 10px">每轮同时保留“升级 / 缓和 / 第三方转向 / 谈判或豁免”四类路径。节点状态只表示当前证据覆盖，不表示概率、意图或最终结果。</div>'+
+     rounds.map(r=>'<div style="margin:12px 0"><b>第'+esc(r.round)+'轮 · '+esc(r.actorName||r.actor)+'响应节点</b>'+
+       '<div class="observation-list">'+(r.branches||[]).map(b=>{
+         const hits=(b.matchedEventTitles||[]).join('；');
+         const cov=b.evidenceCoverage||{};
+         return '<span class="tag"><b>'+esc(modeLabel[b.mode]||b.modeName||'')+'</b> · '+esc(b.toolName||'')+' · '+esc(statusLabel[b.status]||b.status||'')+
+           '<br><span class="mini">'+esc(b.statusReason||'')+' · 事件 '+String(cov.eventCount||0)+' · 正式来源 '+String(cov.primarySourceCount||0)+' · 独立来源 '+String(cov.independentSourceCount||0)+
+           (hits?'<br>匹配：'+esc(hits):'')+
+           '<br>下一步：'+esc((b.nextMonitor||[]).join('；'))+'</span></span>';
+       }).join('')+'</div></div>').join('')+
+     '<div class="mini muted" style="margin-top:8px"><b>节点切换规则：</b>'+esc((tree.transitions||[]).flatMap(x=>x.rules||[]).map(x=>x.when+' → '+(x.nextModes||[]).join('/')).join('；'))+'</div></div>';
  }
  selectSandboxHorizon(0);
 }
