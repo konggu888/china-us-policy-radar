@@ -34,7 +34,7 @@ async function signup(){
  if(password.length<6)return msg('注册需要至少 6 位密码。');
  msg('正在注册，请稍候……');
  try{
-   let {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}});
+   let {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:(/github\.io$/i.test(location.hostname)?location.origin+location.pathname:'https://konggu888.github.io/china-us-policy-radar/scenario.html')}});
    if(error&&/only request this after 1 seconds/i.test(error.message||'')){
      msg('注册服务刚刚触发了安全限流，1.2 秒后自动重试一次……');
      await new Promise(r=>setTimeout(r,1200));
