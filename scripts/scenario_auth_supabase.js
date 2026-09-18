@@ -41,9 +41,28 @@ async function signup(){
      ({data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}}));
    }
    if(error){msg('注册失败：'+error.message);return;}
-   msg(data?.session?'注册成功，正在登录并同步历史推演……':'注册成功，请查收邮箱完成验证后再登录。');
+   msg(data?.session?'注册成功，正在登录并同步历史推演……':'注册成功，请查收邮箱完成验证。若未收到或旧邮件回跳地址错误，可点击“重新发送验证邮件”。');
+   if(!data?.session){
+     const box=document.getElementById('authBox');
+     if(box&&!document.getElementById('authResend')){
+       const b=document.createElement('button'); b.id='authResend'; b.textContent='重新发送验证邮件'; b.style.marginTop='8px'; box.appendChild(b); b.onclick=resendVerification;
+     }
+   }
    if(data?.session) await cloudPull();
  }catch(e){msg('注册请求失败：'+(e?.message||'请检查网络后重试。'));}
+}
+async function resendVerification(){
+ const email=document.getElementById('authEmail')?.value.trim();
+ if(!sb)return msg('登录服务正在加载，请稍等后再试。');
+ if(!email)return msg('请先输入注册时使用的邮箱。');
+ const b=document.getElementById('authResend'); if(b?.dataset.busy==='1')return;
+ if(b)b.dataset.busy='1';
+ msg('正在重新发送验证邮件……');
+ try{
+   const {error}=await sb.auth.resend({type:'signup',email,options:{emailRedirectTo:(/github\\.io$/i.test(location.hostname)?location.origin+location.pathname:'https://konggu888.github.io/china-us-policy-radar/scenario.html')}});
+   msg(error?'重新发送失败：'+error.message:'新的验证邮件已发送，请使用最新一封邮件。');
+ }catch(e){msg('重新发送失败：'+(e?.message||'请检查网络后重试。'));}
+ finally{if(b)b.dataset.busy='0';}
 }
 async function resetPassword(){
  const email=document.getElementById('authEmail').value.trim();
