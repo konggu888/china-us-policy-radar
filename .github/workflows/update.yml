@@ -12,8 +12,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: intelligence-radar-update-v2
-  cancel-in-progress: true
+  group: intelligence-radar-pipeline
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -36,6 +36,16 @@ jobs:
           python scripts/enrich_policy.py; policy_rc=$?
           python scripts/enrich_priority.py; priority_rc=$?
           python scripts/archive_news.py; archive_rc=$?
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/news.json')
+          try: rows=json.loads(p.read_text(encoding='utf-8'))
+          except Exception: rows=[]
+          if not isinstance(rows,list) or not rows:
+              raise SystemExit('DATA INTEGRITY ERROR: data/news.json is empty after collection/archive; refusing to publish an empty radar feed')
+          print('DATA INTEGRITY OK: news.json rows=',len(rows))
+          PY
           python scripts/build_timeline.py; timeline_rc=$?
           python scripts/build_social_signals.py; social_rc=$?
           python scripts/scenario_engine.py; scenario_rc=$?
