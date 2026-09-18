@@ -286,6 +286,38 @@ def persist_market_snapshot(dash,max_rows=720):
     MARKET_SNAPSHOTS.write_text(json.dumps(old,ensure_ascii=False,indent=2),encoding="utf-8")
     return old
 
+def _market_baseline(snapshots, event_time, days=7):
+    """Simple observational baseline from snapshots before the event."""
+    vals={}
+    for s in snapshots:
+        t=dt(s.get("capturedAt"))
+        if not t or not event_time: continue
+        delta=(event_time-t).total_seconds()/86400
+        if 0 < delta <= days:
+            for m in s.get("markets",[]):
+                try:
+                    if m.get("change_pct") is not None:
+                        vals.setdefault(str(m.get("name")),[]).append(float(m["change_pct"]))
+                except Exception:
+                    pass
+    return {k:sum(v)/len(v) for k,v in vals.items() if v}
+
+def build_event_market_anomalies(event, windows, snapshots):
+    pub=dt(event.get("source",{}).get("publishedAt"))
+    if not pub: return {"status":"EVENT_TIME_UNKNOWN","metrics":[]}
+    baseline=_market_baseline(snapshots,pub,7)
+    metrics=[]
+    for w in windows:
+        if w.get("window")=="T0" or w.get("status")!="OBSERVED": continue
+        for m in w.get("markets",[]):
+            name=str(m.get("name")); cp=m.get("change_pct")
+            if cp is None: continue
+            b=baseline.get(name)
+            if b is None: continue
+            delta=round(float(cp)-b,3)
+            metrics.append({"window":w.get("window"),"name":name,"observedChangePct":cp,"baseline7dAvgChangePct":round(b,3),"deviationPctPoints":delta,"signal":"ELEVATED_DEVIATION" if abs(delta)>=1.5 else ("WATCH" if abs(delta)>=0.5 else "WITHIN_BASELINE")})
+    return {"status":"OBSERVATIONAL_ONLY","baselineWindow":"T-7D→T-1D","metrics":metrics,"causalStatus":"NOT_ESTABLISHED"}
+
 def build_historical_market_windows(event, snapshots):
     """Use only snapshots whose timestamps are actually observed; never backfill missing history."""
     pub=dt(event.get("source",{}).get("publishedAt"))
@@ -447,7 +479,11 @@ def build_dynamic_tree(news,dash=None):
     snapshot=build_scenario_snapshot(scenarios,ge)
     snapshots=persist_market_snapshot(dash or {})
     snapshot["transmissionTimeline"]=build_transmission_windows(ge, markets(dash or {}))
-    snapshot["historicalMarketWindows"]=[dict(x,windows=build_historical_market_windows(e,snapshots)) for e in ge[:12]]
+    historical=[]
+    for e in ge[:12]:
+        ws=build_historical_market_windows(e,snapshots)
+        historical.append(dict(e,windows=ws,anomalyAnalysis=build_event_market_anomalies(e,ws,snapshots)))
+    snapshot["historicalMarketWindows"]=historical
     # Separate observation from causal attribution: market data can corroborate a transmission
     # signal only as a co-movement/validation observation, never as proof of causality.
     market_drivers=[d for s in scenarios for d in s.get("evidenceDrivers",[]) if d.get("kind")=="MARKET"]
