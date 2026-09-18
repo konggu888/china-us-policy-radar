@@ -382,6 +382,54 @@ def _market_baseline(snapshots, event_time, days=7):
                     pass
     return {k:sum(v)/len(v) for k,v in vals.items() if v}
 
+def build_time_window_validation(scenarios, historical_events):
+    """Validate trigger evidence across event-relative windows using only observed later evidence."""
+    windows=[("T1D",1),("T3D",3),("T7D",7),("T30D",30),("T90D",90),("T1Y",365)]
+    events=historical_events or []
+    parsed=[]
+    for e in events:
+        t=dt(e.get("source",{}).get("publishedAt"))
+        if t: parsed.append((e,t))
+    out=[]
+    for s in scenarios or []:
+        drivers=[x for x in s.get("evidenceDrivers",[]) if x.get("kind")=="EVENT"]
+        rows=[]
+        for d in drivers:
+            e=next((x for x in events if str(x.get("id"))==str(d.get("id"))),None)
+            if not e: continue
+            t=dt(e.get("source",{}).get("publishedAt"))
+            if not t: continue
+            for code,days in windows:
+                end=t+timedelta(days=days)
+                later=[x for x,xt in parsed if t < xt <= end and str(x.get("id"))!=str(e.get("id"))]
+                # A later event is treated only as an independent follow-up observation when its source differs.
+                source_ids=set()
+                for x in later:
+                    sm=x.get("source",{}) or {}
+                    source_ids.add(str(x.get("sourceIdentity") or sm.get("provider") or "UNKNOWN"))
+                corroborating=[x for x in later if str(x.get("category","")).upper()==str(e.get("category","")).upper()]
+                rows.append({
+                    "driverId":d.get("id"),"driverTitle":d.get("title"),
+                    "window":code,"startAt":t.isoformat(),"endAt":end.isoformat(),
+                    "status":"OBSERVED" if later else "NO_FOLLOWUP_OBSERVED",
+                    "followupEventCount":len(later),
+                    "sameCategoryFollowupCount":len(corroborating),
+                    "independentSourceCount":len(source_ids),
+                    "evidenceIds":[x.get("id") for x in later[:8]],
+                    "interpretation":"后续事件仅作为时间相关的独立观察；不据此认定因果或预测成立。"
+                })
+        summary={}
+        for code,_ in windows:
+            rr=[x for x in rows if x["window"]==code]
+            summary[code]={
+                "driversObserved":sum(1 for x in rr if x["status"]=="OBSERVED"),
+                "followupEvents":sum(x["followupEventCount"] for x in rr),
+                "sameCategoryFollowups":sum(x["sameCategoryFollowupCount"] for x in rr),
+                "independentSources":sum(x["independentSourceCount"] for x in rr)
+            }
+        out.append({"scenarioCode":s.get("code"),"windows":summary,"details":rows[:60],"method":"事件发生后按固定时间窗检查后续公开事件；缺失数据不回填。","causalStatus":"NOT_ESTABLISHED"})
+    return out
+
 def build_trigger_calibration(scenarios, historical_events):
     """Historical descriptive counts for trigger reliability; not probabilities."""
     buckets={}
@@ -447,13 +495,13 @@ def build_historical_market_windows(event, snapshots):
     """Use only snapshots whose timestamps are actually observed; never backfill missing history."""
     pub=dt(event.get("source",{}).get("publishedAt"))
     if not pub:return []
-    targets=[("T0",0),("T1D",1),("T3D",3),("T7D",7),("T30D",30)]
+    targets=[("T0",0),("T1D",1),("T3D",3),("T7D",7),("T30D",30),("T90D",90),("T1Y",365)]
     out=[]
     for code,days in targets:
         target=pub+timedelta(days=days)
         candidates=[s for s in snapshots if dt(s.get("capturedAt"))]
         candidates.sort(key=lambda s:abs((dt(s["capturedAt"])-target).total_seconds()))
-        chosen=candidates[0] if candidates and abs((dt(candidates[0]["capturedAt"])-target).total_seconds())<=18*3600 else None
+        chosen=candidates[0] if candidates and target <= datetime.now(timezone.utc) and abs((dt(candidates[0]["capturedAt"])-target).total_seconds())<=18*3600 else None
         out.append({"window":code,"targetAt":target.isoformat(),"capturedAt":chosen.get("capturedAt") if chosen else None,"status":"OBSERVED" if chosen else "MISSING","markets":chosen.get("markets",[]) if chosen else []})
     return out
 
@@ -612,6 +660,7 @@ def build_dynamic_tree(news,dash=None):
         historical.append(dict(e,windows=ws,anomalyAnalysis=build_event_market_anomalies(e,ws,snapshots)))
     snapshot["historicalMarketWindows"]=historical
     snapshot["retrospectiveCalibration"]=build_retrospective_calibration(scenarios,historical)
+    snapshot["timeWindowValidation"]=build_time_window_validation(scenarios,historical)
     proposed_calibration=build_trigger_calibration(scenarios,historical)
     previous_audit=(previous_snapshot or {}).get("calibrationAudit",[])
     snapshot["triggerCalibration"],guard_audit=_calibration_guard(proposed_calibration,previous_audit)
