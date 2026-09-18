@@ -761,18 +761,27 @@ def build_dynamic_response_tree(scenario, events=None, previous_tree=None):
     def hits(mode,tid):
         out=[]
         for e in events:
-            t=str(e.get("title","")).lower()
-            cc=(e.get("actor") or {}).get("country")
+            actor=e.get("actor") or {}
+            cc=actor.get("country")
+            fields=[
+                str(e.get("title","")),
+                str(e.get("summary","")),
+                str(e.get("category","")),
+                " ".join(str(x) for x in (e.get("tags") or [])),
+                str(actor.get("name",""))
+            ]
+            text_all=" ".join(fields).lower()
             if mode=="THIRD_PARTY_SHIFT" and cc in ("CN","US","OTHER",None): continue
-            if mode in ("DEESCALATE","NEGOTIATE") and not any(x in t for x in kws["DIPLOMATIC_NEGOTIATION"]): continue
-            if any(x.lower() in t for x in kws.get(tid,())):
+            if mode in ("DEESCALATE","NEGOTIATE") and not any(x.lower() in text_all for x in kws["DIPLOMATIC_NEGOTIATION"]):
+                continue
+            if any(x.lower() in text_all for x in kws.get(tid,())):
                 out.append(e)
         return out
     rounds=[]
     for no,actor in enumerate(("CN","US","CN"),1):
         branches=[]
         for mid,mname,condition in modes:
-            for tid in list(tools)[:8]:
+            for tid in tools:
                 hs=hits(mid,tid)
                 primary=sum(1 for e in hs if e.get("source",{}).get("tier")=="PRIMARY")
                 status="OBSERVED" if primary else ("SUPPORTED" if hs else "UNRESOLVED")
