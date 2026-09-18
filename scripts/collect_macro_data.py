@@ -136,19 +136,78 @@ def update_market_snapshots():
         MARKET_OUT.write_text(json.dumps(old,ensure_ascii=False,indent=2),encoding='utf-8')
     return len(latest)
 
+
+
+NBS_BASE='https://data.stats.gov.cn'
+NBS_COOKIE='eyJkZXZpY2UiOiJQQyIsImxhbmd1YWdlIjoiemhfQ04iLCJlbmdpbmUiOiJCbGluayIsImJyb3dzZXIiOiJDaHJvbWUiLCJvcyI6IldpbmRvd3MiLCJwbGF0Zm9ybSI6IldpbjMyIiwiaXNXZWJ2aWV3IjpmYWxzZSwidmVyc2lvbiI6IjE0Ni4wLjAuMCIsImNvcmUiOiJDaHJvbWUiLCJjb3JlVmVyc2lvbiI6IjE0Ni4wLjAuMCJ9'
+NBS_HEADERS={'Origin':NBS_BASE,'Referer':NBS_BASE+'/dg/website/page.html#/pc/national/monthData','User-Agent':UA,'Accept':'application/json,text/plain,*/*','Content-Type':'application/json;charset=UTF-8'}
+
+NBS_WANTED=('国内生产总值','GDP','居民消费价格指数','CPI','工业生产者出厂价格指数','PPI','规模以上工业增加值',
+ '固定资产投资','社会消费品零售总额','城镇调查失业率','采购经理指数','出口','进口','贸易顺差',
+ '房地产开发投资','商品房销售','财政收入','财政支出','广义货币供应量M2','狭义货币供应量M1','人民币贷款','社会融资规模')
+
+def nbs_json(path,params=None,payload=None):
+    import urllib.request, json as _json
+    req=urllib.request.Request(NBS_BASE+path,headers=NBS_HEADERS,method='POST' if payload is not None else 'GET')
+    if payload is not None:
+        body=_json.dumps(payload,ensure_ascii=False).encode('utf-8')
+        req.data=body
+    if params:
+        req.full_url=NBS_BASE+path+'?'+urllib.parse.urlencode(params)
+    req.add_header('Cookie','client_info='+NBS_COOKIE)
+    with urllib.request.urlopen(req,timeout=25) as resp:
+        raw=resp.read().decode('utf-8','ignore')
+    if raw.lstrip().startswith('<'): raise RuntimeError('NBS structured endpoint returned HTML/challenge')
+    return _json.loads(raw)
+
+def nbs_structured():
+    page='monthData'
+    tree=nbs_json('/dg/website/publicrelease/web/external/new/queryIndexTreeAsync',{'pid':'','code':1}).get('data',[])
+    if not tree:return {'status':'MISSING','error':'NBS monthData tree empty'}
+    root=tree[0]
+    nodes=[root]
+    seen=set()
+    matched=[]
+    while nodes and len(seen)<500:
+        node=nodes.pop(0); cid=str(node.get('_id') or '')
+        if not cid or cid in seen:continue
+        seen.add(cid)
+        name=str(node.get('name') or '')
+        if any(k in name for k in NBS_WANTED): matched.append({'cid':cid,'name':name})
+        children=nbs_json('/dg/website/publicrelease/web/external/new/queryIndexTreeAsync',{'pid':cid,'code':1}).get('data',[])
+        nodes.extend(children)
+    records=[]
+    for cat in matched[:80]:
+        inds=nbs_json('/dg/website/publicrelease/web/external/new/queryIndicatorsByCid',{'cid':cat['cid'],'dt':'','name':''}).get('data',{}).get('list',[])
+        for ind in inds:
+            label=str(ind.get('i_showname') or '').strip()
+            if not label or not any(k in label for k in NBS_WANTED):continue
+            iid=str(ind.get('_id') or '')
+            payload={'cid':cat['cid'],'indicatorIds':[iid],'daCatalogId':'','das':[{'text':'全国','value':'000000000000'}],'showType':2,'dts':[],'rootId':root.get('_id','')}
+            raw=nbs_json('/dg/website/publicrelease/web/external/stream/esData',payload=payload)
+            for period in raw.get('data',[])[-36:]:
+                for item in period.get('values',[]):
+                    val=item.get('dataValue',item.get('value',item.get('data_value')))
+                    if val in (None,''):continue
+                    records.append({'indicatorId':iid,'indicator':label,'category':cat['name'],'period':period.get('code',''),'value':nfloat(val),'unit':ind.get('du_name',ind.get('du','')),'source':'国家统计局国家数据','sourceUrl':NBS_BASE+'/dg/website/page.html#/pc/national/monthData'})
+    return {'status':'OK' if records else 'MISSING','fetchedAt':datetime.now(timezone.utc).isoformat(),'records':records,'matchedCategories':matched,'method':'国家统计局新版国家数据公开接口；按指标名称发现并读取月度全国序列，未命中的指标保持缺失。'}
+
 def main():
     errors=[]
+    try: nbs=nbs_structured()
+    except Exception as e:
+        nbs={'status':'MISSING','error':str(e),'records':[]}; errors.append('NBS_STRUCTURED:'+str(e))
     try: cn=nbs_latest()
     except Exception as e:
         cn={'source':'国家统计局','status':'MISSING','error':str(e),'method':'官方源暂未成功获取；不使用其他来源冒充。'}; errors.append('NBS:'+str(e))
     us,us_errors=collect_us()
     if us_errors: errors.extend('FRED '+k+':'+v for k,v in us_errors.items())
     market_count=update_market_snapshots()
-    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'china':cn,'unitedStates':{'source':'FRED','series':us,'errors':us_errors,'apiMode':'public fredgraph CSV; no API key'},'marketSnapshotCount':market_count,'quality':{'chinaStatus':'OK' if cn.get('values') else 'MISSING','usSeriesCount':len(us),'marketVariableCount':market_count,'errors':len(errors)}}
+    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'china':cn,'chinaStructured':nbs,'unitedStates':{'source':'FRED','series':us,'errors':us_errors,'apiMode':'public fredgraph CSV; no API key'},'marketSnapshotCount':market_count,'quality':{'chinaStatus':'OK' if cn.get('values') else 'MISSING','usSeriesCount':len(us),'marketVariableCount':market_count,'errors':len(errors)}}
     MACRO_OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
     print('macro: China',len(cn.get('values',{})),'US',len(us),'market',market_count,'errors',len(errors))
     # Do not fail the entire pipeline for a single upstream series; fail only if both macro sides and markets are empty.
-    if not cn.get('values') and not us and market_count==0:return 1
+    if not cn.get('values') and nbs.get('status')!='OK' and not us and market_count==0:return 1
     return 0
 
 if __name__=='__main__':
