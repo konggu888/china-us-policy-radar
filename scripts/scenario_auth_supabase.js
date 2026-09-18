@@ -93,48 +93,58 @@ window.saveScenarioRun=async function(task,scenario){
  const {data:{user}}=await currentUser(); if(!user||!scenario)return;
  const radar=window.__scenarioState||{};
  const registry=(radar.scenarioSnapshot?.evidenceRegistry||[]).filter(x=>(scenario.evidenceDrivers||[]).some(d=>String(d.id||'')===String(x.id||''))).slice(0,30);
- const payload={scenario,radarContext:{generatedAt:radar.generated_at||null,state:radar.state||{},events:(radar.events||[]).slice(0,20),market:(radar.state?.finance?.market||[]).slice(0,20)},evidenceRegistry:registry,recordedAt:new Date().toISOString()};
+ const payload={scenario,radarContext:{generatedAt:radar.generated_at||null,state:radar.state||{},events:(radar.events||[]).slice(0,20),market:(radar.state?.finance?.market||[]).slice(0,20)},evidenceRegistry:registry,validation:{timeWindowValidation:(radar.scenarioSnapshot?.timeWindowValidation||[]).filter(x=>String(x.scenarioCode||'')===String(scenario.code||'')),historicalMarketWindows:(radar.scenarioSnapshot?.historicalMarketWindows||[]).filter(x=>(scenario.evidenceDrivers||[]).some(d=>String(d.id||'')===String(x.id||''))).slice(0,20)},recordedAt:new Date().toISOString()};
  const row={task_id:String(task.id),user_id:user.id,status:'RECORDED',scenario_code:scenario.code||null,activation_state:scenario.activationState||null,trigger_score:scenario.triggerScore??null,confidence:scenario.confidence||null,evidence_count:Array.isArray(scenario.evidenceDrivers)?scenario.evidenceDrivers.length:null,payload};
  const {error}=await sb.from('scenario_task_runs').insert(row);
  if(error)console.warn('scenario run save failed',error.message);
 };
 async function buildTriggerFeedback(taskId,currentRun,previousRun){
  const {data:{user}}=await currentUser();
- if(!user||!currentRun||!previousRun)return;
+ if(!user||!currentRun)return;
  const sc=currentRun.payload?.scenario||{};
- const prev=previousRun.payload?.scenario||{};
  const currentDrivers=(sc.evidenceDrivers||[]).filter(d=>d.kind==='EVENT');
- const previousDrivers=(prev.evidenceDrivers||[]).filter(d=>d.kind==='EVENT');
- const prevIds=new Set(previousDrivers.map(d=>String(d.id)));
- const newDrivers=currentDrivers.filter(d=>!prevIds.has(String(d.id)));
+ if(!currentDrivers.length)return;
  const registry=currentRun.payload?.evidenceRegistry||[];
- const followup=registry.filter(e=>['ACTIVE','DEVELOPING','RESOLVED'].includes(e.lifecycle)).length;
- const market=currentRun.payload?.radarContext?.market||[];
- const marketDeviation=market.filter(m=>m.change_pct!==undefined&&m.change_pct!==null&&Math.abs(Number(m.change_pct))>=1.5).length;
- const score=Number(currentRun.trigger_score||0);
- const priorScore=Number(previousRun.trigger_score??score);
- const delta=score-priorScore;
- const outcome=delta>=0.05?'SUPPORTED':(delta<=-0.05?'WEAKENED':'UNRESOLVED');
- const triggers=[...new Set(currentDrivers.map(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')))];
- if(!triggers.length)return;
+ const validation=currentRun.payload?.validation||{};
+ const priorRegistry=previousRun?.payload?.evidenceRegistry||[];
+ const priorByKey=new Map(priorRegistry.map(e=>[String(e.dedupeKey||''),e]));
+ const rowsByTrigger=new Map();
+ for(const d of currentDrivers){
+   const trigger=String(d.category||d.role||'UNKNOWN_TRIGGER');
+   const key=String(d.id||'');
+   const r=registry.find(x=>String(x.dedupeKey||'')===key);
+   const prior=priorByKey.get(key);
+   const repeated=Number(r?.observationCount||0)>1 || Number(r?.independentSourceCount||0)>1 || !!r?.followupObserved;
+   const validationRows=(validation.timeWindowValidation||[]).flatMap(x=>x.details||[]).filter(x=>String(x.driverId||'')===key);
+   const followup=validationRows.filter(x=>x.status==='OBSERVED').length;
+   const marketRows=(validation.historicalMarketWindows||[]).find(x=>String(x.id||'')===key)?.windows||[];
+   const observedMarket=marketRows.filter(x=>x.status==='OBSERVED').length;
+   const evidenceCount=(repeated?1:0)+(followup>0?1:0);
+   const support=evidenceCount>0;
+   const weakened=!support && prior && Number(prior.evidenceWeight||0)>0 && Number(r?.evidenceWeight||0)<Number(prior.evidenceWeight||0)*0.6;
+   const outcome=weakened?'WEAKENED':(support?'SUPPORTED':'UNRESOLVED');
+   const bucket=rowsByTrigger.get(trigger)||{outcomes:[],evidence:0,followup:0,market:0};
+   bucket.outcomes.push(outcome); bucket.evidence+=evidenceCount; bucket.followup+=followup; bucket.market+=observedMarket; rowsByTrigger.set(trigger,bucket);
+ }
  const {data:existing}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('user_id',user.id).eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(100);
  const latest=new Map((existing||[]).map(x=>[x.trigger,x]));
- const rows=triggers.map(trigger=>{
-   const old=latest.get(trigger);
-   const n=Number(old?.sample_size||0)+1;
-   const raw=outcome==='SUPPORTED'?1.05:(outcome==='WEAKENED'?0.95:1);
-   const prior=Number(old?.calibration_factor||1);
+ const rows=[...rowsByTrigger.entries()].map(([trigger,b])=>{
+   const supported=b.outcomes.filter(x=>x==='SUPPORTED').length;
+   const weakened=b.outcomes.filter(x=>x==='WEAKENED').length;
+   const outcome=supported>weakened?'SUPPORTED':(weakened>supported?'WEAKENED':'UNRESOLVED');
+   const old=latest.get(trigger), n=Number(old?.sample_size||0)+1, prior=Number(old?.calibration_factor||1);
+   const raw=outcome==='SUPPORTED'?1.03:(outcome==='WEAKENED'?0.97:1);
    const proposed=Math.max(0.8,Math.min(1.2,prior*raw));
-   const jump=Math.abs(proposed-prior);
-   const frozen=n<3||jump>0.10;
+   const frozen=n<3||Math.abs(proposed-prior)>0.10;
    const applied=frozen?prior:proposed;
-   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun.id,outcome,evidence_count:newDrivers.length,followup_count:followup,market_deviation_count:marketDeviation,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':(frozen?'FROZEN':'CALIBRATED'),payload:{proposedFactor:Number(proposed.toFixed(3)),priorFactor:prior,appliedFactor:Number(applied.toFixed(3)),jump:Number(jump.toFixed(3)),reason:frozen?(n<3?'样本不足，保持原权重':'单次变化超过0.10，自动冻结以防漂移'):'达到样本门槛且变化在安全范围内；仅用于监测权重，不表示概率或因果'}};
+   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun?.id||null,outcome,evidence_count:b.evidence,followup_count:b.followup,market_deviation_count:b.market,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':(frozen?'FROZEN':'CALIBRATED'),payload:{priorFactor:prior,proposedFactor:Number(proposed.toFixed(3)),appliedFactor:Number(applied.toFixed(3)),method:'基于后续证据、多源重复观察与真实历史市场窗口；不再使用相邻运行触发分数变化作为支持/减弱依据。',outcomes:b.outcomes}};
  });
+ if(!rows.length)return;
  const {data:ins,error}=await sb.from('scenario_trigger_feedback').insert(rows).select('id,trigger,calibration_factor,status,sample_size');
  if(error||!ins)return;
  for(const x of ins){
    const src=rows.find(y=>y.trigger===x.trigger);
-   await sb.from('scenario_calibration_audit').insert({user_id:user.id,task_id:String(taskId),trigger:x.trigger,feedback_id:x.id,prior_factor:Number(src?.payload?.priorFactor||1),proposed_factor:Number(src?.payload?.proposedFactor||1),applied_factor:Number(x.calibration_factor||1),delta:Number((Number(x.calibration_factor||1)-Number(src?.payload?.priorFactor||1)).toFixed(3)),status:x.status==='FROZEN'?'FROZEN':(x.status==='EARLY_SAMPLE'?'EARLY_SAMPLE':'APPLIED'),sample_size:x.sample_size,reason:src?.payload?.reason||'历史校准审计'});
+   await sb.from('scenario_calibration_audit').insert({user_id:user.id,task_id:String(taskId),trigger:x.trigger,feedback_id:x.id,prior_factor:Number(src?.payload?.priorFactor||1),proposed_factor:Number(src?.payload?.proposedFactor||1),applied_factor:Number(x.calibration_factor||1),delta:Number((Number(x.calibration_factor||1)-Number(src?.payload?.priorFactor||1)).toFixed(3)),status:x.status==='FROZEN'?'FROZEN':(x.status==='EARLY_SAMPLE'?'EARLY_SAMPLE':'APPLIED'),sample_size:x.sample_size,reason:src?.payload?.method||'历史后续证据校准'});
  }
 }
 async function renderEffectiveTriggerWeights(sc){
