@@ -10,6 +10,11 @@
   <div class="mini muted">按跨运行注册表追踪首次发现、重复观察、多源确认与证据衰减；时间轴是审计记录，不代表因果关系。</div>
   <div id="evidenceTimeline" class="observation-list" style="margin-top:10px"></div>
 </section>
+<section class="panel" id="calibrationAuditPanel">
+  <div class="section-title">校准审计 · 为什么权重改变</div>
+  <div class="mini muted">记录历史样本、原始因子、应用因子和边界约束，便于复核系统是否发生过度自校准。</div>
+  <div id="calibrationAudit" class="actions" style="margin-top:10px"></div>
+</section>
 <section class="panel" id="triggerCalibrationPanel">
   <div class="section-title">触发器校准 · 历史样本</div>
   <div class="mini muted">根据历史观测统计触发器后续信号，仅用于监测权重校准。样本不足时不视为可靠校准。</div>
@@ -58,9 +63,10 @@ function render(s){
  window.__historicalMarketWindows=(s.scenarioSnapshot?.historicalMarketWindows||[]);
  window.__retrospectiveCalibration=(s.scenarioSnapshot?.retrospectiveCalibration||[]);
  window.__triggerCalibration=(s.scenarioSnapshot?.triggerCalibration||[]);
+ window.__calibrationAudit=(s.scenarioSnapshot?.calibrationAudit||[]);
  const tree=document.getElementById('tree');
  tree.innerHTML=scenarioRows.map((x,i)=>'<article class="card node scenario-card '+(i===0?'selected':'')+'" data-scenario="'+esc(x.id||i)+'" onclick="selectSandboxScenario(this.dataset.scenario)"><h3>'+esc((x.code?x.code+' · ':'')+(x.title||x.name||'情景'))+'</h3><div class="muted">'+esc(x.description||x.condition||'')+'</div><div class="tag">敏感度 '+(x.sensitivity!=null?Number(x.sensitivity).toFixed(2):'—')+'</div><div class="tag">置信度 '+esc(x.confidence||'—')+'</div><div class="tag">状态 '+esc(x.activationState||'WATCH')+'</div><div class="scorebar"><span style="width:'+Math.max(0,Math.min(100,Number(x.triggerScore||0)*100))+'%"></span></div></article>').join('');
- renderSandboxScenario(scenarioRows[0],0); renderEvidenceTimeline(scenarioRows[0]); renderTransmissionValidation(scenarioRows[0]); renderTransmissionTimeline(scenarioRows[0]); renderHistoricalMarketWindows(scenarioRows[0]); renderRetrospectiveCalibration(scenarioRows[0]); renderTriggerCalibration();
+ renderSandboxScenario(scenarioRows[0],0); renderEvidenceTimeline(scenarioRows[0]); renderTransmissionValidation(scenarioRows[0]); renderTransmissionTimeline(scenarioRows[0]); renderHistoricalMarketWindows(scenarioRows[0]); renderRetrospectiveCalibration(scenarioRows[0]); renderTriggerCalibration(); renderCalibrationAudit();
  renderScenarioHistory(s.scenarioHistory);
  document.getElementById('signals').innerHTML=(s.signals||[]).map(x=>'<div class="card"><b>'+esc(x.name)+'</b><p>'+esc(x.trigger)+'</p><div class="muted">'+esc(x.why)+'</div></div>').join('');
  const layers=s.layers||[]; document.getElementById('layers').innerHTML=layers.map(x=>'<div class="card"><b>'+esc(x.name)+'</b><p>'+esc(x.signal)+'</p><div class="muted">'+esc(x.caveat||'证据：'+(x.evidence||'未标注'))+'</div></div>').join('');
@@ -81,6 +87,11 @@ function renderEvidenceTimeline(sc){
     const l=life[x.lifecycle]||x.lifecycle||'未知';
     return '<div class="tag"><b>'+esc(l)+'</b> · '+esc(x.title||'')+' · 首次 '+esc(x.firstSeenAt||'未知')+' · 观察 '+Number(x.observationCount||0)+' 次 · 独立来源 '+Number(x.independentSourceCount||0)+'</div>';
   }).join(''):'<span class="tag">当前剧本暂无可追踪事件注册记录</span>';
+}
+function renderCalibrationAudit(){
+  const box=document.getElementById('calibrationAudit'); if(!box)return;
+  const rows=window.__calibrationAudit||[];
+  box.innerHTML=rows.length?rows.slice(0,12).map(x=>'<div class="card"><b>'+esc(x.trigger||'')+'</b><div class="muted mini">样本 '+x.sampleSize+' · 历史明显偏离率 '+(x.historicalSignalRate??'—')+' · 因子 '+x.baseFactor+' → '+x.appliedFactor+' · '+esc(x.direction)+'</div><div class="muted mini">'+esc(x.reason||'')+' · 约束 '+esc(x.guardrail||'')+'</div></div>').join(''):'<div class="muted mini">暂无已应用的校准变更。</div>';
 }
 function renderTriggerCalibration(){
   const box=document.getElementById('triggerCalibration'); if(!box)return;
