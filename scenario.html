@@ -250,7 +250,7 @@ async function loadScenario(){
   const recent=arr.filter(n=>{const t=Date.parse(n.time||n.updated||n.published||'');return !t||Date.now()-t<=31*86400000;});
   const match=keys=>recent.filter(n=>keys.some(k=>textOf(n).includes(k)));
   const latest=keys=>match(keys)[0]||null;
-  const mk=keys=>{const a=match(keys),n=a[0];return {count:a.length,latest:n?.titleZh||n?.title||''};};
+  const mk=keys=>{const a=match(keys),n=a[0];return {count:a.length,latest:n?.titleZh||n?.title||'',items:a.slice(0,10).map(n=>({title:n.titleZh||n.title||'未命名事件',url:n.url||'',sourceOrg:n.sourceOrg||n.source||'',time:n.time||n.updated||n.published||''}))};};
   data.sandboxInputs={
    china:mk(['china','中国','beijing','北京']),
    us:mk(['united states','u.s.','us ','美国','washington','华盛顿']),
