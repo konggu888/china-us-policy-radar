@@ -737,7 +737,7 @@ def build_cross_run_validation(scenarios,history):
     return out
 
 def build_dynamic_response_tree(scenario, events=None, previous_tree=None):
-    """Evidence-linked four-mode response tree; statuses describe evidence coverage, never probability."""
+    """Evidence-linked response tree with state continuity; status is descriptive, never probabilistic."""
     events=events or []
     tools={x["id"]:x for x in _countermeasure_library()}
     kws={
@@ -758,53 +758,98 @@ def build_dynamic_response_tree(scenario, events=None, previous_tree=None):
       ("THIRD_PARTY_SHIFT","第三方转向","第三方政策、产能、贸易路线或金融通道发生可验证变化"),
       ("NEGOTIATE","谈判/豁免","通过磋商、许可、配额、延期或对等安排调整措施")
     ]
+    prev={}
+    if isinstance(previous_tree,dict):
+        for r in previous_tree.get("rounds",[]) or []:
+            for b in r.get("branches",[]) or []:
+                if b.get("id"): prev[b["id"]]=b
+            for b in r.get("modes",[]) or []:
+                for x in b.get("branches",[]) or []:
+                    if x.get("id"): prev[x["id"]]=x
+
     def hits(mode,tid):
         out=[]
         for e in events:
             actor=e.get("actor") or {}
             cc=actor.get("country")
-            fields=[
-                str(e.get("title","")),
-                str(e.get("summary","")),
-                str(e.get("category","")),
-                " ".join(str(x) for x in (e.get("tags") or [])),
-                str(actor.get("name",""))
-            ]
-            text_all=" ".join(fields).lower()
+            text_all=" ".join([
+                str(e.get("title","")),str(e.get("summary","")),str(e.get("category","")),
+                " ".join(str(x) for x in (e.get("tags") or [])),str(actor.get("name",""))
+            ]).lower()
             if mode=="THIRD_PARTY_SHIFT" and cc in ("CN","US","OTHER",None): continue
             if mode in ("DEESCALATE","NEGOTIATE") and not any(x.lower() in text_all for x in kws["DIPLOMATIC_NEGOTIATION"]):
                 continue
             if any(x.lower() in text_all for x in kws.get(tid,())):
                 out.append(e)
         return out
+
+    def transition(branch_id, matched, primary, old):
+        current="OBSERVED" if primary else ("SUPPORTED" if matched else "UNRESOLVED")
+        if old:
+            old_status=old.get("status")
+            old_count=int((old.get("evidenceCoverage") or {}).get("eventCount",0) or 0)
+            new_count=len(matched)
+            if old_status=="OBSERVED" and not primary and not matched:
+                current="WEAKENED"
+            elif old_status in ("OBSERVED","SUPPORTED") and new_count>old_count:
+                current="EVIDENCE_ENHANCED"
+            elif old_status=="UNRESOLVED" and matched:
+                current="SUPPORTED" if not primary else "OBSERVED"
+        return current
+
     rounds=[]
     for no,actor in enumerate(("CN","US","CN"),1):
         branches=[]
         for mid,mname,condition in modes:
-            for tid in tools:
+            for tid,tool in tools.items():
                 hs=hits(mid,tid)
-                primary=sum(1 for e in hs if e.get("source",{}).get("tier")=="PRIMARY")
-                status="OBSERVED" if primary else ("SUPPORTED" if hs else "UNRESOLVED")
+                primary=sum(1 for e in hs if (e.get("source") or {}).get("tier")=="PRIMARY")
+                bid=f"r{no}-{mid}-{tid}"
+                old=prev.get(bid)
+                status=transition(bid,hs,primary,old)
                 branches.append({
-                  "id":f"r{no}-{mid}-{tid}","round":no,"actor":actor,"mode":mid,"modeName":mname,
-                  "toolId":tid,"toolName":tools[tid]["name"],"status":status,
-                  "statusReason":"已有正式来源对应事件" if primary else ("已有主题匹配事件" if hs else "当前没有直接匹配证据"),
-                  "matchedEventIds":[e.get("id") for e in hs[:6]],
-                  "matchedEventTitles":[e.get("title") for e in hs[:4]],
-                  "evidenceCoverage":{"eventCount":len(hs),"primarySourceCount":primary,"independentSourceCount":len({e.get("source",{}).get("provider") for e in hs if e.get("source",{}).get("provider")})},
-                  "triggerConditions":tools[tid].get("activationTriggers",[]),
-                  "observableEvidence":tools[tid].get("observableEvidence",[]),
+                  "id":bid,"round":no,"actor":actor,"mode":mid,"modeName":mname,
+                  "toolId":tid,"toolName":tool["name"],"status":status,
+                  "statusReason":(
+                    "本轮出现正式来源对应事件" if primary else
+                    ("本轮出现主题匹配事件" if hs else
+                     ("上一轮有证据但本轮暂未发现新匹配证据" if old and old.get("status") in ("OBSERVED","SUPPORTED","EVIDENCE_ENHANCED") else "当前没有直接匹配证据"))
+                  ),
+                  "matchedEventIds":[e.get("id") for e in hs[:8]],
+                  "matchedEventTitles":[e.get("title") for e in hs[:6]],
+                  "evidenceCoverage":{
+                    "eventCount":len(hs),
+                    "primarySourceCount":primary,
+                    "independentSourceCount":len({(e.get("source") or {}).get("provider") for e in hs if (e.get("source") or {}).get("provider")})
+                  },
+                  "previousState":old.get("status") if old else "NEW",
+                  "stateTransition":"NEW" if not old else (old.get("status")+" -> "+status),
+                  "triggerConditions":tool.get("activationTriggers",[]),
+                  "observableEvidence":tool.get("observableEvidence",[]),
                   "nextMonitor":["正式政策文本/公告","执行细则、许可证或名单","后续贸易、产业、金融数据"],
-                  "caveat":"条件分支，不表示政策意图、发生概率或最终结果。"
+                  "caveat":"条件分支；状态表示当前证据覆盖变化，不表示政策意图、发生概率或最终结果。"
                 })
-        rounds.append({"round":no,"actor":actor,"title":f"第{no}轮 · {actor}响应选择","modes":[{"id":x[0],"name":x[1],"condition":x[2]} for x in modes],"branches":branches})
+        rounds.append({"round":no,"actor":actor,"title":f"第{no}轮 · {actor}响应选择",
+                        "modes":[{"id":x[0],"name":x[1],"condition":x[2]} for x in modes],
+                        "branches":branches})
     transitions=[{"fromRound":i,"toRound":i+1,"rules":[
       {"when":"ESCALATE","nextModes":["ESCALATE","THIRD_PARTY_SHIFT","NEGOTIATE"]},
       {"when":"DEESCALATE","nextModes":["DEESCALATE","NEGOTIATE"]},
       {"when":"THIRD_PARTY_SHIFT","nextModes":["THIRD_PARTY_SHIFT","ESCALATE","NEGOTIATE"]},
       {"when":"NEGOTIATE","nextModes":["NEGOTIATE","DEESCALATE","ESCALATE"]}
     ]} for i in (1,2)]
-    return {"version":"dynamic-response-v3","rootScenarioId":scenario.get("id"),"generatedAt":datetime.now(timezone.utc).isoformat(),"rounds":rounds,"transitions":transitions,"eventCount":len(events),"method":"事件用于更新证据覆盖状态，不用于预测。"}
+    return {
+      "version":"dynamic-response-v4",
+      "rootScenarioId":scenario.get("id"),
+      "generatedAt":datetime.now(timezone.utc).isoformat(),
+      "rounds":rounds,"transitions":transitions,
+      "eventCount":len(events),
+      "previousTreeVersion":previous_tree.get("version") if isinstance(previous_tree,dict) else None,
+      "stateModel":{"statuses":["NEW","UNRESOLVED","SUPPORTED","OBSERVED","EVIDENCE_ENHANCED","WEAKENED"],
+                    "rule":"状态来自本轮与上一轮证据覆盖的变化；不代表概率、意图或结果。"},
+      "method":"事件用于更新证据覆盖状态；新证据增强节点，证据消失或不再匹配时标记为WEAKENED，而不是删除。"
+    }
+
 def build_scenario_snapshot(scenarios,global_events=None):
     """Compact audit snapshot for UI/history consumers; no probabilities are implied."""
     previous_snapshot=None
