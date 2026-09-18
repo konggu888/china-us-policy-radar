@@ -10,14 +10,19 @@ function authLoad(){
   document.head.appendChild(tag);
 }
 function authPanel(){
-  if(document.getElementById('accountPanel'))return;
+  if(!document.getElementById('accountPanel')){
   const p=document.createElement('section'); p.id='accountPanel'; p.className='panel';
   p.innerHTML='<div class="title">👤 账号与云端同步</div><div id="authBox"><div class="controls"><label>邮箱<input id="authEmail" type="email" autocomplete="email" placeholder="你的邮箱"></label><label>密码<input id="authPassword" type="password" autocomplete="current-password" placeholder="至少 6 位"></label></div><div style="margin-top:10px"><button id="authLogin">登录</button> <button id="authSignup">注册</button> <button id="authResend">重新发送验证邮件</button> <button id="authReset">忘记密码</button></div><div id="authStatus" class="status">登录后，历史推演会自动保存到你的账号；不再需要同步密钥。</div></div>';
   document.querySelector('header.hero').after(p);
-  document.getElementById('authLogin').onclick=login;
-  document.getElementById('authSignup').onclick=signup;
-  document.getElementById('authResend').onclick=resendVerification;
-  document.getElementById('authReset').onclick=resetPassword;
+  }
+  const loginBtn=document.getElementById('authLogin');
+  const signupBtn=document.getElementById('authSignup');
+  const resendBtn=document.getElementById('authResend');
+  const resetBtn=document.getElementById('authReset');
+  if(loginBtn)loginBtn.onclick=login;
+  if(signupBtn)signupBtn.onclick=signup;
+  if(resendBtn)resendBtn.onclick=resendVerification;
+  if(resetBtn)resetBtn.onclick=resetPassword;
 }
 function msg(t){const e=document.getElementById('authStatus');if(e)e.textContent=t;}
 async function login(){
