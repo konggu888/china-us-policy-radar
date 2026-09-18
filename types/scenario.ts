@@ -47,6 +47,8 @@ export interface ActorResponse {
   confidence: ConfidenceLevel;
 }
 
+export type EvidenceLevel = "FACT" | "SIGNAL" | "INFERENCE" | "ASSUMPTION" | "UNKNOWN";
+
 export interface ScenarioChainNode {
   id: string;
   order: number;
@@ -56,6 +58,9 @@ export interface ScenarioChainNode {
   consequence: string;
   nextNodeIds: string[];
   affectedDomains: ActionDomain[];
+  evidenceLevel?: EvidenceLevel;
+  evidenceEventIds?: string[];
+  caveat?: string;
 }
 
 export interface ActionItem {
@@ -116,6 +121,11 @@ export interface Scenario {
   chain: ScenarioChainNode[];
   confidence: ConfidenceLevel;
   sensitivity: number;
+  activationState: "WATCH" | "ACTIVE" | "ELEVATED";
+  triggerScore: number;
+  triggerEvidence: string[];
+  counterSignals: string[];
+  recomputeIf: string[];
   horizons: ScenarioHorizon[];
 }
 
