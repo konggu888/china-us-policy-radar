@@ -68,7 +68,7 @@ FRED={
  'real_gdp':'GDPC1','cpi':'CPIAUCSL','core_cpi':'CPILFESL','pce_price':'PCEPI',
  'unemployment':'UNRATE','nonfarm_payrolls':'PAYEMS','industrial_production':'INDPRO',
  'retail_sales':'RSAFS','fed_funds':'FEDFUNDS','m2':'M2SL','10y_treasury':'DGS10',
- '2y_treasury':'DGS2','30y_treasury':'DGS30','usd_index':'DTWEXBGS'
+ '2y_treasury':'DGS2','5y_treasury':'DGS5','30y_treasury':'DGS30','usd_index':'DTWEXBGS'
 }
 
 def fred_series(series_id):
@@ -196,27 +196,64 @@ def nbs_structured():
 
 def pbc_latest():
     out={'source':'中国人民银行','fetchedAt':datetime.now(timezone.utc).isoformat(),'records':[],'errors':[]}
+    def clean(s):
+        s=re.sub(r'<script[\\s\\S]*?</script>',' ',s,flags=re.I)
+        s=re.sub(r'<style[\\s\\S]*?</style>',' ',s,flags=re.I)
+        s=re.sub(r'<[^>]+>',' ',s)
+        return re.sub(r'\\s+',' ',s).strip()
+    def add(url,text,published=''):
+        patterns={
+          'M2_balance_trillion':r'广义货币\\(M2\\)余额([0-9.]+)万亿元',
+          'M2_yoy_pct':r'广义货币(?:\\(M2\\))?.*?同比增长([+-]?[0-9.]+)%',
+          'M1_balance_trillion':r'狭义货币(?:\\(M1\\))?余额([0-9.]+)万亿元',
+          'M1_yoy_pct':r'狭义货币(?:\\(M1\\))?.*?同比增长([+-]?[0-9.]+)%',
+          'M0_balance_trillion':r'流通中货币(?:\\(M0\\))?余额([0-9.]+)万亿元',
+          'RMB_loans_balance_trillion':r'人民币贷款余额([0-9.]+)万亿元',
+          'RMB_loans_ytd_trillion':r'前([一二三四五六七八九十0-9]+)个月人民币贷款增加([0-9.]+)万亿元',
+          'RMB_deposits_balance_trillion':r'人民币存款余额([0-9.]+)万亿元',
+          'RMB_deposits_ytd_trillion':r'前([一二三四五六七八九十0-9]+)个月人民币存款增加([0-9.]+)万亿元',
+          'interbank_lending_rate_pct':r'同业拆借月加权平均利率为([0-9.]+)%',
+          'pledged_repo_rate_pct':r'质押式(?:债券)?回购月加权平均利率为([0-9.]+)%',
+          'social_financing_ytd_trillion':r'社会融资规模增量累计为([0-9.]+)万亿元'
+        }
+        found=0
+        for name,pat in patterns.items():
+            m=re.search(pat,text)
+            if m:
+                out['records'].append({'indicator':name,'value':nfloat(m.group(1) if name.endswith('_pct') or 'balance' in name or 'ytd' in name or name=='social_financing_ytd_trillion' else m.group(1)),'publishedAt':published,'sourceUrl':url,'source':'中国人民银行'})
+                found+=1
+        return found
     try:
-        page=fetch('https://www.pbc.gov.cn/')
-        links=re.findall(r'href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',page,re.S|re.I)
-        cand=[]
+        index=fetch('https://www.pbc.gov.cn/diaochatongjisi/116219/116225/index.html')
+        links=re.findall(r'href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',index,re.S|re.I)
+        candidates=[]
         for href,title in links:
-            txt=re.sub(r'<[^>]+>',' ',title); txt=re.sub(r'\\s+',' ',txt).strip()
-            if '贷款市场报价利率' in txt or 'LPR' in txt:
-                cand.append((urllib.parse.urljoin('https://www.pbc.gov.cn/',href),txt))
-        if cand:
-            url,title=cand[0]
-            body=fetch(url); plain=re.sub(r'<[^>]+>',' ',body); plain=re.sub(r'\\s+',' ',plain)
-            m=re.search(r'([12]年期LPR[^0-9]{0,20})([0-9]+(?:\\.[0-9]+)?)%',plain)
-            n=re.search(r'5年期以上LPR[^0-9]{0,20}([0-9]+(?:\\.[0-9]+)?)%',plain)
-            if m: out['records'].append({'indicator':'LPR_1Y_pct','value':nfloat(m.group(2)),'sourceUrl':url,'publishedAt':title})
-            if n: out['records'].append({'indicator':'LPR_5Y_PCT','value':nfloat(n.group(1)),'sourceUrl':url,'publishedAt':title})
-        else: out['errors'].append('LPR link not found')
-    except Exception as e: out['errors'].append('LPR:'+str(e))
+            txt=clean(title)
+            if ('金融统计数据报告' in txt or '社会融资规模增量统计数据报告' in txt or '社会融资规模存量统计数据报告' in txt) and re.search(r'2026年',txt):
+                candidates.append((urllib.parse.urljoin('https://www.pbc.gov.cn/',href),txt))
+        for url,title in candidates[:12]:
+            try:
+                body=clean(fetch(url))
+                date=re.search(r'文章来源：\\s*(20\\d{2}-\\d{2}-\\d{2})',body)
+                add(url,body,date.group(1) if date else '')
+            except Exception as e: out['errors'].append('REPORT:'+str(e))
+    except Exception as e: out['errors'].append('REPORT_INDEX:'+str(e))
+    try:
+        home=fetch('https://www.pbc.gov.cn/')
+        links=re.findall(r'href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',home,re.S|re.I)
+        for href,title in links:
+            txt=clean(title)
+            if '公开市场业务交易公告' in txt:
+                url=urllib.parse.urljoin('https://www.pbc.gov.cn/',href)
+                body=clean(fetch(url))
+                m=re.search(r'(20\\d{2}-\\d{1,2}-\\d{1,2}).{0,250}?开展了([0-9.]+)亿元(?:[0-9一二三四五六七八九十]*?)([0-9]+)天期逆回购操作',body)
+                if m:
+                    out['records'].append({'indicator':'open_market_7d_reverse_repo_amount_billion','value':nfloat(m.group(2)),'observedAt':m.group(1),'source':'中国人民银行','sourceUrl':url})
+                break
+    except Exception as e: out['errors'].append('OMO:'+str(e))
     try:
         html=fetch('https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do')
-        plain=re.sub(r'<[^>]+> ',' ',html)
-        plain=re.sub(r'<[^>]+>',' ',plain); plain=re.sub(r'\\s+',' ',plain)
+        plain=clean(html)
         m=re.search(r'(20\\d{2}-\\d{2}-\\d{2})\\s+([0-9]+(?:\\.[0-9]+)?)',plain)
         if m: out['records'].append({'indicator':'USD/CNY_PBOC_MID','value':nfloat(m.group(2))/100,'observedAt':m.group(1),'source':'SAFE/PBOC RMB central parity','sourceUrl':'https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do'})
     except Exception as e: out['errors'].append('RMB_MID:'+str(e))
