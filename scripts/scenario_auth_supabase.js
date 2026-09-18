@@ -27,10 +27,16 @@ async function login(){
 }
 async function signup(){
  const email=document.getElementById('authEmail').value.trim(), password=document.getElementById('authPassword').value;
- if(!email||password.length<6)return msg('注册需要有效邮箱和至少 6 位密码。');
- const {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}});
- if(error)return msg('注册失败：'+error.message);
- msg(data.session?'注册成功。':'注册成功，请先查收邮箱完成验证。');
+ if(!sb)return msg('登录服务正在加载，请稍等 1-2 秒后再试。');
+ if(!email)return msg('请输入邮箱。');
+ if(password.length<6)return msg('注册需要至少 6 位密码。');
+ msg('正在注册，请稍候……');
+ try{
+   const {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}});
+   if(error){msg('注册失败：'+error.message);return;}
+   msg(data?.session?'注册成功，正在登录并同步历史推演……':'注册成功，请查收邮箱完成验证后再登录。');
+   if(data?.session) await cloudPull();
+ }catch(e){msg('注册请求失败：'+(e?.message||'请检查网络后重试。'));}
 }
 async function resetPassword(){
  const email=document.getElementById('authEmail').value.trim();
