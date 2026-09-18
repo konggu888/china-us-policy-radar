@@ -46,7 +46,7 @@ function renderSandboxScenario(sc,index){if(!sc)return;const hs=sc.horizons||[];
 function selectSandboxHorizon(i){const sc=window.__selectedScenario,hs=sc?.horizons||[],h=hs[i];if(!h)return;window.__selectedHorizon=h;document.querySelectorAll('.sandbox-tab').forEach((x,n)=>x.classList.toggle('active',n===i));
  const a=h.actions||{}; const section=(label,x)=>'<article class="card matrix-section"><h4>'+label+'</h4><b>做</b>'+list((x?.do||[]).map(y=>y.title+'：'+y.action))+'<b>不要做</b>'+list((x?.dont||[]).map(y=>y.title+'：'+y.action))+'<b>观察</b>'+list((x?.watch||[]).map(y=>y.title+'：'+y.action))+'</article>';
  document.getElementById('horizonMatrix').innerHTML='<div class="matrix-grid">'+section('投资',a.investment)+section('贸易',a.trade)+section('生活',a.life)+'</div>';
- const impacts=(h.impacts||[]).map(x=>esc(x.domain)+' · '+esc(x.direction)+' · 强度 '+Number(x.intensity||0).toFixed(2)+'：'+esc(x.explanation)).join('；')||'暂无';
+ const impacts=(h.impacts||[]).map(x=>esc(x.domain)+' · '+esc(x.direction)+' · 强度 '+Number(x.intensity||0).toFixed(2)+'：'+esc(x.explanation)).join('；')||'暂无'; const ev=(sc.triggerEvidence||[]).map(x=>'<span class="tag">证据：'+esc(x)+'</span>').join(''); const cs=(sc.counterSignals||[]).map(x=>'<span class="tag">反证：'+esc(x)+'</span>').join('');
  const sigs=(h.keySignals||[]).map(x=>esc(x.name)+' / '+esc(x.metric)+' / '+esc(x.direction)).join('；')||'暂无';
  document.getElementById('sandboxEvidence').innerHTML='<b>'+esc(h.label||h.horizon)+'</b> · 影响：'+impacts+'<br>触发观察：'+sigs+'<br><span class="muted">情景仅在触发条件与证据满足时提高权重；出现反证时应重新建模。</span>';
 }
