@@ -980,7 +980,18 @@ def main():
  news=read('news.json',[]); dash=read('dashboard.json',{}); policy=read('policy_radar.json',{}); social=read('social_signals.json',{}); ai=read('ai_summaries.json',{})
  base=build(news,dash,policy,social,ai); x=ai_validate(base)
  if isinstance(x,dict):
-  for k in ('events','state','social','data_health','layers'): x[k]=base[k]
+  for k in ('events','state','social','data_health','layers','responses','scenarioSnapshot','scenarioHistory','pipeline','action_domains','time_horizons'): x[k]=base[k]
+  ai_tree=x.get('scenarioTree') if isinstance(x.get('scenarioTree'),dict) else {}
+  base_tree=base.get('scenarioTree',{})
+  base_by_code={str(s.get('code')):s for s in base_tree.get('scenarios',[]) or []}
+  merged=[]
+  for s in ai_tree.get('scenarios',[]) or base_tree.get('scenarios',[]):
+   b=base_by_code.get(str(s.get('code')),{}); m=dict(b); m.update(s)
+   for k in ('responseOptions','highRelevanceResponseTools','chain','recomputeIf'): m[k]=b.get(k,m.get(k,[]))
+   merged.append(m)
+  ai_tree['scenarios']=merged or base_tree.get('scenarios',[])
+  x['scenarioTree']=ai_tree
+  x['globalEvents']=base.get('globalEvents',[]); x['dynamic_scenarios']=ai_tree.get('scenarios',[])
   x['generated_at']=datetime.now(timezone.utc).isoformat(); x['engine']='scenario-engine-v3-ai-validated'; state=x
  else: state=base
  OUT.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding='utf-8'); print('Scenario:',state['engine'],'layers=',len(state['layers']),'events=',len(state['events'])); return 0
