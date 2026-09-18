@@ -605,7 +605,7 @@ def build_transmission_windows(global_events, snapshots):
         })
     return out
 
-SCENARIO_VALIDATION_HISTORY=ROOT/'scenario_validation_history.json'
+SCENARIO_VALIDATION_HISTORY=DATA/'scenario_validation_history.json'
 
 def persist_validation_history(scenarios,historical_events,max_rows=720):
     """Persist compact cross-run validation observations so later runs can validate the same trigger without relying on the previous run only."""
