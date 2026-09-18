@@ -38,23 +38,23 @@ def nbs_latest():
     text=re.sub(r'<[^>]+>',' ',text)
     text=re.sub(r'&nbsp;',' ',text)
     text=re.sub(r'\s+',' ',text)
-    published=re.search(r'(20\\d{2}/\\d{1,2}/\\d{1,2})',text)
+    published=re.search(r'(20\d{2}/\d{1,2}/\d{1,2})',text)
     observed=published.group(1).replace('/','-') if published else ''
     patterns={
-      'industrial_yoy_pct':r'规模以上工业增加值同比增长([+-]?\\d+(?:\\.\\d+)?)%',
-      'industrial_mom_pct':r'环比增长([+-]?\\d+(?:\\.\\d+)?)%',
-      'services_production_yoy_pct':r'服务业生产指数同比增长([+-]?\\d+(?:\\.\\d+)?)%',
-      'fixed_asset_investment_ytd_yoy_pct':r'固定资产投资.*?同比下降([+-]?\\d+(?:\\.\\d+)?)%',
-      'retail_yoy_pct':r'社会消费品零售总额.*?同比增长([+-]?\\d+(?:\\.\\d+)?)%',
-      'exports_yoy_pct':r'出口[^。]{0,80}?增长([+-]?\\d+(?:\\.\\d+)?)%',
-      'imports_yoy_pct':r'进口[^。]{0,80}?增长([+-]?\\d+(?:\\.\\d+)?)%',
-      'unemployment_pct':r'城镇调查失业率为([+-]?\\d+(?:\\.\\d+)?)%',
-      'cpi_yoy_pct':r'CPI同比上涨([+-]?\\d+(?:\\.\\d+)?)%',
-      'cpi_mom_pct':r'CPI[^。]{0,80}?环比上涨([+-]?\\d+(?:\\.\\d+)?)%',
-      'core_cpi_yoy_pct':r'核心CPI同比上涨([+-]?\\d+(?:\\.\\d+)?)%',
-      'ppi_yoy_pct':r'PPI同比上涨([+-]?\\d+(?:\\.\\d+)?)%',
-      'ppi_mom_pct':r'PPI[^。]{0,80}?环比上涨([+-]?\\d+(?:\\.\\d+)?)%',
-      'fx_reserves_usd_trillion':r'外汇储备(?:稳定在|超过|保持在)\\s*([+-]?\\d+(?:\\.\\d+)?)万亿美元'
+      'industrial_yoy_pct':r'规模以上工业增加值同比增长([+-]?\d+(?:\.\d+)?)%',
+      'industrial_mom_pct':r'环比增长([+-]?\d+(?:\.\d+)?)%',
+      'services_production_yoy_pct':r'服务业生产指数同比增长([+-]?\d+(?:\.\d+)?)%',
+      'fixed_asset_investment_ytd_yoy_pct':r'固定资产投资.*?同比下降([+-]?\d+(?:\.\d+)?)%',
+      'retail_yoy_pct':r'社会消费品零售总额.*?同比增长([+-]?\d+(?:\.\d+)?)%',
+      'exports_yoy_pct':r'出口[^。]{0,80}?增长([+-]?\d+(?:\.\d+)?)%',
+      'imports_yoy_pct':r'进口[^。]{0,80}?增长([+-]?\d+(?:\.\d+)?)%',
+      'unemployment_pct':r'城镇调查失业率为([+-]?\d+(?:\.\d+)?)%',
+      'cpi_yoy_pct':r'CPI同比上涨([+-]?\d+(?:\.\d+)?)%',
+      'cpi_mom_pct':r'CPI[^。]{0,80}?环比上涨([+-]?\d+(?:\.\d+)?)%',
+      'core_cpi_yoy_pct':r'核心CPI同比上涨([+-]?\d+(?:\.\d+)?)%',
+      'ppi_yoy_pct':r'PPI同比上涨([+-]?\d+(?:\.\d+)?)%',
+      'ppi_mom_pct':r'PPI[^。]{0,80}?环比上涨([+-]?\d+(?:\.\d+)?)%',
+      'fx_reserves_usd_trillion':r'外汇储备(?:稳定在|超过|保持在)\s*([+-]?\d+(?:\.\d+)?)万亿美元'
     }
     values={}
     for k,p in patterns.items():
