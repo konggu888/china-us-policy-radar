@@ -142,6 +142,7 @@ export interface ScenarioSnapshotItem {
 export interface ScenarioSnapshot {
   generatedAt: string;
   scenarios: ScenarioSnapshotItem[];
+  eventEvidence?: { id: string; title: string; publishedAt?: string; fetchedAt?: string; tier?: "PRIMARY" | "KNOWN_MEDIA" | "UNKNOWN"; freshness?: "NEW" | "RECENT" | "STALE" | "UNKNOWN"; dedupeKey?: string }[];
 }
 
 export interface EvidenceDriver {
@@ -155,6 +156,11 @@ export interface EvidenceDriver {
   name?: string;
   value?: unknown;
   change_pct?: number;
+  publishedAt?: string;
+  fetchedAt?: string;
+  tier?: "PRIMARY" | "KNOWN_MEDIA" | "UNKNOWN";
+  freshness?: "NEW" | "RECENT" | "STALE" | "UNKNOWN";
+  credibility?: number;
 }
 
 export interface ScenarioHistoryChange {
@@ -174,6 +180,8 @@ export interface ScenarioHistory {
   baseline: "FIRST_RUN" | "COMPARISON";
   previousGeneratedAt: string | null;
   changes: ScenarioHistoryChange[];
+  newEvidence?: { id: string; title: string; publishedAt?: string; fetchedAt?: string; tier?: "PRIMARY" | "KNOWN_MEDIA" | "UNKNOWN"; freshness?: "NEW" | "RECENT" | "STALE" | "UNKNOWN"; dedupeKey?: string }[];
+  staleOrRemovedEvidence?: { id: string; title: string; publishedAt?: string; fetchedAt?: string; tier?: "PRIMARY" | "KNOWN_MEDIA" | "UNKNOWN"; freshness?: "NEW" | "RECENT" | "STALE" | "UNKNOWN"; dedupeKey?: string }[];
 }
 
 export interface ScenarioTree {
