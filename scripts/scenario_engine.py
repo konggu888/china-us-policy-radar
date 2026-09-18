@@ -605,6 +605,56 @@ def build_transmission_windows(global_events, snapshots):
         })
     return out
 
+SCENARIO_VALIDATION_HISTORY=ROOT/'scenario_validation_history.json'
+
+def persist_validation_history(scenarios,historical_events,max_rows=720):
+    """Persist compact cross-run validation observations so later runs can validate the same trigger without relying on the previous run only."""
+    old=read('scenario_validation_history.json',[])
+    if isinstance(old,dict): old=old.get('rows',[])
+    now=datetime.now(timezone.utc).isoformat()
+    rows=[]
+    for s in scenarios or []:
+        for d in [x for x in s.get('evidenceDrivers',[]) if x.get('kind')=='EVENT']:
+            e=next((x for x in (historical_events or []) if str(x.get('eventId'))==str(d.get('id'))),None)
+            if not e: continue
+            windows=[w for w in e.get('windows',[]) if w.get('status')=='OBSERVED']
+            rows.append({
+                'recordedAt':now,'scenarioCode':s.get('code'),'driverId':d.get('id'),
+                'driverTitle':d.get('title'),'category':d.get('category'),'dedupeKey':e.get('dedupeKey'),
+                'eventPublishedAt':e.get('eventPublishedAt'),'followupWindows':[w.get('window') for w in windows],
+                'followupObserved':bool(windows),
+                'followupEventIds':sum(([x] if x else [] for w in windows for x in []),[]),
+                'marketObservedWindows':[w.get('window') for w in e.get('windows',[]) if w.get('status')=='OBSERVED'],
+                'sourceCount':int((e.get('corroboration') or {}).get('independentSourceCount',0) or 0)
+            })
+    # One row per run/driver; keep bounded history.
+    old.extend(rows)
+    old=sorted(old,key=lambda x:x.get('recordedAt',''))[-max_rows:]
+    SCENARIO_VALIDATION_HISTORY.write_text(json.dumps(old,ensure_ascii=False,indent=2),encoding='utf-8')
+    return old
+
+def build_cross_run_validation(scenarios,history):
+    """Aggregate durable observations across many runs; descriptive only, never a probability."""
+    hist=history or []
+    out=[]
+    for s in scenarios or []:
+        for d in [x for x in s.get('evidenceDrivers',[]) if x.get('kind')=='EVENT']:
+            key=str(d.get('id'))
+            rr=[x for x in hist if str(x.get('driverId'))==key]
+            if not rr: continue
+            out.append({
+                'scenarioCode':s.get('code'),'driverId':key,'driverTitle':d.get('title'),
+                'runObservationCount':len(rr),
+                'firstObservedAt':min((x.get('recordedAt') for x in rr),default=None),
+                'followupRunCount':sum(1 for x in rr if x.get('followupObserved')),
+                'marketObservedRunCount':sum(1 for x in rr if x.get('marketObservedWindows')),
+                'maxIndependentSourceCount':max((int(x.get('sourceCount',0) or 0) for x in rr),default=0),
+                'observedWindows':sorted(set(w for x in rr for w in x.get('followupWindows',[]))),
+                'status':'MULTI_RUN_OBSERVED' if len(rr)>=2 else 'SINGLE_RUN',
+                'method':'跨运行持久化的后续观察计数；用于描述性校准，不代表概率、因果或预测成立。'
+            })
+    return out
+
 def build_scenario_snapshot(scenarios,global_events=None):
     """Compact audit snapshot for UI/history consumers; no probabilities are implied."""
     previous_snapshot=None
@@ -745,6 +795,8 @@ def build_dynamic_tree(news,dash=None):
     snapshot["historicalMarketWindows"]=historical
     snapshot["retrospectiveCalibration"]=build_retrospective_calibration(scenarios,historical)
     snapshot["timeWindowValidation"]=build_time_window_validation(scenarios,historical)
+    validation_history=persist_validation_history(scenarios,historical)
+    snapshot["crossRunValidation"]=build_cross_run_validation(scenarios,validation_history)
     proposed_calibration=build_trigger_calibration(scenarios,historical)
     previous_audit=(previous_snapshot or {}).get("calibrationAudit",[])
     snapshot["triggerCalibration"],guard_audit=_calibration_guard(proposed_calibration,previous_audit)
