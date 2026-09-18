@@ -1,0 +1,345 @@
+{
+  "generatedAt": "2026-09-19T00:00:00+08:00",
+  "purpose": "审计现有雷达数据层：区分已经存在、已有但质量/覆盖不足、完全缺失的数据，并为缺口指定优先数据源。",
+  "statusLegend": {
+    "PRESENT": "当前代码已有采集/快照能力",
+    "PARTIAL": "已有能力但覆盖、稳定性或历史维度不足",
+    "MISSING": "当前仓库没有可靠数据管道"
+  },
+  "currentRepositoryFindings": [
+    {
+      "item": "data/news.json",
+      "status": "PARTIAL",
+      "detail": "当前文件为空；采集器有一手官方HTML/RSS、媒体RSS、Google/Bing RSS，并有归档恢复保护。"
+    },
+    {
+      "item": "data/market_snapshots.json",
+      "status": "PARTIAL",
+      "detail": "当前仅保存9个市场变量的快照；历史频率和品种覆盖不足。"
+    },
+    {
+      "item": "data/scenario_state.json",
+      "status": "PRESENT",
+      "detail": "已消费新闻、市场与情景引擎结果，但不是原始数据源。"
+    },
+    {
+      "item": "data/collection_health.json",
+      "status": "PRESENT",
+      "detail": "已有来源健康状态，但需要扩展为字段级数据质量。"
+    },
+    {
+      "item": "data/archive/*.json",
+      "status": "PRESENT",
+      "detail": "新闻长期归档已建立，可用于历史事件窗口。"
+    }
+  ],
+  "domains": [
+    {
+      "id": "policy_cn",
+      "name": "中国政策原文",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "needed": [
+        "国务院/国务院办公厅正式文件",
+        "发改委",
+        "财政部",
+        "人民银行",
+        "商务部",
+        "工信部",
+        "外交部",
+        "海关总署",
+        "国家金融监督管理总局",
+        "证监会",
+        "外汇局",
+        "科技部",
+        "能源局"
+      ],
+      "current": [
+        "collect_broad_sources.py 已包含国务院、发改委、人民银行、工信部、商务部、统计局、外交部、国防部等官方页",
+        "collect_policy_sources.py 已登记更多中国部委域名，但通过GDELT间接发现，不能替代第一方直采"
+      ],
+      "firstParty": [
+        "https://www.gov.cn/",
+        "https://sousuo.www.gov.cn/zcwjk/",
+        "https://www.ndrc.gov.cn/",
+        "https://www.pbc.gov.cn/",
+        "https://www.mofcom.gov.cn/",
+        "https://www.miit.gov.cn/",
+        "https://www.mfa.gov.cn/",
+        "https://www.customs.gov.cn/",
+        "https://www.mof.gov.cn/",
+        "https://www.safe.gov.cn/",
+        "https://www.csrc.gov.cn/"
+      ],
+      "gap": "需要把关键部委从通用新闻采集升级为独立、可追踪的政策文档采集器，并保存文号、发布日期、生效日期、政策类型、原文URL。"
+    },
+    {
+      "id": "policy_us",
+      "name": "美国政策/法规原文",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "needed": [
+        "White House总统文件",
+        "Federal Register规则/总统文件",
+        "USTR",
+        "BIS/Commerce出口管制",
+        "Treasury制裁",
+        "State",
+        "Defense",
+        "Congress法案",
+        "Regulations.gov规则制定材料"
+      ],
+      "current": [
+        "已有White House、State、Defense、Treasury、Commerce、USTR等官方页；Fed/BLS/EIA/BEA官方源也已有",
+        "缺Federal Register结构化直采、BIS专门管道、Congress/Regulations.gov结构化管道"
+      ],
+      "firstParty": [
+        "https://www.whitehouse.gov/",
+        "https://www.federalregister.gov/api/v1/documents.json",
+        "https://www.bis.gov/",
+        "https://home.treasury.gov/",
+        "https://ustr.gov/",
+        "https://www.congress.gov/",
+        "https://api.regulations.gov/v4/documents"
+      ],
+      "gap": "把正式规则与新闻/新闻稿分层。Federal Register可按机构、日期、文档类型筛选；适合成为美国正式政策事件主表。"
+    },
+    {
+      "id": "macro_cn",
+      "name": "中国宏观经济",
+      "priority": "P0",
+      "status": "MISSING",
+      "needed": [
+        "GDP",
+        "CPI/PPI",
+        "工业增加值",
+        "固定资产投资",
+        "房地产投资/销售",
+        "社零",
+        "就业/失业",
+        "PMI",
+        "居民收入",
+        "财政",
+        "金融",
+        "外贸",
+        "外汇储备"
+      ],
+      "current": [],
+      "firstParty": [
+        "https://data.stats.gov.cn/",
+        "https://www.stats.gov.cn/",
+        "https://www.pbc.gov.cn/",
+        "https://www.mof.gov.cn/",
+        "https://www.customs.gov.cn/"
+      ],
+      "gap": "需要建立结构化指标表与历史快照，不应从新闻标题推导宏观指标。"
+    },
+    {
+      "id": "macro_us",
+      "name": "美国宏观经济",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "needed": [
+        "GDP",
+        "CPI",
+        "PCE",
+        "PPI",
+        "就业/失业",
+        "工资",
+        "零售",
+        "工业生产",
+        "财政",
+        "货币",
+        "Fed资产负债表"
+      ],
+      "current": [
+        "BLS、BEA、Fed新闻源已存在，但主要作为新闻/页面采集，不是统一结构化指标库"
+      ],
+      "firstParty": [
+        "https://fred.stlouisfed.org/",
+        "https://www.bls.gov/",
+        "https://www.bea.gov/",
+        "https://www.federalreserve.gov/",
+        "https://home.treasury.gov/"
+      ],
+      "gap": "优先建立FRED/官方机构结构化时间序列，保存发布日期、观测期、修订状态。"
+    },
+    {
+      "id": "market",
+      "name": "金融市场",
+      "priority": "P0",
+      "status": "PARTIAL",
+      "needed": [
+        "USD/CNY",
+        "USD/CNH",
+        "DXY",
+        "EUR/USD",
+        "USD/JPY",
+        "2Y/5Y/10Y/30Y美债",
+        "中国1Y/5Y/10Y/30Y",
+        "上证/深证/沪深300/恒生/恒科",
+        "S&P500/Nasdaq/Dow",
+        "黄金/白银/Brent/WTI/铜",
+        "VIX",
+        "信用利差",
+        "期限利差"
+      ],
+      "current": [
+        "dashboard/market_sectors已有Yahoo Finance与腾讯/Eastmoney部分指数采集；market_snapshots当前仅9项"
+      ],
+      "firstParty": [
+        "Fed Treasury/FRED（利率宏观基准）",
+        "交易所官方数据（中国市场）",
+        "CME/ICE等交易所官方数据（相应品种）"
+      ],
+      "secondary": [
+        "Yahoo Finance",
+        "Eastmoney",
+        "Tencent quote"
+      ],
+      "gap": "需要独立market_collector，统一symbol、provider、timestamp、observedAt、value、daily/weekly/monthly return，并把二级源标记为非官方。"
+    },
+    {
+      "id": "trade",
+      "name": "中美贸易/商品级贸易",
+      "priority": "P0",
+      "status": "MISSING",
+      "needed": [
+        "双边贸易额",
+        "进口/出口",
+        "HS商品",
+        "数量/重量",
+        "国家/地区",
+        "关税/税率",
+        "贸易转移到越南/墨西哥/东盟等"
+      ],
+      "current": [],
+      "firstParty": [
+        "US Census International Trade API",
+        "中国海关总署",
+        "WTO/UN Comtrade作为跨国交叉验证"
+      ],
+      "gap": "美国Census提供2010年至今的月度国际贸易数据并支持HS等分类；需要申请Census API key后接入。"
+    },
+    {
+      "id": "supply",
+      "name": "供应链/物流/关键原材料",
+      "priority": "P1",
+      "status": "MISSING",
+      "needed": [
+        "航运运价/运量",
+        "港口拥堵",
+        "交付周期",
+        "半导体产能",
+        "GPU/服务器",
+        "稀土/锂/铜/镍/钴",
+        "电力/天然气/LNG",
+        "关键产品价格"
+      ],
+      "current": [
+        "新闻分类和市场行业板块仅能间接观察"
+      ],
+      "firstParty": [
+        "EIA能源数据",
+        "USGS矿产数据",
+        "中国海关/统计局",
+        "港口/海事公开数据",
+        "交易所商品数据"
+      ],
+      "gap": "先建立10-20个关键指标，不要一开始覆盖全部供应链。"
+    },
+    {
+      "id": "companies",
+      "name": "企业行为",
+      "priority": "P1",
+      "status": "MISSING",
+      "needed": [
+        "资本开支",
+        "订单",
+        "库存",
+        "招聘/裁员",
+        "工厂/产能",
+        "融资",
+        "供应链迁移",
+        "企业公告"
+      ],
+      "current": [
+        "新闻中有企业相关新闻，但没有结构化企业时间序列"
+      ],
+      "firstParty": [
+        "SEC EDGAR",
+        "公司IR/公告",
+        "中国上市公司公告/交易所",
+        "企业财报"
+      ],
+      "gap": "先建立30-50家关键中美企业观察池，事件型数据优先，避免购买昂贵商业数据库。"
+    },
+    {
+      "id": "third_party",
+      "name": "第三方国家",
+      "priority": "P1",
+      "status": "PARTIAL",
+      "needed": [
+        "欧盟、日本、韩国、台湾、印度、越南、墨西哥、东盟政策",
+        "贸易转移",
+        "FDI",
+        "出口管制",
+        "产业补贴"
+      ],
+      "current": [
+        "global新闻有，但缺结构化国家政策/贸易流数据"
+      ],
+      "firstParty": [
+        "各国政府/贸易统计机构",
+        "Eurostat",
+        "日本财务省贸易统计",
+        "韩国KOSIS/海关",
+        "UN Comtrade/WTO"
+      ],
+      "gap": "先做越南、墨西哥、印度、欧盟、日本、韩国六个观察对象。"
+    },
+    {
+      "id": "social",
+      "name": "社会/民众体感",
+      "priority": "P2",
+      "status": "PARTIAL",
+      "needed": [
+        "就业/收入/住房/物价/消费行为",
+        "公开讨论趋势"
+      ],
+      "current": [
+        "已有social_signals，但明确标注不代表总体民意"
+      ],
+      "firstParty": [
+        "官方就业/收入/消费统计"
+      ],
+      "secondary": [
+        "公开网页讨论/搜索趋势"
+      ],
+      "gap": "继续把行为数据放在讨论信号之前；不把舆情热度当总体民意。"
+    }
+  ],
+  "phase1": [
+    "正式政策事件：国务院政策库 + Federal Register + USTR/BIS/Treasury等关键美国一手源",
+    "中国宏观：国家统计局数据发布库 + PBOC + 财政部 + 海关",
+    "美国宏观：FRED/BLS/BEA/Fed/Treasury",
+    "金融：USD/CNY、USD/CNH、DXY、US2Y/10Y/30Y、中国10Y、S&P500、沪深300、黄金、Brent、VIX",
+    "贸易：Census HS + 中国海关，先做中美双边及关键HS商品",
+    "历史快照：所有上述结构化指标每次更新都落盘，不覆盖旧值"
+  ],
+  "phase2": [
+    "供应链关键指标",
+    "30-50家关键企业行为",
+    "第三方国家贸易转移",
+    "企业公告与SEC/交易所结构化事件"
+  ],
+  "qualityRules": [
+    "每个指标必须有source/provider、observedAt、publishedAt或observationPeriod、unit、value、frequency。",
+    "政策事件必须区分publishedAt、effectiveAt、announced/issued/effective状态。",
+    "历史数据不可用当前值回填。",
+    "同一指标多个来源冲突时保留全部来源并标记sourcePriority，不静默覆盖。",
+    "官方一手数据与二级数据必须分层，二级数据不得伪装成官方。",
+    "采集成功不等于数据正确；增加range、timestamp、staleness、duplicate、missingness检查。",
+    "每次运行保存raw snapshot和normalized record，保证沙盘可以回放。"
+  ]
+}
