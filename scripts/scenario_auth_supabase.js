@@ -104,6 +104,26 @@ async function buildTriggerFeedback(taskId,currentRun,previousRun){
    await sb.from('scenario_calibration_audit').insert({user_id:user.id,task_id:String(taskId),trigger:x.trigger,feedback_id:x.id,prior_factor:Number(src?.payload?.priorFactor||1),proposed_factor:Number(src?.payload?.proposedFactor||1),applied_factor:Number(x.calibration_factor||1),delta:Number((Number(x.calibration_factor||1)-Number(src?.payload?.priorFactor||1)).toFixed(3)),status:x.status==='FROZEN'?'FROZEN':(x.status==='EARLY_SAMPLE'?'EARLY_SAMPLE':'APPLIED'),sample_size:x.sample_size,reason:src?.payload?.reason||'历史校准审计'});
  }
 }
+async function renderEffectiveTriggerWeights(sc){
+ const box=document.getElementById('effectiveTriggerWeights'); if(!box||!sb||!sc)return;
+ const {data:{user}}=await currentUser();
+ const globalRows=window.__triggerCalibration||[];
+ const globalMap=new Map(globalRows.map(x=>[String(x.trigger),x]));
+ let userRows=[];
+ if(user){
+   const {data}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('task_id',String((loadTaskArchive()[0]||{}).id)).order('created_at',{ascending:false}).limit(100);
+   userRows=data||[];
+ }
+ const userMap=new Map(userRows.map(x=>[String(x.trigger),x]));
+ const drivers=[...(sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT')];
+ const triggers=[...new Set(drivers.map(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')))];
+ const rows=triggers.map(t=>{
+   const g=globalMap.get(t),u=userMap.get(t);
+   const base=1, gf=(g?.status==='CALIBRATED'?Number(g.calibrationWeight||1):1), uf=(u?.status==='CALIBRATED'?Number(u.calibration_factor||1):1);
+   return {t,gf,uf,eff:Math.max(.8,Math.min(1.2,gf*uf)),gs:g?.status||'无全局样本',us:u?.status||'无账户样本',n:u?.sample_size||0};
+ });
+ box.innerHTML=rows.length?'<div class="card"><b>当前触发器有效权重</b><div class="mini muted">基础权重固定为 1.00；全局历史校准与本账号历史反馈分别展示。有效权重只作为监测敏感度参考，不直接代表发生概率。</div>'+rows.map(r=>'<div class="mini" style="margin-top:7px"><b>'+esc(r.t)+'</b> · 基础 1.000 → 全局 '+r.gf.toFixed(3)+' → 账户 '+r.uf.toFixed(3)+' → <b>当前 '+r.eff.toFixed(3)+'</b> · 全局 '+esc(r.gs)+' · 账户 '+esc(r.us)+(r.n?' · 账户样本 '+r.n:'')+'</div>').join('')+'</div>':'<div class="card muted">当前情景暂无可映射的事件触发器。</div>';
+}
 async function renderUserTriggerCalibration(taskId){
  const box=document.getElementById('triggerCalibrationList'); if(!box||!taskId||!sb)return;
  const {data,error}=await sb.from('scenario_trigger_feedback').select('trigger,outcome,evidence_count,followup_count,market_deviation_count,sample_size,calibration_factor,status,created_at').eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(80);
@@ -159,6 +179,10 @@ function patchSandboxHooks(){
    const hint=document.querySelector('#taskArchiveList .muted.mini');
    if(hint) hint.textContent='已登录账号后自动云端保存；无需同步密钥。';
  };
+ const oldRenderScenario=window.renderSandboxScenario;
+ if(typeof oldRenderScenario==='function'){
+   window.renderSandboxScenario=function(sc,index){const result=oldRenderScenario(sc,index); setTimeout(()=>renderEffectiveTriggerWeights(sc),50); return result;};
+ }
  const oldRun=window.runScenarioTask;
  window.runScenarioTask=function(task){
    const result=oldRun(task);
