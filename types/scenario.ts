@@ -129,6 +129,38 @@ export interface Scenario {
   horizons: ScenarioHorizon[];
 }
 
+export interface ScenarioSnapshotItem {
+  id: string;
+  code: "A" | "B" | "C";
+  activationState: "WATCH" | "ACTIVE" | "ELEVATED";
+  triggerScore: number;
+  triggerEvidence: string[];
+  counterSignals: string[];
+}
+
+export interface ScenarioSnapshot {
+  generatedAt: string;
+  scenarios: ScenarioSnapshotItem[];
+}
+
+export interface ScenarioHistoryChange {
+  id: string;
+  code: "A" | "B" | "C";
+  previousState: "WATCH" | "ACTIVE" | "ELEVATED";
+  currentState: "WATCH" | "ACTIVE" | "ELEVATED";
+  previousScore: number;
+  currentScore: number;
+  delta: number;
+  reasons: string[];
+  counterSignals: string[];
+}
+
+export interface ScenarioHistory {
+  baseline: "FIRST_RUN" | "COMPARISON";
+  previousGeneratedAt: string | null;
+  changes: ScenarioHistoryChange[];
+}
+
 export interface ScenarioTree {
   id: string;
   rootEventId: string;
@@ -147,6 +179,8 @@ export interface IntelligenceScenarioV2 {
   responses: ActorResponse[];
   scenarioTree: ScenarioTree;
   state: Record<string, unknown>;
+  scenarioSnapshot: ScenarioSnapshot;
+  scenarioHistory: ScenarioHistory;
   dashboard: {
     headline: string;
     triggerEvents: string[];
