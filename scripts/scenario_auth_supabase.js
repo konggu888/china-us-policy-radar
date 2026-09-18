@@ -93,7 +93,7 @@ window.saveScenarioRun=async function(task,scenario){
  const {data:{user}}=await currentUser(); if(!user||!scenario)return;
  const radar=window.__scenarioState||{};
  const registry=(radar.scenarioSnapshot?.evidenceRegistry||[]).filter(x=>(scenario.evidenceDrivers||[]).some(d=>String(d.id||'')===String(x.id||''))).slice(0,30);
- const payload={scenario,radarContext:{generatedAt:radar.generated_at||null,state:radar.state||{},events:(radar.events||[]).slice(0,20),market:(radar.state?.finance?.market||[]).slice(0,20)},evidenceRegistry:registry,validation:{timeWindowValidation:(radar.scenarioSnapshot?.timeWindowValidation||[]).filter(x=>String(x.scenarioCode||'')===String(scenario.code||'')),historicalMarketWindows:(radar.scenarioSnapshot?.historicalMarketWindows||[]).filter(x=>(scenario.evidenceDrivers||[]).some(d=>String(d.id||'')===String(x.id||''))).slice(0,20)},recordedAt:new Date().toISOString()};
+ const payload={scenario,radarContext:{generatedAt:radar.generated_at||null,state:radar.state||{},events:(radar.events||[]).slice(0,20),market:(radar.state?.finance?.market||[]).slice(0,20)},evidenceRegistry:registry,validation:{timeWindowValidation:(radar.scenarioSnapshot?.timeWindowValidation||[]).filter(x=>String(x.scenarioCode||'')===String(scenario.code||'')),crossRunValidation:(radar.scenarioSnapshot?.crossRunValidation||[]).filter(x=>String(x.scenarioCode||'')===String(scenario.code||'')),historicalMarketWindows:(radar.scenarioSnapshot?.historicalMarketWindows||[]).filter(x=>(scenario.evidenceDrivers||[]).some(d=>String(d.id||'')===String(x.eventId||''))).slice(0,20)},recordedAt:new Date().toISOString()};
  const row={task_id:String(task.id),user_id:user.id,status:'RECORDED',scenario_code:scenario.code||null,activation_state:scenario.activationState||null,trigger_score:scenario.triggerScore??null,confidence:scenario.confidence||null,evidence_count:Array.isArray(scenario.evidenceDrivers)?scenario.evidenceDrivers.length:null,payload};
  const {error}=await sb.from('scenario_task_runs').insert(row);
  if(error)console.warn('scenario run save failed',error.message);
@@ -106,25 +106,23 @@ async function buildTriggerFeedback(taskId,currentRun,previousRun){
  if(!currentDrivers.length)return;
  const registry=currentRun.payload?.evidenceRegistry||[];
  const validation=currentRun.payload?.validation||{};
- const priorRegistry=previousRun?.payload?.evidenceRegistry||[];
- const priorByKey=new Map(priorRegistry.map(e=>[String(e.dedupeKey||''),e]));
+ const crossRun=validation.crossRunValidation||[];
  const rowsByTrigger=new Map();
  for(const d of currentDrivers){
    const trigger=String(d.category||d.role||'UNKNOWN_TRIGGER');
    const key=String(d.id||'');
    const r=registry.find(x=>String(x.dedupeKey||'')===key);
-   const prior=priorByKey.get(key);
+   const cross=crossRun.find(x=>String(x.driverId||'')===key);
    const repeated=Number(r?.observationCount||0)>1 || Number(r?.independentSourceCount||0)>1 || !!r?.followupObserved;
-   const validationRows=(validation.timeWindowValidation||[]).flatMap(x=>x.details||[]).filter(x=>String(x.driverId||'')===key);
-   const followup=validationRows.filter(x=>x.status==='OBSERVED').length;
-   const marketRows=(validation.historicalMarketWindows||[]).find(x=>String(x.id||'')===key)?.windows||[];
-   const observedMarket=marketRows.filter(x=>x.status==='OBSERVED').length;
-   const evidenceCount=(repeated?1:0)+(followup>0?1:0);
+   const multiRun=Number(cross?.runObservationCount||0)>=2;
+   const followup=Number(cross?.followupRunCount||0)>0 || !!r?.followupObserved;
+   const observedMarket=Number(cross?.marketObservedRunCount||0);
+   const evidenceCount=(repeated?1:0)+(multiRun?1:0)+(followup?1:0);
    const support=evidenceCount>0;
-   const weakened=!support && prior && Number(prior.evidenceWeight||0)>0 && Number(r?.evidenceWeight||0)<Number(prior.evidenceWeight||0)*0.6;
+   const weakened=Number(cross?.runObservationCount||0)>=3 && !followup && Number(cross?.maxIndependentSourceCount||0)<=1;
    const outcome=weakened?'WEAKENED':(support?'SUPPORTED':'UNRESOLVED');
    const bucket=rowsByTrigger.get(trigger)||{outcomes:[],evidence:0,followup:0,market:0};
-   bucket.outcomes.push(outcome); bucket.evidence+=evidenceCount; bucket.followup+=followup; bucket.market+=observedMarket; rowsByTrigger.set(trigger,bucket);
+   bucket.outcomes.push(outcome); bucket.evidence+=evidenceCount; bucket.followup+=followup?1:0; bucket.market+=observedMarket; rowsByTrigger.set(trigger,bucket);
  }
  const {data:existing}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('user_id',user.id).eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(100);
  const latest=new Map((existing||[]).map(x=>[x.trigger,x]));
@@ -137,14 +135,14 @@ async function buildTriggerFeedback(taskId,currentRun,previousRun){
    const proposed=Math.max(0.8,Math.min(1.2,prior*raw));
    const frozen=n<3||Math.abs(proposed-prior)>0.10;
    const applied=frozen?prior:proposed;
-   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun?.id||null,outcome,evidence_count:b.evidence,followup_count:b.followup,market_deviation_count:b.market,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':(frozen?'FROZEN':'CALIBRATED'),payload:{priorFactor:prior,proposedFactor:Number(proposed.toFixed(3)),appliedFactor:Number(applied.toFixed(3)),method:'基于后续证据、多源重复观察与真实历史市场窗口；不再使用相邻运行触发分数变化作为支持/减弱依据。',outcomes:b.outcomes}};
+   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun?.id||null,outcome,evidence_count:b.evidence,followup_count:b.followup,market_deviation_count:b.market,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':(frozen?'FROZEN':'CALIBRATED'),payload:{priorFactor:prior,proposedFactor:Number(proposed.toFixed(3)),appliedFactor:Number(applied.toFixed(3)),method:'基于跨运行持久化证据、多源重复观察与真实历史市场窗口；不再使用相邻运行触发分数变化作为支持/减弱依据。',outcomes:b.outcomes,crossRunValidation:crossRun.filter(x=>String(x.driverId||'')===String(currentDrivers.find(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')===trigger)?.id||''))}};
  });
  if(!rows.length)return;
  const {data:ins,error}=await sb.from('scenario_trigger_feedback').insert(rows).select('id,trigger,calibration_factor,status,sample_size');
  if(error||!ins)return;
  for(const x of ins){
    const src=rows.find(y=>y.trigger===x.trigger);
-   await sb.from('scenario_calibration_audit').insert({user_id:user.id,task_id:String(taskId),trigger:x.trigger,feedback_id:x.id,prior_factor:Number(src?.payload?.priorFactor||1),proposed_factor:Number(src?.payload?.proposedFactor||1),applied_factor:Number(x.calibration_factor||1),delta:Number((Number(x.calibration_factor||1)-Number(src?.payload?.priorFactor||1)).toFixed(3)),status:x.status==='FROZEN'?'FROZEN':(x.status==='EARLY_SAMPLE'?'EARLY_SAMPLE':'APPLIED'),sample_size:x.sample_size,reason:src?.payload?.method||'历史后续证据校准'});
+   await sb.from('scenario_calibration_audit').insert({user_id:user.id,task_id:String(taskId),trigger:x.trigger,feedback_id:x.id,prior_factor:Number(src?.payload?.priorFactor||1),proposed_factor:Number(src?.payload?.proposedFactor||1),applied_factor:Number(x.calibration_factor||1),delta:Number((Number(x.calibration_factor||1)-Number(src?.payload?.priorFactor||1)).toFixed(3)),status:x.status==='FROZEN'?'FROZEN':(x.status==='EARLY_SAMPLE'?'EARLY_SAMPLE':'APPLIED'),sample_size:x.sample_size,reason:src?.payload?.method||'跨运行历史后续证据校准'});
  }
 }
 async function renderEffectiveTriggerWeights(sc){
