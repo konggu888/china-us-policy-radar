@@ -95,8 +95,14 @@ window.saveScenarioRun=async function(task,scenario){
  const registry=(radar.scenarioSnapshot?.evidenceRegistry||[]).filter(x=>(scenario.evidenceDrivers||[]).some(d=>String(d.id||'')===String(x.id||''))).slice(0,30);
  const payload={scenario,radarContext:{generatedAt:radar.generated_at||null,state:radar.state||{},events:(radar.events||[]).slice(0,20),market:(radar.state?.finance?.market||[]).slice(0,20)},evidenceRegistry:registry,validation:{timeWindowValidation:(radar.scenarioSnapshot?.timeWindowValidation||[]).filter(x=>String(x.scenarioCode||'')===String(scenario.code||'')),crossRunValidation:(radar.scenarioSnapshot?.crossRunValidation||[]).filter(x=>String(x.scenarioCode||'')===String(scenario.code||'')),historicalMarketWindows:(radar.scenarioSnapshot?.historicalMarketWindows||[]).filter(x=>(scenario.evidenceDrivers||[]).some(d=>String(d.id||'')===String(x.eventId||''))).slice(0,20)},recordedAt:new Date().toISOString()};
  const row={task_id:String(task.id),user_id:user.id,status:'RECORDED',scenario_code:scenario.code||null,activation_state:scenario.activationState||null,trigger_score:scenario.triggerScore??null,confidence:scenario.confidence||null,evidence_count:Array.isArray(scenario.evidenceDrivers)?scenario.evidenceDrivers.length:null,payload};
- const {error}=await sb.from('scenario_task_runs').insert(row);
- if(error)console.warn('scenario run save failed',error.message);
+ const {data:insertedRun,error}=await sb.from('scenario_task_runs').insert(row).select('id,observed_at').single();
+ if(error){console.warn('scenario run save failed',error.message);return;}
+ const runAt=insertedRun?.observed_at||payload.recordedAt;
+ const taskPayload={...task};
+ delete taskPayload.id; delete taskPayload.event; delete taskPayload.goal; delete taskPayload.horizon; delete taskPayload.mode; delete taskPayload.createdAt; delete taskPayload.updatedAt; delete taskPayload.lastRunAt;
+ const taskRow={id:String(task.id),user_id:user.id,event:String(task.event||''),goal:task.goal||null,horizon:task.horizon||null,mode:task.mode||null,created_at:task.createdAt||new Date().toISOString(),updated_at:new Date().toISOString(),last_run_at:runAt,payload:taskPayload};
+ const {error:taskError}=await sb.from('scenario_tasks').upsert(taskRow,{onConflict:'id'});
+ if(taskError)console.warn('scenario task last-run update failed',taskError.message);
 };
 async function buildTriggerFeedback(taskId,currentRun,previousRun){
  const {data:{user}}=await currentUser();
