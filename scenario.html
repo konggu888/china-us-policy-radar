@@ -258,14 +258,10 @@ async function loadScenario(){
   const st=document.getElementById('status');
   if(st)st.textContent='雷达数据已加载：'+arr.length+' 条新闻；沙盘可用。';
  }catch(e){
-  console.error(e);
+  console.error('scenario data load failed',e);
   const st=document.getElementById('status');
   if(st)st.textContent='雷达数据加载失败：'+(e.message||e);
- }
-}catch(e){
- console.error('scenario data load failed',e);
- document.getElementById('status').textContent='沙盘数据读取失败：'+(e.message||e);
-}}
+ }}
 function normalizeLocalScenario(e,g,h,m,s){
  const text=(e+' '+g).toLowerCase();
  const ai=/(ai|人工智能|大模型|芯片|算力|deepseek|英伟达|openai)/i.test(text);
