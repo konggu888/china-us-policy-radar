@@ -265,5 +265,5 @@ function buildScenario(){
  const e=document.getElementById('event').value.trim(),g=document.getElementById('goal').value.trim(),h=document.getElementById('horizon').value,m=document.getElementById('mode').value;
  if(!e){document.getElementById('status').textContent='请先输入一个推演事件。';return;}
  runScenarioTask({id:'task-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),event:e,goal:g,horizon:h,mode:m,createdAt:new Date().toISOString()});
-}renderTaskArchive(); syncTasksFromServer().then(()=>{renderTaskArchive(); loadScenario().then(()=>{renderTaskArchive();const latest=loadTaskArchive()[0];if(latest)runScenarioTask(latest);});});
+}renderTaskArchive(); loadScenario().then(()=>{renderTaskArchive();});
 </script></body></html>
