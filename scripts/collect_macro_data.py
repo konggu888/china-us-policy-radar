@@ -197,17 +197,17 @@ def nbs_structured():
 def pbc_latest():
     out={'source':'中国人民银行','fetchedAt':datetime.now(timezone.utc).isoformat(),'records':[],'errors':[]}
     def clean(s):
-        s=re.sub(r'<script[\\s\\S]*?</script>',' ',s,flags=re.I)
-        s=re.sub(r'<style[\\s\\S]*?</style>',' ',s,flags=re.I)
+        s=re.sub(r'<script[\s\S]*?</script>',' ',s,flags=re.I)
+        s=re.sub(r'<style[\s\S]*?</style>',' ',s,flags=re.I)
         s=re.sub(r'<[^>]+>',' ',s)
-        return re.sub(r'\\s+',' ',s).strip()
+        return re.sub(r'\s+',' ',s).strip()
     def add(url,text,published=''):
         patterns={
-          'M2_balance_trillion':r'广义货币\\(M2\\)余额([0-9.]+)万亿元',
-          'M2_yoy_pct':r'广义货币(?:\\(M2\\))?.*?同比增长([+-]?[0-9.]+)%',
-          'M1_balance_trillion':r'狭义货币(?:\\(M1\\))?余额([0-9.]+)万亿元',
-          'M1_yoy_pct':r'狭义货币(?:\\(M1\\))?.*?同比增长([+-]?[0-9.]+)%',
-          'M0_balance_trillion':r'流通中货币(?:\\(M0\\))?余额([0-9.]+)万亿元',
+          'M2_balance_trillion':r'广义货币\(M2\)余额([0-9.]+)万亿元',
+          'M2_yoy_pct':r'广义货币(?:\(M2\))?.*?同比增长([+-]?[0-9.]+)%',
+          'M1_balance_trillion':r'狭义货币(?:\(M1\))?余额([0-9.]+)万亿元',
+          'M1_yoy_pct':r'狭义货币(?:\(M1\))?.*?同比增长([+-]?[0-9.]+)%',
+          'M0_balance_trillion':r'流通中货币(?:\(M0\))?余额([0-9.]+)万亿元',
           'RMB_loans_balance_trillion':r'人民币贷款余额([0-9.]+)万亿元',
           'RMB_loans_ytd_trillion':r'前([一二三四五六七八九十0-9]+)个月人民币贷款增加([0-9.]+)万亿元',
           'RMB_deposits_balance_trillion':r'人民币存款余额([0-9.]+)万亿元',
@@ -234,7 +234,7 @@ def pbc_latest():
         for url,title in candidates[:12]:
             try:
                 body=clean(fetch(url))
-                date=re.search(r'文章来源：\\s*(20\\d{2}-\\d{2}-\\d{2})',body)
+                date=re.search(r'文章来源：\s*(20\d{2}-\d{2}-\d{2})',body)
                 add(url,body,date.group(1) if date else '')
             except Exception as e: out['errors'].append('REPORT:'+str(e))
     except Exception as e: out['errors'].append('REPORT_INDEX:'+str(e))
@@ -246,7 +246,7 @@ def pbc_latest():
             if '公开市场业务交易公告' in txt:
                 url=urllib.parse.urljoin('https://www.pbc.gov.cn/',href)
                 body=clean(fetch(url))
-                m=re.search(r'(20\\d{2}-\\d{1,2}-\\d{1,2}).{0,250}?开展了([0-9.]+)亿元(?:[0-9一二三四五六七八九十]*?)([0-9]+)天期逆回购操作',body)
+                m=re.search(r'(20\d{2}-\d{1,2}-\d{1,2}).{0,250}?开展了([0-9.]+)亿元(?:[0-9一二三四五六七八九十]*?)([0-9]+)天期逆回购操作',body)
                 if m:
                     out['records'].append({'indicator':'open_market_7d_reverse_repo_amount_billion','value':nfloat(m.group(2)),'observedAt':m.group(1),'source':'中国人民银行','sourceUrl':url})
                 break
@@ -254,7 +254,7 @@ def pbc_latest():
     try:
         html=fetch('https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do')
         plain=clean(html)
-        m=re.search(r'(20\\d{2}-\\d{2}-\\d{2})\\s+([0-9]+(?:\\.[0-9]+)?)',plain)
+        m=re.search(r'(20\d{2}-\d{2}-\d{2})\s+([0-9]+(?:\.[0-9]+)?)',plain)
         if m: out['records'].append({'indicator':'USD/CNY_PBOC_MID','value':nfloat(m.group(2))/100,'observedAt':m.group(1),'source':'SAFE/PBOC RMB central parity','sourceUrl':'https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do'})
     except Exception as e: out['errors'].append('RMB_MID:'+str(e))
     out['status']='OK' if out['records'] else 'MISSING'
