@@ -303,13 +303,30 @@ function runScenarioTask(task){
  if(!e){document.getElementById('status').textContent='历史任务缺少推演事件，无法恢复。';return;}
  const s=window.__scenarioState||{},cn=s.state?.china||{},us=s.state?.us||{},fm=s.state?.finance||{};
  const model=normalizeLocalScenario(e,g,h,m,s),rows=window.__scenarioRows||[];
- const idx=rows.findIndex(x=>String(x.code)===model.code);
+ // 兼容当前 scenario_state.json 的基础 A/B/C/D 数据结构：没有 code/horizons 时也生成可操作的前端剧本。
+ const normalizedRows=rows.map((x,i)=>{
+  const id=String(x.id||i), code=String(x.code||({base:'A',escalate:'B',ease:'C',shock:'D'}[x.id]||String.fromCharCode(65+i)));
+  if(x.horizons?.length)return {...x,id,code};
+  const labels=['未来7天','未来30天','未来90天','未来1年'];
+  const horizons=labels.map(label=>({label,horizon:label,impacts:[
+   {domain:'政策执行',direction:'待观察',intensity:0.35,explanation:'根据正式政策文本与执行细则继续核验。'},
+   {domain:'市场',direction:'待观察',intensity:0.30,explanation:'仅记录可观测市场变化，不单独解释为因果。'},
+   {domain:'产业/社会',direction:'待观察',intensity:0.25,explanation:'等待订单、供应链、就业或公开社会信号。'}
+  ],actions:{
+   investment:{do:[{title:'分批',action:'保留流动性并等待新证据。'}],dont:[{title:'避免单因子',action:'不要仅凭单一事件做重大决策。'}],watch:[{title:'市场',action:'观察汇率、利率、股债商品联动。'}]},
+   trade:{do:[{title:'核验',action:'跟踪正式措施、豁免和执行细则。'}],dont:[{title:'不提前假定',action:'不要把情景假设当成已发生事实。'}],watch:[{title:'供应链',action:'观察订单、航运、能源与关键原材料。'}]},
+   life:{do:[{title:'信息核验',action:'优先使用正式文件和多源交叉验证。'}],dont:[{title:'避免恐慌',action:'不要依据单条消息改变长期安排。'}],watch:[{title:'体感',action:'观察就业、收入、物价与消费等公开信号。'}]}
+  },keySignals:[{name:'正式政策文本',metric:'policy',direction:'确认/否定'},{name:'市场联动',metric:'market',direction:'异常/正常'}]}));
+  return {...x,id,code,horizons};
+ });
+ window.__scenarioRows=normalizedRows;
+ const idx=normalizedRows.findIndex(x=>String(x.code)===model.code);
  if(idx>=0){
   selectSandboxScenario(rows[idx].id);
   document.getElementById('status').innerHTML='已恢复历史推演任务：<b>'+esc(model.theme)+'</b> · '+esc(h)+' · '+esc(m)+'。使用最新雷达数据重新计算；历史任务不会因刷新或新建任务而消失。';
  }else{
-  const fallback={id:'local-'+Date.now(),code:model.code,type:model.type,title:model.title,description:'用户输入：'+e,confidence:'LOW',sensitivity:0.5,activationState:'WATCH',triggerScore:0,triggerEvidence:['用户输入事件：'+e],counterSignals:['等待实时证据验证'],recomputeIf:['出现多源反证或新的正式政策文本'],chain:[{order:1,actor:'CN',action:'中国第1轮应对',mechanism:'基于输入事件建立条件响应',consequence:'等待后续证据',evidenceLevel:'ASSUMPTION'},{order:2,actor:'US',action:'美国第2轮响应',mechanism:'条件路径，不代表已发生',consequence:'等待后续证据',evidenceLevel:'ASSUMPTION'},{order:3,actor:'CN',action:model.title,mechanism:'根据触发器分化',consequence:'重新计算',evidenceLevel:'ASSUMPTION'}],horizons:(rows[0]?.horizons||[])};
-  window.__scenarioRows=[fallback,...rows];selectSandboxScenario(fallback.id);
+  const fallback={id:'local-'+Date.now(),code:model.code,type:model.type,title:model.title,description:'用户输入：'+e,confidence:'LOW',sensitivity:0.5,activationState:'WATCH',triggerScore:0,triggerEvidence:['用户输入事件：'+e],counterSignals:['等待实时证据验证'],recomputeIf:['出现多源反证或新的正式政策文本'],chain:[{order:1,actor:'CN',action:'中国第1轮应对',mechanism:'基于输入事件建立条件响应',consequence:'等待后续证据',evidenceLevel:'ASSUMPTION'},{order:2,actor:'US',action:'美国第2轮响应',mechanism:'条件路径，不代表已发生',consequence:'等待后续证据',evidenceLevel:'ASSUMPTION'},{order:3,actor:'CN',action:model.title,mechanism:'根据触发器分化',consequence:'重新计算',evidenceLevel:'ASSUMPTION'}],horizons:(normalizedRows[0]?.horizons||[])};
+  window.__scenarioRows=[fallback,...normalizedRows];selectSandboxScenario(fallback.id);
   document.getElementById('status').innerHTML='已恢复历史任务；当前没有对应的实时结构化剧本，先保持条件路径并等待新证据。';
  }
  archiveTask(task);
