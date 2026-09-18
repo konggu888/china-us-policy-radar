@@ -489,7 +489,10 @@ def build_scenario_history(current_snapshot):
     }
 
 def build_dynamic_tree(news,dash=None):
-    trigger_calibration=[]
+    previous_snapshot=None
+    try: previous_snapshot=json.loads(OUT.read_text(encoding="utf-8")).get("scenarioSnapshot")
+    except Exception: pass
+    trigger_calibration=(previous_snapshot or {}).get("triggerCalibration",[])
     ge=build_global_events(news)
     root=ge[0]["id"] if ge else "evt-none"
     ids=[x["id"] for x in ge[:8]]
