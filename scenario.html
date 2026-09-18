@@ -78,7 +78,11 @@ function renderHistoricalMarketWindows(sc){
   const labels={T0:'T0',T1D:'T+1',T3D:'T+3',T7D:'T+7',T30D:'T+30'};
   box.innerHTML=rows.length?rows.map(e=>'<article class="card"><b>'+esc(e.title||'')+'</b><div class="observation-list">'+(e.windows||[]).map(w=>{
     const sig=(w.markets||[]).slice(0,5).map(m=>esc(m.name)+' '+(m.change_pct!=null?pct(m.change_pct):'—')).join(' · ');
-    return '<span class="tag">'+esc(labels[w.window]||w.window)+' · '+esc(w.status)+(sig?' · '+sig:'')+'</span>';
+    const anomaly=(e.anomalyAnalysis?.metrics||[]).filter(x=>x.window===w.window);
+    const abnormal=anomaly.filter(x=>x.signal==='ELEVATED_DEVIATION').length;
+    const watch=anomaly.filter(x=>x.signal==='WATCH').length;
+    const anomalyText=anomaly.length?(' · 基准偏离 '+(abnormal?'明显':(watch?'值得观察':'正常'))):'';
+    return '<span class="tag">'+esc(labels[w.window]||w.window)+' · '+esc(w.status)+(sig?' · '+sig:'')+anomalyText+'</span>';
   }).join('')+'</div><div class="muted mini">仅使用实际保存的市场快照；缺失窗口不补值。</div></article>').join(''):'<div class="card muted">暂无可用于历史窗口验证的已保存快照。随着雷达持续运行，窗口会逐步形成。</div>';
 }
 function renderTransmissionTimeline(sc){
