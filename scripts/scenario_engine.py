@@ -189,7 +189,8 @@ def build_scenario_snapshot(scenarios):
                 "activationState": s.get("activationState","WATCH"),
                 "triggerScore": s.get("triggerScore",0),
                 "triggerEvidence": s.get("triggerEvidence",[]),
-                "counterSignals": s.get("counterSignals",[])
+                "counterSignals": s.get("counterSignals",[]),
+                "evidenceDrivers": s.get("evidenceDrivers",[])
             } for s in scenarios
         ]
     }
@@ -223,6 +224,7 @@ def build_scenario_history(current_snapshot):
                 "currentScore":cur.get("triggerScore",0),
                 "delta":delta,
                 "reasons":cur.get("triggerEvidence",[]),
+                "evidenceDrivers":cur.get("evidenceDrivers",[]),
                 "counterSignals":cur.get("counterSignals",[])
             })
     return {
@@ -231,7 +233,7 @@ def build_scenario_history(current_snapshot):
         "changes":changes
     }
 
-def build_dynamic_tree(news):
+def build_dynamic_tree(news,dash=None):
     ge=build_global_events(news)
     root=ge[0]["id"] if ge else "evt-none"
     ids=[x["id"] for x in ge[:8]]
@@ -246,13 +248,26 @@ def build_dynamic_tree(news):
       ("scenario-c","THIRD_PARTY_DIVERSION","C","第三方迂回 / 市场转移","贸易、生产或资金流通过第三方市场重新配置，同时合规要求提高。",0.58)
     ]
     scenarios=[]
+    market_by_name={str(x.get("name")):x for x in markets(dash or {})}
+    def drivers_for(stype):
+        drivers=[]
+        for e in ge[:6]:
+            cat=str(e.get("category","")).upper()
+            relevant=(stype=="HARD_DECOUPLING" and cat in ("TECHNOLOGY","TRADE","TARIFF","SANCTIONS","PAYMENT")) or (stype=="STRUCTURAL_NEGOTIATION" and cat in ("POLITICS","GEOPOLITICS","TRADE")) or (stype=="THIRD_PARTY_DIVERSION" and e.get("triggerRole")=="CATALYST")
+            if relevant:
+                drivers.append({"kind":"EVENT","id":e.get("id"),"title":e.get("title"),"source":e.get("source",{}).get("provider"),"url":e.get("source",{}).get("url"),"role":e.get("triggerRole"),"category":e.get("category")})
+        for name in ("USD/CNY","黄金","美国10年期收益率","布伦特原油","VIX"):
+            m=market_by_name.get(name)
+            if m:
+                drivers.append({"kind":"MARKET","name":name,"value":m.get("value"),"change_pct":m.get("change_pct"),"source":"dashboard"})
+        return drivers[:10]
     for sid,stype,code,title,condition,sens in specs:
         chain=[
           {"id":f"{sid}-1","order":1,"actor":"CN","action":"第1轮应对","mechanism":"降低直接冲击并调整供应链","consequence":"第三方与美国相关方重新评估政策工具","nextNodeIds":[f"{sid}-2"],"affectedDomains":["TRADE","INVESTMENT"],"evidenceLevel":"INFERENCE","evidenceEventIds":ids,"caveat":"不是对未来行为的事实陈述；需由正式政策与执行证据验证。"},
           {"id":f"{sid}-2","order":2,"actor":"US","action":"第2轮加码/施压","mechanism":"通过贸易、技术、资本或规则工具改变成本","consequence":"中国进入第3轮路径选择","nextNodeIds":[f"{sid}-3"],"affectedDomains":["TRADE","INVESTMENT"],"evidenceLevel":"INFERENCE","evidenceEventIds":ids,"caveat":"只有出现新的正式措施或执行变化时才提高该节点监控权重。"},
           {"id":f"{sid}-3","order":3,"actor":"CN","action":title,"mechanism":condition,"consequence":"进入对应时间窗口并持续验证触发器","nextNodeIds":[],"affectedDomains":["TRADE","INVESTMENT","LIFE"],"evidenceLevel":"ASSUMPTION","evidenceEventIds":ids,"caveat":"剧本假设；不得当作已经发生的政策结果。"}
         ]
-        act=_scenario_activation(ge,stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
+        act=_scenario_activation(ge,stype); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
     snapshot=build_scenario_snapshot(scenarios)
     history=build_scenario_history(snapshot)
     return {"schema_version":"2.0","globalEvents":ge,"responses":responses,"scenarioTree":{"id":"tree-"+datetime.now(timezone.utc).strftime("%Y%m%d"),"rootEventId":root,"title":"全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本","rounds":[{"round":1,"actor":"CN","title":"中国第1轮应对","responseIds":["resp-cn-r1"]},{"round":2,"actor":"US","title":"美国第2轮加码/施压","responseIds":["resp-us-r2"]},{"round":3,"actor":"CN","title":"中国第3轮多剧本","responseIds":["resp-cn-r3"]}],"scenarios":scenarios,"generatedAt":datetime.now(timezone.utc).isoformat(),"modelVersion":"dynamic-scenario-v2"},"time_horizons":[{"id":h[0],"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3]} for h in HORIZONS],"action_domains":["INVESTMENT","TRADE","LIFE"],"scenarioSnapshot":snapshot,"scenarioHistory":history}
@@ -279,7 +294,7 @@ def build(news,dash,policy,social,ai):
  ]
  red=['不要把“某人来自某地/曾任某职”直接当作政治派系证据；必须有明确、可靠来源才记录关系。','不要把反腐调查与地方项目变化的时间先后自动解释成因果关系；需要独立政策/项目证据。','不要根据籍贯、校友、任职经历等单一关系推断派系归属。','不要把公开评论/搜索结果当成总体民意；必须标明样本和选择偏差。','不要把新闻相关性当因果关系；要求至少一个独立验证信号。','不要把政策发布等同于政策执行，更不要把执行等同于效果。','不要把市场涨跌直接解释成资金迁徙，除非有连续资金流证据。','不要忽略企业与地方/行业之间的差异。','每条情景都要写出反证条件；反证出现就降低可信度并重建情景。','7天、30天、90天和1年尺度分开，不把短期冲击外推成长期结构。']
  base={'headline':'全局态势与多层社会反馈沙盘','executive_summary':'系统把公开事实、观察信号、模型推断、情景假设和未知分开。民众讨论仅作为信号，不代表总体民意；企业、资金、执行效果缺乏直接证据时保持未知。','state':{'china':{'event_count':regs.get('china',0)},'us':{'event_count':regs.get('us',0)},'global':{'event_count':regs.get('global',0)},'finance':{'market':markets(dash),'us_sector_risers':sectors(dash,'us_sector_market',True),'us_sector_fallers':sectors(dash,'us_sector_market',False)}},'layers':ls,'events':es,'governance':{'anti_corruption_signals':gov,'method':'documented public career/role links only; no faction attribution without explicit sourced evidence','regional_watch':[],'disruption_review':'对被查人员曾任职地区、行业与项目，仅检查是否存在公开可核验的政策/项目/人事变化；不把时间上的先后关系自动解释为因果关系'},'scenarios':scenarios,'signals':signals,'red_team':red,'action_framework':{'immediate':'只处理已确认、低成本、可逆事项；先记录证据。','watchlist':'监控政策落地、民众体感、企业行为、市场/资金、供应链、国际反应。','backup':'为不同情景准备可逆备用路径，不预设哪条一定发生。','stop':'核心假设被反证、数据质量异常或出现重大外生冲击时停止沿用旧情景并重算。'},'evidence':{'confirmed':'来源明确的政策、新闻和市场数据','signal':'公开讨论与行为变化等观察信号','inference':'影响链及跨层关联','assumption':'情景触发条件','unknown':'尚无足够公开证据验证的部分'},'social':social,'data_health':{'news_count':len(news),'ai_available':bool(ai),'dashboard_updated':dash.get('updated'),'policy_updated':policy.get('updated')},'generated_at':datetime.now(timezone.utc).isoformat(),'engine':'scenario-engine-v3-layered'}
- dynamic=build_dynamic_tree(news)
+ dynamic=build_dynamic_tree(news,dash)
  base['schema_version']='2.0'
  base['generatedAt']=base['generated_at']
  base['globalEvents']=dynamic['globalEvents']
