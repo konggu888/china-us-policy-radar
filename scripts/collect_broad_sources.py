@@ -1,5 +1,5 @@
 import json,re,urllib.parse,urllib.request,xml.etree.ElementTree as ET
-from datetime import datetime,timezone
+from datetime import datetime,timezone,timedelta
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data'; OUT=DATA/'news.json'; HEALTH=DATA/'collection_health.json'
 UA='China-US-Global-Intelligence-Radar/BroadCollector-5.1'
@@ -79,4 +79,32 @@ for i,x in enumerate(selected):x['updated']=stamp;x['x']=8+(i*37)%84;x['y']=8+(i
 bycat={c:sum(1 for x in selected if x.get('cat')==c) for c in CATS};byregion={r:sum(1 for x in selected if x.get('region')==r) for r in ('china','us','global')};official_count=sum(1 for x in selected if x.get('official'))
 sources=dict(health)
 health.update({'updated':stamp,'method':'direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed','total_collected':len(selected),'new_discovery_count':new_discovery,'official_direct_count':official_direct,'official_in_working_set':official_count,'category_counts':bycat,'region_counts':byregion,'sources':sources})
+# Data-integrity guard: a collector outage must never erase a previously healthy working feed.
+if not selected:
+    recovered=[]
+    arch=DATA/'archive'
+    if arch.exists():
+        now=datetime.now(timezone.utc); cutoff=now-timedelta(days=31)
+        for p in sorted(arch.glob('*.json'),reverse=True):
+            try:
+                rows=json.loads(p.read_text(encoding='utf-8'))
+            except Exception:
+                continue
+            for n in rows:
+                try:
+                    s=str(n.get('time') or n.get('updated') or '').replace(' UTC','+00:00').replace('Z','+00:00')
+                    t=datetime.fromisoformat(s).astimezone(timezone.utc)
+                except Exception:
+                    t=now
+                if t>=cutoff: recovered.append(n)
+    selected=recovered[:12000]
+if not selected:
+    try:
+        previous=json.loads(OUT.read_text(encoding='utf-8'))
+    except Exception:
+        previous=[]
+    if previous:
+        selected=previous
+    else:
+        raise RuntimeError('collector produced 0 items and no non-empty archive/working feed is available; refusing to overwrite news.json')
 OUT.write_text(json.dumps(selected,ensure_ascii=False,indent=2),encoding='utf-8');HEALTH.write_text(json.dumps(health,ensure_ascii=False,indent=2),encoding='utf-8');print('broad discovery:',new_discovery,'official direct:',official_direct,'working set:',len(selected),'official retained:',official_count,'categories:',bycat,'regions:',byregion)
