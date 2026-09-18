@@ -37,7 +37,7 @@
   "OfficialPage:EIA": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 14
+    "count": 13
   },
   "OfficialPage:BLS": {
     "method": "direct_first_party_html",
@@ -76,7 +76,7 @@
   },
   "OfficialPage:China MOFCOM": {
     "method": "direct_first_party_html",
-    "status": "error:HTTPError",
+    "status": "error:TimeoutError",
     "count": 0
   },
   "OfficialPage:China NBS": {
@@ -137,7 +137,7 @@
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
     "status": "ok",
-    "count": 16
+    "count": 17
   },
   "OfficialFeed:IAEA": {
     "method": "direct_first_party_rss",
@@ -194,12 +194,12 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-09-18 12:51 UTC",
+  "updated": "2026-09-18 13:07 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 2923,
+  "total_collected": 2924,
   "new_discovery_count": 299,
   "official_direct_count": 267,
-  "official_in_working_set": 517,
+  "official_in_working_set": 518,
   "category_counts": {
     "政治": 3,
     "金融": 13,
@@ -213,11 +213,11 @@
     "贸易 / 供应链": 0,
     "能源 / 资源": 7,
     "中美博弈": 0,
-    "全球政策": 2880
+    "全球政策": 2881
   },
   "region_counts": {
     "china": 466,
-    "us": 484,
+    "us": 485,
     "global": 1973
   },
   "sources": {
@@ -259,7 +259,7 @@
     "OfficialPage:EIA": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 14
+      "count": 13
     },
     "OfficialPage:BLS": {
       "method": "direct_first_party_html",
@@ -298,7 +298,7 @@
     },
     "OfficialPage:China MOFCOM": {
       "method": "direct_first_party_html",
-      "status": "error:HTTPError",
+      "status": "error:TimeoutError",
       "count": 0
     },
     "OfficialPage:China NBS": {
@@ -359,7 +359,7 @@
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
       "status": "ok",
-      "count": 16
+      "count": 17
     },
     "OfficialFeed:IAEA": {
       "method": "direct_first_party_rss",
