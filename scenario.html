@@ -49,9 +49,18 @@ function list(a){return '<ul>'+((a||[]).map(x=>'<li>'+esc(x)+'</li>').join('')||
 function renderSandboxInputs(data){
  const x=data.sandboxInputs||{};
  const set=(id,k)=>{
-  const el=document.getElementById(id),v=x[k]||{};
+  const el=document.getElementById(id),v=x[k]||{},items=Array.isArray(v.items)?v.items:[];
   if(!el)return;
-  el.innerHTML='<b style="display:inline-block;margin-right:8px">'+Number(v.count||0)+' 条</b><span>'+window.esc(v.latest||'暂无近期匹配事件')+'</span>';
+  const escLocal=window.esc||((s)=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])));
+  const rows=items.slice(0,10).map((item,i)=>{
+   const title=item.title||item.titleZh||'未命名事件';
+   const time=item.time||item.updated||item.published||'';
+   const source=item.sourceOrg||item.source||'';
+   const href=item.url||'';
+   const meta=[time,source].filter(Boolean).join(' · ');
+   return '<div class="sandbox-news-row"><span class="sandbox-news-rank">'+(i+1)+'</span><div class="sandbox-news-main"><div class="sandbox-news-title">'+(href?'<a href="'+escLocal(href)+'" target="_blank" rel="noopener">'+escLocal(title)+'</a>':escLocal(title))+'</div>'+(meta?'<div class="muted mini">'+escLocal(meta)+'</div>':'')+'</div></div>';
+  }).join('');
+  el.innerHTML='<div class="sandbox-news-head"><b>'+Number(v.count||0)+' 条匹配</b><span class="muted mini">显示最新 '+Math.min(items.length,10)+' 条</span></div>'+(rows||'<div class="muted">暂无匹配事件</div>');
  };
  set('cn','china'); set('us','us'); set('gl','global'); set('finance','finance'); set('supply','supply'); set('geopolitics','geopolitics');
 }
