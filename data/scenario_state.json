@@ -1,0 +1,368 @@
+{
+  "headline": "基于最新公开情报的全局情景底盘",
+  "executive_summary": "系统将当前公开事实与模型推断分开。当前沙盘不把任何单一事件直接等同于未来结果，而是通过基准、升级、缓和和外生冲击四条路径观察条件变化。",
+  "state": {
+    "china": {
+      "signal": "政策与经济数据持续更新",
+      "event_count": 2
+    },
+    "us": {
+      "signal": "政策、金融与地缘工具并行观察",
+      "event_count": 9
+    },
+    "global": {
+      "signal": "多地区事件与跨境传导需要联动观察",
+      "event_count": 1
+    },
+    "finance": {
+      "market": [
+        {
+          "symbol": "CNY=X",
+          "value": 6.6986,
+          "change_pct": -0.11,
+          "time": "2026-09-18",
+          "name": "USD/CNY"
+        },
+        {
+          "symbol": "000001.SS",
+          "value": 3909.8418,
+          "change_pct": 0.88,
+          "time": "2026-09-18",
+          "name": "上证指数"
+        },
+        {
+          "symbol": "399001.SZ",
+          "value": 13620.0957,
+          "change_pct": 1.57,
+          "time": "2026-09-18",
+          "name": "深证成指"
+        },
+        {
+          "symbol": "000300.SS",
+          "value": 4505.1035,
+          "change_pct": 0.0,
+          "time": "2026-09-18",
+          "name": "沪深300"
+        },
+        {
+          "symbol": "^GSPC",
+          "value": 7637.7598,
+          "change_pct": 1.14,
+          "time": "2026-09-17",
+          "name": "标普500"
+        },
+        {
+          "symbol": "^TNX",
+          "value": 4.947,
+          "change_pct": -1.18,
+          "time": "2026-09-17",
+          "name": "美国10年期收益率"
+        },
+        {
+          "symbol": "BZ=F",
+          "value": 102.77,
+          "change_pct": -1.96,
+          "time": "2026-09-18",
+          "name": "布伦特原油"
+        },
+        {
+          "symbol": "GC=F",
+          "value": 4432.8999,
+          "change_pct": 0.75,
+          "time": "2026-09-18",
+          "name": "黄金"
+        },
+        {
+          "symbol": "^VIX",
+          "value": 15.44,
+          "change_pct": -12.82,
+          "time": "2026-09-17",
+          "name": "VIX"
+        }
+      ],
+      "us_sector_risers": [],
+      "us_sector_fallers": [],
+      "a_share_risers": [],
+      "a_share_fallers": []
+    },
+    "policy_language": {
+      "稳增长": 0,
+      "扩大内需": 6,
+      "人工智能": 613,
+      "产业升级": 8,
+      "开放": 75,
+      "安全": 86,
+      "贸易": 145
+    }
+  },
+  "events": [
+    {
+      "title": "特朗普总统是对的：美国控制霍尔木兹海峡",
+      "original_title": "President Trump Was Right: America Controls the Strait of Hormuz",
+      "region": "us",
+      "category": "国防",
+      "risk": "极高",
+      "importance": 95,
+      "source": "White House",
+      "source_tier": "官方",
+      "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
+      "time": "2026-09-18 06:32 UTC"
+    },
+    {
+      "title": "财政部在经济诺曼底登陆日发起针对伊朗政权的史无前例的行动",
+      "original_title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
+      "region": "us",
+      "category": "金融",
+      "risk": "极高",
+      "importance": 90,
+      "source": "US Treasury",
+      "source_tier": "官方",
+      "url": "https://home.treasury.gov/news/press-releases/sb0613/",
+      "time": "2026-09-18 06:32 UTC"
+    },
+    {
+      "title": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
+      "original_title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
+      "region": "us",
+      "category": "能源 / 资源",
+      "risk": "高",
+      "importance": 80,
+      "source": "US Energy",
+      "source_tier": "官方",
+      "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
+      "time": "20260908T1"
+    },
+    {
+      "title": "伊朗进入阿联酋银行是“经济弃儿”行动的目标",
+      "original_title": "Iran’s Access to UAE Banks Targeted Under Operation Economic Outcast",
+      "region": "us",
+      "category": "金融",
+      "risk": "高",
+      "importance": 75,
+      "source": "US Treasury",
+      "source_tier": "官方",
+      "url": "https://home.treasury.gov/news/press-releases/sb0617/",
+      "time": "2026-09-18 06:32 UTC"
+    },
+    {
+      "title": "财政部加大对真主党的制裁力度，并打击为真主党走私数百万现金的网络",
+      "original_title": "Treasury Increases Sanctions on Hizballah and Targets Network Smuggling Millions in Cash for Hizballah",
+      "region": "us",
+      "category": "国家安全",
+      "risk": "高",
+      "importance": 75,
+      "source": "US Treasury",
+      "source_tier": "官方",
+      "url": "https://home.treasury.gov/news/press-releases/sb0611/",
+      "time": "2026-09-18 06:32 UTC"
+    },
+    {
+      "title": "财政部对暴力极左恐怖网络采取行动",
+      "original_title": "Treasury Takes Action Against Violent Far-Left Terrorist Networks",
+      "region": "us",
+      "category": "国家安全",
+      "risk": "高",
+      "importance": 70,
+      "source": "US Treasury",
+      "source_tier": "官方",
+      "url": "https://home.treasury.gov/news/press-releases/sb0616/",
+      "time": "2026-09-18 06:32 UTC"
+    },
+    {
+      "title": "碳氢化合物和地热能办公室奖 1 美元。 200万加强美国地热能源劳动力",
+      "original_title": "Hydrocarbons and Geothermal Energy Office Awards $1 . 2 Million to Strengthen America Geothermal Energy Workforce",
+      "region": "us",
+      "category": "能源 / 资源",
+      "risk": "高",
+      "importance": 68,
+      "source": "US Energy",
+      "source_tier": "官方",
+      "url": "https://www.energy.gov/hgeo/articles/hydrocarbons-and-geothermal-energy-office-awards-12-million-strengthen-americas",
+      "time": "20260909T0"
+    },
+    {
+      "title": "核|能源部",
+      "original_title": "Nuclear | Department of Energy",
+      "region": "us",
+      "category": "能源 / 资源",
+      "risk": "高",
+      "importance": 68,
+      "source": "US Energy",
+      "source_tier": "官方",
+      "url": "https://www.energy.gov/topics/nuclear",
+      "time": "20260908T1"
+    },
+    {
+      "title": "中国人民银行公告﹝2026﹞第22号",
+      "original_title": "中国人民银行公告﹝2026﹞第22号",
+      "region": "china",
+      "category": "金融",
+      "risk": "高",
+      "importance": 65,
+      "source": "China PBOC",
+      "source_tier": "官方",
+      "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2026082809193480410/index.html",
+      "time": "2026-09-18 06:32 UTC"
+    },
+    {
+      "title": "中国人民银行公告﹝2026﹞第21号",
+      "original_title": "中国人民银行公告﹝2026﹞第21号",
+      "region": "china",
+      "category": "金融",
+      "risk": "高",
+      "importance": 65,
+      "source": "China PBOC",
+      "source_tier": "官方",
+      "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2026081417014187625/index.html",
+      "time": "2026-09-18 06:32 UTC"
+    },
+    {
+      "title": "财政部长斯科特·贝森特关于针对伊朗的经济排斥行动的讲话",
+      "original_title": "Remarks from Secretary of the Treasury Scott Bessent on Operation Economic Outcast against Iran",
+      "region": "us",
+      "category": "政治",
+      "risk": "高",
+      "importance": 70,
+      "source": "US Treasury",
+      "source_tier": "官方",
+      "url": "https://home.treasury.gov/news/press-releases/sb0614/",
+      "time": "2026-09-18 06:32 UTC"
+    },
+    {
+      "title": "West Bank: UN rights report warns of forcible displacement from three refugee camps",
+      "original_title": "West Bank: UN rights report warns of forcible displacement from three refugee camps",
+      "region": "global",
+      "category": "全球政策",
+      "risk": "高",
+      "importance": 64,
+      "source": "UN News",
+      "source_tier": "官方",
+      "url": "https://news.un.org/en/story/2026/09/1168282",
+      "time": "2026-09-18 06:32 UTC"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "name": "A · 基准路径",
+      "condition": "现有政策与已公布措施按当前节奏推进，没有出现新的重大升级或回撤。",
+      "chain": [
+        "现有政策执行",
+        "企业/政府响应",
+        "市场重新定价",
+        "供应链逐步消化",
+        "下一轮政策反馈"
+      ],
+      "watch": [
+        "后续正式政策文本",
+        "执行细则与时间表",
+        "市场是否持续验证政策影响"
+      ]
+    },
+    {
+      "id": "escalate",
+      "name": "B · 升级路径",
+      "condition": "出现新增制裁、关税、出口管制、军事行动或关键运输/能源供给扰动。",
+      "chain": [
+        "新增措施",
+        "对手或相关方反制",
+        "能源/贸易/金融成本上升",
+        "企业调整供应链",
+        "政策进一步反馈"
+      ],
+      "watch": [
+        "新增强制性措施",
+        "能源/航运异常",
+        "关键资产波动与官方反制措辞"
+      ]
+    },
+    {
+      "id": "ease",
+      "name": "C · 缓和路径",
+      "condition": "主要参与方出现可验证的沟通、豁免、延期、撤回或执行强度下降。",
+      "chain": [
+        "缓和信号",
+        "企业恢复/延后决策",
+        "风险溢价回落",
+        "贸易与供应链修复",
+        "后续政策确认"
+      ],
+      "watch": [
+        "正式协议/豁免文本",
+        "措施实际撤回",
+        "市场与实体数据是否同步改善"
+      ]
+    },
+    {
+      "id": "shock",
+      "name": "D · 外生冲击",
+      "condition": "出现当前资料未覆盖的重大突发事件，导致既有情景假设失效。",
+      "chain": [
+        "突发冲击",
+        "参与方紧急响应",
+        "市场与物流先行波动",
+        "政策工具箱扩张",
+        "重新建立情景树"
+      ],
+      "watch": [
+        "异常市场波动",
+        "突发官方通告",
+        "能源/航运/支付系统异常"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "name": "政策强度",
+      "trigger": "新法令、行政命令、制裁、关税、出口管制或正式监管文本出现",
+      "why": "这是从讨论/表态进入可执行政策的关键节点"
+    },
+    {
+      "name": "能源与运输",
+      "trigger": "原油、航运、关键通道或保险成本出现异常变化",
+      "why": "可把地缘事件传导到通胀、贸易和供应链"
+    },
+    {
+      "name": "金融条件",
+      "trigger": "汇率、利率、信用或主要股指出现持续性异常",
+      "why": "验证市场是否开始定价二阶影响"
+    },
+    {
+      "name": "供应链",
+      "trigger": "关键原材料、芯片、设备或物流出现供给限制",
+      "why": "验证政策是否进入实体经济"
+    },
+    {
+      "name": "官方措辞",
+      "trigger": "主要参与方从一般表态转为明确期限、对象和执行措施",
+      "why": "提高情景切换的证据强度"
+    }
+  ],
+  "red_team": [
+    "把媒体报道误当成政策事实：必须回到原始文件或明确来源。",
+    "把相关性当因果关系：市场变化只能作为验证信号，不能单独证明政策效果。",
+    "忽略参与方反应：每个升级情景都必须列出至少一个潜在反制或适应路径。",
+    "时间尺度混淆：7天内信号与90天结构性变化分开。",
+    "数据缺口：如果新闻、政策或金融数据不足，降低结论置信度而不是补写事实。"
+  ],
+  "action_framework": {
+    "immediate": "只处理已确认、低成本、可逆的事项；记录事实与来源。",
+    "watchlist": "围绕政策文本、市场条件、能源运输、供应链和官方措辞设置监控。",
+    "backup": "为每条主要情景准备可逆的备用路径，不预设情景一定发生。",
+    "stop": "出现关键假设被新证据推翻、数据源异常或重大外生冲击时重新推演。"
+  },
+  "evidence": {
+    "confirmed": "新闻、政策、市场数据及其来源字段",
+    "inference": "事件之间的影响链和情景分支",
+    "assumption": "每条情景的触发条件",
+    "unknown": "尚未被公开数据验证的动因、执行效果和后续反应"
+  },
+  "data_health": {
+    "dashboard_updated": "2026-09-18 06:43 UTC",
+    "policy_updated": "2026-09-18 06:43 UTC",
+    "news_count": 2878,
+    "ai_available": true
+  },
+  "generated_at": "2026-09-18T06:43:14.023343+00:00",
+  "engine": "scenario-engine-v2-deterministic"
+}
