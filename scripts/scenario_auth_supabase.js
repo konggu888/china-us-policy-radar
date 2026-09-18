@@ -170,7 +170,7 @@ function initAuth(){
    renderAuthState(session?.user||null);
    if(session?.user){await cloudPull();patchSandboxHooks();}
  });
- sb.auth.getSession().then(async({data:{session}})=>{renderAuthState(session?.user||null);if(session?.user){await cloudPull();patchSandboxHooks();}});
+ sb.auth.getSession().then(async({data:{session}})=>{renderAuthState(session?.user||null);if(session?.user){await cloudPull();patchSandboxHooks(); if(loadTaskArchive()[0]) await renderTriggerCalibration(loadTaskArchive()[0].id);}});
 }
 authLoad();
 })();
