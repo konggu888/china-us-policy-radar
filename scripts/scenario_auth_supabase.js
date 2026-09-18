@@ -22,10 +22,24 @@ function authPanel(){
 }
 function msg(t){const e=document.getElementById('authStatus');if(e)e.textContent=t;}
 async function login(){
- const email=document.getElementById('authEmail').value.trim(), password=document.getElementById('authPassword').value;
+ const btn=document.getElementById('authLogin');
+ if(btn?.dataset.busy==='1')return;
+ const email=document.getElementById('authEmail')?.value.trim()||'', password=document.getElementById('authPassword')?.value||'';
  if(!email||!password)return msg('请输入邮箱和密码。');
- const {error}=await sb.auth.signInWithPassword({email,password});
- msg(error?('登录失败：'+error.message):'登录成功，正在同步历史推演……');
+ if(!sb)return msg('登录服务正在加载，请稍等 1-2 秒后再试。');
+ if(btn)btn.dataset.busy='1';
+ msg('正在登录，请稍候……');
+ try{
+   const {data,error}=await sb.auth.signInWithPassword({email,password});
+   if(error){msg('登录失败：'+(error.message||'账号或密码不正确。'));return;}
+   if(!data?.session){msg('登录未建立会话，请检查 Supabase 的 Email/Password 登录配置。');return;}
+   renderAuthState(data.user||data.session.user||null);
+   msg('登录成功，正在同步历史推演……');
+   await cloudPull();
+   patchSandboxHooks();
+ }catch(e){
+   msg('登录请求失败：'+(e?.message||'请检查网络后重试。'));
+ }finally{if(btn)btn.dataset.busy='0';}
 }
 async function signup(){
  const btn=document.getElementById('authSignup'); if(btn?.dataset.busy==='1')return msg('正在注册，请不要重复点击。');
@@ -117,13 +131,13 @@ async function renderEffectiveTriggerWeights(sc){
  const {data:{user}}=await currentUser();
  const globalRows=window.__triggerCalibration||[];
  const globalMap=new Map(globalRows.map(x=>[String(x.trigger),x]));
+ const taskId=(sc?.taskId||window.__activeScenarioTaskId||loadTaskArchive()[0]?.id||'');
  let userRows=[];
- if(user){
+ if(user&&taskId){
    const {data}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(100);
    userRows=data||[];
  }
  const userMap=new Map(); userRows.forEach(x=>{if(!userMap.has(String(x.trigger)))userMap.set(String(x.trigger),x);});
- const taskId=(sc?.taskId||window.__activeScenarioTaskId||loadTaskArchive()[0]?.id||'');
  const drivers=[...(sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT')];
  const triggers=[...new Set([...drivers.map(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')),...(sc.triggerEvidence||[]).map(x=>String(x))])];
  const rows=triggers.map(t=>{
