@@ -265,6 +265,31 @@ def _merge_evidence_registry(current_events, previous_snapshot):
         registry.append({"dedupeKey":k,"title":e.get("title"),"firstSeenAt":prev.get("firstSeenAt") or s.get("publishedAt") or now,"lastSeenAt":now,"observationCount":int(prev.get("observationCount",0) or 0)+1,"sourceIds":sorted(sources),"independentSourceCount":len(sources),"lifecycle":s.get("lifecycle","UNVERIFIED_TIME"),"freshness":s.get("freshness","UNKNOWN"),"evidenceWeight":s.get("evidenceWeight",0),"tier":s.get("tier","UNKNOWN")})
     return registry
 
+def build_transmission_windows(global_events, market_data):
+    """Create event-relative observation windows. This is observational, not causal attribution."""
+    names=("USD/CNY","黄金","美国10年期收益率","布伦特原油","VIX","上证指数","沪深300","标普500")
+    by={str(x.get("name")):x for x in (market_data or [])}
+    windows=[("T0","事件当日",0),("T1D","T+1天",1),("T3D","T+3天",3),("T7D","T+7天",7),("T30D","T+30天",30)]
+    out=[]
+    for e in (global_events or [])[:12]:
+        pub=dt(e.get("source",{}).get("publishedAt"))
+        obs=[]
+        for code,label,offset in windows:
+            metrics=[]
+            for name in names:
+                m=by.get(name)
+                if not m: continue
+                metrics.append({"name":name,"value":m.get("value"),"change_pct":m.get("change_pct"),"status":"AVAILABLE","source":"dashboard"})
+            obs.append({"window":code,"label":label,"offsetDays":offset,"metrics":metrics,"status":"OBSERVATION_ONLY"})
+        out.append({
+            "eventId":e.get("id"),"dedupeKey":e.get("dedupeKey"),"title":e.get("title"),
+            "eventPublishedAt":e.get("source",{}).get("publishedAt"),"eventTimeKnown":pub is not None,
+            "windows":obs,
+            "method":"相对事件时间窗记录可用市场观测；当前数据源未提供逐日历史快照时，不回填缺失值。",
+            "causalStatus":"NOT_ESTABLISHED"
+        })
+    return out
+
 def build_scenario_snapshot(scenarios,global_events=None):
     """Compact audit snapshot for UI/history consumers; no probabilities are implied."""
     previous_snapshot=None
@@ -385,6 +410,7 @@ def build_dynamic_tree(news,dash=None):
         ]
         act=_scenario_activation(ge,stype); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
     snapshot=build_scenario_snapshot(scenarios,ge)
+    snapshot["transmissionTimeline"]=build_transmission_windows(ge, markets(dash or {}))
     # Separate observation from causal attribution: market data can corroborate a transmission
     # signal only as a co-movement/validation observation, never as proof of causality.
     market_drivers=[d for s in scenarios for d in s.get("evidenceDrivers",[]) if d.get("kind")=="MARKET"]
