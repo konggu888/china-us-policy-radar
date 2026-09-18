@@ -914,7 +914,7 @@ def build_dynamic_tree(news,dash=None):
         ]
     }
     history=build_scenario_history(snapshot)
-    return {"schema_version":"2.0","globalEvents":ge,"responses":responses,"scenarioTree":{"id":"tree-"+datetime.now(timezone.utc).strftime("%Y%m%d"),"rootEventId":root,"title":"全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本","rounds":[{"round":1,"actor":"CN","title":"中国第1轮应对","responseIds":["resp-cn-r1"]},{"round":2,"actor":"US","title":"美国第2轮加码/施压","responseIds":["resp-us-r2"]},{"round":3,"actor":"CN","title":"中国第3轮多剧本","responseIds":["resp-cn-r3"]}],"scenarios":scenarios,"generatedAt":datetime.now(timezone.utc).isoformat(),"modelVersion":"dynamic-scenario-v2"},"time_horizons":[{"id":h[0],"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3]} for h in HORIZONS],"action_domains":["INVESTMENT","TRADE","LIFE"],"scenarioSnapshot":snapshot,"scenarioHistory":history}
+    return {"schema_version":"2.0","globalEvents":ge,"responses":responses,"scenarioTree":{"id":"tree-"+datetime.now(timezone.utc).strftime("%Y%m%d"),"rootEventId":root,"title":"全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本","rounds":[{"round":1,"actor":"CN","title":"中国第1轮应对","responseIds":["resp-cn-r1"]},{"round":2,"actor":"US","title":"美国第2轮加码/施压","responseIds":["resp-us-r2"]},{"round":3,"actor":"CN","title":"中国第3轮多剧本","responseIds":["resp-cn-r3"]}],"scenarios":scenarios,"generatedAt":datetime.now(timezone.utc).isoformat(),"modelVersion":"dynamic-scenario-v3-response-modes"},"time_horizons":[{"id":h[0],"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3]} for h in HORIZONS],"action_domains":["INVESTMENT","TRADE","LIFE"],"scenarioSnapshot":snapshot,"scenarioHistory":history}
 
 def scenario_task_registry():
     """Read durable task records when a backend or scheduled runner has written them."""
