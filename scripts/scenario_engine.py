@@ -248,6 +248,25 @@ def _calibration_audit(trigger_calibration):
         })
     return rows
 
+def _calibration_guard(trigger_calibration, previous_audit=None):
+    """Freeze suspicious calibration changes and retain a rollback snapshot."""
+    prev={str(x.get("trigger")):x for x in (previous_audit or [])}
+    guarded=[]; audit=[]
+    for x in trigger_calibration or []:
+        trigger=str(x.get("trigger") or "UNKNOWN_TRIGGER")
+        factor=float(x.get("calibrationWeight",1.0) or 1.0)
+        samples=int(x.get("observations",0) or 0)
+        old=prev.get(trigger)
+        prior=float(old.get("appliedFactor",1.0)) if old else 1.0
+        reasons=[]
+        if samples<3: reasons.append("SAMPLE_TOO_SMALL")
+        if abs(factor-prior)>0.20: reasons.append("LARGE_JUMP")
+        applied=prior if reasons and old else factor
+        status="FROZEN" if reasons and old else "APPLIED"
+        guarded.append(dict(x,calibrationWeight=round(max(0.8,min(1.2,applied)),3),calibrationStatus=status))
+        audit.append({"trigger":trigger,"sampleSize":samples,"previousFactor":prior,"proposedFactor":round(factor,3),"appliedFactor":round(applied,3),"status":status,"reasons":reasons,"rollbackAvailable":bool(old)})
+    return guarded,audit
+
 def _calibration_factor(trigger_calibration, trigger):
     row=next((x for x in (trigger_calibration or []) if x.get("trigger")==trigger and x.get("status")=="CALIBRATED"),None)
     if not row:return 1.0
@@ -561,8 +580,10 @@ def build_dynamic_tree(news,dash=None):
         historical.append(dict(e,windows=ws,anomalyAnalysis=build_event_market_anomalies(e,ws,snapshots)))
     snapshot["historicalMarketWindows"]=historical
     snapshot["retrospectiveCalibration"]=build_retrospective_calibration(scenarios,historical)
-    snapshot["triggerCalibration"]=build_trigger_calibration(scenarios,historical)
-    snapshot["calibrationAudit"]=_calibration_audit(snapshot["triggerCalibration"])
+    proposed_calibration=build_trigger_calibration(scenarios,historical)
+    previous_audit=(previous_snapshot or {}).get("calibrationAudit",[])
+    snapshot["triggerCalibration"],guard_audit=_calibration_guard(proposed_calibration,previous_audit)
+    snapshot["calibrationAudit"]=guard_audit
     # Separate observation from causal attribution: market data can corroborate a transmission
     # signal only as a co-movement/validation observation, never as proof of causality.
     market_drivers=[d for s in scenarios for d in s.get("evidenceDrivers",[]) if d.get("kind")=="MARKET"]
