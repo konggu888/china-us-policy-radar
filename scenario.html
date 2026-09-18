@@ -276,7 +276,7 @@ function normalizeLocalScenario(e,g,h,m,s){
 const TASK_STORE_KEY='chinaUsPolicyRadar.scenarioTasks.v1';
 const TASK_API_KEY='chinaUsPolicyRadar.scenarioTaskApi.v1';
 const TASK_TOKEN_KEY='chinaUsPolicyRadar.scenarioTaskToken.v1';
-function taskApi(){return (localStorage.getItem(TASK_API_KEY)||'').trim().replace(/\\/$/,'');}
+function taskApi(){return (localStorage.getItem(TASK_API_KEY)||'').trim().replace(/\/$/,'');}
 function taskToken(){return localStorage.getItem(TASK_TOKEN_KEY)||'';}
 function setTaskApi(){
  const url=prompt('请输入你部署的推演任务 API 地址（留空关闭服务器同步）',taskApi());
