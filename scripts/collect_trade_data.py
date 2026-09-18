@@ -19,10 +19,10 @@ def census_china():
     url='https://www.census.gov/foreign-trade/balance/c5700.html'
     html=fetch(url)
     text=re.sub(r'<[^>]+>',' ',html); text=re.sub(r'&nbsp;',' ',text); text=re.sub(r'\s+',' ',text)
-    m=re.search(r'2026.*?January 2026\s+([0-9,.]+)\s+([0-9,.]+)\s+([0-9,.]+).*?TOTAL 2026\s+([0-9,.]+)\s+([0-9,.]+)\s+([0-9,.]+)',text)
+    m=re.search(r'TOTAL\s+20\d{2}\s+([0-9,.]+)\s+([0-9,.]+)\s+([0-9,.]+)',text)
     if not m: raise RuntimeError('Census China trade table not parsed')
     vals=[num(x) for x in m.groups()]
-    return {'source':'U.S. Census Bureau','sourceUrl':url,'unit':'USD million','basis':'nominal, not seasonally adjusted','year':2026,'ytd':{'exports':vals[3],'imports':vals[4],'balance':vals[5]},'jan':{'exports':vals[0],'imports':vals[1],'balance':vals[2]},'fetchedAt':datetime.now(timezone.utc).isoformat()}
+    return {'source':'U.S. Census Bureau','sourceUrl':url,'unit':'USD million','basis':'nominal, not seasonally adjusted','year':datetime.now(timezone.utc).year,'ytd':{'exports':vals[0],'imports':vals[1],'balance':vals[2]},'fetchedAt':datetime.now(timezone.utc).isoformat()}
 
 
 THIRD_COUNTRIES={'Vietnam':'5700','Malaysia':'5570','Mexico':'2010','India':'5330','Japan':'5880','Korea':'5800','Thailand':'5490','Germany':'4280'}
