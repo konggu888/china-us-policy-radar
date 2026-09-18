@@ -81,10 +81,32 @@ def _country_for_region(region):
     if r in ("me","middle_east","中东"): return "ME"
     return "OTHER"
 
+def _norm_title(v):
+    s=re.sub(r"\\s+"," ",str(v or "").lower()).strip()
+    return re.sub(r"[^0-9a-z\\u4e00-\\u9fff]+","",s)
+
+def _source_meta(n):
+    src=str(n.get("sourceOrg") or n.get("source") or "未知来源")
+    official=bool(n.get("official")) or bool(re.search(r"政府|国务院|外交部|商务部|财政部|央行|白宫|state\\.gov|treasury|commerce|europa",src,re.I))
+    tier="PRIMARY" if official else ("KNOWN_MEDIA" if src!="未知来源" else "UNKNOWN")
+    return src,tier,(0.95 if tier=="PRIMARY" else (0.75 if tier=="KNOWN_MEDIA" else 0.45))
+
+def _is_duplicate_title(norm,seen_norms):
+    if not norm:return True
+    for old in seen_norms:
+        if norm==old:return True
+        if len(norm)>=16 and len(old)>=16:
+            overlap=len(set(norm)&set(old))/max(1,len(set(norm)|set(old)))
+            if overlap>=0.88:return True
+    return False
+
 def build_global_events(rows,limit=20):
-    out=[]; seen=set(); now=datetime.now(timezone.utc).isoformat()
+    out=[]; seen=set(); seen_norms=[]; now=datetime.now(timezone.utc).isoformat()
     for n in events(rows,limit=limit):
         region=n.get("region") or "global"; cc=_country_for_region(region)
+        norm=_norm_title(n.get("titleZh") or n.get("title") or "")
+        if _is_duplicate_title(norm,seen_norms):continue
+        seen_norms.append(norm)
         # Third-party events are first-class triggers, not discarded as unrelated noise.
         role="CATALYST" if cc not in ("CN","US") else "BACKGROUND"
         if not out: role="PRIMARY_TRIGGER"
@@ -96,6 +118,10 @@ def build_global_events(rows,limit=20):
         if "TRADE" in ec or "TARIFF" in ec: channels.append({"id":f"{n.get('url','event')}-trade","name":"TRADE","intensity":0.65,"description":"贸易成本与市场准入传导"})
         if "ENERGY" in ec or "LOGISTICS" in ec: channels.append({"id":f"{n.get('url','event')}-energy","name":"ENERGY","intensity":0.60,"description":"能源/运输成本传导"})
         if not channels: channels.append({"id":f"{n.get('url','event')}-supply","name":"SUPPLY_CHAIN","intensity":0.45,"description":"供应链与产业传导"})
+        src,tier,cred=_source_meta(n)
+        published=n.get("time") or n.get("updated") or n.get("published") or ""
+        pdt=dt(published); age=(datetime.now(timezone.utc)-pdt).total_seconds()/86400 if pdt else None
+        freshness="NEW" if age is not None and age<=1 else ("RECENT" if age is not None and age<=7 else ("STALE" if age is not None else "UNKNOWN"))
         out.append({
             "id":"evt-"+str(len(out)+1),
             "title":n.get("title",""),
@@ -104,12 +130,12 @@ def build_global_events(rows,limit=20):
             "importance":importance,
             "actor":{"type":"COUNTRY" if cc not in ("EU","ME","OTHER") else "REGION","country":cc,"name":region},
             "affectedCountries":[cc] if cc!="OTHER" else ["CN","US"],
-            "source":{"provider":n.get("source","未知来源"),"url":n.get("url",""),"publishedAt":n.get("time",""),"fetchedAt":now,"credibility":0.7},
+            "source":{"provider":src,"url":n.get("url",""),"publishedAt":published,"fetchedAt":now,"credibility":cred,"tier":tier,"ageDays":round(age,2) if age is not None else None,"freshness":freshness},
             "status":"CONFIRMED",
             "triggerRole":role,
             "impact":{"china":0,"us":0,"globalTrade":0,"logistics":0,"finance":0,"energy":0,"technology":0},
             "channels":channels,
-            "tags":[str(region),ec]
+            "tags":[str(region),ec],"dedupeKey":norm
         })
     return out
 
@@ -179,10 +205,11 @@ def _scenario_activation(events, scenario_type):
         counter=["若主要冲击完全停留在中美双边渠道，应降低该路径权重"]
     return {"activationState":"WATCH" if score<0.35 else ("ACTIVE" if score<0.70 else "ELEVATED"),"triggerScore":round(score,2),"evidence":evidence,"counterSignals":counter}
 
-def build_scenario_snapshot(scenarios):
+def build_scenario_snapshot(scenarios,global_events=None):
     """Compact audit snapshot for UI/history consumers; no probabilities are implied."""
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "eventEvidence": [{"id":e.get("id"),"title":e.get("title"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"dedupeKey":e.get("dedupeKey")} for e in (global_events or [])],
         "scenarios": [
             {
                 "id": s.get("id"), "code": s.get("code"),
@@ -205,6 +232,10 @@ def build_scenario_history(current_snapshot):
     if not previous or not previous.get("scenarios"):
         return {"baseline":"FIRST_RUN","previousGeneratedAt":None,"changes":[]}
     old={str(x.get("code")):x for x in previous.get("scenarios",[])}
+    old_events={str(x.get("dedupeKey")):x for x in previous.get("eventEvidence",[]) if x.get("dedupeKey")}
+    cur_events={str(x.get("dedupeKey")):x for x in current_snapshot.get("eventEvidence",[]) if x.get("dedupeKey")}
+    added_events=[v for k,v in cur_events.items() if k not in old_events]
+    removed_events=[v for k,v in old_events.items() if k not in cur_events]
     changes=[]
     for cur in current_snapshot.get("scenarios",[]):
         code=str(cur.get("code"))
@@ -230,7 +261,7 @@ def build_scenario_history(current_snapshot):
     return {
         "baseline":"COMPARISON",
         "previousGeneratedAt":previous.get("generatedAt"),
-        "changes":changes
+        "changes":changes,"newEvidence":added_events[:20],"staleOrRemovedEvidence":removed_events[:20]
     }
 
 def build_dynamic_tree(news,dash=None):
@@ -255,7 +286,7 @@ def build_dynamic_tree(news,dash=None):
             cat=str(e.get("category","")).upper()
             relevant=(stype=="HARD_DECOUPLING" and cat in ("TECHNOLOGY","TRADE","TARIFF","SANCTIONS","PAYMENT")) or (stype=="STRUCTURAL_NEGOTIATION" and cat in ("POLITICS","GEOPOLITICS","TRADE")) or (stype=="THIRD_PARTY_DIVERSION" and e.get("triggerRole")=="CATALYST")
             if relevant:
-                drivers.append({"kind":"EVENT","id":e.get("id"),"title":e.get("title"),"source":e.get("source",{}).get("provider"),"url":e.get("source",{}).get("url"),"role":e.get("triggerRole"),"category":e.get("category")})
+                drivers.append({"kind":"EVENT","id":e.get("id"),"title":e.get("title"),"source":e.get("source",{}).get("provider"),"url":e.get("source",{}).get("url"),"role":e.get("triggerRole"),"category":e.get("category"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"credibility":e.get("source",{}).get("credibility")})
         for name in ("USD/CNY","黄金","美国10年期收益率","布伦特原油","VIX"):
             m=market_by_name.get(name)
             if m:
@@ -268,7 +299,7 @@ def build_dynamic_tree(news,dash=None):
           {"id":f"{sid}-3","order":3,"actor":"CN","action":title,"mechanism":condition,"consequence":"进入对应时间窗口并持续验证触发器","nextNodeIds":[],"affectedDomains":["TRADE","INVESTMENT","LIFE"],"evidenceLevel":"ASSUMPTION","evidenceEventIds":ids,"caveat":"剧本假设；不得当作已经发生的政策结果。"}
         ]
         act=_scenario_activation(ge,stype); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
-    snapshot=build_scenario_snapshot(scenarios)
+    snapshot=build_scenario_snapshot(scenarios,ge)
     history=build_scenario_history(snapshot)
     return {"schema_version":"2.0","globalEvents":ge,"responses":responses,"scenarioTree":{"id":"tree-"+datetime.now(timezone.utc).strftime("%Y%m%d"),"rootEventId":root,"title":"全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本","rounds":[{"round":1,"actor":"CN","title":"中国第1轮应对","responseIds":["resp-cn-r1"]},{"round":2,"actor":"US","title":"美国第2轮加码/施压","responseIds":["resp-us-r2"]},{"round":3,"actor":"CN","title":"中国第3轮多剧本","responseIds":["resp-cn-r3"]}],"scenarios":scenarios,"generatedAt":datetime.now(timezone.utc).isoformat(),"modelVersion":"dynamic-scenario-v2"},"time_horizons":[{"id":h[0],"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3]} for h in HORIZONS],"action_domains":["INVESTMENT","TRADE","LIFE"],"scenarioSnapshot":snapshot,"scenarioHistory":history}
 
