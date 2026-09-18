@@ -57,6 +57,129 @@ def governance_layer(news):
   if re.search(pats[0],t,re.I):
    rows.append({'title':t[:220],'source':n.get('sourceOrg') or n.get('source') or '未知来源','url':n.get('url',''),'time':n.get('time') or n.get('updated') or '','region':n.get('ai_region') or n.get('region') or 'global','person_or_entity':n.get('person') or n.get('name') or '待核实','role_or_place':n.get('role') or n.get('location') or '待核实'})
  return rows[:30]
+
+HORIZONS = [
+    ("T1D","超短期 1天",0,1),
+    ("T7D","短期 1周",1,7),
+    ("T15D","短期 15天",7,15),
+    ("T30D","中短期 30天",15,30),
+    ("T180D","中长期 6个月",30,180),
+    ("T365D","长期 1年",180,365),
+]
+
+def _country_for_region(region):
+    r=str(region or "").lower()
+    if r in ("china","cn","中国"): return "CN"
+    if r in ("us","usa","美国"): return "US"
+    if r in ("eu","europe","欧盟"): return "EU"
+    if r in ("jp","japan","日本"): return "JP"
+    if r in ("kr","korea","韩国"): return "KR"
+    if r in ("in","india","印度"): return "IN"
+    if r in ("ru","russia","俄罗斯"): return "RU"
+    if r in ("gb","uk","英国"): return "GB"
+    if r in ("au","australia","澳大利亚"): return "AU"
+    if r in ("me","middle_east","中东"): return "ME"
+    return "OTHER"
+
+def build_global_events(rows,limit=20):
+    out=[]; seen=set(); now=datetime.now(timezone.utc).isoformat()
+    for n in events(rows,limit=limit):
+        region=n.get("region") or "global"; cc=_country_for_region(region)
+        # Third-party events are first-class triggers, not discarded as unrelated noise.
+        role="CATALYST" if cc not in ("CN","US") else "BACKGROUND"
+        if not out: role="PRIMARY_TRIGGER"
+        cat=str(n.get("category") or "全球政策")
+        cmap={"贸易 / 供应链":"TRADE","能源 / 资源":"ENERGY","科技 / AI":"TECHNOLOGY","金融":"FINANCE","中美博弈":"GEOPOLITICS","全球政策":"POLITICS","国防":"SECURITY","外交":"GEOPOLITICS"}
+        ec=cmap.get(cat,cat.upper().replace(" ","_").replace("/","_"))
+        importance="CRITICAL" if n.get("risk")=="极高" else ("HIGH" if n.get("risk")=="高" else "MEDIUM")
+        channels=[]
+        if "TRADE" in ec or "TARIFF" in ec: channels.append({"id":f"{n.get('url','event')}-trade","name":"TRADE","intensity":0.65,"description":"贸易成本与市场准入传导"})
+        if "ENERGY" in ec or "LOGISTICS" in ec: channels.append({"id":f"{n.get('url','event')}-energy","name":"ENERGY","intensity":0.60,"description":"能源/运输成本传导"})
+        if not channels: channels.append({"id":f"{n.get('url','event')}-supply","name":"SUPPLY_CHAIN","intensity":0.45,"description":"供应链与产业传导"})
+        out.append({
+            "id":"evt-"+str(len(out)+1),
+            "title":n.get("title",""),
+            "summary":n.get("title",""),
+            "category":ec,
+            "importance":importance,
+            "actor":{"type":"COUNTRY" if cc not in ("EU","ME","OTHER") else "REGION","country":cc,"name":region},
+            "affectedCountries":[cc] if cc!="OTHER" else ["CN","US"],
+            "source":{"provider":n.get("source","未知来源"),"url":n.get("url",""),"publishedAt":n.get("time",""),"fetchedAt":now,"credibility":0.7},
+            "status":"CONFIRMED",
+            "triggerRole":role,
+            "impact":{"china":0,"us":0,"globalTrade":0,"logistics":0,"finance":0,"energy":0,"technology":0},
+            "channels":channels,
+            "tags":[str(region),ec]
+        })
+    return out
+
+def _action_matrix(prefix, horizon):
+    h=horizon[0]
+    return {
+      "investment":{"domain":"INVESTMENT","do":[
+        {"id":f"{prefix}-inv-do-{h}","polarity":"DO","title":"复核汇率与流动性敞口","action":"按本时间窗口重新核算 USD/CNY、现金及外币收支的敏感度，并保留足够流动性。","rationale":"政策与外部冲击可能先通过汇率和流动性传导。","urgency":"HIGH" if h in ("T1D","T7D") else "MEDIUM","relatedSignals":["USD/CNY","liquidity"]}
+      ],"dont":[
+        {"id":f"{prefix}-inv-dont-{h}","polarity":"DONT","title":"不要因单一事件集中调整资产","action":"不把单一新闻直接转换为大额、不可逆的资产配置动作。","rationale":"情景存在分支且短期价格变化不能单独证明长期路径。","urgency":"MEDIUM"}
+      ],"watch":[
+        {"id":f"{prefix}-inv-watch-{h}","polarity":"WATCH","title":"观察避险与风险资产联动","action":"跟踪黄金、美债、股票、美元及加密资产的同步/背离变化。","rationale":"用于识别风险偏好变化，而非单独作为资金迁徙证明。","urgency":"MEDIUM"}
+      ]},
+      "trade":{"domain":"TRADE","do":[
+        {"id":f"{prefix}-trade-do-{h}","polarity":"DO","title":"核算关税与物流成本","action":"更新关税、保险、运费、交付周期和库存安全边际。","rationale":"第三方事件可通过供应链和航运成为中美博弈的催化剂。","urgency":"HIGH" if h in ("T1D","T7D","T15D") else "MEDIUM","relatedSignals":["tariff","shipping","lead_time"]}
+      ],"dont":[
+        {"id":f"{prefix}-trade-dont-{h}","polarity":"DONT","title":"不要未经合规审查进行转口","action":"不得把第三方转口作为规避关税、出口管制或制裁的默认方案；先核验原产地、海关与制裁规则。","rationale":"第三方路线可能增加合规、成本和追溯风险。","urgency":"HIGH"}
+      ],"watch":[
+        {"id":f"{prefix}-trade-watch-{h}","polarity":"WATCH","title":"监控支付与资金通道","action":"检查银行、Wise、SEPA、离岸账户及收付款对手方的可用性和合规要求。","rationale":"支付通道是跨境贸易链的重要节点。","urgency":"MEDIUM"}
+      ]},
+      "life":{"domain":"LIFE","do":[
+        {"id":f"{prefix}-life-do-{h}","polarity":"DO","title":"建立现金流预警线","action":"按未来本时间窗口的固定支出、收入和跨境支付依赖设置预警线。","rationale":"外部冲击可能造成收入或支付延迟。","urgency":"HIGH" if h in ("T1D","T7D") else "MEDIUM"}
+      ],"dont":[
+        {"id":f"{prefix}-life-dont-{h}","polarity":"DONT","title":"不要把全部生活资金放在单一通道","action":"避免单一银行、单一支付渠道或单一司法辖区形成关键依赖。","rationale":"降低单点故障风险。","urgency":"MEDIUM"}
+      ],"watch":[
+        {"id":f"{prefix}-life-watch-{h}","polarity":"WATCH","title":"关注资产隔离与身份/出行政策","action":"按所在司法辖区检查海外资产、身份文件、保险、签证及航线变化。","rationale":"长期跨境风险不仅来自金融，也来自司法与出行规则变化。","urgency":"MEDIUM"}
+      ]}
+    }
+
+def _scenario_horizons(prefix, scenario_type):
+    out=[]
+    for h in HORIZONS:
+        matrix=_action_matrix(prefix,h)
+        if scenario_type=="HARD_DECOUPLING":
+            impacts=[{"domain":"INVESTMENT","direction":"MIXED","intensity":0.75,"explanation":"风险溢价和汇率敏感度上升。"},{"domain":"TRADE","direction":"NEGATIVE","intensity":0.85,"explanation":"关税、物流和供应链重构压力增加。"},{"domain":"LIFE","direction":"MIXED","intensity":0.45,"explanation":"现金流、支付和出行依赖需要更多冗余。"}]
+        elif scenario_type=="STRUCTURAL_NEGOTIATION":
+            impacts=[{"domain":"INVESTMENT","direction":"MIXED","intensity":0.40,"explanation":"不确定性下降但结构性竞争仍在。"},{"domain":"TRADE","direction":"MIXED","intensity":0.45,"explanation":"局部措施可能维持，企业重新定价成本。"},{"domain":"LIFE","direction":"POSITIVE","intensity":0.25,"explanation":"跨境通道压力可能相对稳定。"}]
+        else:
+            impacts=[{"domain":"INVESTMENT","direction":"MIXED","intensity":0.55,"explanation":"区域资产与汇率分化可能扩大。"},{"domain":"TRADE","direction":"MIXED","intensity":0.65,"explanation":"第三方路线增加但合规和物流成本同步上升。"},{"domain":"LIFE","direction":"MIXED","intensity":0.35,"explanation":"司法辖区、支付和出行差异更重要。"}]
+        signals=[
+          {"id":f"{prefix}-sig-{h}-fx","name":"USD/CNY","metric":"汇率与波动","direction":"VOLATILE","importance":"HIGH"},
+          {"id":f"{prefix}-sig-{h}-trade","name":"贸易/航运成本","metric":"关税、运费、交付周期","direction":"UP" if scenario_type!="STRUCTURAL_NEGOTIATION" else "STABLE","importance":"HIGH"}
+        ]
+        out.append({"horizon":h,"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3],"keySignals":signals,"impacts":impacts,"actions":matrix})
+    return out
+
+def build_dynamic_tree(news):
+    ge=build_global_events(news)
+    root=ge[0]["id"] if ge else "evt-none"
+    ids=[x["id"] for x in ge[:8]]
+    responses=[
+      {"id":"resp-cn-r1","round":1,"actor":"CN","responseType":"POLICY","title":"中国第1轮应对","description":"围绕供应链、贸易伙伴、能源与产业政策工具进行响应。","triggerEventIds":ids,"expectedTargets":["供应链","贸易","能源"],"intensity":0.55,"expectedTiming":"T7D","impacts":{"trade":0.15,"currency":-0.05,"equities":0,"bonds":0.05,"commodities":0.1,"crypto":0,"logistics":0.2},"confidence":"MEDIUM"},
+      {"id":"resp-us-r2","round":2,"actor":"US","responseType":"POLICY","title":"美国第2轮加码/施压","description":"若中国响应改变贸易或技术路径，美国可能通过贸易、技术或投资工具继续施压。","triggerEventIds":ids,"expectedTargets":["技术","资本","贸易"],"intensity":0.55,"expectedTiming":"T15D","impacts":{"trade":-0.25,"currency":-0.1,"equities":-0.15,"bonds":0.1,"commodities":0.15,"crypto":0,"logistics":-0.1},"confidence":"MEDIUM"},
+      {"id":"resp-cn-r3","round":3,"actor":"CN","responseType":"DIPLOMACY","title":"中国第3轮多剧本","description":"根据第2轮压力分化为硬碰撞、结构性谈判或第三方迂回三条条件路径。","triggerEventIds":ids,"expectedTargets":["贸易","产业","第三方市场"],"intensity":0.65,"expectedTiming":"T30D","impacts":{"trade":0.05,"currency":0,"equities":0,"bonds":0.05,"commodities":0.1,"crypto":0,"logistics":0.15},"confidence":"MEDIUM"}
+    ]
+    specs=[
+      ("scenario-a","HARD_DECOUPLING","A","全面脱钩 / 硬碰撞","新增强制措施同时扩大到贸易、技术或资本渠道。",0.60),
+      ("scenario-b","STRUCTURAL_NEGOTIATION","B","结构性谈判 / 局部缓和","竞争继续，但出现可核验的沟通、豁免、延期或执行强度下降。",0.50),
+      ("scenario-c","THIRD_PARTY_DIVERSION","C","第三方迂回 / 市场转移","贸易、生产或资金流通过第三方市场重新配置，同时合规要求提高。",0.58)
+    ]
+    scenarios=[]
+    for sid,stype,code,title,condition,sens in specs:
+        chain=[
+          {"id":f"{sid}-1","order":1,"actor":"CN","action":"第1轮应对","mechanism":"降低直接冲击并调整供应链","consequence":"第三方与美国相关方重新评估政策工具","nextNodeIds":[f"{sid}-2"],"affectedDomains":["TRADE","INVESTMENT"]},
+          {"id":f"{sid}-2","order":2,"actor":"US","action":"第2轮加码/施压","mechanism":"通过贸易、技术、资本或规则工具改变成本","consequence":"中国进入第3轮路径选择","nextNodeIds":[f"{sid}-3"],"affectedDomains":["TRADE","INVESTMENT"]},
+          {"id":f"{sid}-3","order":3,"actor":"CN","action":title,"mechanism":condition,"consequence":"进入对应时间窗口并持续验证触发器","nextNodeIds":[],"affectedDomains":["TRADE","INVESTMENT","LIFE"]}
+        ]
+        scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"horizons":_scenario_horizons(sid,stype)})
+    return {"schema_version":"2.0","globalEvents":ge,"responses":responses,"scenarioTree":{"id":"tree-"+datetime.now(timezone.utc).strftime("%Y%m%d"),"rootEventId":root,"title":"全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本","rounds":[{"round":1,"actor":"CN","title":"中国第1轮应对","responseIds":["resp-cn-r1"]},{"round":2,"actor":"US","title":"美国第2轮加码/施压","responseIds":["resp-us-r2"]},{"round":3,"actor":"CN","title":"中国第3轮多剧本","responseIds":["resp-cn-r3"]}],"scenarios":scenarios,"generatedAt":datetime.now(timezone.utc).isoformat(),"modelVersion":"dynamic-scenario-v2"},"time_horizons":[{"id":h[0],"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3]} for h in HORIZONS],"action_domains":["INVESTMENT","TRADE","LIFE"]}
+
 def build(news,dash,policy,social,ai):
  es=events(news); regs=Counter(x['region'] for x in es); ls=layer_state(news,dash,social)
  gov=governance_layer(news)
@@ -79,6 +202,16 @@ def build(news,dash,policy,social,ai):
  ]
  red=['不要把“某人来自某地/曾任某职”直接当作政治派系证据；必须有明确、可靠来源才记录关系。','不要把反腐调查与地方项目变化的时间先后自动解释成因果关系；需要独立政策/项目证据。','不要根据籍贯、校友、任职经历等单一关系推断派系归属。','不要把公开评论/搜索结果当成总体民意；必须标明样本和选择偏差。','不要把新闻相关性当因果关系；要求至少一个独立验证信号。','不要把政策发布等同于政策执行，更不要把执行等同于效果。','不要把市场涨跌直接解释成资金迁徙，除非有连续资金流证据。','不要忽略企业与地方/行业之间的差异。','每条情景都要写出反证条件；反证出现就降低可信度并重建情景。','7天、30天、90天和1年尺度分开，不把短期冲击外推成长期结构。']
  base={'headline':'全局态势与多层社会反馈沙盘','executive_summary':'系统把公开事实、观察信号、模型推断、情景假设和未知分开。民众讨论仅作为信号，不代表总体民意；企业、资金、执行效果缺乏直接证据时保持未知。','state':{'china':{'event_count':regs.get('china',0)},'us':{'event_count':regs.get('us',0)},'global':{'event_count':regs.get('global',0)},'finance':{'market':markets(dash),'us_sector_risers':sectors(dash,'us_sector_market',True),'us_sector_fallers':sectors(dash,'us_sector_market',False)}},'layers':ls,'events':es,'governance':{'anti_corruption_signals':gov,'method':'documented public career/role links only; no faction attribution without explicit sourced evidence','regional_watch':[],'disruption_review':'对被查人员曾任职地区、行业与项目，仅检查是否存在公开可核验的政策/项目/人事变化；不把时间上的先后关系自动解释为因果关系'},'scenarios':scenarios,'signals':signals,'red_team':red,'action_framework':{'immediate':'只处理已确认、低成本、可逆事项；先记录证据。','watchlist':'监控政策落地、民众体感、企业行为、市场/资金、供应链、国际反应。','backup':'为不同情景准备可逆备用路径，不预设哪条一定发生。','stop':'核心假设被反证、数据质量异常或出现重大外生冲击时停止沿用旧情景并重算。'},'evidence':{'confirmed':'来源明确的政策、新闻和市场数据','signal':'公开讨论与行为变化等观察信号','inference':'影响链及跨层关联','assumption':'情景触发条件','unknown':'尚无足够公开证据验证的部分'},'social':social,'data_health':{'news_count':len(news),'ai_available':bool(ai),'dashboard_updated':dash.get('updated'),'policy_updated':policy.get('updated')},'generated_at':datetime.now(timezone.utc).isoformat(),'engine':'scenario-engine-v3-layered'}
+ dynamic=build_dynamic_tree(news)
+ base['schema_version']='2.0'
+ base['generatedAt']=base['generated_at']
+ base['globalEvents']=dynamic['globalEvents']
+ base['responses']=dynamic['responses']
+ base['scenarioTree']=dynamic['scenarioTree']
+ base['dynamic_scenarios']=dynamic['scenarioTree']['scenarios']
+ base['time_horizons']=dynamic['time_horizons']
+ base['action_domains']=dynamic['action_domains']
+ base['dashboard']={'headline':base['headline'],'triggerEvents':[x['id'] for x in dynamic['globalEvents'][:5]],'activeScenarios':['scenario-a','scenario-b','scenario-c'],'immediateActions':['复核USD/CNY与流动性敞口','核算关税/物流成本','检查跨境支付通道','建立现金流预警线'],'warnings':['第三方转口必须通过原产地、海关、出口管制与制裁合规审查','情景是条件路径，不是确定性预测','单一市场价格不能单独证明资金迁徙']}
  return base
 def ai_validate(base):
  if not KEY:return None
