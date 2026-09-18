@@ -21,44 +21,54 @@ function authPanel(){
   if(signupBtn)signupBtn.onclick=signup;
 }
 function msg(t){const e=document.getElementById('authStatus');if(e)e.textContent=t;}
+function bindNativeAuthButtons(){
+ const l=document.getElementById('authLogin'),s=document.getElementById('authSignup');
+ if(l)l.onclick=login;
+ if(s)s.onclick=signup;
+}
+async function nativeAuthRequest(path,body){
+ const res=await fetch(SUPABASE_URL+path,{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify(body)});
+ let data=null; try{data=await res.json();}catch(_){data={};}
+ if(!res.ok) throw new Error(data?.msg||data?.message||data?.error_description||'Supabase 请求失败（HTTP '+res.status+'）');
+ return data;
+}
 async function login(){
  const btn=document.getElementById('authLogin');
  if(btn?.dataset.busy==='1')return;
  const email=document.getElementById('authEmail')?.value.trim()||'', password=document.getElementById('authPassword')?.value||'';
  if(!email||!password)return msg('请输入邮箱和密码。');
- if(!sb)return msg('登录服务正在加载，请稍等 1-2 秒后再试。');
- if(btn)btn.dataset.busy='1';
- msg('正在登录，请稍候……');
+ if(btn)btn.dataset.busy='1'; msg('正在登录，请稍候……');
  try{
-   const {data,error}=await sb.auth.signInWithPassword({email,password});
-   if(error){msg('登录失败：'+(error.message||'账号或密码不正确。'));return;}
-   if(!data?.session){msg('登录未建立会话，请检查 Supabase 的 Email/Password 登录配置。');return;}
-   renderAuthState(data.user||data.session.user||null);
+   let data;
+   if(sb){
+     const r=await sb.auth.signInWithPassword({email,password});
+     if(r.error)throw new Error(r.error.message);
+     data={session:r.data?.session,user:r.data?.user};
+   }else{
+     data=await nativeAuthRequest('/auth/v1/token?grant_type=password',{email,password});
+     if(data?.access_token&&data?.refresh_token){localStorage.setItem('scenario_auth_fallback',JSON.stringify({access_token:data.access_token,refresh_token:data.refresh_token}));}
+   }
+   if(!data?.session&&!data?.access_token){msg('登录未建立会话，请检查账号、密码及 Supabase Email 登录配置。');return;}
    msg('登录成功，正在同步历史推演……');
-   await cloudPull();
-   patchSandboxHooks();
- }catch(e){
-   msg('登录请求失败：'+(e?.message||'请检查网络后重试。'));
- }finally{if(btn)btn.dataset.busy='0';}
+   if(sb&&data?.access_token&&data?.refresh_token)await sb.auth.setSession({access_token:data.access_token,refresh_token:data.refresh_token});
+   if(sb){await cloudPull();patchSandboxHooks();}
+   else msg('登录成功；云端同步组件正在加载，请刷新页面后即可继续同步。');
+ }catch(e){msg('登录失败：'+(e?.message||'请检查网络后重试。'));}
+ finally{if(btn)btn.dataset.busy='0';}
 }
 async function signup(){
- const btn=document.getElementById('authSignup'); if(btn?.dataset.busy==='1')return msg('正在注册，请不要重复点击。');
- if(btn)btn.dataset.busy='1';
- const email=document.getElementById('authEmail').value.trim(), password=document.getElementById('authPassword').value;
- if(!sb){if(btn)btn.dataset.busy='0';return msg('登录服务正在加载，请稍等 1-2 秒后再试。');}
- if(!email){if(btn)btn.dataset.busy='0';return msg('请输入账号。');}
- if(password.length<6){if(btn)btn.dataset.busy='0';return msg('注册需要至少 6 位密码。');}
- msg('正在创建账号，请稍候……');
+ const btn=document.getElementById('authSignup'); if(btn?.dataset.busy==='1')return;
+ const email=document.getElementById('authEmail')?.value.trim()||'', password=document.getElementById('authPassword')?.value||'';
+ if(!email)return msg('请输入账号。'); if(password.length<6)return msg('注册需要至少 6 位密码。');
+ if(btn)btn.dataset.busy='1'; msg('正在创建账号，请稍候……');
  try{
-   const {data,error}=await sb.auth.signUp({email,password});
-   if(error){msg('注册失败：'+error.message);return;}
-   if(data?.session){
-     msg('注册成功，已直接登录，正在同步历史推演……');
-     await cloudPull();
-   }else{
-     msg('账号已创建，但当前 Supabase 仍要求邮箱确认。请在 Supabase 后台关闭“Confirm email”后再注册。');
-   }
- }catch(e){msg('注册请求失败：'+(e?.message||'请检查网络后重试。'));}
+   let data;
+   if(sb){const r=await sb.auth.signUp({email,password});if(r.error)throw new Error(r.error.message);data={session:r.data?.session,user:r.data?.user};}
+   else data=await nativeAuthRequest('/auth/v1/signup',{email,password});
+   if(data?.access_token&&data?.refresh_token)localStorage.setItem('scenario_auth_fallback',JSON.stringify({access_token:data.access_token,refresh_token:data.refresh_token}));
+   if(data?.session||data?.access_token){msg('注册成功，已直接登录。'); if(sb&&data?.access_token)await sb.auth.setSession({access_token:data.access_token,refresh_token:data.refresh_token}); if(sb)await cloudPull();}
+   else msg('账号已创建，但 Supabase 仍要求邮箱确认。请关闭 Confirm email 后再注册。');
+ }catch(e){msg('注册失败：'+(e?.message||'请检查网络后重试。'));}
  finally{if(btn)btn.dataset.busy='0';}
 }
 async function cloudPull(){
@@ -229,6 +239,7 @@ function patchSandboxHooks(){
 }
 function initAuth(){
  authPanel();
+ bindNativeAuthButtons();
  const hash=location.hash||'';
  const search=location.search||'';
  
