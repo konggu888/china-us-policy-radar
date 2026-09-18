@@ -736,6 +736,12 @@ def build_cross_run_validation(scenarios,history):
             })
     return out
 
+def build_dynamic_response_tree(scenario, max_depth=3):
+    """Expand a scenario into conditional response branches; branches are not forecasts."""
+    tools=scenario.get('responseOptions') or _countermeasure_library()
+    def branches(actor, round_no):
+        return [{"id":f"{scenario.get('id','scenario')}-{round_no}-{t.get('id')}","round":round_no,"actor":actor,"toolId":t.get('id'),"toolName":t.get('name'),"triggerConditions":t.get('activationTriggers',[]),"observableEvidence":t.get('observableEvidence',[]),"mechanism":t.get('mechanism'),"status":"CONDITIONAL_BRANCH","caveat":"条件分支，不表示该工具一定会被采用；需由正式政策或执行证据更新状态。"} for t in tools[:8]]
+    return {"root":{"id":scenario.get('id'),"status":"OBSERVED_OR_HYPOTHESIS"},"rounds":[{"round":1,"actor":"CN","branches":branches('CN',1)},{"round":2,"actor":"US","branches":branches('US',2)},{"round":3,"actor":"CN","branches":branches('CN',3)}],"branchingRule":"每一轮保留多种政策工具路径；实际事件证据决定哪些分支继续展开。"}
 def build_scenario_snapshot(scenarios,global_events=None):
     """Compact audit snapshot for UI/history consumers; no probabilities are implied."""
     previous_snapshot=None
@@ -869,7 +875,7 @@ def build_dynamic_tree(news,dash=None):
           {"id":f"{sid}-3","order":3,"actor":"CN","action":title+"：多工具分支","mechanism":condition,"consequence":"进入对应时间窗口并验证实际采用的政策工具及实体反馈","nextNodeIds":[],"affectedDomains":["TRADE","SUPPLY_CHAIN","TECHNOLOGY","INVESTMENT","FINANCE","LIFE"],"evidenceLevel":"ASSUMPTION","evidenceEventIds":ids,"caveat":"剧本假设；不得当作已经发生的政策结果。"}
         ]
         act=_scenario_activation(ge,stype,trigger_calibration); drivers=drivers_for(stype)
-        scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个中美或第三方事件被确认","存在可验证的政策响应或工具选择信号"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"counterSignalAnalysis":_counter_signal_analysis(ge,stype),"responseOptions":response_options,"highRelevanceResponseTools":top_tools,"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","出现新的反制/对等措施","出现豁免、延期、谈判或执行强度下降","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
+        scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个中美或第三方事件被确认","存在可验证的政策响应或工具选择信号"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"counterSignalAnalysis":_counter_signal_analysis(ge,stype),"responseOptions":response_options,"highRelevanceResponseTools":top_tools,"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","出现新的反制/对等措施","出现豁免、延期、谈判或执行强度下降","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)}; scenario_obj["dynamicResponseTree"]=build_dynamic_response_tree(scenario_obj); scenarios.append(scenario_obj)
 
     snapshot=build_scenario_snapshot(scenarios,ge)
     snapshots=persist_market_snapshot(dash or {})
