@@ -624,7 +624,9 @@ def persist_validation_history(scenarios,historical_events,max_rows=720):
                 'eventPublishedAt':e.get('eventPublishedAt'),'followupWindows':[w.get('window') for w in windows],
                 'followupObserved':bool(windows),
                 'marketObservedWindows':[w.get('window') for w in e.get('windows',[]) if w.get('status')=='OBSERVED'],
-                'sourceCount':int((e.get('corroboration') or {}).get('independentSourceCount',0) or 0)
+                'sourceCount':int((e.get('corroboration') or {}).get('independentSourceCount',0) or 0),
+                'counterSignalCount':sum(1 for x in (s.get('counterSignalAnalysis',{}) or {}).get('signals',[]) if str(x.get('eventId'))==str(e.get('eventId'))),
+                'counterSignalStrength':round(sum(float(x.get('evidenceWeight',0) or 0) for x in (s.get('counterSignalAnalysis',{}) or {}).get('signals',[]) if str(x.get('eventId'))==str(e.get('eventId'))),3)
             })
     # One row per run/driver; keep bounded history.
     old.extend(rows)
@@ -648,9 +650,12 @@ def build_cross_run_validation(scenarios,history):
                 'followupRunCount':sum(1 for x in rr if x.get('followupObserved')),
                 'marketObservedRunCount':sum(1 for x in rr if x.get('marketObservedWindows')),
                 'maxIndependentSourceCount':max((int(x.get('sourceCount',0) or 0) for x in rr),default=0),
+                'counterRunCount':sum(1 for x in rr if int(x.get('counterSignalCount',0) or 0)>0),
+                'counterSignalCount':sum(int(x.get('counterSignalCount',0) or 0) for x in rr),
+                'counterSignalStrength':round(sum(float(x.get('counterSignalStrength',0) or 0) for x in rr),3),
                 'observedWindows':sorted(set(w for x in rr for w in x.get('followupWindows',[]))),
                 'status':'MULTI_RUN_OBSERVED' if len(rr)>=2 else 'SINGLE_RUN',
-                'method':'跨运行持久化的后续观察计数；用于描述性校准，不代表概率、因果或预测成立。'
+                'method':'跨运行持久化正向后续观察与反向/反证信号；用于描述性监控校准，不代表概率、因果或预测成立。'
             })
     return out
 
