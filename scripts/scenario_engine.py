@@ -299,6 +299,40 @@ def _scenario_activation(events, scenario_type, trigger_calibration=None):
         counter=["若主要冲击完全停留在中美双边渠道，应降低该路径权重"]
     return {"activationState":"WATCH" if score<0.35 else ("ACTIVE" if score<0.70 else "ELEVATED"),"triggerScore":round(score,2),"evidence":evidence,"counterSignals":counter}
 
+def _counter_signal_analysis(events, scenario_type):
+    """Identify observable counter-signals separately from hypothetical counter-conditions."""
+    rules={
+        "HARD_DECOUPLING":{"opposite":{"POLITICS","DIPLOMACY"},"keywords":["豁免","延期","撤回","暂停执行","waiver","extension","suspend"]},
+        "STRUCTURAL_NEGOTIATION":{"opposite":{"SANCTIONS","TARIFF","TRADE","TECHNOLOGY","PAYMENT"},"keywords":["新增制裁","加征关税","出口管制","investment restriction","export control"]},
+        "THIRD_PARTY_DIVERSION":{"opposite":{"TRADE","TARIFF","SANCTIONS","TECHNOLOGY"},"keywords":["双边直接","直接贸易","直接供应","direct bilateral"]}
+    }
+    rule=rules.get(scenario_type,{"opposite":set(),"keywords":[]})
+    rows=[]
+    for e in events or []:
+        cat=str(e.get("category","")).upper()
+        title=str(e.get("title",""))
+        if cat not in rule["opposite"] and not any(k.lower() in title.lower() for k in rule["keywords"]):
+            continue
+        ew=float(e.get("source",{}).get("evidenceWeight",0) or 0)
+        rows.append({
+            "eventId":e.get("id"),
+            "title":title,
+            "category":cat,
+            "evidenceWeight":round(ew,3),
+            "publishedAt":e.get("source",{}).get("publishedAt"),
+            "tier":e.get("source",{}).get("tier"),
+            "lifecycle":e.get("source",{}).get("lifecycle"),
+            "interpretation":"候选反证；只有在事件内容与当前情景核心假设直接冲突时才应降低该路径监测权重。"
+        })
+    strength=round(sum(x["evidenceWeight"] for x in rows),3)
+    return {
+        "status":"OBSERVED_COUNTER_SIGNAL" if rows else "NO_OBSERVED_COUNTER_SIGNAL",
+        "count":len(rows),
+        "strength":strength,
+        "signals":rows[:8],
+        "rule":"反证是监测信号，不等于情景被证伪；需要时间、来源和执行证据进一步确认。"
+    }
+
 def _merge_evidence_registry(current_events, previous_snapshot):
     old={str(x.get("dedupeKey")):x for x in (previous_snapshot or {}).get("evidenceRegistry",[]) if x.get("dedupeKey")}
     now=datetime.now(timezone.utc).isoformat()
@@ -570,7 +604,7 @@ def build_dynamic_tree(news,dash=None):
           {"id":f"{sid}-2","order":2,"actor":"US","action":"第2轮加码/施压","mechanism":"通过贸易、技术、资本或规则工具改变成本","consequence":"中国进入第3轮路径选择","nextNodeIds":[f"{sid}-3"],"affectedDomains":["TRADE","INVESTMENT"],"evidenceLevel":"INFERENCE","evidenceEventIds":ids,"caveat":"只有出现新的正式措施或执行变化时才提高该节点监控权重。"},
           {"id":f"{sid}-3","order":3,"actor":"CN","action":title,"mechanism":condition,"consequence":"进入对应时间窗口并持续验证触发器","nextNodeIds":[],"affectedDomains":["TRADE","INVESTMENT","LIFE"],"evidenceLevel":"ASSUMPTION","evidenceEventIds":ids,"caveat":"剧本假设；不得当作已经发生的政策结果。"}
         ]
-        act=_scenario_activation(ge,stype,trigger_calibration); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
+        act=_scenario_activation(ge,stype,trigger_calibration); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"counterSignalAnalysis":_counter_signal_analysis(ge,stype),"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
     snapshot=build_scenario_snapshot(scenarios,ge)
     snapshots=persist_market_snapshot(dash or {})
     snapshot["transmissionTimeline"]=build_transmission_windows(ge, markets(dash or {}))
