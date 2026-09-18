@@ -207,20 +207,47 @@ async function renderTaskOverview(taskId,rows){
  const marketMissing=market.filter(x=>x.status==='MISSING').length;
  const counters=(sc.counterSignalAnalysis?.signals||[]);
  const cross=validation.crossRunValidation||[];
- const supported=drivers.filter(d=>{const r=registry.find(x=>String(x.id||x.dedupeKey||x.eventId||'')===String(d.id||''));return Number(r?.observationCount||0)>1||Number(r?.independentSourceCount||0)>1||!!r?.followupObserved;}).length;
- const unresolved=Math.max(0,drivers.length-supported);
+ let feedback=[];
+ try{
+   const q=await sb.from('scenario_trigger_feedback').select('trigger,outcome,calibration_factor,sample_size,status,created_at,evidence_count,followup_count,market_deviation_count').eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(100);
+   feedback=q.data||[];
+ }catch(e){feedback=[];}
+ const latestFeedback=new Map();
+ feedback.forEach(x=>{if(!latestFeedback.has(String(x.trigger||'')))latestFeedback.set(String(x.trigger||''),x);});
+ const checklist=drivers.map(d=>{
+   const key=String(d.id||''), reg=registry.find(x=>String(x.dedupeKey||'')===key||String(x.id||'')===key||String(x.eventId||'')===key);
+   const crossRow=cross.find(x=>String(x.driverId||'')===key);
+   const fb=latestFeedback.get(String(d.category||d.role||'UNKNOWN_TRIGGER'));
+   let state=fb?.outcome||'UNRESOLVED';
+   if(!fb){
+     const repeated=Number(reg?.observationCount||0)>1||Number(reg?.independentSourceCount||0)>1||!!reg?.followupObserved;
+     const multi=Number(crossRow?.runObservationCount||0)>=2;
+     state=(repeated||multi)?'SUPPORTED':'UNRESOLVED';
+   }
+   const next=[];
+   if(!reg?.followupObserved&&!crossRow?.followupRunCount)next.push('等待后续事件');
+   if(!crossRow?.marketObservedRunCount)next.push('等待市场窗口');
+   if(Number(crossRow?.counterRunCount||0)>0)next.push('复核反证');
+   if(!next.length)next.push('继续下一轮复核');
+   return {title:d.title||d.id||'未命名触发器',state,next:next.slice(0,3),sample:Number(fb?.sample_size||crossRow?.runObservationCount||0)};
+ });
+ const supported=checklist.filter(x=>x.state==='SUPPORTED').length;
+ const weakened=checklist.filter(x=>x.state==='WEAKENED').length;
+ const unresolved=Math.max(0,checklist.length-supported-weakened);
  const scoreDelta=prev==null?null:Number(latest.trigger_score||0)-Number(prev.trigger_score||0);
  const state=String(latest.activation_state||sc.activationState||'WATCH');
  const statusText=state==='ACTIVE'?'当前触发条件较充分，继续做后续验证':state==='WATCH'?'保持观察，继续等待触发与反证':'当前情景状态：'+state;
  const tile=(title,value,sub)=>'<div class="card"><b>'+authEsc(title)+'</b><div style="font-size:20px;margin-top:5px">'+authEsc(String(value))+'</div><div class="muted mini">'+authEsc(sub||'')+'</div></div>';
- box.innerHTML='<div class="card"><div class="scenario-summary-head"><div><b>🧭 任务级总览</b><div class="muted mini">基于最近一次真实雷达快照；不把后来信息倒灌到过去。</div></div><span class="tag">'+authEsc(state)+'</span></div><p>'+authEsc(statusText)+'</p><div class="scenario-summary-grid">'+
+ const badge=x=>'<span class="tag">'+authEsc(x)+'</span>';
+ const rowsHtml=checklist.map(x=>'<div class="card" style="margin-top:8px"><div class="scenario-summary-head"><b>'+authEsc(x.title)+'</b>'+badge(x.state)+'</div><div class="mini muted">样本 '+x.sample+' · 下一步：'+authEsc(x.next.join('、'))+'</div></div>').join('');
+ box.innerHTML='<div class="card"><div class="scenario-summary-head"><div><b>🧭 任务级总览</b><div class="muted mini">基于最近一次真实雷达快照；历史窗口没有快照时保持缺失。</div></div><span class="tag">'+authEsc(state)+'</span></div><p>'+authEsc(statusText)+'</p><div class="scenario-summary-grid">'+
  tile('当前情景',latest.scenario_code||sc.code||'未标注','触发分数 '+Number(latest.trigger_score||0).toFixed(2)+(scoreDelta==null?'':' · 较上次 '+(scoreDelta>=0?'+':'')+scoreDelta.toFixed(2)))+
- tile('直接触发器',drivers.length,supported+' 个已有重复/后续观察 · '+unresolved+' 个仍待验证')+
+ tile('触发器',checklist.length,supported+' 支持 · '+weakened+' 削弱 · '+unresolved+' 待验证')+
  tile('时间窗口',observedWindows.length,missingWindows.length+' 个窗口暂缺历史快照')+
  tile('市场验证',marketObserved,marketMissing+' 个市场窗口缺失')+
- tile('反证信号',counters.length,'跨运行记录 '+Number(cross.reduce((n,x)=>n+Number(x.counterSignalCount||0),0))+' 个')+
+ tile('反证信号',counters.length,'跨运行累计 '+Number(cross.reduce((n,x)=>n+Number(x.counterSignalCount||0),0))+' 个')+
  tile('历史运行',all.length,'最近运行 '+(latest.observed_at||'未知'))+
- '</div><div class="mini" style="margin-top:8px"><b>已验证条件：</b>'+authEsc(supported?drivers.slice(0,supported).map(x=>x.title||x.id).join('；'):'目前没有足够的重复/后续观察')+'</div><div class="mini" style="margin-top:6px"><b>下一观察重点：</b>核验新增正式政策文本、后续事件、时间窗口、市场快照与反证；出现关键反证时重新建模。</div></div>';
+ '</div><div class="mini" style="margin-top:10px"><b>监控清单：</b>每个触发器单独跟踪“后续事件 → 时间窗口 → 市场验证 → 反证”。状态来自已保存的运行观察，不代表概率或预测。</div></div>'+rowsHtml;
 }
 async function renderTaskRuns(taskId){
  const box=document.getElementById('taskRunsList'); if(!box||!taskId||!sb)return;
