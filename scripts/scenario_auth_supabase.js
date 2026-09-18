@@ -65,6 +65,38 @@ window.saveScenarioRun=async function(task,scenario){
  const {error}=await sb.from('scenario_task_runs').insert(row);
  if(error)console.warn('scenario run save failed',error.message);
 };
+async function buildTriggerFeedback(taskId,currentRun,previousRun){
+ const {data:{user}}=await currentUser(); if(!user||!currentRun)return;
+ const sc=currentRun.payload?.scenario||{}, prev=previousRun?.payload?.scenario||{};
+ const currentDrivers=(sc.evidenceDrivers||[]).filter(d=>d.kind==='EVENT');
+ const previousDrivers=(prev.evidenceDrivers||[]).filter(d=>d.kind==='EVENT');
+ const prevIds=new Set(previousDrivers.map(d=>String(d.id)));
+ const newDrivers=currentDrivers.filter(d=>!prevIds.has(String(d.id)));
+ const registry=currentRun.payload?.evidenceRegistry||[];
+ const followup=registry.filter(e=>['ACTIVE','DEVELOPING','RESOLVED'].includes(e.lifecycle)).length;
+ const market=currentRun.payload?.radarContext?.market||[];
+ const marketDeviation=market.filter(m=>m.change_pct!==undefined&&m.change_pct!==null&&Math.abs(Number(m.change_pct))>=1.5).length;
+ const score=Number(currentRun.trigger_score||0), priorScore=Number(previousRun?.trigger_score??score), delta=score-priorScore;
+ const outcome=delta>=0.05?'SUPPORTED':(delta<=-0.05?'WEAKENED':'UNRESOLVED');
+ const triggers=[...new Set(currentDrivers.map(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')))];
+ if(!triggers.length)return;
+ const {data:existing}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('user_id',user.id).eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(100);
+ const latest=new Map((existing||[]).map(x=>[x.trigger,x]));
+ const rows=triggers.map(trigger=>{
+   const old=latest.get(trigger), n=(old?.sample_size||0)+1, raw=outcome==='SUPPORTED'?1.05:(outcome==='WEAKENED'?0.95:1);
+   const prior=Number(old?.calibration_factor||1), proposed=Math.max(0.8,Math.min(1.2,prior*raw)), applied=n<3?1:proposed;
+   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun?.id||null,outcome,evidence_count:newDrivers.length,followup_count:followup,market_deviation_count:marketDeviation,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':'CALIBRATED',payload:{proposedFactor:Number(proposed.toFixed(3)),reason:'描述性历史反馈；仅用于监测权重，不表示概率或因果'}};
+ });
+ if(rows.length)await sb.from('scenario_trigger_feedback').insert(rows);
+}
+async function renderTriggerCalibration(taskId){
+ const box=document.getElementById('triggerCalibrationList'); if(!box||!taskId||!sb)return;
+ const {data,error}=await sb.from('scenario_trigger_feedback').select('trigger,outcome,evidence_count,followup_count,market_deviation_count,sample_size,calibration_factor,status,created_at').eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(80);
+ if(error){box.innerHTML='<div class="card muted">历史校准读取失败。</div>';return;}
+ const latest=new Map(); (data||[]).forEach(r=>{if(!latest.has(r.trigger))latest.set(r.trigger,r);});
+ const rows=[...latest.values()];
+ box.innerHTML=rows.length?rows.map(r=>'<article class="card"><b>'+esc(r.trigger)+'</b><div class="muted mini">样本 '+r.sample_size+' · '+esc(r.status)+' · 校准因子 '+Number(r.calibration_factor).toFixed(3)+'</div><div class="mini">最近结果：'+esc(r.outcome)+' · 新增证据 '+r.evidence_count+' · 后续证据 '+r.followup_count+' · 市场偏离 '+r.market_deviation_count+'</div><div class="mini muted">描述性历史反馈，不是发生概率、胜率或因果估计。</div></article>').join(''):'<div class="card muted">形成历史样本后，这里会逐步出现触发器反馈。</div>';
+}
 function renderAuthState(user){
  const box=document.getElementById('authBox'); if(!box)return;
  if(user) box.innerHTML='<div class="status">已登录：<b>'+esc(user.email||'账号')+'</b>。历史推演自动云端保存。 <button id="authLogout">退出登录</button></div><div class="mini muted">账号跨设备同步，不再需要保存同步密钥。</div>';
@@ -97,7 +129,7 @@ function ensureTaskRunsPanel(){
  const anchor=document.getElementById('taskArchive');
  if(!anchor)return;
  const p=document.createElement('section');p.id='taskRunsPanel';p.className='panel';
- p.innerHTML='<div class="title">🧾 推演运行历史 · 第二阶段</div><div class="mini muted">每次运行保存当时的雷达时间、态势、关键事件、市场快照、剧本状态和证据驱动。这里记录历史事实，不把后来的信息倒灌回过去。</div><div id="taskRunsList" class="actions" style="margin-top:10px"><div class="card muted">选择或运行一个任务后加载。</div></div>';
+ p.innerHTML='<div class="title">🧾 推演运行历史 · 第二阶段</div><div class="mini muted">每次运行保存当时的雷达时间、态势、关键事件、市场快照、剧本状态和证据驱动。这里记录历史事实，不把后来的信息倒灌回过去。</div><div id="taskRunsList" class="actions" style="margin-top:10px"><div class="card muted">选择或运行一个任务后加载。</div></div><div class="title" style="margin-top:14px">🧪 第三阶段 · 历史触发器校准</div><div class="mini muted">连续运行样本用于记录触发器在后续观察中被支持、减弱或仍无法确认；样本不足时不调整权重。</div><div id="triggerCalibrationList" class="actions" style="margin-top:10px"><div class="card muted">形成历史样本后显示。</div></div>';
  anchor.after(p);
 }
 function patchSandboxHooks(){
@@ -117,7 +149,15 @@ function patchSandboxHooks(){
    const result=oldRun(task);
    setTimeout(async()=>{
      const sc=window.__selectedScenario;
-     if(sc){ await window.saveScenarioRun(task,sc); await renderTaskRuns(task.id); }
+     if(sc){
+ await window.saveScenarioRun(task,sc);
+ const {data:{user}}=await currentUser();
+ if(user){
+   const {data:runs}=await sb.from('scenario_task_runs').select('id,observed_at,trigger_score,payload').eq('task_id',String(task.id)).order('observed_at',{ascending:false}).limit(2);
+   if(runs?.[0]){await buildTriggerFeedback(task.id,runs[0],runs?.[1]);}
+ }
+ await renderTaskRuns(task.id); await renderTriggerCalibration(task.id);
+}
    },250);
    return result;
  };
