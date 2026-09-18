@@ -117,7 +117,7 @@ async function buildTriggerFeedback(taskId,currentRun,previousRun){
  for(const d of currentDrivers){
    const trigger=String(d.category||d.role||'UNKNOWN_TRIGGER');
    const key=String(d.id||'');
-   const r=registry.find(x=>String(x.dedupeKey||'')===key);
+   const r=registry.find(x=>String(x.dedupeKey||'')===key || String(x.id||'')===key || String(x.eventId||'')===key);
    const cross=crossRun.find(x=>String(x.driverId||'')===key);
    const repeated=Number(r?.observationCount||0)>1 || Number(r?.independentSourceCount||0)>1 || !!r?.followupObserved;
    const multiRun=Number(cross?.runObservationCount||0)>=2;
