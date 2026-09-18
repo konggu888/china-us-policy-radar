@@ -252,10 +252,30 @@ def _scenario_activation(events, scenario_type):
         counter=["若主要冲击完全停留在中美双边渠道，应降低该路径权重"]
     return {"activationState":"WATCH" if score<0.35 else ("ACTIVE" if score<0.70 else "ELEVATED"),"triggerScore":round(score,2),"evidence":evidence,"counterSignals":counter}
 
+def _merge_evidence_registry(current_events, previous_snapshot):
+    old={str(x.get("dedupeKey")):x for x in (previous_snapshot or {}).get("evidenceRegistry",[]) if x.get("dedupeKey")}
+    now=datetime.now(timezone.utc).isoformat()
+    registry=[]
+    for e in current_events:
+        k=e.get("dedupeKey")
+        if not k: continue
+        s=e.get("source",{}); prev=old.get(k,{})
+        sources=set(prev.get("sourceIds",[]) or [])
+        sources.add(str(e.get("sourceIdentity") or s.get("provider") or "UNKNOWN"))
+        registry.append({"dedupeKey":k,"title":e.get("title"),"firstSeenAt":prev.get("firstSeenAt") or s.get("publishedAt") or now,"lastSeenAt":now,"observationCount":int(prev.get("observationCount",0) or 0)+1,"sourceIds":sorted(sources),"independentSourceCount":len(sources),"lifecycle":s.get("lifecycle","UNVERIFIED_TIME"),"freshness":s.get("freshness","UNKNOWN"),"evidenceWeight":s.get("evidenceWeight",0),"tier":s.get("tier","UNKNOWN")})
+    return registry
+
 def build_scenario_snapshot(scenarios,global_events=None):
     """Compact audit snapshot for UI/history consumers; no probabilities are implied."""
+    previous_snapshot=None
+    try:
+        previous_snapshot=json.loads(OUT.read_text(encoding="utf-8")).get("scenarioSnapshot")
+    except Exception:
+        previous_snapshot=None
+    registry=_merge_evidence_registry(global_events or [],previous_snapshot)
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "evidenceRegistry": registry,
         "eventEvidence": [{"id":e.get("id"),"title":e.get("title"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"dedupeKey":e.get("dedupeKey"),"lifecycle":e.get("source",{}).get("lifecycle"),"evidenceWeight":e.get("source",{}).get("evidenceWeight"),"corroboration":e.get("corroboration")} for e in (global_events or [])],
         "scenarios": [
             {
