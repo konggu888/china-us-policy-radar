@@ -202,7 +202,7 @@ function renderSandboxScenario(sc,index){if(!sc)return;const hs=sc.horizons||[];
  if(dt){
    const tree=sc.dynamicResponseTree||{};
    const rounds=tree.rounds||[];
-   const statusLabel={OBSERVED:'已观察',SUPPORTED:'证据支持',UNRESOLVED:'待验证'};
+   const statusLabel={OBSERVED:'已观察',SUPPORTED:'证据支持',UNRESOLVED:'待验证',EVIDENCE_ENHANCED:'证据增强',WEAKENED:'证据减弱',CONTESTED:'出现反证'};
    const modeLabel={ESCALATE:'升级',DEESCALATE:'缓和',THIRD_PARTY_SHIFT:'第三方转向',NEGOTIATE:'谈判/豁免'};
    dt.innerHTML='<div class="card" style="margin:10px 0"><b>🌳 多轮动态博弈树 v3</b><div class="mini muted" style="margin:6px 0 10px">每轮同时保留“升级 / 缓和 / 第三方转向 / 谈判或豁免”四类路径。节点状态只表示当前证据覆盖，不表示概率、意图或最终结果。</div>'+
      rounds.map(r=>'<div style="margin:12px 0"><b>第'+esc(r.round)+'轮 · '+esc(r.actorName||r.actor)+'响应节点</b>'+
