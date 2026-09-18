@@ -985,7 +985,15 @@ def build_dynamic_tree(news,dash=None):
         act=_scenario_activation(ge,stype,trigger_calibration); drivers=drivers_for(stype)
         scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个中美或第三方事件被确认","存在可验证的政策响应或工具选择信号"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"counterSignalAnalysis":_counter_signal_analysis(ge,stype),"responseOptions":response_options,"highRelevanceResponseTools":top_tools,"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","出现新的反制/对等措施","出现豁免、延期、谈判或执行强度下降","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
         scenario_obj=scenarios[-1]
-        scenario_obj["dynamicResponseTree"]=build_dynamic_response_tree(scenario_obj, ge, previous_snapshot)
+        previous_tree=None
+        if isinstance(previous_snapshot,dict):
+            prev_root=previous_snapshot.get("scenarioTree") or previous_snapshot.get("scenarioSnapshot",{}).get("scenarioTree") or {}
+            prev_scenarios=prev_root.get("scenarios",[]) if isinstance(prev_root,dict) else []
+            for prev_s in prev_scenarios:
+                if prev_s.get("code")==scenario_obj.get("code") or prev_s.get("id")==scenario_obj.get("id"):
+                    previous_tree=prev_s.get("dynamicResponseTree")
+                    break
+        scenario_obj["dynamicResponseTree"]=build_dynamic_response_tree(scenario_obj, ge, previous_tree)
 
     snapshot=build_scenario_snapshot(scenarios,ge)
     snapshots=persist_market_snapshot(dash or {})
