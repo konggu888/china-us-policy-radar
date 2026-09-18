@@ -368,7 +368,14 @@ def build_dynamic_tree(news,dash=None):
         for name in ("USD/CNY","黄金","美国10年期收益率","布伦特原油","VIX"):
             m=market_by_name.get(name)
             if m:
-                drivers.append({"kind":"MARKET","name":name,"value":m.get("value"),"change_pct":m.get("change_pct"),"source":"dashboard"})
+                cp=m.get("change_pct")
+                drivers.append({
+                    "kind":"MARKET","name":name,"value":m.get("value"),"change_pct":cp,
+                    "source":"dashboard",
+                    "observationStatus":"DATA_PRESENT",
+                    "observedAt":m.get("time") or m.get("updated") or m.get("date"),
+                    "interpretation":"同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
+                })
         return drivers[:10]
     for sid,stype,code,title,condition,sens in specs:
         chain=[
@@ -378,6 +385,22 @@ def build_dynamic_tree(news,dash=None):
         ]
         act=_scenario_activation(ge,stype); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
     snapshot=build_scenario_snapshot(scenarios,ge)
+    # Separate observation from causal attribution: market data can corroborate a transmission
+    # signal only as a co-movement/validation observation, never as proof of causality.
+    market_drivers=[d for s in scenarios for d in s.get("evidenceDrivers",[]) if d.get("kind")=="MARKET"]
+    snapshot["transmissionValidation"]={
+        "marketObservationCount":len(market_drivers),
+        "eventObservationCount":len(ge),
+        "status":"OBSERVATIONAL",
+        "rule":"市场指标与事件同期变化只能作为伴随验证信号；缺少连续、可识别的实体数据时不做因果归因。",
+        "observations":[
+            {"scenarioCode":s.get("code"),"marketSignals":[
+                {"name":d.get("name"),"change_pct":d.get("change_pct"),"observationStatus":d.get("observationStatus","DATA_PRESENT")}
+                for d in s.get("evidenceDrivers",[]) if d.get("kind")=="MARKET"
+            ]}
+            for s in scenarios
+        ]
+    }
     history=build_scenario_history(snapshot)
     return {"schema_version":"2.0","globalEvents":ge,"responses":responses,"scenarioTree":{"id":"tree-"+datetime.now(timezone.utc).strftime("%Y%m%d"),"rootEventId":root,"title":"全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本","rounds":[{"round":1,"actor":"CN","title":"中国第1轮应对","responseIds":["resp-cn-r1"]},{"round":2,"actor":"US","title":"美国第2轮加码/施压","responseIds":["resp-us-r2"]},{"round":3,"actor":"CN","title":"中国第3轮多剧本","responseIds":["resp-cn-r3"]}],"scenarios":scenarios,"generatedAt":datetime.now(timezone.utc).isoformat(),"modelVersion":"dynamic-scenario-v2"},"time_horizons":[{"id":h[0],"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3]} for h in HORIZONS],"action_domains":["INVESTMENT","TRADE","LIFE"],"scenarioSnapshot":snapshot,"scenarioHistory":history}
 
