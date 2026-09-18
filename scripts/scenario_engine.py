@@ -301,6 +301,16 @@ def build_scenario_history(current_snapshot):
     old={str(x.get("code")):x for x in previous.get("scenarios",[])}
     old_events={str(x.get("dedupeKey")):x for x in previous.get("eventEvidence",[]) if x.get("dedupeKey")}
     cur_events={str(x.get("dedupeKey")):x for x in current_snapshot.get("eventEvidence",[]) if x.get("dedupeKey")}
+    old_reg={str(x.get("dedupeKey")):x for x in previous.get("evidenceRegistry",[]) if x.get("dedupeKey")}
+    cur_reg={str(x.get("dedupeKey")):x for x in current_snapshot.get("evidenceRegistry",[]) if x.get("dedupeKey")}
+    corroborated=[]; lifecycle_changes=[]
+    for k,c in cur_reg.items():
+        p=old_reg.get(k)
+        if not p: continue
+        if int(c.get("independentSourceCount",0))>int(p.get("independentSourceCount",0)):
+            corroborated.append({"dedupeKey":k,"title":c.get("title"),"from":p.get("independentSourceCount",0),"to":c.get("independentSourceCount",0)})
+        if c.get("lifecycle")!=p.get("lifecycle"):
+            lifecycle_changes.append({"dedupeKey":k,"title":c.get("title"),"from":p.get("lifecycle"),"to":c.get("lifecycle")})
     added_events=[v for k,v in cur_events.items() if k not in old_events]
     removed_events=[v for k,v in old_events.items() if k not in cur_events]
     changes=[]
@@ -329,7 +339,7 @@ def build_scenario_history(current_snapshot):
     return {
         "baseline":"COMPARISON",
         "previousGeneratedAt":previous.get("generatedAt"),
-        "changes":changes,"newEvidence":added_events[:20],"staleOrRemovedEvidence":removed_events[:20]
+        "changes":changes,"newEvidence":added_events[:20],"staleOrRemovedEvidence":removed_events[:20],"corroboratedEvidence":corroborated[:20],"lifecycleChanges":lifecycle_changes[:20]
     }
 
 def build_dynamic_tree(news,dash=None):
