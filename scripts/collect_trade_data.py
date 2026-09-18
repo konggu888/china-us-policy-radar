@@ -1,4 +1,4 @@
-import csv, io, json, re, sys, urllib.parse, urllib.request
+import csv, io, json, os, re, sys, urllib.parse, urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -27,6 +27,21 @@ def census_china():
 
 THIRD_COUNTRIES={'Vietnam':'5700','Malaysia':'5570','Mexico':'2010','India':'5330','Japan':'5880','Korea':'5800','Thailand':'5490','Germany':'4280'}
 
+def census_hs_sample():
+    key=os.environ.get('CENSUS_API_KEY','').strip()
+    if not key:
+        return {'status':'MISSING','reason':'CENSUS_API_KEY未配置；官方HS API当前要求API key。','source':'U.S. Census Bureau','sourceUrl':'https://www.census.gov/data/developers/data-sets/international-trade.html'}
+    year=datetime.now(timezone.utc).year
+    month=datetime.now(timezone.utc).month-1
+    if month < 1: month=1
+    params={'get':'CTY_CODE,CTY_NAME,I_COMMODITY,I_COMMODITY_LDESC,GEN_VAL_MO','time':f'{year}-{month:02d}','CTY_CODE':'5700','key':key}
+    url='https://api.census.gov/data/timeseries/intltrade/imports/hs?'+urllib.parse.urlencode(params)
+    raw=fetch(url)
+    rows=json.loads(raw)
+    if not isinstance(rows,list) or len(rows)<2: raise RuntimeError('Census HS API returned no rows')
+    head=rows[0]
+    return {'status':'OK','period':f'{year}-{month:02d}','partner':'Vietnam','source':'U.S. Census Bureau','sourceUrl':'https://www.census.gov/data/developers/data-sets/international-trade.html','rows':len(rows)-1,'columns':head,'sample':rows[1:21]}
+
 def census_country(country_code):
     url='https://www.census.gov/foreign-trade/balance/c'+str(country_code)+'.html'
     html=fetch(url); text=re.sub(r'<[^>]+>',' ',html); text=re.sub(r'&nbsp;',' ',text); text=re.sub(r'\\s+',' ',text)
@@ -34,17 +49,19 @@ def census_country(country_code):
     return {'countryCode':country_code,'source':'U.S. Census Bureau','sourceUrl':url,'available':bool(text),'fetchedAt':datetime.now(timezone.utc).isoformat()}
 
 def main():
-    errors=[]; us={}; third={}
+    errors=[]; us={}; third={}; hs={}
     try:
         us=census_china()
     except Exception as e:
         errors.append('US_CENSUS:'+str(e))
+    try: hs=census_hs_sample()
+    except Exception as e: errors.append('HS_API:'+str(e))
     for name,code in THIRD_COUNTRIES.items():
         try:
             third[name]=census_country(code)
         except Exception as e:
             errors.append('THIRD_'+name+':'+str(e))
-    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'usChina':us,'thirdCountry':third,'chinaCustoms':{'status':'MISSING','reason':'未在本轮写入未经验证的抓取接口；保留缺失状态，避免用二手数据冒充海关原始数据。','sourceUrl':'https://online.customs.gov.cn/'},'quality':{'errors':len(errors),'usChinaStatus':'OK' if us else 'MISSING'}}
+    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'usChina':us,'thirdCountry':third,'hs':hs,'chinaCustoms':{'status':'MISSING','reason':'未在本轮写入未经验证的抓取接口；保留缺失状态，避免用二手数据冒充海关原始数据。','sourceUrl':'https://online.customs.gov.cn/'},'quality':{'errors':len(errors),'usChinaStatus':'OK' if us else 'MISSING'}}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
     try:
         history=json.loads(HISTORY.read_text(encoding='utf-8')) if HISTORY.exists() else []
