@@ -79,17 +79,17 @@ async function buildTriggerFeedback(taskId,currentRun,previousRun){
  const score=Number(currentRun.trigger_score||0), priorScore=Number(previousRun?.trigger_score??score), delta=score-priorScore;
  const outcome=delta>=0.05?'SUPPORTED':(delta<=-0.05?'WEAKENED':'UNRESOLVED');
  const triggers=[...new Set(currentDrivers.map(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')))];
- if(!triggers.length)return;
+ if(!triggers.length||!previousRun)return;
  const {data:existing}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('user_id',user.id).eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(100);
  const latest=new Map((existing||[]).map(x=>[x.trigger,x]));
  const rows=triggers.map(trigger=>{
    const old=latest.get(trigger), n=(old?.sample_size||0)+1, raw=outcome==='SUPPORTED'?1.05:(outcome==='WEAKENED'?0.95:1);
-   const prior=Number(old?.calibration_factor||1), proposed=Math.max(0.8,Math.min(1.2,prior*raw)), applied=n<3?1:proposed;
-   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun?.id||null,outcome,evidence_count:newDrivers.length,followup_count:followup,market_deviation_count:marketDeviation,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':'CALIBRATED',payload:{proposedFactor:Number(proposed.toFixed(3)),reason:'描述性历史反馈；仅用于监测权重，不表示概率或因果'}};
+   const prior=Number(old?.calibration_factor||1), proposed=Math.max(0.8,Math.min(1.2,prior*raw)), jump=Math.abs(proposed-prior), frozen=n<3||jump>0.10, applied=frozen?prior:proposed;
+   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun?.id||null,outcome,evidence_count:newDrivers.length,followup_count:followup,market_deviation_count:marketDeviation,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':(frozen?'FROZEN':'CALIBRATED'),payload:{proposedFactor:Number(proposed.toFixed(3)),priorFactor:prior,appliedFactor:Number(applied.toFixed(3)),jump:Number(jump.toFixed(3)),reason:frozen?(n<3?'样本不足，保持原权重':'单次变化超过0.10，自动冻结以防漂移'):'达到样本门槛且变化在安全范围内；仅用于监测权重，不表示概率或因果'}};
  });
- if(rows.length)await sb.from('scenario_trigger_feedback').insert(rows);
+ if(rows.length){ const {data:ins}=await sb.from('scenario_trigger_feedback').insert(rows).select('id,trigger,calibration_factor,status,sample_size'); for(const x of (ins||[])){const src=rows.find(y=>y.trigger===x.trigger)||{}; await sb.from('scenario_calibration_audit').insert({user_id:user.id,task_id:String(taskId),trigger:x.trigger,feedback_id:x.id,prior_factor:Number(src.payload?.priorFactor||1),proposed_factor:Number(src.payload?.proposedFactor||1),applied_factor:Number(src.calibration_factor||1),delta:Number((Number(src.calibration_factor||1)-Number(src.payload?.priorFactor||1)).toFixed(3)),status:x.status==='FROZEN'?'FROZEN':(x.status==='EARLY_SAMPLE'?'EARLY_SAMPLE':'APPLIED'),sample_size:x.sample_size,reason:src.payload?.reason||'历史校准审计');}}
 }
-async function renderTriggerCalibration(taskId){
+async function renderUserTriggerCalibration(taskId){
  const box=document.getElementById('triggerCalibrationList'); if(!box||!taskId||!sb)return;
  const {data,error}=await sb.from('scenario_trigger_feedback').select('trigger,outcome,evidence_count,followup_count,market_deviation_count,sample_size,calibration_factor,status,created_at').eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(80);
  if(error){box.innerHTML='<div class="card muted">历史校准读取失败。</div>';return;}
@@ -156,7 +156,7 @@ function patchSandboxHooks(){
    const {data:runs}=await sb.from('scenario_task_runs').select('id,observed_at,trigger_score,payload').eq('task_id',String(task.id)).order('observed_at',{ascending:false}).limit(2);
    if(runs?.[0]){await buildTriggerFeedback(task.id,runs[0],runs?.[1]);}
  }
- await renderTaskRuns(task.id); await renderTriggerCalibration(task.id);
+ await renderTaskRuns(task.id); await renderUserTriggerCalibration(task.id);
 }
    },250);
    return result;
@@ -170,7 +170,7 @@ function initAuth(){
    renderAuthState(session?.user||null);
    if(session?.user){await cloudPull();patchSandboxHooks();}
  });
- sb.auth.getSession().then(async({data:{session}})=>{renderAuthState(session?.user||null);if(session?.user){await cloudPull();patchSandboxHooks(); if(loadTaskArchive()[0]) await renderTriggerCalibration(loadTaskArchive()[0].id);}});
+ sb.auth.getSession().then(async({data:{session}})=>{renderAuthState(session?.user||null);if(session?.user){await cloudPull();patchSandboxHooks(); if(loadTaskArchive()[0]) await renderUserTriggerCalibration(loadTaskArchive()[0].id);}});
 }
 authLoad();
 })();
