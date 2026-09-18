@@ -1049,7 +1049,7 @@ def main():
   merged=[]
   for s in ai_tree.get('scenarios',[]) or base_tree.get('scenarios',[]):
    b=base_by_code.get(str(s.get('code')),{}); m=dict(b); m.update(s)
-   for k in ('responseOptions','highRelevanceResponseTools','chain','recomputeIf'): m[k]=b.get(k,m.get(k,[]))
+   for k in ('responseOptions','highRelevanceResponseTools','chain','recomputeIf','dynamicResponseTree'): m[k]=b.get(k,m.get(k,{}))
    merged.append(m)
   ai_tree['scenarios']=merged or base_tree.get('scenarios',[])
   x['scenarioTree']=ai_tree
