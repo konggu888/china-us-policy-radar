@@ -177,7 +177,7 @@ async function renderUserTriggerCalibration(taskId){
  if(error){box.innerHTML='<div class="card muted">历史校准读取失败。</div>';return;}
  const latest=new Map(); (data||[]).forEach(r=>{if(!latest.has(r.trigger))latest.set(r.trigger,r);});
  const rows=[...latest.values()];
- box.innerHTML=rows.length?rows.map(r=>'<article class="card"><b>'+authEsc(r.trigger)+'</b><div class="muted mini">样本 '+r.sample_size+' · '+authEsc(r.status)+' · 校准因子 '+Number(r.calibration_factor).toFixed(3)+'</div><div class="mini">最近结果：'+authEsc(r.outcome)+' · 新增证据 '+r.evidence_count+' · 后续证据 '+r.followup_count+' · 市场偏离 '+r.market_deviation_count+'</div><div class="mini muted">描述性历史反馈，不是发生概率、胜率或因果估计。</div></article>').join(''):'<div class="card muted">形成历史样本后，这里会逐步出现触发器反馈。</div>';
+ box.innerHTML=rows.length?rows.map(r=>'<article class="card"><b>'+authEsc(r.trigger)+'</b><div class="muted mini">样本 '+r.sample_size+' · '+authEsc(r.status)+' · 校准因子 '+Number(r.calibration_factor).toFixed(3)+'</div><div class="mini">最近结果：'+authEsc(r.outcome)+' · 新增证据 '+r.evidence_count+' · 后续证据 '+r.followup_count+' · 市场偏离 '+r.market_deviation_count+' · 反证信号将从跨运行历史累计后参与监控校准</div><div class="mini muted">描述性历史反馈，不是发生概率、胜率或因果估计。</div></article>').join(''):'<div class="card muted">形成历史样本后，这里会逐步出现触发器反馈。</div>';
 }
 function renderAuthState(user){
  const box=document.getElementById('authBox'); if(!box)return;
