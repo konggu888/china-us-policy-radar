@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data'
 MACRO_OUT=DATA/'macro_data.json'
+MACRO_HISTORY=DATA/'macro_history.json'
 MARKET_OUT=DATA/'market_snapshots.json'
 UA='Mozilla/5.0 (compatible; China-US-Global-Intelligence-Radar/Macro-Collector-1.0)'
 
@@ -276,6 +277,17 @@ def main():
     market_count=update_market_snapshots()
     payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'china':cn,'chinaStructured':nbs,'pbc':pbc,'unitedStates':{'source':'FRED','series':us,'errors':us_errors,'apiMode':'public fredgraph CSV; no API key'},'marketSnapshotCount':market_count,'quality':{'chinaStatus':'OK' if cn.get('values') else 'MISSING','usSeriesCount':len(us),'marketVariableCount':market_count,'errors':len(errors)}}
     MACRO_OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
+    # Keep immutable daily macro observations; never overwrite an earlier day with current data.
+    try:
+        history=json.loads(MACRO_HISTORY.read_text(encoding='utf-8')) if MACRO_HISTORY.exists() else []
+        if not isinstance(history,list): history=[]
+        day=payload['updatedAt'][:10]
+        history=[x for x in history if str(x.get('updatedAt',''))[:10]!=day]
+        history.append(payload)
+        history=history[-730:]
+        MACRO_HISTORY.write_text(json.dumps(history,ensure_ascii=False,indent=2),encoding='utf-8')
+    except Exception as e:
+        print('macro history warning',type(e).__name__)
     print('macro: China',len(cn.get('values',{})),'US',len(us),'market',market_count,'errors',len(errors))
     # Do not fail the entire pipeline for a single upstream series; fail only if both macro sides and markets are empty.
     if not cn.get('values') and nbs.get('status')!='OK' and not us and market_count==0:return 1
