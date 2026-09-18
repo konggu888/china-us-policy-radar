@@ -111,16 +111,18 @@ async function renderEffectiveTriggerWeights(sc){
  const globalMap=new Map(globalRows.map(x=>[String(x.trigger),x]));
  let userRows=[];
  if(user){
-   const {data}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('task_id',String((loadTaskArchive()[0]||{}).id)).order('created_at',{ascending:false}).limit(100);
+   const {data}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(100);
    userRows=data||[];
  }
- const userMap=new Map(userRows.map(x=>[String(x.trigger),x]));
+ const userMap=new Map(); userRows.forEach(x=>{if(!userMap.has(String(x.trigger)))userMap.set(String(x.trigger),x);});
+ const taskId=(sc?.taskId||window.__activeScenarioTaskId||loadTaskArchive()[0]?.id||'');
  const drivers=[...(sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT')];
- const triggers=[...new Set(drivers.map(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')))];
+ const triggers=[...new Set([...drivers.map(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')),...(sc.triggerEvidence||[]).map(x=>String(x))])];
  const rows=triggers.map(t=>{
    const g=globalMap.get(t),u=userMap.get(t);
    const base=1, gf=(g?.status==='CALIBRATED'?Number(g.calibrationWeight||1):1), uf=(u?.status==='CALIBRATED'?Number(u.calibration_factor||1):1);
-   return {t,gf,uf,eff:Math.max(.8,Math.min(1.2,gf*uf)),gs:g?.status||'无全局样本',us:u?.status||'无账户样本',n:u?.sample_size||0};
+   const eff=Math.max(.8,Math.min(1.2,gf*uf));
+   return {t,gf,uf,eff,gs:g?.status||'无全局样本',us:u?.status||'无账户样本',n:u?.sample_size||0,source:g?.historicalSignalRate??null};
  });
  box.innerHTML=rows.length?'<div class="card"><b>当前触发器有效权重</b><div class="mini muted">基础权重固定为 1.00；全局历史校准与本账号历史反馈分别展示。有效权重只作为监测敏感度参考，不直接代表发生概率。</div>'+rows.map(r=>'<div class="mini" style="margin-top:7px"><b>'+esc(r.t)+'</b> · 基础 1.000 → 全局 '+r.gf.toFixed(3)+' → 账户 '+r.uf.toFixed(3)+' → <b>当前 '+r.eff.toFixed(3)+'</b> · 全局 '+esc(r.gs)+' · 账户 '+esc(r.us)+(r.n?' · 账户样本 '+r.n:'')+'</div>').join('')+'</div>':'<div class="card muted">当前情景暂无可映射的事件触发器。</div>';
 }
