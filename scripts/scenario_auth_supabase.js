@@ -12,10 +12,11 @@ function authLoad(){
 function authPanel(){
   if(document.getElementById('accountPanel'))return;
   const p=document.createElement('section'); p.id='accountPanel'; p.className='panel';
-  p.innerHTML='<div class="title">👤 账号与云端同步</div><div id="authBox"><div class="controls"><label>邮箱<input id="authEmail" type="email" autocomplete="email" placeholder="你的邮箱"></label><label>密码<input id="authPassword" type="password" autocomplete="current-password" placeholder="至少 6 位"></label></div><div style="margin-top:10px"><button id="authLogin">登录</button> <button id="authSignup">注册</button> <button id="authReset">忘记密码</button></div><div id="authStatus" class="status">登录后，历史推演会自动保存到你的账号；不再需要同步密钥。</div></div>';
+  p.innerHTML='<div class="title">👤 账号与云端同步</div><div id="authBox"><div class="controls"><label>邮箱<input id="authEmail" type="email" autocomplete="email" placeholder="你的邮箱"></label><label>密码<input id="authPassword" type="password" autocomplete="current-password" placeholder="至少 6 位"></label></div><div style="margin-top:10px"><button id="authLogin">登录</button> <button id="authSignup">注册</button> <button id="authResend">重新发送验证邮件</button> <button id="authReset">忘记密码</button></div><div id="authStatus" class="status">登录后，历史推演会自动保存到你的账号；不再需要同步密钥。</div></div>';
   document.querySelector('header.hero').after(p);
   document.getElementById('authLogin').onclick=login;
   document.getElementById('authSignup').onclick=signup;
+  document.getElementById('authResend').onclick=resendVerification;
   document.getElementById('authReset').onclick=resetPassword;
 }
 function msg(t){const e=document.getElementById('authStatus');if(e)e.textContent=t;}
@@ -45,7 +46,7 @@ async function signup(){
    if(!data?.session){
      const box=document.getElementById('authBox');
      if(box&&!document.getElementById('authResend')){
-       const b=document.createElement('button'); b.id='authResend'; b.textContent='重新发送验证邮件'; b.style.marginTop='8px'; box.appendChild(b); b.onclick=resendVerification;
+
      }
    }
    if(data?.session) await cloudPull();
