@@ -119,10 +119,14 @@ async function buildTriggerFeedback(taskId,currentRun,previousRun){
    const observedMarket=Number(cross?.marketObservedRunCount||0);
    const evidenceCount=(repeated?1:0)+(multiRun?1:0)+(followup?1:0);
    const support=evidenceCount>0;
-   const weakened=Number(cross?.runObservationCount||0)>=3 && !followup && Number(cross?.maxIndependentSourceCount||0)<=1;
+   const counterRunCount=Number(cross?.counterRunCount||0);
+   const counterSignalCount=Number(cross?.counterSignalCount||0);
+   const counterStrength=Number(cross?.counterSignalStrength||0);
+   const counterObserved=counterRunCount>0||counterSignalCount>0;
+   const weakened=counterObserved && counterRunCount>=2 && counterStrength>=1.5 && !followup;
    const outcome=weakened?'WEAKENED':(support?'SUPPORTED':'UNRESOLVED');
-   const bucket=rowsByTrigger.get(trigger)||{outcomes:[],evidence:0,followup:0,market:0};
-   bucket.outcomes.push(outcome); bucket.evidence+=evidenceCount; bucket.followup+=followup?1:0; bucket.market+=observedMarket; rowsByTrigger.set(trigger,bucket);
+   const bucket=rowsByTrigger.get(trigger)||{outcomes:[],evidence:0,followup:0,market:0,counterRuns:0,counterCount:0,counterStrength:0};
+   bucket.outcomes.push(outcome); bucket.evidence+=evidenceCount; bucket.followup+=followup?1:0; bucket.market+=observedMarket; bucket.counterRuns+=counterRunCount; bucket.counterCount+=counterSignalCount; bucket.counterStrength+=counterStrength; rowsByTrigger.set(trigger,bucket);
  }
  const {data:existing}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('user_id',user.id).eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(100);
  const latest=new Map((existing||[]).map(x=>[x.trigger,x]));
@@ -135,7 +139,7 @@ async function buildTriggerFeedback(taskId,currentRun,previousRun){
    const proposed=Math.max(0.8,Math.min(1.2,prior*raw));
    const frozen=n<3||Math.abs(proposed-prior)>0.10;
    const applied=frozen?prior:proposed;
-   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun?.id||null,outcome,evidence_count:b.evidence,followup_count:b.followup,market_deviation_count:b.market,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':(frozen?'FROZEN':'CALIBRATED'),payload:{priorFactor:prior,proposedFactor:Number(proposed.toFixed(3)),appliedFactor:Number(applied.toFixed(3)),method:'基于跨运行持久化证据、多源重复观察与真实历史市场窗口；不再使用相邻运行触发分数变化作为支持/减弱依据。',outcomes:b.outcomes,crossRunValidation:crossRun.filter(x=>String(x.driverId||'')===String(currentDrivers.find(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')===trigger)?.id||''))}};
+   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun?.id||null,outcome,evidence_count:b.evidence,followup_count:b.followup,market_deviation_count:b.market,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':(frozen?'FROZEN':'CALIBRATED'),payload:{priorFactor:prior,proposedFactor:Number(proposed.toFixed(3)),appliedFactor:Number(applied.toFixed(3)),method:'基于跨运行正向后续证据、反向反证信号、多源重复观察与真实历史市场窗口；不再使用相邻运行触发分数变化作为支持/减弱依据。',counterSignalRunCount:b.counterRuns,counterSignalCount:b.counterCount,counterSignalStrength:Number(b.counterStrength.toFixed(3)),outcomes:b.outcomes,crossRunValidation:crossRun.filter(x=>String(x.driverId||'')===String(currentDrivers.find(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')===trigger)?.id||''))}};
  });
  if(!rows.length)return;
  const {data:ins,error}=await sb.from('scenario_trigger_feedback').insert(rows).select('id,trigger,calibration_factor,status,sample_size');
