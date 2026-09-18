@@ -3,13 +3,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data'
-OUT=DATA/'trade_data.json'; HISTORY=DATA/'trade_history.json'; THIRD_COUNTRY=DATA/'third_country_trade.json'
+OUT=DATA/'trade_data.json'; HISTORY=DATA/'trade_history.json'; THIRD_COUNTRY=DATA/'third_country_trade.json'; FOCUS_MAP=DATA/'trade_focus_map.json'
 UA='Mozilla/5.0 (compatible; China-US-Global-Intelligence-Radar/Trade-Collector-1.0)'
 
 def fetch(url, timeout=30):
     req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'text/html,application/json,text/csv,*/*'})
     with urllib.request.urlopen(req,timeout=timeout) as r:
         return r.read().decode('utf-8','ignore')
+
+def load_focus_map():
+    try:
+        x=json.loads(FOCUS_MAP.read_text(encoding='utf-8'))
+        return x if isinstance(x,dict) else {}
+    except Exception:
+        return {}
 
 def num(v):
     try:return float(str(v).replace(',','').strip())
@@ -34,7 +41,7 @@ def census_country(country_code):
     return {'countryCode':country_code,'source':'U.S. Census Bureau','sourceUrl':url,'available':bool(text),'fetchedAt':datetime.now(timezone.utc).isoformat()}
 
 def main():
-    errors=[]; us={}; third={}
+    errors=[]; us={}; third={}; focus=load_focus_map()
     try:
         us=census_china()
     except Exception as e:
@@ -44,7 +51,7 @@ def main():
             third[name]=census_country(code)
         except Exception as e:
             errors.append('THIRD_'+name+':'+str(e))
-    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'usChina':us,'thirdCountry':third,'chinaCustoms':{'status':'MISSING','reason':'未在本轮写入未经验证的抓取接口；保留缺失状态，避免用二手数据冒充海关原始数据。','sourceUrl':'https://online.customs.gov.cn/'},'quality':{'errors':len(errors),'usChinaStatus':'OK' if us else 'MISSING'}}
+    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'focusMapVersion':focus.get('version'),'focusSectorCount':len(focus.get('sectors',[])),'usChina':us,'thirdCountry':third,'chinaCustoms':{'status':'MISSING','reason':'未在本轮写入未经验证的抓取接口；保留缺失状态，避免用二手数据冒充海关原始数据。','sourceUrl':'https://online.customs.gov.cn/'},'quality':{'errors':len(errors),'usChinaStatus':'OK' if us else 'MISSING'}}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
     try:
         history=json.loads(HISTORY.read_text(encoding='utf-8')) if HISTORY.exists() else []
