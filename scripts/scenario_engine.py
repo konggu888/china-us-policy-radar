@@ -507,12 +507,10 @@ def build_scenario_snapshot(scenarios,global_events=None):
     }
 
 def build_scenario_history(current_snapshot):
-    """Compare the current monitoring snapshot with the last persisted run."""
-    previous = None
-    try:
-        previous = json.loads(OUT.read_text(encoding="utf-8")).get("scenarioSnapshot")
-    except Exception:
-        previous = None
+    """Explain changes between consecutive monitoring runs using observable component deltas."""
+    previous=None
+    try: previous=json.loads(OUT.read_text(encoding="utf-8")).get("scenarioSnapshot")
+    except Exception: pass
     if not previous or not previous.get("scenarios"):
         return {"baseline":"FIRST_RUN","previousGeneratedAt":None,"changes":[]}
     old={str(x.get("code")):x for x in previous.get("scenarios",[])}
@@ -521,43 +519,43 @@ def build_scenario_history(current_snapshot):
     old_reg={str(x.get("dedupeKey")):x for x in previous.get("evidenceRegistry",[]) if x.get("dedupeKey")}
     cur_reg={str(x.get("dedupeKey")):x for x in current_snapshot.get("evidenceRegistry",[]) if x.get("dedupeKey")}
     corroborated=[]; lifecycle_changes=[]
-    for k,c in cur_reg.items():
+    for k,v in cur_reg.items():
         p=old_reg.get(k)
         if not p: continue
-        if int(c.get("independentSourceCount",0))>int(p.get("independentSourceCount",0)):
-            corroborated.append({"dedupeKey":k,"title":c.get("title"),"from":p.get("independentSourceCount",0),"to":c.get("independentSourceCount",0)})
-        if c.get("lifecycle")!=p.get("lifecycle"):
-            lifecycle_changes.append({"dedupeKey":k,"title":c.get("title"),"from":p.get("lifecycle"),"to":c.get("lifecycle")})
+        if int(v.get("independentSourceCount",0))>int(p.get("independentSourceCount",0)):
+            corroborated.append({"dedupeKey":k,"title":v.get("title"),"from":p.get("independentSourceCount",0),"to":v.get("independentSourceCount",0)})
+        if v.get("lifecycle")!=p.get("lifecycle"):
+            lifecycle_changes.append({"dedupeKey":k,"title":v.get("title"),"from":p.get("lifecycle"),"to":v.get("lifecycle")})
     added_events=[v for k,v in cur_events.items() if k not in old_events]
     removed_events=[v for k,v in old_events.items() if k not in cur_events]
     changes=[]
     for cur in current_snapshot.get("scenarios",[]):
-        code=str(cur.get("code"))
-        p=old.get(code)
-        if not p:
-            continue
+        code=str(cur.get("code")); p=old.get(code)
+        if not p: continue
         delta=round(float(cur.get("triggerScore",0))-float(p.get("triggerScore",0)),2)
-        state_changed=cur.get("activationState")!=p.get("activationState")
-        evidence_changed=cur.get("triggerEvidence",[])!=p.get("triggerEvidence",[])
-        counter_changed=cur.get("counterSignals",[])!=p.get("counterSignals",[])
-        drivers_changed=cur.get("evidenceDrivers",[])!=p.get("evidenceDrivers")
-        if delta or state_changed or evidence_changed or counter_changed or drivers_changed:
-            changes.append({
-                "id":cur.get("id"),"code":code,
-                "previousState":p.get("activationState","WATCH"),
-                "currentState":cur.get("activationState","WATCH"),
-                "previousScore":p.get("triggerScore",0),
-                "currentScore":cur.get("triggerScore",0),
-                "delta":delta,
-                "reasons":cur.get("triggerEvidence",[]),
-                "evidenceDrivers":cur.get("evidenceDrivers",[]),
-                "counterSignals":cur.get("counterSignals",[])
-            })
-    return {
-        "baseline":"COMPARISON",
-        "previousGeneratedAt":previous.get("generatedAt"),
-        "changes":changes,"newEvidence":added_events[:20],"staleOrRemovedEvidence":removed_events[:20],"corroboratedEvidence":corroborated[:20],"lifecycleChanges":lifecycle_changes[:20]
-    }
+        old_drivers={str(x.get("id") or x.get("name")):x for x in p.get("evidenceDrivers",[])}
+        cur_drivers={str(x.get("id") or x.get("name")):x for x in cur.get("evidenceDrivers",[])}
+        added=[v for k,v in cur_drivers.items() if k not in old_drivers]
+        removed=[v for k,v in old_drivers.items() if k not in cur_drivers]
+        corroborated_local=[]
+        for k,v in cur_drivers.items():
+            q=old_drivers.get(k)
+            if q and v.get("kind")=="EVENT":
+                a=float(q.get("evidenceWeight",0) or 0); b=float(v.get("evidenceWeight",0) or 0)
+                if b>a+0.05: corroborated_local.append({"id":k,"title":v.get("title"),"from":a,"to":b})
+        counter=cur.get("counterSignalAnalysis",{})
+        prev_counter=p.get("counterSignalAnalysis",{})
+        counter_delta=round(float(counter.get("strength",0) or 0)-float(prev_counter.get("strength",0) or 0),3)
+        reasons=[]
+        if added: reasons.append({"type":"NEW_EVIDENCE","direction":"UP","magnitude":len(added),"items":[x.get("title") for x in added[:5]]})
+        if corroborated_local or corroborated: reasons.append({"type":"CORROBORATION","direction":"UP","magnitude":len(corroborated_local)+len(corroborated),"items":[x.get("title") for x in (corroborated_local+corroborated)[:5]]})
+        if removed: reasons.append({"type":"EVIDENCE_REMOVED","direction":"DOWN","magnitude":len(removed),"items":[x.get("title") for x in removed[:5]]})
+        if counter_delta>0: reasons.append({"type":"COUNTER_SIGNAL","direction":"DOWN","magnitude":counter_delta,"items":[x.get("title") for x in (counter.get("signals") or [])[:5]]})
+        if counter_delta<0: reasons.append({"type":"COUNTER_SIGNAL_WEAKENED","direction":"UP","magnitude":abs(counter_delta),"items":[]})
+        if cur.get("triggerEvidence")!=p.get("triggerEvidence"): reasons.append({"type":"TRIGGER_EVIDENCE_CHANGE","direction":"MIXED","magnitude":1,"items":cur.get("triggerEvidence",[])[:5]})
+        if cur.get("activationState")!=p.get("activationState"): reasons.append({"type":"STATE_CHANGE","direction":"MIXED","magnitude":1,"items":[str(p.get("activationState"))+" → "+str(cur.get("activationState"))]})
+        changes.append({"id":cur.get("id"),"code":code,"previousState":p.get("activationState","WATCH"),"currentState":cur.get("activationState","WATCH"),"previousScore":p.get("triggerScore",0),"currentScore":cur.get("triggerScore",0),"delta":delta,"explanation":{"scoreDelta":delta,"components":reasons,"interpretation":"变化解释基于相邻运行的可观察证据差异，不表示因果关系或发生概率。"}})
+    return {"baseline":"COMPARISON","previousGeneratedAt":previous.get("generatedAt"),"changes":changes,"newEvidence":added_events[:20],"staleOrRemovedEvidence":removed_events[:20],"corroboratedEvidence":corroborated[:20],"lifecycleChanges":lifecycle_changes[:20]}
 
 def build_dynamic_tree(news,dash=None):
     previous_snapshot=None
