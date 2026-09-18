@@ -142,7 +142,9 @@ export interface ScenarioSnapshotItem {
 export interface ScenarioSnapshot {
   generatedAt: string;
   scenarios: ScenarioSnapshotItem[];
-  eventEvidence?: { id: string; title: string; publishedAt?: string; fetchedAt?: string; tier?: "PRIMARY" | "KNOWN_MEDIA" | "UNKNOWN"; freshness?: "NEW" | "RECENT" | "STALE" | "UNKNOWN"; dedupeKey?: string }[];
+  eventEvidence?: { id: string; title: string; publishedAt?: string; fetchedAt?: string; tier?: "PRIMARY" | "KNOWN_MEDIA" | "UNKNOWN"; freshness?: "NEW" | "RECENT" | "STALE" | "UNKNOWN";
+    lifecycle?: "NEW" | "DEVELOPING" | "ACTIVE" | "WATCH" | "DECAYED" | "RESOLVED" | "UNVERIFIED_TIME";
+    evidenceWeight?: number; dedupeKey?: string; lifecycle?: string; evidenceWeight?: number }[];
 }
 
 export interface EvidenceDriver {
@@ -160,6 +162,8 @@ export interface EvidenceDriver {
   fetchedAt?: string;
   tier?: "PRIMARY" | "KNOWN_MEDIA" | "UNKNOWN";
   freshness?: "NEW" | "RECENT" | "STALE" | "UNKNOWN";
+  lifecycle?: "NEW" | "DEVELOPING" | "ACTIVE" | "WATCH" | "DECAYED" | "RESOLVED" | "UNVERIFIED_TIME";
+  evidenceWeight?: number;
   credibility?: number;
 }
 
