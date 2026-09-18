@@ -346,6 +346,49 @@ def _merge_evidence_registry(current_events, previous_snapshot):
         registry.append({"dedupeKey":k,"title":e.get("title"),"firstSeenAt":prev.get("firstSeenAt") or s.get("publishedAt") or now,"lastSeenAt":now,"observationCount":int(prev.get("observationCount",0) or 0)+1,"sourceIds":sorted(sources),"independentSourceCount":len(sources),"lifecycle":s.get("lifecycle","UNVERIFIED_TIME"),"freshness":s.get("freshness","UNKNOWN"),"evidenceWeight":s.get("evidenceWeight",0),"tier":s.get("tier","UNKNOWN")})
     return registry
 
+def _evidence_lifecycle(age_days, status, tier, observation_count=1, independent_sources=1, has_followup=False):
+    """Descriptive evidence aging state; does not assert truth/falsity."""
+    s=str(status or "CONFIRMED").upper()
+    age=float(age_days) if age_days is not None else None
+    if s=="RESOLVED": return "EXPIRED"
+    if s=="RUMOR": return "UNVERIFIED"
+    if age is None: return "UNVERIFIED_TIME"
+    if age <= 1: return "NEW"
+    if age <= 7: return "SUSTAINED" if has_followup or independent_sources>=2 else "RECENT"
+    if age <= 30: return "PENDING_CONFIRMATION" if not has_followup else "SUSTAINED"
+    if age <= 90: return "DECAYING" if not has_followup else "SUSTAINED"
+    if age <= 365: return "DECAYING" if not has_followup else "LONG_RUNNING"
+    return "EXPIRED"
+
+def build_evidence_lifecycle(events, previous_snapshot=None):
+    """Reclassify evidence by age and observable follow-up/corroboration."""
+    old={str(x.get("dedupeKey")):x for x in (previous_snapshot or {}).get("evidenceRegistry",[]) if x.get("dedupeKey")}
+    now=datetime.now(timezone.utc)
+    rows=[]
+    for e in events or []:
+        s=e.get("source",{}) or {}
+        pub=dt(s.get("publishedAt"))
+        age=(now-pub).total_seconds()/86400 if pub else None
+        prev=old.get(str(e.get("dedupeKey")),{})
+        sources=max(int(prev.get("independentSourceCount",0) or 0),int((e.get("corroboration") or {}).get("independentSourceCount",1) or 1))
+        followup=bool(prev.get("followupObserved",False))
+        lifecycle=_evidence_lifecycle(age,e.get("status","CONFIRMED"),s.get("tier"),int(prev.get("observationCount",0) or 0)+1,sources,followup)
+        base=float(s.get("evidenceWeight",0) or 0)
+        # Aging factor affects monitoring weight only; it is not a probability.
+        if lifecycle=="DECAYING": factor=0.70
+        elif lifecycle=="EXPIRED": factor=0.35
+        elif lifecycle=="PENDING_CONFIRMATION": factor=0.85
+        else: factor=1.0
+        rows.append({
+            "dedupeKey":e.get("dedupeKey"),"title":e.get("title"),
+            "publishedAt":s.get("publishedAt"),"ageDays":round(age,2) if age is not None else None,
+            "lifecycle":lifecycle,"baseEvidenceWeight":round(base,3),
+            "agingFactor":factor,"effectiveEvidenceWeight":round(min(1.0,base*factor),3),
+            "independentSourceCount":sources,"followupObserved":followup,
+            "interpretation":"生命周期用于降低陈旧证据对监测权重的影响，不代表该事件为真/假或任何发生概率。"
+        })
+    return rows
+
 def _market_snapshot_now(dash):
     now=datetime.now(timezone.utc).isoformat()
     rows=[]
@@ -537,10 +580,17 @@ def build_scenario_snapshot(scenarios,global_events=None):
         previous_snapshot=json.loads(OUT.read_text(encoding="utf-8")).get("scenarioSnapshot")
     except Exception:
         previous_snapshot=None
+    lifecycle=build_evidence_lifecycle(global_events or [],previous_snapshot)
+    lifecycle_map={str(x.get('dedupeKey')):x for x in lifecycle if x.get('dedupeKey')}
     registry=_merge_evidence_registry(global_events or [],previous_snapshot)
+    for r in registry:
+        x=lifecycle_map.get(str(r.get('dedupeKey')))
+        if x:
+            r.update({'lifecycle':x.get('lifecycle'),'agingFactor':x.get('agingFactor'),'effectiveEvidenceWeight':x.get('effectiveEvidenceWeight'),'followupObserved':x.get('followupObserved',False)})
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "evidenceRegistry": registry,
+        "evidenceLifecycle": lifecycle,
         "eventEvidence": [{"id":e.get("id"),"title":e.get("title"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"dedupeKey":e.get("dedupeKey"),"lifecycle":e.get("source",{}).get("lifecycle"),"evidenceWeight":e.get("source",{}).get("evidenceWeight"),"corroboration":e.get("corroboration")} for e in (global_events or [])],
         "scenarios": [
             {
