@@ -3,6 +3,7 @@ from collections import Counter
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data'; OUT=DATA/'scenario_state.json'
+MARKET_SNAPSHOTS=DATA/'market_snapshots.json'
 KEY=os.getenv('DEEPSEEK_API_KEY','').strip(); MODEL=os.getenv('DEEPSEEK_MODEL','deepseek-v4-flash')
 def read(n,d):
  try:return json.loads((DATA/n).read_text(encoding='utf-8'))
@@ -265,6 +266,40 @@ def _merge_evidence_registry(current_events, previous_snapshot):
         registry.append({"dedupeKey":k,"title":e.get("title"),"firstSeenAt":prev.get("firstSeenAt") or s.get("publishedAt") or now,"lastSeenAt":now,"observationCount":int(prev.get("observationCount",0) or 0)+1,"sourceIds":sorted(sources),"independentSourceCount":len(sources),"lifecycle":s.get("lifecycle","UNVERIFIED_TIME"),"freshness":s.get("freshness","UNKNOWN"),"evidenceWeight":s.get("evidenceWeight",0),"tier":s.get("tier","UNKNOWN")})
     return registry
 
+def _market_snapshot_now(dash):
+    now=datetime.now(timezone.utc).isoformat()
+    rows=[]
+    for x in markets(dash or {}):
+        rows.append({"name":x.get("name"),"value":x.get("value"),"change_pct":x.get("change_pct"),"observedAt":x.get("time") or x.get("updated") or now})
+    return {"capturedAt":now,"markets":rows}
+
+def persist_market_snapshot(dash,max_rows=720):
+    """Append one immutable observation; bounded retention prevents unbounded file growth."""
+    current=_market_snapshot_now(dash)
+    old=read('market_snapshots.json',[])
+    if isinstance(old,dict): old=old.get("snapshots",[])
+    # Avoid duplicate writes during the same hour.
+    hour=current["capturedAt"][:13]
+    old=[x for x in old if str(x.get("capturedAt",""))[:13]!=hour]
+    old.append(current)
+    old=sorted(old,key=lambda x:x.get("capturedAt",""))[-max_rows:]
+    MARKET_SNAPSHOTS.write_text(json.dumps(old,ensure_ascii=False,indent=2),encoding="utf-8")
+    return old
+
+def build_historical_market_windows(event, snapshots):
+    """Use only snapshots whose timestamps are actually observed; never backfill missing history."""
+    pub=dt(event.get("source",{}).get("publishedAt"))
+    if not pub:return []
+    targets=[("T0",0),("T1D",1),("T3D",3),("T7D",7),("T30D",30)]
+    out=[]
+    for code,days in targets:
+        target=pub+timedelta(days=days)
+        candidates=[s for s in snapshots if dt(s.get("capturedAt"))]
+        candidates.sort(key=lambda s:abs((dt(s["capturedAt"])-target).total_seconds()))
+        chosen=candidates[0] if candidates and abs((dt(candidates[0]["capturedAt"])-target).total_seconds())<=18*3600 else None
+        out.append({"window":code,"targetAt":target.isoformat(),"capturedAt":chosen.get("capturedAt") if chosen else None,"status":"OBSERVED" if chosen else "MISSING","markets":chosen.get("markets",[]) if chosen else []})
+    return out
+
 def build_transmission_windows(global_events, market_data):
     """Create event-relative observation windows. This is observational, not causal attribution."""
     names=("USD/CNY","黄金","美国10年期收益率","布伦特原油","VIX","上证指数","沪深300","标普500")
@@ -410,7 +445,9 @@ def build_dynamic_tree(news,dash=None):
         ]
         act=_scenario_activation(ge,stype); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
     snapshot=build_scenario_snapshot(scenarios,ge)
+    snapshots=persist_market_snapshot(dash or {})
     snapshot["transmissionTimeline"]=build_transmission_windows(ge, markets(dash or {}))
+    snapshot["historicalMarketWindows"]=[dict(x,windows=build_historical_market_windows(e,snapshots)) for e in ge[:12]]
     # Separate observation from causal attribution: market data can corroborate a transmission
     # signal only as a co-movement/validation observation, never as proof of causality.
     market_drivers=[d for s in scenarios for d in s.get("evidenceDrivers",[]) if d.get("kind")=="MARKET"]
