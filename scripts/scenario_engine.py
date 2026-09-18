@@ -360,6 +360,31 @@ def _evidence_lifecycle(age_days, status, tier, observation_count=1, independent
     if age <= 365: return "DECAYING" if not has_followup else "LONG_RUNNING"
     return "EXPIRED"
 
+def build_evidence_graph(events, scenarios, lifecycle_rows=None):
+    """Build an auditable evidence graph linking events, corroboration, follow-up and scenarios."""
+    life={str(x.get("dedupeKey")):x for x in (lifecycle_rows or []) if x.get("dedupeKey")}
+    nodes=[]; edges=[]; seen=set()
+    def add_node(nid,kind,label,meta=None):
+        if nid in seen:return
+        seen.add(nid); nodes.append({"id":nid,"kind":kind,"label":label,"meta":meta or {}})
+    for e in events or []:
+        eid="event:"+str(e.get("dedupeKey") or e.get("id"))
+        s=e.get("source",{}) or {}; add_node(eid,"EVENT",e.get("title",""),{"publishedAt":s.get("publishedAt"),"provider":s.get("provider"),"tier":s.get("tier")})
+        l=life.get(str(e.get("dedupeKey")))
+        if l:
+            lid="lifecycle:"+str(e.get("dedupeKey")); add_node(lid,"LIFECYCLE",l.get("lifecycle",""),{"agingFactor":l.get("agingFactor"),"effectiveEvidenceWeight":l.get("effectiveEvidenceWeight")}); edges.append({"from":eid,"to":lid,"relation":"HAS_LIFECYCLE"})
+        for sid in (e.get("corroboration",{}) or {}).get("sources",[]) or []:
+            nid="source:"+str(sid); add_node(nid,"SOURCE",str(sid)); edges.append({"from":nid,"to":eid,"relation":"CORROBORATES"})
+    for s in scenarios or []:
+        sid="scenario:"+str(s.get("code") or s.get("id")); add_node(sid,"SCENARIO",s.get("code",""))
+        for d in s.get("evidenceDrivers",[]) or []:
+            if d.get("kind")!="EVENT":continue
+            eid="event:"+str(d.get("dedupeKey") or d.get("id"))
+            add_node(eid,"EVENT",d.get("title","")); edges.append({"from":eid,"to":sid,"relation":"SUPPORTS_MONITORING"})
+        for x in s.get("counterSignalAnalysis",{}).get("signals",[]) or []:
+            eid="event:"+str(x.get("eventId") or x.get("title")); add_node(eid,"EVENT",x.get("title","")); edges.append({"from":eid,"to":sid,"relation":"COUNTER_SIGNAL"})
+    return {"generatedAt":datetime.now(timezone.utc).isoformat(),"nodes":nodes[:300],"edges":edges[:600],"interpretation":"图谱用于追踪证据来源、生命周期与情景关联；关系是监测关系，不表示因果或概率。"}
+
 def build_evidence_lifecycle(events, previous_snapshot=None):
     """Reclassify evidence by age and observable follow-up/corroboration."""
     old={str(x.get("dedupeKey")):x for x in (previous_snapshot or {}).get("evidenceRegistry",[]) if x.get("dedupeKey")}
@@ -583,6 +608,7 @@ def build_scenario_snapshot(scenarios,global_events=None):
     lifecycle=build_evidence_lifecycle(global_events or [],previous_snapshot)
     lifecycle_map={str(x.get('dedupeKey')):x for x in lifecycle if x.get('dedupeKey')}
     registry=_merge_evidence_registry(global_events or [],previous_snapshot)
+    graph=build_evidence_graph(global_events or [],scenarios,lifecycle)
     for r in registry:
         x=lifecycle_map.get(str(r.get('dedupeKey')))
         if x:
@@ -591,6 +617,7 @@ def build_scenario_snapshot(scenarios,global_events=None):
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "evidenceRegistry": registry,
         "evidenceLifecycle": lifecycle,
+        "evidenceGraph": graph,
         "eventEvidence": [{"id":e.get("id"),"title":e.get("title"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"dedupeKey":e.get("dedupeKey"),"lifecycle":e.get("source",{}).get("lifecycle"),"evidenceWeight":e.get("source",{}).get("evidenceWeight"),"corroboration":e.get("corroboration")} for e in (global_events or [])],
         "scenarios": [
             {
