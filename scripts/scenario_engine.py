@@ -783,19 +783,34 @@ def build_dynamic_response_tree(scenario, events=None, previous_tree=None):
                 out.append(e)
         return out
 
-    def transition(branch_id, matched, primary, old):
+    def transition(branch_id, matched, primary, old, contradictory=False):
         current="OBSERVED" if primary else ("SUPPORTED" if matched else "UNRESOLVED")
+        if contradictory and matched:
+            current="CONTESTED"
         if old:
             old_status=old.get("status")
             old_count=int((old.get("evidenceCoverage") or {}).get("eventCount",0) or 0)
             new_count=len(matched)
             if old_status=="OBSERVED" and not primary and not matched:
                 current="WEAKENED"
+            elif old_status in ("OBSERVED","SUPPORTED","EVIDENCE_ENHANCED") and contradictory:
+                current="CONTESTED"
             elif old_status in ("OBSERVED","SUPPORTED") and new_count>old_count:
                 current="EVIDENCE_ENHANCED"
             elif old_status=="UNRESOLVED" and matched:
                 current="SUPPORTED" if not primary else "OBSERVED"
         return current
+
+    def opposite_evidence(mode,tid):
+        """Find evidence that points against the current mode without inferring intent."""
+        opposites={"ESCALATE":("DEESCALATE","NEGOTIATE"),
+                   "DEESCALATE":("ESCALATE",),
+                   "NEGOTIATE":("ESCALATE","DEESCALATE"),
+                   "THIRD_PARTY_SHIFT":("ESCALATE","DEESCALATE","NEGOTIATE")}
+        found=[]
+        for om in opposites.get(mode,()):
+            found.extend(hits(om,tid))
+        return found
 
     rounds=[]
     for no,actor in enumerate(("CN","US","CN"),1):
@@ -803,10 +818,12 @@ def build_dynamic_response_tree(scenario, events=None, previous_tree=None):
         for mid,mname,condition in modes:
             for tid,tool in tools.items():
                 hs=hits(mid,tid)
+                contradictory_events=opposite_evidence(mid,tid)
                 primary=sum(1 for e in hs if (e.get("source") or {}).get("tier")=="PRIMARY")
+                contradictory_primary=sum(1 for e in contradictory_events if (e.get("source") or {}).get("tier")=="PRIMARY")
                 bid=f"r{no}-{mid}-{tid}"
                 old=prev.get(bid)
-                status=transition(bid,hs,primary,old)
+                status=transition(bid,hs,primary,old,bool(contradictory_events))
                 branches.append({
                   "id":bid,"round":no,"actor":actor,"mode":mid,"modeName":mname,
                   "toolId":tid,"toolName":tool["name"],"status":status,
@@ -817,6 +834,12 @@ def build_dynamic_response_tree(scenario, events=None, previous_tree=None):
                   ),
                   "matchedEventIds":[e.get("id") for e in hs[:8]],
                   "matchedEventTitles":[e.get("title") for e in hs[:6]],
+                  "counterEvidence":{
+                    "eventCount":len(contradictory_events),
+                    "primarySourceCount":contradictory_primary,
+                    "eventIds":[e.get("id") for e in contradictory_events[:8]],
+                    "eventTitles":[e.get("title") for e in contradictory_events[:6]]
+                  },
                   "evidenceCoverage":{
                     "eventCount":len(hs),
                     "primarySourceCount":primary,
@@ -845,9 +868,9 @@ def build_dynamic_response_tree(scenario, events=None, previous_tree=None):
       "rounds":rounds,"transitions":transitions,
       "eventCount":len(events),
       "previousTreeVersion":previous_tree.get("version") if isinstance(previous_tree,dict) else None,
-      "stateModel":{"statuses":["NEW","UNRESOLVED","SUPPORTED","OBSERVED","EVIDENCE_ENHANCED","WEAKENED"],
+      "stateModel":{"statuses":["NEW","UNRESOLVED","SUPPORTED","OBSERVED","EVIDENCE_ENHANCED","WEAKENED","CONTESTED"],
                     "rule":"状态来自本轮与上一轮证据覆盖的变化；不代表概率、意图或结果。"},
-      "method":"事件用于更新证据覆盖状态；新证据增强节点，证据消失或不再匹配时标记为WEAKENED，而不是删除。"
+      "method":"事件用于更新证据覆盖状态；新证据增强节点，反向证据标记为CONTESTED，证据消失或不再匹配时标记为WEAKENED，而不是删除。"
     }
 
 def build_scenario_snapshot(scenarios,global_events=None):
