@@ -26,13 +26,20 @@ async function login(){
  msg(error?('登录失败：'+error.message):'登录成功，正在同步历史推演……');
 }
 async function signup(){
+ const btn=document.getElementById('authSignup'); if(btn?.dataset.busy==='1')return msg('正在注册，请不要重复点击。');
+ if(btn)btn.dataset.busy='1';
  const email=document.getElementById('authEmail').value.trim(), password=document.getElementById('authPassword').value;
  if(!sb)return msg('登录服务正在加载，请稍等 1-2 秒后再试。');
  if(!email)return msg('请输入邮箱。');
  if(password.length<6)return msg('注册需要至少 6 位密码。');
  msg('正在注册，请稍候……');
  try{
-   const {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}});
+   let {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}});
+   if(error&&/only request this after 1 seconds/i.test(error.message||'')){
+     msg('注册服务刚刚触发了安全限流，1.2 秒后自动重试一次……');
+     await new Promise(r=>setTimeout(r,1200));
+     ({data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}}));
+   }
    if(error){msg('注册失败：'+error.message);return;}
    msg(data?.session?'注册成功，正在登录并同步历史推演……':'注册成功，请查收邮箱完成验证后再登录。');
    if(data?.session) await cloudPull();
