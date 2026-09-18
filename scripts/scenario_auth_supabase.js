@@ -220,11 +220,15 @@ function patchSandboxHooks(){
 }
 function initAuth(){
  authPanel();
+ const hash=location.hash||'';
+ const search=location.search||'';
+ if(/type=recovery/i.test(hash)||/code=/i.test(search)){msg('验证链接已打开，正在确认账号状态……');}
+
  sb.auth.onAuthStateChange(async(_event,session)=>{
    renderAuthState(session?.user||null);
    if(session?.user){await cloudPull();patchSandboxHooks();}
  });
- sb.auth.getSession().then(async({data:{session}})=>{renderAuthState(session?.user||null);if(session?.user){await cloudPull();patchSandboxHooks(); if(loadTaskArchive()[0]) await renderUserTriggerCalibration(loadTaskArchive()[0].id);}});
+ sb.auth.getSession().then(async({data:{session}})=>{renderAuthState(session?.user||null);if(session?.user){await cloudPull();patchSandboxHooks(); if(loadTaskArchive()[0]) await renderUserTriggerCalibration(loadTaskArchive()[0].id); msg('邮箱验证/登录状态已确认，云端历史推演已同步。');}});
 }
 authLoad();
 })();
