@@ -219,6 +219,14 @@ async function loadScenario(){try{
  const data=await sr.json();
  let news=[];
  if(nr.ok){try{const x=await nr.json();news=Array.isArray(x)?x:(Array.isArray(x.news)?x.news:[]);}catch(_){}}
+ // Working-feed fallback: if news.json is temporarily empty, read the current monthly archive.
+ if(!news.length){
+  try{
+   const month=new Date().toISOString().slice(0,7);
+   const ar=await fetch('data/archive/'+month+'.json?ts='+ts,{cache:'no-store'});
+   if(ar.ok){const x=await ar.json();news=Array.isArray(x)?x:[];}
+  }catch(_){}
+ }
  // 直接读取雷达原始新闻，避免沙盘只看到 scenario_engine 截取后的少量事件。
  const rawEvents=news.slice().sort((a,b)=>String(b.time||b.updated||b.published||'').localeCompare(String(a.time||a.updated||a.published||''))).slice(0,60).map(n=>({
   title:n.titleZh||n.title||'未命名事件',
@@ -365,14 +373,19 @@ function buildScenario(){
  const e=document.getElementById('sandboxEvent').value.trim(),g=document.getElementById('goal').value.trim(),h=document.getElementById('horizon').value,m=document.getElementById('mode').value;
  if(!e){document.getElementById('status').textContent='请先输入一个推演事件。';return;}
  runScenarioTask({id:'task-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),event:e,goal:g,horizon:h,mode:m,createdAt:new Date().toISOString()});
-}renderTaskArchive();
-document.addEventListener('DOMContentLoaded',function(){
+}function bindSandboxButton(){
  const btn=document.getElementById('buildScenarioBtn');
- if(btn)btn.addEventListener('click',function(){
+ if(!btn||btn.dataset.bound==='1')return;
+ btn.dataset.bound='1';
+ btn.addEventListener('click',function(){
   try{buildScenario();}catch(e){console.error(e);const box=document.getElementById('status');if(box)box.textContent='沙盘启动失败：'+(e.message||e);}
  });
-});
-loadScenario().then(()=>{renderTaskArchive();});
+}
+renderTaskArchive();
+bindSandboxButton();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindSandboxButton,{once:true});
+setTimeout(bindSandboxButton,300);
+loadScenario().then(()=>{renderTaskArchive();bindSandboxButton();});
 </script><script>
 (function(){
  function unlockSandboxInputs(){
