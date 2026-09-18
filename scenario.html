@@ -204,17 +204,26 @@ function renderSandboxScenario(sc,index){if(!sc)return;const hs=sc.horizons||[];
    const rounds=tree.rounds||[];
    const statusLabel={OBSERVED:'已观察',SUPPORTED:'证据支持',UNRESOLVED:'待验证',EVIDENCE_ENHANCED:'证据增强',WEAKENED:'证据减弱',CONTESTED:'出现反证'};
    const modeLabel={ESCALATE:'升级',DEESCALATE:'缓和',THIRD_PARTY_SHIFT:'第三方转向',NEGOTIATE:'谈判/豁免'};
-   dt.innerHTML='<div class="card" style="margin:10px 0"><b>🌳 多轮动态博弈树 v3</b><div class="mini muted" style="margin:6px 0 10px">每轮同时保留“升级 / 缓和 / 第三方转向 / 谈判或豁免”四类路径。节点状态只表示当前证据覆盖，不表示概率、意图或最终结果。</div>'+
+   const stateModel=tree.stateModel||{};
+   const reversalChain=tree.reversalChain||tree.counterEvidenceChain||[];
+   const renderReversal=(x)=>'<div class="tag" style="border-left:3px solid var(--accent,#888)"><b>'+esc((x.previousStatus||'—')+' → '+(x.newStatus||x.status||'—'))+'</b> · '+esc(x.fromMode||x.mode||'')+' → '+esc(x.toMode||'')+'<br><span class="mini">'+esc(x.reason||'新证据与上一轮状态不一致')+(x.eventTitles?.length?'<br>反证事件：'+esc(x.eventTitles.join('；')):'')+'</span></div>';
+   dt.innerHTML='<div class="card" style="margin:10px 0"><b>🌳 多轮动态博弈树 v4</b><div class="mini muted" style="margin:6px 0 10px">路径会跨运行保留；反向证据不会删除旧节点，而是进入“反证/反转链”。状态描述证据变化，不表示概率、意图或最终结果。</div>'+
      rounds.map(r=>'<div style="margin:12px 0"><b>第'+esc(r.round)+'轮 · '+esc(r.actorName||r.actor)+'响应节点</b>'+
        '<div class="observation-list">'+(r.branches||[]).map(b=>{
          const hits=(b.matchedEventTitles||[]).join('；');
-         const cov=b.evidenceCoverage||{};
+         const cov=b.evidenceCoverage||{}, ce=b.counterEvidence||{};
+         const prior=b.previousState||b.previousStatus||'—';
+         const transition=b.stateTransition||((prior!=='—'&&prior!==(b.status||'—'))?prior+' → '+b.status:'');
          return '<span class="tag"><b>'+esc(modeLabel[b.mode]||b.modeName||'')+'</b> · '+esc(b.toolName||'')+' · '+esc(statusLabel[b.status]||b.status||'')+
+           (transition?'<br><span class="mini">状态：'+esc(transition)+'</span>':'')+
            '<br><span class="mini">'+esc(b.statusReason||'')+' · 事件 '+String(cov.eventCount||0)+' · 正式来源 '+String(cov.primarySourceCount||0)+' · 独立来源 '+String(cov.independentSourceCount||0)+
+           (ce.eventCount?'<br>反证：'+String(ce.eventCount)+' 条 · 正式来源 '+String(ce.primarySourceCount||0):'')+
            (hits?'<br>匹配：'+esc(hits):'')+
+           (ce.eventTitles?.length?'<br>反证事件：'+esc(ce.eventTitles.join('；')):'')+
            '<br>下一步：'+esc((b.nextMonitor||[]).join('；'))+'</span></span>';
        }).join('')+'</div></div>').join('')+
-     '<div class="mini muted" style="margin-top:8px"><b>节点切换规则：</b>'+esc((tree.transitions||[]).flatMap(x=>x.rules||[]).map(x=>x.when+' → '+(x.nextModes||[]).join('/')).join('；'))+'</div></div>';
+     (reversalChain.length?'<div class="card" style="margin-top:10px"><b>↩️ 反证 / 反转链</b><div class="mini muted" style="margin:6px 0 9px">只记录证据覆盖方向发生变化的节点，不把反证解释成意图或结果。</div><div class="observation-list">'+reversalChain.map(renderReversal).join('')+'</div></div>':'')+
+     '<div class="mini muted" style="margin-top:8px"><b>节点切换规则：</b>'+esc((tree.transitions||[]).flatMap(x=>x.rules||[]).map(x=>x.when+' → '+(x.nextModes||[]).join('/')).join('；'))+' · 状态模型：'+esc((stateModel.statuses||[]).join(' / '))+'</div></div>';
  }
  selectSandboxHorizon(0);
 }
