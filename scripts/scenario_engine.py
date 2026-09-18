@@ -230,6 +230,24 @@ def _scenario_horizons(prefix, scenario_type):
         out.append({"horizon":h,"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3],"keySignals":signals,"impacts":impacts,"actions":matrix})
     return out
 
+def _calibration_audit(trigger_calibration):
+    rows=[]
+    for x in trigger_calibration or []:
+        if x.get("status")!="CALIBRATED": continue
+        factor=float(x.get("calibrationWeight",1.0) or 1.0)
+        rows.append({
+            "trigger":x.get("trigger"),
+            "sampleSize":x.get("observations",0),
+            "historicalSignalRate":x.get("historicalSignalRate"),
+            "baseFactor":1.0,
+            "appliedFactor":factor,
+            "delta":round(factor-1.0,3),
+            "direction":"UP" if factor>1 else ("DOWN" if factor<1 else "UNCHANGED"),
+            "reason":"基于历史样本中的明显市场偏离占比；仅调整监测敏感度。",
+            "guardrail":"bounded_0.8_1.2"
+        })
+    return rows
+
 def _calibration_factor(trigger_calibration, trigger):
     row=next((x for x in (trigger_calibration or []) if x.get("trigger")==trigger and x.get("status")=="CALIBRATED"),None)
     if not row:return 1.0
@@ -544,6 +562,7 @@ def build_dynamic_tree(news,dash=None):
     snapshot["historicalMarketWindows"]=historical
     snapshot["retrospectiveCalibration"]=build_retrospective_calibration(scenarios,historical)
     snapshot["triggerCalibration"]=build_trigger_calibration(scenarios,historical)
+    snapshot["calibrationAudit"]=_calibration_audit(snapshot["triggerCalibration"])
     # Separate observation from causal attribution: market data can corroborate a transmission
     # signal only as a co-movement/validation observation, never as proof of causality.
     market_drivers=[d for s in scenarios for d in s.get("evidenceDrivers",[]) if d.get("kind")=="MARKET"]
