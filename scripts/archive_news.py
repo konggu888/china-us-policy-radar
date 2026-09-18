@@ -48,7 +48,12 @@ print('archive:',sum(len(v) for v in months.values()),'items across',len(months)
 ,'+00:00',s).replace('Z','+00:00')).astimezone(timezone.utc)
             except Exception: pass
             if t is None or t>=cutoff: recovered.append(n)
-    seen=set(); news=[n for n in recovered if (n.get('url') or n.get('title')) and not ((n.get('url') or n.get('title')) in seen and seen.add(n.get('url') or n.get('title')))]
+    seen=set(); clean=[]
+    for n in recovered:
+        k=n.get('url') or n.get('title')
+        if k and k not in seen:
+            seen.add(k); clean.append(n)
+    news=clean
 
 
 def parse_time(n):
