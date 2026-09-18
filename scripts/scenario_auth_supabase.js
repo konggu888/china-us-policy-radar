@@ -80,7 +80,16 @@ async function renderTaskRuns(taskId){
    const p=r.payload||{}, sc=p.scenario||{};
    const ctx=p.radarContext||{};
    const ev=(sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT').slice(0,4).map(x=>esc(x.title||x.id)).join('；');
-   return '<article class="card"><b>#'+(rows.length-i)+' · '+esc(r.scenario_code||'未标注')+' · '+esc(r.activation_state||'WATCH')+' · '+Number(r.trigger_score||0).toFixed(2)+'</b><div class="muted mini">运行时间：'+esc(r.observed_at||'')+' · 置信度：'+esc(r.confidence||'—')+' · 证据：'+Number(r.evidence_count||0)+'</div><div class="mini">当时雷达：'+esc(ctx.generatedAt||'未知')+'</div><div class="mini">直接事件：'+esc(ev||'暂无')+'</div><div class="mini muted">记录包含当时态势、事件、市场与证据快照，可用于与后续运行对照。</div></article>';
+   const prev=rows[i+1]||null, pp=prev?.payload?.scenario||{};
+   const scoreDelta=prev?Number(r.trigger_score||0)-Number(prev.trigger_score||0):null;
+   const confChange=prev&&pp.confidence&&sc.confidence&&pp.confidence!==sc.confidence?'置信度 '+esc(pp.confidence)+' → '+esc(sc.confidence):'';
+   const stateChange=prev&&pp.activationState&&sc.activationState&&pp.activationState!==sc.activationState?'状态 '+esc(pp.activationState)+' → '+esc(sc.activationState):'';
+   const currentIds=new Set((sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT').map(x=>String(x.id)));
+   const previousIds=new Set((pp.evidenceDrivers||[]).filter(x=>x.kind==='EVENT').map(x=>String(x.id)));
+   const added=[...currentIds].filter(x=>!previousIds.has(x)).length;
+   const removed=[...previousIds].filter(x=>!currentIds.has(x)).length;
+   const deltaText=prev?('触发分数 '+(scoreDelta>=0?'+':'')+scoreDelta.toFixed(2)+'；新增证据 '+added+'；移出证据 '+removed+(stateChange?'；'+stateChange:'')+(confChange?'；'+confChange:'')):'这是该任务的首次记录。';
+   return '<article class="card"><b>#'+(rows.length-i)+' · '+esc(r.scenario_code||'未标注')+' · '+esc(r.activation_state||'WATCH')+' · '+Number(r.trigger_score||0).toFixed(2)+'</b><div class="muted mini">运行时间：'+esc(r.observed_at||'')+' · 置信度：'+esc(r.confidence||'—')+' · 证据：'+Number(r.evidence_count||0)+'</div><div class="mini">当时雷达：'+esc(ctx.generatedAt||'未知')+'</div><div class="mini">直接事件：'+esc(ev||'暂无')+'</div><div class="mini">与上一次运行的变化：'+deltaText+'</div><div class="mini muted">记录包含当时态势、事件、市场与证据快照；变化只做历史对照，不表示因果关系或发生概率。</div></article>';
  }).join(''):'<div class="card muted">这个任务还没有服务器运行记录。完成一次推演后会自动留下审计记录。</div>';
 }
 function ensureTaskRunsPanel(){
