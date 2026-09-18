@@ -302,6 +302,32 @@ def _market_baseline(snapshots, event_time, days=7):
                     pass
     return {k:sum(v)/len(v) for k,v in vals.items() if v}
 
+def build_trigger_calibration(scenarios, historical_events):
+    """Historical descriptive counts for trigger reliability; not probabilities."""
+    buckets={}
+    for e in historical_events or []:
+        metrics=e.get("anomalyAnalysis",{}).get("metrics",[])
+        signal="ELEVATED_DEVIATION" if any(x.get("signal")=="ELEVATED_DEVIATION" for x in metrics) else ("WATCH" if any(x.get("signal")=="WATCH" for x in metrics) else "WITHIN_BASELINE")
+        for s in scenarios or []:
+            ids={str(x.get("id")) for x in s.get("evidenceDrivers",[]) if x.get("kind")=="EVENT"}
+            if e.get("eventId") not in ids: continue
+            for d in s.get("evidenceDrivers",[]):
+                if d.get("kind")!="EVENT" or str(d.get("id"))!=str(e.get("eventId")): continue
+                key=str(d.get("category") or d.get("role") or "UNKNOWN_TRIGGER")
+                b=buckets.setdefault(key,{"trigger":key,"observations":0,"followup":0,"signals":{"WITHIN_BASELINE":0,"WATCH":0,"ELEVATED_DEVIATION":0}})
+                b["observations"]+=1
+                if any(w.get("status")=="OBSERVED" for w in e.get("windows",[])): b["followup"]+=1
+                b["signals"][signal]+=1
+    out=[]
+    for b in buckets.values():
+        n=b["observations"]; strong=b["signals"]["ELEVATED_DEVIATION"]
+        b["historicalSignalRate"]=round(strong/n,3) if n else None
+        b["calibrationWeight"]=round(min(1.0,0.35+0.65*(strong/n)),3) if n>=3 else 0.5
+        b["status"]="CALIBRATED" if n>=3 else "INSUFFICIENT_SAMPLE"
+        b["interpretation"]="历史描述性指标，仅用于调整监测权重；不是发生概率、胜率或因果估计。"
+        out.append(b)
+    return sorted(out,key=lambda x:(x["status"]!="CALIBRATED",-x["observations"],x["trigger"]))
+
 def build_retrospective_calibration(scenarios, historical_events):
     """Record post-hoc observations without treating them as forecasts or causal proof."""
     rows=[]
@@ -504,6 +530,7 @@ def build_dynamic_tree(news,dash=None):
         historical.append(dict(e,windows=ws,anomalyAnalysis=build_event_market_anomalies(e,ws,snapshots)))
     snapshot["historicalMarketWindows"]=historical
     snapshot["retrospectiveCalibration"]=build_retrospective_calibration(scenarios,historical)
+    snapshot["triggerCalibration"]=build_trigger_calibration(scenarios,historical)
     # Separate observation from causal attribution: market data can corroborate a transmission
     # signal only as a co-movement/validation observation, never as proof of causality.
     market_drivers=[d for s in scenarios for d in s.get("evidenceDrivers",[]) if d.get("kind")=="MARKET"]
