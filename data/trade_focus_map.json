@@ -1,0 +1,149 @@
+{
+  "version": "2026-09-19",
+  "source": "U.S. Census Bureau Harmonized System data products",
+  "principle": "重点产业监测白名单；后台筛选与聚合，网站不下载原始大文件。",
+  "sectors": [
+    {
+      "id": "semiconductor",
+      "name": "半导体与集成电路",
+      "hsPrefixes": [
+        "8541",
+        "8542",
+        "8486"
+      ],
+      "priority": "P0"
+    },
+    {
+      "id": "electronics",
+      "name": "电子元件与电气设备",
+      "hsPrefixes": [
+        "8504",
+        "8507",
+        "8517",
+        "8523",
+        "8528"
+      ],
+      "priority": "P0"
+    },
+    {
+      "id": "computing",
+      "name": "计算机与服务器",
+      "hsPrefixes": [
+        "8471",
+        "8473"
+      ],
+      "priority": "P0"
+    },
+    {
+      "id": "machinery",
+      "name": "工业机械与设备",
+      "hsPrefixes": [
+        "84"
+      ],
+      "priority": "P1"
+    },
+    {
+      "id": "automotive",
+      "name": "汽车及零部件",
+      "hsPrefixes": [
+        "8703",
+        "8708",
+        "8711"
+      ],
+      "priority": "P0"
+    },
+    {
+      "id": "batteries",
+      "name": "电池与储能",
+      "hsPrefixes": [
+        "8507",
+        "8504"
+      ],
+      "priority": "P0"
+    },
+    {
+      "id": "solar",
+      "name": "光伏与新能源设备",
+      "hsPrefixes": [
+        "8541",
+        "8504",
+        "8419"
+      ],
+      "priority": "P0"
+    },
+    {
+      "id": "critical_minerals",
+      "name": "关键矿产与有色金属",
+      "hsPrefixes": [
+        "26",
+        "27",
+        "28",
+        "74",
+        "75",
+        "76"
+      ],
+      "priority": "P0"
+    },
+    {
+      "id": "steel",
+      "name": "钢铁与金属材料",
+      "hsPrefixes": [
+        "72",
+        "73",
+        "74",
+        "76"
+      ],
+      "priority": "P1"
+    },
+    {
+      "id": "chemicals",
+      "name": "化工材料",
+      "hsPrefixes": [
+        "28",
+        "29",
+        "38",
+        "39"
+      ],
+      "priority": "P1"
+    },
+    {
+      "id": "pharma",
+      "name": "医药与医疗产品",
+      "hsPrefixes": [
+        "30",
+        "90"
+      ],
+      "priority": "P1"
+    },
+    {
+      "id": "textile",
+      "name": "纺织与服装",
+      "hsPrefixes": [
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55",
+        "56",
+        "57",
+        "58",
+        "59",
+        "60",
+        "61",
+        "62",
+        "63"
+      ],
+      "priority": "P2"
+    }
+  ],
+  "derivedSignals": [
+    "中国对美相关HS商品出口变化",
+    "美国自中国相关HS商品进口变化",
+    "美国自第三国相同HS商品进口变化",
+    "第三国相同HS商品出口变化",
+    "同一HS商品的中国份额变化",
+    "第三国份额变化"
+  ],
+  "caveat": "第三国相同HS商品增加不能单独证明转口；需要原产地、产能、政策及多源证据交叉验证。"
+}
