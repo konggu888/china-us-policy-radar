@@ -208,8 +208,18 @@ async function renderTaskRuns(taskId){
    const previousIds=new Set((pp.evidenceDrivers||[]).filter(x=>x.kind==='EVENT').map(x=>String(x.id)));
    const added=[...currentIds].filter(x=>!previousIds.has(x)).length;
    const removed=[...previousIds].filter(x=>!currentIds.has(x)).length;
-   const deltaText=prev?('触发分数 '+(scoreDelta>=0?'+':'')+scoreDelta.toFixed(2)+'；新增证据 '+added+'；移出证据 '+removed+(stateChange?'；'+stateChange:'')+(confChange?'；'+confChange:'')):'这是该任务的首次记录。';
-   return '<article class="card"><b>#'+(rows.length-i)+' · '+authEsc(r.scenario_code||'未标注')+' · '+authEsc(r.activation_state||'WATCH')+' · '+Number(r.trigger_score||0).toFixed(2)+'</b><div class="muted mini">运行时间：'+authEsc(r.observed_at||'')+' · 置信度：'+authEsc(r.confidence||'—')+' · 证据：'+Number(r.evidence_count||0)+'</div><div class="mini">当时雷达：'+authEsc(ctx.generatedAt||'未知')+'</div><div class="mini">直接事件：'+authEsc(ev||'暂无')+'</div><div class="mini">与上一次运行的变化：'+deltaText+'</div><div class="mini muted">记录包含当时态势、事件、市场与证据快照；变化只做历史对照，不表示因果关系或发生概率。</div></article>';
+   const validation=p.validation||{};
+   const tw=(validation.timeWindowValidation||[]).filter(x=>x.scenarioCode===r.scenario_code);
+   const mw=(validation.historicalMarketWindows||[]).filter(x=>x.eventId&&new Set((sc.evidenceDrivers||[]).map(d=>String(d.id))).has(String(x.eventId)));
+   const counters=(sc.counterSignalAnalysis?.signals||[]).length;
+   const observedWindows=[...new Set(tw.flatMap(x=>(x.details||[]).filter(d=>d.status==='OBSERVED').map(d=>d.window)))];
+   const missingWindows=[...new Set(tw.flatMap(x=>(x.details||[]).filter(d=>d.status==='MISSING').map(d=>d.window)))];
+   const marketObserved=mw.filter(x=>x.status==='OBSERVED').length;
+   const marketMissing=mw.filter(x=>x.status==='MISSING').length;
+   const statusLine='时间窗口 '+observedWindows.length+' 个已观察'+(missingWindows.length?' · '+missingWindows.length+' 个尚无历史快照':'')+'；市场验证 '+marketObserved+' 个已观察'+(marketMissing?' · '+marketMissing+' 个缺失':'')+'；反证信号 '+counters+' 个';
+   const feedbackText=prev?'触发分数 '+(scoreDelta>=0?'+':'')+scoreDelta.toFixed(2)+'；新增证据 '+added+'；移出证据 '+removed+(stateChange?'；'+stateChange:'')+(confChange?'；'+confChange:''):'这是该任务的首次记录，尚未形成跨运行反馈。';
+   const feedbackHint=prev?'下一轮重点：复核新增/移出证据、后续窗口、市场观察和反证。':'下一轮开始后，系统会把本次快照与后续现实观察进行对照。';
+   return '<article class="card"><b>#'+(rows.length-i)+' · '+authEsc(r.scenario_code||'未标注')+' · '+authEsc(r.activation_state||'WATCH')+' · '+Number(r.trigger_score||0).toFixed(2)+'</b><div class="muted mini">运行时间：'+authEsc(r.observed_at||'')+' · 置信度：'+authEsc(r.confidence||'—')+' · 证据：'+Number(r.evidence_count||0)+'</div><div class="mini">当时雷达：'+authEsc(ctx.generatedAt||'未知')+'</div><div class="mini">直接事件：'+authEsc(ev||'暂无')+'</div><div class="mini">验证状态：'+authEsc(statusLine)+'</div><div class="mini">运行反馈：'+feedbackText+'</div><div class="mini">'+authEsc(feedbackHint)+'</div><div class="mini muted">记录包含当时态势、事件、市场与证据快照；变化只做历史对照，不表示因果关系或发生概率。</div></article>';
  }).join(''):'<div class="card muted">这个任务还没有服务器运行记录。完成一次推演后会自动留下审计记录。</div>';
 }
 function ensureTaskRunsPanel(){
