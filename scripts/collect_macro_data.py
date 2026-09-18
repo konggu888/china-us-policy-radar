@@ -1,0 +1,155 @@
+import csv, io, json, re, sys, urllib.parse, urllib.request
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+DATA=ROOT/'data'
+MACRO_OUT=DATA/'macro_data.json'
+MARKET_OUT=DATA/'market_snapshots.json'
+UA='Mozilla/5.0 (compatible; China-US-Global-Intelligence-Radar/Macro-Collector-1.0)'
+
+def fetch(url,timeout=20):
+    req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'text/html,application/json,text/csv,*/*'})
+    with urllib.request.urlopen(req,timeout=timeout) as r:
+        return r.read().decode('utf-8','ignore')
+
+def nfloat(v):
+    if v is None:return None
+    s=str(v).replace(',','').replace('%','').strip()
+    try:return float(s)
+    except:return None
+
+def nbs_latest():
+    index='https://www.stats.gov.cn/sj/zxfb/'
+    html=fetch(index)
+    links=re.findall(r'href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',html,re.S|re.I)
+    candidates=[]
+    for href,title in links:
+        text=re.sub(r'<[^>]+>','',title).strip()
+        if '国民经济运行' in text:
+            url=urllib.parse.urljoin(index,href)
+            candidates.append((url,text))
+    if not candidates:
+        raise RuntimeError('NBS latest national-economy release link not found')
+    url,title=candidates[0]
+    page=fetch(url)
+    text=re.sub(r'<script[\s\S]*?</script>',' ',page,flags=re.I)
+    text=re.sub(r'<style[\s\S]*?</style>',' ',text,flags=re.I)
+    text=re.sub(r'<[^>]+>',' ',text)
+    text=re.sub(r'&nbsp;',' ',text)
+    text=re.sub(r'\s+',' ',text)
+    published=re.search(r'(20\\d{2}/\\d{1,2}/\\d{1,2})',text)
+    observed=published.group(1).replace('/','-') if published else ''
+    patterns={
+      'industrial_yoy_pct':r'规模以上工业增加值同比增长([+-]?\\d+(?:\\.\\d+)?)%',
+      'industrial_mom_pct':r'环比增长([+-]?\\d+(?:\\.\\d+)?)%',
+      'services_production_yoy_pct':r'服务业生产指数同比增长([+-]?\\d+(?:\\.\\d+)?)%',
+      'fixed_asset_investment_ytd_yoy_pct':r'固定资产投资.*?同比下降([+-]?\\d+(?:\\.\\d+)?)%',
+      'retail_yoy_pct':r'社会消费品零售总额.*?同比增长([+-]?\\d+(?:\\.\\d+)?)%',
+      'exports_yoy_pct':r'出口[^。]{0,80}?增长([+-]?\\d+(?:\\.\\d+)?)%',
+      'imports_yoy_pct':r'进口[^。]{0,80}?增长([+-]?\\d+(?:\\.\\d+)?)%',
+      'unemployment_pct':r'城镇调查失业率为([+-]?\\d+(?:\\.\\d+)?)%',
+      'cpi_yoy_pct':r'CPI同比上涨([+-]?\\d+(?:\\.\\d+)?)%',
+      'cpi_mom_pct':r'CPI[^。]{0,80}?环比上涨([+-]?\\d+(?:\\.\\d+)?)%',
+      'core_cpi_yoy_pct':r'核心CPI同比上涨([+-]?\\d+(?:\\.\\d+)?)%',
+      'ppi_yoy_pct':r'PPI同比上涨([+-]?\\d+(?:\\.\\d+)?)%',
+      'ppi_mom_pct':r'PPI[^。]{0,80}?环比上涨([+-]?\\d+(?:\\.\\d+)?)%',
+      'fx_reserves_usd_trillion':r'外汇储备(?:稳定在|超过|保持在)\\s*([+-]?\\d+(?:\\.\\d+)?)万亿美元'
+    }
+    values={}
+    for k,p in patterns.items():
+        m=re.search(p,text)
+        if m:
+            val=nfloat(m.group(1))
+            if val is not None: values[k]=val
+    return {'source':'国家统计局','sourceUrl':url,'releaseTitle':title,'publishedAt':observed,'fetchedAt':datetime.now(timezone.utc).isoformat(),'values':values,'method':'从国家统计局数据发布页自动发现最新国民经济运行正式发布并解析明确标注的指标；未匹配字段保持缺失。'}
+
+FRED={
+ 'real_gdp':'GDPC1','cpi':'CPIAUCSL','core_cpi':'CPILFESL','pce_price':'PCEPI',
+ 'unemployment':'UNRATE','nonfarm_payrolls':'PAYEMS','industrial_production':'INDPRO',
+ 'retail_sales':'RSAFS','fed_funds':'FEDFUNDS','m2':'M2SL','10y_treasury':'DGS10',
+ '2y_treasury':'DGS2','30y_treasury':'DGS30','usd_index':'DTWEXBGS'
+}
+
+def fred_series(series_id):
+    url='https://fred.stlouisfed.org/graph/fredgraph.csv?id='+urllib.parse.quote(series_id)
+    rows=list(csv.DictReader(io.StringIO(fetch(url,25))))
+    vals=[]
+    for r in rows:
+        v=nfloat(r.get(series_id))
+        if v is not None:
+            vals.append((r.get('observation_date',''),v))
+    if not vals: raise RuntimeError('empty FRED '+series_id)
+    date,val=vals[-1]
+    prev=vals[-2][1] if len(vals)>1 else None
+    return {'seriesId':series_id,'observedAt':date,'value':val,'previousValue':prev,'source':'FRED / Federal Reserve Bank of St. Louis','sourceUrl':'https://fred.stlouisfed.org/series/'+series_id}
+
+def collect_us():
+    out={}
+    errors={}
+    for name,sid in FRED.items():
+        try: out[name]=fred_series(sid)
+        except Exception as e: errors[name]=str(e)
+    return out,errors
+
+MARKETS={
+ 'DXY':'DX-Y.NYB','USD/CNH':'CNH=X','EUR/USD':'EURUSD=X','USD/JPY':'JPY=X',
+ '美国2年期收益率':'^IRX','美国5年期收益率':'^FVX','美国10年期收益率':'^TNX','美国30年期收益率':'^TYX',
+ 'NASDAQ':'^IXIC','道琼斯':'^DJI','恒生指数':'^HSI','恒生科技':'^HSTECH','WTI原油':'CL=F','铜':'HG=F','白银':'SI=F',
+ '黄金':'GC=F','VIX':'^VIX','标普500':'^GSPC','USD/CNY':'CNY=X'
+}
+
+def yahoo(ticker):
+    url=f'https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ticker)}?range=1mo&interval=1d&events=history'
+    obj=json.loads(fetch(url,20))
+    r=obj['chart']['result'][0]; q=r['indicators']['quote'][0]
+    pairs=[(t,c) for t,c in zip(r.get('timestamp',[]),q.get('close',[])) if c is not None]
+    if not pairs: raise RuntimeError('empty Yahoo '+ticker)
+    closes=[float(x[1]) for x in pairs]
+    latest=closes[-1]; prev=closes[-2] if len(closes)>1 else None
+    return {'name':None,'ticker':ticker,'value':latest,'change_pct':round((latest/prev-1)*100,4) if prev else None,'observedAt':datetime.fromtimestamp(pairs[-1][0],timezone.utc).strftime('%Y-%m-%d'),'source':'Yahoo Finance','sourceUrl':'https://finance.yahoo.com/quote/'+urllib.parse.quote(ticker)}
+
+def update_market_snapshots():
+    try: old=json.loads(MARKET_OUT.read_text(encoding='utf-8'))
+    except: old=[]
+    if not isinstance(old,list): old=[]
+    latest=[]
+    for name,ticker in MARKETS.items():
+        try:
+            x=yahoo(ticker); x['name']=name; latest.append(x)
+        except Exception as e:
+            print('market missing',name,e)
+    # Preserve the existing 9 baseline variables from the prior collector if the expanded provider fails.
+    try:
+        prior=old[-1].get('markets',[]) if old else []
+        by={x.get('name'):x for x in prior}
+        for x in latest: by[x['name']]=x
+        latest=list(by.values())
+    except Exception: pass
+    if latest:
+        snap={'capturedAt':datetime.now(timezone.utc).isoformat(),'markets':latest}
+        # One snapshot per calendar day; replace same-day snapshot instead of duplicating it.
+        day=snap['capturedAt'][:10]
+        old=[x for x in old if str(x.get('capturedAt',''))[:10]!=day]
+        old.append(snap)
+        old=old[-730:]
+        MARKET_OUT.write_text(json.dumps(old,ensure_ascii=False,indent=2),encoding='utf-8')
+    return len(latest)
+
+def main():
+    errors=[]
+    try: cn=nbs_latest()
+    except Exception as e:
+        cn={'source':'国家统计局','status':'MISSING','error':str(e),'method':'官方源暂未成功获取；不使用其他来源冒充。'}; errors.append('NBS:'+str(e))
+    us,us_errors=collect_us()
+    if us_errors: errors.extend('FRED '+k+':'+v for k,v in us_errors.items())
+    market_count=update_market_snapshots()
+    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'china':cn,'unitedStates':{'source':'FRED','series':us,'errors':us_errors,'apiMode':'public fredgraph CSV; no API key'},'marketSnapshotCount':market_count,'quality':{'chinaStatus':'OK' if cn.get('values') else 'MISSING','usSeriesCount':len(us),'marketVariableCount':market_count,'errors':len(errors)}}
+    MACRO_OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
+    print('macro: China',len(cn.get('values',{})),'US',len(us),'market',market_count,'errors',len(errors))
+    # Do not fail the entire pipeline for a single upstream series; fail only if both macro sides and markets are empty.
+    if not cn.get('values') and not us and market_count==0:return 1
+    return 0
+
+if __name__=='__main__':
+    sys.exit(main())
