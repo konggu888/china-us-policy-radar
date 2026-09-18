@@ -75,6 +75,10 @@ jobs:
             if [ "$hour" = "04" ] && [ "$minute" = "50" ]; then case "$month-$dom" in 01-01|04-01|07-01|10-01) python scripts/ai_intelligence.py quarterly ;; esac; fi
             if [ "$hour" = "04" ] && [ "$minute" = "55" ]; then case "$month-$dom" in 01-01|07-01) python scripts/ai_intelligence.py half_year ;; esac; fi
           fi
+      - name: Refresh strategic scenario state
+        shell: bash
+        run: |
+          python scripts/scenario_engine.py
       - name: Commit AI intelligence and health
         if: ${{ always() }}
         shell: bash
@@ -83,7 +87,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           for attempt in 1 2 3; do
-            git add data/ai_summaries.json data/news.json data/ai_health.json
+            git add data/ai_summaries.json data/news.json data/ai_health.json data/scenario_state.json
             git diff --cached --quiet || git commit -m 'chore: update AI strategic intelligence'
             git fetch origin main
             if git push origin HEAD:main; then exit 0; fi
