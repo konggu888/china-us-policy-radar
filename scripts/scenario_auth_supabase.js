@@ -66,8 +66,10 @@ window.saveScenarioRun=async function(task,scenario){
  if(error)console.warn('scenario run save failed',error.message);
 };
 async function buildTriggerFeedback(taskId,currentRun,previousRun){
- const {data:{user}}=await currentUser(); if(!user||!currentRun)return;
- const sc=currentRun.payload?.scenario||{}, prev=previousRun?.payload?.scenario||{};
+ const {data:{user}}=await currentUser();
+ if(!user||!currentRun||!previousRun)return;
+ const sc=currentRun.payload?.scenario||{};
+ const prev=previousRun.payload?.scenario||{};
  const currentDrivers=(sc.evidenceDrivers||[]).filter(d=>d.kind==='EVENT');
  const previousDrivers=(prev.evidenceDrivers||[]).filter(d=>d.kind==='EVENT');
  const prevIds=new Set(previousDrivers.map(d=>String(d.id)));
@@ -76,18 +78,31 @@ async function buildTriggerFeedback(taskId,currentRun,previousRun){
  const followup=registry.filter(e=>['ACTIVE','DEVELOPING','RESOLVED'].includes(e.lifecycle)).length;
  const market=currentRun.payload?.radarContext?.market||[];
  const marketDeviation=market.filter(m=>m.change_pct!==undefined&&m.change_pct!==null&&Math.abs(Number(m.change_pct))>=1.5).length;
- const score=Number(currentRun.trigger_score||0), priorScore=Number(previousRun?.trigger_score??score), delta=score-priorScore;
+ const score=Number(currentRun.trigger_score||0);
+ const priorScore=Number(previousRun.trigger_score??score);
+ const delta=score-priorScore;
  const outcome=delta>=0.05?'SUPPORTED':(delta<=-0.05?'WEAKENED':'UNRESOLVED');
  const triggers=[...new Set(currentDrivers.map(d=>String(d.category||d.role||'UNKNOWN_TRIGGER')))];
- if(!triggers.length||!previousRun)return;
+ if(!triggers.length)return;
  const {data:existing}=await sb.from('scenario_trigger_feedback').select('trigger,calibration_factor,sample_size,status').eq('user_id',user.id).eq('task_id',String(taskId)).order('created_at',{ascending:false}).limit(100);
  const latest=new Map((existing||[]).map(x=>[x.trigger,x]));
  const rows=triggers.map(trigger=>{
-   const old=latest.get(trigger), n=(old?.sample_size||0)+1, raw=outcome==='SUPPORTED'?1.05:(outcome==='WEAKENED'?0.95:1);
-   const prior=Number(old?.calibration_factor||1), proposed=Math.max(0.8,Math.min(1.2,prior*raw)), jump=Math.abs(proposed-prior), frozen=n<3||jump>0.10, applied=frozen?prior:proposed;
-   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun?.id||null,outcome,evidence_count:newDrivers.length,followup_count:followup,market_deviation_count:marketDeviation,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':(frozen?'FROZEN':'CALIBRATED'),payload:{proposedFactor:Number(proposed.toFixed(3)),priorFactor:prior,appliedFactor:Number(applied.toFixed(3)),jump:Number(jump.toFixed(3)),reason:frozen?(n<3?'样本不足，保持原权重':'单次变化超过0.10，自动冻结以防漂移'):'达到样本门槛且变化在安全范围内；仅用于监测权重，不表示概率或因果'}};
+   const old=latest.get(trigger);
+   const n=Number(old?.sample_size||0)+1;
+   const raw=outcome==='SUPPORTED'?1.05:(outcome==='WEAKENED'?0.95:1);
+   const prior=Number(old?.calibration_factor||1);
+   const proposed=Math.max(0.8,Math.min(1.2,prior*raw));
+   const jump=Math.abs(proposed-prior);
+   const frozen=n<3||jump>0.10;
+   const applied=frozen?prior:proposed;
+   return {user_id:user.id,task_id:String(taskId),trigger,observed_run_id:currentRun.id,prior_run_id:previousRun.id,outcome,evidence_count:newDrivers.length,followup_count:followup,market_deviation_count:marketDeviation,sample_size:n,calibration_factor:Number(applied.toFixed(3)),status:n<3?'EARLY_SAMPLE':(frozen?'FROZEN':'CALIBRATED'),payload:{proposedFactor:Number(proposed.toFixed(3)),priorFactor:prior,appliedFactor:Number(applied.toFixed(3)),jump:Number(jump.toFixed(3)),reason:frozen?(n<3?'样本不足，保持原权重':'单次变化超过0.10，自动冻结以防漂移'):'达到样本门槛且变化在安全范围内；仅用于监测权重，不表示概率或因果'}};
  });
- if(rows.length){ const {data:ins}=await sb.from('scenario_trigger_feedback').insert(rows).select('id,trigger,calibration_factor,status,sample_size'); for(const x of (ins||[])){const src=rows.find(y=>y.trigger===x.trigger)||{}; await sb.from('scenario_calibration_audit').insert({user_id:user.id,task_id:String(taskId),trigger:x.trigger,feedback_id:x.id,prior_factor:Number(src.payload?.priorFactor||1),proposed_factor:Number(src.payload?.proposedFactor||1),applied_factor:Number(src.calibration_factor||1),delta:Number((Number(src.calibration_factor||1)-Number(src.payload?.priorFactor||1)).toFixed(3)),status:x.status==='FROZEN'?'FROZEN':(x.status==='EARLY_SAMPLE'?'EARLY_SAMPLE':'APPLIED'),sample_size:x.sample_size,reason:src.payload?.reason||'历史校准审计');}}
+ const {data:ins,error}=await sb.from('scenario_trigger_feedback').insert(rows).select('id,trigger,calibration_factor,status,sample_size');
+ if(error||!ins)return;
+ for(const x of ins){
+   const src=rows.find(y=>y.trigger===x.trigger);
+   await sb.from('scenario_calibration_audit').insert({user_id:user.id,task_id:String(taskId),trigger:x.trigger,feedback_id:x.id,prior_factor:Number(src?.payload?.priorFactor||1),proposed_factor:Number(src?.payload?.proposedFactor||1),applied_factor:Number(x.calibration_factor||1),delta:Number((Number(x.calibration_factor||1)-Number(src?.payload?.priorFactor||1)).toFixed(3)),status:x.status==='FROZEN'?'FROZEN':(x.status==='EARLY_SAMPLE'?'EARLY_SAMPLE':'APPLIED'),sample_size:x.sample_size,reason:src?.payload?.reason||'历史校准审计'});
+ }
 }
 async function renderUserTriggerCalibration(taskId){
  const box=document.getElementById('triggerCalibrationList'); if(!box||!taskId||!sb)return;
