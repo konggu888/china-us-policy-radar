@@ -4,7 +4,7 @@
 .scenario-card{cursor:pointer;transition:.15s ease}.scenario-card:hover{border-color:var(--accent);transform:translateY(-1px)}.scenario-card.selected{box-shadow:0 0 0 1px var(--accent) inset}.sandbox-toolbar{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}.sandbox-tab{padding:7px 10px;border-radius:999px;background:#08141d;border:1px solid var(--line);color:var(--muted);cursor:pointer}.sandbox-tab.active{color:var(--text);border-color:var(--accent)}.scenario-head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.state-pill{padding:5px 9px;border-radius:999px;border:1px solid var(--line);font-weight:700}.state-pill.elevated{border-color:var(--danger);color:var(--danger)}.state-pill.active{border-color:var(--warn);color:var(--warn)}.state-pill.watch{color:var(--muted)}.scorebar{height:6px;background:#08141d;border-radius:999px;overflow:hidden;margin:7px 0}.scorebar span{display:block;height:100%;background:var(--accent)}.sandbox-evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.sandbox-evidence-grid .card{min-height:70px}@media(max-width:850px){.sandbox-evidence-grid{grid-template-columns:1fr}}.sandbox-chain{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}.sandbox-step{position:relative}.sandbox-step:not(:last-child):after{content:'→';position:absolute;right:-7px;top:30%;color:var(--accent);z-index:2}.sandbox-step .card{height:100%;box-sizing:border-box}.matrix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.matrix-section h4{margin:0 0 7px}.matrix-section ul{padding-left:18px;margin:6px 0}.evidence-line{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}.mini{font-size:12px}.counter{border-left:3px solid var(--warn)}.history-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.history-change{border-left:3px solid var(--accent)}.delta-up{color:var(--danger)}.delta-down{color:var(--ok)}.delta-flat{color:var(--muted)}.observation-list{display:flex;flex-wrap:wrap;gap:6px}@media(max-width:850px){.history-grid{grid-template-columns:1fr}}@media(max-width:850px){.sandbox-chain,.matrix-grid{grid-template-columns:1fr}.sandbox-step:not(:last-child):after{content:'↓';right:50%;top:auto;bottom:-14px}}.evidence-chain{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.evidence-node{border:1px solid var(--line);border-radius:9px;padding:10px;background:#091720}.evidence-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700}.driver-link{cursor:pointer}.driver-link:hover{border-color:var(--accent)}@media(max-width:850px){.evidence-chain{grid-template-columns:1fr}.evidence-arrow{transform:rotate(90deg)}}</style></head><body><main class="wrap">
 <header class="hero"><div><div class="muted">GLOBAL POLICY INTELLIGENCE RADAR</div><h1>🧠 战略沙盘</h1><div class="muted">从公开事实 → 当前态势 → 情景树 → 触发器 → 行动方案 → 红队压力测试</div></div><a href="index.html" style="color:var(--accent)">← 返回雷达</a></header><section id="accountPanel" class="panel"><div class="title">👤 账号与云端同步</div><div id="authBox"><div class="controls"><label>账号（邮箱格式，仅作为登录名）<input id="authEmail" type="email" autocomplete="username" placeholder="你的账号邮箱"></label><label>密码<input id="authPassword" type="password" autocomplete="current-password" placeholder="至少 6 位"></label></div><div style="margin-top:10px"><button id="authLogin" type="button">登录</button> <button id="authSignup" type="button">注册</button></div><div id="authStatus" class="status">注册后直接使用账号和密码登录；不发送验证邮件。</div></div></section>
 <section id="taskArchive" class="panel"><div class="title">🗂️ 历史推演任务 · 持久保存</div><div class="status">任务保存在本机浏览器中。刷新、关闭页面、重新推演其他问题都不会删除它。重新打开旧任务时，会使用最新雷达数据重新计算；“样本不足”只表示等待后续证据。</div><div id="taskArchiveList" class="actions" style="margin-top:10px"></div></section><section id="scenarioResult" class="panel" style="display:none"><div class="title">🧠 本次问题的推演结果</div><div id="scenarioSummary" class="actions"></div><div class="status">以下内容是基于当前公开数据的条件路径，用于验证假设；不是确定性预测。点击“开始本地沙盘建模”后这里会立即更新。</div></section>
-<section class="panel"><div class="title">① 推演任务</div><div class="controls"><label>推演主题<textarea id="sandboxEvent" placeholder="例如：中美贸易政策出现新的限制措施；某国发生重大地缘事件；国内出台重大经济政策……"></textarea></label><label>你的目标<textarea id="goal" placeholder="例如：识别未来可能出现的政策链、市场影响与需要观察的信号。不要输入个人敏感信息。"></textarea></label><label>时间范围<select id="horizon"><option>未来7天</option><option selected>未来30天</option><option>未来90天</option><option>未来1年</option></select></label><label>推演模式<select id="mode"><option selected>多情景</option><option>压力测试</option><option>反事实</option></select></label><div class="wide"><button onclick="buildScenario()">开始本地沙盘建模</button><div id="status" class="status">本页面 V1 先建立结构化沙盘；正式 AI 推演将在后端接入最新雷达数据后运行。</div></div></div></section>
+<section class="panel"><div class="title">① 推演任务</div><div class="controls"><label>推演主题<textarea id="sandboxEvent" placeholder="例如：中美贸易政策出现新的限制措施；某国发生重大地缘事件；国内出台重大经济政策……"></textarea></label><label>你的目标<textarea id="goal" placeholder="例如：识别未来可能出现的政策链、市场影响与需要观察的信号。不要输入个人敏感信息。"></textarea></label><label>时间范围<select id="horizon"><option>未来7天</option><option selected>未来30天</option><option>未来90天</option><option>未来1年</option></select></label><label>推演模式<select id="mode"><option selected>多情景</option><option>压力测试</option><option>反事实</option></select></label><div class="wide"><button id="buildScenarioBtn" type="button">开始本地沙盘建模</button><div id="status" class="status">本页面 V1 先建立结构化沙盘；正式 AI 推演将在后端接入最新雷达数据后运行。</div></div></div></section>
 <div class="grid"><section><div class="panel"><div class="title">② 当前态势 · State</div><div class="state"><div><b>🇨🇳 中国</b><span id="cn">待从最新数据读取</span></div><div><b>🇺🇸 美国</b><span id="us">待从最新数据读取</span></div><div><b>🌐 全球</b><span id="gl">待从最新数据读取</span></div><div><b>💹 金融</b><span id="finance">市场变量待接入</span></div><div><b>🚢 供应链</b><span>事件与贸易变量待接入</span></div><div><b>⚠️ 地缘</b><span>热点与风险变量待接入</span></div></div></div><div class="panel"><div class="title">③ 十一层态势模型 · 观察而非猜测</div><div id="layers" class="actions"></div><div class="status">民众层使用公开讨论发现代理信号，不等同于民调；企业层、资金流向、政策执行效果在缺少直接数据时明确显示“未知”。</div></div><div class="panel"><div class="title">③ 情景树 · Scenario Tree</div><div id="tree" class="tree"><article class="card node"><h3>情景 A · 基准路径</h3><div class="muted">当前政策路径延续</div><ul><li>触发条件：现有政策信号没有明显变化</li><li>重点观察：政策执行、市场反馈、外交表态</li></ul></article><article class="card node warn"><h3>情景 B · 升级路径</h3><div class="muted">新增限制或反制</div><ul><li>触发条件：出现新的强制性政策措施</li><li>重点观察：贸易、科技、金融与供应链</li></ul></article><article class="card node"><h3>情景 C · 缓和路径</h3><div class="muted">沟通增加或措施回撤</div><ul><li>触发条件：官方表态与实际措施同步缓和</li><li>重点观察：市场定价与后续执行</li></ul></article></div></div><div class="panel"><div class="title">④ 时间切片 × 剧本 × 行动矩阵</div><div id="sandboxToolbar" class="sandbox-toolbar"></div><div id="dynamicMatrix" class="actions"></div><section class="panel" id="evidenceTimelinePanel">
   <div class="section-title">证据时间轴 · 事件生命周期</div>
   <div class="mini muted">按跨运行注册表追踪首次发现、重复观察、多源确认与证据衰减；时间轴是审计记录，不代表因果关系。</div>
@@ -209,7 +209,35 @@ function selectSandboxHorizon(i){const sc=window.__selectedScenario,hs=sc?.horiz
  const sigs=(h.keySignals||[]).map(x=>esc(x.name)+' / '+esc(x.metric)+' / '+esc(x.direction)).join('；')||'暂无';
  document.getElementById('sandboxEvidence').innerHTML='<b>'+esc(h.label||h.horizon)+'</b> · 影响：'+impacts+'<br>触发观察：'+sigs+'<br><b>下一观察指标：</b><div class="observation-list">'+(h.keySignals||[]).map(x=>'<span class="tag">'+esc(x.name)+' · '+esc(x.importance||'MEDIUM')+'</span>').join('')+'</div><span class="muted">情景仅在触发条件与证据满足时提高权重；出现反证时应重新建模。</span>';
 }
-async function loadScenario(){try{const r=await fetch('data/scenario_state.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);const data=await r.json(); window.__scenarioState=data; render(data);}catch(e){document.getElementById('status').textContent='等待自动更新生成 scenario_state.json；基础页面仍可使用。';}}
+async function loadScenario(){try{
+ const ts=Date.now();
+ const [sr,nr]=await Promise.all([
+  fetch('data/scenario_state.json?ts='+ts,{cache:'no-store'}),
+  fetch('data/news.json?ts='+ts,{cache:'no-store'})
+ ]);
+ if(!sr.ok)throw new Error('scenario_state HTTP '+sr.status);
+ const data=await sr.json();
+ let news=[];
+ if(nr.ok){try{const x=await nr.json();news=Array.isArray(x)?x:(Array.isArray(x.news)?x.news:[]);}catch(_){}}
+ // 直接读取雷达原始新闻，避免沙盘只看到 scenario_engine 截取后的少量事件。
+ const rawEvents=news.slice().sort((a,b)=>String(b.time||b.updated||b.published||'').localeCompare(String(a.time||a.updated||a.published||''))).slice(0,60).map(n=>({
+  title:n.titleZh||n.title||'未命名事件',
+  region:n.ai_region||n.region||'global',
+  category:n.ai_category||n.category||n.cat||'全球政策',
+  risk:n.ai_risk||n.risk||'待评估',
+  source:n.sourceOrg||n.source||'未知来源',
+  url:n.url||'',
+  time:n.time||n.updated||n.published||''
+ }));
+ if(rawEvents.length)data.events=rawEvents;
+ data.__rawNewsCount=news.length;
+ window.__scenarioState=data;
+ render(data);
+ document.getElementById('status').innerHTML='沙盘已读取最新雷达数据：新闻 '+news.length+' 条；当前展示 '+rawEvents.length+' 条事件。';
+}catch(e){
+ console.error('scenario data load failed',e);
+ document.getElementById('status').textContent='沙盘数据读取失败：'+(e.message||e);
+}}
 function normalizeLocalScenario(e,g,h,m,s){
  const text=(e+' '+g).toLowerCase();
  const ai=/(ai|人工智能|大模型|芯片|算力|deepseek|英伟达|openai)/i.test(text);
@@ -337,7 +365,14 @@ function buildScenario(){
  const e=document.getElementById('sandboxEvent').value.trim(),g=document.getElementById('goal').value.trim(),h=document.getElementById('horizon').value,m=document.getElementById('mode').value;
  if(!e){document.getElementById('status').textContent='请先输入一个推演事件。';return;}
  runScenarioTask({id:'task-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),event:e,goal:g,horizon:h,mode:m,createdAt:new Date().toISOString()});
-}renderTaskArchive(); loadScenario().then(()=>{renderTaskArchive();});
+}renderTaskArchive();
+document.addEventListener('DOMContentLoaded',function(){
+ const btn=document.getElementById('buildScenarioBtn');
+ if(btn)btn.addEventListener('click',function(){
+  try{buildScenario();}catch(e){console.error(e);const box=document.getElementById('status');if(box)box.textContent='沙盘启动失败：'+(e.message||e);}
+ });
+});
+loadScenario().then(()=>{renderTaskArchive();});
 </script><script>
 (function(){
  function unlockSandboxInputs(){
