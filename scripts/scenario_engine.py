@@ -302,6 +302,25 @@ def _market_baseline(snapshots, event_time, days=7):
                     pass
     return {k:sum(v)/len(v) for k,v in vals.items() if v}
 
+def build_retrospective_calibration(scenarios, historical_events):
+    """Record post-hoc observations without treating them as forecasts or causal proof."""
+    rows=[]
+    for s in scenarios or []:
+        code=s.get("code")
+        evidence=set(str(x.get("id")) for x in s.get("evidenceDrivers",[]) if x.get("kind")=="EVENT")
+        related=[e for e in (historical_events or []) if e.get("eventId") in evidence]
+        observed=sum(1 for e in related if any(w.get("status")=="OBSERVED" for w in e.get("windows",[])))
+        deviations=sum(1 for e in related for x in e.get("anomalyAnalysis",{}).get("metrics",[]) if x.get("signal")=="ELEVATED_DEVIATION")
+        rows.append({
+            "scenarioCode":code,
+            "eventCount":len(related),
+            "eventsWithFollowup":observed,
+            "elevatedMarketDeviationCount":deviations,
+            "calibrationStatus":"EARLY_SAMPLE" if observed<3 else "HISTORICAL_SAMPLE",
+            "interpretation":"用于事后校准触发器与证据权重；不表示该剧本发生概率或因果成立。"
+        })
+    return rows
+
 def build_event_market_anomalies(event, windows, snapshots):
     pub=dt(event.get("source",{}).get("publishedAt"))
     if not pub: return {"status":"EVENT_TIME_UNKNOWN","metrics":[]}
@@ -484,6 +503,7 @@ def build_dynamic_tree(news,dash=None):
         ws=build_historical_market_windows(e,snapshots)
         historical.append(dict(e,windows=ws,anomalyAnalysis=build_event_market_anomalies(e,ws,snapshots)))
     snapshot["historicalMarketWindows"]=historical
+    snapshot["retrospectiveCalibration"]=build_retrospective_calibration(scenarios,historical)
     # Separate observation from causal attribution: market data can corroborate a transmission
     # signal only as a co-movement/validation observation, never as proof of causality.
     market_drivers=[d for s in scenarios for d in s.get("evidenceDrivers",[]) if d.get("kind")=="MARKET"]
