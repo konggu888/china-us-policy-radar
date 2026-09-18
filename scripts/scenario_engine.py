@@ -156,6 +156,29 @@ def _scenario_horizons(prefix, scenario_type):
         out.append({"horizon":h,"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3],"keySignals":signals,"impacts":impacts,"actions":matrix})
     return out
 
+def _scenario_activation(events, scenario_type):
+    """Evidence-weighted activation state. This is a monitoring weight, not a probability forecast."""
+    cats=[str(e.get("category","")).upper() for e in events]
+    roles=[str(e.get("triggerRole","")) for e in events]
+    confirmed=sum(1 for e in events if e.get("status")=="CONFIRMED")
+    third_party=sum(1 for e in events if e.get("actor",{}).get("country") not in ("CN","US","OTHER",None))
+    trade=sum(1 for x in cats if x in ("TRADE","TARIFF","SANCTIONS","TECHNOLOGY","PAYMENT"))
+    shock=sum(1 for x in cats if x in ("GEOPOLITICS","ENERGY","PORT","LOGISTICS","CRITICAL_MINERALS"))
+    if scenario_type=="HARD_DECOUPLING":
+        score=min(1.0,0.12*confirmed+0.10*trade+0.08*shock)
+        evidence=["确认事件数量="+str(confirmed)]
+        if trade:evidence.append("贸易/技术/制裁类信号="+str(trade))
+        counter=["若出现明确豁免、延期或执行强度下降，应降低该路径权重"]
+    elif scenario_type=="STRUCTURAL_NEGOTIATION":
+        score=min(1.0,0.10*confirmed+0.05*len([x for x in roles if x=="PRIMARY_TRIGGER"]))
+        evidence=["已有确认事件="+str(confirmed),"需要额外的官方缓和/豁免证据"]
+        counter=["若出现新增强制措施并持续执行，应降低该路径权重"]
+    else:
+        score=min(1.0,0.10*confirmed+0.12*third_party+0.08*shock)
+        evidence=["第三方事件="+str(third_party),"物流/能源/地缘信号="+str(shock)]
+        counter=["若主要冲击完全停留在中美双边渠道，应降低该路径权重"]
+    return {"activationState":"WATCH" if score<0.35 else ("ACTIVE" if score<0.70 else "ELEVATED"),"triggerScore":round(score,2),"evidence":evidence,"counterSignals":counter}
+
 def build_dynamic_tree(news):
     ge=build_global_events(news)
     root=ge[0]["id"] if ge else "evt-none"
@@ -177,7 +200,7 @@ def build_dynamic_tree(news):
           {"id":f"{sid}-2","order":2,"actor":"US","action":"第2轮加码/施压","mechanism":"通过贸易、技术、资本或规则工具改变成本","consequence":"中国进入第3轮路径选择","nextNodeIds":[f"{sid}-3"],"affectedDomains":["TRADE","INVESTMENT"]},
           {"id":f"{sid}-3","order":3,"actor":"CN","action":title,"mechanism":condition,"consequence":"进入对应时间窗口并持续验证触发器","nextNodeIds":[],"affectedDomains":["TRADE","INVESTMENT","LIFE"]}
         ]
-        scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"horizons":_scenario_horizons(sid,stype)})
+        act=_scenario_activation(ge,stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
     return {"schema_version":"2.0","globalEvents":ge,"responses":responses,"scenarioTree":{"id":"tree-"+datetime.now(timezone.utc).strftime("%Y%m%d"),"rootEventId":root,"title":"全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本","rounds":[{"round":1,"actor":"CN","title":"中国第1轮应对","responseIds":["resp-cn-r1"]},{"round":2,"actor":"US","title":"美国第2轮加码/施压","responseIds":["resp-us-r2"]},{"round":3,"actor":"CN","title":"中国第3轮多剧本","responseIds":["resp-cn-r3"]}],"scenarios":scenarios,"generatedAt":datetime.now(timezone.utc).isoformat(),"modelVersion":"dynamic-scenario-v2"},"time_horizons":[{"id":h[0],"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3]} for h in HORIZONS],"action_domains":["INVESTMENT","TRADE","LIFE"]}
 
 def build(news,dash,policy,social,ai):
