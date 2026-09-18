@@ -3,7 +3,7 @@ from collections import Counter
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data'; OUT=DATA/'scenario_state.json'
-MARKET_SNAPSHOTS=DATA/'market_snapshots.json'
+MARKET_SNAPSHOTS=DATA/'market_snapshots.json'; MACRO_HISTORY=DATA/'macro_history.json'; MACRO_OUT=DATA/'macro_data.json'
 KEY=os.getenv('DEEPSEEK_API_KEY','').strip(); MODEL=os.getenv('DEEPSEEK_MODEL','deepseek-v4-flash')
 def read(n,d):
  try:return json.loads((DATA/n).read_text(encoding='utf-8'))
@@ -26,6 +26,30 @@ def events(rows,limit=15):
   seen.add(k);out.append({'title':t[:220],'region':n.get('ai_region') or n.get('region') or 'global','category':n.get('ai_category') or n.get('cat') or '全球政策','risk':n.get('ai_risk') or n.get('risk') or '低','source':n.get('sourceOrg') or n.get('source') or '未知来源','url':u,'time':n.get('time') or n.get('updated') or ''})
   if len(out)>=limit:break
  return out
+def macro_timeline(days=365):
+    rows=read('macro_history.json',[])
+    if not isinstance(rows,list): rows=[]
+    current=read('macro_data.json',{})
+    if not rows and current: rows=[current]
+    out=[]
+    for snap in rows:
+        ts=snap.get('updatedAt') or snap.get('fetchedAt')
+        if not ts: continue
+        out.append({'updatedAt':ts,'china':snap.get('china',{}),'chinaStructured':snap.get('chinaStructured',{}),'pbc':snap.get('pbc',{}),'unitedStates':snap.get('unitedStates',{}),'marketSnapshotCount':snap.get('marketSnapshotCount',0),'quality':snap.get('quality',{})})
+    return sorted(out,key=lambda x:x.get('updatedAt',''))[-days:]
+
+def build_transmission_timeline(dash):
+    macro=macro_timeline()
+    market=read('market_snapshots.json',[])
+    if not isinstance(market,list): market=[]
+    market=sorted(market,key=lambda x:x.get('capturedAt',''))
+    by_day={str(x.get('capturedAt',''))[:10]:x for x in market}
+    rows=[]
+    for snap in macro:
+        day=str(snap.get('updatedAt',''))[:10]
+        rows.append({'date':day,'macro':snap,'market':by_day.get(day,{'capturedAt':None,'markets':[]}),'status':'OBSERVED' if by_day.get(day) else 'MACRO_ONLY','rule':'同日数据用于时间对齐观察；不据此推断政策因果关系。'})
+    return rows[-365:]
+
 def markets(d):
  m=d.get('market',[])
  wanted=('USD/CNY','上证指数','深证成指','沪深300','标普500','美国10年期收益率','布伦特原油','黄金','VIX')
@@ -791,6 +815,8 @@ def build_dynamic_tree(news,dash=None):
         act=_scenario_activation(ge,stype,trigger_calibration); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"counterSignalAnalysis":_counter_signal_analysis(ge,stype),"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
     snapshot=build_scenario_snapshot(scenarios,ge)
     snapshots=persist_market_snapshot(dash or {})
+    snapshot['macroTimeline']=macro_timeline()
+    snapshot['transmissionTimelineUnified']=build_transmission_timeline(dash or {})
     snapshot["transmissionTimeline"]=build_transmission_windows(ge, snapshots)
     historical=[]
     for e in ge[:12]:
@@ -863,6 +889,7 @@ def build(news,dash,policy,social,ai):
    {'id':'triggers','name':'触发器','status':'OK','count':sum(len(s.get('evidenceDrivers',[])) for s in dynamic.get('scenarioTree',{}).get('scenarios',[])),'source':'scenario_snapshot'},
    {'id':'windows','name':'时间窗口','status':'OK','count':sum(len(x.get('details',[])) for x in dynamic.get('scenarioSnapshot',{}).get('timeWindowValidation',[])),'source':'scenario_snapshot'},
    {'id':'market','name':'市场验证','status':'OK','count':len(dynamic.get('scenarioSnapshot',{}).get('transmissionTimeline',[])),'source':'market_snapshots.json'},
+   {'id':'macro','name':'宏观时间轴','status':'OK' if macro_timeline() else 'MISSING','count':len(macro_timeline()),'source':'macro_history.json'},
    {'id':'counter','name':'反证','status':'OK','count':sum(len(s.get('counterSignalAnalysis',{}).get('signals',[])) for s in dynamic.get('scenarioTree',{}).get('scenarios',[])),'source':'scenario_snapshot'},
    {'id':'history','name':'历史任务','status':'OK','count':len(scenario_task_registry()),'source':'scenario_tasks'},
    {'id':'cross_run','name':'跨运行校准','status':'OK','count':len(dynamic.get('scenarioSnapshot',{}).get('crossRunValidation',[])),'source':'scenario_validation_history.json'}
