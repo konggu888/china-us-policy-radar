@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: intelligence-radar-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update:
