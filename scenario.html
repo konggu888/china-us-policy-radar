@@ -228,6 +228,28 @@ async function loadScenario(){try{
   }catch(_){}
  }
  // 直接读取雷达原始新闻，避免沙盘只看到 scenario_engine 截取后的少量事件。
+ const nowMs=Date.now();
+ const recent=n=>{const t=Date.parse(n.time||n.updated||n.published||'');return !t||nowMs-t<=31*86400000;};
+ const classifyRegion=n=>String(n.ai_region||n.region||'').toLowerCase();
+ const classifyCat=n=>String(n.ai_category||n.category||n.cat||'').toLowerCase();
+ const recentNews=news.filter(recent);
+ const regionCount=(key)=>recentNews.filter(n=>classifyRegion(n).includes(key)).length;
+ const catCount=(keys)=>recentNews.filter(n=>keys.some(k=>classifyCat(n).includes(k))).length;
+ const latestFor=(keys)=>recentNews.slice().sort((a,b)=>Date.parse(b.time||b.updated||b.published||0)-Date.parse(a.time||a.updated||a.published||0)).find(n=>keys.some(k=>classifyCat(n).includes(k))||keys.some(k=>classifyRegion(n).includes(k)));
+ const latestChina=latestFor(['china','中国']);
+ const latestUS=latestFor(['us','美国']);
+ const latestGlobal=latestFor(['global','全球']);
+ const latestSupply=latestFor(['supply','trade','供应链','贸易','export','出口','rare','稀土']);
+ const latestGeo=latestFor(['geopolit','地缘','military','security','外交','冲突']);
+ data.sandboxInputs={
+  updatedAt:new Date().toISOString(),
+  china:{count:regionCount('china')||regionCount('中国'),latest:latestChina?.titleZh||latestChina?.title||''},
+  us:{count:regionCount('us')||regionCount('美国'),latest:latestUS?.titleZh||latestUS?.title||''},
+  global:{count:regionCount('global')||regionCount('全球'),latest:latestGlobal?.titleZh||latestGlobal?.title||''},
+  finance:{count:catCount(['金融','finance','market','货币','央行','利率']),latest:(latestFor(['金融','finance','market','货币','央行','利率'])||{}).titleZh||''},
+  supply:{count:catCount(['供应链','supply','trade','贸易','出口']),latest:latestSupply?.titleZh||latestSupply?.title||''},
+  geopolitics:{count:catCount(['地缘','geopolit','military','security','外交','冲突']),latest:latestGeo?.titleZh||latestGeo?.title||''}
+ };
  const rawEvents=news.slice().sort((a,b)=>String(b.time||b.updated||b.published||'').localeCompare(String(a.time||a.updated||a.published||''))).slice(0,60).map(n=>({
   title:n.titleZh||n.title||'未命名事件',
   region:n.ai_region||n.region||'global',
