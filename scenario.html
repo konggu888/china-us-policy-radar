@@ -51,41 +51,43 @@ function selectSandboxHorizon(i){const sc=window.__selectedScenario,hs=sc?.horiz
  document.getElementById('sandboxEvidence').innerHTML='<b>'+esc(h.label||h.horizon)+'</b> · 影响：'+impacts+'<br>触发观察：'+sigs+'<br><span class="muted">情景仅在触发条件与证据满足时提高权重；出现反证时应重新建模。</span>';
 }
 async function loadScenario(){try{const r=await fetch('data/scenario_state.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);const data=await r.json(); window.__scenarioState=data; render(data);}catch(e){document.getElementById('status').textContent='等待自动更新生成 scenario_state.json；基础页面仍可使用。';}}
-function buildScenario(){
- const e=document.getElementById('event').value.trim(),g=document.getElementById('goal').value.trim(),h=document.getElementById('horizon').value,m=document.getElementById('mode').value;
- if(!e){document.getElementById('status').textContent='请先输入一个推演事件。';return;}
- const s=window.__scenarioState||{}, text=(e+' '+g).toLowerCase();
+function normalizeLocalScenario(e,g,h,m,s){
+ const text=(e+' '+g).toLowerCase();
  const ai=/(ai|人工智能|大模型|芯片|算力|deepseek|英伟达|openai)/i.test(text);
  const trade=/(贸易|关税|出口|制裁|供应链|tariff|export)/i.test(text);
  const finance=/(金融|股市|美元|人民币|利率|债券|资本|资金)/i.test(text);
- const cn=(s.state&&s.state.china)||{}, us=(s.state&&s.state.us)||{}, fm=(s.state&&s.state.finance)||{};
- const theme=ai?'美国AI产业与中国产业政策':trade?'贸易与供应链冲击':finance?'金融与政策反馈':e;
- const branches=[
-  {n:'A · 基准延续',c:'现有政策与产业趋势延续，调整以渐进方式发生',x:ai?'美国AI企业增速分化 → 企业资本开支趋于谨慎 → 中国侧重国产算力、应用落地与产业链韧性。':'现有政策继续执行 → 企业和市场逐步定价 → 地方与行业根据执行效果调整。'},
-  {n:'B · 压力上升',c:'出现新的限制、融资收缩或产业链扰动',x:ai?'融资与算力约束增强 → 美国AI投资节奏放缓 → 中国加快替代供给、算力基础设施和应用侧需求。':'政策限制扩大 → 成本与不确定性上升 → 企业、地方和金融市场出现二阶反馈。'},
-  {n:'C · 调整缓和',c:'限制边际放松或产业效率改善',x:ai?'AI投资重新加速 → 中美产业链竞争与合作空间同时变化 → 中国需要重新评估资源配置。':'外部压力边际下降 → 市场风险溢价回落 → 政策重点可能重新转向增长与效率。'},
-  {n:'D · 外部冲击',c:'第三方事件改变原有路径',x:'能源、金融、地缘或技术突破等非预期变量进入 → 原有推演失效 → 重新校准假设。'}
- ];
- document.getElementById('status').innerHTML='已完成 '+esc(h)+' · '+esc(m)+' 沙盘推演：<b>'+esc(theme)+'</b>。以下是条件路径，不是确定性预测；基础事实来自最新雷达数据。';
- document.getElementById('tree').innerHTML=branches.map((x,i)=>card(x.n,'<div class="muted">'+esc(x.c)+'</div><p>'+esc(x.x)+'</p>',i===1?'warn':i===3?'danger':'')).join('');
- document.getElementById('chain').innerHTML=(ai?['美国AI企业增长/融资','资本开支与算力需求','芯片/云/应用产业链','中国国产替代与应用','政策与市场反馈']:trade?['贸易措施','企业成本与订单','供应链迁移','地方产业调整','政策反馈']:finance?['金融变量','风险偏好/资金','企业融资','产业投资','政策反馈']:['输入事件','直接政策影响','企业与居民','金融市场','产业/地方','政策反馈']).map(x=>'<span class="tag">'+esc(x)+'</span>').join(' → ');
- const sig=(ai?['美国AI企业财报/融资/裁员与资本开支','AI算力价格、GPU供给和云厂商资本开支','中国算力、国产芯片与AI应用政策','美国出口管制及其执行变化']:trade?['新增关税/出口管制文本','企业订单与航运变化','关键原材料和中间品价格','地方产业政策/项目调整']:finance?['央行与财政政策','人民币/美元及国债收益率','主要指数与波动率','企业融资和信用利差']:['官方政策文本','关键企业行为','市场异常变化','反向证据']).map(x=>'<div class="card"><b>'+esc(x)+'</b><p class="muted">出现时重新评估情景权重</p></div>').join('');
- document.getElementById('signals').innerHTML=sig;
- const act=ai?'先观察美国AI企业资本开支、融资与需求是否同步放缓；国内侧重点可拆成算力、芯片、模型、应用和人才五条链分别验证，不把单一企业减速等同于整个AI行业衰退。':trade?'先拆分关税、出口管制、订单、运输和产业迁移，不把单一政策事件直接等同于全面脱钩。':finance?'先观察政策、汇率、利率、资金与企业融资是否同向变化，避免只用单一市场指标判断。':'先确认事件是否有正式文本，再追踪执行、企业行为、市场反馈和地方政策的二阶变化。';
- document.getElementById('actions').innerHTML=[['立即验证',act],['观察清单','未来 '+h+' 内持续记录上述触发器，并区分已发生、正在发生和待验证。'],['备用路径','若核心假设被反证，切换到D·外部冲击路径并重新建模。'],['停止条件','出现与核心假设相反的多源证据时，不继续沿用原推演。']].map(x=>'<div class="card"><b>'+esc(x[0])+'</b><p class="muted">'+esc(x[1])+'</p></div>').join('');
- const result=document.getElementById('scenarioResult');
- const summary=document.getElementById('scenarioSummary');
- if(result&&summary){
-   result.style.display='block';
-   summary.innerHTML=[
-     ['核心问题','<p>'+esc(e)+'</p><div class="muted">目标：'+esc(g||'未指定')+' · 时间：'+esc(h)+' · 模式：'+esc(m)+'</div>'],
-     ['当前态势','<p>'+esc(cn.signal||'中国态势暂无')+'</p><div class="muted">美国：'+esc(us.signal||'暂无')+' · 金融：'+esc((fm.market||[]).length?'已有市场数据':'暂无市场数据')+'</div>'],
-     ['核心传导链','<p>'+((ai?['美国AI企业增长/融资','资本开支与算力需求','芯片/云/应用产业链','中国国产替代与应用','政策与市场反馈']:trade?['贸易措施','企业成本与订单','供应链迁移','地方产业调整','政策反馈']:finance?['金融变量','风险偏好/资金','企业融资','产业投资','政策反馈']:['输入事件','直接政策影响','企业与居民','金融市场','产业/地方','政策反馈']).map(x=>'<span class="tag">'+esc(x)+'</span>').join(' → '))+'</p>'],
-     ['关键验证','<p>① 先验证正式政策文本；② 再看企业/居民行为；③ 再看金融与供应链反馈；④ 出现反证时重新建模。</p>'],
-     ['情景分支','<p>A 基准延续 · B 压力上升 · C 调整缓和 · D 外部冲击</p><div class="muted">四条路径同时保留，不预设哪条一定发生。</div>']
-   ].map(x=>'<div class="card"><b>'+esc(x[0])+'</b>'+x[1]+'</div>').join('');
-   result.scrollIntoView({behavior:'smooth',block:'start'});
+ const type=trade?'THIRD_PARTY_DIVERSION':finance?'STRUCTURAL_NEGOTIATION':ai?'HARD_DECOUPLING':'STRUCTURAL_NEGOTIATION';
+ const code=type==='HARD_DECOUPLING'?'A':type==='STRUCTURAL_NEGOTIATION'?'B':'C';
+ const title=type==='HARD_DECOUPLING'?'全面脱钩 / 硬碰撞':type==='STRUCTURAL_NEGOTIATION'?'结构性谈判 / 局部缓和':'第三方迂回 / 市场转移';
+ const triggers=ai?['AI企业资本开支、融资或需求出现同步变化','芯片/算力出口管制文本或执行变化']:trade?['新增关税、出口管制或制裁正式文本','订单、航运与关键原材料同步变化']:finance?['央行/财政政策变化','汇率、利率、股债商品出现同向异常']:['出现正式政策文本','企业行为与市场反馈形成多源验证'];
+ return {code,title,type,triggers,theme:ai?'AI产业与技术链':trade?'贸易与供应链':finance?'金融与政策反馈':e};
+}
+function buildScenario(){
+ const e=document.getElementById('event').value.trim(),g=document.getElementById('goal').value.trim(),h=document.getElementById('horizon').value,m=document.getElementById('mode').value;
+ if(!e){document.getElementById('status').textContent='请先输入一个推演事件。';return;}
+ const s=window.__scenarioState||{}, cn=s.state?.china||{}, us=s.state?.us||{}, fm=s.state?.finance||{};
+ const model=normalizeLocalScenario(e,g,h,m,s);
+ const rows=window.__scenarioRows||[];
+ const idx=rows.findIndex(x=>String(x.code)===model.code);
+ if(idx>=0){
+   selectSandboxScenario(rows[idx].id);
+   document.getElementById('status').innerHTML='已将你的问题注入实时沙盘：<b>'+esc(model.theme)+'</b> · '+esc(h)+' · '+esc(m)+'。当前展示 '+esc(model.code)+' 路径；其他路径仍保留，需根据触发/反证证据持续校准。';
+ }else{
+   const fallback={id:'local-'+Date.now(),code:model.code,type:model.type,title:model.title,description:'用户输入：'+e,confidence:'LOW',sensitivity:0.5,activationState:'WATCH',triggerScore:0,triggerEvidence:['用户输入事件：'+e],counterSignals:['等待实时证据验证'],recomputeIf:['出现多源反证或新的正式政策文本'],chain:[
+    {order:1,actor:'CN',action:'中国第1轮应对',mechanism:'基于输入事件建立条件响应',consequence:'等待后续证据',evidenceLevel:'ASSUMPTION'},
+    {order:2,actor:'US',action:'美国第2轮响应',mechanism:'条件路径，不代表已发生',consequence:'等待后续证据',evidenceLevel:'ASSUMPTION'},
+    {order:3,actor:'CN',action:model.title,mechanism:'根据触发器分化',consequence:'重新计算',evidenceLevel:'ASSUMPTION'}],
+    horizons:(rows[0]?.horizons||[])};
+   window.__scenarioRows=[fallback,...rows]; selectSandboxScenario(fallback.id);
+   document.getElementById('status').innerHTML='实时沙盘尚未返回结构化剧本，已建立临时条件路径。它不会替代实时数据。';
  }
+ const result=document.getElementById('scenarioResult'),summary=document.getElementById('scenarioSummary');
+ if(result&&summary){result.style.display='block';summary.innerHTML=[
+   ['核心问题','<p>'+esc(e)+'</p><div class="muted">目标：'+esc(g||'未指定')+' · 时间：'+esc(h)+' · 模式：'+esc(m)+'</div>'],
+   ['当前态势','<p>'+esc(cn.signal||'中国态势暂无')+'</p><div class="muted">美国：'+esc(us.signal||'暂无')+' · 金融：'+esc((fm.market||[]).length?'已有市场数据':'暂无市场数据')+'</div>'],
+   ['统一沙盘路径','<p><span class="tag">'+esc(model.code)+'</span> '+esc(model.title)+'</p><div class="muted">用户问题已进入与实时雷达相同的 A/B/C 沙盘结构。</div>'],
+   ['关键验证','<p>① 正式政策文本；② 执行细则；③ 企业/市场行为；④ 反证信号。任一关键假设被多源证据推翻，就重新建模。</p>']
+ ].map(x=>'<div class="card"><b>'+esc(x[0])+'</b>'+x[1]+'</div>').join('');result.scrollIntoView({behavior:'smooth',block:'start'});}
 }
 loadScenario();
 </script></body></html>
