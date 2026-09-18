@@ -46,6 +46,15 @@ window.esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const pct=x=>x==null?'—':(Number(x)>=0?'+':'')+Number(x).toFixed(2)+'%';
 function card(title,body,cls=''){return '<article class="card node '+cls+'"><h3>'+esc(title)+'</h3>'+body+'</article>'}
 function list(a){return '<ul>'+((a||[]).map(x=>'<li>'+esc(x)+'</li>').join('')||'<li>暂无数据</li>')+'</ul>'}
+function renderSandboxInputs(data){
+ const x=data.sandboxInputs||{};
+ const map=[['china','🇨🇳 中国'],['us','🇺🇸 美国'],['global','🌐 全球'],['finance','💹 金融'],['supply','🚢 供应链'],['geopolitics','⚠️ 地缘']];
+ const root=document.getElementById('sandboxInputs');
+ if(!root)return;
+ root.innerHTML=map.map(([k,label])=>{
+  const v=x[k]||{}; return '<div class="sandbox-input-item"><b>'+label+'</b><span class="sandbox-count">'+Number(v.count||0)+' 条</span><small>'+window.esc(v.latest||'暂无近期匹配事件')+'</small></div>';
+ }).join('');
+}
 function render(s){
  document.getElementById('status').innerHTML='沙盘数据：<b>'+esc(s.engine||'scenario-engine')+'</b> · '+esc(s.generated_at||'')+' · 已加载 '+((s.events||[]).length)+' 个高优先级事件。';
  const st=s.state||{};
@@ -262,7 +271,7 @@ async function loadScenario(){try{
  if(rawEvents.length)data.events=rawEvents;
  data.__rawNewsCount=news.length;
  window.__scenarioState=data;
- render(data);
+ renderSandboxInputs(data); render(data);
  document.getElementById('status').innerHTML='沙盘已读取最新雷达数据：新闻 '+news.length+' 条；当前展示 '+rawEvents.length+' 条事件。';
 }catch(e){
  console.error('scenario data load failed',e);
