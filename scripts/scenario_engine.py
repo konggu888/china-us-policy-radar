@@ -258,6 +258,38 @@ def _action_matrix(prefix, horizon):
       ]}
     }
 
+def _countermeasure_library():
+    """Policy-tool library: available response channels, not a claim that any actor will choose them."""
+    return [
+      {"id":"RARE_EARTH_CRITICAL_MINERALS","name":"关键矿产/稀土出口管制","domain":"SUPPLY_CHAIN","mechanism":"通过许可、清单、最终用途/最终用户审查影响关键矿产、材料、磁材及相关产品流动。","activationTriggers":["关键矿产被纳入正式措施","相关产业依赖度高","出现军事/安全最终用途信号"],"observableEvidence":["商务/海关公告","许可证规则","通关与出口数据"],"caveat":"控制措施不等于全面禁运；具体效果取决于许可范围、执行与替代来源。","exampleEvidence":"2025-04-04中国商务部、海关总署公告18号对部分中重稀土相关物项实施出口管制。"},
+      {"id":"DUAL_USE_EXPORT_CONTROL","name":"两用物项/技术出口管制","domain":"TECHNOLOGY","mechanism":"扩大或调整出口管制清单、许可证和最终用途/最终用户审查。","activationTriggers":["芯片/设备/软件/技术被限制","军事或敏感最终用途证据增加"],"observableEvidence":["出口管制清单","许可证审批规则","企业合规公告"]},
+      {"id":"TARIFF_RETALIATION","name":"关税/税费反制","domain":"TRADE","mechanism":"调整特定来源商品的关税或相关贸易措施。","activationTriggers":["新增关税或贸易限制正式生效","贸易措施覆盖面扩大"],"observableEvidence":["关税税则","国务院/商务主管部门公告","海关数据"]},
+      {"id":"TRADE_REMEDY","name":"反倾销/反补贴与贸易救济","domain":"TRADE","mechanism":"通过调查、临时措施或最终措施改变特定商品进入市场的成本与条件。","activationTriggers":["特定行业进口激增","产业损害或补贴争议进入正式程序"],"observableEvidence":["立案/调查公告","裁决与税率","行业进口数据"]},
+      {"id":"ENTITY_AND_END_USER","name":"实体/不可靠实体/最终用户限制","domain":"REGULATION","mechanism":"针对特定企业、最终用户或交易关系施加限制、审查或合规要求。","activationTriggers":["特定企业被列入限制名单","最终用户风险提高"],"observableEvidence":["名单公告","许可证条件","企业交易披露"]},
+      {"id":"PROCUREMENT_REGULATORY","name":"政府采购与监管准入","domain":"REGULATION","mechanism":"通过政府采购、认证、标准、数据/安全审查和市场准入规则改变竞争条件。","activationTriggers":["政府采购规则变化","关键行业安全审查扩大"],"observableEvidence":["采购规则","监管文件","认证/准入决定"]},
+      {"id":"INVESTMENT_TECH_TRANSFER","name":"投资/技术转移与境外经营限制","domain":"CAPITAL_TECH","mechanism":"调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。","activationTriggers":["敏感技术/产业投资受限","境外生产使用受控技术出现证据"],"observableEvidence":["投资审查决定","技术出口规则","企业交易披露"]},
+      {"id":"DIPLOMATIC_NEGOTIATION","name":"谈判、豁免与对等安排","domain":"DIPLOMACY","mechanism":"通过谈判、豁免、延期、配额、许可便利化或对等安排改变措施强度。","activationTriggers":["高层磋商","正式豁免/延期文本","许可证便利化"],"observableEvidence":["联合声明","官方公告","执行细则"]},
+      {"id":"LEGAL_DISPUTE","name":"法律/争端解决渠道","domain":"LEGAL","mechanism":"通过国内法律程序、行政复议/诉讼或国际贸易争端机制处理争议。","activationTriggers":["措施进入正式争端程序","法律依据或程序争议出现"],"observableEvidence":["立案/裁决文件","WTO争端文件","司法/行政决定"]},
+      {"id":"PAYMENT_FINANCE","name":"金融、支付与融资监管工具","domain":"FINANCE","mechanism":"调整特定交易的融资、支付、结算或金融监管条件。","activationTriggers":["金融制裁/支付限制","跨境融资条件明显变化"],"observableEvidence":["金融监管文件","制裁/名单文件","支付与融资数据"]}
+    ]
+
+def _response_options_for(scenario_type, events):
+    """Rank response tools by observed trigger categories; descriptive monitoring only."""
+    cats={str(e.get("category","")).upper() for e in (events or [])}
+    options=_countermeasure_library()
+    def score(o):
+        oid=o["id"]; s=0
+        if oid=="RARE_EARTH_CRITICAL_MINERALS" and ("CRITICAL_MINERALS" in cats or "SUPPLY_CHAIN" in cats or "TRADE" in cats): s+=4
+        if oid=="DUAL_USE_EXPORT_CONTROL" and ("TECHNOLOGY" in cats or "SECURITY" in cats): s+=4
+        if oid in ("TARIFF_RETALIATION","TRADE_REMEDY") and ("TRADE" in cats or "TARIFF" in cats): s+=3
+        if oid=="ENTITY_AND_END_USER" and ("SANCTIONS" in cats or "TECHNOLOGY" in cats or "SECURITY" in cats): s+=3
+        if oid=="PROCUREMENT_REGULATORY" and ("TECHNOLOGY" in cats or "TRADE" in cats): s+=2
+        if oid=="INVESTMENT_TECH_TRANSFER" and ("TECHNOLOGY" in cats or "FINANCE" in cats): s+=2
+        if oid=="PAYMENT_FINANCE" and ("FINANCE" in cats or "SANCTIONS" in cats): s+=3
+        if oid in ("DIPLOMATIC_NEGOTIATION","LEGAL_DISPUTE"): s+=1
+        return s
+    ranked=sorted(options,key=lambda o:(score(o),o["id"]),reverse=True)
+    return [dict(o,relevance="HIGH" if score(o)>=3 else ("MEDIUM" if score(o)>=1 else "LOW"),status="AVAILABLE_TOOL_TO_MONITOR") for o in ranked]
 def _scenario_horizons(prefix, scenario_type):
     out=[]
     for h in HORIZONS:
@@ -796,10 +828,11 @@ def build_dynamic_tree(news,dash=None):
     ge=build_global_events(news)
     root=ge[0]["id"] if ge else "evt-none"
     ids=[x["id"] for x in ge[:8]]
+    tool_library=_countermeasure_library()
     responses=[
-      {"id":"resp-cn-r1","round":1,"actor":"CN","responseType":"POLICY","title":"中国第1轮应对","description":"围绕供应链、贸易伙伴、能源与产业政策工具进行响应。","triggerEventIds":ids,"expectedTargets":["供应链","贸易","能源"],"intensity":0.55,"expectedTiming":"T7D","impacts":{"trade":0.15,"currency":-0.05,"equities":0,"bonds":0.05,"commodities":0.1,"crypto":0,"logistics":0.2},"confidence":"MEDIUM"},
-      {"id":"resp-us-r2","round":2,"actor":"US","responseType":"POLICY","title":"美国第2轮加码/施压","description":"若中国响应改变贸易或技术路径，美国可能通过贸易、技术或投资工具继续施压。","triggerEventIds":ids,"expectedTargets":["技术","资本","贸易"],"intensity":0.55,"expectedTiming":"T15D","impacts":{"trade":-0.25,"currency":-0.1,"equities":-0.15,"bonds":0.1,"commodities":0.15,"crypto":0,"logistics":-0.1},"confidence":"MEDIUM"},
-      {"id":"resp-cn-r3","round":3,"actor":"CN","responseType":"DIPLOMACY","title":"中国第3轮多剧本","description":"根据第2轮压力分化为硬碰撞、结构性谈判或第三方迂回三条条件路径。","triggerEventIds":ids,"expectedTargets":["贸易","产业","第三方市场"],"intensity":0.65,"expectedTiming":"T30D","impacts":{"trade":0.05,"currency":0,"equities":0,"bonds":0.05,"commodities":0.1,"crypto":0,"logistics":0.15},"confidence":"MEDIUM"}
+      {"id":"resp-cn-r1","round":1,"actor":"CN","responseType":"POLICY_TOOL_SET","title":"中国第1轮：多工具应对池","description":"不再只沿能源/供应链被动路径；根据实际触发事件，从关键矿产、两用物项、贸易救济、实体限制、采购监管、投资技术、金融、法律和外交工具中选择需要监测的渠道。","triggerEventIds":ids,"tools":tool_library,"evidenceLevel":"TOOL_LIBRARY","confidence":"MEDIUM"},
+      {"id":"resp-us-r2","round":2,"actor":"US","responseType":"POLICY_TOOL_SET","title":"美国第2轮：对等/加码/豁免工具池","description":"将美国可能使用的贸易、技术、金融、投资、监管与谈判工具作为独立分支观察，而不是预设必然加码。","triggerEventIds":ids,"tools":tool_library,"evidenceLevel":"TOOL_LIBRARY","confidence":"MEDIUM"},
+      {"id":"resp-cn-r3","round":3,"actor":"CN","responseType":"MULTI_TOOL_BRANCH","title":"第3轮：多工具组合分支","description":"比较不同工具组合的触发条件、覆盖对象、可观测执行证据和反制链条；任何单一工具都需要正式文本和执行证据确认。","triggerEventIds":ids,"tools":tool_library,"evidenceLevel":"SCENARIO_BRANCH","confidence":"MEDIUM"}
     ]
     specs=[
       ("scenario-a","HARD_DECOUPLING","A","全面脱钩 / 硬碰撞","新增强制措施同时扩大到贸易、技术或资本渠道。",0.60),
@@ -828,13 +861,17 @@ def build_dynamic_tree(news,dash=None):
                 })
         return drivers[:10]
     for sid,stype,code,title,condition,sens in specs:
+        response_options=_response_options_for(stype,ge)
+        top_tools=[x for x in response_options if x["relevance"]=="HIGH"][:6]
         chain=[
-          {"id":f"{sid}-1","order":1,"actor":"CN","action":"第1轮应对","mechanism":"降低直接冲击并调整供应链","consequence":"第三方与美国相关方重新评估政策工具","nextNodeIds":[f"{sid}-2"],"affectedDomains":["TRADE","INVESTMENT"],"evidenceLevel":"INFERENCE","evidenceEventIds":ids,"caveat":"不是对未来行为的事实陈述；需由正式政策与执行证据验证。"},
-          {"id":f"{sid}-2","order":2,"actor":"US","action":"第2轮加码/施压","mechanism":"通过贸易、技术、资本或规则工具改变成本","consequence":"中国进入第3轮路径选择","nextNodeIds":[f"{sid}-3"],"affectedDomains":["TRADE","INVESTMENT"],"evidenceLevel":"INFERENCE","evidenceEventIds":ids,"caveat":"只有出现新的正式措施或执行变化时才提高该节点监控权重。"},
-          {"id":f"{sid}-3","order":3,"actor":"CN","action":title,"mechanism":condition,"consequence":"进入对应时间窗口并持续验证触发器","nextNodeIds":[],"affectedDomains":["TRADE","INVESTMENT","LIFE"],"evidenceLevel":"ASSUMPTION","evidenceEventIds":ids,"caveat":"剧本假设；不得当作已经发生的政策结果。"}
+          {"id":f"{sid}-1","order":1,"actor":"CN","action":"第1轮应对：工具选择节点","mechanism":"从贸易、关键矿产、技术、监管、金融、法律和外交工具中按触发证据选择响应渠道","consequence":"对手与第三方重新评估成本、替代来源与合规约束","nextNodeIds":[f"{sid}-2"],"affectedDomains":["TRADE","SUPPLY_CHAIN","TECHNOLOGY","FINANCE","DIPLOMACY"],"evidenceLevel":"INFERENCE","evidenceEventIds":ids,"caveat":"这是可选政策工具节点，不是对未来行为的事实陈述。"},
+          {"id":f"{sid}-2","order":2,"actor":"US","action":"第2轮：对等/加码/豁免选择节点","mechanism":"根据第1轮工具的覆盖范围和执行强度选择贸易、技术、资本、监管或谈判工具","consequence":"中国进入下一轮工具选择","nextNodeIds":[f"{sid}-3"],"affectedDomains":["TRADE","INVESTMENT","TECHNOLOGY","REGULATION"],"evidenceLevel":"INFERENCE","evidenceEventIds":ids,"caveat":"只有出现新的正式措施、执行变化或谈判文本时才提高相应节点监测权重。"},
+          {"id":f"{sid}-3","order":3,"actor":"CN","action":title+"：多工具分支","mechanism":condition,"consequence":"进入对应时间窗口并验证实际采用的政策工具及实体反馈","nextNodeIds":[],"affectedDomains":["TRADE","SUPPLY_CHAIN","TECHNOLOGY","INVESTMENT","FINANCE","LIFE"],"evidenceLevel":"ASSUMPTION","evidenceEventIds":ids,"caveat":"剧本假设；不得当作已经发生的政策结果。"}
         ]
-        act=_scenario_activation(ge,stype,trigger_calibration); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"counterSignalAnalysis":_counter_signal_analysis(ge,stype),"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
-    snapshot=build_scenario_snapshot(scenarios,ge)
+        act=_scenario_activation(ge,stype,trigger_calibration); drivers=drivers_for(stype)
+        scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个中美或第三方事件被确认","存在可验证的政策响应或工具选择信号"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"counterSignalAnalysis":_counter_signal_analysis(ge,stype),"responseOptions":response_options,"highRelevanceResponseTools":top_tools,"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","出现新的反制/对等措施","出现豁免、延期、谈判或执行强度下降","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
+
+    snapshot=build_scenario_snapshot(scenarios,ge)    snapshot=build_scenario_snapshot(scenarios,ge)
     snapshots=persist_market_snapshot(dash or {})
     snapshot['macroTimeline']=macro_timeline()
     snapshot['transmissionTimelineUnified']=build_transmission_timeline(dash or {})
