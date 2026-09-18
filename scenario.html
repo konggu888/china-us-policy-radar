@@ -167,6 +167,35 @@ function normalizeLocalScenario(e,g,h,m,s){
  return {code,title,type,triggers,theme:ai?'AI产业与技术链':trade?'贸易与供应链':finance?'金融与政策反馈':e};
 }
 const TASK_STORE_KEY='chinaUsPolicyRadar.scenarioTasks.v1';
+const TASK_API_KEY='chinaUsPolicyRadar.scenarioTaskApi.v1';
+const TASK_TOKEN_KEY='chinaUsPolicyRadar.scenarioTaskToken.v1';
+function taskApi(){return (localStorage.getItem(TASK_API_KEY)||'').trim().replace(/\\/$/,'');}
+function taskToken(){return localStorage.getItem(TASK_TOKEN_KEY)||'';}
+function setTaskApi(){
+ const url=prompt('请输入你部署的推演任务 API 地址（留空关闭服务器同步）',taskApi());
+ if(url===null)return;
+ if(url.trim())localStorage.setItem(TASK_API_KEY,url.trim()); else localStorage.removeItem(TASK_API_KEY);
+ const token=prompt('请输入 API Token（仅保存在本机浏览器，不写入网页代码）',taskToken());
+ if(token===null)return;
+ if(token) localStorage.setItem(TASK_TOKEN_KEY,token); else localStorage.removeItem(TASK_TOKEN_KEY);
+ renderTaskArchive();
+}
+async function syncTasksFromServer(){
+ const url=taskApi(), token=taskToken(); if(!url||!token)return;
+ try{
+  const r=await fetch(url,{headers:{Authorization:'Bearer '+token}});
+  if(!r.ok)return;
+  const p=await r.json(), incoming=Array.isArray(p.tasks)?p.tasks:[];
+  const map=new Map(loadTaskArchive().map(t=>[t.id,t]));
+  incoming.forEach(t=>{if(t?.id&&t?.event)map.set(t.id,t);});
+  saveTaskArchive(Array.from(map.values()).sort((a,b)=>String(b.updatedAt||b.createdAt||'').localeCompare(String(a.updatedAt||a.createdAt||''))));
+ }catch(e){console.warn('scenario task sync failed');}
+}
+async function syncTaskToServer(task){
+ const url=taskApi(), token=taskToken(); if(!url||!token)return;
+ try{await fetch(url,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify({task})});}
+ catch(e){console.warn('scenario task upload failed');}
+}
 const TASK_LIMIT=50;
 function loadTaskArchive(){
  try{const a=JSON.parse(localStorage.getItem(TASK_STORE_KEY)||'[]');return Array.isArray(a)?a:[];}catch(e){return [];}
@@ -199,12 +228,12 @@ function archiveTask(task){
  const i=tasks.findIndex(x=>x.id===task.id);
  const row={...(i>=0?tasks[i]:{}),...task,updatedAt:now};
  if(i>=0)tasks.splice(i,1);
- tasks.unshift(row); saveTaskArchive(tasks); renderTaskArchive(); return row;
+ tasks.unshift(row); saveTaskArchive(tasks); renderTaskArchive(); syncTaskToServer(row); return row;
 }
 function renderTaskArchive(){
  const box=document.getElementById('taskArchiveList'); if(!box)return;
  const tasks=loadTaskArchive();
- box.innerHTML='<div class="card" style="grid-column:1/-1"><button onclick="exportTaskArchive()">导出全部任务</button> <label style="display:inline-block"><button type="button">导入任务档案</button><input type="file" accept=".json,application/json" onchange="importTaskArchive(this)" style="display:none"></label><span class="muted mini" style="margin-left:8px">可把任务档案带到另一台设备继续。</span></div>'+ (tasks.length?tasks.map(t=>'<article class="card"><div style="display:flex;justify-content:space-between;gap:8px;align-items:start"><div><b>'+esc(t.event)+'</b><div class="muted mini">目标：'+esc(t.goal||'未指定')+' · '+esc(t.horizon||'')+' · '+esc(t.mode||'')+'</div><div class="muted mini">创建：'+esc(t.createdAt||'未知')+' · 最近继续：'+esc(t.updatedAt||t.createdAt||'未知')+'</div><div class="muted mini">任务ID：'+esc(t.id)+'</div></div><button onclick="resumeTask(\''+esc(t.id)+'\')">继续推演</button></div></article>').join(''):'<div class="card muted">还没有保存的推演任务。第一次点击“开始本地沙盘建模”后会自动保存。</div>');
+ box.innerHTML='<div class="card" style="grid-column:1/-1"><button onclick="setTaskApi()">设置服务器同步</button> <button onclick="exportTaskArchive()">导出全部任务</button> <label style="display:inline-block"><button type="button">导入任务档案</button><input type="file" accept=".json,application/json" onchange="importTaskArchive(this)" style="display:none"></label><span class="muted mini" style="margin-left:8px">可把任务档案带到另一台设备继续。</span></div>'+ (tasks.length?tasks.map(t=>'<article class="card"><div style="display:flex;justify-content:space-between;gap:8px;align-items:start"><div><b>'+esc(t.event)+'</b><div class="muted mini">目标：'+esc(t.goal||'未指定')+' · '+esc(t.horizon||'')+' · '+esc(t.mode||'')+'</div><div class="muted mini">创建：'+esc(t.createdAt||'未知')+' · 最近继续：'+esc(t.updatedAt||t.createdAt||'未知')+'</div><div class="muted mini">任务ID：'+esc(t.id)+'</div></div><button onclick="resumeTask(\''+esc(t.id)+'\')">继续推演</button></div></article>').join(''):'<div class="card muted">还没有保存的推演任务。第一次点击“开始本地沙盘建模”后会自动保存。</div>');
 }
 function resumeTask(id){
  const task=loadTaskArchive().find(x=>x.id===id); if(!task)return;
@@ -236,5 +265,5 @@ function buildScenario(){
  const e=document.getElementById('event').value.trim(),g=document.getElementById('goal').value.trim(),h=document.getElementById('horizon').value,m=document.getElementById('mode').value;
  if(!e){document.getElementById('status').textContent='请先输入一个推演事件。';return;}
  runScenarioTask({id:'task-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),event:e,goal:g,horizon:h,mode:m,createdAt:new Date().toISOString()});
-}renderTaskArchive(); loadScenario().then(()=>{renderTaskArchive();const latest=loadTaskArchive()[0];if(latest)runScenarioTask(latest);});
+}renderTaskArchive(); syncTasksFromServer().then(()=>{renderTaskArchive(); loadScenario().then(()=>{renderTaskArchive();const latest=loadTaskArchive()[0];if(latest)runScenarioTask(latest);});});
 </script></body></html>
