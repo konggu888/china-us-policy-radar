@@ -2,7 +2,7 @@
 const SUPABASE_URL='https://ctiebkgsfmimedkoiapw.supabase.co';
 const SUPABASE_KEY='sb_publishable_IcY5asvrEzEQSTCQB3XyCQ_GE1nuUje';
 let sb=null;
-function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function authEsc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function authLoad(){
   const tag=document.createElement('script');
   tag.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js';
@@ -157,7 +157,7 @@ async function renderEffectiveTriggerWeights(sc){
    const eff=Math.max(.8,Math.min(1.2,gf*uf));
    return {t,gf,uf,eff,gs:g?.status||'无全局样本',us:u?.status||'无账户样本',n:u?.sample_size||0,source:g?.historicalSignalRate??null};
  });
- box.innerHTML=rows.length?'<div class="card"><b>当前触发器有效权重</b><div class="mini muted">基础权重固定为 1.00；全局历史校准与本账号历史反馈分别展示。有效权重只作为监测敏感度参考，不直接代表发生概率。</div>'+rows.map(r=>'<div class="mini" style="margin-top:7px"><b>'+esc(r.t)+'</b> · 基础 1.000 → 全局 '+r.gf.toFixed(3)+' → 账户 '+r.uf.toFixed(3)+' → <b>当前 '+r.eff.toFixed(3)+'</b> · 全局 '+esc(r.gs)+' · 账户 '+esc(r.us)+(r.n?' · 账户样本 '+r.n:'')+'</div>').join('')+'</div>':'<div class="card muted">当前情景暂无可映射的事件触发器。</div>';
+ box.innerHTML=rows.length?'<div class="card"><b>当前触发器有效权重</b><div class="mini muted">基础权重固定为 1.00；全局历史校准与本账号历史反馈分别展示。有效权重只作为监测敏感度参考，不直接代表发生概率。</div>'+rows.map(r=>'<div class="mini" style="margin-top:7px"><b>'+authEsc(r.t)+'</b> · 基础 1.000 → 全局 '+r.gf.toFixed(3)+' → 账户 '+r.uf.toFixed(3)+' → <b>当前 '+r.eff.toFixed(3)+'</b> · 全局 '+authEsc(r.gs)+' · 账户 '+authEsc(r.us)+(r.n?' · 账户样本 '+r.n:'')+'</div>').join('')+'</div>':'<div class="card muted">当前情景暂无可映射的事件触发器。</div>';
 }
 async function renderUserTriggerCalibration(taskId){
  const box=document.getElementById('triggerCalibrationList'); if(!box||!taskId||!sb)return;
@@ -165,11 +165,11 @@ async function renderUserTriggerCalibration(taskId){
  if(error){box.innerHTML='<div class="card muted">历史校准读取失败。</div>';return;}
  const latest=new Map(); (data||[]).forEach(r=>{if(!latest.has(r.trigger))latest.set(r.trigger,r);});
  const rows=[...latest.values()];
- box.innerHTML=rows.length?rows.map(r=>'<article class="card"><b>'+esc(r.trigger)+'</b><div class="muted mini">样本 '+r.sample_size+' · '+esc(r.status)+' · 校准因子 '+Number(r.calibration_factor).toFixed(3)+'</div><div class="mini">最近结果：'+esc(r.outcome)+' · 新增证据 '+r.evidence_count+' · 后续证据 '+r.followup_count+' · 市场偏离 '+r.market_deviation_count+'</div><div class="mini muted">描述性历史反馈，不是发生概率、胜率或因果估计。</div></article>').join(''):'<div class="card muted">形成历史样本后，这里会逐步出现触发器反馈。</div>';
+ box.innerHTML=rows.length?rows.map(r=>'<article class="card"><b>'+authEsc(r.trigger)+'</b><div class="muted mini">样本 '+r.sample_size+' · '+authEsc(r.status)+' · 校准因子 '+Number(r.calibration_factor).toFixed(3)+'</div><div class="mini">最近结果：'+authEsc(r.outcome)+' · 新增证据 '+r.evidence_count+' · 后续证据 '+r.followup_count+' · 市场偏离 '+r.market_deviation_count+'</div><div class="mini muted">描述性历史反馈，不是发生概率、胜率或因果估计。</div></article>').join(''):'<div class="card muted">形成历史样本后，这里会逐步出现触发器反馈。</div>';
 }
 function renderAuthState(user){
  const box=document.getElementById('authBox'); if(!box)return;
- if(user) box.innerHTML='<div class="status">已登录：<b>'+esc(user.email||'账号')+'</b>。历史推演自动云端保存。 <button id="authLogout">退出登录</button></div><div class="mini muted">账号跨设备同步，不再需要保存同步密钥。</div>';
+ if(user) box.innerHTML='<div class="status">已登录：<b>'+authEsc(user.email||'账号')+'</b>。历史推演自动云端保存。 <button id="authLogout">退出登录</button></div><div class="mini muted">账号跨设备同步，不再需要保存同步密钥。</div>';
  else authPanel();
  const lo=document.getElementById('authLogout'); if(lo)lo.onclick=async()=>{await sb.auth.signOut();msg('已退出登录。')};
 }
@@ -181,17 +181,17 @@ async function renderTaskRuns(taskId){
  box.innerHTML=rows.length?rows.map((r,i)=>{
    const p=r.payload||{}, sc=p.scenario||{};
    const ctx=p.radarContext||{};
-   const ev=(sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT').slice(0,4).map(x=>esc(x.title||x.id)).join('；');
+   const ev=(sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT').slice(0,4).map(x=>authEsc(x.title||x.id)).join('；');
    const prev=rows[i+1]||null, pp=prev?.payload?.scenario||{};
    const scoreDelta=prev?Number(r.trigger_score||0)-Number(prev.trigger_score||0):null;
-   const confChange=prev&&pp.confidence&&sc.confidence&&pp.confidence!==sc.confidence?'置信度 '+esc(pp.confidence)+' → '+esc(sc.confidence):'';
-   const stateChange=prev&&pp.activationState&&sc.activationState&&pp.activationState!==sc.activationState?'状态 '+esc(pp.activationState)+' → '+esc(sc.activationState):'';
+   const confChange=prev&&pp.confidence&&sc.confidence&&pp.confidence!==sc.confidence?'置信度 '+authEsc(pp.confidence)+' → '+authEsc(sc.confidence):'';
+   const stateChange=prev&&pp.activationState&&sc.activationState&&pp.activationState!==sc.activationState?'状态 '+authEsc(pp.activationState)+' → '+authEsc(sc.activationState):'';
    const currentIds=new Set((sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT').map(x=>String(x.id)));
    const previousIds=new Set((pp.evidenceDrivers||[]).filter(x=>x.kind==='EVENT').map(x=>String(x.id)));
    const added=[...currentIds].filter(x=>!previousIds.has(x)).length;
    const removed=[...previousIds].filter(x=>!currentIds.has(x)).length;
    const deltaText=prev?('触发分数 '+(scoreDelta>=0?'+':'')+scoreDelta.toFixed(2)+'；新增证据 '+added+'；移出证据 '+removed+(stateChange?'；'+stateChange:'')+(confChange?'；'+confChange:'')):'这是该任务的首次记录。';
-   return '<article class="card"><b>#'+(rows.length-i)+' · '+esc(r.scenario_code||'未标注')+' · '+esc(r.activation_state||'WATCH')+' · '+Number(r.trigger_score||0).toFixed(2)+'</b><div class="muted mini">运行时间：'+esc(r.observed_at||'')+' · 置信度：'+esc(r.confidence||'—')+' · 证据：'+Number(r.evidence_count||0)+'</div><div class="mini">当时雷达：'+esc(ctx.generatedAt||'未知')+'</div><div class="mini">直接事件：'+esc(ev||'暂无')+'</div><div class="mini">与上一次运行的变化：'+deltaText+'</div><div class="mini muted">记录包含当时态势、事件、市场与证据快照；变化只做历史对照，不表示因果关系或发生概率。</div></article>';
+   return '<article class="card"><b>#'+(rows.length-i)+' · '+authEsc(r.scenario_code||'未标注')+' · '+authEsc(r.activation_state||'WATCH')+' · '+Number(r.trigger_score||0).toFixed(2)+'</b><div class="muted mini">运行时间：'+authEsc(r.observed_at||'')+' · 置信度：'+authEsc(r.confidence||'—')+' · 证据：'+Number(r.evidence_count||0)+'</div><div class="mini">当时雷达：'+authEsc(ctx.generatedAt||'未知')+'</div><div class="mini">直接事件：'+authEsc(ev||'暂无')+'</div><div class="mini">与上一次运行的变化：'+deltaText+'</div><div class="mini muted">记录包含当时态势、事件、市场与证据快照；变化只做历史对照，不表示因果关系或发生概率。</div></article>';
  }).join(''):'<div class="card muted">这个任务还没有服务器运行记录。完成一次推演后会自动留下审计记录。</div>';
 }
 function ensureTaskRunsPanel(){
