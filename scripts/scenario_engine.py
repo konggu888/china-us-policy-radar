@@ -82,7 +82,7 @@ def _country_for_region(region):
     return "OTHER"
 
 def _norm_title(v):
-    s=re.sub(r"\\s+"," ",str(v or "").lower()).strip()
+    s=re.sub(r"\s+"," ",str(v or "").lower()).strip()
     return re.sub(r"[^0-9a-z\\u4e00-\\u9fff]+","",s)
 
 def _source_meta(n):
@@ -99,6 +99,19 @@ def _is_duplicate_title(norm,seen_norms):
             overlap=len(set(norm)&set(old))/max(1,len(set(norm)|set(old)))
             if overlap>=0.88:return True
     return False
+
+def _event_lifecycle(age,status,tier):
+    if status=="RESOLVED": return "RESOLVED"
+    if status=="DEVELOPING": return "DEVELOPING"
+    if age is None: return "UNVERIFIED_TIME"
+    if age<=1: return "NEW"
+    if age<=7: return "ACTIVE"
+    if age<=30: return "WATCH"
+    return "DECAYED"
+
+def _evidence_weight(age,cred,tier):
+    freshness=1.0 if age is None else (1.0 if age<=1 else (0.85 if age<=7 else (0.55 if age<=30 else 0.25)))
+    return round(max(0.05,min(1.0,cred*freshness)),3)
 
 def build_global_events(rows,limit=20):
     out=[]; seen=set(); seen_norms=[]; now=datetime.now(timezone.utc).isoformat()
@@ -130,8 +143,8 @@ def build_global_events(rows,limit=20):
             "importance":importance,
             "actor":{"type":"COUNTRY" if cc not in ("EU","ME","OTHER") else "REGION","country":cc,"name":region},
             "affectedCountries":[cc] if cc!="OTHER" else ["CN","US"],
-            "source":{"provider":src,"url":n.get("url",""),"publishedAt":published,"fetchedAt":now,"credibility":cred,"tier":tier,"ageDays":round(age,2) if age is not None else None,"freshness":freshness},
-            "status":"CONFIRMED",
+            "source":{"provider":src,"url":n.get("url",""),"publishedAt":published,"fetchedAt":now,"credibility":cred,"tier":tier,"ageDays":round(age,2) if age is not None else None,"freshness":freshness,"lifecycle":_event_lifecycle(age,n.get("status","CONFIRMED"),tier),"evidenceWeight":_evidence_weight(age,cred,tier)},
+            "status":n.get("status") if n.get("status") in ("RUMOR","DEVELOPING","CONFIRMED","RESOLVED") else "CONFIRMED",
             "triggerRole":role,
             "impact":{"china":0,"us":0,"globalTrade":0,"logistics":0,"finance":0,"energy":0,"technology":0},
             "channels":channels,
@@ -186,10 +199,10 @@ def _scenario_activation(events, scenario_type):
     """Evidence-weighted activation state. This is a monitoring weight, not a probability forecast."""
     cats=[str(e.get("category","")).upper() for e in events]
     roles=[str(e.get("triggerRole","")) for e in events]
-    confirmed=sum(1 for e in events if e.get("status")=="CONFIRMED")
-    third_party=sum(1 for e in events if e.get("actor",{}).get("country") not in ("CN","US","OTHER",None))
-    trade=sum(1 for x in cats if x in ("TRADE","TARIFF","SANCTIONS","TECHNOLOGY","PAYMENT"))
-    shock=sum(1 for x in cats if x in ("GEOPOLITICS","ENERGY","PORT","LOGISTICS","CRITICAL_MINERALS"))
+    confirmed=sum(float(e.get("source",{}).get("evidenceWeight",1.0) or 0) for e in events if e.get("status")=="CONFIRMED")
+    third_party=sum(float(e.get("source",{}).get("evidenceWeight",1.0) or 0) for e in events if e.get("actor",{}).get("country") not in ("CN","US","OTHER",None))
+    trade=sum(float(e.get("source",{}).get("evidenceWeight",1.0) or 0) for e in events if str(e.get("category","")).upper() in ("TRADE","TARIFF","SANCTIONS","TECHNOLOGY","PAYMENT"))
+    shock=sum(float(e.get("source",{}).get("evidenceWeight",1.0) or 0) for e in events if str(e.get("category","")).upper() in ("GEOPOLITICS","ENERGY","PORT","LOGISTICS","CRITICAL_MINERALS"))
     if scenario_type=="HARD_DECOUPLING":
         score=min(1.0,0.12*confirmed+0.10*trade+0.08*shock)
         evidence=["确认事件数量="+str(confirmed)]
@@ -209,7 +222,7 @@ def build_scenario_snapshot(scenarios,global_events=None):
     """Compact audit snapshot for UI/history consumers; no probabilities are implied."""
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "eventEvidence": [{"id":e.get("id"),"title":e.get("title"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"dedupeKey":e.get("dedupeKey")} for e in (global_events or [])],
+        "eventEvidence": [{"id":e.get("id"),"title":e.get("title"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"dedupeKey":e.get("dedupeKey"),"lifecycle":e.get("source",{}).get("lifecycle"),"evidenceWeight":e.get("source",{}).get("evidenceWeight")} for e in (global_events or [])],
         "scenarios": [
             {
                 "id": s.get("id"), "code": s.get("code"),
@@ -246,7 +259,8 @@ def build_scenario_history(current_snapshot):
         state_changed=cur.get("activationState")!=p.get("activationState")
         evidence_changed=cur.get("triggerEvidence",[])!=p.get("triggerEvidence",[])
         counter_changed=cur.get("counterSignals",[])!=p.get("counterSignals",[])
-        if delta or state_changed or evidence_changed or counter_changed:
+        drivers_changed=cur.get("evidenceDrivers",[])!=p.get("evidenceDrivers")
+        if delta or state_changed or evidence_changed or counter_changed or drivers_changed:
             changes.append({
                 "id":cur.get("id"),"code":code,
                 "previousState":p.get("activationState","WATCH"),
@@ -286,7 +300,7 @@ def build_dynamic_tree(news,dash=None):
             cat=str(e.get("category","")).upper()
             relevant=(stype=="HARD_DECOUPLING" and cat in ("TECHNOLOGY","TRADE","TARIFF","SANCTIONS","PAYMENT")) or (stype=="STRUCTURAL_NEGOTIATION" and cat in ("POLITICS","GEOPOLITICS","TRADE")) or (stype=="THIRD_PARTY_DIVERSION" and e.get("triggerRole")=="CATALYST")
             if relevant:
-                drivers.append({"kind":"EVENT","id":e.get("id"),"title":e.get("title"),"source":e.get("source",{}).get("provider"),"url":e.get("source",{}).get("url"),"role":e.get("triggerRole"),"category":e.get("category"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"credibility":e.get("source",{}).get("credibility")})
+                drivers.append({"kind":"EVENT","id":e.get("id"),"title":e.get("title"),"source":e.get("source",{}).get("provider"),"url":e.get("source",{}).get("url"),"role":e.get("triggerRole"),"category":e.get("category"),"publishedAt":e.get("source",{}).get("publishedAt"),"fetchedAt":e.get("source",{}).get("fetchedAt"),"tier":e.get("source",{}).get("tier"),"freshness":e.get("source",{}).get("freshness"),"credibility":e.get("source",{}).get("credibility"),"lifecycle":e.get("source",{}).get("lifecycle"),"evidenceWeight":e.get("source",{}).get("evidenceWeight")})
         for name in ("USD/CNY","黄金","美国10年期收益率","布伦特原油","VIX"):
             m=market_by_name.get(name)
             if m:
