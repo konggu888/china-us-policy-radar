@@ -136,11 +136,25 @@ export interface ScenarioSnapshotItem {
   triggerScore: number;
   triggerEvidence: string[];
   counterSignals: string[];
+  evidenceDrivers?: EvidenceDriver[];
 }
 
 export interface ScenarioSnapshot {
   generatedAt: string;
   scenarios: ScenarioSnapshotItem[];
+}
+
+export interface EvidenceDriver {
+  kind: "EVENT" | "MARKET";
+  id?: string;
+  title?: string;
+  source?: string;
+  url?: string;
+  role?: string;
+  category?: string;
+  name?: string;
+  value?: unknown;
+  change_pct?: number;
 }
 
 export interface ScenarioHistoryChange {
@@ -152,6 +166,7 @@ export interface ScenarioHistoryChange {
   currentScore: number;
   delta: number;
   reasons: string[];
+  evidenceDrivers?: EvidenceDriver[];
   counterSignals: string[];
 }
 
