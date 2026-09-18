@@ -194,6 +194,43 @@ def build_scenario_snapshot(scenarios):
         ]
     }
 
+def build_scenario_history(current_snapshot):
+    """Compare the current monitoring snapshot with the last persisted run."""
+    previous = None
+    try:
+        previous = json.loads(OUT.read_text(encoding="utf-8")).get("scenarioSnapshot")
+    except Exception:
+        previous = None
+    if not previous or not previous.get("scenarios"):
+        return {"baseline":"FIRST_RUN","previousGeneratedAt":None,"changes":[]}
+    old={str(x.get("code")):x for x in previous.get("scenarios",[])}
+    changes=[]
+    for cur in current_snapshot.get("scenarios",[]):
+        code=str(cur.get("code"))
+        p=old.get(code)
+        if not p:
+            continue
+        delta=round(float(cur.get("triggerScore",0))-float(p.get("triggerScore",0)),2)
+        state_changed=cur.get("activationState")!=p.get("activationState")
+        evidence_changed=cur.get("triggerEvidence",[])!=p.get("triggerEvidence",[])
+        counter_changed=cur.get("counterSignals",[])!=p.get("counterSignals",[])
+        if delta or state_changed or evidence_changed or counter_changed:
+            changes.append({
+                "id":cur.get("id"),"code":code,
+                "previousState":p.get("activationState","WATCH"),
+                "currentState":cur.get("activationState","WATCH"),
+                "previousScore":p.get("triggerScore",0),
+                "currentScore":cur.get("triggerScore",0),
+                "delta":delta,
+                "reasons":cur.get("triggerEvidence",[]),
+                "counterSignals":cur.get("counterSignals",[])
+            })
+    return {
+        "baseline":"COMPARISON",
+        "previousGeneratedAt":previous.get("generatedAt"),
+        "changes":changes
+    }
+
 def build_dynamic_tree(news):
     ge=build_global_events(news)
     root=ge[0]["id"] if ge else "evt-none"
@@ -217,7 +254,8 @@ def build_dynamic_tree(news):
         ]
         act=_scenario_activation(ge,stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
     snapshot=build_scenario_snapshot(scenarios)
-    return {"schema_version":"2.0","globalEvents":ge,"responses":responses,"scenarioTree":{"id":"tree-"+datetime.now(timezone.utc).strftime("%Y%m%d"),"rootEventId":root,"title":"全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本","rounds":[{"round":1,"actor":"CN","title":"中国第1轮应对","responseIds":["resp-cn-r1"]},{"round":2,"actor":"US","title":"美国第2轮加码/施压","responseIds":["resp-us-r2"]},{"round":3,"actor":"CN","title":"中国第3轮多剧本","responseIds":["resp-cn-r3"]}],"scenarios":scenarios,"generatedAt":datetime.now(timezone.utc).isoformat(),"modelVersion":"dynamic-scenario-v2"},"time_horizons":[{"id":h[0],"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3]} for h in HORIZONS],"action_domains":["INVESTMENT","TRADE","LIFE"],"scenarioSnapshot":snapshot}
+    history=build_scenario_history(snapshot)
+    return {"schema_version":"2.0","globalEvents":ge,"responses":responses,"scenarioTree":{"id":"tree-"+datetime.now(timezone.utc).strftime("%Y%m%d"),"rootEventId":root,"title":"全球事件 → 中国第1轮 → 美国第2轮 → 中国第3轮多剧本","rounds":[{"round":1,"actor":"CN","title":"中国第1轮应对","responseIds":["resp-cn-r1"]},{"round":2,"actor":"US","title":"美国第2轮加码/施压","responseIds":["resp-us-r2"]},{"round":3,"actor":"CN","title":"中国第3轮多剧本","responseIds":["resp-cn-r3"]}],"scenarios":scenarios,"generatedAt":datetime.now(timezone.utc).isoformat(),"modelVersion":"dynamic-scenario-v2"},"time_horizons":[{"id":h[0],"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3]} for h in HORIZONS],"action_domains":["INVESTMENT","TRADE","LIFE"],"scenarioSnapshot":snapshot,"scenarioHistory":history}
 
 def build(news,dash,policy,social,ai):
  es=events(news); regs=Counter(x['region'] for x in es); ls=layer_state(news,dash,social)
@@ -247,6 +285,8 @@ def build(news,dash,policy,social,ai):
  base['globalEvents']=dynamic['globalEvents']
  base['responses']=dynamic['responses']
  base['scenarioTree']=dynamic['scenarioTree']
+ base['scenarioSnapshot']=dynamic['scenarioSnapshot']
+ base['scenarioHistory']=dynamic['scenarioHistory']
  base['dynamic_scenarios']=dynamic['scenarioTree']['scenarios']
  base['time_horizons']=dynamic['time_horizons']
  base['action_domains']=dynamic['action_domains']
