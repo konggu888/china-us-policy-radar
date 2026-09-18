@@ -736,12 +736,66 @@ def build_cross_run_validation(scenarios,history):
             })
     return out
 
-def build_dynamic_response_tree(scenario, max_depth=3):
-    """Expand a scenario into conditional response branches; branches are not forecasts."""
-    tools=scenario.get('responseOptions') or _countermeasure_library()
-    def branches(actor, round_no):
-        return [{"id":f"{scenario.get('id','scenario')}-{round_no}-{t.get('id')}","round":round_no,"actor":actor,"toolId":t.get('id'),"toolName":t.get('name'),"triggerConditions":t.get('activationTriggers',[]),"observableEvidence":t.get('observableEvidence',[]),"mechanism":t.get('mechanism'),"status":"CONDITIONAL_BRANCH","caveat":"条件分支，不表示该工具一定会被采用；需由正式政策或执行证据更新状态。"} for t in tools[:8]]
-    return {"root":{"id":scenario.get('id'),"status":"OBSERVED_OR_HYPOTHESIS"},"rounds":[{"round":1,"actor":"CN","branches":branches('CN',1)},{"round":2,"actor":"US","branches":branches('US',2)},{"round":3,"actor":"CN","branches":branches('CN',3)}],"branchingRule":"每一轮保留多种政策工具路径；实际事件证据决定哪些分支继续展开。"}
+def build_dynamic_response_tree(scenario, events=None, previous_tree=None):
+    """Evidence-linked four-mode response tree; statuses describe evidence coverage, never probability."""
+    events=events or []
+    tools={x["id"]:x for x in _countermeasure_library()}
+    kws={
+      "RARE_EARTH_CRITICAL_MINERALS":("稀土","关键矿产","磁材","磁体","出口管制"),
+      "DUAL_USE_EXPORT_CONTROL":("两用物项","出口管制","芯片","技术出口"),
+      "TARIFF_RETALIATION":("关税","加征关税","税费"),
+      "TRADE_REMEDY":("反倾销","反补贴","贸易救济","调查"),
+      "ENTITY_AND_END_USER":("实体名单","最终用户","不可靠实体"),
+      "PROCUREMENT_REGULATORY":("政府采购","监管准入","采购限制"),
+      "INVESTMENT_TECH_TRANSFER":("投资审查","技术转移","投资限制"),
+      "DIPLOMATIC_NEGOTIATION":("谈判","会谈","磋商","联合声明","豁免","延期"),
+      "LEGAL_DISPUTE":("世贸","争端解决","诉讼","法律"),
+      "PAYMENT_FINANCE":("支付","融资","金融制裁","结算")
+    }
+    modes=[
+      ("ESCALATE","升级","新增强制措施、扩大覆盖范围或提高执行强度"),
+      ("DEESCALATE","缓和","出现豁免、延期、撤回或执行强度下降"),
+      ("THIRD_PARTY_SHIFT","第三方转向","第三方政策、产能、贸易路线或金融通道发生可验证变化"),
+      ("NEGOTIATE","谈判/豁免","通过磋商、许可、配额、延期或对等安排调整措施")
+    ]
+    def hits(mode,tid):
+        out=[]
+        for e in events:
+            t=str(e.get("title","")).lower()
+            cc=(e.get("actor") or {}).get("country")
+            if mode=="THIRD_PARTY_SHIFT" and cc in ("CN","US","OTHER",None): continue
+            if mode in ("DEESCALATE","NEGOTIATE") and not any(x in t for x in kws["DIPLOMATIC_NEGOTIATION"]): continue
+            if any(x.lower() in t for x in kws.get(tid,())):
+                out.append(e)
+        return out
+    rounds=[]
+    for no,actor in enumerate(("CN","US","CN"),1):
+        branches=[]
+        for mid,mname,condition in modes:
+            for tid in list(tools)[:8]:
+                hs=hits(mid,tid)
+                primary=sum(1 for e in hs if e.get("source",{}).get("tier")=="PRIMARY")
+                status="OBSERVED" if primary else ("SUPPORTED" if hs else "UNRESOLVED")
+                branches.append({
+                  "id":f"r{no}-{mid}-{tid}","round":no,"actor":actor,"mode":mid,"modeName":mname,
+                  "toolId":tid,"toolName":tools[tid]["name"],"status":status,
+                  "statusReason":"已有正式来源对应事件" if primary else ("已有主题匹配事件" if hs else "当前没有直接匹配证据"),
+                  "matchedEventIds":[e.get("id") for e in hs[:6]],
+                  "matchedEventTitles":[e.get("title") for e in hs[:4]],
+                  "evidenceCoverage":{"eventCount":len(hs),"primarySourceCount":primary,"independentSourceCount":len({e.get("source",{}).get("provider") for e in hs if e.get("source",{}).get("provider")})},
+                  "triggerConditions":tools[tid].get("activationTriggers",[]),
+                  "observableEvidence":tools[tid].get("observableEvidence",[]),
+                  "nextMonitor":["正式政策文本/公告","执行细则、许可证或名单","后续贸易、产业、金融数据"],
+                  "caveat":"条件分支，不表示政策意图、发生概率或最终结果。"
+                })
+        rounds.append({"round":no,"actor":actor,"title":f"第{no}轮 · {actor}响应选择","modes":[{"id":x[0],"name":x[1],"condition":x[2]} for x in modes],"branches":branches})
+    transitions=[{"fromRound":i,"toRound":i+1,"rules":[
+      {"when":"ESCALATE","nextModes":["ESCALATE","THIRD_PARTY_SHIFT","NEGOTIATE"]},
+      {"when":"DEESCALATE","nextModes":["DEESCALATE","NEGOTIATE"]},
+      {"when":"THIRD_PARTY_SHIFT","nextModes":["THIRD_PARTY_SHIFT","ESCALATE","NEGOTIATE"]},
+      {"when":"NEGOTIATE","nextModes":["NEGOTIATE","DEESCALATE","ESCALATE"]}
+    ]} for i in (1,2)]
+    return {"version":"dynamic-response-v3","rootScenarioId":scenario.get("id"),"generatedAt":datetime.now(timezone.utc).isoformat(),"rounds":rounds,"transitions":transitions,"eventCount":len(events),"method":"事件用于更新证据覆盖状态，不用于预测。"}
 def build_scenario_snapshot(scenarios,global_events=None):
     """Compact audit snapshot for UI/history consumers; no probabilities are implied."""
     previous_snapshot=None
