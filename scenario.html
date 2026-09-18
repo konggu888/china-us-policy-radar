@@ -333,6 +333,27 @@ function buildScenario(){
    el.style.userSelect='text';
    el.style.webkitUserSelect='text';
    el.style.touchAction='auto';
+   if(el.dataset.imeCompat==='1')return;
+   el.dataset.imeCompat='1';
+   let composing=false, before='';
+   el.addEventListener('compositionstart',function(){
+     composing=true;
+     before=this.value;
+   });
+   el.addEventListener('compositionend',function(e){
+     composing=false;
+     const data=String(e.data||'');
+     if(data && this.value===before){
+       const start=this.selectionStart??this.value.length;
+       const end=this.selectionEnd??start;
+       this.value=this.value.slice(0,start)+data+this.value.slice(end);
+       this.selectionStart=this.selectionEnd=start+data.length;
+       this.dispatchEvent(new Event('input',{bubbles:true}));
+     }
+   });
+   el.addEventListener('beforeinput',function(e){
+     if(e.inputType==='insertCompositionText' || e.inputType==='insertFromComposition') return;
+   });
   });
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',unlockSandboxInputs,{once:true});
@@ -340,4 +361,4 @@ function buildScenario(){
  setTimeout(unlockSandboxInputs,500);
  setTimeout(unlockSandboxInputs,2000);
 })();
-</script><script src="scripts/scenario_auth_supabase.js?v=2026091904"></script></body></html>
+</script><script src="scripts/scenario_auth_supabase.js?v=2026091905"></script></body></html>
