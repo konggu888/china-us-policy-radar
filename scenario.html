@@ -218,61 +218,50 @@ function selectSandboxHorizon(i){const sc=window.__selectedScenario,hs=sc?.horiz
  const sigs=(h.keySignals||[]).map(x=>esc(x.name)+' / '+esc(x.metric)+' / '+esc(x.direction)).join('；')||'暂无';
  document.getElementById('sandboxEvidence').innerHTML='<b>'+esc(h.label||h.horizon)+'</b> · 影响：'+impacts+'<br>触发观察：'+sigs+'<br><b>下一观察指标：</b><div class="observation-list">'+(h.keySignals||[]).map(x=>'<span class="tag">'+esc(x.name)+' · '+esc(x.importance||'MEDIUM')+'</span>').join('')+'</div><span class="muted">情景仅在触发条件与证据满足时提高权重；出现反证时应重新建模。</span>';
 }
-async function loadScenario(){try{
- const ts=Date.now();
- const [sr,nr]=await Promise.all([
-  fetch('data/scenario_state.json?ts='+ts,{cache:'no-store'}),
-  fetch('data/news.json?ts='+ts,{cache:'no-store'})
- ]);
- if(!sr.ok)throw new Error('scenario_state HTTP '+sr.status);
- const data=await sr.json();
- let news=[];
- if(nr.ok){try{const x=await nr.json();news=Array.isArray(x)?x:(Array.isArray(x.news)?x.news:[]);}catch(_){}}
- // Working-feed fallback: if news.json is temporarily empty, read the current monthly archive.
- if(!news.length){
-  try{
-   const month=new Date().toISOString().slice(0,7);
-   const ar=await fetch('data/archive/'+month+'.json?ts='+ts,{cache:'no-store'});
-   if(ar.ok){const x=await ar.json();news=Array.isArray(x)?x:[];}
-  }catch(_){}
+async function loadScenario(){
+ try{
+  const ts=Date.now();
+  const [sr,nr]=await Promise.all([
+   fetch('data/scenario_state.json?ts='+ts,{cache:'no-store'}),
+   fetch('data/news.json?ts='+ts,{cache:'no-store'})
+  ]);
+  if(!sr.ok)throw new Error('scenario_state HTTP '+sr.status);
+  const data=await sr.json();
+  let news=[];
+  if(nr.ok){try{const x=await nr.json();news=Array.isArray(x)?x:(Array.isArray(x.news)?x.news:[]);}catch(_){}}
+  if(!news.length){
+   try{
+    const month=new Date().toISOString().slice(0,7);
+    const ar=await fetch('data/archive/'+month+'.json?ts='+ts,{cache:'no-store'});
+    if(ar.ok){const x=await ar.json();news=Array.isArray(x)?x:[];}
+   }catch(_){}
+  }
+  const arr=Array.isArray(news)?news:[];
+  const textOf=n=>String([n.titleZh,n.title,n.ai_category,n.category,n.ai_region,n.region,n.summary].filter(Boolean).join(' ')).toLowerCase();
+  const recent=arr.filter(n=>{const t=Date.parse(n.time||n.updated||n.published||'');return !t||Date.now()-t<=31*86400000;});
+  const match=keys=>recent.filter(n=>keys.some(k=>textOf(n).includes(k)));
+  const latest=keys=>match(keys)[0]||null;
+  const mk=keys=>{const a=match(keys),n=a[0];return {count:a.length,latest:n?.titleZh||n?.title||''};};
+  data.sandboxInputs={
+   china:mk(['china','中国','beijing','北京']),
+   us:mk(['united states','u.s.','us ','美国','washington','华盛顿']),
+   global:mk(['global','全球','international','国际']),
+   finance:mk(['finance','金融','market','市场','fed','美联储','pboc','央行','利率','currency','汇率']),
+   supply:mk(['supply chain','供应链','trade','贸易','tariff','关税','export','出口','semiconductor','芯片','rare earth','稀土','shipping','航运']),
+   geopolitics:mk(['geopolit','地缘','taiwan','台湾','台海','iran','伊朗','israel','以色列','gaza','加沙','ukraine','乌克兰','russia','俄罗斯','sanction','制裁','military','军事','diplom','外交'])
+  };
+  data.events=arr.slice().sort((a,b)=>String(b.time||b.updated||b.published||'').localeCompare(String(a.time||a.updated||a.published||''))).slice(0,80).map(n=>({title:n.titleZh||n.title||'未命名事件',region:n.ai_region||n.region||'global',category:n.ai_category||n.category||n.cat||'全球政策',risk:n.ai_risk||n.risk||'待评估',source:n.sourceOrg||n.source||'未知来源',url:n.url||'',time:n.time||n.updated||n.published||''}));
+  window.__scenarioState=data;
+  document.getElementById('status').textContent='正在加载雷达新闻：'+arr.length+' 条';
+  render(data);
+  renderSandboxInputs(data);
+  const st=document.getElementById('status');
+  if(st)st.textContent='雷达数据已加载：'+arr.length+' 条新闻；沙盘可用。';
+ }catch(e){
+  console.error(e);
+  const st=document.getElementById('status');
+  if(st)st.textContent='雷达数据加载失败：'+(e.message||e);
  }
- // 直接读取雷达原始新闻，避免沙盘只看到 scenario_engine 截取后的少量事件。
- const nowMs=Date.now();
- const recent=n=>{const t=Date.parse(n.time||n.updated||n.published||'');return !t||nowMs-t<=31*86400000;};
- const classifyRegion=n=>String(n.ai_region||n.region||'').toLowerCase();
- const classifyCat=n=>String(n.ai_category||n.category||n.cat||'').toLowerCase();
- const recentNews=news.filter(recent);
- const regionCount=(key)=>recentNews.filter(n=>classifyRegion(n).includes(key)).length;
- const catCount=(keys)=>recentNews.filter(n=>keys.some(k=>classifyCat(n).includes(k))).length;
- const latestFor=(keys)=>recentNews.slice().sort((a,b)=>Date.parse(b.time||b.updated||b.published||0)-Date.parse(a.time||a.updated||a.published||0)).find(n=>keys.some(k=>classifyCat(n).includes(k))||keys.some(k=>classifyRegion(n).includes(k)));
- const latestChina=latestFor(['china','中国']);
- const latestUS=latestFor(['us','美国']);
- const latestGlobal=latestFor(['global','全球']);
- const latestSupply=latestFor(['supply','trade','供应链','贸易','export','出口','rare','稀土']);
- const latestGeo=latestFor(['geopolit','地缘','military','security','外交','冲突']);
- data.sandboxInputs={
-  updatedAt:new Date().toISOString(),
-  china:{count:regionCount('china')||regionCount('中国'),latest:latestChina?.titleZh||latestChina?.title||''},
-  us:{count:regionCount('us')||regionCount('美国'),latest:latestUS?.titleZh||latestUS?.title||''},
-  global:{count:regionCount('global')||regionCount('全球'),latest:latestGlobal?.titleZh||latestGlobal?.title||''},
-  finance:{count:catCount(['金融','finance','market','货币','央行','利率']),latest:(latestFor(['金融','finance','market','货币','央行','利率'])||{}).titleZh||''},
-  supply:{count:catCount(['供应链','supply','trade','贸易','出口']),latest:latestSupply?.titleZh||latestSupply?.title||''},
-  geopolitics:{count:catCount(['地缘','geopolit','military','security','外交','冲突']),latest:latestGeo?.titleZh||latestGeo?.title||''}
- };
- const rawEvents=news.slice().sort((a,b)=>String(b.time||b.updated||b.published||'').localeCompare(String(a.time||a.updated||a.published||''))).slice(0,60).map(n=>({
-  title:n.titleZh||n.title||'未命名事件',
-  region:n.ai_region||n.region||'global',
-  category:n.ai_category||n.category||n.cat||'全球政策',
-  risk:n.ai_risk||n.risk||'待评估',
-  source:n.sourceOrg||n.source||'未知来源',
-  url:n.url||'',
-  time:n.time||n.updated||n.published||''
- }));
- if(rawEvents.length)data.events=rawEvents;
- data.__rawNewsCount=news.length;
- window.__scenarioState=data;
- render(data); renderSandboxInputs(data);
- document.getElementById('status').innerHTML='沙盘已读取最新雷达数据：新闻 '+news.length+' 条；当前展示 '+rawEvents.length+' 条事件。';
 }catch(e){
  console.error('scenario data load failed',e);
  document.getElementById('status').textContent='沙盘数据读取失败：'+(e.message||e);
