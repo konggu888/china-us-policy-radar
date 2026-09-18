@@ -191,11 +191,43 @@ function renderAuthState(user){
  else authPanel();
  const lo=document.getElementById('authLogout'); if(lo)lo.onclick=async()=>{await sb.auth.signOut();msg('已退出登录。')};
 }
+async function renderTaskOverview(taskId,rows){
+ const box=document.getElementById('taskOverview');
+ if(!box||!taskId||!sb)return;
+ const all=rows||[];
+ if(!all.length){box.innerHTML='<div class="card muted">完成一次推演后，这里会形成任务级总览。</div>';return;}
+ const latest=all[0], prev=all[1];
+ const lp=latest.payload||{}, sc=lp.scenario||{}, validation=lp.validation||{};
+ const drivers=(sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT');
+ const registry=lp.evidenceRegistry||[];
+ const observedWindows=[...new Set((validation.timeWindowValidation||[]).flatMap(x=>(x.details||[]).filter(d=>d.status==='OBSERVED').map(d=>d.window)))];
+ const missingWindows=[...new Set((validation.timeWindowValidation||[]).flatMap(x=>(x.details||[]).filter(d=>d.status==='MISSING').map(d=>d.window)))];
+ const market=(validation.historicalMarketWindows||[]);
+ const marketObserved=market.filter(x=>x.status==='OBSERVED').length;
+ const marketMissing=market.filter(x=>x.status==='MISSING').length;
+ const counters=(sc.counterSignalAnalysis?.signals||[]);
+ const cross=validation.crossRunValidation||[];
+ const supported=drivers.filter(d=>{const r=registry.find(x=>String(x.id||x.dedupeKey||x.eventId||'')===String(d.id||''));return Number(r?.observationCount||0)>1||Number(r?.independentSourceCount||0)>1||!!r?.followupObserved;}).length;
+ const unresolved=Math.max(0,drivers.length-supported);
+ const scoreDelta=prev==null?null:Number(latest.trigger_score||0)-Number(prev.trigger_score||0);
+ const state=String(latest.activation_state||sc.activationState||'WATCH');
+ const statusText=state==='ACTIVE'?'当前触发条件较充分，继续做后续验证':state==='WATCH'?'保持观察，继续等待触发与反证':'当前情景状态：'+state;
+ const tile=(title,value,sub)=>'<div class="card"><b>'+authEsc(title)+'</b><div style="font-size:20px;margin-top:5px">'+authEsc(String(value))+'</div><div class="muted mini">'+authEsc(sub||'')+'</div></div>';
+ box.innerHTML='<div class="card"><div class="scenario-summary-head"><div><b>🧭 任务级总览</b><div class="muted mini">基于最近一次真实雷达快照；不把后来信息倒灌到过去。</div></div><span class="tag">'+authEsc(state)+'</span></div><p>'+authEsc(statusText)+'</p><div class="scenario-summary-grid">'+
+ tile('当前情景',latest.scenario_code||sc.code||'未标注','触发分数 '+Number(latest.trigger_score||0).toFixed(2)+(scoreDelta==null?'':' · 较上次 '+(scoreDelta>=0?'+':'')+scoreDelta.toFixed(2)))+
+ tile('直接触发器',drivers.length,supported+' 个已有重复/后续观察 · '+unresolved+' 个仍待验证')+
+ tile('时间窗口',observedWindows.length,missingWindows.length+' 个窗口暂缺历史快照')+
+ tile('市场验证',marketObserved,marketMissing+' 个市场窗口缺失')+
+ tile('反证信号',counters.length,'跨运行记录 '+Number(cross.reduce((n,x)=>n+Number(x.counterSignalCount||0),0))+' 个')+
+ tile('历史运行',all.length,'最近运行 '+(latest.observed_at||'未知'))+
+ '</div><div class="mini" style="margin-top:8px"><b>已验证条件：</b>'+authEsc(supported?drivers.slice(0,supported).map(x=>x.title||x.id).join('；'):'目前没有足够的重复/后续观察')+'</div><div class="mini" style="margin-top:6px"><b>下一观察重点：</b>核验新增正式政策文本、后续事件、时间窗口、市场快照与反证；出现关键反证时重新建模。</div></div>';
+}
 async function renderTaskRuns(taskId){
  const box=document.getElementById('taskRunsList'); if(!box||!taskId||!sb)return;
  const {data,error}=await sb.from('scenario_task_runs').select('id,observed_at,status,scenario_code,activation_state,trigger_score,confidence,evidence_count,payload').eq('task_id',String(taskId)).order('observed_at',{ascending:false}).limit(30);
  if(error){box.innerHTML='<div class="card muted">运行历史读取失败。</div>';return;}
  const rows=data||[];
+ await renderTaskOverview(taskId,rows);
  box.innerHTML=rows.length?rows.map((r,i)=>{
    const p=r.payload||{}, sc=p.scenario||{};
    const ctx=p.radarContext||{};
@@ -227,7 +259,7 @@ function ensureTaskRunsPanel(){
  const anchor=document.getElementById('taskArchive');
  if(!anchor)return;
  const p=document.createElement('section');p.id='taskRunsPanel';p.className='panel';
- p.innerHTML='<div class="title">🧾 推演运行历史 · 第二阶段</div><div class="mini muted">每次运行保存当时的雷达时间、态势、关键事件、市场快照、剧本状态和证据驱动。这里记录历史事实，不把后来的信息倒灌回过去。</div><div id="taskRunsList" class="actions" style="margin-top:10px"><div class="card muted">选择或运行一个任务后加载。</div></div><div class="title" style="margin-top:14px">🧪 第三阶段 · 历史触发器校准</div><div class="mini muted">连续运行样本用于记录触发器在后续观察中被支持、减弱或仍无法确认；样本不足时不调整权重。</div><div id="triggerCalibrationList" class="actions" style="margin-top:10px"><div class="card muted">形成历史样本后显示。</div></div>';
+ p.innerHTML='<div class="title">🧭 任务级总览</div><div id="taskOverview" class="actions" style="margin-top:10px"><div class="card muted">选择或运行一个任务后生成。</div></div><div class="title" style="margin-top:14px">🧾 推演运行历史 · 第二阶段</div><div class="mini muted">每次运行保存当时的雷达时间、态势、关键事件、市场快照、剧本状态和证据驱动。这里记录历史事实，不把后来的信息倒灌回过去。</div><div id="taskRunsList" class="actions" style="margin-top:10px"><div class="card muted">选择或运行一个任务后加载。</div></div><div class="title" style="margin-top:14px">🧪 第三阶段 · 历史触发器校准</div><div class="mini muted">连续运行样本用于记录触发器在后续观察中被支持、减弱或仍无法确认；样本不足时不调整权重。</div><div id="triggerCalibrationList" class="actions" style="margin-top:10px"><div class="card muted">形成历史样本后显示。</div></div>';
  anchor.after(p);
 }
 function patchSandboxHooks(){
