@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: intelligence-radar-pipeline
+  group: intelligence-radar-update
   cancel-in-progress: false
 
 jobs:
