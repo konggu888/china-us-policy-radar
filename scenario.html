@@ -28,6 +28,7 @@ function render(s){
  document.getElementById('events').innerHTML=(s.events||[]).map(e=>'<article class="card"><b>'+esc(e.title)+'</b><div class="muted">'+esc(e.region)+' · '+esc(e.category)+' · '+esc(e.risk)+' · '+esc(e.source)+'</div>'+(e.url?'<a href="'+esc(e.url)+'" target="_blank" rel="noopener" style="color:var(--accent)">查看来源</a>':'')+'</article>').join('');
  const scenarioRows=(s.scenarioTree?.scenarios||s.dynamic_scenarios||s.scenarios||[]);
  window.__scenarioRows=scenarioRows;
+ window.__scenarioEvidenceRegistry=(s.scenarioSnapshot?.evidenceRegistry||[]);
  const tree=document.getElementById('tree');
  tree.innerHTML=scenarioRows.map((x,i)=>'<article class="card node scenario-card '+(i===0?'selected':'')+'" data-scenario="'+esc(x.id||i)+'" onclick="selectSandboxScenario(this.dataset.scenario)"><h3>'+esc((x.code?x.code+' · ':'')+(x.title||x.name||'情景'))+'</h3><div class="muted">'+esc(x.description||x.condition||'')+'</div><div class="tag">敏感度 '+(x.sensitivity!=null?Number(x.sensitivity).toFixed(2):'—')+'</div><div class="tag">置信度 '+esc(x.confidence||'—')+'</div><div class="tag">状态 '+esc(x.activationState||'WATCH')+'</div><div class="scorebar"><span style="width:'+Math.max(0,Math.min(100,Number(x.triggerScore||0)*100))+'%"></span></div></article>').join('');
  renderSandboxScenario(scenarioRows[0],0); renderEvidenceTimeline(scenarioRows[0]);
