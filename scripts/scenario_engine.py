@@ -3,7 +3,7 @@ from collections import Counter
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data'; OUT=DATA/'scenario_state.json'
-MARKET_SNAPSHOTS=DATA/'market_snapshots.json'; MACRO_HISTORY=DATA/'macro_history.json'; MACRO_OUT=DATA/'macro_data.json'
+MARKET_SNAPSHOTS=DATA/'market_snapshots.json'; MACRO_HISTORY=DATA/'macro_history.json'; MACRO_OUT=DATA/'macro_data.json'; TRADE_OUT=DATA/'trade_data.json'; TRADE_HISTORY=DATA/'trade_history.json'
 KEY=os.getenv('DEEPSEEK_API_KEY','').strip(); MODEL=os.getenv('DEEPSEEK_MODEL','deepseek-v4-flash')
 def read(n,d):
  try:return json.loads((DATA/n).read_text(encoding='utf-8'))
@@ -26,6 +26,24 @@ def events(rows,limit=15):
   seen.add(k);out.append({'title':t[:220],'region':n.get('ai_region') or n.get('region') or 'global','category':n.get('ai_category') or n.get('cat') or '全球政策','risk':n.get('ai_risk') or n.get('risk') or '低','source':n.get('sourceOrg') or n.get('source') or '未知来源','url':u,'time':n.get('time') or n.get('updated') or ''})
   if len(out)>=limit:break
  return out
+def trade_focus_timeline(days=365):
+    current=read('trade_data.json',{})
+    history=read('trade_history.json',[])
+    rows=[]
+    if isinstance(history,list):
+        for snap in history:
+            ft=snap.get('focusTrade',{})
+            if ft.get('status')!='OK': continue
+            rows.append({'updatedAt':snap.get('updatedAt'),'period':ft.get('period'),'source':ft.get('source'),'rows':ft.get('rows',[])})
+    if isinstance(current,dict) and current.get('focusTrade',{}).get('status')=='OK':
+        ft=current['focusTrade']
+        rows.append({'updatedAt':current.get('updatedAt'),'period':ft.get('period'),'source':ft.get('source'),'rows':ft.get('rows',[])})
+    seen={}
+    for x in rows:
+        key=str(x.get('period') or x.get('updatedAt') or '')
+        if key: seen[key]=x
+    return sorted(seen.values(),key=lambda x:x.get('period',''))[-days:]
+
 def macro_timeline(days=365):
     rows=read('macro_history.json',[])
     if not isinstance(rows,list): rows=[]
@@ -40,14 +58,17 @@ def macro_timeline(days=365):
 
 def build_transmission_timeline(dash):
     macro=macro_timeline()
+    trade=trade_focus_timeline()
     market=read('market_snapshots.json',[])
     if not isinstance(market,list): market=[]
     market=sorted(market,key=lambda x:x.get('capturedAt',''))
     by_day={str(x.get('capturedAt',''))[:10]:x for x in market}
+    trade_by_period={str(x.get('period','')):x for x in trade}
     rows=[]
     for snap in macro:
         day=str(snap.get('updatedAt',''))[:10]
-        rows.append({'date':day,'macro':snap,'market':by_day.get(day,{'capturedAt':None,'markets':[]}),'status':'OBSERVED' if by_day.get(day) else 'MACRO_ONLY','rule':'同日数据用于时间对齐观察；不据此推断政策因果关系。'})
+        tr=trade_by_period.get(day[:7])
+        rows.append({'date':day,'macro':snap,'market':by_day.get(day,{'capturedAt':None,'markets':[]}),'trade':tr,'status':'OBSERVED' if by_day.get(day) or tr else 'MACRO_ONLY','rule':'同日/同月数据用于时间对齐观察；不据此推断政策因果关系。'})
     return rows[-365:]
 
 def markets(d):
@@ -890,6 +911,7 @@ def build(news,dash,policy,social,ai):
    {'id':'windows','name':'时间窗口','status':'OK','count':sum(len(x.get('details',[])) for x in dynamic.get('scenarioSnapshot',{}).get('timeWindowValidation',[])),'source':'scenario_snapshot'},
    {'id':'market','name':'市场验证','status':'OK','count':len(dynamic.get('scenarioSnapshot',{}).get('transmissionTimeline',[])),'source':'market_snapshots.json'},
    {'id':'macro','name':'宏观时间轴','status':'OK' if macro_timeline() else 'MISSING','count':len(macro_timeline()),'source':'macro_history.json'},
+   {'id':'trade','name':'重点产业贸易','status':'OK' if trade_focus_timeline() else 'MISSING','count':len(trade_focus_timeline()),'source':'trade_data.json'},
    {'id':'counter','name':'反证','status':'OK','count':sum(len(s.get('counterSignalAnalysis',{}).get('signals',[])) for s in dynamic.get('scenarioTree',{}).get('scenarios',[])),'source':'scenario_snapshot'},
    {'id':'history','name':'历史任务','status':'OK','count':len(scenario_task_registry()),'source':'scenario_tasks'},
    {'id':'cross_run','name':'跨运行校准','status':'OK','count':len(dynamic.get('scenarioSnapshot',{}).get('crossRunValidation',[])),'source':'scenario_validation_history.json'}
