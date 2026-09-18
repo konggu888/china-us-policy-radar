@@ -2,6 +2,9 @@ name = "china-us-policy-radar-scenario-tasks"
 main = "worker/scenario_tasks.js"
 compatibility_date = "2026-09-19"
 
+[triggers]
+crons = ["17 */6 * * *"]
+
 [[kv_namespaces]]
 binding = "SCENARIO_TASKS"
 id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
