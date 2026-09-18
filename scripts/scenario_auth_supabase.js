@@ -58,8 +58,12 @@ window.syncTaskToServer=async function(task){
 };
 window.saveScenarioRun=async function(task,scenario){
  const {data:{user}}=await currentUser(); if(!user||!scenario)return;
- const row={task_id:String(task.id),user_id:user.id,status:'RECORDED',scenario_code:scenario.code||null,activation_state:scenario.activationState||null,trigger_score:scenario.triggerScore??null,confidence:scenario.confidence||null,evidence_count:Array.isArray(scenario.evidenceDrivers)?scenario.evidenceDrivers.length:null,payload:{scenario,generatedAt:new Date().toISOString()}};
- await sb.from('scenario_task_runs').insert(row);
+ const radar=window.__scenarioState||{};
+ const registry=(radar.scenarioSnapshot?.evidenceRegistry||[]).filter(x=>(scenario.evidenceDrivers||[]).some(d=>String(d.id||'')===String(x.id||''))).slice(0,30);
+ const payload={scenario,radarContext:{generatedAt:radar.generated_at||null,state:radar.state||{},events:(radar.events||[]).slice(0,20),market:(radar.state?.finance?.market||[]).slice(0,20)},evidenceRegistry:registry,recordedAt:new Date().toISOString()};
+ const row={task_id:String(task.id),user_id:user.id,status:'RECORDED',scenario_code:scenario.code||null,activation_state:scenario.activationState||null,trigger_score:scenario.triggerScore??null,confidence:scenario.confidence||null,evidence_count:Array.isArray(scenario.evidenceDrivers)?scenario.evidenceDrivers.length:null,payload};
+ const {error}=await sb.from('scenario_task_runs').insert(row);
+ if(error)console.warn('scenario run save failed',error.message);
 };
 const oldArchive=window.archiveTask;
 window.archiveTask=async function(task){const row=oldArchive(task); await window.syncTaskToServer(row); return row;};
@@ -68,6 +72,26 @@ function renderAuthState(user){
  if(user) box.innerHTML='<div class="status">已登录：<b>'+esc(user.email||'账号')+'</b>。历史推演自动云端保存。 <button id="authLogout">退出登录</button></div><div class="mini muted">账号跨设备同步，不再需要保存同步密钥。</div>';
  else authPanel();
  const lo=document.getElementById('authLogout'); if(lo)lo.onclick=async()=>{await sb.auth.signOut();msg('已退出登录。')};
+}
+async function renderTaskRuns(taskId){
+ const box=document.getElementById('taskRunsList'); if(!box||!taskId||!sb)return;
+ const {data,error}=await sb.from('scenario_task_runs').select('id,observed_at,status,scenario_code,activation_state,trigger_score,confidence,evidence_count,payload').eq('task_id',String(taskId)).order('observed_at',{ascending:false}).limit(30);
+ if(error){box.innerHTML='<div class="card muted">运行历史读取失败。</div>';return;}
+ const rows=data||[];
+ box.innerHTML=rows.length?rows.map((r,i)=>{
+   const p=r.payload||{}, sc=p.scenario||{};
+   const ctx=p.radarContext||{};
+   const ev=(sc.evidenceDrivers||[]).filter(x=>x.kind==='EVENT').slice(0,4).map(x=>esc(x.title||x.id)).join('；');
+   return '<article class="card"><b>#'+(rows.length-i)+' · '+esc(r.scenario_code||'未标注')+' · '+esc(r.activation_state||'WATCH')+' · '+Number(r.trigger_score||0).toFixed(2)+'</b><div class="muted mini">运行时间：'+esc(r.observed_at||'')+' · 置信度：'+esc(r.confidence||'—')+' · 证据：'+Number(r.evidence_count||0)+'</div><div class="mini">当时雷达：'+esc(ctx.generatedAt||'未知')+'</div><div class="mini">直接事件：'+esc(ev||'暂无')+'</div><div class="mini muted">记录包含当时态势、事件、市场与证据快照，可用于与后续运行对照。</div></article>';
+ }).join(''):'<div class="card muted">这个任务还没有服务器运行记录。完成一次推演后会自动留下审计记录。</div>';
+}
+function ensureTaskRunsPanel(){
+ if(document.getElementById('taskRunsPanel'))return;
+ const anchor=document.getElementById('taskArchive');
+ if(!anchor)return;
+ const p=document.createElement('section');p.id='taskRunsPanel';p.className='panel';
+ p.innerHTML='<div class="title">🧾 推演运行历史 · 第二阶段</div><div class="mini muted">每次运行保存当时的雷达时间、态势、关键事件、市场快照、剧本状态和证据驱动。这里记录历史事实，不把后来的信息倒灌回过去。</div><div id="taskRunsList" class="actions" style="margin-top:10px"><div class="card muted">选择或运行一个任务后加载。</div></div>';
+ anchor.after(p);
 }
 function patchSandboxHooks(){
  if(window.__supabaseSandboxHooks)return;
@@ -86,10 +110,11 @@ function patchSandboxHooks(){
    const result=oldRun(task);
    setTimeout(async()=>{
      const sc=window.__selectedScenario;
-     if(sc) await window.saveScenarioRun(task,sc);
-   },150);
+     if(sc){ await window.saveScenarioRun(task,sc); await renderTaskRuns(task.id); }
+   },250);
    return result;
  };
+ ensureTaskRunsPanel();
  window.renderTaskArchive();
 }
 function initAuth(){
