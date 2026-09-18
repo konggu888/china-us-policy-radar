@@ -1,0 +1,29 @@
+name: Activate Supabase account auth
+
+on:
+  push:
+    paths:
+      - 'scripts/scenario_auth_supabase.js'
+      - 'scripts/activate_supabase_auth.py'
+      - 'scenario.html'
+
+permissions:
+  contents: write
+
+jobs:
+  activate:
+    if: ${{ !contains(github.event.head_commit.message, 'activate: supabase auth') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/activate_supabase_auth.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet; then exit 0; fi
+          git add scenario.html
+          git commit -m 'activate: supabase auth'
+          git push origin HEAD:main
