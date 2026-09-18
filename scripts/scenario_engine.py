@@ -230,7 +230,13 @@ def _scenario_horizons(prefix, scenario_type):
         out.append({"horizon":h,"label":h[1],"startOffsetDays":h[2],"endOffsetDays":h[3],"keySignals":signals,"impacts":impacts,"actions":matrix})
     return out
 
-def _scenario_activation(events, scenario_type):
+def _calibration_factor(trigger_calibration, trigger):
+    row=next((x for x in (trigger_calibration or []) if x.get("trigger")==trigger and x.get("status")=="CALIBRATED"),None)
+    if not row:return 1.0
+    rate=row.get("historicalSignalRate")
+    return round(max(0.8,min(1.2,0.8+0.4*float(rate))),3) if rate is not None else 1.0
+
+def _scenario_activation(events, scenario_type, trigger_calibration=None):
     """Evidence-weighted activation state. This is a monitoring weight, not a probability forecast."""
     cats=[str(e.get("category","")).upper() for e in events]
     roles=[str(e.get("triggerRole","")) for e in events]
@@ -238,17 +244,20 @@ def _scenario_activation(events, scenario_type):
     third_party=sum(float(e.get("source",{}).get("evidenceWeight",1.0) or 0) for e in events if e.get("actor",{}).get("country") not in ("CN","US","OTHER",None))
     trade=sum(float(e.get("source",{}).get("evidenceWeight",1.0) or 0) for e in events if str(e.get("category","")).upper() in ("TRADE","TARIFF","SANCTIONS","TECHNOLOGY","PAYMENT"))
     shock=sum(float(e.get("source",{}).get("evidenceWeight",1.0) or 0) for e in events if str(e.get("category","")).upper() in ("GEOPOLITICS","ENERGY","PORT","LOGISTICS","CRITICAL_MINERALS"))
+    trigger_names=[str(e.get("category") or e.get("triggerRole") or "UNKNOWN_TRIGGER") for e in events]
+    factors=[_calibration_factor(trigger_calibration,x) for x in trigger_names]
+    calibration=sum(factors)/len(factors) if factors else 1.0
     if scenario_type=="HARD_DECOUPLING":
-        score=min(1.0,0.12*confirmed+0.10*trade+0.08*shock)
+        score=min(1.0,(0.12*confirmed+0.10*trade+0.08*shock)*calibration)
         evidence=["确认事件数量="+str(confirmed)]
         if trade:evidence.append("贸易/技术/制裁类信号="+str(trade))
         counter=["若出现明确豁免、延期或执行强度下降，应降低该路径权重"]
     elif scenario_type=="STRUCTURAL_NEGOTIATION":
-        score=min(1.0,0.10*confirmed+0.05*len([x for x in roles if x=="PRIMARY_TRIGGER"]))
+        score=min(1.0,(0.10*confirmed+0.05*len([x for x in roles if x=="PRIMARY_TRIGGER"]))*calibration)
         evidence=["已有确认事件="+str(confirmed),"需要额外的官方缓和/豁免证据"]
         counter=["若出现新增强制措施并持续执行，应降低该路径权重"]
     else:
-        score=min(1.0,0.10*confirmed+0.12*third_party+0.08*shock)
+        score=min(1.0,(0.10*confirmed+0.12*third_party+0.08*shock)*calibration)
         evidence=["第三方事件="+str(third_party),"物流/能源/地缘信号="+str(shock)]
         counter=["若主要冲击完全停留在中美双边渠道，应降低该路径权重"]
     return {"activationState":"WATCH" if score<0.35 else ("ACTIVE" if score<0.70 else "ELEVATED"),"triggerScore":round(score,2),"evidence":evidence,"counterSignals":counter}
@@ -480,6 +489,7 @@ def build_scenario_history(current_snapshot):
     }
 
 def build_dynamic_tree(news,dash=None):
+    trigger_calibration=[]
     ge=build_global_events(news)
     root=ge[0]["id"] if ge else "evt-none"
     ids=[x["id"] for x in ge[:8]]
