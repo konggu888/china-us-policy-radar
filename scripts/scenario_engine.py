@@ -182,7 +182,7 @@ def build_global_events(rows,limit=20):
         c=corr.get(e.get("dedupeKey"),{"sources":set(),"tiers":set(),"count":1})
         independent=len(c["sources"])
         source_bonus=min(0.25,0.08*max(0,independent-1))
-        e["corroboration"]={"independentSourceCount":independent,"reportCount":c["count"],"tierCount":len(c["tiers"])}
+        e["corroboration"]={"independentSourceCount":independent,"reportCount":c["count"],"tierCount":len(c["tiers"]),"sources":sorted(c["sources"])}
         e["source"]["corroborationBonus"]=round(source_bonus,3)
         e["source"]["evidenceWeight"]=round(min(1.0,float(e["source"].get("evidenceWeight",0))+source_bonus),3)
     return out[:limit]
@@ -396,7 +396,8 @@ def build_evidence_lifecycle(events, previous_snapshot=None):
         age=(now-pub).total_seconds()/86400 if pub else None
         prev=old.get(str(e.get("dedupeKey")),{})
         sources=max(int(prev.get("independentSourceCount",0) or 0),int((e.get("corroboration") or {}).get("independentSourceCount",1) or 1))
-        followup=bool(prev.get("followupObserved",False))
+        # A repeated observation or a second independent source is observable follow-up evidence.
+        followup=bool(prev.get("followupObserved",False)) or int(prev.get("observationCount",0) or 0)>0 or sources>=2
         lifecycle=_evidence_lifecycle(age,e.get("status","CONFIRMED"),s.get("tier"),int(prev.get("observationCount",0) or 0)+1,sources,followup)
         base=float(s.get("evidenceWeight",0) or 0)
         # Aging factor affects monitoring weight only; it is not a probability.
@@ -573,27 +574,33 @@ def build_historical_market_windows(event, snapshots):
         out.append({"window":code,"targetAt":target.isoformat(),"capturedAt":chosen.get("capturedAt") if chosen else None,"status":"OBSERVED" if chosen else "MISSING","markets":chosen.get("markets",[]) if chosen else []})
     return out
 
-def build_transmission_windows(global_events, market_data):
-    """Create event-relative observation windows. This is observational, not causal attribution."""
+def build_transmission_windows(global_events, snapshots):
+    """Create event-relative market windows from immutable observed snapshots; never reuse today's market data for future windows."""
     names=("USD/CNY","黄金","美国10年期收益率","布伦特原油","VIX","上证指数","沪深300","标普500")
-    by={str(x.get("name")):x for x in (market_data or [])}
     windows=[("T0","事件当日",0),("T1D","T+1天",1),("T3D","T+3天",3),("T7D","T+7天",7),("T30D","T+30天",30)]
+    snap=list(snapshots or [])
     out=[]
     for e in (global_events or [])[:12]:
         pub=dt(e.get("source",{}).get("publishedAt"))
         obs=[]
         for code,label,offset in windows:
-            metrics=[]
+            metrics=[]; chosen=None
+            if pub:
+                target=pub+timedelta(days=offset)
+                candidates=[s for s in snap if dt(s.get("capturedAt")) and target <= datetime.now(timezone.utc) and abs((dt(s["capturedAt"])-target).total_seconds())<=18*3600]
+                if candidates:
+                    chosen=min(candidates,key=lambda s:abs((dt(s["capturedAt"])-target).total_seconds()))
+            by={str(x.get("name")):x for x in (chosen.get("markets",[]) if chosen else [])}
             for name in names:
                 m=by.get(name)
                 if not m: continue
-                metrics.append({"name":name,"value":m.get("value"),"change_pct":m.get("change_pct"),"status":"AVAILABLE","source":"dashboard"})
-            obs.append({"window":code,"label":label,"offsetDays":offset,"metrics":metrics,"status":"OBSERVATION_ONLY"})
+                metrics.append({"name":name,"value":m.get("value"),"change_pct":m.get("change_pct"),"observedAt":m.get("observedAt") or (chosen or {}).get("capturedAt"),"status":"AVAILABLE","source":"market_snapshot"})
+            obs.append({"window":code,"label":label,"offsetDays":offset,"metrics":metrics,"capturedAt":(chosen or {}).get("capturedAt"),"status":"OBSERVATION_ONLY" if chosen else "MISSING"})
         out.append({
             "eventId":e.get("id"),"dedupeKey":e.get("dedupeKey"),"title":e.get("title"),
             "eventPublishedAt":e.get("source",{}).get("publishedAt"),"eventTimeKnown":pub is not None,
             "windows":obs,
-            "method":"相对事件时间窗记录可用市场观测；当前数据源未提供逐日历史快照时，不回填缺失值。",
+            "method":"相对事件时间窗只读取实际保存的市场快照；没有对应历史快照就保持缺失，不用当前数据回填 T+1/T+3/T+7/T+30。",
             "causalStatus":"NOT_ESTABLISHED"
         })
     return out
@@ -730,7 +737,7 @@ def build_dynamic_tree(news,dash=None):
         act=_scenario_activation(ge,stype,trigger_calibration); drivers=drivers_for(stype); scenarios.append({"id":sid,"type":stype,"code":code,"title":title,"description":condition,"evidenceDrivers":drivers,"prerequisites":["至少一个第三方或中美事件被确认","存在可验证的政策响应"],"triggers":[{"condition":condition,"direction":"OCCUR"}],"chain":chain,"confidence":"MEDIUM","sensitivity":sens,"activationState":act["activationState"],"triggerScore":act["triggerScore"],"triggerEvidence":act["evidence"],"counterSignals":act["counterSignals"],"counterSignalAnalysis":_counter_signal_analysis(ge,stype),"recomputeIf":["出现新的正式政策文本","关键执行细则发生变化","第三方冲击解除或扩大","出现与当前路径相反的多源证据"],"horizons":_scenario_horizons(sid,stype)})
     snapshot=build_scenario_snapshot(scenarios,ge)
     snapshots=persist_market_snapshot(dash or {})
-    snapshot["transmissionTimeline"]=build_transmission_windows(ge, markets(dash or {}))
+    snapshot["transmissionTimeline"]=build_transmission_windows(ge, snapshots)
     historical=[]
     for e in ge[:12]:
         ws=build_historical_market_windows(e,snapshots)
