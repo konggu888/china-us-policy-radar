@@ -148,12 +148,12 @@ NBS_WANTED=('国内生产总值','GDP','居民消费价格指数','CPI','工业�
 
 def nbs_json(path,params=None,payload=None):
     import urllib.request, json as _json
-    req=urllib.request.Request(NBS_BASE+path,headers=NBS_HEADERS,method='POST' if payload is not None else 'GET')
+    url=NBS_BASE+path
+    if params:url += '?'+urllib.parse.urlencode(params)
+    req=urllib.request.Request(url,headers=NBS_HEADERS,method='POST' if payload is not None else 'GET')
     if payload is not None:
         body=_json.dumps(payload,ensure_ascii=False).encode('utf-8')
         req.data=body
-    if params:
-        req.full_url=NBS_BASE+path+'?'+urllib.parse.urlencode(params)
     req.add_header('Cookie','client_info='+NBS_COOKIE)
     with urllib.request.urlopen(req,timeout=25) as resp:
         raw=resp.read().decode('utf-8','ignore')
