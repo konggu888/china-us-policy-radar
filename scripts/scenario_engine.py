@@ -623,7 +623,6 @@ def persist_validation_history(scenarios,historical_events,max_rows=720):
                 'driverTitle':d.get('title'),'category':d.get('category'),'dedupeKey':e.get('dedupeKey'),
                 'eventPublishedAt':e.get('eventPublishedAt'),'followupWindows':[w.get('window') for w in windows],
                 'followupObserved':bool(windows),
-                'followupEventIds':sum(([x] if x else [] for w in windows for x in []),[]),
                 'marketObservedWindows':[w.get('window') for w in e.get('windows',[]) if w.get('status')=='OBSERVED'],
                 'sourceCount':int((e.get('corroboration') or {}).get('independentSourceCount',0) or 0)
             })
