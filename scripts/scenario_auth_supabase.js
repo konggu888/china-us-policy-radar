@@ -5,7 +5,7 @@ let sb=null;
 function authLoad(){
   const tag=document.createElement('script');
   tag.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js';
-  tag.onload=()=>{ sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY); initAuth(); };
+  tag.onload=()=>{ sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY); if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initAuth,{once:true}); else initAuth(); };
   tag.onerror=()=>console.warn('Supabase client failed to load');
   document.head.appendChild(tag);
 }
@@ -69,13 +69,36 @@ function renderAuthState(user){
  else authPanel();
  const lo=document.getElementById('authLogout'); if(lo)lo.onclick=async()=>{await sb.auth.signOut();msg('已退出登录。')};
 }
+function patchSandboxHooks(){
+ if(window.__supabaseSandboxHooks)return;
+ if(typeof window.archiveTask!=='function'||typeof window.renderTaskArchive!=='function'||typeof window.runScenarioTask!=='function'){setTimeout(patchSandboxHooks,100);return;}
+ window.__supabaseSandboxHooks=true;
+ const oldRender=window.renderTaskArchive;
+ window.renderTaskArchive=function(){
+   oldRender();
+   const legacy=document.querySelector('#taskArchiveList button[onclick="setTaskApi()"]');
+   if(legacy) legacy.remove();
+   const hint=document.querySelector('#taskArchiveList .muted.mini');
+   if(hint) hint.textContent='已登录账号后自动云端保存；无需同步密钥。';
+ };
+ const oldRun=window.runScenarioTask;
+ window.runScenarioTask=function(task){
+   const result=oldRun(task);
+   setTimeout(async()=>{
+     const sc=window.__selectedScenario;
+     if(sc) await window.saveScenarioRun(task,sc);
+   },150);
+   return result;
+ };
+ window.renderTaskArchive();
+}
 function initAuth(){
  authPanel();
  sb.auth.onAuthStateChange(async(_event,session)=>{
    renderAuthState(session?.user||null);
-   if(session?.user){await cloudPull();}
+   if(session?.user){await cloudPull();patchSandboxHooks();}
  });
- sb.auth.getSession().then(({data:{session}})=>renderAuthState(session?.user||null));
+ sb.auth.getSession().then(async({data:{session}})=>{renderAuthState(session?.user||null);if(session?.user){await cloudPull();patchSandboxHooks();}});
 }
 authLoad();
 })();
