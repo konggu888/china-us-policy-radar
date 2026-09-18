@@ -37,7 +37,8 @@ jobs:
           python scripts/enrich_priority.py; priority_rc=$?
           python scripts/archive_news.py; archive_rc=$?
           python scripts/build_timeline.py; timeline_rc=$?
-          python - "$legacy_rc" "$broad_rc" "$translate_rc" "$policy_collect_rc" "$market_rc" "$enrich_rc" "$policy_rc" "$priority_rc" "$archive_rc" "$timeline_rc" <<'PY'
+          python scripts/scenario_engine.py; scenario_rc=$?
+          python - "$legacy_rc" "$broad_rc" "$translate_rc" "$policy_collect_rc" "$market_rc" "$enrich_rc" "$policy_rc" "$priority_rc" "$archive_rc" "$timeline_rc" "$scenario_rc" <<'PY'
           import json,sys
           from datetime import datetime,timezone
           from pathlib import Path
@@ -55,7 +56,7 @@ jobs:
           dp.write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf-8')
           print(d['collection_message'])
           PY
-          exit $(( broad_rc != 0 || market_rc != 0 || enrich_rc != 0 || policy_rc != 0 || priority_rc != 0 || archive_rc != 0 || timeline_rc != 0 ))
+          exit $(( broad_rc != 0 || market_rc != 0 || enrich_rc != 0 || policy_rc != 0 || priority_rc != 0 || archive_rc != 0 || timeline_rc != 0 || scenario_rc != 0 ))
       - name: Commit data and archive
         if: ${{ always() }}
         shell: bash
