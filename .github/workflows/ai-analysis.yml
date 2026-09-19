@@ -7,6 +7,7 @@ on:
       - 'scripts/market_sectors.py'
       - 'scripts/enrich_dashboard.py'
       - 'scripts/build_timeline.py'
+      - 'scripts/intelligence_spine.py'
       - 'home.js'
       - 'ui-enhancements.js'
   schedule:
@@ -75,6 +76,10 @@ jobs:
             if [ "$hour" = "04" ] && [ "$minute" = "50" ]; then case "$month-$dom" in 01-01|04-01|07-01|10-01) python scripts/ai_intelligence.py quarterly ;; esac; fi
             if [ "$hour" = "04" ] && [ "$minute" = "55" ]; then case "$month-$dom" in 01-01|07-01) python scripts/ai_intelligence.py half_year ;; esac; fi
           fi
+      - name: Refresh canonical intelligence spine
+        shell: bash
+        run: |
+          python scripts/intelligence_spine.py
       - name: Refresh strategic scenario state
         shell: bash
         run: |
