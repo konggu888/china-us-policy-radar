@@ -26,12 +26,12 @@ def cat(t,hint=''):
  scores={}
  for c in priority:
   terms=CATS[c]
-  scores[c]=sum(1 for term in re.split(r'\\s+',terms) if term and re.search(re.escape(term),text,re.I))
- if re.search(r'\\bchina\\b.*\\b(us|united states)\\b|\\b(us|united states)\\b.*\\bchina\\b|中美|台海|台湾.*美国|美国.*台湾',text,re.I):
+  scores[c]=sum(1 for term in re.split(r'\s+',terms) if term and re.search(re.escape(term),text,re.I))
+ if re.search(r'\bchina\b.*\b(us|united states)\b|\b(us|united states)\b.*\bchina\b|中美|台海|台湾.*美国|美国.*台湾',text,re.I):
   scores['中美博弈']+=4
- if re.search(r'\\b(trade|tariff|export|import|supply chain|shipping|logistics)\\b|贸易|关税|出口|进口|供应链|航运|物流',text,re.I):
+ if re.search(r'\b(trade|tariff|export|import|supply chain|shipping|logistics)\b|贸易|关税|出口|进口|供应链|航运|物流',text,re.I):
   scores['贸易 / 供应链']+=3
- if re.search(r'\\b(ai|artificial intelligence|semiconductor|chip|robotics|quantum)\\b|人工智能|半导体|芯片|机器人|量子',text,re.I):
+ if re.search(r'\b(ai|artificial intelligence|semiconductor|chip|robotics|quantum)\b|人工智能|半导体|芯片|机器人|量子',text,re.I):
   scores['科技 / AI']+=3
  best=max(scores,key=scores.get)
  return best if scores[best]>0 else '全球政策'
