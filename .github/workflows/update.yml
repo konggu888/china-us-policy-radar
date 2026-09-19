@@ -69,7 +69,7 @@ jobs:
           dp.write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf-8')
           print(d['collection_message'])
           PY
-          exit $(( broad_rc != 0 || macro_rc != 0 || trade_rc != 0 || market_rc != 0 || enrich_rc != 0 || policy_rc != 0 || priority_rc != 0 || archive_rc != 0 || timeline_rc != 0 || social_rc != 0 || scenario_rc != 0 ))
+          exit $(( broad_rc != 0 || macro_rc != 0 || trade_rc != 0 || market_rc != 0 || enrich_rc != 0 || policy_rc != 0 || priority_rc != 0 || archive_rc != 0 || timeline_rc != 0 || social_rc != 0 || spine_rc != 0 || scenario_rc != 0 ))
       - name: Commit data and archive
         if: ${{ always() }}
         shell: bash
