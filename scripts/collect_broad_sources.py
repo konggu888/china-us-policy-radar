@@ -17,11 +17,24 @@ def risk(t):
  if re.search(r'sanction|tariff|military|security|energy|oil|trade|election|制裁|关税|军事|安全|能源|石油|贸易|选举',t,re.I):return '中'
  return '低'
 def cat(t,hint=''):
- for c,terms in CATS.items():
-  if hint==c:return c
- for c,terms in CATS.items():
-  if re.search(terms,t,re.I):return c
- return '全球政策'
+ text=str(t or '')
+ if hint in CATS:return hint
+ # Score specific domains instead of first-match ordering. This prevents generic
+ # words such as "policy", "international" or "security" from swallowing
+ # trade/industry/technology/China-US items into 全球政策.
+ priority=['中美博弈','贸易 / 供应链','科技 / AI','产业','金融','能源 / 资源','国防','国家安全','外交','政治','经济','内政']
+ scores={}
+ for c in priority:
+  terms=CATS[c]
+  scores[c]=sum(1 for term in re.split(r'\\s+',terms) if term and re.search(re.escape(term),text,re.I))
+ if re.search(r'\\bchina\\b.*\\b(us|united states)\\b|\\b(us|united states)\\b.*\\bchina\\b|中美|台海|台湾.*美国|美国.*台湾',text,re.I):
+  scores['中美博弈']+=4
+ if re.search(r'\\b(trade|tariff|export|import|supply chain|shipping|logistics)\\b|贸易|关税|出口|进口|供应链|航运|物流',text,re.I):
+  scores['贸易 / 供应链']+=3
+ if re.search(r'\\b(ai|artificial intelligence|semiconductor|chip|robotics|quantum)\\b|人工智能|半导体|芯片|机器人|量子',text,re.I):
+  scores['科技 / AI']+=3
+ best=max(scores,key=scores.get)
+ return best if scores[best]>0 else '全球政策'
 def item(title,url,source,stype,region,cat_hint='',time=''):
  tier='官方' if stype=='official' else ('权威媒体' if stype=='major_media' else '其他媒体')
  return {'title':re.sub(r'\s+',' ',title).strip()[:240],'url':url,'source':source,'sourceType':stype,'sourceOrg':source,'sourceTier':tier,'official':stype=='official','verification':'单一官方' if stype=='official' else '单一来源','time':str(time)[:80],'region':region,'cat':cat(title,cat_hint),'risk':risk(title),'x':50,'y':50}
