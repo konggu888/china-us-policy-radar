@@ -102,7 +102,7 @@ def main():
     except Exception as e:
         errors.append('FOCUS_TRADE:'+str(e))
         focus_trade={'status':'MISSING','reason':str(e)}
-    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'focusMapVersion':focus.get('version'),'focusSectorCount':len(focus.get('sectors',[])),'focusTrade':focus_trade,'usChina':us,'thirdCountry':third,'chinaCustoms':{'status':'MISSING','reason':'未在本轮写入未经验证的抓取接口；保留缺失状态，避免用二手数据冒充海关原始数据。','sourceUrl':'https://online.customs.gov.cn/'},'quality':{'errors':len(errors),'usChinaStatus':'OK' if us else 'MISSING'}}
+    payload={'updatedAt':datetime.now(timezone.utc).isoformat(),'focusMapVersion':focus.get('version'),'focusSectorCount':len(focus.get('sectors',[])),'focusTrade':focus_trade,'usChina':us,'thirdCountry':third,'chinaCustoms':{'status':'MISSING','reason':'未在本轮写入未经验证的抓取接口；保留缺失状态，避免用二手数据冒充海关原始数据。','sourceUrl':'https://online.customs.gov.cn/'},'quality':{'errors':len(errors),'errorDetails':errors,'usChinaStatus':'OK' if us else 'MISSING','focusTradeStatus':focus_trade.get('status'),'thirdCountryCount':len(third)}}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8')
     try:
         history=json.loads(HISTORY.read_text(encoding='utf-8')) if HISTORY.exists() else []
@@ -111,6 +111,6 @@ def main():
         history.append(payload); HISTORY.write_text(json.dumps(history[-730:],ensure_ascii=False,indent=2),encoding='utf-8')
     except Exception as e: print('trade history warning',type(e).__name__)
     print('trade: US-China',bool(us),'errors',len(errors))
-    return 0 if us else 1
+    return 0 if (us or focus_trade.get('status')=='OK' or len(third)>=3) else 1
 
 if __name__=='__main__':sys.exit(main())
