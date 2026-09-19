@@ -187,6 +187,12 @@ def _evidence_weight(age,cred,tier):
 
 def build_global_events(rows,limit=20):
     out=[]; seen=set(); seen_norms=[]; now=datetime.now(timezone.utc).isoformat()
+    # Canonical intelligence spine is the durable evidence registry. The scenario
+    # engine consumes its corroboration/conflict metadata while retaining the
+    # existing news-derived event model for backward compatibility.
+    spine=read('intelligence_spine.json',{})
+    spine_events=spine.get('events',[]) if isinstance(spine,dict) else []
+    spine_by_title={_norm_title(x.get('title')):x for x in spine_events if x.get('title')}
     for n in events(rows,limit=limit):
         region=n.get("region") or "global"; cc=_country_for_region(region)
         norm=_event_fingerprint(n)
@@ -207,6 +213,7 @@ def build_global_events(rows,limit=20):
         published=n.get("time") or n.get("updated") or n.get("published") or ""
         pdt=dt(published); age=(datetime.now(timezone.utc)-pdt).total_seconds()/86400 if pdt else None
         freshness="NEW" if age is not None and age<=1 else ("RECENT" if age is not None and age<=7 else ("STALE" if age is not None else "UNKNOWN"))
+        canonical=spine_by_title.get(_norm_title(n.get("titleZh") or n.get("title")))
         out.append({
             "id":"evt-"+str(len(out)+1),
             "title":n.get("title",""),
@@ -220,7 +227,15 @@ def build_global_events(rows,limit=20):
             "triggerRole":role,
             "impact":{"china":0,"us":0,"globalTrade":0,"logistics":0,"finance":0,"energy":0,"technology":0},
             "channels":channels,
-            "tags":[str(region),ec],"dedupeKey":norm,"sourceIdentity":_source_identity(n)
+            "tags":[str(region),ec],"dedupeKey":norm,"sourceIdentity":_source_identity(n),
+            "canonicalIntelligence":{
+                "eventId":canonical.get("id") if canonical else None,
+                "status":canonical.get("status") if canonical else "UNREGISTERED",
+                "independentSourceCount":canonical.get("independent_source_count",0) if canonical else 0,
+                "mentionCount":canonical.get("mention_count",0) if canonical else 0,
+                "claimIds":canonical.get("claim_ids",[]) if canonical else [],
+                "spineMatched":bool(canonical)
+            }
         })
     corr=_corroboration(out)
     for e in out:
