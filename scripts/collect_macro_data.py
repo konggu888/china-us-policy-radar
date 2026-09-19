@@ -42,19 +42,19 @@ def nbs_latest():
     published=re.search(r'(20\d{2}/\d{1,2}/\d{1,2})',text)
     observed=published.group(1).replace('/','-') if published else ''
     patterns={
-      'industrial_yoy_pct':r'规模以上工业增加值同比增长([+-]?\d+(?:\.\d+)?)%',
-      'industrial_mom_pct':r'环比增长([+-]?\d+(?:\.\d+)?)%',
-      'services_production_yoy_pct':r'服务业生产指数同比增长([+-]?\d+(?:\.\d+)?)%',
-      'fixed_asset_investment_ytd_yoy_pct':r'固定资产投资.*?同比下降([+-]?\d+(?:\.\d+)?)%',
-      'retail_yoy_pct':r'社会消费品零售总额.*?同比增长([+-]?\d+(?:\.\d+)?)%',
-      'exports_yoy_pct':r'出口[^。]{0,80}?增长([+-]?\d+(?:\.\d+)?)%',
-      'imports_yoy_pct':r'进口[^。]{0,80}?增长([+-]?\d+(?:\.\d+)?)%',
-      'unemployment_pct':r'城镇调查失业率为([+-]?\d+(?:\.\d+)?)%',
-      'cpi_yoy_pct':r'CPI同比上涨([+-]?\d+(?:\.\d+)?)%',
-      'cpi_mom_pct':r'CPI[^。]{0,80}?环比上涨([+-]?\d+(?:\.\d+)?)%',
-      'core_cpi_yoy_pct':r'核心CPI同比上涨([+-]?\d+(?:\.\d+)?)%',
-      'ppi_yoy_pct':r'PPI同比上涨([+-]?\d+(?:\.\d+)?)%',
-      'ppi_mom_pct':r'PPI[^。]{0,80}?环比上涨([+-]?\d+(?:\.\d+)?)%',
+      'industrial_yoy_pct':r'规模以上工业增加值[^。]{0,40}?同比(?:实际)?增长\s*([+-]?\d+(?:\.\d+)?)%',
+      'industrial_mom_pct':r'规模以上工业增加值[^。]{0,80}?环比(?:增长|上升)\s*([+-]?\d+(?:\.\d+)?)%',
+      'services_production_yoy_pct':r'服务业生产指数[^。]{0,40}?同比增长\s*([+-]?\d+(?:\.\d+)?)%',
+      'fixed_asset_investment_ytd_yoy_pct':r'固定资产投资[^。]{0,120}?同比下降\s*([+-]?\d+(?:\.\d+)?)%',
+      'retail_yoy_pct':r'社会消费品零售总额[^。]{0,120}?同比增长\s*([+-]?\d+(?:\.\d+)?)%',
+      'exports_yoy_pct':r'出口(?:额)?[^。]{0,100}?(?:同比)?增长\s*([+-]?\d+(?:\.\d+)?)%',
+      'imports_yoy_pct':r'进口(?:额)?[^。]{0,100}?(?:同比)?增长\s*([+-]?\d+(?:\.\d+)?)%',
+      'unemployment_pct':r'城镇调查失业率[^。]{0,50}?为\s*([+-]?\d+(?:\.\d+)?)%',
+      'cpi_yoy_pct':r'(?:居民消费价格|CPI)[^。]{0,80}?同比上涨\s*([+-]?\d+(?:\.\d+)?)%',
+      'cpi_mom_pct':r'(?:居民消费价格|CPI)[^。]{0,100}?环比上涨\s*([+-]?\d+(?:\.\d+)?)%',
+      'core_cpi_yoy_pct':r'核心CPI[^。]{0,80}?同比上涨\s*([+-]?\d+(?:\.\d+)?)%',
+      'ppi_yoy_pct':r'(?:工业生产者出厂价格|PPI)[^。]{0,100}?同比上涨\s*([+-]?\d+(?:\.\d+)?)%',
+      'ppi_mom_pct':r'(?:工业生产者出厂价格|PPI)[^。]{0,100}?环比上涨\s*([+-]?\d+(?:\.\d+)?)%',
       'fx_reserves_usd_trillion':r'外汇储备(?:稳定在|超过|保持在)\s*([+-]?\d+(?:\.\d+)?)万亿美元'
     }
     values={}
