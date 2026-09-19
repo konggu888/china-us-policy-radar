@@ -92,7 +92,7 @@
   "OfficialPage:UN News": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 35
+    "count": 36
   },
   "OfficialPage:WTO News": {
     "method": "direct_first_party_html",
@@ -157,7 +157,7 @@
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 60
+    "count": 58
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
@@ -177,7 +177,7 @@
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 27
+    "count": 29
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-09-19 08:48 UTC",
+  "updated": "2026-09-19 15:02 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 3028,
-  "new_discovery_count": 300,
-  "official_direct_count": 265,
-  "official_in_working_set": 538,
+  "total_collected": 3064,
+  "new_discovery_count": 298,
+  "official_direct_count": 266,
+  "official_in_working_set": 539,
   "category_counts": {
-    "政治": 3,
-    "金融": 13,
-    "经济": 7,
-    "产业": 0,
-    "科技 / AI": 2,
-    "国防": 3,
-    "内政": 2,
-    "国家安全": 3,
-    "外交": 3,
-    "贸易 / 供应链": 0,
-    "能源 / 资源": 7,
-    "中美博弈": 0,
-    "全球政策": 2985
+    "政治": 16,
+    "金融": 76,
+    "经济": 21,
+    "产业": 3,
+    "科技 / AI": 62,
+    "国防": 9,
+    "内政": 6,
+    "国家安全": 25,
+    "外交": 25,
+    "贸易 / 供应链": 63,
+    "能源 / 资源": 36,
+    "中美博弈": 156,
+    "全球政策": 2566
   },
   "region_counts": {
-    "china": 471,
-    "us": 513,
-    "global": 2044
+    "china": 474,
+    "us": 515,
+    "global": 2075
   },
   "sources": {
     "OfficialPage:White House": {
@@ -314,7 +314,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 35
+      "count": 36
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -379,7 +379,7 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 60
+      "count": 58
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -399,7 +399,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 27
+      "count": 29
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
