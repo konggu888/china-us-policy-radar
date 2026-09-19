@@ -96,7 +96,7 @@ def collect_us():
 MARKETS={
  'DXY':'DX-Y.NYB','USD/CNH':'CNH=X','EUR/USD':'EURUSD=X','USD/JPY':'JPY=X',
  '美国2年期收益率':'^IRX','美国5年期收益率':'^FVX','美国10年期收益率':'^TNX','美国30年期收益率':'^TYX',
- 'NASDAQ':'^IXIC','道琼斯':'^DJI','恒生指数':'^HSI','恒生科技':'^HSTECH','WTI原油':'CL=F','铜':'HG=F','白银':'SI=F',
+ 'NASDAQ':'^IXIC','道琼斯':'^DJI','恒生指数':'^HSI','恒生科技':'HSTECH.HK','WTI原油':'CL=F','铜':'HG=F','白银':'SI=F',
  '黄金':'GC=F','VIX':'^VIX','标普500':'^GSPC','USD/CNY':'CNY=X'
 }
 
