@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20 04:58 UTC",
+  "updated": "2026-09-20 10:22 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-09-20 04:58 UTC"
+    "asof": "2026-09-20 10:22 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -607,19 +607,19 @@
       ],
       [
         "金融",
-        19
+        21
+      ],
+      [
+        "国家安全",
+        17
       ],
       [
         "经济",
         14
       ],
       [
-        "国家安全",
-        14
-      ],
-      [
         "外交",
-        12
+        11
       ]
     ],
     "us": [
@@ -651,19 +651,19 @@
     "global": [
       [
         "全球政策",
-        1896
+        1899
       ],
       [
         "中美博弈",
-        83
+        91
       ],
       [
         "贸易 / 供应链",
-        42
+        41
       ],
       [
         "科技 / AI",
-        31
+        32
       ],
       [
         "金融",
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 665
+      "count": 656
     },
     {
       "keyword": "产业升级",
@@ -698,11 +698,11 @@
     },
     {
       "keyword": "安全",
-      "count": 113
+      "count": 115
     },
     {
       "keyword": "贸易",
-      "count": 174
+      "count": 173
     }
   ],
   "policy_source_matrix": [
@@ -781,7 +781,7 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 481,
+      "total": 484,
       "top_categories": [
         {
           "name": "全球政策",
@@ -793,19 +793,19 @@
         },
         {
           "name": "金融",
-          "count": 19
+          "count": 21
         },
         {
           "name": "国家安全",
-          "count": 14
+          "count": 17
         },
         {
           "name": "经济",
           "count": 14
         },
         {
-          "name": "外交",
-          "count": 12
+          "name": "贸易 / 供应链",
+          "count": 11
         }
       ],
       "risk_high": 27
@@ -978,8 +978,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 3124 条；本轮发现 299 条；13类覆盖=13/13；中国/美国/全球=481/520/2123；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-09-20 04:58 UTC",
+  "collection_message": "长期情报库：当前工作集 3142 条；本轮发现 300 条；13类覆盖=13/13；中国/美国/全球=484/520/2138；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-09-20 10:22 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1139,7 +1139,7 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 59
+      "count": 60
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
