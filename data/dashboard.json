@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23 05:52 UTC",
+  "updated": "2026-09-23 10:06 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -10,42 +10,42 @@
     },
     {
       "symbol": "000001.SS",
-      "value": 3936.5381,
+      "value": 3936.52,
       "change_pct": -0.34,
       "time": "2026-09-23",
       "name": "上证指数"
     },
     {
       "symbol": "399001.SZ",
-      "value": 13637.2305,
+      "value": 13636.0742,
       "change_pct": -0.68,
       "time": "2026-09-23",
       "name": "深证成指"
     },
     {
       "symbol": "000300.SS",
-      "value": 4516.3389,
+      "value": 4517.2783,
       "change_pct": 0.0,
       "time": "2026-09-23",
       "name": "沪深300"
     },
     {
       "symbol": "000905.SS",
-      "value": 7797.6831,
+      "value": 7791.8164,
       "change_pct": 0.0,
       "time": "2026-09-23",
       "name": "中证500"
     },
     {
       "symbol": "399006.SZ",
-      "value": 3379.116,
+      "value": 3379.6099,
       "change_pct": 0.0,
       "time": "2026-09-23",
       "name": "创业板指"
     },
     {
       "symbol": "000688.SS",
-      "value": 1662.217,
+      "value": 1660.8542,
       "change_pct": 0.0,
       "time": "2026-09-23",
       "name": "科创50"
@@ -66,23 +66,23 @@
     },
     {
       "symbol": "BZ=F",
-      "value": 98.55,
-      "change_pct": -0.71,
+      "value": 95.82,
+      "change_pct": -3.46,
       "time": "2026-09-23",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4372.0,
-      "change_pct": -0.1,
+      "value": 4350.2998,
+      "change_pct": -0.6,
       "time": "2026-09-23",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 14.87,
-      "change_pct": 0.41,
-      "time": "2026-09-22",
+      "value": 14.17,
+      "change_pct": -4.71,
+      "time": "2026-09-23",
       "name": "VIX"
     }
   ],
@@ -223,32 +223,32 @@
   "a_share_market": {
     "上证指数": {
       "ticker": "000001.SS",
-      "latest": 3937.0652,
-      "daily_pct": -0.33,
-      "weekly_pct": 1.88,
-      "monthly_pct": 1.42,
-      "quarterly_pct": -4.45,
-      "six_month_pct": 1.44,
+      "latest": 3936.52,
+      "daily_pct": -0.34,
+      "weekly_pct": 1.87,
+      "monthly_pct": 1.4,
+      "quarterly_pct": -4.46,
+      "six_month_pct": 1.42,
       "asof": "2026-09-23",
       "provider": "Yahoo Finance",
       "weekly_rank": 2
     },
     "深证成指": {
       "ticker": "399001.SZ",
-      "latest": 13634.5176,
-      "daily_pct": -0.7,
-      "weekly_pct": 2.61,
-      "monthly_pct": -1.16,
-      "quarterly_pct": -16.58,
-      "six_month_pct": 0.72,
+      "latest": 13636.0742,
+      "daily_pct": -0.68,
+      "weekly_pct": 2.62,
+      "monthly_pct": -1.15,
+      "quarterly_pct": -16.57,
+      "six_month_pct": 0.74,
       "asof": "2026-09-23",
       "provider": "Yahoo Finance",
       "weekly_rank": 1
     },
     "沪深300": {
       "ticker": "000300.SS",
-      "latest": 4521.94,
-      "daily_pct": -0.5,
+      "latest": 4517.28,
+      "daily_pct": -0.6,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -260,8 +260,8 @@
     },
     "中证500": {
       "ticker": "000905.SS",
-      "latest": 7808.06,
-      "daily_pct": -0.27,
+      "latest": 7791.82,
+      "daily_pct": -0.47,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -273,8 +273,8 @@
     },
     "中证1000": {
       "ticker": "000852.SS",
-      "latest": 7760.89,
-      "daily_pct": 0.02,
+      "latest": 7745.56,
+      "daily_pct": -0.17,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -286,8 +286,8 @@
     },
     "创业板指": {
       "ticker": "399006.SZ",
-      "latest": 3383.55,
-      "daily_pct": -0.48,
+      "latest": 3379.61,
+      "daily_pct": -0.6,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -299,8 +299,8 @@
     },
     "科创50": {
       "ticker": "000688.SS",
-      "latest": 1665.36,
-      "daily_pct": 0.02,
+      "latest": 1660.85,
+      "daily_pct": -0.25,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -450,12 +450,12 @@
       {
         "name": "深证成指",
         "ticker": "399001.SZ",
-        "latest": 13634.5176,
-        "daily_pct": -0.7,
-        "weekly_pct": 2.61,
-        "monthly_pct": -1.16,
-        "quarterly_pct": -16.58,
-        "six_month_pct": 0.72,
+        "latest": 13636.0742,
+        "daily_pct": -0.68,
+        "weekly_pct": 2.62,
+        "monthly_pct": -1.15,
+        "quarterly_pct": -16.57,
+        "six_month_pct": 0.74,
         "asof": "2026-09-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 1
@@ -463,12 +463,12 @@
       {
         "name": "上证指数",
         "ticker": "000001.SS",
-        "latest": 3937.0652,
-        "daily_pct": -0.33,
-        "weekly_pct": 1.88,
-        "monthly_pct": 1.42,
-        "quarterly_pct": -4.45,
-        "six_month_pct": 1.44,
+        "latest": 3936.52,
+        "daily_pct": -0.34,
+        "weekly_pct": 1.87,
+        "monthly_pct": 1.4,
+        "quarterly_pct": -4.46,
+        "six_month_pct": 1.42,
         "asof": "2026-09-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 2
@@ -476,8 +476,8 @@
       {
         "name": "沪深300",
         "ticker": "000300.SS",
-        "latest": 4521.94,
-        "daily_pct": -0.5,
+        "latest": 4517.28,
+        "daily_pct": -0.6,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -490,8 +490,8 @@
       {
         "name": "中证500",
         "ticker": "000905.SS",
-        "latest": 7808.06,
-        "daily_pct": -0.27,
+        "latest": 7791.82,
+        "daily_pct": -0.47,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -504,8 +504,8 @@
       {
         "name": "中证1000",
         "ticker": "000852.SS",
-        "latest": 7760.89,
-        "daily_pct": 0.02,
+        "latest": 7745.56,
+        "daily_pct": -0.17,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -520,8 +520,8 @@
       {
         "name": "科创50",
         "ticker": "000688.SS",
-        "latest": 1665.36,
-        "daily_pct": 0.02,
+        "latest": 1660.85,
+        "daily_pct": -0.25,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -534,8 +534,8 @@
       {
         "name": "创业板指",
         "ticker": "399006.SZ",
-        "latest": 3383.55,
-        "daily_pct": -0.48,
+        "latest": 3379.61,
+        "daily_pct": -0.6,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -548,8 +548,8 @@
       {
         "name": "中证1000",
         "ticker": "000852.SS",
-        "latest": 7760.89,
-        "daily_pct": 0.02,
+        "latest": 7745.56,
+        "daily_pct": -0.17,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -562,8 +562,8 @@
       {
         "name": "中证500",
         "ticker": "000905.SS",
-        "latest": 7808.06,
-        "daily_pct": -0.27,
+        "latest": 7791.82,
+        "daily_pct": -0.47,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -576,8 +576,8 @@
       {
         "name": "沪深300",
         "ticker": "000300.SS",
-        "latest": 4521.94,
-        "daily_pct": -0.5,
+        "latest": 4517.28,
+        "daily_pct": -0.6,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-09-23 05:52 UTC"
+    "asof": "2026-09-23 10:06 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,19 +599,19 @@
     "china": [
       [
         "全球政策",
-        321
+        320
       ],
       [
         "中美博弈",
-        86
-      ],
-      [
-        "金融",
-        20
+        88
       ],
       [
         "国家安全",
         20
+      ],
+      [
+        "金融",
+        19
       ],
       [
         "外交",
@@ -625,11 +625,11 @@
     "us": [
       [
         "全球政策",
-        352
+        353
       ],
       [
         "中美博弈",
-        56
+        58
       ],
       [
         "金融",
@@ -645,21 +645,21 @@
       ],
       [
         "能源 / 资源",
-        19
+        20
       ]
     ],
     "global": [
       [
         "全球政策",
-        2011
+        2017
       ],
       [
         "中美博弈",
-        191
+        197
       ],
       [
         "科技 / AI",
-        75
+        80
       ],
       [
         "贸易 / 供应链",
@@ -667,7 +667,7 @@
       ],
       [
         "能源 / 资源",
-        25
+        26
       ],
       [
         "金融",
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 752
+      "count": 759
     },
     {
       "keyword": "产业升级",
@@ -781,15 +781,15 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 523,
+      "total": 524,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 321
+          "count": 320
         },
         {
           "name": "中美博弈",
-          "count": 86
+          "count": 88
         },
         {
           "name": "国家安全",
@@ -797,7 +797,7 @@
         },
         {
           "name": "金融",
-          "count": 20
+          "count": 19
         },
         {
           "name": "外交",
@@ -812,15 +812,15 @@
     },
     {
       "side": "美国",
-      "total": 559,
+      "total": 563,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 352
+          "count": 353
         },
         {
           "name": "中美博弈",
-          "count": 56
+          "count": 58
         },
         {
           "name": "金融",
@@ -836,7 +836,7 @@
         },
         {
           "name": "能源 / 资源",
-          "count": 19
+          "count": 20
         }
       ],
       "risk_high": 48
@@ -978,8 +978,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 3548 条；本轮发现 300 条；13类覆盖=13/13；中国/美国/全球=523/559/2466；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-09-23 05:52 UTC",
+  "collection_message": "长期情报库：当前工作集 3574 条；本轮发现 300 条；13类覆盖=13/13；中国/美国/全球=524/563/2487；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-09-23 10:06 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1074,7 +1074,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 38
+      "count": 36
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -1154,12 +1154,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 23
+      "count": 26
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 24
+      "count": 26
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
