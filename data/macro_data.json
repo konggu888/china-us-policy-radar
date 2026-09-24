@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-24T01:01:12.738049+00:00",
+  "updatedAt": "2026-09-24T06:26:44.480672+00:00",
   "china": {
     "source": "国家统计局",
     "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
     "releaseTitle": "8月份国民经济运行平稳、发展向新向优",
     "publishedAt": "2026-09-15",
-    "fetchedAt": "2026-09-24T01:01:09.552237+00:00",
+    "fetchedAt": "2026-09-24T06:26:41.116669+00:00",
     "values": {
       "industrial_yoy_pct": 5.2,
       "industrial_mom_pct": 0.54,
@@ -24,12 +24,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+    "error": "<urlopen error _ssl.c:993: The handshake operation timed out>",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-09-24T00:58:37.302910+00:00",
+    "fetchedAt": "2026-09-24T06:16:04.376846+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
@@ -578,9 +578,16 @@
         "source": "中国人民银行"
       },
       {
+        "indicator": "open_market_7d_reverse_repo_amount_billion",
+        "value": 515.0,
+        "observedAt": "2026-09-24",
+        "source": "中国人民银行",
+        "sourceUrl": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026092408454713496/index.html"
+      },
+      {
         "indicator": "USD/CNY_PBOC_MID",
-        "value": 6.7467999999999995,
-        "observedAt": "2026-09-23",
+        "value": 6.7489,
+        "observedAt": "2026-09-24",
         "source": "SAFE/PBOC RMB central parity",
         "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
       }
