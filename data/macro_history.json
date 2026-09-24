@@ -22475,5 +22475,730 @@
       "marketVariableCount": 23,
       "errors": 0
     }
+  },
+  {
+    "updatedAt": "2026-09-24T01:01:12.738049+00:00",
+    "china": {
+      "source": "国家统计局",
+      "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
+      "releaseTitle": "8月份国民经济运行平稳、发展向新向优",
+      "publishedAt": "2026-09-15",
+      "fetchedAt": "2026-09-24T01:01:09.552237+00:00",
+      "values": {
+        "industrial_yoy_pct": 5.2,
+        "industrial_mom_pct": 0.54,
+        "services_production_yoy_pct": 4.1,
+        "fixed_asset_investment_ytd_yoy_pct": 7.2,
+        "retail_yoy_pct": 1.1,
+        "exports_yoy_pct": 19.8,
+        "imports_yoy_pct": 21.7,
+        "unemployment_pct": 5.2,
+        "cpi_yoy_pct": 0.8,
+        "cpi_mom_pct": 0.4,
+        "ppi_yoy_pct": 3.8,
+        "ppi_mom_pct": 0.4
+      },
+      "method": "从国家统计局数据发布页自动发现最新国民经济运行正式发布并解析明确标注的指标；未匹配字段保持缺失。"
+    },
+    "chinaStructured": {
+      "status": "MISSING",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+      "records": []
+    },
+    "pbc": {
+      "source": "中国人民银行",
+      "fetchedAt": "2026-09-24T00:58:37.302910+00:00",
+      "records": [
+        {
+          "indicator": "M2_yoy_pct",
+          "value": 7.5,
+          "publishedAt": "2026-09-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026091417020862747/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_yoy_pct",
+          "value": 4.1,
+          "publishedAt": "2026-09-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026091417020862747/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_balance_trillion",
+          "value": 278.63,
+          "publishedAt": "2026-09-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026091417020862747/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_ytd_trillion",
+          "value": null,
+          "publishedAt": "2026-09-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026091417020862747/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_balance_trillion",
+          "value": 347.67,
+          "publishedAt": "2026-09-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026091417020862747/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_ytd_trillion",
+          "value": null,
+          "publishedAt": "2026-09-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026091417020862747/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "interbank_lending_rate_pct",
+          "value": 1.38,
+          "publishedAt": "2026-09-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026091417020862747/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "pledged_repo_rate_pct",
+          "value": 1.4,
+          "publishedAt": "2026-09-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026091417020862747/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "social_financing_ytd_trillion",
+          "value": 23.91,
+          "publishedAt": "2026-09-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026091417020862747/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_yoy_pct",
+          "value": 7.7,
+          "publishedAt": "2026-08-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026081416320925645/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_yoy_pct",
+          "value": 4.0,
+          "publishedAt": "2026-08-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026081416320925645/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_balance_trillion",
+          "value": 278.57,
+          "publishedAt": "2026-08-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026081416320925645/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_ytd_trillion",
+          "value": null,
+          "publishedAt": "2026-08-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026081416320925645/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_balance_trillion",
+          "value": 346.47,
+          "publishedAt": "2026-08-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026081416320925645/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_ytd_trillion",
+          "value": null,
+          "publishedAt": "2026-08-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026081416320925645/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "interbank_lending_rate_pct",
+          "value": 1.4,
+          "publishedAt": "2026-08-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026081416320925645/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "pledged_repo_rate_pct",
+          "value": 1.42,
+          "publishedAt": "2026-08-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026081416320925645/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "social_financing_ytd_trillion",
+          "value": 22.25,
+          "publishedAt": "2026-08-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026081416320925645/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_balance_trillion",
+          "value": 356.71,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_yoy_pct",
+          "value": 8.0,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_balance_trillion",
+          "value": 118.48,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_yoy_pct",
+          "value": 4.0,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M0_balance_trillion",
+          "value": 14.74,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_balance_trillion",
+          "value": 279.16,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_balance_trillion",
+          "value": 346.44,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "interbank_lending_rate_pct",
+          "value": 1.41,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "pledged_repo_rate_pct",
+          "value": 1.43,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "social_financing_ytd_trillion",
+          "value": 20.84,
+          "publishedAt": "2026-07-15",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026071515025183948/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_balance_trillion",
+          "value": 353.67,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_yoy_pct",
+          "value": 8.6,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_balance_trillion",
+          "value": 114.89,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_yoy_pct",
+          "value": 5.5,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M0_balance_trillion",
+          "value": 14.69,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_balance_trillion",
+          "value": 277.4,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_ytd_trillion",
+          "value": null,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_balance_trillion",
+          "value": 344.45,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_ytd_trillion",
+          "value": null,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "interbank_lending_rate_pct",
+          "value": 1.31,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "pledged_repo_rate_pct",
+          "value": 1.33,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "social_financing_ytd_trillion",
+          "value": 17.48,
+          "publishedAt": "2026-06-12",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026061217051611931/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_yoy_pct",
+          "value": 8.6,
+          "publishedAt": "2026-05-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026051417030520490/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_yoy_pct",
+          "value": 5.0,
+          "publishedAt": "2026-05-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026051417030520490/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_balance_trillion",
+          "value": 276.9,
+          "publishedAt": "2026-05-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026051417030520490/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_ytd_trillion",
+          "value": null,
+          "publishedAt": "2026-05-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026051417030520490/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_balance_trillion",
+          "value": 342.68,
+          "publishedAt": "2026-05-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026051417030520490/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_ytd_trillion",
+          "value": null,
+          "publishedAt": "2026-05-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026051417030520490/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "interbank_lending_rate_pct",
+          "value": 1.29,
+          "publishedAt": "2026-05-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026051417030520490/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "pledged_repo_rate_pct",
+          "value": 1.31,
+          "publishedAt": "2026-05-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026051417030520490/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "social_financing_ytd_trillion",
+          "value": 15.45,
+          "publishedAt": "2026-05-14",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026051417030520490/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_balance_trillion",
+          "value": 353.86,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_yoy_pct",
+          "value": 8.5,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_balance_trillion",
+          "value": 119.32,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_yoy_pct",
+          "value": 5.1,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M0_balance_trillion",
+          "value": 14.71,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_balance_trillion",
+          "value": 277.3,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_balance_trillion",
+          "value": 342.41,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "interbank_lending_rate_pct",
+          "value": 1.38,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "pledged_repo_rate_pct",
+          "value": 1.4,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "social_financing_ytd_trillion",
+          "value": 14.83,
+          "publishedAt": "2026-04-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026041317011944771/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_balance_trillion",
+          "value": 349.22,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_yoy_pct",
+          "value": 9.0,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_balance_trillion",
+          "value": 115.93,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_yoy_pct",
+          "value": 5.9,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M0_balance_trillion",
+          "value": 15.14,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_balance_trillion",
+          "value": 277.52,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_balance_trillion",
+          "value": 337.94,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "interbank_lending_rate_pct",
+          "value": 1.4,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "pledged_repo_rate_pct",
+          "value": 1.44,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "social_financing_ytd_trillion",
+          "value": 9.6,
+          "publishedAt": "2026-03-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026031317020260950/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_balance_trillion",
+          "value": 347.19,
+          "publishedAt": "2026-02-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M2_yoy_pct",
+          "value": 9.0,
+          "publishedAt": "2026-02-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_balance_trillion",
+          "value": 117.97,
+          "publishedAt": "2026-02-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M1_yoy_pct",
+          "value": 4.9,
+          "publishedAt": "2026-02-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "M0_balance_trillion",
+          "value": 14.61,
+          "publishedAt": "2026-02-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_loans_balance_trillion",
+          "value": 276.62,
+          "publishedAt": "2026-02-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "RMB_deposits_balance_trillion",
+          "value": 336.77,
+          "publishedAt": "2026-02-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "interbank_lending_rate_pct",
+          "value": 1.4,
+          "publishedAt": "2026-02-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "pledged_repo_rate_pct",
+          "value": 1.43,
+          "publishedAt": "2026-02-13",
+          "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
+          "source": "中国人民银行"
+        },
+        {
+          "indicator": "USD/CNY_PBOC_MID",
+          "value": 6.7467999999999995,
+          "observedAt": "2026-09-23",
+          "source": "SAFE/PBOC RMB central parity",
+          "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
+        }
+      ],
+      "errors": [],
+      "status": "OK"
+    },
+    "unitedStates": {
+      "source": "FRED",
+      "series": {
+        "real_gdp": {
+          "seriesId": "GDPC1",
+          "observedAt": "2026-04-01",
+          "value": 24269.613,
+          "previousValue": 24180.419,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/GDPC1"
+        },
+        "cpi": {
+          "seriesId": "CPIAUCSL",
+          "observedAt": "2026-08-01",
+          "value": 334.131,
+          "previousValue": 332.813,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/CPIAUCSL"
+        },
+        "core_cpi": {
+          "seriesId": "CPILFESL",
+          "observedAt": "2026-08-01",
+          "value": 337.765,
+          "previousValue": 336.789,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/CPILFESL"
+        },
+        "pce_price": {
+          "seriesId": "PCEPI",
+          "observedAt": "2026-07-01",
+          "value": 131.659,
+          "previousValue": 131.454,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/PCEPI"
+        },
+        "unemployment": {
+          "seriesId": "UNRATE",
+          "observedAt": "2026-08-01",
+          "value": 4.1,
+          "previousValue": 4.1,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/UNRATE"
+        },
+        "nonfarm_payrolls": {
+          "seriesId": "PAYEMS",
+          "observedAt": "2026-08-01",
+          "value": 159075.0,
+          "previousValue": 158913.0,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/PAYEMS"
+        },
+        "industrial_production": {
+          "seriesId": "INDPRO",
+          "observedAt": "2026-08-01",
+          "value": 103.0682,
+          "previousValue": 103.0454,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/INDPRO"
+        },
+        "retail_sales": {
+          "seriesId": "RSAFS",
+          "observedAt": "2026-08-01",
+          "value": 773947.0,
+          "previousValue": 764462.0,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/RSAFS"
+        },
+        "fed_funds": {
+          "seriesId": "FEDFUNDS",
+          "observedAt": "2026-08-01",
+          "value": 3.63,
+          "previousValue": 3.63,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/FEDFUNDS"
+        },
+        "m2": {
+          "seriesId": "M2SL",
+          "observedAt": "2026-08-01",
+          "value": 23342.8,
+          "previousValue": 23217.9,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/M2SL"
+        },
+        "10y_treasury": {
+          "seriesId": "DGS10",
+          "observedAt": "2026-09-22",
+          "value": 4.96,
+          "previousValue": 4.96,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
+        },
+        "2y_treasury": {
+          "seriesId": "DGS2",
+          "observedAt": "2026-09-22",
+          "value": 4.71,
+          "previousValue": 4.76,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
+        },
+        "5y_treasury": {
+          "seriesId": "DGS5",
+          "observedAt": "2026-09-22",
+          "value": 4.83,
+          "previousValue": 4.83,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DGS5"
+        },
+        "30y_treasury": {
+          "seriesId": "DGS30",
+          "observedAt": "2026-09-22",
+          "value": 5.29,
+          "previousValue": 5.29,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
+        },
+        "usd_index": {
+          "seriesId": "DTWEXBGS",
+          "observedAt": "2026-09-18",
+          "value": 119.5133,
+          "previousValue": 119.3489,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DTWEXBGS"
+        }
+      },
+      "errors": {},
+      "apiMode": "public fredgraph CSV; no API key"
+    },
+    "marketSnapshotCount": 23,
+    "quality": {
+      "chinaStatus": "OK",
+      "usSeriesCount": 15,
+      "marketVariableCount": 23,
+      "errors": 1
+    }
   }
 ]
