@@ -15,8 +15,8 @@
       "market": [
         {
           "symbol": "CNY=X",
-          "value": 6.7037,
-          "change_pct": -0.11,
+          "value": 6.7123,
+          "change_pct": 0.02,
           "time": "2026-09-25",
           "name": "USD/CNY"
         },
@@ -43,36 +43,36 @@
         },
         {
           "symbol": "^GSPC",
-          "value": 7705.3398,
-          "change_pct": 0.02,
+          "value": 7736.1802,
+          "change_pct": 0.42,
           "time": "2026-09-25",
           "name": "标普500"
         },
         {
           "symbol": "^TNX",
-          "value": 5.207,
-          "change_pct": 0.87,
+          "value": 5.204,
+          "change_pct": 0.81,
           "time": "2026-09-25",
           "name": "美国10年期收益率"
         },
         {
           "symbol": "BZ=F",
-          "value": 98.85,
-          "change_pct": -7.27,
+          "value": 97.49,
+          "change_pct": -8.55,
           "time": "2026-09-25",
           "name": "布伦特原油"
         },
         {
           "symbol": "GC=F",
-          "value": 4299.3999,
-          "change_pct": 0.03,
+          "value": 4321.5,
+          "change_pct": 0.55,
           "time": "2026-09-25",
           "name": "黄金"
         },
         {
           "symbol": "^VIX",
-          "value": 15.68,
-          "change_pct": 0.06,
+          "value": 14.99,
+          "change_pct": -4.34,
           "time": "2026-09-25",
           "name": "VIX"
         }
@@ -80,45 +80,45 @@
       "us_sector_risers": [
         {
           "name": "科技",
-          "weekly_pct": 3.11
+          "weekly_pct": 3.63
         },
         {
           "name": "通信服务",
-          "weekly_pct": 1.84
+          "weekly_pct": 1.83
         },
         {
           "name": "医疗",
-          "weekly_pct": 0.45
+          "weekly_pct": 1.19
         },
         {
           "name": "工业",
-          "weekly_pct": -0.01
+          "weekly_pct": 0.19
         },
         {
-          "name": "材料",
-          "weekly_pct": -0.74
+          "name": "可选消费",
+          "weekly_pct": -0.54
         }
       ],
       "us_sector_fallers": [
         {
           "name": "公用事业",
-          "weekly_pct": -4.31
+          "weekly_pct": -4.15
         },
         {
           "name": "能源",
-          "weekly_pct": -3.54
-        },
-        {
-          "name": "金融",
-          "weekly_pct": -2.4
+          "weekly_pct": -3.9
         },
         {
           "name": "房地产",
-          "weekly_pct": -2.09
+          "weekly_pct": -2.42
+        },
+        {
+          "name": "金融",
+          "weekly_pct": -1.92
         },
         {
           "name": "必选消费",
-          "weekly_pct": -1.42
+          "weekly_pct": -1.14
         }
       ]
     }
@@ -133,7 +133,7 @@
     {
       "id": "public",
       "name": "民众体感",
-      "signal": "公开讨论代理信号：就业/收入 5、住房 1、物价 9、消费 9",
+      "signal": "公开讨论代理信号：就业/收入 5、住房 1、物价 10、消费 9",
       "evidence": "social_signals",
       "caveat": "仅代表公开讨论发现，不代表总体民意或民调"
     },
@@ -204,7 +204,7 @@
       "risk": "极高",
       "source": "White House",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     },
     {
       "title": "财政部在经济诺曼底登陆日发起针对伊朗政权的史无前例的行动",
@@ -213,7 +213,7 @@
       "risk": "极高",
       "source": "US Treasury",
       "url": "https://home.treasury.gov/news/press-releases/sb0613/",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     },
     {
       "title": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
@@ -225,13 +225,22 @@
       "time": "20260908T1"
     },
     {
+      "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+      "region": "global",
+      "category": "金融",
+      "risk": "高",
+      "source": "IAEA",
+      "url": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development",
+      "time": "26-09-25  14:02"
+    },
+    {
       "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
       "region": "global",
       "category": "中美博弈",
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/09/1168386",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     },
     {
       "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
@@ -240,7 +249,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/09/1168416",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     },
     {
       "title": "World News in Brief: ‘New intensity’ to Russian attacks on Ukraine, Yemen, Gaza and Colombia updates",
@@ -249,7 +258,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/09/1168427",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     },
     {
       "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
@@ -285,7 +294,7 @@
       "risk": "高",
       "source": "US Treasury",
       "url": "https://home.treasury.gov/news/press-releases/sb0617/",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     },
     {
       "title": "财政部加大对真主党的制裁力度，并打击为真主党走私数百万现金的网络",
@@ -294,7 +303,7 @@
       "risk": "高",
       "source": "US Treasury",
       "url": "https://home.treasury.gov/news/press-releases/sb0611/",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     },
     {
       "title": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
@@ -303,7 +312,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/09/1168410",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     },
     {
       "title": "财政部对暴力极左恐怖网络采取行动",
@@ -312,7 +321,7 @@
       "risk": "高",
       "source": "US Treasury",
       "url": "https://home.treasury.gov/news/press-releases/sb0616/",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     },
     {
       "title": "财政部长斯科特·贝森特关于针对伊朗的经济排斥行动的讲话",
@@ -321,16 +330,7 @@
       "risk": "高",
       "source": "US Treasury",
       "url": "https://home.treasury.gov/news/press-releases/sb0614/",
-      "time": "2026-09-25 13:37 UTC"
-    },
-    {
-      "title": "UN report warns of reprisals against those who collaborate in defence of human rights",
-      "region": "global",
-      "category": "贸易 / 供应链",
-      "risk": "高",
-      "source": "UN News",
-      "url": "https://news.un.org/en/story/2026/09/1168345",
-      "time": "2026-09-25 13:37 UTC"
+      "time": "2026-09-25 18:03 UTC"
     }
   ],
   "governance": {
@@ -480,18 +480,18 @@
     "unknown": "尚无足够公开证据验证的部分"
   },
   "social": {
-    "updated": "2026-09-25T14:24:06.053502+00:00",
+    "updated": "2026-09-25T18:39:16.927638+00:00",
     "method": "public discussion discovery proxy via indexed public RSS; not representative survey data",
     "items": [
       {
-        "title": "GDP增长超预期，消费冷感挥之不去，中国经济“温差”何来？ - BBC",
+        "title": "GDP增长超预期，消费冷感挥之不去，中国经济“温差”何来？ - bbc.com",
         "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB6alZmQnNBZUxQMlRoNF9vcXFoRjhsV3lYX25EUFNma2QzeDVYX3JXUG1CYW93VklyQWJEWkNxT2pzeF81ZklMaEpRc2xnMGtxai1GOV9McjN0Yi0xUEU1OXpqOUhLQdIBa0FVX3lxTE9BdVhzRG5vbEpocFRrYUFBVW1sY01YbDBQN0FxbjlNellnT0VyM1BGT3BubUZicVVpb0tYYnU1eVdmaUZPZFZXam51dzZHSWNfSEhLd2J4TGg2bUdxWXFnV0VoLWNPdnRUN1Fr?oc=5",
         "source": "Google News discussion proxy",
         "region": "china",
         "time": "Fri, 24 Apr 2026 07:00:00 GMT"
       },
       {
-        "title": "温天：中国民间为何执意送别高善文——一个经济学家的哀荣照出良知价值 - 早晨报",
+        "title": "温天：中国民间为何执意送别高善文——一个经济学家的哀荣照出良知价值 - zaochenbao.com",
         "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1IcTNTeTVzUzE5TzVBNzUzTmhSNEU0MjFuSnM0UEx1bXpLQ3YxaEV0S3VNc2tWbFZIeHpyRTZMMGFRTWEzbklUZ2ZEeVFNb01WbEtzNG9OYjBWaE01VnNVeTN6UXhUZUcxNGNB?oc=5",
         "source": "Google News discussion proxy",
         "region": "china",
@@ -505,7 +505,7 @@
         "time": "Mon, 11 May 2026 07:00:00 GMT"
       },
       {
-        "title": "十五五规划：中国三大经济战略主线明晰，从对标美国转向抢占科技高地？ - BBC",
+        "title": "十五五规划：中国三大经济战略主线明晰，从对标美国转向抢占科技高地？ - bbc.com",
         "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBzYmVnbW9TbUwzMnFpUEtRN0RreU1aRS03WWNHOVVNZkpSbmVXSkhPWUZ4QWJ2cG10Ykd4Q0N4TDFwb3UtbldYRzBwU05NbE55eXdibUVCeVN0cWxSNmpseUdTQkV2UdIBa0FVX3lxTE9XVWJNVXpqSWVLUnl2SlJ3SFpEYnR1RHgyTC0xanJyVnNpU1UxcnpNbjdxV3pSOVJDdjVTQThBY0RKSy1LVkp4SzR0QUJQcHMtR01PWHRBWC1TWlJ3NmpSRkdVcWlNY25CbDRF?oc=5",
         "source": "Google News discussion proxy",
         "region": "china",
@@ -533,7 +533,7 @@
         "time": "Wed, 29 Jan 2025 08:00:00 GMT"
       },
       {
-        "title": "“过紧日子”成中国全民现状降薪、裁员、通缩三重夹击– 普通话主页 - rfa.org",
+        "title": "“过紧日子”成中国全民现状降薪、裁员、通缩三重夹击– 普通话主页 - Radio Free Asia",
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOaXJDUW10OXJjSzBtblkxaUZKX1ZwWEZvUTZYTWR0b1kzQk9qcm12RnlpcUdIVEN1b0lYem84cDhaRVc4b2NJVXJaMlo4MHU0dEVja0hKcUtCaEc1NXo2Slppa21IWXdsM1lkM29yWkFWTEVTMUFqbXFtcVlDTGtZemtfN0NOYjZMTGhTOXVRZFNkMFk4N3VUdVFKTXF5Mmgy?oc=5",
         "source": "Google News discussion proxy",
         "region": "china",
@@ -547,7 +547,7 @@
         "time": "Thu, 19 Dec 2024 08:00:00 GMT"
       },
       {
-        "title": "中国经济：中央经济工作会前刺激信号频出，两位经济学家被禁言 - BBC",
+        "title": "中国经济：中央经济工作会前刺激信号频出，两位经济学家被禁言 - bbc.com",
         "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBXUzljOGFoRGhfUElDR2JZTnFKUU9fOFRvb0VSRmlMUVZCdVNvVl9ocndNZzlUYmhhSl9aWW1zLU1MbzV2NE9UVkg5Si1nUldQMVo4WUxmRThQVFRuMjE5clF6cDNUZ9IBa0FVX3lxTE9Ud2EwRGppeHdSZDZLeUp1TXJFZnk4dXZOdGhkeG8zaVNLY3picFdEY0NHQ1E4Um1LSVFJTUxSUDlONi1ORnZGQURKby0wa29ESWZzWXhaMnRlbDF1U2xrSDI1OUdsbnB0SURv?oc=5",
         "source": "Google News discussion proxy",
         "region": "china",
@@ -582,6 +582,13 @@
         "time": "Fri, 21 Jun 2024 07:00:00 GMT"
       },
       {
+        "title": "杯水车薪奖励生二孩三孩 打得动哪些年轻人的心？ - 美国之音",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcmQ5Uk5telpueUk3bnZHZ0dmUElwM1RTV2NBQ09JYVRBMWFFZTNOYzlZUHdSaURHV240N2tvbzFld2Ixc1prTzFWdFpVd21mNHVzWWtMeU8yeVFwSGdiMXlMdUxDRUxlQzFmN2NLY2o4cnNSOV9sUVFOaHMzT2hsblk2QVNoZWplWU5HbUxRNnhja1RwdThRTzAtUURlcDA1Ym1xV2R5YTBLMV82TnJ3X0ZGNEl0Rm1O0gG7AUFVX3lxTE5uckc5Ylp0ay15TDlNNDFzd2VhaURrazRRRTBRX2VLRGMtbF9rejlBQUlYUmljZkU2MDEyV0xRbS1JU000Zjh2c3dhODE1M1pQc3k5R3huTEFfMy1wSWRSbW5zbm16T1JOY0FFTTdUbS05YmY5R3NlTk9Rdk8ySVJ0NkNIWGl3UVRkeTVoMzNsWmxVUHB3ZVQzckxHVjNkVm4tOGU0REVxS2o3QUVicUZSaDJxWlprUUx2bFE?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "china",
+        "time": "Tue, 03 Oct 2023 07:00:00 GMT"
+      },
+      {
         "title": "What’s happening this week in economics? - Deloitte",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNcV9VYnV0R0RPcWN0d2g1SHJIVlNmaVA1TV9nXzRKdVlFcWtSMjQ1T1B0djE4dDNRanZvSVFGX0ZBNUd6cnZkVnAtenFuMnFzdU9zYzg5cFdkTVRxU1F5YVVXVFhVWGdhd2RsTDBkNS1Xcm9ub1FnMFp5NnB3WVBYa3JJa1FVbG5IT0ZRRHphTUhtNThkenVJS1ZrdWNDdw?oc=5",
         "source": "Google News discussion proxy",
@@ -603,7 +610,7 @@
         "time": "Mon, 21 Sep 2026 15:36:00 GMT"
       },
       {
-        "title": "Trump’s Numbers, July 2026 Update - factcheck.org",
+        "title": "Trump’s Numbers, July 2026 Update - FactCheck.org",
         "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9CQjlSQVhkLThRNnY4V0Jvd0NnbUZReXlfZG5pQmJ1QUY0bk90bXZUYjJiTkNaVjUxd0tWQ0h4Z1lNNkxhMm16OTJUalZ5alhLWlFndlBud2I3amhJcWdKcWZicUtyNTI0eUVfNVNRVlBqUGpM?oc=5",
         "source": "Google News discussion proxy",
         "region": "us",
@@ -624,7 +631,7 @@
         "time": "Tue, 25 Aug 2026 07:00:00 GMT"
       },
       {
-        "title": "Inflation worries weigh on US consumer confidence in May - Reuters",
+        "title": "Inflation worries weigh on US consumer confidence in May - reuters.com",
         "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNUi1Na1U1ZzhDQ3pKc2VxQWFNd0dEVFNEZzhRNVJibExrYVJ0YS14QnJHVXRHckczdTdOaHBJcDdUcFBfYlozRkRVeTNQeHdfaXRpcGN1TkJCNVgyTElEQUU4YUI4X2Rpb0RtTklYQTZXWFktR2NBRmgtWmR6YnZQNWduUzFJYTJMaTdYUEtFTktKdnE1V1pUd1l5ZGxtaDRKNmc?oc=5",
         "source": "Google News discussion proxy",
         "region": "us",
@@ -673,7 +680,7 @@
         "time": "Tue, 23 Dec 2025 08:00:00 GMT"
       },
       {
-        "title": "US consumer confidence improves in February; cloud over labor market remains - Reuters",
+        "title": "US consumer confidence improves in February; cloud over labor market remains - reuters.com",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQm1NYTB3djNmTi04WkdOS0FWS3VMV2tuNU5BSTdqOXhEWkFtMDk1cnpLeExSMDN1bFJHc2ZoVHIxVmhmMldiZUZwRWYwME5VQTBseTU4UWx2TWNUNVVCTzdNM052MkhwMGVTdTBUTXFDdmdvM0hWSTFLTjNBang0OHc5VmV1WkhkdWdhTEpn?oc=5",
         "source": "Google News discussion proxy",
         "region": "us",
@@ -692,6 +699,13 @@
         "source": "Google News discussion proxy",
         "region": "us",
         "time": "Wed, 10 Dec 2025 08:00:00 GMT"
+      },
+      {
+        "title": "The U.S. Economy Is Insulated From High Oil Prices. Americans Aren’t. - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObGNDc2h5S09vV2J3N3BZUkJRNDlEbDFudnMxZHF6QVhqaWdWaG85OGsxRUZOTk1WdGxSSVZTNzVEWEpxRkN5V29BOW94YlRuZURGZ0w4Z1F1Vk1QRzNhOFZrRFRiVHN4bXp2S3F4UEFPd0pEbVUxNjFzdTBIVjFRdm5tbGpRZGUwWi1iTXRickpLZXhPMXFuSWdTbklNcG5h?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "us",
+        "time": "Fri, 20 Mar 2026 07:00:00 GMT"
       },
       {
         "title": "Donald Trump Reacts to GDP Report as US Economy Grows Rapidly - Newsweek",
@@ -722,7 +736,7 @@
         "time": "Wed, 29 Jun 2022 11:57:08 GMT"
       },
       {
-        "title": "Fed's Waller says weak job market justifies rate cut in December - Reuters",
+        "title": "Fed's Waller says weak job market justifies rate cut in December - reuters.com",
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMzRhb2QwYUxhc1k0elU2TGQxcXVMQy1TQWc2MDBLekR2UlhmcEprcW5WREFELXEzM2l1bWxRcnB2bWc5cGp4eXV6WDRITU1jNWc1WjY0ZzA5M0QwamV1dXUxN2ZGd1pUNTRoZS1qQWR3Y2RlTmxUZTJpenZQbEhsNnM4MzlMZlNseWtPckl6a1JKMjdSdFlETXNvM0dBS2NkTFVRd3BPeUhydjZWd01Nc0pITQ?oc=5",
         "source": "Google News discussion proxy",
         "region": "us",
@@ -764,6 +778,13 @@
         "time": "Fri, 06 Mar 2026 08:00:00 GMT"
       },
       {
+        "title": "Revenge of the Vibecession - newyorker.com",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE40NnFWc3Rud2N3RVE1ZlptTnVrdlU2eS14M2dOT1JyS214QjV4UFIyQWNCUmZHZnpPVWt2VnFBRk1CZUoxNTZtYjc2T0xZeGwwMUNXWVhLSVNseDF0elk3cTdIV2otUm9rRV9Qb0x0ZGpBbXp1TzZxSw?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "us",
+        "time": "Fri, 08 Aug 2025 07:00:00 GMT"
+      },
+      {
         "title": "Trump’s Tariffs and Economy of Uncertainty Are Already Causing Pain - The Century Foundation",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRmpkOGdoZnJYakJzRThKSjFSemJocTVhNVRYN3hDSlF1N1NwU044a0djcGM0WTVaUDczTFFoLU8xbkQ0aW9fYWRDamI1enZ5dGg4TTVHMHhVUlpYQXQyd0RONkpUakEwb2ZsMVBMVGU2aThFOGgzVms1UmhpM3RqSHlPeUlWVFIzQTdDMjU0WE5mRnpTS2owYVNaZWIwblZkLXgyag?oc=5",
         "source": "Google News discussion proxy",
@@ -776,13 +797,6 @@
         "source": "Google News discussion proxy",
         "region": "us",
         "time": "Wed, 25 Jun 2025 07:00:00 GMT"
-      },
-      {
-        "title": "4 US Economic Events to Shake Bitcoin Sentiment in First Week of December 2025 - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1vVzFrNXRyOVZvS0V2cEhLU3ZzdjFYaUlOVENMV1RXRXdvQmlVOGVrVno3NktHa0tNaXk2dG1JLWxaN3hfZDhybE96M2Ffc2w3U3paVVRsM3dMVjYtSGtSODFleUVfYUFPOWREaDlMdFRHNzVwV2h0VWJtbk8?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "us",
-        "time": "Sun, 30 Nov 2025 08:00:00 GMT"
       },
       {
         "title": "Vibecession: Much More Than You Wanted To Know - Astral Codex Ten",
@@ -834,6 +848,13 @@
         "time": "Tue, 02 Sep 2025 07:00:00 GMT"
       },
       {
+        "title": "4 US Economic Events to Shake Bitcoin Sentiment in First Week of December 2025 - finance.yahoo.com",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1vVzFrNXRyOVZvS0V2cEhLU3ZzdjFYaUlOVENMV1RXRXdvQmlVOGVrVno3NktHa0tNaXk2dG1JLWxaN3hfZDhybE96M2Ffc2w3U3paVVRsM3dMVjYtSGtSODFleUVfYUFPOWREaDlMdFRHNzVwV2h0VWJtbk8?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "us",
+        "time": "Sun, 30 Nov 2025 08:00:00 GMT"
+      },
+      {
         "title": "Economic Projection? Confusion - U.S. News & World Report",
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQQWJza3pkZnJoSXQ4TFY4MmZfaXlMUVZYSHg0RzFFWnhKcC1wcWN1QzRUSC1mWWZ4WVdNZlFleGdjUmZaTjM5WDl2SDRyT2VYc3BkWVFFSXQyN0dnSG1NTWs2amVFRXNPTEdWQXA0Zzd4bDlLd0thN0xfOVZQeHVVRDFBQW9BR1Q0NEJNUEQ1WUxvQ0NJc0NQUjJ5MWVfN0ljX0o0Z3FiLWsxQ0dOQW9J?oc=5",
         "source": "Google News discussion proxy",
@@ -848,7 +869,7 @@
         "time": "Tue, 12 Aug 2025 07:46:38 GMT"
       },
       {
-        "title": "Consumer Confidence In the Housing Market Hits All-Time Low Over the Last Two Weeks - Yahoo Finance",
+        "title": "Consumer Confidence In the Housing Market Hits All-Time Low Over the Last Two Weeks - finance.yahoo.com",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPblJoS2tUcmo0bmJZZ0tGeUlabGxtelBHLU9FVVlfSnJSa015RzdlYzlyQ1QxS2I0VW5CNzltLS03U183bk1WbTgwUzdyZlN2WnNjaHkzRGZsVERsb2xiMnh2d2xEZjNWTWZydXI2a193Rm1fVHA4cFg5OHphVV9WcWIya2pNTTFnWEwtWDhB?oc=5",
         "source": "Google News discussion proxy",
         "region": "us",
@@ -869,7 +890,7 @@
         "time": "Thu, 18 Jun 2026 07:00:00 GMT"
       },
       {
-        "title": "Opinion | China’s view of Trump’s America has changed from alarm to a shrug - scmp.com",
+        "title": "Opinion | China’s view of Trump’s America has changed from alarm to a shrug - South China Morning Post",
         "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNd0VSNDFaVE1vQ0M2cmZVS09aanlBalMwYTFzQndMSFExUEFvdHhvRk1fbjU5ZldBOGdyYVZxVmxXVGFhbGxvdm5mNkRWREprbzNmamg4bHJrMzRSZ1JocmNvSUN1RzdOT3FpZ0lhMEktMEN1RUZRLVlKYUZJSGZrUDNfS0RyNHFjVHluM2pZdG95ZFNPZEIyV1AtLVNVQUE4N1IxRVdJWHpMMXlGT3fSAa4BQVVfeXFMTzc0eUJMRHI3RnlKb3NHeVo1QVNLOGwwaEZ1aUpEdW9FSnVSSTJnQUl6bGJGRGREdWwtc0NZUFA4Y29vT2ZscVNUVS1KUmdEQUN1OUE2RjcxRjZSVkVSTHNsdnlBLU9lWHFieXdyZXNhV1UyNnBsTFNxUDVuQlRpcXRxMmx3SnhNc2FXLXlDS2ZfZWhjRnRKZmNobUJ0Mnpla1NhLTFGZmhJS2M4Tzh3?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
@@ -911,7 +932,7 @@
         "time": "Tue, 03 Mar 2026 08:00:00 GMT"
       },
       {
-        "title": "War in the Middle East: What implications for the EU and the world? - iss.europa.eu",
+        "title": "War in the Middle East: What implications for the EU and the world? - European Union Institute for Security Studies |",
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQTRGaW1hQWxIUVd5aEszM2h5YTlYODljLU1say1JQUg4NkcwWlg1azREZWxaNUFPdGhPLXpnYTRRSTV3QjNyVlFTMnMxbXlyb1ZzSkZkZkpxYzRHX1c1aW1zMXZzS0puVEJFSTlnWk5iQmhjMmdvOENSckNDNFZSd0hBc2k3YUVpQkdBRW9WQndiQkRjWWlpT2VqbVQ?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
@@ -953,13 +974,6 @@
         "time": "Sat, 03 Jan 2026 08:00:00 GMT"
       },
       {
-        "title": "Unpacking a Trump Twist of the National Security Strategy - Council on Foreign Relations",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQeWszMTRQX1pZZElmbmVZMXZWTFR6RHBTOWVKSWdINmxubk9Rd1BOQXJtYUJPdHU3TnVRQ0NyeUJ1dHBORFVybjZ2V05za2IzRUhXSXgzRlV5NTJmbUhQUDNXZHJIX1JOUkhfY1V3bUphczRhUTdjeFhrbWd3TEFmMldnSQ?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Sat, 06 Dec 2025 08:00:00 GMT"
-      },
-      {
         "title": "Italy’s policy on China: The Belt and Road gamble and its aftermath - Atlantic Council",
         "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPWUNVQ1RmXzd6WUI3VGJ0OXVETUFpdkgyajhIdE5IVGFTVzNpY2xpTUFoU3hrRjZMVkJOd0VDNXZzOWwyYVFteGpJWmJPdGFBSmRSdEJFZXFKTmtiaWNzT0JoYlVKZkNuajB5ZWcxNGpuWmFDSnFMcFQtb0FmVUN6Ul94OUpPSGM2SEpqZUFPZUpMNV9YWXlxWmRfQ2g5Z2dxdEF0ZkNfaHh1YUdqRHBvYno4YnFiUTc0MEZ6c1hLdU56UW13N2cwcWxtYw?oc=5",
         "source": "Google News discussion proxy",
@@ -974,11 +988,25 @@
         "time": "Wed, 18 Mar 2026 07:00:00 GMT"
       },
       {
+        "title": "Geopolitics of Trump Tariffs: How U.S. Trade Policy Has Shaken Allies - Council on Foreign Relations",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZE1OWC1LNmJGQXEySEYzRkh6dWl3RWlwWndvSU53N2dOVEMwbnVaT0otY0V1VHdPQXNYMWg4MEUxNXhZSWtBdzVUeHJJTzlYMDFqcXJMUnlHQWl2U1FaZllMUERCSk5nb3NUTUFReXlfOFJNUDNQLUhFLUJJcExBUDdxN0dQamxWRXRuVEk4ZGRhbmpDa3BV?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Wed, 10 Sep 2025 07:00:00 GMT"
+      },
+      {
         "title": "U.S.-China Relations for the 2030s: Toward a Realistic Scenario for Coexistence - Carnegie Endowment for International Peace",
         "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPLXgtQm42RDIzUXh3Vnl5YlhBaXFOXzNldF9KVTBWYVpqSnlXTGh4cWRMZ253M1dYREdrVlNfNmgyTGJqRGpCYmFtT054U05FMGRtVFVXVUdFOHR5UGxqTGtkYmxBR1NIV0dpREpsdkZZcjdEX3VJVm8xcWRWQ2t2T25JMUFlSXR3cE4wRUh6bmpvYmVXcDM2cW9HU29BSWRNZ0NDM0ppU0dMYTVhclNjUUlWal8yZjJsUVVKZ0dBekQ?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
         "time": "Thu, 17 Oct 2024 07:00:00 GMT"
+      },
+      {
+        "title": "Mainland Chinese see Taiwan positively, won’t retreat from US trade war: survey - South China Morning Post",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQWZYTVpFdnZuS2N4MGdjLUg0Nlp3Sm10WEJXY2l2Mnk2Rzg0QUp5eE5OazJGcGJOaGNPTERpbUZDSHlHZ29hYWNlX2VaWGZWcFcybXFYT0RUSFZKMWl1eV8xOS1tREd1LWVOeWVjOEU4VDQ4MTNYWUplSEJ0ZHFqbGxqMHlKUjk4WGV2SUpzU05EZzZMQk56NXpWWlVWaE9JR3BMdXZqU01BU3paODh3ZUxvUy03ZEhSZVl6NDlILXUwWUg2UnZLOdIByAFBVV95cUxQa2xqOTAzYTdqRjI5MWhHMDhPYXdWakVsS0JmN1NZRVQ3RGlFNThRbUVFbXZqZzRTOFpUbklTejdCcTA2ZTd1WmVPVVQtR0V6aHFiZTE3NUFqV3UtT040Q080RnAwRjBpajJjRHRuQ2xnRHM4Vm5FakE0cW5takpfbWdNbVF2VFJWQjZRMnM4LTNXU0FxSWFPT1BfOHdHS1hwODNDRmVLM1pNQm5kdzVHb2xVdzNhOWFsV2RqWWhiRkI3OUhsVkRIOA?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Wed, 11 Mar 2026 07:00:00 GMT"
       },
       {
         "title": "In Venezuela, Trump Puts His National Security Strategy in Action. What Do Americans Think? - Chicago Council on Global Affairs",
@@ -995,13 +1023,6 @@
         "time": "Thu, 30 Oct 2025 07:00:00 GMT"
       },
       {
-        "title": "Geopolitics of Trump Tariffs: How U.S. Trade Policy Has Shaken Allies - Council on Foreign Relations",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZE1OWC1LNmJGQXEySEYzRkh6dWl3RWlwWndvSU53N2dOVEMwbnVaT0otY0V1VHdPQXNYMWg4MEUxNXhZSWtBdzVUeHJJTzlYMDFqcXJMUnlHQWl2U1FaZllMUERCSk5nb3NUTUFReXlfOFJNUDNQLUhFLUJJcExBUDdxN0dQamxWRXRuVEk4ZGRhbmpDa3BV?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Wed, 10 Sep 2025 07:00:00 GMT"
-      },
-      {
         "title": "Greenland, the United States and Arctic security: Towards a credible and principled Transatlantic response - European Leadership Network",
         "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPalJYNWVRQjRRYjFLRTIzVnlwMFE4R1ZILUN0T2xma05Pdkc5QWFkbVV0YUJITC1ac3ItajZFRWpWbnZieDZ2eWpETjFTeXJjNHpyUlRTODQ4RXd5R1hPNkRBdVplbF93dDg2ZGoxOUdWWnNZOUY5Zi01U0pyRE81cXRZS1YyOUE3UVViX3dCN1FvRklFOVJ3YlBTTE1rSUZBQlJGTEhtTUpPMkpSX1pQX3hBcFN5MkdaOXVlSmtoUF8xMXd3WEc2Z0UybzI2d0FVQWhNem02T3laTlE0M1NQTEZ6Vy1fRjB4N0E?oc=5",
         "source": "Google News discussion proxy",
@@ -1009,7 +1030,7 @@
         "time": "Mon, 09 Mar 2026 07:00:00 GMT"
       },
       {
-        "title": "Geopolitical analysis of the imposed war against Iran - Al Jazeera",
+        "title": "Geopolitical analysis of the imposed war against Iran - aljazeera.com",
         "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcmJwVk9DMnJQYkZZZnU1SzNoV0VSc0JmaWlrZklKNlQycWNhR2dCMzJRV0RITVlVTlNNWTRLNjRMaUJTYzBXWjh3ejhvSW8wZXpWZHdZR21iWnpmbzg4Ykw4TEV4X3ZzaEtvSW9Od3lXTTVIbjEtN215SWpBNmJJZkhEeV9ydXdtRVZQV1BVd3hKNTdhWGV5dS1CUHdmNU3SAaQBQVVfeXFMUHRPNHdUYW5Mc0daR1k4T295OTFkXzF0RnAwQ0NxUjQxak96LV9ONE9Rd0VJbjFWdmE2OTNfeVZNZHJ3T3hZX0ltb0pTZ3Jxa0RxWmpDQ0w5bHZocXdncVRpZlQxMUlMYkZRWkN6Nm5YamdGVEpiZU42Sk52ZlpoM2lzaF9SemVEdVRBNjFWX1FsaTVkWm9JeGZVa3N0WnhEVUl3VXU?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
@@ -1030,11 +1051,18 @@
         "time": "Thu, 23 Jul 2026 07:00:00 GMT"
       },
       {
-        "title": "Will China come to Venezuela’s rescue? - Al Jazeera",
+        "title": "Will China come to Venezuela’s rescue? - aljazeera.com",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOUG5LbldTVlQ0YlRvTF9oVFFSbkd6RTN4STk2bUIzT1FhUXZ3THBZLTlpMXRxU212T1ZRbHdndVZNUHRwMVNwR3djbWpCTnlHR3JicmlsTU80eUZhTVZkTU1vWm4zdUVSWWUxN0lxWEgzdXlKb0lIVmZzLWZRWVpQQXF2TklqRFNCVkHSAY8BQVVfeXFMTV9IejVqeFo3NGpmRFA2cGlZYTZ6Njg5cVkwbkZZOTk1VUU3am1QbmFwZjBoVTBZanhvaVRZSlIzSjljM05Sclhmd3BQZDd0dEI1d3A2X2xJZzh6OHBPM3JJcG9TNDZMX1hPVWFsZUd1MmxWNlJRTVJhTk5mWTRSbk5tY3hNV1Vxc3FRTl9Xdmc?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
         "time": "Fri, 26 Dec 2025 08:00:00 GMT"
+      },
+      {
+        "title": "Unpacking a Trump Twist of the National Security Strategy - Council on Foreign Relations",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQeWszMTRQX1pZZElmbmVZMXZWTFR6RHBTOWVKSWdINmxubk9Rd1BOQXJtYUJPdHU3TnVRQ0NyeUJ1dHBORFVybjZ2V05za2IzRUhXSXgzRlV5NTJmbUhQUDNXZHJIX1JOUkhfY1V3bUphczRhUTdjeFhrbWd3TEFmMldnSQ?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Sat, 06 Dec 2025 08:00:00 GMT"
       },
       {
         "title": "How are the United States and China intersecting in Latin America? - Brookings",
@@ -1051,7 +1079,7 @@
         "time": "Fri, 07 Feb 2025 08:00:00 GMT"
       },
       {
-        "title": "Investors react to Trump's massive increase in China tariffs​ - Reuters",
+        "title": "Investors react to Trump's massive increase in China tariffs​ - reuters.com",
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOT0thTHBkWjE2OU1tNWZ6OEFhZFFMbGZJb1hCenlkR3RsUU1maFJoN2tiMnZDalNTaGZVRGlxdGFLSjFMX0ZOTGJ4a3NDMzBCaGE1NEIyUHpoanRyc0RQMThFRUNrNnlIWE5NVTAyNGltWlF0WDBDVnFTTGNuWVNtdkhwNDh0SEdCd1k5ckFGV3lCd1liTThEN19IU0MtWDUw?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
@@ -1100,14 +1128,14 @@
         "time": "Mon, 14 Jul 2025 07:00:00 GMT"
       },
       {
-        "title": "Rising Tensions and Shifting Strategies: The Evolving Dynamics of US Grand Strategy in the Arctic - The Arctic Institute",
+        "title": "Rising Tensions and Shifting Strategies: The Evolving Dynamics of US Grand Strategy in the Arctic - thearcticinstitute.org",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVHlDajdXZ3ZjZWFYZlJEVlRpSHVadG5wLWE0WEliTlN0ckJDbFR4WGxLemM3bV9nZ2llUXpwenFOYlZxVndaLTZrQlJPandpUDlGaXBLbkpNdlBBWEhmazEyelJtTE1OUVBHQTFqZDdiNFpxZ2lTVjFvckhLWVg1VE1YNS0zS09xbVdUcW05OU1OZjUweDFmcjNlV3A3cHZOTHdKemVYMTZoR2llUEpyRkwxaVE?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
         "time": "Tue, 07 Jan 2025 08:00:00 GMT"
       },
       {
-        "title": "Tracking Chinese and Russian Statements on the Iran War - washingtoninstitute.org",
+        "title": "Tracking Chinese and Russian Statements on the Iran War - The Washington Institute",
         "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOb1lSUjFCUWJDako4dVNNNmNIQVd3ZXp0MlhGVGhDZjhwMG1US0hMM3Z1MENsZnljd2ZKM0pjclZUOE9GcW1xT1hiaFd0TkdEV1h0QXZKU29YblM2S0hMeElveEZpQU5MV0YtYThIT1kxbWQ0ZU9PV2ZFTW92UzlIVDhWRndGMWxkVld1dWphd2ZXal9sMmJETVRTZTVBT2FwWmc?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
@@ -1128,7 +1156,7 @@
         "time": "Thu, 18 Aug 2022 07:00:00 GMT"
       },
       {
-        "title": "Marshaling National Power Industries to Preserve America’s Strength and Thwart China’s Bid for Global Dominance - itif.org",
+        "title": "Marshaling National Power Industries to Preserve America’s Strength and Thwart China’s Bid for Global Dominance - Information Technology and Innovation Foundation",
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPekU5aFhRb2dDSEppY2h3eEdfczF5NnBLRnJYVHdNX2JXVDMzS1pIWlFKNkpQWDQyMlh1V0R3Z1E5NmdPTDhENUhaNFNldG9TNnJrYWgtektUTnZ4eElJS1ZTREdySUNFSEZoUGZ4ckg0NXQ3RFVpU3BkbGhGbHNqZzZFWlNwYTA2YzUtc1VjOVIwNEd4T0l6ZGpCSHMxeHR1ZGJhOXBiWlNjSXFqVmNyZXRoLUxLazFlbDB3?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
@@ -1140,6 +1168,13 @@
         "source": "Google News discussion proxy",
         "region": "global",
         "time": "Wed, 30 Apr 2025 07:00:00 GMT"
+      },
+      {
+        "title": "Xi Delivers Veiled Warning to Nations Not to Take the U.S.’s Side - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE4teHJIeWRLVjdzbTJ4UXNfZjNsTTBXMm5LdFIzekZQY0E1Q2NTREwtZkd0Zlh1OTNEd3FrQVlwWm9rYkVWbm1raTJreHVjMnM3Qjk4VGxvRmZhU2gyQWEtOHFQRHYyRk9aLVZHSXJFYnFBQ1hHSDNEdkczVENrQQ?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Fri, 31 Oct 2025 07:00:00 GMT"
       },
       {
         "title": "Donald Trump's return to office: Ten consequences - Centre for European Reform (CER)",
@@ -1189,38 +1224,24 @@
         "source": "Google News discussion proxy",
         "region": "global",
         "time": "Sun, 09 Aug 2026 07:00:00 GMT"
-      },
-      {
-        "title": "US or China, which is truly democratic? American oligarchy vs Chinese 'consultative democracy' - Geopolitical Economy Report",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUEp0T0E4aEp6aldEcktIS3R3X3pMYVZERW1WWEdoeXJTZmFEMVQ4WkQ1cEhpS194MHJVYTNRQmg5VkdFSUJSYlZJYzM2SUVrYTJiSHB2LXFRaDltWEs5b0RNWTFuOXROVXZkbjZIRGkwcFJfY0kxX1hRc0NJcmE3bl9td3p3S1A3bU11YzZB?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Fri, 16 Aug 2024 07:00:00 GMT"
-      },
-      {
-        "title": "Chinese firms set for record US listings, undeterred by geopolitics - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPOU1acGNYdThnczJFOElZM3huYjJoSmtqcFVlemJGTWhQVG5OUUhMNDdiSlgwN3FXWGg2TkZuOGxxcTJuOGpsMDJsSm9oeUtPRHVVRGs0Y0d2M2hTakNYT0E0cGpQWkI0RWQ3ck45SngwV243REpKbVhVbGJhdVpqeTRZeDVjTkVfSDM4YlZab19rTzJNRlRvZFdtWTUtLUkwNldLM1VBRTZ1RGZDNzlTMFdUenhDQQ?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Tue, 05 Aug 2025 07:00:00 GMT"
       }
     ],
     "theme_counts": {
       "就业/收入": 5,
       "住房/房价": 1,
-      "物价/生活成本": 9,
+      "物价/生活成本": 10,
       "消费": 9,
-      "贸易/关税": 10,
-      "地缘安全": 16
+      "贸易/关税": 11,
+      "地缘安全": 18
     },
     "health": {
       "china": {
         "status": "ok",
-        "count": 12
+        "count": 13
       },
       "us": {
         "status": "ok",
-        "count": 40
+        "count": 42
       },
       "global": {
         "status": "ok",
@@ -1236,22 +1257,22 @@
     "status": "signal_only"
   },
   "data_health": {
-    "news_count": 3948,
+    "news_count": 3987,
     "ai_available": true,
-    "dashboard_updated": "2026-09-25 14:24 UTC",
-    "policy_updated": "2026-09-25 14:24 UTC"
+    "dashboard_updated": "2026-09-25 18:39 UTC",
+    "policy_updated": "2026-09-25 18:39 UTC"
   },
-  "generated_at": "2026-09-25T17:55:54.688222+00:00",
+  "generated_at": "2026-09-25T18:39:17.085174+00:00",
   "engine": "scenario-engine-v3-layered",
   "pipeline": {
     "status": "LIVE_PIPELINE",
-    "updatedAt": "2026-09-25T17:55:54.688222+00:00",
+    "updatedAt": "2026-09-25T18:39:17.085174+00:00",
     "stages": [
       {
         "id": "radar",
         "name": "实时雷达数据",
         "status": "OK",
-        "count": 3948,
+        "count": 3987,
         "source": "data/news.json"
       },
       {
@@ -1272,7 +1293,7 @@
         "id": "triggers",
         "name": "触发器",
         "status": "OK",
-        "count": 23,
+        "count": 22,
         "source": "scenario_snapshot"
       },
       {
@@ -1286,7 +1307,7 @@
         "id": "market",
         "name": "市场验证",
         "status": "OK",
-        "count": 10,
+        "count": 11,
         "source": "market_snapshots.json"
       },
       {
@@ -1329,7 +1350,7 @@
   },
   "scenarioTasks": [],
   "schema_version": "2.0",
-  "generatedAt": "2026-09-25T17:55:54.688222+00:00",
+  "generatedAt": "2026-09-25T18:39:17.085174+00:00",
   "globalEvents": [
     {
       "id": "evt-1",
@@ -1348,8 +1369,8 @@
       "source": {
         "provider": "White House",
         "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
-        "publishedAt": "2026-09-25 13:37 UTC",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "publishedAt": "2026-09-25 18:03 UTC",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1420,7 +1441,7 @@
         "provider": "US Energy",
         "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
         "publishedAt": "20260908T1",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1473,6 +1494,76 @@
     },
     {
       "id": "evt-3",
+      "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+      "summary": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+      "category": "FINANCE",
+      "importance": "HIGH",
+      "actor": {
+        "type": "REGION",
+        "country": "OTHER",
+        "name": "global"
+      },
+      "affectedCountries": [
+        "CN",
+        "US"
+      ],
+      "source": {
+        "provider": "IAEA",
+        "url": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development",
+        "publishedAt": "26-09-25  14:02",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
+        "credibility": 0.75,
+        "tier": "KNOWN_MEDIA",
+        "ageDays": null,
+        "freshness": "UNKNOWN",
+        "lifecycle": "UNVERIFIED_TIME",
+        "evidenceWeight": 0.75,
+        "corroborationBonus": 0.0
+      },
+      "status": "CONFIRMED",
+      "triggerRole": "CATALYST",
+      "impact": {
+        "china": 0,
+        "us": 0,
+        "globalTrade": 0,
+        "logistics": 0,
+        "finance": 0,
+        "energy": 0,
+        "technology": 0
+      },
+      "channels": [
+        {
+          "id": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development-supply",
+          "name": "SUPPLY_CHAIN",
+          "intensity": 0.45,
+          "description": "供应链与产业传导"
+        }
+      ],
+      "tags": [
+        "global",
+        "FINANCE"
+      ],
+      "dedupeKey": "iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+      "sourceIdentity": "iaea",
+      "canonicalIntelligence": {
+        "eventId": null,
+        "status": "UNREGISTERED",
+        "independentSourceCount": 0,
+        "mentionCount": 0,
+        "claimIds": [],
+        "spineMatched": false
+      },
+      "corroboration": {
+        "independentSourceCount": 1,
+        "reportCount": 1,
+        "tierCount": 1,
+        "sources": [
+          "IAEA"
+        ]
+      }
+    },
+    {
+      "id": "evt-4",
       "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
       "summary": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
       "category": "GEOPOLITICS",
@@ -1489,8 +1580,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/09/1168386",
-        "publishedAt": "2026-09-25 13:37 UTC",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "publishedAt": "2026-09-25 18:03 UTC",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1544,7 +1635,7 @@
       }
     },
     {
-      "id": "evt-4",
+      "id": "evt-5",
       "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
       "summary": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
       "category": "GEOPOLITICS",
@@ -1561,8 +1652,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/09/1168416",
-        "publishedAt": "2026-09-25 13:37 UTC",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "publishedAt": "2026-09-25 18:03 UTC",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1614,7 +1705,7 @@
       }
     },
     {
-      "id": "evt-5",
+      "id": "evt-6",
       "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
       "summary": "Türkiye Protects its Citrus Harvests with Nuclear Science",
       "category": "GEOPOLITICS",
@@ -1632,7 +1723,7 @@
         "provider": "IAEA",
         "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
         "publishedAt": "26-09-25  08:00",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1684,7 +1775,7 @@
       }
     },
     {
-      "id": "evt-6",
+      "id": "evt-7",
       "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
       "summary": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
       "category": "GEOPOLITICS",
@@ -1702,7 +1793,7 @@
         "provider": "IAEA",
         "url": "http://www.iaea.org/newscenter/pressreleases/adequate-uranium-resources-available-but-sustained-investment-essential-to-support-global-nuclear-capacity-growth",
         "publishedAt": "26-09-14  08:34",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1754,7 +1845,7 @@
       }
     },
     {
-      "id": "evt-7",
+      "id": "evt-8",
       "title": "IAEA-Led Mission Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
       "summary": "IAEA-Led Mission Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
       "category": "GEOPOLITICS",
@@ -1772,7 +1863,7 @@
         "provider": "IAEA",
         "url": "http://www.iaea.org/newscenter/pressreleases/iaea-led-mission-samples-alps-treated-water-at-fukushima-daiichi-nuclear-power-station-under-additional-measures",
         "publishedAt": "26-09-11  17:52",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1824,7 +1915,7 @@
       }
     },
     {
-      "id": "evt-8",
+      "id": "evt-9",
       "title": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
       "summary": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
       "category": "国家安全",
@@ -1841,8 +1932,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/09/1168410",
-        "publishedAt": "2026-09-25 13:37 UTC",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "publishedAt": "2026-09-25 18:03 UTC",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1894,7 +1985,7 @@
       }
     },
     {
-      "id": "evt-9",
+      "id": "evt-10",
       "title": "IAEA Projects Global Nuclear Power Capacity Could Triple by 2060, Continuing Rising Trend",
       "summary": "IAEA Projects Global Nuclear Power Capacity Could Triple by 2060, Continuing Rising Trend",
       "category": "ENERGY",
@@ -1912,7 +2003,7 @@
         "provider": "IAEA",
         "url": "http://www.iaea.org/newscenter/pressreleases/iaea-projects-global-nuclear-power-capacity-could-triple-by-2060-continuing-rising-trend",
         "publishedAt": "26-09-14  09:00",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1964,7 +2055,7 @@
       }
     },
     {
-      "id": "evt-10",
+      "id": "evt-11",
       "title": "碳氢化合物和地热能办公室奖 1 美元。 200万加强美国地热能源劳动力",
       "summary": "碳氢化合物和地热能办公室奖 1 美元。 200万加强美国地热能源劳动力",
       "category": "ENERGY",
@@ -1981,7 +2072,7 @@
         "provider": "US Energy",
         "url": "https://www.energy.gov/hgeo/articles/hydrocarbons-and-geothermal-energy-office-awards-12-million-strengthen-americas",
         "publishedAt": "20260909T0",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -2604,8 +2695,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.7037,
-            "change_pct": -0.11,
+            "value": 6.7123,
+            "change_pct": 0.02,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -2614,8 +2705,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4299.3999,
-            "change_pct": 0.03,
+            "value": 4321.5,
+            "change_pct": 0.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -2624,8 +2715,8 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 5.207,
-            "change_pct": 0.87,
+            "value": 5.204,
+            "change_pct": 0.81,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -2634,8 +2725,8 @@
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.85,
-            "change_pct": -7.27,
+            "value": 97.49,
+            "change_pct": -8.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -2644,8 +2735,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 15.68,
-            "change_pct": 0.06,
+            "value": 14.99,
+            "change_pct": -4.34,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -2757,7 +2848,7 @@
         "activationState": "ELEVATED",
         "triggerScore": 1.0,
         "triggerEvidence": [
-          "确认事件数量=7.5"
+          "确认事件数量=8.25"
         ],
         "counterSignals": [
           "若出现明确豁免、延期或执行强度下降，应降低该路径权重"
@@ -2788,6 +2879,23 @@
             "status": "AVAILABLE_TOOL_TO_MONITOR"
           },
           {
+            "id": "PAYMENT_FINANCE",
+            "name": "金融、支付与融资监管工具",
+            "domain": "FINANCE",
+            "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+            "activationTriggers": [
+              "金融制裁/支付限制",
+              "跨境融资条件明显变化"
+            ],
+            "observableEvidence": [
+              "金融监管文件",
+              "制裁/名单文件",
+              "支付与融资数据"
+            ],
+            "relevance": "HIGH",
+            "status": "AVAILABLE_TOOL_TO_MONITOR"
+          },
+          {
             "id": "ENTITY_AND_END_USER",
             "name": "实体/不可靠实体/最终用户限制",
             "domain": "REGULATION",
@@ -2802,6 +2910,23 @@
               "企业交易披露"
             ],
             "relevance": "HIGH",
+            "status": "AVAILABLE_TOOL_TO_MONITOR"
+          },
+          {
+            "id": "INVESTMENT_TECH_TRANSFER",
+            "name": "投资/技术转移与境外经营限制",
+            "domain": "CAPITAL_TECH",
+            "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
+            "activationTriggers": [
+              "敏感技术/产业投资受限",
+              "境外生产使用受控技术出现证据"
+            ],
+            "observableEvidence": [
+              "投资审查决定",
+              "技术出口规则",
+              "企业交易披露"
+            ],
+            "relevance": "MEDIUM",
             "status": "AVAILABLE_TOOL_TO_MONITOR"
           },
           {
@@ -2909,40 +3034,6 @@
             ],
             "relevance": "LOW",
             "status": "AVAILABLE_TOOL_TO_MONITOR"
-          },
-          {
-            "id": "PAYMENT_FINANCE",
-            "name": "金融、支付与融资监管工具",
-            "domain": "FINANCE",
-            "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
-            "activationTriggers": [
-              "金融制裁/支付限制",
-              "跨境融资条件明显变化"
-            ],
-            "observableEvidence": [
-              "金融监管文件",
-              "制裁/名单文件",
-              "支付与融资数据"
-            ],
-            "relevance": "LOW",
-            "status": "AVAILABLE_TOOL_TO_MONITOR"
-          },
-          {
-            "id": "INVESTMENT_TECH_TRANSFER",
-            "name": "投资/技术转移与境外经营限制",
-            "domain": "CAPITAL_TECH",
-            "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
-            "activationTriggers": [
-              "敏感技术/产业投资受限",
-              "境外生产使用受控技术出现证据"
-            ],
-            "observableEvidence": [
-              "投资审查决定",
-              "技术出口规则",
-              "企业交易披露"
-            ],
-            "relevance": "LOW",
-            "status": "AVAILABLE_TOOL_TO_MONITOR"
           }
         ],
         "highRelevanceResponseTools": [
@@ -2959,6 +3050,23 @@
               "出口管制清单",
               "许可证审批规则",
               "企业合规公告"
+            ],
+            "relevance": "HIGH",
+            "status": "AVAILABLE_TOOL_TO_MONITOR"
+          },
+          {
+            "id": "PAYMENT_FINANCE",
+            "name": "金融、支付与融资监管工具",
+            "domain": "FINANCE",
+            "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+            "activationTriggers": [
+              "金融制裁/支付限制",
+              "跨境融资条件明显变化"
+            ],
+            "observableEvidence": [
+              "金融监管文件",
+              "制裁/名单文件",
+              "支付与融资数据"
             ],
             "relevance": "HIGH",
             "status": "AVAILABLE_TOOL_TO_MONITOR"
@@ -3936,7 +4044,7 @@
         "dynamicResponseTree": {
           "version": "dynamic-response-v4",
           "rootScenarioId": "scenario-a",
-          "generatedAt": "2026-09-25T17:55:54.757301+00:00",
+          "generatedAt": "2026-09-25T18:39:17.156657+00:00",
           "rounds": [
             {
               "round": 1,
@@ -9046,7 +9154,7 @@
               ]
             }
           ],
-          "eventCount": 10,
+          "eventCount": 11,
           "previousTreeVersion": null,
           "stateModel": {
             "statuses": [
@@ -9072,30 +9180,14 @@
         "evidenceDrivers": [
           {
             "kind": "EVENT",
-            "id": "evt-3",
+            "id": "evt-4",
             "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
             "source": "UN News",
             "url": "https://news.un.org/en/story/2026/09/1168386",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-09-25 13:37 UTC",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
-            "tier": "KNOWN_MEDIA",
-            "freshness": "UNKNOWN",
-            "credibility": 0.75,
-            "lifecycle": "UNVERIFIED_TIME",
-            "evidenceWeight": 0.75
-          },
-          {
-            "kind": "EVENT",
-            "id": "evt-4",
-            "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
-            "source": "UN News",
-            "url": "https://news.un.org/en/story/2026/09/1168416",
-            "role": "CATALYST",
-            "category": "GEOPOLITICS",
-            "publishedAt": "2026-09-25 13:37 UTC",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "2026-09-25 18:03 UTC",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -9105,13 +9197,13 @@
           {
             "kind": "EVENT",
             "id": "evt-5",
-            "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
-            "source": "IAEA",
-            "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
+            "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+            "source": "UN News",
+            "url": "https://news.un.org/en/story/2026/09/1168416",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "26-09-25  08:00",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "2026-09-25 18:03 UTC",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -9121,13 +9213,13 @@
           {
             "kind": "EVENT",
             "id": "evt-6",
-            "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
+            "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
             "source": "IAEA",
-            "url": "http://www.iaea.org/newscenter/pressreleases/adequate-uranium-resources-available-but-sustained-investment-essential-to-support-global-nuclear-capacity-growth",
+            "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "26-09-14  08:34",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "26-09-25  08:00",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -9137,8 +9229,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.7037,
-            "change_pct": -0.11,
+            "value": 6.7123,
+            "change_pct": 0.02,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -9147,8 +9239,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4299.3999,
-            "change_pct": 0.03,
+            "value": 4321.5,
+            "change_pct": 0.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -9157,8 +9249,8 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 5.207,
-            "change_pct": 0.87,
+            "value": 5.204,
+            "change_pct": 0.81,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -9167,8 +9259,8 @@
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.85,
-            "change_pct": -7.27,
+            "value": 97.49,
+            "change_pct": -8.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -9177,8 +9269,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 15.68,
-            "change_pct": 0.06,
+            "value": 14.99,
+            "change_pct": -4.34,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -9288,9 +9380,9 @@
         "confidence": "MEDIUM",
         "sensitivity": 0.5,
         "activationState": "ELEVATED",
-        "triggerScore": 0.8,
+        "triggerScore": 0.88,
         "triggerEvidence": [
-          "已有确认事件=7.5",
+          "已有确认事件=8.25",
           "需要额外的官方缓和/豁免证据"
         ],
         "counterSignals": [
@@ -9322,6 +9414,23 @@
             "status": "AVAILABLE_TOOL_TO_MONITOR"
           },
           {
+            "id": "PAYMENT_FINANCE",
+            "name": "金融、支付与融资监管工具",
+            "domain": "FINANCE",
+            "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+            "activationTriggers": [
+              "金融制裁/支付限制",
+              "跨境融资条件明显变化"
+            ],
+            "observableEvidence": [
+              "金融监管文件",
+              "制裁/名单文件",
+              "支付与融资数据"
+            ],
+            "relevance": "HIGH",
+            "status": "AVAILABLE_TOOL_TO_MONITOR"
+          },
+          {
             "id": "ENTITY_AND_END_USER",
             "name": "实体/不可靠实体/最终用户限制",
             "domain": "REGULATION",
@@ -9336,6 +9445,23 @@
               "企业交易披露"
             ],
             "relevance": "HIGH",
+            "status": "AVAILABLE_TOOL_TO_MONITOR"
+          },
+          {
+            "id": "INVESTMENT_TECH_TRANSFER",
+            "name": "投资/技术转移与境外经营限制",
+            "domain": "CAPITAL_TECH",
+            "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
+            "activationTriggers": [
+              "敏感技术/产业投资受限",
+              "境外生产使用受控技术出现证据"
+            ],
+            "observableEvidence": [
+              "投资审查决定",
+              "技术出口规则",
+              "企业交易披露"
+            ],
+            "relevance": "MEDIUM",
             "status": "AVAILABLE_TOOL_TO_MONITOR"
           },
           {
@@ -9443,40 +9569,6 @@
             ],
             "relevance": "LOW",
             "status": "AVAILABLE_TOOL_TO_MONITOR"
-          },
-          {
-            "id": "PAYMENT_FINANCE",
-            "name": "金融、支付与融资监管工具",
-            "domain": "FINANCE",
-            "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
-            "activationTriggers": [
-              "金融制裁/支付限制",
-              "跨境融资条件明显变化"
-            ],
-            "observableEvidence": [
-              "金融监管文件",
-              "制裁/名单文件",
-              "支付与融资数据"
-            ],
-            "relevance": "LOW",
-            "status": "AVAILABLE_TOOL_TO_MONITOR"
-          },
-          {
-            "id": "INVESTMENT_TECH_TRANSFER",
-            "name": "投资/技术转移与境外经营限制",
-            "domain": "CAPITAL_TECH",
-            "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
-            "activationTriggers": [
-              "敏感技术/产业投资受限",
-              "境外生产使用受控技术出现证据"
-            ],
-            "observableEvidence": [
-              "投资审查决定",
-              "技术出口规则",
-              "企业交易披露"
-            ],
-            "relevance": "LOW",
-            "status": "AVAILABLE_TOOL_TO_MONITOR"
           }
         ],
         "highRelevanceResponseTools": [
@@ -9493,6 +9585,23 @@
               "出口管制清单",
               "许可证审批规则",
               "企业合规公告"
+            ],
+            "relevance": "HIGH",
+            "status": "AVAILABLE_TOOL_TO_MONITOR"
+          },
+          {
+            "id": "PAYMENT_FINANCE",
+            "name": "金融、支付与融资监管工具",
+            "domain": "FINANCE",
+            "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+            "activationTriggers": [
+              "金融制裁/支付限制",
+              "跨境融资条件明显变化"
+            ],
+            "observableEvidence": [
+              "金融监管文件",
+              "制裁/名单文件",
+              "支付与融资数据"
             ],
             "relevance": "HIGH",
             "status": "AVAILABLE_TOOL_TO_MONITOR"
@@ -10470,7 +10579,7 @@
         "dynamicResponseTree": {
           "version": "dynamic-response-v4",
           "rootScenarioId": "scenario-b",
-          "generatedAt": "2026-09-25T17:55:54.768075+00:00",
+          "generatedAt": "2026-09-25T18:39:17.168189+00:00",
           "rounds": [
             {
               "round": 1,
@@ -15580,7 +15689,7 @@
               ]
             }
           ],
-          "eventCount": 10,
+          "eventCount": 11,
           "previousTreeVersion": null,
           "stateModel": {
             "statuses": [
@@ -15607,13 +15716,13 @@
           {
             "kind": "EVENT",
             "id": "evt-3",
-            "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
-            "source": "UN News",
-            "url": "https://news.un.org/en/story/2026/09/1168386",
+            "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+            "source": "IAEA",
+            "url": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development",
             "role": "CATALYST",
-            "category": "GEOPOLITICS",
-            "publishedAt": "2026-09-25 13:37 UTC",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "category": "FINANCE",
+            "publishedAt": "26-09-25  14:02",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -15623,13 +15732,13 @@
           {
             "kind": "EVENT",
             "id": "evt-4",
-            "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+            "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
             "source": "UN News",
-            "url": "https://news.un.org/en/story/2026/09/1168416",
+            "url": "https://news.un.org/en/story/2026/09/1168386",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-09-25 13:37 UTC",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "2026-09-25 18:03 UTC",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -15639,13 +15748,13 @@
           {
             "kind": "EVENT",
             "id": "evt-5",
-            "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
-            "source": "IAEA",
-            "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
+            "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+            "source": "UN News",
+            "url": "https://news.un.org/en/story/2026/09/1168416",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "26-09-25  08:00",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "2026-09-25 18:03 UTC",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -15655,13 +15764,13 @@
           {
             "kind": "EVENT",
             "id": "evt-6",
-            "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
+            "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
             "source": "IAEA",
-            "url": "http://www.iaea.org/newscenter/pressreleases/adequate-uranium-resources-available-but-sustained-investment-essential-to-support-global-nuclear-capacity-growth",
+            "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "26-09-14  08:34",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "26-09-25  08:00",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -15671,8 +15780,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.7037,
-            "change_pct": -0.11,
+            "value": 6.7123,
+            "change_pct": 0.02,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -15681,8 +15790,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4299.3999,
-            "change_pct": 0.03,
+            "value": 4321.5,
+            "change_pct": 0.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -15691,8 +15800,8 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 5.207,
-            "change_pct": 0.87,
+            "value": 5.204,
+            "change_pct": 0.81,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -15701,8 +15810,8 @@
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.85,
-            "change_pct": -7.27,
+            "value": 97.49,
+            "change_pct": -8.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -15711,8 +15820,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 15.68,
-            "change_pct": 0.06,
+            "value": 14.99,
+            "change_pct": -4.34,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -15856,6 +15965,23 @@
             "status": "AVAILABLE_TOOL_TO_MONITOR"
           },
           {
+            "id": "PAYMENT_FINANCE",
+            "name": "金融、支付与融资监管工具",
+            "domain": "FINANCE",
+            "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+            "activationTriggers": [
+              "金融制裁/支付限制",
+              "跨境融资条件明显变化"
+            ],
+            "observableEvidence": [
+              "金融监管文件",
+              "制裁/名单文件",
+              "支付与融资数据"
+            ],
+            "relevance": "HIGH",
+            "status": "AVAILABLE_TOOL_TO_MONITOR"
+          },
+          {
             "id": "ENTITY_AND_END_USER",
             "name": "实体/不可靠实体/最终用户限制",
             "domain": "REGULATION",
@@ -15870,6 +15996,23 @@
               "企业交易披露"
             ],
             "relevance": "HIGH",
+            "status": "AVAILABLE_TOOL_TO_MONITOR"
+          },
+          {
+            "id": "INVESTMENT_TECH_TRANSFER",
+            "name": "投资/技术转移与境外经营限制",
+            "domain": "CAPITAL_TECH",
+            "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
+            "activationTriggers": [
+              "敏感技术/产业投资受限",
+              "境外生产使用受控技术出现证据"
+            ],
+            "observableEvidence": [
+              "投资审查决定",
+              "技术出口规则",
+              "企业交易披露"
+            ],
+            "relevance": "MEDIUM",
             "status": "AVAILABLE_TOOL_TO_MONITOR"
           },
           {
@@ -15977,40 +16120,6 @@
             ],
             "relevance": "LOW",
             "status": "AVAILABLE_TOOL_TO_MONITOR"
-          },
-          {
-            "id": "PAYMENT_FINANCE",
-            "name": "金融、支付与融资监管工具",
-            "domain": "FINANCE",
-            "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
-            "activationTriggers": [
-              "金融制裁/支付限制",
-              "跨境融资条件明显变化"
-            ],
-            "observableEvidence": [
-              "金融监管文件",
-              "制裁/名单文件",
-              "支付与融资数据"
-            ],
-            "relevance": "LOW",
-            "status": "AVAILABLE_TOOL_TO_MONITOR"
-          },
-          {
-            "id": "INVESTMENT_TECH_TRANSFER",
-            "name": "投资/技术转移与境外经营限制",
-            "domain": "CAPITAL_TECH",
-            "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
-            "activationTriggers": [
-              "敏感技术/产业投资受限",
-              "境外生产使用受控技术出现证据"
-            ],
-            "observableEvidence": [
-              "投资审查决定",
-              "技术出口规则",
-              "企业交易披露"
-            ],
-            "relevance": "LOW",
-            "status": "AVAILABLE_TOOL_TO_MONITOR"
           }
         ],
         "highRelevanceResponseTools": [
@@ -16027,6 +16136,23 @@
               "出口管制清单",
               "许可证审批规则",
               "企业合规公告"
+            ],
+            "relevance": "HIGH",
+            "status": "AVAILABLE_TOOL_TO_MONITOR"
+          },
+          {
+            "id": "PAYMENT_FINANCE",
+            "name": "金融、支付与融资监管工具",
+            "domain": "FINANCE",
+            "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+            "activationTriggers": [
+              "金融制裁/支付限制",
+              "跨境融资条件明显变化"
+            ],
+            "observableEvidence": [
+              "金融监管文件",
+              "制裁/名单文件",
+              "支付与融资数据"
             ],
             "relevance": "HIGH",
             "status": "AVAILABLE_TOOL_TO_MONITOR"
@@ -17004,7 +17130,7 @@
         "dynamicResponseTree": {
           "version": "dynamic-response-v4",
           "rootScenarioId": "scenario-c",
-          "generatedAt": "2026-09-25T17:55:54.779478+00:00",
+          "generatedAt": "2026-09-25T18:39:17.179703+00:00",
           "rounds": [
             {
               "round": 1,
@@ -22114,7 +22240,7 @@
               ]
             }
           ],
-          "eventCount": 10,
+          "eventCount": 11,
           "previousTreeVersion": null,
           "stateModel": {
             "statuses": [
@@ -22132,18 +22258,18 @@
         }
       }
     ],
-    "generatedAt": "2026-09-25T17:55:54.899677+00:00",
+    "generatedAt": "2026-09-25T18:39:17.302587+00:00",
     "modelVersion": "dynamic-scenario-v3-response-modes"
   },
   "scenarioSnapshot": {
-    "generatedAt": "2026-09-25T17:55:54.821333+00:00",
+    "generatedAt": "2026-09-25T18:39:17.221787+00:00",
     "evidenceRegistry": [
       {
         "dedupeKey": "us",
         "title": "特朗普总统是对的：美国控制霍尔木兹海峡",
         "firstSeenAt": "2026-09-22 09:50 UTC",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 42,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 43,
         "sourceIds": [
           "white house"
         ],
@@ -22160,8 +22286,8 @@
         "dedupeKey": "190|us",
         "title": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
         "firstSeenAt": "20260908T1",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 42,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 43,
         "sourceIds": [
           "us energy"
         ],
@@ -22175,11 +22301,29 @@
         "followupObserved": true
       },
       {
+        "dedupeKey": "iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+        "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+        "firstSeenAt": "26-09-25  14:02",
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 1,
+        "sourceIds": [
+          "iaea"
+        ],
+        "independentSourceCount": 1,
+        "lifecycle": "UNVERIFIED_TIME",
+        "freshness": "UNKNOWN",
+        "evidenceWeight": 0.75,
+        "tier": "KNOWN_MEDIA",
+        "agingFactor": 1.0,
+        "effectiveEvidenceWeight": 0.75,
+        "followupObserved": false
+      },
+      {
         "dedupeKey": "nowhereissafe:unexpertsdetailukrainewarstollandrussiasreachbeyonditsborders|global",
         "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
         "firstSeenAt": "2026-09-21 16:58 UTC",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 51,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 52,
         "sourceIds": [
           "un news"
         ],
@@ -22196,8 +22340,8 @@
         "dedupeKey": "zelenskyyurgesstrongerpressureonrussiawarnswarsimpactisspreadingbeyondukraine|global",
         "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
         "firstSeenAt": "2026-09-23 22:11 UTC",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 23,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 24,
         "sourceIds": [
           "un news"
         ],
@@ -22214,8 +22358,8 @@
         "dedupeKey": "trkiyeprotectsitscitrusharvestswithnuclearscience|global",
         "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
         "firstSeenAt": "26-09-25  08:00",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 2,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 3,
         "sourceIds": [
           "iaea"
         ],
@@ -22232,8 +22376,8 @@
         "dedupeKey": "adequateuraniumresourcesavailablebutsustainedinvestmentessentialtosupportglobalnuclearcapacitygrowth|global",
         "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
         "firstSeenAt": "26-09-14  08:34",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 85,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 86,
         "sourceIds": [
           "iaea"
         ],
@@ -22250,8 +22394,8 @@
         "dedupeKey": "iaealedmissionsamplesalpstreatedwateratfukushimadaiichinuclearpowerstationunderadditionalmeasures|global",
         "title": "IAEA-Led Mission Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
         "firstSeenAt": "26-09-11  17:52",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 83,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 84,
         "sourceIds": [
           "iaea"
         ],
@@ -22268,8 +22412,8 @@
         "dedupeKey": "securitycouncillive:worldleadersdebateongoingwarinukraine|global",
         "title": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
         "firstSeenAt": "2026-09-23 18:58 UTC",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 25,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 26,
         "sourceIds": [
           "un news"
         ],
@@ -22286,8 +22430,8 @@
         "dedupeKey": "iaeaprojectsglobalnuclearpowercapacitycouldtripleby2060continuingrisingtrend|global",
         "title": "IAEA Projects Global Nuclear Power Capacity Could Triple by 2060, Continuing Rising Trend",
         "firstSeenAt": "26-09-14  09:00",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 85,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 86,
         "sourceIds": [
           "iaea"
         ],
@@ -22304,8 +22448,8 @@
         "dedupeKey": "1200|us",
         "title": "碳氢化合物和地热能办公室奖 1 美元。 200万加强美国地热能源劳动力",
         "firstSeenAt": "20260909T0",
-        "lastSeenAt": "2026-09-25T17:55:54.821227+00:00",
-        "observationCount": 42,
+        "lastSeenAt": "2026-09-25T18:39:17.221669+00:00",
+        "observationCount": 43,
         "sourceIds": [
           "us energy"
         ],
@@ -22323,7 +22467,7 @@
       {
         "dedupeKey": "us",
         "title": "特朗普总统是对的：美国控制霍尔木兹海峡",
-        "publishedAt": "2026-09-25 13:37 UTC",
+        "publishedAt": "2026-09-25 18:03 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22347,9 +22491,22 @@
         "interpretation": "生命周期用于降低陈旧证据对监测权重的影响，不代表该事件为真/假或任何发生概率。"
       },
       {
+        "dedupeKey": "iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+        "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+        "publishedAt": "26-09-25  14:02",
+        "ageDays": null,
+        "lifecycle": "UNVERIFIED_TIME",
+        "baseEvidenceWeight": 0.75,
+        "agingFactor": 1.0,
+        "effectiveEvidenceWeight": 0.75,
+        "independentSourceCount": 1,
+        "followupObserved": false,
+        "interpretation": "生命周期用于降低陈旧证据对监测权重的影响，不代表该事件为真/假或任何发生概率。"
+      },
+      {
         "dedupeKey": "nowhereissafe:unexpertsdetailukrainewarstollandrussiasreachbeyonditsborders|global",
         "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
-        "publishedAt": "2026-09-25 13:37 UTC",
+        "publishedAt": "2026-09-25 18:03 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22362,7 +22519,7 @@
       {
         "dedupeKey": "zelenskyyurgesstrongerpressureonrussiawarnswarsimpactisspreadingbeyondukraine|global",
         "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
-        "publishedAt": "2026-09-25 13:37 UTC",
+        "publishedAt": "2026-09-25 18:03 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22414,7 +22571,7 @@
       {
         "dedupeKey": "securitycouncillive:worldleadersdebateongoingwarinukraine|global",
         "title": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
-        "publishedAt": "2026-09-25 13:37 UTC",
+        "publishedAt": "2026-09-25 18:03 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22452,14 +22609,14 @@
       }
     ],
     "evidenceGraph": {
-      "generatedAt": "2026-09-25T17:55:54.821319+00:00",
+      "generatedAt": "2026-09-25T18:39:17.221771+00:00",
       "nodes": [
         {
           "id": "event:us",
           "kind": "EVENT",
           "label": "特朗普总统是对的：美国控制霍尔木兹海峡",
           "meta": {
-            "publishedAt": "2026-09-25 13:37 UTC",
+            "publishedAt": "2026-09-25 18:03 UTC",
             "provider": "White House",
             "tier": "KNOWN_MEDIA"
           }
@@ -22505,11 +22662,36 @@
           "meta": {}
         },
         {
+          "id": "event:iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+          "kind": "EVENT",
+          "label": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+          "meta": {
+            "publishedAt": "26-09-25  14:02",
+            "provider": "IAEA",
+            "tier": "KNOWN_MEDIA"
+          }
+        },
+        {
+          "id": "lifecycle:iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+          "kind": "LIFECYCLE",
+          "label": "UNVERIFIED_TIME",
+          "meta": {
+            "agingFactor": 1.0,
+            "effectiveEvidenceWeight": 0.75
+          }
+        },
+        {
+          "id": "source:IAEA",
+          "kind": "SOURCE",
+          "label": "IAEA",
+          "meta": {}
+        },
+        {
           "id": "event:nowhereissafe:unexpertsdetailukrainewarstollandrussiasreachbeyonditsborders|global",
           "kind": "EVENT",
           "label": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
           "meta": {
-            "publishedAt": "2026-09-25 13:37 UTC",
+            "publishedAt": "2026-09-25 18:03 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22534,7 +22716,7 @@
           "kind": "EVENT",
           "label": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
           "meta": {
-            "publishedAt": "2026-09-25 13:37 UTC",
+            "publishedAt": "2026-09-25 18:03 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22566,12 +22748,6 @@
             "agingFactor": 1.0,
             "effectiveEvidenceWeight": 0.75
           }
-        },
-        {
-          "id": "source:IAEA",
-          "kind": "SOURCE",
-          "label": "IAEA",
-          "meta": {}
         },
         {
           "id": "event:adequateuraniumresourcesavailablebutsustainedinvestmentessentialtosupportglobalnuclearcapacitygrowth|global",
@@ -22616,7 +22792,7 @@
           "kind": "EVENT",
           "label": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
           "meta": {
-            "publishedAt": "2026-09-25 13:37 UTC",
+            "publishedAt": "2026-09-25 18:03 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22681,33 +22857,33 @@
           "meta": {}
         },
         {
-          "id": "event:evt-3",
+          "id": "event:evt-4",
           "kind": "EVENT",
           "label": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
           "meta": {}
         },
         {
-          "id": "event:evt-4",
+          "id": "event:evt-5",
           "kind": "EVENT",
           "label": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
           "meta": {}
         },
         {
-          "id": "event:evt-5",
-          "kind": "EVENT",
-          "label": "Türkiye Protects its Citrus Harvests with Nuclear Science",
-          "meta": {}
-        },
-        {
           "id": "event:evt-6",
           "kind": "EVENT",
-          "label": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
+          "label": "Türkiye Protects its Citrus Harvests with Nuclear Science",
           "meta": {}
         },
         {
           "id": "scenario:C",
           "kind": "SCENARIO",
           "label": "C",
+          "meta": {}
+        },
+        {
+          "id": "event:evt-3",
+          "kind": "EVENT",
+          "label": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
           "meta": {}
         }
       ],
@@ -22730,6 +22906,16 @@
         {
           "from": "source:US Energy",
           "to": "event:190|us",
+          "relation": "CORROBORATES"
+        },
+        {
+          "from": "event:iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+          "to": "lifecycle:iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+          "relation": "HAS_LIFECYCLE"
+        },
+        {
+          "from": "source:IAEA",
+          "to": "event:iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
           "relation": "CORROBORATES"
         },
         {
@@ -22813,11 +22999,6 @@
           "relation": "CORROBORATES"
         },
         {
-          "from": "event:evt-3",
-          "to": "scenario:B",
-          "relation": "SUPPORTS_MONITORING"
-        },
-        {
           "from": "event:evt-4",
           "to": "scenario:B",
           "relation": "SUPPORTS_MONITORING"
@@ -22859,8 +23040,8 @@
       {
         "id": "evt-1",
         "title": "特朗普总统是对的：美国控制霍尔木兹海峡",
-        "publishedAt": "2026-09-25 13:37 UTC",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "publishedAt": "2026-09-25 18:03 UTC",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "us",
@@ -22879,7 +23060,7 @@
         "id": "evt-2",
         "title": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
         "publishedAt": "20260908T1",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "190|us",
@@ -22896,9 +23077,28 @@
       },
       {
         "id": "evt-3",
+        "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+        "publishedAt": "26-09-25  14:02",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
+        "tier": "KNOWN_MEDIA",
+        "freshness": "UNKNOWN",
+        "dedupeKey": "iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+        "lifecycle": "UNVERIFIED_TIME",
+        "evidenceWeight": 0.75,
+        "corroboration": {
+          "independentSourceCount": 1,
+          "reportCount": 1,
+          "tierCount": 1,
+          "sources": [
+            "IAEA"
+          ]
+        }
+      },
+      {
+        "id": "evt-4",
         "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
-        "publishedAt": "2026-09-25 13:37 UTC",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "publishedAt": "2026-09-25 18:03 UTC",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "nowhereissafe:unexpertsdetailukrainewarstollandrussiasreachbeyonditsborders|global",
@@ -22914,10 +23114,10 @@
         }
       },
       {
-        "id": "evt-4",
+        "id": "evt-5",
         "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
-        "publishedAt": "2026-09-25 13:37 UTC",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "publishedAt": "2026-09-25 18:03 UTC",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "zelenskyyurgesstrongerpressureonrussiawarnswarsimpactisspreadingbeyondukraine|global",
@@ -22933,10 +23133,10 @@
         }
       },
       {
-        "id": "evt-5",
+        "id": "evt-6",
         "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
         "publishedAt": "26-09-25  08:00",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "trkiyeprotectsitscitrusharvestswithnuclearscience|global",
@@ -22952,10 +23152,10 @@
         }
       },
       {
-        "id": "evt-6",
+        "id": "evt-7",
         "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
         "publishedAt": "26-09-14  08:34",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "adequateuraniumresourcesavailablebutsustainedinvestmentessentialtosupportglobalnuclearcapacitygrowth|global",
@@ -22971,10 +23171,10 @@
         }
       },
       {
-        "id": "evt-7",
+        "id": "evt-8",
         "title": "IAEA-Led Mission Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
         "publishedAt": "26-09-11  17:52",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "iaealedmissionsamplesalpstreatedwateratfukushimadaiichinuclearpowerstationunderadditionalmeasures|global",
@@ -22990,10 +23190,10 @@
         }
       },
       {
-        "id": "evt-8",
+        "id": "evt-9",
         "title": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
-        "publishedAt": "2026-09-25 13:37 UTC",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "publishedAt": "2026-09-25 18:03 UTC",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "securitycouncillive:worldleadersdebateongoingwarinukraine|global",
@@ -23009,10 +23209,10 @@
         }
       },
       {
-        "id": "evt-9",
+        "id": "evt-10",
         "title": "IAEA Projects Global Nuclear Power Capacity Could Triple by 2060, Continuing Rising Trend",
         "publishedAt": "26-09-14  09:00",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "iaeaprojectsglobalnuclearpowercapacitycouldtripleby2060continuingrisingtrend|global",
@@ -23028,10 +23228,10 @@
         }
       },
       {
-        "id": "evt-10",
+        "id": "evt-11",
         "title": "碳氢化合物和地热能办公室奖 1 美元。 200万加强美国地热能源劳动力",
         "publishedAt": "20260909T0",
-        "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "1200|us",
@@ -23054,7 +23254,7 @@
         "activationState": "ELEVATED",
         "triggerScore": 1.0,
         "triggerEvidence": [
-          "确认事件数量=7.5"
+          "确认事件数量=8.25"
         ],
         "counterSignals": [
           "若出现明确豁免、延期或执行强度下降，应降低该路径权重"
@@ -23063,8 +23263,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.7037,
-            "change_pct": -0.11,
+            "value": 6.7123,
+            "change_pct": 0.02,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23073,8 +23273,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4299.3999,
-            "change_pct": 0.03,
+            "value": 4321.5,
+            "change_pct": 0.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23083,8 +23283,8 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 5.207,
-            "change_pct": 0.87,
+            "value": 5.204,
+            "change_pct": 0.81,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23093,8 +23293,8 @@
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.85,
-            "change_pct": -7.27,
+            "value": 97.49,
+            "change_pct": -8.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23103,8 +23303,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 15.68,
-            "change_pct": 0.06,
+            "value": 14.99,
+            "change_pct": -4.34,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23116,9 +23316,9 @@
         "id": "scenario-b",
         "code": "B",
         "activationState": "ELEVATED",
-        "triggerScore": 0.8,
+        "triggerScore": 0.88,
         "triggerEvidence": [
-          "已有确认事件=7.5",
+          "已有确认事件=8.25",
           "需要额外的官方缓和/豁免证据"
         ],
         "counterSignals": [
@@ -23127,30 +23327,14 @@
         "evidenceDrivers": [
           {
             "kind": "EVENT",
-            "id": "evt-3",
+            "id": "evt-4",
             "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
             "source": "UN News",
             "url": "https://news.un.org/en/story/2026/09/1168386",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-09-25 13:37 UTC",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
-            "tier": "KNOWN_MEDIA",
-            "freshness": "UNKNOWN",
-            "credibility": 0.75,
-            "lifecycle": "UNVERIFIED_TIME",
-            "evidenceWeight": 0.75
-          },
-          {
-            "kind": "EVENT",
-            "id": "evt-4",
-            "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
-            "source": "UN News",
-            "url": "https://news.un.org/en/story/2026/09/1168416",
-            "role": "CATALYST",
-            "category": "GEOPOLITICS",
-            "publishedAt": "2026-09-25 13:37 UTC",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "2026-09-25 18:03 UTC",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23160,13 +23344,13 @@
           {
             "kind": "EVENT",
             "id": "evt-5",
-            "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
-            "source": "IAEA",
-            "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
+            "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+            "source": "UN News",
+            "url": "https://news.un.org/en/story/2026/09/1168416",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "26-09-25  08:00",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "2026-09-25 18:03 UTC",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23176,13 +23360,13 @@
           {
             "kind": "EVENT",
             "id": "evt-6",
-            "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
+            "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
             "source": "IAEA",
-            "url": "http://www.iaea.org/newscenter/pressreleases/adequate-uranium-resources-available-but-sustained-investment-essential-to-support-global-nuclear-capacity-growth",
+            "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "26-09-14  08:34",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "26-09-25  08:00",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23192,8 +23376,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.7037,
-            "change_pct": -0.11,
+            "value": 6.7123,
+            "change_pct": 0.02,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23202,8 +23386,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4299.3999,
-            "change_pct": 0.03,
+            "value": 4321.5,
+            "change_pct": 0.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23212,8 +23396,8 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 5.207,
-            "change_pct": 0.87,
+            "value": 5.204,
+            "change_pct": 0.81,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23222,8 +23406,8 @@
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.85,
-            "change_pct": -7.27,
+            "value": 97.49,
+            "change_pct": -8.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23232,8 +23416,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 15.68,
-            "change_pct": 0.06,
+            "value": 14.99,
+            "change_pct": -4.34,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23257,13 +23441,13 @@
           {
             "kind": "EVENT",
             "id": "evt-3",
-            "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
-            "source": "UN News",
-            "url": "https://news.un.org/en/story/2026/09/1168386",
+            "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+            "source": "IAEA",
+            "url": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development",
             "role": "CATALYST",
-            "category": "GEOPOLITICS",
-            "publishedAt": "2026-09-25 13:37 UTC",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "category": "FINANCE",
+            "publishedAt": "26-09-25  14:02",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23273,13 +23457,13 @@
           {
             "kind": "EVENT",
             "id": "evt-4",
-            "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+            "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
             "source": "UN News",
-            "url": "https://news.un.org/en/story/2026/09/1168416",
+            "url": "https://news.un.org/en/story/2026/09/1168386",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-09-25 13:37 UTC",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "2026-09-25 18:03 UTC",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23289,13 +23473,13 @@
           {
             "kind": "EVENT",
             "id": "evt-5",
-            "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
-            "source": "IAEA",
-            "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
+            "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+            "source": "UN News",
+            "url": "https://news.un.org/en/story/2026/09/1168416",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "26-09-25  08:00",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "2026-09-25 18:03 UTC",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23305,13 +23489,13 @@
           {
             "kind": "EVENT",
             "id": "evt-6",
-            "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
+            "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
             "source": "IAEA",
-            "url": "http://www.iaea.org/newscenter/pressreleases/adequate-uranium-resources-available-but-sustained-investment-essential-to-support-global-nuclear-capacity-growth",
+            "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "26-09-14  08:34",
-            "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+            "publishedAt": "26-09-25  08:00",
+            "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23321,8 +23505,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.7037,
-            "change_pct": -0.11,
+            "value": 6.7123,
+            "change_pct": 0.02,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23331,8 +23515,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4299.3999,
-            "change_pct": 0.03,
+            "value": 4321.5,
+            "change_pct": 0.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23341,8 +23525,8 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 5.207,
-            "change_pct": 0.87,
+            "value": 5.204,
+            "change_pct": 0.81,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23351,8 +23535,8 @@
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.85,
-            "change_pct": -7.27,
+            "value": 97.49,
+            "change_pct": -8.55,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -23361,8 +23545,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 15.68,
-            "change_pct": 0.06,
+            "value": 14.99,
+            "change_pct": -4.34,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-09-25",
@@ -46582,13 +46766,13 @@
         }
       },
       {
-        "updatedAt": "2026-09-25T14:19:52.610597+00:00",
+        "updatedAt": "2026-09-25T18:34:57.510284+00:00",
         "china": {
           "source": "国家统计局",
           "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
           "releaseTitle": "8月份国民经济运行平稳、发展向新向优",
           "publishedAt": "2026-09-15",
-          "fetchedAt": "2026-09-25T14:19:48.457459+00:00",
+          "fetchedAt": "2026-09-25T18:34:53.588086+00:00",
           "values": {
             "industrial_yoy_pct": 5.2,
             "industrial_mom_pct": 0.54,
@@ -46607,7 +46791,7 @@
         },
         "chinaStructured": {
           "status": "OK",
-          "fetchedAt": "2026-09-25T14:19:37.891081+00:00",
+          "fetchedAt": "2026-09-25T18:34:40.325851+00:00",
           "records": [
             {
               "indicatorId": "962228822a9c4001bea4f3254d442dca",
@@ -56024,7 +56208,7 @@
         },
         "pbc": {
           "source": "中国人民银行",
-          "fetchedAt": "2026-09-25T13:53:20.957859+00:00",
+          "fetchedAt": "2026-09-25T18:14:38.979428+00:00",
           "records": [
             {
               "indicator": "M2_yoy_pct",
@@ -80329,13 +80513,13 @@
       {
         "date": "2026-09-25",
         "macro": {
-          "updatedAt": "2026-09-25T14:19:52.610597+00:00",
+          "updatedAt": "2026-09-25T18:34:57.510284+00:00",
           "china": {
             "source": "国家统计局",
             "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
             "releaseTitle": "8月份国民经济运行平稳、发展向新向优",
             "publishedAt": "2026-09-15",
-            "fetchedAt": "2026-09-25T14:19:48.457459+00:00",
+            "fetchedAt": "2026-09-25T18:34:53.588086+00:00",
             "values": {
               "industrial_yoy_pct": 5.2,
               "industrial_mom_pct": 0.54,
@@ -80354,7 +80538,7 @@
           },
           "chinaStructured": {
             "status": "OK",
-            "fetchedAt": "2026-09-25T14:19:37.891081+00:00",
+            "fetchedAt": "2026-09-25T18:34:40.325851+00:00",
             "records": [
               {
                 "indicatorId": "962228822a9c4001bea4f3254d442dca",
@@ -89771,7 +89955,7 @@
           },
           "pbc": {
             "source": "中国人民银行",
-            "fetchedAt": "2026-09-25T13:53:20.957859+00:00",
+            "fetchedAt": "2026-09-25T18:14:38.979428+00:00",
             "records": [
               {
                 "indicator": "M2_yoy_pct",
@@ -90473,12 +90657,12 @@
           }
         },
         "market": {
-          "capturedAt": "2026-09-25T17:55:54.822589+00:00",
+          "capturedAt": "2026-09-25T18:39:17.223324+00:00",
           "markets": [
             {
               "name": "USD/CNY",
-              "value": 6.7037,
-              "change_pct": -0.11,
+              "value": 6.7123,
+              "change_pct": 0.02,
               "observedAt": "2026-09-25"
             },
             {
@@ -90501,32 +90685,32 @@
             },
             {
               "name": "标普500",
-              "value": 7705.3398,
-              "change_pct": 0.02,
+              "value": 7736.1802,
+              "change_pct": 0.42,
               "observedAt": "2026-09-25"
             },
             {
               "name": "美国10年期收益率",
-              "value": 5.207,
-              "change_pct": 0.87,
+              "value": 5.204,
+              "change_pct": 0.81,
               "observedAt": "2026-09-25"
             },
             {
               "name": "布伦特原油",
-              "value": 98.85,
-              "change_pct": -7.27,
+              "value": 97.49,
+              "change_pct": -8.55,
               "observedAt": "2026-09-25"
             },
             {
               "name": "黄金",
-              "value": 4299.3999,
-              "change_pct": 0.03,
+              "value": 4321.5,
+              "change_pct": 0.55,
               "observedAt": "2026-09-25"
             },
             {
               "name": "VIX",
-              "value": 15.68,
-              "change_pct": 0.06,
+              "value": 14.99,
+              "change_pct": -4.34,
               "observedAt": "2026-09-25"
             }
           ]
@@ -90541,7 +90725,7 @@
         "eventId": "evt-1",
         "dedupeKey": "us",
         "title": "特朗普总统是对的：美国控制霍尔木兹海峡",
-        "eventPublishedAt": "2026-09-25 13:37 UTC",
+        "eventPublishedAt": "2026-09-25 18:03 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -90641,9 +90825,9 @@
       },
       {
         "eventId": "evt-3",
-        "dedupeKey": "nowhereissafe:unexpertsdetailukrainewarstollandrussiasreachbeyonditsborders|global",
-        "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
-        "eventPublishedAt": "2026-09-25 13:37 UTC",
+        "dedupeKey": "iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+        "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+        "eventPublishedAt": "26-09-25  14:02",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -90692,9 +90876,9 @@
       },
       {
         "eventId": "evt-4",
-        "dedupeKey": "zelenskyyurgesstrongerpressureonrussiawarnswarsimpactisspreadingbeyondukraine|global",
-        "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
-        "eventPublishedAt": "2026-09-25 13:37 UTC",
+        "dedupeKey": "nowhereissafe:unexpertsdetailukrainewarstollandrussiasreachbeyonditsborders|global",
+        "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
+        "eventPublishedAt": "2026-09-25 18:03 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -90743,6 +90927,57 @@
       },
       {
         "eventId": "evt-5",
+        "dedupeKey": "zelenskyyurgesstrongerpressureonrussiawarnswarsimpactisspreadingbeyondukraine|global",
+        "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+        "eventPublishedAt": "2026-09-25 18:03 UTC",
+        "eventTimeKnown": false,
+        "windows": [
+          {
+            "window": "T0",
+            "label": "事件当日",
+            "offsetDays": 0,
+            "metrics": [],
+            "capturedAt": null,
+            "status": "MISSING"
+          },
+          {
+            "window": "T1D",
+            "label": "T+1天",
+            "offsetDays": 1,
+            "metrics": [],
+            "capturedAt": null,
+            "status": "MISSING"
+          },
+          {
+            "window": "T3D",
+            "label": "T+3天",
+            "offsetDays": 3,
+            "metrics": [],
+            "capturedAt": null,
+            "status": "MISSING"
+          },
+          {
+            "window": "T7D",
+            "label": "T+7天",
+            "offsetDays": 7,
+            "metrics": [],
+            "capturedAt": null,
+            "status": "MISSING"
+          },
+          {
+            "window": "T30D",
+            "label": "T+30天",
+            "offsetDays": 30,
+            "metrics": [],
+            "capturedAt": null,
+            "status": "MISSING"
+          }
+        ],
+        "method": "相对事件时间窗只读取实际保存的市场快照；没有对应历史快照就保持缺失，不用当前数据回填 T+1/T+3/T+7/T+30。",
+        "causalStatus": "NOT_ESTABLISHED"
+      },
+      {
+        "eventId": "evt-6",
         "dedupeKey": "trkiyeprotectsitscitrusharvestswithnuclearscience|global",
         "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
         "eventPublishedAt": "26-09-25  08:00",
@@ -90793,7 +91028,7 @@
         "causalStatus": "NOT_ESTABLISHED"
       },
       {
-        "eventId": "evt-6",
+        "eventId": "evt-7",
         "dedupeKey": "adequateuraniumresourcesavailablebutsustainedinvestmentessentialtosupportglobalnuclearcapacitygrowth|global",
         "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
         "eventPublishedAt": "26-09-14  08:34",
@@ -90844,7 +91079,7 @@
         "causalStatus": "NOT_ESTABLISHED"
       },
       {
-        "eventId": "evt-7",
+        "eventId": "evt-8",
         "dedupeKey": "iaealedmissionsamplesalpstreatedwateratfukushimadaiichinuclearpowerstationunderadditionalmeasures|global",
         "title": "IAEA-Led Mission Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
         "eventPublishedAt": "26-09-11  17:52",
@@ -90895,10 +91130,10 @@
         "causalStatus": "NOT_ESTABLISHED"
       },
       {
-        "eventId": "evt-8",
+        "eventId": "evt-9",
         "dedupeKey": "securitycouncillive:worldleadersdebateongoingwarinukraine|global",
         "title": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
-        "eventPublishedAt": "2026-09-25 13:37 UTC",
+        "eventPublishedAt": "2026-09-25 18:03 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -90946,7 +91181,7 @@
         "causalStatus": "NOT_ESTABLISHED"
       },
       {
-        "eventId": "evt-9",
+        "eventId": "evt-10",
         "dedupeKey": "iaeaprojectsglobalnuclearpowercapacitycouldtripleby2060continuingrisingtrend|global",
         "title": "IAEA Projects Global Nuclear Power Capacity Could Triple by 2060, Continuing Rising Trend",
         "eventPublishedAt": "26-09-14  09:00",
@@ -90997,7 +91232,7 @@
         "causalStatus": "NOT_ESTABLISHED"
       },
       {
-        "eventId": "evt-10",
+        "eventId": "evt-11",
         "dedupeKey": "1200|us",
         "title": "碳氢化合物和地热能办公室奖 1 美元。 200万加强美国地热能源劳动力",
         "eventPublishedAt": "20260909T0",
@@ -91066,8 +91301,8 @@
         "source": {
           "provider": "White House",
           "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
-          "publishedAt": "2026-09-25 13:37 UTC",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "2026-09-25 18:03 UTC",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91143,7 +91378,7 @@
           "provider": "US Energy",
           "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
           "publishedAt": "20260908T1",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91201,6 +91436,81 @@
       },
       {
         "id": "evt-3",
+        "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+        "summary": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+        "category": "FINANCE",
+        "importance": "HIGH",
+        "actor": {
+          "type": "REGION",
+          "country": "OTHER",
+          "name": "global"
+        },
+        "affectedCountries": [
+          "CN",
+          "US"
+        ],
+        "source": {
+          "provider": "IAEA",
+          "url": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development",
+          "publishedAt": "26-09-25  14:02",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
+          "credibility": 0.75,
+          "tier": "KNOWN_MEDIA",
+          "ageDays": null,
+          "freshness": "UNKNOWN",
+          "lifecycle": "UNVERIFIED_TIME",
+          "evidenceWeight": 0.75,
+          "corroborationBonus": 0.0
+        },
+        "status": "CONFIRMED",
+        "triggerRole": "CATALYST",
+        "impact": {
+          "china": 0,
+          "us": 0,
+          "globalTrade": 0,
+          "logistics": 0,
+          "finance": 0,
+          "energy": 0,
+          "technology": 0
+        },
+        "channels": [
+          {
+            "id": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development-supply",
+            "name": "SUPPLY_CHAIN",
+            "intensity": 0.45,
+            "description": "供应链与产业传导"
+          }
+        ],
+        "tags": [
+          "global",
+          "FINANCE"
+        ],
+        "dedupeKey": "iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+        "sourceIdentity": "iaea",
+        "canonicalIntelligence": {
+          "eventId": null,
+          "status": "UNREGISTERED",
+          "independentSourceCount": 0,
+          "mentionCount": 0,
+          "claimIds": [],
+          "spineMatched": false
+        },
+        "corroboration": {
+          "independentSourceCount": 1,
+          "reportCount": 1,
+          "tierCount": 1,
+          "sources": [
+            "IAEA"
+          ]
+        },
+        "windows": [],
+        "anomalyAnalysis": {
+          "status": "EVENT_TIME_UNKNOWN",
+          "metrics": []
+        }
+      },
+      {
+        "id": "evt-4",
         "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
         "summary": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
         "category": "GEOPOLITICS",
@@ -91217,8 +91527,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/09/1168386",
-          "publishedAt": "2026-09-25 13:37 UTC",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "2026-09-25 18:03 UTC",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91277,7 +91587,7 @@
         }
       },
       {
-        "id": "evt-4",
+        "id": "evt-5",
         "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
         "summary": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
         "category": "GEOPOLITICS",
@@ -91294,8 +91604,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/09/1168416",
-          "publishedAt": "2026-09-25 13:37 UTC",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "2026-09-25 18:03 UTC",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91352,7 +91662,7 @@
         }
       },
       {
-        "id": "evt-5",
+        "id": "evt-6",
         "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
         "summary": "Türkiye Protects its Citrus Harvests with Nuclear Science",
         "category": "GEOPOLITICS",
@@ -91370,7 +91680,7 @@
           "provider": "IAEA",
           "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
           "publishedAt": "26-09-25  08:00",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91427,7 +91737,7 @@
         }
       },
       {
-        "id": "evt-6",
+        "id": "evt-7",
         "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
         "summary": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
         "category": "GEOPOLITICS",
@@ -91445,7 +91755,7 @@
           "provider": "IAEA",
           "url": "http://www.iaea.org/newscenter/pressreleases/adequate-uranium-resources-available-but-sustained-investment-essential-to-support-global-nuclear-capacity-growth",
           "publishedAt": "26-09-14  08:34",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91502,7 +91812,7 @@
         }
       },
       {
-        "id": "evt-7",
+        "id": "evt-8",
         "title": "IAEA-Led Mission Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
         "summary": "IAEA-Led Mission Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
         "category": "GEOPOLITICS",
@@ -91520,7 +91830,7 @@
           "provider": "IAEA",
           "url": "http://www.iaea.org/newscenter/pressreleases/iaea-led-mission-samples-alps-treated-water-at-fukushima-daiichi-nuclear-power-station-under-additional-measures",
           "publishedAt": "26-09-11  17:52",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91577,7 +91887,7 @@
         }
       },
       {
-        "id": "evt-8",
+        "id": "evt-9",
         "title": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
         "summary": "Security Council LIVE: World leaders debate ongoing war in Ukraine",
         "category": "国家安全",
@@ -91594,8 +91904,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/09/1168410",
-          "publishedAt": "2026-09-25 13:37 UTC",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "2026-09-25 18:03 UTC",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91652,7 +91962,7 @@
         }
       },
       {
-        "id": "evt-9",
+        "id": "evt-10",
         "title": "IAEA Projects Global Nuclear Power Capacity Could Triple by 2060, Continuing Rising Trend",
         "summary": "IAEA Projects Global Nuclear Power Capacity Could Triple by 2060, Continuing Rising Trend",
         "category": "ENERGY",
@@ -91670,7 +91980,7 @@
           "provider": "IAEA",
           "url": "http://www.iaea.org/newscenter/pressreleases/iaea-projects-global-nuclear-power-capacity-could-triple-by-2060-continuing-rising-trend",
           "publishedAt": "26-09-14  09:00",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91727,7 +92037,7 @@
         }
       },
       {
-        "id": "evt-10",
+        "id": "evt-11",
         "title": "碳氢化合物和地热能办公室奖 1 美元。 200万加强美国地热能源劳动力",
         "summary": "碳氢化合物和地热能办公室奖 1 美元。 200万加强美国地热能源劳动力",
         "category": "ENERGY",
@@ -91744,7 +92054,7 @@
           "provider": "US Energy",
           "url": "https://www.energy.gov/hgeo/articles/hydrocarbons-and-geothermal-energy-office-awards-12-million-strengthen-americas",
           "publishedAt": "20260909T0",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -91966,7 +92276,7 @@
     "calibrationAudit": [],
     "transmissionValidation": {
       "marketObservationCount": 15,
-      "eventObservationCount": 10,
+      "eventObservationCount": 11,
       "status": "OBSERVATIONAL",
       "rule": "市场指标与事件同期变化只能作为伴随验证信号；缺少连续、可识别的实体数据时不做因果归因。",
       "observations": [
@@ -91975,27 +92285,27 @@
           "marketSignals": [
             {
               "name": "USD/CNY",
-              "change_pct": -0.11,
+              "change_pct": 0.02,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "黄金",
-              "change_pct": 0.03,
+              "change_pct": 0.55,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "美国10年期收益率",
-              "change_pct": 0.87,
+              "change_pct": 0.81,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "布伦特原油",
-              "change_pct": -7.27,
+              "change_pct": -8.55,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "VIX",
-              "change_pct": 0.06,
+              "change_pct": -4.34,
               "observationStatus": "DATA_PRESENT"
             }
           ]
@@ -92005,27 +92315,27 @@
           "marketSignals": [
             {
               "name": "USD/CNY",
-              "change_pct": -0.11,
+              "change_pct": 0.02,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "黄金",
-              "change_pct": 0.03,
+              "change_pct": 0.55,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "美国10年期收益率",
-              "change_pct": 0.87,
+              "change_pct": 0.81,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "布伦特原油",
-              "change_pct": -7.27,
+              "change_pct": -8.55,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "VIX",
-              "change_pct": 0.06,
+              "change_pct": -4.34,
               "observationStatus": "DATA_PRESENT"
             }
           ]
@@ -92035,27 +92345,27 @@
           "marketSignals": [
             {
               "name": "USD/CNY",
-              "change_pct": -0.11,
+              "change_pct": 0.02,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "黄金",
-              "change_pct": 0.03,
+              "change_pct": 0.55,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "美国10年期收益率",
-              "change_pct": 0.87,
+              "change_pct": 0.81,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "布伦特原油",
-              "change_pct": -7.27,
+              "change_pct": -8.55,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "VIX",
-              "change_pct": 0.06,
+              "change_pct": -4.34,
               "observationStatus": "DATA_PRESENT"
             }
           ]
@@ -92065,7 +92375,7 @@
   },
   "scenarioHistory": {
     "baseline": "COMPARISON",
-    "previousGeneratedAt": "2026-09-25T14:24:06.281704+00:00",
+    "previousGeneratedAt": "2026-09-25T17:55:54.821333+00:00",
     "changes": [
       {
         "id": "scenario-a",
@@ -92077,7 +92387,16 @@
         "delta": 0.0,
         "explanation": {
           "scoreDelta": 0.0,
-          "components": [],
+          "components": [
+            {
+              "type": "TRIGGER_EVIDENCE_CHANGE",
+              "direction": "MIXED",
+              "magnitude": 1,
+              "items": [
+                "确认事件数量=8.25"
+              ]
+            }
+          ],
           "interpretation": "变化解释基于相邻运行的可观察证据差异，不表示因果关系或发生概率。"
         }
       },
@@ -92087,11 +92406,29 @@
         "previousState": "ELEVATED",
         "currentState": "ELEVATED",
         "previousScore": 0.8,
-        "currentScore": 0.8,
-        "delta": 0.0,
+        "currentScore": 0.88,
+        "delta": 0.08,
         "explanation": {
-          "scoreDelta": 0.0,
-          "components": [],
+          "scoreDelta": 0.08,
+          "components": [
+            {
+              "type": "EVIDENCE_REMOVED",
+              "direction": "DOWN",
+              "magnitude": 1,
+              "items": [
+                "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders"
+              ]
+            },
+            {
+              "type": "TRIGGER_EVIDENCE_CHANGE",
+              "direction": "MIXED",
+              "magnitude": 1,
+              "items": [
+                "已有确认事件=8.25",
+                "需要额外的官方缓和/豁免证据"
+              ]
+            }
+          ],
           "interpretation": "变化解释基于相邻运行的可观察证据差异，不表示因果关系或发生概率。"
         }
       },
@@ -92110,7 +92447,27 @@
         }
       }
     ],
-    "newEvidence": [],
+    "newEvidence": [
+      {
+        "id": "evt-3",
+        "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+        "publishedAt": "26-09-25  14:02",
+        "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
+        "tier": "KNOWN_MEDIA",
+        "freshness": "UNKNOWN",
+        "dedupeKey": "iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
+        "lifecycle": "UNVERIFIED_TIME",
+        "evidenceWeight": 0.75,
+        "corroboration": {
+          "independentSourceCount": 1,
+          "reportCount": 1,
+          "tierCount": 1,
+          "sources": [
+            "IAEA"
+          ]
+        }
+      }
+    ],
     "staleOrRemovedEvidence": [],
     "corroboratedEvidence": [],
     "lifecycleChanges": []
@@ -92126,8 +92483,8 @@
         {
           "kind": "MARKET",
           "name": "USD/CNY",
-          "value": 6.7037,
-          "change_pct": -0.11,
+          "value": 6.7123,
+          "change_pct": 0.02,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -92136,8 +92493,8 @@
         {
           "kind": "MARKET",
           "name": "黄金",
-          "value": 4299.3999,
-          "change_pct": 0.03,
+          "value": 4321.5,
+          "change_pct": 0.55,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -92146,8 +92503,8 @@
         {
           "kind": "MARKET",
           "name": "美国10年期收益率",
-          "value": 5.207,
-          "change_pct": 0.87,
+          "value": 5.204,
+          "change_pct": 0.81,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -92156,8 +92513,8 @@
         {
           "kind": "MARKET",
           "name": "布伦特原油",
-          "value": 98.85,
-          "change_pct": -7.27,
+          "value": 97.49,
+          "change_pct": -8.55,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -92166,8 +92523,8 @@
         {
           "kind": "MARKET",
           "name": "VIX",
-          "value": 15.68,
-          "change_pct": 0.06,
+          "value": 14.99,
+          "change_pct": -4.34,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -92279,7 +92636,7 @@
       "activationState": "ELEVATED",
       "triggerScore": 1.0,
       "triggerEvidence": [
-        "确认事件数量=7.5"
+        "确认事件数量=8.25"
       ],
       "counterSignals": [
         "若出现明确豁免、延期或执行强度下降，应降低该路径权重"
@@ -92310,6 +92667,23 @@
           "status": "AVAILABLE_TOOL_TO_MONITOR"
         },
         {
+          "id": "PAYMENT_FINANCE",
+          "name": "金融、支付与融资监管工具",
+          "domain": "FINANCE",
+          "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+          "activationTriggers": [
+            "金融制裁/支付限制",
+            "跨境融资条件明显变化"
+          ],
+          "observableEvidence": [
+            "金融监管文件",
+            "制裁/名单文件",
+            "支付与融资数据"
+          ],
+          "relevance": "HIGH",
+          "status": "AVAILABLE_TOOL_TO_MONITOR"
+        },
+        {
           "id": "ENTITY_AND_END_USER",
           "name": "实体/不可靠实体/最终用户限制",
           "domain": "REGULATION",
@@ -92324,6 +92698,23 @@
             "企业交易披露"
           ],
           "relevance": "HIGH",
+          "status": "AVAILABLE_TOOL_TO_MONITOR"
+        },
+        {
+          "id": "INVESTMENT_TECH_TRANSFER",
+          "name": "投资/技术转移与境外经营限制",
+          "domain": "CAPITAL_TECH",
+          "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
+          "activationTriggers": [
+            "敏感技术/产业投资受限",
+            "境外生产使用受控技术出现证据"
+          ],
+          "observableEvidence": [
+            "投资审查决定",
+            "技术出口规则",
+            "企业交易披露"
+          ],
+          "relevance": "MEDIUM",
           "status": "AVAILABLE_TOOL_TO_MONITOR"
         },
         {
@@ -92431,40 +92822,6 @@
           ],
           "relevance": "LOW",
           "status": "AVAILABLE_TOOL_TO_MONITOR"
-        },
-        {
-          "id": "PAYMENT_FINANCE",
-          "name": "金融、支付与融资监管工具",
-          "domain": "FINANCE",
-          "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
-          "activationTriggers": [
-            "金融制裁/支付限制",
-            "跨境融资条件明显变化"
-          ],
-          "observableEvidence": [
-            "金融监管文件",
-            "制裁/名单文件",
-            "支付与融资数据"
-          ],
-          "relevance": "LOW",
-          "status": "AVAILABLE_TOOL_TO_MONITOR"
-        },
-        {
-          "id": "INVESTMENT_TECH_TRANSFER",
-          "name": "投资/技术转移与境外经营限制",
-          "domain": "CAPITAL_TECH",
-          "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
-          "activationTriggers": [
-            "敏感技术/产业投资受限",
-            "境外生产使用受控技术出现证据"
-          ],
-          "observableEvidence": [
-            "投资审查决定",
-            "技术出口规则",
-            "企业交易披露"
-          ],
-          "relevance": "LOW",
-          "status": "AVAILABLE_TOOL_TO_MONITOR"
         }
       ],
       "highRelevanceResponseTools": [
@@ -92481,6 +92838,23 @@
             "出口管制清单",
             "许可证审批规则",
             "企业合规公告"
+          ],
+          "relevance": "HIGH",
+          "status": "AVAILABLE_TOOL_TO_MONITOR"
+        },
+        {
+          "id": "PAYMENT_FINANCE",
+          "name": "金融、支付与融资监管工具",
+          "domain": "FINANCE",
+          "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+          "activationTriggers": [
+            "金融制裁/支付限制",
+            "跨境融资条件明显变化"
+          ],
+          "observableEvidence": [
+            "金融监管文件",
+            "制裁/名单文件",
+            "支付与融资数据"
           ],
           "relevance": "HIGH",
           "status": "AVAILABLE_TOOL_TO_MONITOR"
@@ -93458,7 +93832,7 @@
       "dynamicResponseTree": {
         "version": "dynamic-response-v4",
         "rootScenarioId": "scenario-a",
-        "generatedAt": "2026-09-25T17:55:54.757301+00:00",
+        "generatedAt": "2026-09-25T18:39:17.156657+00:00",
         "rounds": [
           {
             "round": 1,
@@ -98568,7 +98942,7 @@
             ]
           }
         ],
-        "eventCount": 10,
+        "eventCount": 11,
         "previousTreeVersion": null,
         "stateModel": {
           "statuses": [
@@ -98594,30 +98968,14 @@
       "evidenceDrivers": [
         {
           "kind": "EVENT",
-          "id": "evt-3",
+          "id": "evt-4",
           "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
           "source": "UN News",
           "url": "https://news.un.org/en/story/2026/09/1168386",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "2026-09-25 13:37 UTC",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
-          "tier": "KNOWN_MEDIA",
-          "freshness": "UNKNOWN",
-          "credibility": 0.75,
-          "lifecycle": "UNVERIFIED_TIME",
-          "evidenceWeight": 0.75
-        },
-        {
-          "kind": "EVENT",
-          "id": "evt-4",
-          "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
-          "source": "UN News",
-          "url": "https://news.un.org/en/story/2026/09/1168416",
-          "role": "CATALYST",
-          "category": "GEOPOLITICS",
-          "publishedAt": "2026-09-25 13:37 UTC",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "2026-09-25 18:03 UTC",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -98627,13 +98985,13 @@
         {
           "kind": "EVENT",
           "id": "evt-5",
-          "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
-          "source": "IAEA",
-          "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
+          "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+          "source": "UN News",
+          "url": "https://news.un.org/en/story/2026/09/1168416",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "26-09-25  08:00",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "2026-09-25 18:03 UTC",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -98643,13 +99001,13 @@
         {
           "kind": "EVENT",
           "id": "evt-6",
-          "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
+          "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
           "source": "IAEA",
-          "url": "http://www.iaea.org/newscenter/pressreleases/adequate-uranium-resources-available-but-sustained-investment-essential-to-support-global-nuclear-capacity-growth",
+          "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "26-09-14  08:34",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "26-09-25  08:00",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -98659,8 +99017,8 @@
         {
           "kind": "MARKET",
           "name": "USD/CNY",
-          "value": 6.7037,
-          "change_pct": -0.11,
+          "value": 6.7123,
+          "change_pct": 0.02,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -98669,8 +99027,8 @@
         {
           "kind": "MARKET",
           "name": "黄金",
-          "value": 4299.3999,
-          "change_pct": 0.03,
+          "value": 4321.5,
+          "change_pct": 0.55,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -98679,8 +99037,8 @@
         {
           "kind": "MARKET",
           "name": "美国10年期收益率",
-          "value": 5.207,
-          "change_pct": 0.87,
+          "value": 5.204,
+          "change_pct": 0.81,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -98689,8 +99047,8 @@
         {
           "kind": "MARKET",
           "name": "布伦特原油",
-          "value": 98.85,
-          "change_pct": -7.27,
+          "value": 97.49,
+          "change_pct": -8.55,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -98699,8 +99057,8 @@
         {
           "kind": "MARKET",
           "name": "VIX",
-          "value": 15.68,
-          "change_pct": 0.06,
+          "value": 14.99,
+          "change_pct": -4.34,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -98810,9 +99168,9 @@
       "confidence": "MEDIUM",
       "sensitivity": 0.5,
       "activationState": "ELEVATED",
-      "triggerScore": 0.8,
+      "triggerScore": 0.88,
       "triggerEvidence": [
-        "已有确认事件=7.5",
+        "已有确认事件=8.25",
         "需要额外的官方缓和/豁免证据"
       ],
       "counterSignals": [
@@ -98844,6 +99202,23 @@
           "status": "AVAILABLE_TOOL_TO_MONITOR"
         },
         {
+          "id": "PAYMENT_FINANCE",
+          "name": "金融、支付与融资监管工具",
+          "domain": "FINANCE",
+          "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+          "activationTriggers": [
+            "金融制裁/支付限制",
+            "跨境融资条件明显变化"
+          ],
+          "observableEvidence": [
+            "金融监管文件",
+            "制裁/名单文件",
+            "支付与融资数据"
+          ],
+          "relevance": "HIGH",
+          "status": "AVAILABLE_TOOL_TO_MONITOR"
+        },
+        {
           "id": "ENTITY_AND_END_USER",
           "name": "实体/不可靠实体/最终用户限制",
           "domain": "REGULATION",
@@ -98858,6 +99233,23 @@
             "企业交易披露"
           ],
           "relevance": "HIGH",
+          "status": "AVAILABLE_TOOL_TO_MONITOR"
+        },
+        {
+          "id": "INVESTMENT_TECH_TRANSFER",
+          "name": "投资/技术转移与境外经营限制",
+          "domain": "CAPITAL_TECH",
+          "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
+          "activationTriggers": [
+            "敏感技术/产业投资受限",
+            "境外生产使用受控技术出现证据"
+          ],
+          "observableEvidence": [
+            "投资审查决定",
+            "技术出口规则",
+            "企业交易披露"
+          ],
+          "relevance": "MEDIUM",
           "status": "AVAILABLE_TOOL_TO_MONITOR"
         },
         {
@@ -98965,40 +99357,6 @@
           ],
           "relevance": "LOW",
           "status": "AVAILABLE_TOOL_TO_MONITOR"
-        },
-        {
-          "id": "PAYMENT_FINANCE",
-          "name": "金融、支付与融资监管工具",
-          "domain": "FINANCE",
-          "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
-          "activationTriggers": [
-            "金融制裁/支付限制",
-            "跨境融资条件明显变化"
-          ],
-          "observableEvidence": [
-            "金融监管文件",
-            "制裁/名单文件",
-            "支付与融资数据"
-          ],
-          "relevance": "LOW",
-          "status": "AVAILABLE_TOOL_TO_MONITOR"
-        },
-        {
-          "id": "INVESTMENT_TECH_TRANSFER",
-          "name": "投资/技术转移与境外经营限制",
-          "domain": "CAPITAL_TECH",
-          "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
-          "activationTriggers": [
-            "敏感技术/产业投资受限",
-            "境外生产使用受控技术出现证据"
-          ],
-          "observableEvidence": [
-            "投资审查决定",
-            "技术出口规则",
-            "企业交易披露"
-          ],
-          "relevance": "LOW",
-          "status": "AVAILABLE_TOOL_TO_MONITOR"
         }
       ],
       "highRelevanceResponseTools": [
@@ -99015,6 +99373,23 @@
             "出口管制清单",
             "许可证审批规则",
             "企业合规公告"
+          ],
+          "relevance": "HIGH",
+          "status": "AVAILABLE_TOOL_TO_MONITOR"
+        },
+        {
+          "id": "PAYMENT_FINANCE",
+          "name": "金融、支付与融资监管工具",
+          "domain": "FINANCE",
+          "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+          "activationTriggers": [
+            "金融制裁/支付限制",
+            "跨境融资条件明显变化"
+          ],
+          "observableEvidence": [
+            "金融监管文件",
+            "制裁/名单文件",
+            "支付与融资数据"
           ],
           "relevance": "HIGH",
           "status": "AVAILABLE_TOOL_TO_MONITOR"
@@ -99992,7 +100367,7 @@
       "dynamicResponseTree": {
         "version": "dynamic-response-v4",
         "rootScenarioId": "scenario-b",
-        "generatedAt": "2026-09-25T17:55:54.768075+00:00",
+        "generatedAt": "2026-09-25T18:39:17.168189+00:00",
         "rounds": [
           {
             "round": 1,
@@ -105102,7 +105477,7 @@
             ]
           }
         ],
-        "eventCount": 10,
+        "eventCount": 11,
         "previousTreeVersion": null,
         "stateModel": {
           "statuses": [
@@ -105129,13 +105504,13 @@
         {
           "kind": "EVENT",
           "id": "evt-3",
-          "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
-          "source": "UN News",
-          "url": "https://news.un.org/en/story/2026/09/1168386",
+          "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
+          "source": "IAEA",
+          "url": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development",
           "role": "CATALYST",
-          "category": "GEOPOLITICS",
-          "publishedAt": "2026-09-25 13:37 UTC",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "category": "FINANCE",
+          "publishedAt": "26-09-25  14:02",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -105145,13 +105520,13 @@
         {
           "kind": "EVENT",
           "id": "evt-4",
-          "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+          "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
           "source": "UN News",
-          "url": "https://news.un.org/en/story/2026/09/1168416",
+          "url": "https://news.un.org/en/story/2026/09/1168386",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "2026-09-25 13:37 UTC",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "2026-09-25 18:03 UTC",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -105161,13 +105536,13 @@
         {
           "kind": "EVENT",
           "id": "evt-5",
-          "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
-          "source": "IAEA",
-          "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
+          "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
+          "source": "UN News",
+          "url": "https://news.un.org/en/story/2026/09/1168416",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "26-09-25  08:00",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "2026-09-25 18:03 UTC",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -105177,13 +105552,13 @@
         {
           "kind": "EVENT",
           "id": "evt-6",
-          "title": "Adequate uranium resources available, but sustained investment essential to support global nuclear capacity growth",
+          "title": "Türkiye Protects its Citrus Harvests with Nuclear Science",
           "source": "IAEA",
-          "url": "http://www.iaea.org/newscenter/pressreleases/adequate-uranium-resources-available-but-sustained-investment-essential-to-support-global-nuclear-capacity-growth",
+          "url": "http://www.iaea.org/newscenter/news/turkiye-protects-its-citrus-harvests-with-nuclear-science",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "26-09-14  08:34",
-          "fetchedAt": "2026-09-25T17:55:54.731764+00:00",
+          "publishedAt": "26-09-25  08:00",
+          "fetchedAt": "2026-09-25T18:39:17.130244+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -105193,8 +105568,8 @@
         {
           "kind": "MARKET",
           "name": "USD/CNY",
-          "value": 6.7037,
-          "change_pct": -0.11,
+          "value": 6.7123,
+          "change_pct": 0.02,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -105203,8 +105578,8 @@
         {
           "kind": "MARKET",
           "name": "黄金",
-          "value": 4299.3999,
-          "change_pct": 0.03,
+          "value": 4321.5,
+          "change_pct": 0.55,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -105213,8 +105588,8 @@
         {
           "kind": "MARKET",
           "name": "美国10年期收益率",
-          "value": 5.207,
-          "change_pct": 0.87,
+          "value": 5.204,
+          "change_pct": 0.81,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -105223,8 +105598,8 @@
         {
           "kind": "MARKET",
           "name": "布伦特原油",
-          "value": 98.85,
-          "change_pct": -7.27,
+          "value": 97.49,
+          "change_pct": -8.55,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -105233,8 +105608,8 @@
         {
           "kind": "MARKET",
           "name": "VIX",
-          "value": 15.68,
-          "change_pct": 0.06,
+          "value": 14.99,
+          "change_pct": -4.34,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-09-25",
@@ -105378,6 +105753,23 @@
           "status": "AVAILABLE_TOOL_TO_MONITOR"
         },
         {
+          "id": "PAYMENT_FINANCE",
+          "name": "金融、支付与融资监管工具",
+          "domain": "FINANCE",
+          "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+          "activationTriggers": [
+            "金融制裁/支付限制",
+            "跨境融资条件明显变化"
+          ],
+          "observableEvidence": [
+            "金融监管文件",
+            "制裁/名单文件",
+            "支付与融资数据"
+          ],
+          "relevance": "HIGH",
+          "status": "AVAILABLE_TOOL_TO_MONITOR"
+        },
+        {
           "id": "ENTITY_AND_END_USER",
           "name": "实体/不可靠实体/最终用户限制",
           "domain": "REGULATION",
@@ -105392,6 +105784,23 @@
             "企业交易披露"
           ],
           "relevance": "HIGH",
+          "status": "AVAILABLE_TOOL_TO_MONITOR"
+        },
+        {
+          "id": "INVESTMENT_TECH_TRANSFER",
+          "name": "投资/技术转移与境外经营限制",
+          "domain": "CAPITAL_TECH",
+          "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
+          "activationTriggers": [
+            "敏感技术/产业投资受限",
+            "境外生产使用受控技术出现证据"
+          ],
+          "observableEvidence": [
+            "投资审查决定",
+            "技术出口规则",
+            "企业交易披露"
+          ],
+          "relevance": "MEDIUM",
           "status": "AVAILABLE_TOOL_TO_MONITOR"
         },
         {
@@ -105499,40 +105908,6 @@
           ],
           "relevance": "LOW",
           "status": "AVAILABLE_TOOL_TO_MONITOR"
-        },
-        {
-          "id": "PAYMENT_FINANCE",
-          "name": "金融、支付与融资监管工具",
-          "domain": "FINANCE",
-          "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
-          "activationTriggers": [
-            "金融制裁/支付限制",
-            "跨境融资条件明显变化"
-          ],
-          "observableEvidence": [
-            "金融监管文件",
-            "制裁/名单文件",
-            "支付与融资数据"
-          ],
-          "relevance": "LOW",
-          "status": "AVAILABLE_TOOL_TO_MONITOR"
-        },
-        {
-          "id": "INVESTMENT_TECH_TRANSFER",
-          "name": "投资/技术转移与境外经营限制",
-          "domain": "CAPITAL_TECH",
-          "mechanism": "调整投资审查、技术转移、跨境并购或境外生产相关许可与合规条件。",
-          "activationTriggers": [
-            "敏感技术/产业投资受限",
-            "境外生产使用受控技术出现证据"
-          ],
-          "observableEvidence": [
-            "投资审查决定",
-            "技术出口规则",
-            "企业交易披露"
-          ],
-          "relevance": "LOW",
-          "status": "AVAILABLE_TOOL_TO_MONITOR"
         }
       ],
       "highRelevanceResponseTools": [
@@ -105549,6 +105924,23 @@
             "出口管制清单",
             "许可证审批规则",
             "企业合规公告"
+          ],
+          "relevance": "HIGH",
+          "status": "AVAILABLE_TOOL_TO_MONITOR"
+        },
+        {
+          "id": "PAYMENT_FINANCE",
+          "name": "金融、支付与融资监管工具",
+          "domain": "FINANCE",
+          "mechanism": "调整特定交易的融资、支付、结算或金融监管条件。",
+          "activationTriggers": [
+            "金融制裁/支付限制",
+            "跨境融资条件明显变化"
+          ],
+          "observableEvidence": [
+            "金融监管文件",
+            "制裁/名单文件",
+            "支付与融资数据"
           ],
           "relevance": "HIGH",
           "status": "AVAILABLE_TOOL_TO_MONITOR"
@@ -106526,7 +106918,7 @@
       "dynamicResponseTree": {
         "version": "dynamic-response-v4",
         "rootScenarioId": "scenario-c",
-        "generatedAt": "2026-09-25T17:55:54.779478+00:00",
+        "generatedAt": "2026-09-25T18:39:17.179703+00:00",
         "rounds": [
           {
             "round": 1,
@@ -111636,7 +112028,7 @@
             ]
           }
         ],
-        "eventCount": 10,
+        "eventCount": 11,
         "previousTreeVersion": null,
         "stateModel": {
           "statuses": [
