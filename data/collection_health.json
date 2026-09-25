@@ -37,7 +37,7 @@
   "OfficialPage:EIA": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 12
+    "count": 11
   },
   "OfficialPage:BLS": {
     "method": "direct_first_party_html",
@@ -137,7 +137,7 @@
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
     "status": "ok",
-    "count": 18
+    "count": 19
   },
   "OfficialFeed:IAEA": {
     "method": "direct_first_party_rss",
@@ -177,7 +177,7 @@
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 37
+    "count": 32
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-09-25 08:18 UTC",
+  "updated": "2026-09-25 13:37 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 3913,
+  "total_collected": 3948,
   "new_discovery_count": 300,
   "official_direct_count": 264,
-  "official_in_working_set": 631,
+  "official_in_working_set": 635,
   "category_counts": {
-    "政治": 53,
+    "政治": 51,
     "金融": 90,
     "经济": 26,
     "产业": 3,
-    "科技 / AI": 172,
-    "国防": 30,
-    "内政": 18,
-    "国家安全": 56,
-    "外交": 56,
-    "贸易 / 供应链": 117,
-    "能源 / 资源": 67,
-    "中美博弈": 453,
-    "全球政策": 2772
+    "科技 / AI": 181,
+    "国防": 31,
+    "内政": 20,
+    "国家安全": 55,
+    "外交": 59,
+    "贸易 / 供应链": 118,
+    "能源 / 资源": 69,
+    "中美博弈": 465,
+    "全球政策": 2780
   },
   "region_counts": {
-    "china": 551,
-    "us": 601,
-    "global": 2761
+    "china": 552,
+    "us": 604,
+    "global": 2792
   },
   "sources": {
     "OfficialPage:White House": {
@@ -259,7 +259,7 @@
     "OfficialPage:EIA": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 12
+      "count": 11
     },
     "OfficialPage:BLS": {
       "method": "direct_first_party_html",
@@ -359,7 +359,7 @@
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
       "status": "ok",
-      "count": 18
+      "count": 19
     },
     "OfficialFeed:IAEA": {
       "method": "direct_first_party_rss",
@@ -399,7 +399,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 37
+      "count": 32
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
