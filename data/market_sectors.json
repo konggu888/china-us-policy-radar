@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29 06:36 UTC",
+  "updated": "2026-09-29 13:01 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -143,32 +143,32 @@
   "a_share": {
     "上证指数": {
       "ticker": "000001.SS",
-      "latest": 3837.7078,
-      "daily_pct": 0.37,
-      "weekly_pct": -2.84,
-      "monthly_pct": -2.9,
-      "quarterly_pct": -6.68,
-      "six_month_pct": -2.18,
+      "latest": 3830.4514,
+      "daily_pct": 0.18,
+      "weekly_pct": -3.02,
+      "monthly_pct": -3.08,
+      "quarterly_pct": -6.86,
+      "six_month_pct": -2.37,
       "asof": "2026-09-29",
       "provider": "Yahoo Finance",
       "weekly_rank": 1
     },
     "深证成指": {
       "ticker": "399001.SZ",
-      "latest": 12936.0547,
-      "daily_pct": 0.6,
-      "weekly_pct": -5.78,
-      "monthly_pct": -7.29,
-      "quarterly_pct": -19.75,
-      "six_month_pct": -5.76,
+      "latest": 12901.9473,
+      "daily_pct": 0.34,
+      "weekly_pct": -6.03,
+      "monthly_pct": -7.53,
+      "quarterly_pct": -19.96,
+      "six_month_pct": -6.0,
       "asof": "2026-09-29",
       "provider": "Yahoo Finance",
       "weekly_rank": 2
     },
     "沪深300": {
       "ticker": "000300.SS",
-      "latest": 4356.76,
-      "daily_pct": 0.37,
+      "latest": 4345.21,
+      "daily_pct": 0.1,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -180,8 +180,8 @@
     },
     "中证500": {
       "ticker": "000905.SS",
-      "latest": 7460.54,
-      "daily_pct": 0.79,
+      "latest": 7439.63,
+      "daily_pct": 0.5,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -193,8 +193,8 @@
     },
     "中证1000": {
       "ticker": "000852.SS",
-      "latest": 7345.82,
-      "daily_pct": 0.71,
+      "latest": 7325.35,
+      "daily_pct": 0.43,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -206,8 +206,8 @@
     },
     "创业板指": {
       "ticker": "399006.SZ",
-      "latest": 3151.87,
-      "daily_pct": 0.38,
+      "latest": 3142.56,
+      "daily_pct": 0.09,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -219,8 +219,8 @@
     },
     "科创50": {
       "ticker": "000688.SS",
-      "latest": 1575.04,
-      "daily_pct": 1.22,
+      "latest": 1569.34,
+      "daily_pct": 0.86,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -232,7 +232,7 @@
     }
   },
   "a_share_industry_boards": [],
-  "a_share_board_status": "error:URLError",
+  "a_share_board_status": "error:HTTPError",
   "a_share_weekly_industry_boards": [],
   "weekly_risers": [
     "医疗",
