@@ -826,213 +826,13 @@
     ]
   },
   {
-    "capturedAt": "2026-10-02T00:57:43.179247+00:00",
+    "capturedAt": "2026-10-02T06:47:00.861820+00:00",
     "markets": [
       {
         "name": "USD/CNY",
-        "ticker": "CNY=X",
-        "value": 6.704500198364258,
-        "change_pct": 0.0224,
-        "observedAt": "2026-09-30",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/CNY%3DX"
-      },
-      {
-        "name": "上证指数",
-        "value": 3842.1951,
-        "change_pct": 0.31,
-        "observedAt": "2026-09-30"
-      },
-      {
-        "name": "深证成指",
-        "value": 12887.6201,
-        "change_pct": -0.11,
-        "observedAt": "2026-09-30"
-      },
-      {
-        "name": "沪深300",
-        "value": 4357.6157,
-        "change_pct": 0.0,
-        "observedAt": "2026-09-30"
-      },
-      {
-        "name": "标普500",
-        "ticker": "^GSPC",
-        "value": 7666.4501953125,
-        "change_pct": 0.1949,
-        "observedAt": "2026-10-01",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/%5EGSPC"
-      },
-      {
-        "name": "美国10年期收益率",
-        "ticker": "^TNX",
-        "value": 5.236999988555908,
-        "change_pct": -1.058,
-        "observedAt": "2026-10-01",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/%5ETNX"
-      },
-      {
-        "name": "布伦特原油",
-        "value": 102.21,
-        "change_pct": -1.27,
-        "observedAt": "2026-10-01"
-      },
-      {
-        "name": "黄金",
-        "ticker": "GC=F",
-        "value": 4189.10009765625,
-        "change_pct": 0.0573,
-        "observedAt": "2026-10-02",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/GC%3DF"
-      },
-      {
-        "name": "VIX",
-        "ticker": "^VIX",
-        "value": 16.389999389648438,
-        "change_pct": 0.306,
-        "observedAt": "2026-10-01",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/%5EVIX"
-      },
-      {
-        "name": "DXY",
-        "ticker": "DX-Y.NYB",
-        "value": 102.0770034790039,
-        "change_pct": 0.618,
-        "observedAt": "2026-10-02",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
-      },
-      {
-        "name": "USD/CNH",
-        "ticker": "CNH=X",
-        "value": 6.716440200805664,
-        "change_pct": null,
-        "observedAt": "2026-10-02",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/CNH%3DX"
-      },
-      {
-        "name": "EUR/USD",
-        "ticker": "EURUSD=X",
-        "value": 1.1238480806350708,
-        "change_pct": -0.7833,
-        "observedAt": "2026-10-02",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/EURUSD%3DX"
-      },
-      {
-        "name": "USD/JPY",
-        "ticker": "JPY=X",
-        "value": 158.1020050048828,
-        "change_pct": 0.3453,
-        "observedAt": "2026-10-02",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/JPY%3DX"
-      },
-      {
-        "name": "美国2年期收益率",
-        "ticker": "^IRX",
-        "value": 3.9819998741149902,
-        "change_pct": -1.1911,
-        "observedAt": "2026-10-01",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/%5EIRX"
-      },
-      {
-        "name": "美国5年期收益率",
-        "ticker": "^FVX",
-        "value": 5.005000114440918,
-        "change_pct": -1.6506,
-        "observedAt": "2026-10-01",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/%5EFVX"
-      },
-      {
-        "name": "美国30年期收益率",
-        "ticker": "^TYX",
-        "value": 5.602999687194824,
-        "change_pct": -0.6208,
-        "observedAt": "2026-10-01",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/%5ETYX"
-      },
-      {
-        "name": "NASDAQ",
-        "ticker": "^IXIC",
-        "value": 26871.595703125,
-        "change_pct": 0.0392,
-        "observedAt": "2026-10-01",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/%5EIXIC"
-      },
-      {
-        "name": "道琼斯",
-        "ticker": "^DJI",
-        "value": 50926.55859375,
-        "change_pct": 0.0403,
-        "observedAt": "2026-10-01",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/%5EDJI"
-      },
-      {
-        "name": "恒生指数",
-        "ticker": "^HSI",
-        "value": 24613.26953125,
-        "change_pct": 0.3658,
-        "observedAt": "2026-09-30",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/%5EHSI"
-      },
-      {
-        "name": "恒生科技",
-        "ticker": "HSTECH.HK",
-        "value": 4253.89013671875,
-        "change_pct": null,
-        "observedAt": "2026-09-30",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/HSTECH.HK"
-      },
-      {
-        "name": "WTI原油",
-        "ticker": "CL=F",
-        "value": 93.16000366210938,
-        "change_pct": 3.0303,
-        "observedAt": "2026-10-02",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/CL%3DF"
-      },
-      {
-        "name": "铜",
-        "ticker": "HG=F",
-        "value": 6.569499969482422,
-        "change_pct": 0.1601,
-        "observedAt": "2026-10-02",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/HG%3DF"
-      },
-      {
-        "name": "白银",
-        "ticker": "SI=F",
-        "value": 61.0,
-        "change_pct": 1.5009,
-        "observedAt": "2026-10-02",
-        "source": "Yahoo Finance",
-        "sourceUrl": "https://finance.yahoo.com/quote/SI%3DF"
-      }
-    ]
-  },
-  {
-    "capturedAt": "2026-10-02T01:00:58.716234+00:00",
-    "markets": [
-      {
-        "name": "USD/CNY",
-        "value": 6.7045,
-        "change_pct": 0.02,
-        "observedAt": "2026-10-01"
+        "value": 6.6987,
+        "change_pct": -0.09,
+        "observedAt": "2026-10-02"
       },
       {
         "name": "上证指数",
@@ -1066,14 +866,14 @@
       },
       {
         "name": "布伦特原油",
-        "value": 102.67,
-        "change_pct": -0.83,
+        "value": 101.56,
+        "change_pct": -0.73,
         "observedAt": "2026-10-02"
       },
       {
         "name": "黄金",
-        "value": 4189.0,
-        "change_pct": 0.05,
+        "value": 4213.8999,
+        "change_pct": 0.28,
         "observedAt": "2026-10-02"
       },
       {
