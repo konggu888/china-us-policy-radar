@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04 18:40 UTC",
+  "updated": "2026-10-04 22:26 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -66,16 +66,16 @@
     },
     {
       "symbol": "BZ=F",
-      "value": 102.25,
-      "change_pct": -0.06,
-      "time": "2026-10-02",
+      "value": 102.89,
+      "change_pct": 0.63,
+      "time": "2026-10-04",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4162.2998,
-      "change_pct": -0.95,
-      "time": "2026-10-02",
+      "value": 4169.2002,
+      "change_pct": 0.17,
+      "time": "2026-10-04",
       "name": "黄金"
     },
     {
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-10-04 18:40 UTC"
+    "asof": "2026-10-04 22:26 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -603,23 +603,23 @@
       ],
       [
         "中美博弈",
-        121
+        118
       ],
       [
         "科技 / AI",
         27
       ],
       [
+        "外交",
+        26
+      ],
+      [
         "国家安全",
         25
       ],
       [
-        "外交",
-        24
-      ],
-      [
         "金融",
-        22
+        21
       ]
     ],
     "us": [
@@ -629,15 +629,15 @@
       ],
       [
         "中美博弈",
-        111
+        113
       ],
       [
         "科技 / AI",
-        62
+        63
       ],
       [
         "金融",
-        46
+        47
       ],
       [
         "贸易 / 供应链",
@@ -651,11 +651,11 @@
     "global": [
       [
         "全球政策",
-        2401
+        2407
       ],
       [
         "中美博弈",
-        600
+        602
       ],
       [
         "科技 / AI",
@@ -667,11 +667,11 @@
       ],
       [
         "政治",
-        85
+        90
       ],
       [
         "内政",
-        54
+        55
       ]
     ]
   },
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 1211
+      "count": 1213
     },
     {
       "keyword": "产业升级",
@@ -781,7 +781,7 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 621,
+      "total": 619,
       "top_categories": [
         {
           "name": "全球政策",
@@ -789,30 +789,30 @@
         },
         {
           "name": "中美博弈",
-          "count": 121
+          "count": 118
         },
         {
           "name": "科技 / AI",
           "count": 27
         },
         {
+          "name": "外交",
+          "count": 26
+        },
+        {
           "name": "国家安全",
           "count": 25
         },
         {
-          "name": "外交",
-          "count": 24
-        },
-        {
           "name": "金融",
-          "count": 22
+          "count": 21
         }
       ],
       "risk_high": 35
     },
     {
       "side": "美国",
-      "total": 751,
+      "total": 754,
       "top_categories": [
         {
           "name": "全球政策",
@@ -820,15 +820,15 @@
         },
         {
           "name": "中美博弈",
-          "count": 111
+          "count": 113
         },
         {
           "name": "科技 / AI",
-          "count": 62
+          "count": 63
         },
         {
           "name": "金融",
-          "count": 46
+          "count": 47
         },
         {
           "name": "贸易 / 供应链",
@@ -979,8 +979,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 5192 条；本轮发现 295 条；13类覆盖=13/13；中国/美国/全球=621/751/3820；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-10-04 18:40 UTC",
+  "collection_message": "长期情报库：当前工作集 5208 条；本轮发现 295 条；13类覆盖=13/13；中国/美国/全球=619/754/3835；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-10-04 22:26 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1075,7 +1075,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 36
+      "count": 35
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -1155,12 +1155,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 26
+      "count": 27
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 21
+      "count": 22
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
