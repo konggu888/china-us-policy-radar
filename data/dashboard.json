@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-04 02:32 UTC",
+  "updated": "2026-10-04 09:03 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6987,
-      "change_pct": -0.09,
-      "time": "2026-10-03",
+      "value": 6.7048,
+      "change_pct": 0.0,
+      "time": "2026-10-04",
       "name": "USD/CNY"
     },
     {
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-10-04 02:32 UTC"
+    "asof": "2026-10-04 09:02 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,7 +599,7 @@
     "china": [
       [
         "全球政策",
-        339
+        340
       ],
       [
         "中美博弈",
@@ -651,23 +651,23 @@
     "global": [
       [
         "全球政策",
-        2387
+        2392
       ],
       [
         "中美博弈",
-        572
+        581
       ],
       [
         "科技 / AI",
-        295
+        299
       ],
       [
         "贸易 / 供应链",
-        133
+        132
       ],
       [
         "政治",
-        79
+        81
       ],
       [
         "内政",
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 1185
+      "count": 1191
     },
     {
       "keyword": "产业升级",
@@ -702,7 +702,7 @@
     },
     {
       "keyword": "贸易",
-      "count": 291
+      "count": 290
     }
   ],
   "policy_source_matrix": [
@@ -781,11 +781,11 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 618,
+      "total": 619,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 339
+          "count": 340
         },
         {
           "name": "中美博弈",
@@ -979,8 +979,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 5117 条；本轮发现 294 条；13类覆盖=13/13；中国/美国/全球=618/749/3750；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-10-04 02:32 UTC",
+  "collection_message": "长期情报库：当前工作集 5137 条；本轮发现 294 条；13类覆盖=13/13；中国/美国/全球=619/749/3769；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-10-04 09:03 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1030,7 +1030,7 @@
     "OfficialPage:BEA": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 9
+      "count": 8
     },
     "OfficialPage:China State Council": {
       "method": "direct_first_party_html",
@@ -1075,7 +1075,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 35
+      "count": 36
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -1160,7 +1160,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 42
+      "count": 21
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
