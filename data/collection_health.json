@@ -146,23 +146,23 @@
   },
   "Search:china:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:GoogleNews",
-    "count": 60
+    "status": "ok:BingNews",
+    "count": 6
   },
   "Search:us:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:GoogleNews",
-    "count": 60
+    "status": "error:HTTPError",
+    "count": 0
   },
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:GoogleNews",
-    "count": 55
+    "status": "ok:BingNews",
+    "count": 9
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:GoogleNews",
-    "count": 60
+    "status": "ok:BingNews",
+    "count": 1
   },
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-10-05 01:18 UTC",
+  "updated": "2026-10-05 06:51 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 5225,
-  "new_discovery_count": 295,
+  "total_collected": 5267,
+  "new_discovery_count": 22,
   "official_direct_count": 271,
-  "official_in_working_set": 794,
+  "official_in_working_set": 795,
   "category_counts": {
-    "政治": 119,
-    "金融": 118,
+    "政治": 122,
+    "金融": 119,
     "经济": 32,
     "产业": 7,
-    "科技 / AI": 398,
+    "科技 / AI": 402,
     "国防": 63,
-    "内政": 62,
-    "国家安全": 78,
-    "外交": 77,
-    "贸易 / 供应链": 189,
-    "能源 / 资源": 82,
-    "中美博弈": 843,
-    "全球政策": 3157
+    "内政": 63,
+    "国家安全": 80,
+    "外交": 78,
+    "贸易 / 供应链": 191,
+    "能源 / 资源": 84,
+    "中美博弈": 863,
+    "全球政策": 3163
   },
   "region_counts": {
-    "china": 621,
+    "china": 628,
     "us": 754,
-    "global": 3850
+    "global": 3885
   },
   "sources": {
     "OfficialPage:White House": {
@@ -368,23 +368,23 @@
     },
     "Search:china:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:GoogleNews",
-      "count": 60
+      "status": "ok:BingNews",
+      "count": 6
     },
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:GoogleNews",
-      "count": 60
+      "status": "error:HTTPError",
+      "count": 0
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:GoogleNews",
-      "count": 55
+      "status": "ok:BingNews",
+      "count": 9
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:GoogleNews",
-      "count": 60
+      "status": "ok:BingNews",
+      "count": 1
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
