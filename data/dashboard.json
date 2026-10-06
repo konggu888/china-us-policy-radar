@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06 03:40 UTC",
+  "updated": "2026-10-06 09:58 UTC",
   "market": [
     {
       "symbol": "CNY=X",
@@ -66,23 +66,23 @@
     },
     {
       "symbol": "BZ=F",
-      "value": 100.62,
-      "change_pct": 0.3,
+      "value": 98.36,
+      "change_pct": -1.95,
       "time": "2026-10-06",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4154.7002,
-      "change_pct": -0.05,
+      "value": 4181.0,
+      "change_pct": 0.58,
       "time": "2026-10-06",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 15.52,
-      "change_pct": 1.37,
-      "time": "2026-10-05",
+      "value": 15.42,
+      "change_pct": -0.64,
+      "time": "2026-10-06",
       "name": "VIX"
     }
   ],
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-10-06 03:40 UTC"
+    "asof": "2026-10-06 09:58 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,19 +599,19 @@
     "china": [
       [
         "全球政策",
-        344
+        343
       ],
       [
         "中美博弈",
-        129
-      ],
-      [
-        "科技 / AI",
-        28
+        131
       ],
       [
         "外交",
         28
+      ],
+      [
+        "科技 / AI",
+        27
       ],
       [
         "国家安全",
@@ -625,15 +625,15 @@
     "us": [
       [
         "全球政策",
-        409
+        410
       ],
       [
         "中美博弈",
-        123
+        127
       ],
       [
         "科技 / AI",
-        64
+        65
       ],
       [
         "金融",
@@ -641,7 +641,7 @@
       ],
       [
         "贸易 / 供应链",
-        39
+        38
       ],
       [
         "政治",
@@ -651,27 +651,27 @@
     "global": [
       [
         "全球政策",
-        2436
+        2445
       ],
       [
         "中美博弈",
-        652
+        660
       ],
       [
         "科技 / AI",
-        328
+        331
       ],
       [
         "贸易 / 供应链",
-        147
+        150
       ],
       [
         "政治",
-        95
+        96
       ],
       [
         "内政",
-        59
+        60
       ]
     ]
   },
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 1258
+      "count": 1266
     },
     {
       "keyword": "产业升级",
@@ -694,7 +694,7 @@
     },
     {
       "keyword": "开放",
-      "count": 141
+      "count": 143
     },
     {
       "keyword": "安全",
@@ -702,7 +702,7 @@
     },
     {
       "keyword": "贸易",
-      "count": 312
+      "count": 314
     }
   ],
   "policy_source_matrix": [
@@ -781,23 +781,23 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 638,
+      "total": 639,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 344
+          "count": 343
         },
         {
           "name": "中美博弈",
-          "count": 129
-        },
-        {
-          "name": "科技 / AI",
-          "count": 28
+          "count": 131
         },
         {
           "name": "外交",
           "count": 28
+        },
+        {
+          "name": "科技 / AI",
+          "count": 27
         },
         {
           "name": "国家安全",
@@ -812,19 +812,19 @@
     },
     {
       "side": "美国",
-      "total": 779,
+      "total": 785,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 409
+          "count": 410
         },
         {
           "name": "中美博弈",
-          "count": 123
+          "count": 127
         },
         {
           "name": "科技 / AI",
-          "count": 64
+          "count": 65
         },
         {
           "name": "金融",
@@ -832,7 +832,7 @@
         },
         {
           "name": "贸易 / 供应链",
-          "count": 39
+          "count": 38
         },
         {
           "name": "政治",
@@ -977,5 +977,241 @@
     }
   ],
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
-  "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。"
+  "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
+  "collection_status": "success",
+  "collection_message": "长期情报库：当前工作集 5427 条；本轮发现 294 条；13类覆盖=13/13；中国/美国/全球=639/785/4003；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-10-06 09:58 UTC",
+  "source_health": {
+    "OfficialPage:White House": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 11
+    },
+    "OfficialPage:US State Department": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:US Defense Department": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 5
+    },
+    "OfficialPage:US Treasury": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 5
+    },
+    "OfficialPage:US Commerce": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:USTR": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 35
+    },
+    "OfficialPage:Federal Reserve": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 19
+    },
+    "OfficialPage:EIA": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 16
+    },
+    "OfficialPage:BLS": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:BEA": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 8
+    },
+    "OfficialPage:China State Council": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:China MFA": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 0
+    },
+    "OfficialPage:China NDRC": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 23
+    },
+    "OfficialPage:China PBOC": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 10
+    },
+    "OfficialPage:China MIIT": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 0
+    },
+    "OfficialPage:China MOFCOM": {
+      "method": "direct_first_party_html",
+      "status": "error:URLError",
+      "count": 0
+    },
+    "OfficialPage:China NBS": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 11
+    },
+    "OfficialPage:China MOD": {
+      "method": "direct_first_party_html",
+      "status": "error:URLError",
+      "count": 0
+    },
+    "OfficialPage:UN News": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 35
+    },
+    "OfficialPage:WTO News": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 3
+    },
+    "OfficialPage:IMF News": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:World Bank News": {
+      "method": "direct_first_party_html",
+      "status": "ok",
+      "count": 17
+    },
+    "OfficialPage:IAEA News": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialPage:OECD News": {
+      "method": "direct_first_party_html",
+      "status": "error:HTTPError",
+      "count": 0
+    },
+    "OfficialFeed:Federal Reserve": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 20
+    },
+    "OfficialFeed:Federal Reserve speeches": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 15
+    },
+    "OfficialFeed:BLS": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 1
+    },
+    "OfficialFeed:EIA": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 13
+    },
+    "OfficialFeed:IAEA": {
+      "method": "direct_first_party_rss",
+      "status": "ok",
+      "count": 15
+    },
+    "Search:china:en-US": {
+      "method": "GoogleNews/Bing RSS fallback",
+      "status": "ok:GoogleNews",
+      "count": 60
+    },
+    "Search:us:en-US": {
+      "method": "GoogleNews/Bing RSS fallback",
+      "status": "ok:GoogleNews",
+      "count": 60
+    },
+    "Search:global:en-US": {
+      "method": "GoogleNews/Bing RSS fallback",
+      "status": "ok:GoogleNews",
+      "count": 54
+    },
+    "Search:china:zh-CN": {
+      "method": "GoogleNews/Bing RSS fallback",
+      "status": "ok:GoogleNews",
+      "count": 60
+    },
+    "MediaFeed:BBC Asia": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 17
+    },
+    "MediaFeed:BBC US": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 22
+    },
+    "MediaFeed:BBC World": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 22
+    },
+    "MediaFeed:DW World": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 0
+    },
+    "MediaFeed:Al Jazeera": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 25
+    },
+    "MediaFeed:NPR World": {
+      "method": "public_media_rss",
+      "status": "ok",
+      "count": 10
+    }
+  },
+  "collection_pipeline_rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "collection_pipeline_named_rc": {
+    "legacy": 0,
+    "broad": 0,
+    "translate": 0,
+    "policy_collect": 0,
+    "macro": 0,
+    "trade": 0,
+    "market": 0,
+    "enrich": 0,
+    "policy": 0,
+    "priority": 0,
+    "archive": 0,
+    "spine": 0,
+    "integrity": 0,
+    "timeline": 0,
+    "social": 0,
+    "scenario": 0
+  }
 }
