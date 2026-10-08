@@ -104141,13 +104141,13 @@
     }
   },
   {
-    "updatedAt": "2026-10-08T00:45:20.380709+00:00",
+    "updatedAt": "2026-10-08T07:05:34.399112+00:00",
     "china": {
       "source": "国家统计局",
       "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
       "releaseTitle": "8月份国民经济运行平稳、发展向新向优",
       "publishedAt": "2026-09-15",
-      "fetchedAt": "2026-10-08T00:45:18.583285+00:00",
+      "fetchedAt": "2026-10-08T07:05:29.040380+00:00",
       "values": {
         "industrial_yoy_pct": 5.2,
         "industrial_mom_pct": 0.54,
@@ -104166,12 +104166,12 @@
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+      "error": "Remote end closed connection without response",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-10-08T00:44:12.103739+00:00",
+      "fetchedAt": "2026-10-08T06:51:31.596686+00:00",
       "records": [
         {
           "indicator": "M2_yoy_pct",
@@ -104721,8 +104721,8 @@
         },
         {
           "indicator": "USD/CNY_PBOC_MID",
-          "value": 6.7351,
-          "observedAt": "2026-09-30",
+          "value": 6.7367,
+          "observedAt": "2026-10-08",
           "source": "SAFE/PBOC RMB central parity",
           "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
         }
