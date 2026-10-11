@@ -6,7 +6,7 @@
   },
   "OfficialPage:US State Department": {
     "method": "direct_first_party_html",
-    "status": "error:HTTPError",
+    "status": "error:URLError",
     "count": 0
   },
   "OfficialPage:US Defense Department": {
@@ -162,22 +162,22 @@
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 60
+    "count": 59
   },
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 17
+    "count": 18
   },
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 27
+    "count": 28
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 37
+    "count": 26
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-10-11 15:33 UTC",
+  "updated": "2026-10-11 19:40 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 6184,
-  "new_discovery_count": 295,
+  "total_collected": 6206,
+  "new_discovery_count": 294,
   "official_direct_count": 266,
-  "official_in_working_set": 894,
+  "official_in_working_set": 896,
   "category_counts": {
     "政治": 156,
-    "金融": 135,
+    "金融": 136,
     "经济": 36,
     "产业": 12,
-    "科技 / AI": 536,
+    "科技 / AI": 539,
     "国防": 90,
     "内政": 97,
     "国家安全": 92,
     "外交": 82,
-    "贸易 / 供应链": 254,
+    "贸易 / 供应链": 256,
     "能源 / 资源": 106,
-    "中美博弈": 1160,
-    "全球政策": 3428
+    "中美博弈": 1172,
+    "全球政策": 3432
   },
   "region_counts": {
-    "china": 687,
-    "us": 872,
-    "global": 4625
+    "china": 690,
+    "us": 873,
+    "global": 4643
   },
   "sources": {
     "OfficialPage:White House": {
@@ -228,7 +228,7 @@
     },
     "OfficialPage:US State Department": {
       "method": "direct_first_party_html",
-      "status": "error:HTTPError",
+      "status": "error:URLError",
       "count": 0
     },
     "OfficialPage:US Defense Department": {
@@ -384,22 +384,22 @@
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 60
+      "count": 59
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 17
+      "count": 18
     },
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 27
+      "count": 28
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 37
+      "count": 26
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
