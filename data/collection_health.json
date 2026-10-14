@@ -56,7 +56,7 @@
   },
   "OfficialPage:China MFA": {
     "method": "direct_first_party_html",
-    "status": "ok",
+    "status": "error:TimeoutError",
     "count": 0
   },
   "OfficialPage:China NDRC": {
@@ -67,7 +67,7 @@
   "OfficialPage:China PBOC": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 10
+    "count": 8
   },
   "OfficialPage:China MIIT": {
     "method": "direct_first_party_html",
@@ -157,7 +157,7 @@
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 57
+    "count": 58
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
@@ -177,7 +177,7 @@
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 23
+    "count": 24
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-10-14 06:04 UTC",
+  "updated": "2026-10-14 11:41 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 6527,
-  "new_discovery_count": 296,
-  "official_direct_count": 265,
-  "official_in_working_set": 928,
+  "total_collected": 6562,
+  "new_discovery_count": 297,
+  "official_direct_count": 263,
+  "official_in_working_set": 929,
   "category_counts": {
     "政治": 169,
-    "金融": 145,
+    "金融": 146,
     "经济": 37,
     "产业": 12,
-    "科技 / AI": 586,
+    "科技 / AI": 596,
     "国防": 98,
-    "内政": 106,
-    "国家安全": 99,
-    "外交": 86,
+    "内政": 110,
+    "国家安全": 100,
+    "外交": 88,
     "贸易 / 供应链": 274,
-    "能源 / 资源": 113,
-    "中美博弈": 1259,
-    "全球政策": 3543
+    "能源 / 资源": 114,
+    "中美博弈": 1264,
+    "全球政策": 3554
   },
   "region_counts": {
-    "china": 718,
-    "us": 908,
-    "global": 4901
+    "china": 723,
+    "us": 911,
+    "global": 4928
   },
   "sources": {
     "OfficialPage:White House": {
@@ -278,7 +278,7 @@
     },
     "OfficialPage:China MFA": {
       "method": "direct_first_party_html",
-      "status": "ok",
+      "status": "error:TimeoutError",
       "count": 0
     },
     "OfficialPage:China NDRC": {
@@ -289,7 +289,7 @@
     "OfficialPage:China PBOC": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 10
+      "count": 8
     },
     "OfficialPage:China MIIT": {
       "method": "direct_first_party_html",
@@ -379,7 +379,7 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 57
+      "count": 58
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -399,7 +399,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 23
+      "count": 24
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",

@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-14T06:17:04.988781+00:00",
+  "updatedAt": "2026-10-14T12:00:03.259173+00:00",
   "china": {
     "source": "国家统计局",
     "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
     "releaseTitle": "8月份国民经济运行平稳、发展向新向优",
     "publishedAt": "2026-09-15",
-    "fetchedAt": "2026-10-14T06:17:02.367869+00:00",
+    "fetchedAt": "2026-10-14T11:59:59.699013+00:00",
     "values": {
       "industrial_yoy_pct": 5.2,
       "industrial_mom_pct": 0.54,
@@ -29,8 +29,57 @@
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-10-14T06:14:45.523814+00:00",
+    "fetchedAt": "2026-10-14T11:53:05.094371+00:00",
     "records": [
+      {
+        "indicator": "M2_yoy_pct",
+        "value": 7.2,
+        "publishedAt": "2026-10-14",
+        "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026101417073743604/index.html",
+        "source": "中国人民银行"
+      },
+      {
+        "indicator": "M1_yoy_pct",
+        "value": 3.2,
+        "publishedAt": "2026-10-14",
+        "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026101417073743604/index.html",
+        "source": "中国人民银行"
+      },
+      {
+        "indicator": "RMB_loans_balance_trillion",
+        "value": 279.9,
+        "publishedAt": "2026-10-14",
+        "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026101417073743604/index.html",
+        "source": "中国人民银行"
+      },
+      {
+        "indicator": "RMB_deposits_balance_trillion",
+        "value": 349.45,
+        "publishedAt": "2026-10-14",
+        "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026101417073743604/index.html",
+        "source": "中国人民银行"
+      },
+      {
+        "indicator": "interbank_lending_rate_pct",
+        "value": 1.4,
+        "publishedAt": "2026-10-14",
+        "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026101417073743604/index.html",
+        "source": "中国人民银行"
+      },
+      {
+        "indicator": "pledged_repo_rate_pct",
+        "value": 1.4,
+        "publishedAt": "2026-10-14",
+        "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026101417073743604/index.html",
+        "source": "中国人民银行"
+      },
+      {
+        "indicator": "social_financing_ytd_trillion",
+        "value": 27.46,
+        "publishedAt": "2026-10-14",
+        "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026101417073743604/index.html",
+        "source": "中国人民银行"
+      },
       {
         "indicator": "M2_yoy_pct",
         "value": 7.5,
