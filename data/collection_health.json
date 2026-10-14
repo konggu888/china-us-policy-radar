@@ -47,7 +47,7 @@
   "OfficialPage:BEA": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 8
+    "count": 9
   },
   "OfficialPage:China State Council": {
     "method": "direct_first_party_html",
@@ -56,7 +56,7 @@
   },
   "OfficialPage:China MFA": {
     "method": "direct_first_party_html",
-    "status": "error:TimeoutError",
+    "status": "ok",
     "count": 0
   },
   "OfficialPage:China NDRC": {
@@ -92,7 +92,7 @@
   "OfficialPage:UN News": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 36
+    "count": 35
   },
   "OfficialPage:WTO News": {
     "method": "direct_first_party_html",
@@ -177,7 +177,7 @@
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 25
+    "count": 26
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-10-14 17:02 UTC",
+  "updated": "2026-10-14 20:33 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 6608,
+  "total_collected": 6633,
   "new_discovery_count": 297,
   "official_direct_count": 264,
-  "official_in_working_set": 934,
+  "official_in_working_set": 937,
   "category_counts": {
     "政治": 169,
     "金融": 146,
     "经济": 38,
     "产业": 12,
-    "科技 / AI": 603,
+    "科技 / AI": 606,
     "国防": 98,
     "内政": 111,
-    "国家安全": 102,
-    "外交": 88,
+    "国家安全": 104,
+    "外交": 90,
     "贸易 / 供应链": 279,
     "能源 / 资源": 114,
-    "中美博弈": 1280,
-    "全球政策": 3568
+    "中美博弈": 1291,
+    "全球政策": 3575
   },
   "region_counts": {
     "china": 724,
-    "us": 917,
-    "global": 4967
+    "us": 919,
+    "global": 4990
   },
   "sources": {
     "OfficialPage:White House": {
@@ -269,7 +269,7 @@
     "OfficialPage:BEA": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 8
+      "count": 9
     },
     "OfficialPage:China State Council": {
       "method": "direct_first_party_html",
@@ -278,7 +278,7 @@
     },
     "OfficialPage:China MFA": {
       "method": "direct_first_party_html",
-      "status": "error:TimeoutError",
+      "status": "ok",
       "count": 0
     },
     "OfficialPage:China NDRC": {
@@ -314,7 +314,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 36
+      "count": 35
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -399,7 +399,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 25
+      "count": 26
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
