@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-15T21:53:09.399099+00:00",
+  "updatedAt": "2026-10-16T00:34:15.104448+00:00",
   "china": {
     "source": "国家统计局",
     "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
     "releaseTitle": "8月份国民经济运行平稳、发展向新向优",
     "publishedAt": "2026-09-15",
-    "fetchedAt": "2026-10-15T21:53:07.271603+00:00",
+    "fetchedAt": "2026-10-16T00:34:12.900316+00:00",
     "values": {
       "industrial_yoy_pct": 5.2,
       "industrial_mom_pct": 0.54,
@@ -24,7 +24,7 @@
   },
   "chinaStructured": {
     "status": "OK",
-    "fetchedAt": "2026-10-15T21:52:56.498839+00:00",
+    "fetchedAt": "2026-10-16T00:34:01.340834+00:00",
     "records": [
       {
         "indicatorId": "962228822a9c4001bea4f3254d442dca",
@@ -1247,6 +1247,426 @@
         "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
       },
       {
+        "indicatorId": "06bb16735fc4416ca91c5f0efa476eef",
+        "indicator": "工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 105.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ff9c957bd7374bb1ade1ad90b996d71f",
+        "indicator": "煤炭开采和洗选业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 135.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "530942d5b5a84f68bfce8d677e22c141",
+        "indicator": "石油和天然气开采业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 124.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "4bb8505067a64678af77abf8e0268569",
+        "indicator": "黑色金属矿采选业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 96.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "c5cee6c7152c42d9b4bc57a0be4855ab",
+        "indicator": "有色金属矿采选业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 121.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "fb7f2dd4c292473da961fb83b799d9ff",
+        "indicator": "非金属矿采选业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "f0140252a8c04c4fa8015e0b32f67b24",
+        "indicator": "开采专业及辅助性活动工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0785c971e3ce43a8a0642f02670c27b4",
+        "indicator": "其他采矿业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.5,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "4767357fb33b4283816a534913b3fca3",
+        "indicator": "农副食品加工业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3e2d9b11d7404d44b5ebebe7cff6639e",
+        "indicator": "食品制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "300271a6cf11439ea5ee1f14412ce212",
+        "indicator": "酒、饮料及精制茶制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 94.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "401936225d2749c6a36240c1d1505d97",
+        "indicator": "烟草制品业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "af402c10a0924341b9e97d789456fec3",
+        "indicator": "纺织业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 102.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e8e761825c4647fd86a05a69d951ef4f",
+        "indicator": "纺织服装、服饰业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e42b1cac0a4547e8b7937cadbe816641",
+        "indicator": "皮革、毛皮、羽毛及其制品和制鞋业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ea24be257d1c4094a45988a8eb258120",
+        "indicator": "木材加工和木、竹、藤、棕、草制品业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2603766182c8498eaff9c49457710b7a",
+        "indicator": "家具制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5838c29f07014ebf885100a541b73874",
+        "indicator": "造纸和纸制品业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "c45d9515fb9841aaa56ad32aa49fe991",
+        "indicator": "印刷和记录媒介复制业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 97.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2f959690ec3f47f2ac1bbac7d50d06fd",
+        "indicator": "文教、工美、体育和娱乐用品制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 109.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "eae1bf31c938492d8cd39172eea0ae1c",
+        "indicator": "石油、煤炭及其他燃料加工业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 121.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "fee9e9ede4a847c29919bc16f7a88efa",
+        "indicator": "化学原料和化学制品制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 112.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3e235968903a4112b913ce6908b843d8",
+        "indicator": "医药制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 96.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "44b166dc8dfe42be9e1b2969921c8789",
+        "indicator": "化学纤维制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 112.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a6e821e5b6c74ccba3c8188f06257ec5",
+        "indicator": "橡胶和塑料制品业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 102.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "978aff96c371475bbf8bc34e22b0d868",
+        "indicator": "非金属矿物制品业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 97.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0682fa784b304f5bb5586a13a8122373",
+        "indicator": "黑色金属冶炼和压延加工业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6502d35e1d6c4fcbb9f209d55aa12f90",
+        "indicator": "有色金属冶炼和压延加工业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 121.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "75a01327718347ebbbc95b93e8e0453e",
+        "indicator": "金属制品业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 101.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "c725217daf254e84a528a28674100f20",
+        "indicator": "通用设备制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "adca06b6149641b28e07caa49413ad0d",
+        "indicator": "专用设备制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "873ff0c129b04696b0cd5c6dc582adb0",
+        "indicator": "汽车制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "f91df17d6e2649ada3828783f7164b23",
+        "indicator": "铁路、船舶、航空航天和其他运输设备制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a2910b4d896b4efd8f5691b576487a86",
+        "indicator": "电气机械和器材制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 106.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "49944912d42844b687fd23294ec55f1b",
+        "indicator": "计算机、通信和其他电子设备制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 105.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "7f09ac43ed0e42d8af4f69abdbecf38e",
+        "indicator": "仪器仪表制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0e62287f959542e7819d4ba049720bca",
+        "indicator": "其他制造业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "b2d1d50234344c7bbe3e28e0025ce560",
+        "indicator": "废弃资源综合利用业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 102.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9ff551f492264d38b328b9b6d4d0a73f",
+        "indicator": "金属制品、机械和设备修理业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 101.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "999d81ea732e4141b8684683d3289dc4",
+        "indicator": "电力、热力生产和供应业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 96.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "104e9f2dbf6c48b8a371f7baab93014e",
+        "indicator": "燃气生产和供应业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 105.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "13883bf357bc4d56813730539a8ea496",
+        "indicator": "水的生产和供应业工业生产者出厂价格指数 (上年同月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
         "indicatorId": "ebff44c76b5149c1b83d6e3958239e16",
         "indicator": "工业生产者出厂价格指数 (上年同期=100)",
         "category": "分行业工业生产者出厂价格指数 (上年同期=100) (-2025)",
@@ -1657,6 +2077,426 @@
         "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
       },
       {
+        "indicatorId": "ff829aca2dca4ff5b5d2e0699274f0c1",
+        "indicator": "工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 102.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "7d778e45abcf4febbd6ea5a92979a5f2",
+        "indicator": "煤炭开采和洗选业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 110.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "8a143e672c8844769db9062ade968eae",
+        "indicator": "石油和天然气开采业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 109.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9afbc28b0da14ff799b3cea40a5fe498",
+        "indicator": "黑色金属矿采选业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 101.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6a68d632fe3944709cf45c73e386b879",
+        "indicator": "有色金属矿采选业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 128.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5546e397c13b4c0aa5e6fad0b8654fbc",
+        "indicator": "非金属矿采选业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 96.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a3c56b4fca8b4d8db129cc79ee71c2fb",
+        "indicator": "开采专业及辅助性活动工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "90f0d659c18c4f4cbf7cbb51a60917a5",
+        "indicator": "其他采矿业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.5,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "07194ad5f9ad41e8bdf2527243b333c9",
+        "indicator": "农副食品加工业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "403dcceaac194c1cbb2ed3542bde0ca4",
+        "indicator": "食品制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "78cf2ce8e17247ec87e2ff163d1a73c8",
+        "indicator": "酒、饮料及精制茶制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 96.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a88b799d5ff24692bca18d352b954100",
+        "indicator": "烟草制品业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a341ede49ec24b95ad65ce4d2acb6076",
+        "indicator": "纺织业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "59629521c1bc40938ab9e2c47ba3f5a1",
+        "indicator": "纺织服装、服饰业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "43d2e8ddcc6a4ca8b8d542a74ce31859",
+        "indicator": "皮革、毛皮、羽毛及其制品和制鞋业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0833c5eeca93438ba98832526246cadd",
+        "indicator": "木材加工和木、竹、藤、棕、草制品业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 97.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "cd0e140fb0644846b804fc4c17a9e68c",
+        "indicator": "家具制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "cc3f5a28c9194fd09384879a54b35136",
+        "indicator": "造纸和纸制品业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "7981afaded7547caabcbf11a56408fdd",
+        "indicator": "印刷和记录媒介复制业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 97.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "869a217bae8a49e88006a702328aa732",
+        "indicator": "文教、工美、体育和娱乐用品制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 115.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "06972274c1634225a82984e74740d77b",
+        "indicator": "石油、煤炭及其他燃料加工业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 106.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "dfc578714d78426a937156858ea2aab9",
+        "indicator": "化学原料和化学制品制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 105.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5f57be8196984bd29c34dc06767ab1d7",
+        "indicator": "医药制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 95.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6156f6fc9cfd4b14b92aa42ad8800cc2",
+        "indicator": "化学纤维制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 104.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "60e34414e8f242e198dffdfb79636d5e",
+        "indicator": "橡胶和塑料制品业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e28442a743884c8ba9c97d6e0db6658d",
+        "indicator": "非金属矿物制品业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 95.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "74904c49421b4ecab9350a29e4bdfb5c",
+        "indicator": "黑色金属冶炼和压延加工业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "43a0e8cf31d4454a8ccb8e16cb2af924",
+        "indicator": "有色金属冶炼和压延加工业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 121.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ca31292ab97a425594128860f7681ffc",
+        "indicator": "金属制品业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9dcf7d1f0c1f4c469da19469355be074",
+        "indicator": "通用设备制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9160fc076f1b4e7aa608231b74573b19",
+        "indicator": "专用设备制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a58e993821994fb5ad40c83d8415e7f2",
+        "indicator": "汽车制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 97.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "f8015e6e993044a6be8942ffb1fb8c4b",
+        "indicator": "铁路、船舶、航空航天和其他运输设备制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e86f6560ebd94ff7ad75af26a59e22ef",
+        "indicator": "电气机械和器材制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 104.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "c371200e746e494490c838f205ea84d5",
+        "indicator": "计算机、通信和其他电子设备制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 102.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "82375c4a7e1241079993fc05423638b1",
+        "indicator": "仪器仪表制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ce368683a2f84947bfe9838c5f4fd535",
+        "indicator": "其他制造业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ccc84c3dba424037b3ef2521d4521de8",
+        "indicator": "废弃资源综合利用业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 102.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2f047c1441244df7a0d15ea102a7c570",
+        "indicator": "金属制品、机械和设备修理业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9d607351ab214052982da3be801c8b38",
+        "indicator": "电力、热力生产和供应业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 96.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "adfce4282a5145a0af11a59de6a20d5b",
+        "indicator": "燃气生产和供应业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 101.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "259ddcd684514478840f3749dbf8e398",
+        "indicator": "水的生产和供应业工业生产者出厂价格指数 (上年同期=100)",
+        "category": "分行业工业生产者出厂价格指数 (上年同期=100) (2026-)",
+        "period": "000000000000",
+        "value": 101.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
         "indicatorId": "9dbce8b20baa4ec1b15934b8322c5222",
         "indicator": "工业生产者出厂价格指数 (上月=100)",
         "category": "分行业工业生产者出厂价格指数 (上月=100) (-2025)",
@@ -2060,6 +2900,426 @@
         "indicatorId": "7a066330243e4bf490732df6cf3c7716",
         "indicator": "水的生产和供应业工业生产者出厂价格指数 (上月=100)",
         "category": "分行业工业生产者出厂价格指数 (上月=100) (-2025)",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "1e5ace697e6a44d4ba5e8a77704858de",
+        "indicator": "工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 101.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "696aced856f64636ab0196f1b3f4dfd7",
+        "indicator": "煤炭开采和洗选业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 109.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "bef1a2351ceb4e6eb03236085580fd0f",
+        "indicator": "石油和天然气开采业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 110.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0ae666e90555420885bfd8ea5f320fa0",
+        "indicator": "黑色金属矿采选业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 98.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6284d60cf49241ef994f0aa9a435cf2f",
+        "indicator": "有色金属矿采选业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 101.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "c02ed3e1562f4589ae55432a334651c5",
+        "indicator": "非金属矿采选业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5359bd952fcf48b6b2cd981ea493820c",
+        "indicator": "开采专业及辅助性活动工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "698d840318314b949dee87311d5737c2",
+        "indicator": "其他采矿业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "342404129854470b9413a439aa988124",
+        "indicator": "农副食品加工业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "f0fc8bfd7683435fa028ba85044f77ae",
+        "indicator": "食品制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "77fd00e3ec2143f39a898cea697ba7a5",
+        "indicator": "酒、饮料及精制茶制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "b1f4b89b26b3430397ebd3c823b3aa6b",
+        "indicator": "烟草制品业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "751a14d8b40641b1bf89a9e9d19883e0",
+        "indicator": "纺织业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e9c31a5780744974bd283a61ccc49fdc",
+        "indicator": "纺织服装、服饰业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5bd463753a7c4a2bb746d59dfbeba295",
+        "indicator": "皮革、毛皮、羽毛及其制品和制鞋业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a537e904f9f44265a2c35a6d119c3492",
+        "indicator": "木材加工和木、竹、藤、棕、草制品业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "021e223222794633895433dac7d8d8b5",
+        "indicator": "家具制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a481950b98504150a295774886aa4c91",
+        "indicator": "造纸和纸制品业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "441728731d7145a6b0930ce0dc6c378e",
+        "indicator": "印刷和记录媒介复制业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "b8ac9810275546e98cc706ee8d444b7d",
+        "indicator": "文教、工美、体育和娱乐用品制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3116f5a1d563423b97ff933969d703dd",
+        "indicator": "石油、煤炭及其他燃料加工业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 108.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e290e51f385f4ce9899eaca32037ae1e",
+        "indicator": "化学原料和化学制品制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 102.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "fa858903795847028208f780440cccb3",
+        "indicator": "医药制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3ab4f656db834f1983fbaf7a8fc58f6b",
+        "indicator": "化学纤维制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 102.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "7f47670c65804516a85d96381f0dc2ee",
+        "indicator": "橡胶和塑料制品业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "8995695d030245f3acf523855c130993",
+        "indicator": "非金属矿物制品业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6586476977434a2c85b93a6081f6f527",
+        "indicator": "黑色金属冶炼和压延加工业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "379b41fd00814b8da3942d89a842cd38",
+        "indicator": "有色金属冶炼和压延加工业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 101.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6fd5c51d4e2446eeaa97e978955533a5",
+        "indicator": "金属制品业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a846dc3d05674c21865ae4058bd507b3",
+        "indicator": "通用设备制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a4318321f3fd4f8996208029d5425b28",
+        "indicator": "专用设备制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a77f6de3057840698d888942cb2c10bf",
+        "indicator": "汽车制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6f93ae546a0146a2809030043dfd8086",
+        "indicator": "铁路、船舶、航空航天和其他运输设备制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "029104da6eaf45af9dda102d8acd7e43",
+        "indicator": "电气机械和器材制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "963603767b994f019d9f4508de0a5725",
+        "indicator": "计算机、通信和其他电子设备制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "05f59da3245d4d9eb1a0b025b325324b",
+        "indicator": "仪器仪表制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e6cfe8da651b42fba3d9d8c6ef3a58ef",
+        "indicator": "其他制造业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3570f0ce609844e2a5135006f0d04777",
+        "indicator": "废弃资源综合利用业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2493bb4f1c444579bb792ba639af5905",
+        "indicator": "金属制品、机械和设备修理业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "d4ce4aff15924d8299d829dbe8d8410e",
+        "indicator": "电力、热力生产和供应业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 99.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2c96bff1ead24f4facc129d061701592",
+        "indicator": "燃气生产和供应业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
+        "period": "000000000000",
+        "value": 100.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0f99c19b5c7b4db1bb2b91d935678830",
+        "indicator": "水的生产和供应业工业生产者出厂价格指数 (上月=100)",
+        "category": "分行业工业生产者出厂价格指数 (上月=100) (2026-)",
         "period": "000000000000",
         "value": 100.0,
         "unit": "无",
@@ -4117,6 +5377,1806 @@
         "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
       },
       {
+        "indicatorId": "09373c3f8fdd428fa1b289925da6d590",
+        "indicator": "食品类居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.3,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "622350938e7f457c9c2d2565c727a929",
+        "indicator": "粮食类居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.4,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6b98867b0bbb4c549de6047c64fbe365",
+        "indicator": "畜肉类居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 96.3,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "d875f76e27844b92b17bba3c827a7a28",
+        "indicator": "蛋类居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 114.3,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "7ae986a6d41e4b00befb33144e7bb8f6",
+        "indicator": "水产品类居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.4,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "12d2782996de45dfa8e51b24df46256a",
+        "indicator": "鲜菜类居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 91.9,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "348db7e163c14728b79a7004b648b27f",
+        "indicator": "鲜果类居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.5,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "74ba328b95904bfc94b3480f851f6e6f",
+        "indicator": "食用油居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.9,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ac5a7e9a298747f1ae98955103991390",
+        "indicator": "猪肉居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 90.0,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0f7af8004c9949b299b24ac7cd7123ff",
+        "indicator": "牛肉居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 107.5,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "14c6439658b340af9b2b67521483962d",
+        "indicator": "羊肉居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 106.4,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e7ec51366c6941e9be4ce576ccff2797",
+        "indicator": "奶类居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.5,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "b6f1103f84bb4857ad8cc5b461fd7231",
+        "indicator": "卷烟居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.2,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5772a0b0804d47cdaf2b6e9a245480c9",
+        "indicator": "酒类居民消费价格指数 (上年同月=100)",
+        "category": "全国食品类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 96.9,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "bdf46dc5f2ef481cad6caf4ce07f18eb",
+        "indicator": "粮食类城市居民消费价格指数 (上年同月=100)",
+        "category": "食品类城市居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e65abc0d04c849d6af8fbb13ce66d12a",
+        "indicator": "畜肉类城市居民消费价格指数 (上年同月=100)",
+        "category": "食品类城市居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 96.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "153d2ec3fced4dd3a834875e0004dcaf",
+        "indicator": "蛋类城市居民消费价格指数 (上年同月=100)",
+        "category": "食品类城市居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 113.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "30454fbbbf3b4baeb0cd3e8e2fbfcf5d",
+        "indicator": "水产品类城市居民消费价格指数 (上年同月=100)",
+        "category": "食品类城市居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5901d20eebd440f1a05018e96a825bf9",
+        "indicator": "鲜菜类城市居民消费价格指数 (上年同月=100)",
+        "category": "食品类城市居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 92.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a9f5794518124106b0cb9be4640a349b",
+        "indicator": "鲜果类城市居民消费价格指数 (上年同月=100)",
+        "category": "食品类城市居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "046f84e8fb304664a003947368e648b7",
+        "indicator": "粮食类农村居民消费价格指数 (上年同月=100)",
+        "category": "食品类农村居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5b727455823a4dc584890c3f6e373d46",
+        "indicator": "畜肉类农村居民消费价格指数 (上年同月=100)",
+        "category": "食品类农村居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 95.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "eb5e9e5a3520462ba1a2d912716e68f7",
+        "indicator": "蛋类农村居民消费价格指数 (上年同月=100)",
+        "category": "食品类农村居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 116.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a2f657dae00a4348ae5f25415feff586",
+        "indicator": "水产品类农村居民消费价格指数 (上年同月=100)",
+        "category": "食品类农村居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "fcdca49c48ce4242b48d80935f763a62",
+        "indicator": "鲜菜类农村居民消费价格指数 (上年同月=100)",
+        "category": "食品类农村居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 91.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "59c854df0db64479828804880a005846",
+        "indicator": "鲜果类农村居民消费价格指数 (上年同月=100)",
+        "category": "食品类农村居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "1c0e5c0d783a444eb66b45b57904ccc8",
+        "indicator": "租赁房房租居民消费价格指数 (上年同月=100)",
+        "category": "全国居住类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.4,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ad199830ebb34eff877e7f4c818a65c8",
+        "indicator": "水电燃料居民消费价格指数 (上年同月=100)",
+        "category": "全国居住类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.6,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "d5954838d2354106bc68946c88f593e7",
+        "indicator": "服装居民消费价格指数 (上年同月=100)",
+        "category": "全国衣着类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "fc6c99155e3b478080216530053cec0f",
+        "indicator": "鞋类居民消费价格指数 (上年同月=100)",
+        "category": "全国衣着类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.5,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3a5a356867954e62b34d52ea9cac56e9",
+        "indicator": "家用器具居民消费价格指数 (上年同月=100)",
+        "category": "全国生活用品及服务类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.2,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3a74b2d0d2c3448da2e10704a492719c",
+        "indicator": "家庭服务居民消费价格指数 (上年同月=100)",
+        "category": "全国生活用品及服务类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 101.1,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a04f8305d626429d87bb50823a1c5a4f",
+        "indicator": "小汽车居民消费价格指数 (上年同月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.3,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "213bd0aff7c44bf8bb9c829b6432ecf8",
+        "indicator": "交通工具用能源居民消费价格指数 (上年同月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 114.9,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "cb67dd8cba68496188e69eeae6b4c703",
+        "indicator": "交通工具使用和维修居民消费价格指数 (上年同月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.5,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9526216100b748a5a28dd5dae38a11ed",
+        "indicator": "通信工具居民消费价格指数 (上年同月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 114.3,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3838e2c978f34f5fb7dea42cea694483",
+        "indicator": "通信服务居民消费价格指数 (上年同月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.2,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a09db194447540a6bffada1d2d30179d",
+        "indicator": "邮递服务居民消费价格指数 (上年同月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.4,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0e49e28feca14632b77b0b0fb89cf775",
+        "indicator": "教育服务居民消费价格指数 (上年同月=100)",
+        "category": "全国教育文化娱乐类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.4,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "213f0acd6933447588e94ee233e0e12e",
+        "indicator": "旅行社及其他旅游服务居民消费价格指数 (上年同月=100)",
+        "category": "全国教育文化娱乐类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 103.5,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5787fa23849744368596c381b374629b",
+        "indicator": "中药居民消费价格指数 (上年同月=100)",
+        "category": "全国医疗保健类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.5,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "42cb41eb1e0440a1bb6eb323a229fcc6",
+        "indicator": "西药居民消费价格指数 (上年同月=100)",
+        "category": "全国医疗保健类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.4,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "b6541db1808f4e14889d4b3cba5ee26d",
+        "indicator": "医疗服务居民消费价格指数 (上年同月=100)",
+        "category": "全国医疗保健类居民消费价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 104.0,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "bb3aa93f2dde420dbc9efe1d232cab96",
+        "indicator": "食品类居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "dee5046d476843978b519d9034679e79",
+        "indicator": "粮食类居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0d03e0bf216344d7b37594eb2948d0db",
+        "indicator": "畜肉类居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 94.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "056a700f1e16471295ce4e184c663cf3",
+        "indicator": "蛋类居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 105.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5196a67feef144f68a3280c1847bdf93",
+        "indicator": "水产品类居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "8bd619e32a9b417180a98709dd9f11c8",
+        "indicator": "鲜菜类居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9c4e3b32903b4ed6b598a64d2e038a96",
+        "indicator": "鲜果类居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 100.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "97ac482ca8794a48b46c89dab90c3d5c",
+        "indicator": "食用油居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.0,
+        "unit": "%",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "bbf51fded9e941908ed0705afa761fa6",
+        "indicator": "猪肉居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 87.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "66d5a3b49d6c4589865a45b89be4086a",
+        "indicator": "牛肉居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 106.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ec0b2b668e6448a5ac4bcdd0f1eee36b",
+        "indicator": "羊肉居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 106.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ce619e2871aa45b68fabe6af1f896f13",
+        "indicator": "奶类居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 98.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2b8b6675f2074567885344dfbdbf780e",
+        "indicator": "卷烟居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "49e27375361c49c1baa96d60dfd8b65e",
+        "indicator": "酒类居民消费价格指数 (上年同期=100)",
+        "category": "全国食品类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 97.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "b7c048d6045c43e6af596cd2d9090197",
+        "indicator": "粮食类城市居民消费价格指数 (上年同期=100)",
+        "category": "食品类城市居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "74bf06175a7c4a889666b2b31c7f6ee9",
+        "indicator": "畜肉类城市居民消费价格指数 (上年同期=100)",
+        "category": "食品类城市居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 94.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "58f0ff13572a414cad19df68ca6fdbef",
+        "indicator": "蛋类城市居民消费价格指数 (上年同期=100)",
+        "category": "食品类城市居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 105.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "4d9a05f1d7934a4cb7d538c5d007db7a",
+        "indicator": "水产品类城市居民消费价格指数 (上年同期=100)",
+        "category": "食品类城市居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "db6b1283471b4d9c96eafe8a86cebbb6",
+        "indicator": "鲜菜类城市居民消费价格指数 (上年同期=100)",
+        "category": "食品类城市居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "66438ad1fc90437384c452d5260df6d9",
+        "indicator": "鲜果类城市居民消费价格指数 (上年同期=100)",
+        "category": "食品类城市居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 100.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "122b156bbea8439f8c5253efc1817369",
+        "indicator": "粮食类农村居民消费价格指数 (上年同期=100)",
+        "category": "食品类农村居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e5c69dab1fa34ef9bbd8d34eaad2c59e",
+        "indicator": "畜肉类农村居民消费价格指数 (上年同期=100)",
+        "category": "食品类农村居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 93.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "7dfc9c011dc74e0195b3196e40c8eb74",
+        "indicator": "蛋类农村居民消费价格指数 (上年同期=100)",
+        "category": "食品类农村居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 106.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a807d8b5d218490a95cdf8e4c1512d68",
+        "indicator": "水产品类农村居民消费价格指数 (上年同期=100)",
+        "category": "食品类农村居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "040b8f58c1ff4f5abf6019adf095a1c2",
+        "indicator": "鲜菜类农村居民消费价格指数 (上年同期=100)",
+        "category": "食品类农村居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9850e27538b24c68a8677c110b556d03",
+        "indicator": "鲜果类农村居民消费价格指数 (上年同期=100)",
+        "category": "食品类农村居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 100.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "947c68d1ae124e8daa0587f6b53c55d0",
+        "indicator": "服装居民消费价格指数 (上年同期=100)",
+        "category": "全国衣着类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "91bed0a66559493fb2dc3f5fa38a3a5a",
+        "indicator": "鞋类居民消费价格指数 (上年同期=100)",
+        "category": "全国衣着类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5f282014f84a47fd8073378bc4602c6f",
+        "indicator": "租赁房房租居民消费价格指数 (上年同期=100)",
+        "category": "全国居住类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "b6821effce6d4277bd4669fa05ab2385",
+        "indicator": "水电燃料居民消费价格指数 (上年同期=100)",
+        "category": "全国居住类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 100.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "657f3a5e8aaf4c3589970eb9d457fcda",
+        "indicator": "家用器具居民消费价格指数 (上年同期=100)",
+        "category": "全国生活用品及服务类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 102.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "dcefa89e6e26435a86cd4669bf0823af",
+        "indicator": "家庭服务居民消费价格指数 (上年同期=100)",
+        "category": "全国生活用品及服务类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "cdeda29c3e7e4597bc3878f86b3d73e2",
+        "indicator": "小汽车居民消费价格指数 (上年同期=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 98.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6cbee27e79d24807affb93aac6e9356a",
+        "indicator": "交通工具用能源居民消费价格指数 (上年同期=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 106.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ec1a5477546649ceade4e990e59cbd49",
+        "indicator": "交通工具使用和维修居民消费价格指数 (上年同期=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 100.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6614e11382c84bdb9ebed844a4ccc46d",
+        "indicator": "通信工具居民消费价格指数 (上年同期=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 106.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "f95c73a38f064b979e735597212544e2",
+        "indicator": "通信服务居民消费价格指数 (上年同期=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "bb5c4f3f44a34a08ba93e2f8c600cfe0",
+        "indicator": "邮递服务居民消费价格指数 (上年同期=100)",
+        "category": "全国交通通信类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "b3bff4c24ca142cc8a26587e75227d8f",
+        "indicator": "教育服务居民消费价格指数 (上年同期=100)",
+        "category": "全国教育文化娱乐类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 100.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "7e8f652b93c14f7bb01d777cc263c02f",
+        "indicator": "旅行社及其他旅游服务居民消费价格指数 (上年同期=100)",
+        "category": "全国教育文化娱乐类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 103.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "1047f52ccc7f48c68c7cb6d65b9a9a08",
+        "indicator": "中药居民消费价格指数 (上年同期=100)",
+        "category": "全国医疗保健类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 98.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "dafffa911a4543c8ab9c59932f2568e3",
+        "indicator": "西药居民消费价格指数 (上年同期=100)",
+        "category": "全国医疗保健类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 98.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "8c0d7386561c4da39542a53b79bcc60e",
+        "indicator": "医疗服务居民消费价格指数 (上年同期=100)",
+        "category": "全国医疗保健类居民消费价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 103.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "97bba449bd8142eaa2bf82e53d0ea0ab",
+        "indicator": "食品类居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ef1ae1c77ce44b02893dfb8f5e858357",
+        "indicator": "粮食类居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "1629356d73d64585a4032ec7577fd51e",
+        "indicator": "畜肉类居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5f4ee852544b4165ab3f3b73b0774987",
+        "indicator": "蛋类居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 102.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "5a1ef65ac3df44c586bae32f6cfba6f3",
+        "indicator": "水产品类居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "c411f254012d4ceb889c86acfc156df5",
+        "indicator": "鲜菜类居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a651525d150f40b7bf8192385003e2ba",
+        "indicator": "鲜果类居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "f60f3ecf3a5e40c6a65238c1fbf0f6de",
+        "indicator": "食用油居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "00ba06fb7cc24a68a1e8b3c517e998ff",
+        "indicator": "猪肉居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 101.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "18c40ab08e6b4f2eaa7c6552c0fd2494",
+        "indicator": "牛肉居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 103.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "f93990b778bc4edc8119a8e7188f5ca6",
+        "indicator": "羊肉居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a86db50e2d8843eab674c366a773e3f5",
+        "indicator": "奶类居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "8e1e3e63ae7e49c4b15bbc9b2f6c7c40",
+        "indicator": "卷烟居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2192812d94f14c04b442ceefcc3121e8",
+        "indicator": "酒类居民消费价格指数 (上月=100)",
+        "category": "食品类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "359fdf3068e44cf9b746d74c830fcf6f",
+        "indicator": "粮食类城市居民消费价格指数 (上月=100)",
+        "category": "食品类城市居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "fc83fa29e3964dd29943d4d78db6c8dd",
+        "indicator": "畜肉类城市居民消费价格指数 (上月=100)",
+        "category": "食品类城市居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "d3174c374d7049ad97d4c139b4e61078",
+        "indicator": "蛋类城市居民消费价格指数 (上月=100)",
+        "category": "食品类城市居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 101.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "456f3ca5eb284c1e91068245a9b342d7",
+        "indicator": "水产品类城市居民消费价格指数 (上月=100)",
+        "category": "食品类城市居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ab2a52a8a574409b9f8e717067ad3663",
+        "indicator": "鲜菜类城市居民消费价格指数 (上月=100)",
+        "category": "食品类城市居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a34d9f59302241ab9a24daa8669f14e2",
+        "indicator": "鲜果类城市居民消费价格指数 (上月=100)",
+        "category": "食品类城市居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "917c033cee5544329f992f81e4484aa7",
+        "indicator": "粮食类农村居民消费价格指数 (上月=100)",
+        "category": "食品类农村居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a2307413bf604961bf9d0ea025007d66",
+        "indicator": "畜肉类农村居民消费价格指数 (上月=100)",
+        "category": "食品类农村居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "c88e5c174c764d1a82be1b0194fb50df",
+        "indicator": "蛋类农村居民消费价格指数 (上月=100)",
+        "category": "食品类农村居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 102.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0778f5a3089e4a2ca23bb42960b9cb27",
+        "indicator": "水产品类农村居民消费价格指数 (上月=100)",
+        "category": "食品类农村居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ddbd0773bea341bd89e8d83731a74156",
+        "indicator": "鲜菜类农村居民消费价格指数 (上月=100)",
+        "category": "食品类农村居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "62c3a9506b884f51bdad831d79adcaa1",
+        "indicator": "鲜果类农村居民消费价格指数 (上月=100)",
+        "category": "食品类农村居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9d751c9ab2eb4454b0e117e6624ac446",
+        "indicator": "服装居民消费价格指数 (上月=100)",
+        "category": "全国衣着类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ff2c7014675545f584e5f1ea1f2b159b",
+        "indicator": "鞋类居民消费价格指数 (上月=100)",
+        "category": "全国衣着类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "170e6f4b99b848a386a1fa6500bcc2a1",
+        "indicator": "租赁房房租居民消费价格指数 (上月=100)",
+        "category": "全国居住类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9fa2ab7f51194c60bcc062e348a2b3bc",
+        "indicator": "水电燃料居民消费价格指数 (上月=100)",
+        "category": "全国居住类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "bab95c660cf54cc9b6aa6b08b8fe2864",
+        "indicator": "家用器具居民消费价格指数 (上月=100)",
+        "category": "全国生活用品及服务类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "c54574500b7d4b11940718f8520c8301",
+        "indicator": "家庭服务居民消费价格指数 (上月=100)",
+        "category": "全国生活用品及服务类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "cc55e11b3dce49c89938ff3a24a6966a",
+        "indicator": "小汽车居民消费价格指数 (上月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6f2c11f1806940e7b8b14d453f661b7f",
+        "indicator": "交通工具用能源居民消费价格指数 (上月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 104.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "57e295334b9f4becb1802af72fbe9c75",
+        "indicator": "交通工具使用和维修居民消费价格指数 (上月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "21ad1ceb36c5462da5893350a4824ecb",
+        "indicator": "通信工具居民消费价格指数 (上月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 103.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "8828a81720be438e9cb919fe990afa6f",
+        "indicator": "通信服务居民消费价格指数 (上月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ba1bd75e608043c4bc52380d87d7b4cb",
+        "indicator": "邮递服务居民消费价格指数 (上月=100)",
+        "category": "全国交通通信类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "14aaaed64372440690e292d5c54788ce",
+        "indicator": "教育服务居民消费价格指数 (上月=100)",
+        "category": "全国教育文化娱乐类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e509d558054c4936aa01706be6f51bb0",
+        "indicator": "旅行社及其他旅游服务居民消费价格指数 (上月=100)",
+        "category": "全国教育文化娱乐类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 94.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "71452b83774e49a886d7870ff8a7555d",
+        "indicator": "中药居民消费价格指数 (上月=100)",
+        "category": "全国医疗保健类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e00c3e9c506046e49a899bceaeb5ce44",
+        "indicator": "西药居民消费价格指数 (上月=100)",
+        "category": "全国医疗保健类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "cfd40f381f334b878d69fa176d0513b6",
+        "indicator": "医疗服务居民消费价格指数 (上月=100)",
+        "category": "全国医疗保健类居民消费价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "150633e52b9a470a9a9fd1b296dd6c5b",
+        "indicator": "工业生产者出厂价格指数 (上年同月=100)",
+        "category": "工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 105.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "47f8464961184392bc4f6a4b8e5b1cb5",
+        "indicator": "生产资料工业生产者出厂价格指数 (上年同月=100)",
+        "category": "工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 106.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "649b27dbffb14466a3f204e16f3c74ed",
+        "indicator": "生活资料工业生产者出厂价格指数 (上年同月=100)",
+        "category": "工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "4740fe80ba494ef49f4543ee3bdd1168",
+        "indicator": "生产资料工业生产者出厂价格指数 (上年同月=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 106.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "38f7cd816fd242958edb727033f7c986",
+        "indicator": "采掘业生产资料工业生产者出厂价格指数 (上年同月=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 125.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "c23201bf3ed449b69ea17af521bb5594",
+        "indicator": "原料业生产资料工业生产者出厂价格指数 (上年同月=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 109.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3ec8a207b7db46dd9a4ccff6c536379c",
+        "indicator": "加工业生产资料工业生产者出厂价格指数 (上年同月=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 103.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ea8df466509d4790b3e94c8e5f82a5c4",
+        "indicator": "生活资料工业生产者出厂价格指数 (上年同月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a267974b388a446b9073e84483ea641e",
+        "indicator": "食品类工业生产者出厂价格指数 (上年同月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "f4e002f8d7b44839b4c28afc875fca57",
+        "indicator": "衣着类工业生产者出厂价格指数 (上年同月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "6a9e122ae0eb4c68a56bb4fc643cd922",
+        "indicator": "一般日用品类工业生产者出厂价格指数 (上年同月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "1e33604700bb4cd7a6e80d206c03919f",
+        "indicator": "耐用消费品类工业生产者出厂价格指数 (上年同月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 101.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "12b8f37a7ea04309984121a616061223",
+        "indicator": "工业生产者出厂价格指数 (上年同期=100)",
+        "category": "工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 102.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "bae2e6a37acc40dfadb29af7828e238e",
+        "indicator": "生产资料工业生产者出厂价格指数 (上年同期=100)",
+        "category": "工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 103.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "fd4dc8d9f1964744b29bc1e947b79e83",
+        "indicator": "生活资料工业生产者出厂价格指数 (上年同期=100)",
+        "category": "工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "10efa21919da4b818f8cca8e6c40ab87",
+        "indicator": "生产资料工业生产者出厂价格指数 (上年同期=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 103.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ed13b5233ee64e6abe9b59acdbf60b38",
+        "indicator": "采掘业生产资料工业生产者出厂价格指数 (上年同期=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 109.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "bc8e733c6ec9468b9360b2da9a16b4a5",
+        "indicator": "原料业生产资料工业生产者出厂价格指数 (上年同期=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 104.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "8c3fb70c887842ceb474b934a0c9b71b",
+        "indicator": "加工业生产资料工业生产者出厂价格指数 (上年同期=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 101.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "358e0de674dd4dc68bf6b0b7d1c4985b",
+        "indicator": "生活资料工业生产者出厂价格指数 (上年同期=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "cbab8bdd6c874ac0b0ad7c51609fcca4",
+        "indicator": "食品类工业生产者出厂价格指数 (上年同期=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 98.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "77470795090347a09c890896ea04ac0b",
+        "indicator": "衣着类工业生产者出厂价格指数 (上年同期=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "9be31ce8572b47919f270775945abfff",
+        "indicator": "一般日用品类工业生产者出厂价格指数 (上年同期=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 98.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "54e9129c37ac4c7680a750a7aba56de4",
+        "indicator": "耐用消费品类工业生产者出厂价格指数 (上年同期=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上年同期=100) ",
+        "period": "000000000000",
+        "value": 99.8,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e64079bae9064aebad1c4c5fe0c8a6ef",
+        "indicator": "工业生产者出厂价格指数 (上月=100)",
+        "category": "工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 101.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2d64292eff8d434492cfc9c155fd158c",
+        "indicator": "生产资料工业生产者出厂价格指数 (上月=100)",
+        "category": "工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2ed0062abfd349f088a6b33213773930",
+        "indicator": "生活资料工业生产者出厂价格指数 (上月=100)",
+        "category": "工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "013e93990f2b4283892943c8322796fb",
+        "indicator": "生产资料工业生产者出厂价格指数 (上月=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 101.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3b7b0d25b22843d593be23f8edc61028",
+        "indicator": "采掘业生产资料工业生产者出厂价格指数 (上月=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 107.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "53a6c4f9f9214a77ba5f5d658e0fd2aa",
+        "indicator": "原料业生产资料工业生产者出厂价格指数 (上月=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 102.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "a2ea2d1d18e741749ceba7cab4fd482a",
+        "indicator": "加工业生产资料工业生产者出厂价格指数 (上月=100)",
+        "category": "生产资料工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "e8755a89500a417fb525b1c88e7a6a6b",
+        "indicator": "生活资料工业生产者出厂价格指数 (上月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "3aaae519b56c40c09bfac8af982486a6",
+        "indicator": "食品类工业生产者出厂价格指数 (上月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "0c13ee8192794754a9aa3d443ede8c9d",
+        "indicator": "衣着类工业生产者出厂价格指数 (上月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "f98ec1eba02a4b2bbe256abf4653b509",
+        "indicator": "一般日用品类工业生产者出厂价格指数 (上月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2d625ad399aa4ae890bfca7d702196e2",
+        "indicator": "耐用消费品类工业生产者出厂价格指数 (上月=100)",
+        "category": "生活资料工业生产者出厂价格指数 (上月=100) ",
+        "period": "000000000000",
+        "value": 100.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "ff540a0119d74e1297a1f23a045cbfa9",
+        "indicator": "冶金工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 109.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "8d6e1eb74eb64815ac04d7998249b965",
+        "indicator": "电力工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 96.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "d60d3c29ff6640c9bb4f506ae6327a62",
+        "indicator": "煤炭及炼焦工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 135.1,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "fd0ea1a3e8bd49b681217ed85f61de62",
+        "indicator": "石油工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 116.3,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2a5ce15c5c1e4db7b9e405eb7825eb27",
+        "indicator": "化学工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 107.4,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "809b44df08af46158fe561a301ef2fca",
+        "indicator": "机械工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 101.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "05b464a8c16747d6823b5999447d9b28",
+        "indicator": "建筑材料工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 96.9,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2979b8f1fdf24342bc1d93e8a5264595",
+        "indicator": "森林工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.7,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "27e1aab0218f44a6a089c2f4134153ad",
+        "indicator": "食品工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "2e65453692e04968a2d61907ffcdc3fa",
+        "indicator": "纺织工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 102.5,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "75dcd26f50ef485b95ba610adeb08934",
+        "indicator": "缝纫工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 99.0,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "df0330700f46487c8fe0eec9cec6b065",
+        "indicator": "皮革工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "b61ee60e602149868e88d4cd574cd44d",
+        "indicator": "造纸工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 100.6,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "4166ecfac69249cda9cdf52ed02639d6",
+        "indicator": "文教艺术用品工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 98.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
+        "indicatorId": "62c749e1e74f4ad4bc5ebd09f958fc36",
+        "indicator": "其它工业生产者出厂价格指数 (上年同月=100)",
+        "category": "按工业部门分工业生产者出厂价格指数 (上年同月=100) ",
+        "period": "000000000000",
+        "value": 114.2,
+        "unit": "无",
+        "source": "国家统计局国家数据",
+        "sourceUrl": "https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData"
+      },
+      {
         "indicatorId": "490b4901102d424599a45d1d11c9ee44",
         "indicator": "烟煤和无烟煤开采洗选业工业生产者出厂价格指数 (上年同月=100)",
         "category": "煤炭开采和洗选业工业生产者出厂价格指数 (上年同月=100) ",
@@ -4901,7 +7961,7 @@
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-10-15T21:29:59.553718+00:00",
+    "fetchedAt": "2026-10-16T00:09:00.631165+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15 21:56 UTC",
+  "updated": "2026-10-16 00:35 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -53,7 +53,7 @@
       "six_month_pct": -3.24,
       "asof": "2026-10-15",
       "provider": "Yahoo Finance",
-      "weekly_rank": 10
+      "weekly_rank": 9
     },
     "可选消费": {
       "ticker": "XLY",
@@ -101,31 +101,31 @@
       "six_month_pct": -2.54,
       "asof": "2026-10-15",
       "provider": "Yahoo Finance",
-      "weekly_rank": 4
+      "weekly_rank": 3
     },
     "房地产": {
       "ticker": "XLRE",
-      "latest": 41.99,
-      "daily_pct": 1.21,
-      "weekly_pct": 2.79,
-      "monthly_pct": -1.92,
-      "quarterly_pct": -7.55,
-      "six_month_pct": -5.6,
-      "asof": "2026-10-15",
+      "latest": 41.49,
+      "daily_pct": -0.81,
+      "weekly_pct": 2.27,
+      "monthly_pct": -3.67,
+      "quarterly_pct": -8.73,
+      "six_month_pct": -5.3,
+      "asof": "2026-10-14",
       "provider": "Yahoo Finance",
-      "weekly_rank": 3
+      "weekly_rank": 4
     },
     "通信服务": {
       "ticker": "XLC",
-      "latest": 112.44,
-      "daily_pct": 1.46,
-      "weekly_pct": 0.33,
-      "monthly_pct": -0.5,
-      "quarterly_pct": 1.62,
-      "six_month_pct": -5.59,
-      "asof": "2026-10-15",
+      "latest": 110.82,
+      "daily_pct": -1.3,
+      "weekly_pct": -0.4,
+      "monthly_pct": -2.82,
+      "quarterly_pct": -1.62,
+      "six_month_pct": -6.74,
+      "asof": "2026-10-14",
       "provider": "Yahoo Finance",
-      "weekly_rank": 9
+      "weekly_rank": 10
     },
     "公用事业": {
       "ticker": "XLU",
@@ -143,25 +143,25 @@
   "a_share": {
     "上证指数": {
       "ticker": "000001.SS",
-      "latest": 3767.2271,
-      "daily_pct": -0.89,
-      "weekly_pct": -1.95,
-      "monthly_pct": -4.21,
-      "quarterly_pct": -6.67,
-      "six_month_pct": -5.7,
-      "asof": "2026-10-14",
+      "latest": 3707.4761,
+      "daily_pct": -1.59,
+      "weekly_pct": -2.74,
+      "monthly_pct": -5.91,
+      "quarterly_pct": -7.22,
+      "six_month_pct": -6.52,
+      "asof": "2026-10-15",
       "provider": "Yahoo Finance",
       "weekly_rank": 1
     },
     "深证成指": {
       "ticker": "399001.SZ",
-      "latest": 12110.5898,
-      "daily_pct": -1.97,
-      "weekly_pct": -6.03,
-      "monthly_pct": -12.08,
-      "quarterly_pct": -21.35,
-      "six_month_pct": -13.76,
-      "asof": "2026-10-14",
+      "latest": 11816.79,
+      "daily_pct": -2.43,
+      "weekly_pct": -6.37,
+      "monthly_pct": -13.77,
+      "quarterly_pct": -21.47,
+      "six_month_pct": -15.57,
+      "asof": "2026-10-15",
       "provider": "Yahoo Finance",
       "weekly_rank": 2
     },
@@ -173,7 +173,7 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-15",
+      "asof": "2026-10-16",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 3
@@ -186,7 +186,7 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-15",
+      "asof": "2026-10-16",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 4
@@ -199,7 +199,7 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-15",
+      "asof": "2026-10-16",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 5
@@ -212,7 +212,7 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-15",
+      "asof": "2026-10-16",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 6
@@ -225,1159 +225,39 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-15",
+      "asof": "2026-10-16",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 7
     }
   },
-  "a_share_industry_boards": [
-    {
-      "code": "BK1452",
-      "name": "卫浴电器",
-      "change_pct": 4.57,
-      "price": 1406.37,
-      "change": 61.44,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "万和电气"
-    },
-    {
-      "code": "BK1347",
-      "name": "纺织鞋类制造",
-      "change_pct": 3.38,
-      "price": 400.49,
-      "change": 13.1,
-      "up_count": 1,
-      "down_count": 0,
-      "leader": "华利集团"
-    },
-    {
-      "code": "BK1289",
-      "name": "大众出版",
-      "change_pct": 1.37,
-      "price": 2095.61,
-      "change": 28.24,
-      "up_count": 9,
-      "down_count": 8,
-      "leader": "读者传媒"
-    },
-    {
-      "code": "BK1587",
-      "name": "电信运营商",
-      "change_pct": 1.11,
-      "price": 1089.08,
-      "change": 11.93,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "中国电信"
-    },
-    {
-      "code": "BK1575",
-      "name": "白酒Ⅲ",
-      "change_pct": 1.03,
-      "price": 4186.14,
-      "change": 42.7,
-      "up_count": 11,
-      "down_count": 8,
-      "leader": "皇台酒业"
-    },
-    {
-      "code": "BK1277",
-      "name": "白酒Ⅱ",
-      "change_pct": 1.03,
-      "price": 4186.14,
-      "change": 42.7,
-      "up_count": 11,
-      "down_count": 8,
-      "leader": "皇台酒业"
-    },
-    {
-      "code": "BK1500",
-      "name": "医美耗材",
-      "change_pct": 0.91,
-      "price": 1381.05,
-      "change": 12.49,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "爱美客"
-    },
-    {
-      "code": "BK1218",
-      "name": "出版",
-      "change_pct": 0.68,
-      "price": 2314.5,
-      "change": 15.6,
-      "up_count": 11,
-      "down_count": 15,
-      "leader": "读者传媒"
-    },
-    {
-      "code": "BK1611",
-      "name": "国有大型银行Ⅲ",
-      "change_pct": 0.67,
-      "price": 3547.39,
-      "change": 23.48,
-      "up_count": 5,
-      "down_count": 1,
-      "leader": "交通银行"
-    },
-    {
-      "code": "BK1351",
-      "name": "印染",
-      "change_pct": 0.49,
-      "price": 1549.14,
-      "change": 7.49,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "富春染织"
-    },
-    {
-      "code": "BK1366",
-      "name": "证券Ⅲ",
-      "change_pct": 0.32,
-      "price": 136241.12,
-      "change": 440.92,
-      "up_count": 19,
-      "down_count": 25,
-      "leader": "华林证券"
-    },
-    {
-      "code": "BK0473",
-      "name": "证券Ⅱ",
-      "change_pct": 0.32,
-      "price": 136241.12,
-      "change": 440.92,
-      "up_count": 19,
-      "down_count": 25,
-      "leader": "华林证券"
-    },
-    {
-      "code": "BK1340",
-      "name": "印制电路板",
-      "change_pct": 0.27,
-      "price": 13269.02,
-      "change": 35.86,
-      "up_count": 20,
-      "down_count": 27,
-      "leader": "崇达技术"
-    },
-    {
-      "code": "BK1542",
-      "name": "文化用品",
-      "change_pct": 0.25,
-      "price": 2743.96,
-      "change": 6.76,
-      "up_count": 1,
-      "down_count": 4,
-      "leader": "广博股份"
-    },
-    {
-      "code": "BK1253",
-      "name": "医疗美容",
-      "change_pct": -0.06,
-      "price": 1002.78,
-      "change": -0.56,
-      "up_count": 2,
-      "down_count": 3,
-      "leader": "爱美客"
-    },
-    {
-      "code": "BK1358",
-      "name": "保险Ⅲ",
-      "change_pct": -0.22,
-      "price": 1271.65,
-      "change": -2.86,
-      "up_count": 3,
-      "down_count": 2,
-      "leader": "中国平安"
-    },
-    {
-      "code": "BK0474",
-      "name": "保险Ⅱ",
-      "change_pct": -0.22,
-      "price": 1271.65,
-      "change": -2.86,
-      "up_count": 3,
-      "down_count": 2,
-      "leader": "中国平安"
-    },
-    {
-      "code": "BK1606",
-      "name": "线下药店",
-      "change_pct": -0.37,
-      "price": 3695.46,
-      "change": -13.59,
-      "up_count": 2,
-      "down_count": 6,
-      "leader": "一心堂"
-    },
-    {
-      "code": "BK1240",
-      "name": "厨卫电器",
-      "change_pct": -0.38,
-      "price": 5722.45,
-      "change": -21.7,
-      "up_count": 2,
-      "down_count": 7,
-      "leader": "万和电气"
-    },
-    {
-      "code": "BK1509",
-      "name": "水产饲料",
-      "change_pct": -0.43,
-      "price": 5984.78,
-      "change": -25.82,
-      "up_count": 2,
-      "down_count": 2,
-      "leader": "百洋股份"
-    },
-    {
-      "code": "BK1602",
-      "name": "诊断服务",
-      "change_pct": -0.47,
-      "price": 6101.61,
-      "change": -28.66,
-      "up_count": 2,
-      "down_count": 3,
-      "leader": "贝瑞基因"
-    },
-    {
-      "code": "BK1610",
-      "name": "股份制银行Ⅲ",
-      "change_pct": -0.47,
-      "price": 2450.41,
-      "change": -11.64,
-      "up_count": 1,
-      "down_count": 8,
-      "leader": "兴业银行"
-    },
-    {
-      "code": "BK1290",
-      "name": "教育出版",
-      "change_pct": -0.49,
-      "price": 2487.51,
-      "change": -12.24,
-      "up_count": 2,
-      "down_count": 7,
-      "leader": "新华文轩"
-    },
-    {
-      "code": "BK1353",
-      "name": "家纺",
-      "change_pct": -0.49,
-      "price": 4157.19,
-      "change": -20.46,
-      "up_count": 1,
-      "down_count": 6,
-      "leader": "众望布艺"
-    },
-    {
-      "code": "BK1203",
-      "name": "非银金融",
-      "change_pct": -0.56,
-      "price": 2344.42,
-      "change": -13.24,
-      "up_count": 23,
-      "down_count": 50,
-      "leader": "华林证券"
-    },
-    {
-      "code": "BK1326",
-      "name": "半导体设备",
-      "change_pct": -0.64,
-      "price": 42837.68,
-      "change": -273.86,
-      "up_count": 9,
-      "down_count": 16,
-      "leader": "至纯科技"
-    },
-    {
-      "code": "BK1579",
-      "name": "保健品",
-      "change_pct": -0.7,
-      "price": 3360.32,
-      "change": -23.8,
-      "up_count": 2,
-      "down_count": 7,
-      "leader": "康比特"
-    },
-    {
-      "code": "BK1581",
-      "name": "预加工食品",
-      "change_pct": -0.71,
-      "price": 6365.54,
-      "change": -45.51,
-      "up_count": 1,
-      "down_count": 10,
-      "leader": "五芳斋"
-    },
-    {
-      "code": "BK0459",
-      "name": "元件",
-      "change_pct": -0.73,
-      "price": 58245.58,
-      "change": -427.83,
-      "up_count": 21,
-      "down_count": 45,
-      "leader": "崇达技术"
-    },
-    {
-      "code": "BK1600",
-      "name": "医疗研发外包",
-      "change_pct": -0.79,
-      "price": 8281.65,
-      "change": -66.0,
-      "up_count": 5,
-      "down_count": 24,
-      "leader": "百花医药"
-    },
-    {
-      "code": "BK1597",
-      "name": "血液制品",
-      "change_pct": -0.79,
-      "price": 4118.87,
-      "change": -32.94,
-      "up_count": 1,
-      "down_count": 5,
-      "leader": "上海莱士"
-    },
-    {
-      "code": "BK1577",
-      "name": "啤酒",
-      "change_pct": -0.83,
-      "price": 2427.84,
-      "change": -20.24,
-      "up_count": 2,
-      "down_count": 5,
-      "leader": "惠泉啤酒"
-    },
-    {
-      "code": "BK1292",
-      "name": "广告媒体",
-      "change_pct": -0.88,
-      "price": 2439.48,
-      "change": -21.55,
-      "up_count": 1,
-      "down_count": 2,
-      "leader": "华媒控股"
-    },
-    {
-      "code": "BK1585",
-      "name": "乳品",
-      "change_pct": -0.9,
-      "price": 2286.82,
-      "change": -20.86,
-      "up_count": 5,
-      "down_count": 14,
-      "leader": "阳光乳业"
-    },
-    {
-      "code": "BK1304",
-      "name": "锂电专用设备",
-      "change_pct": -0.94,
-      "price": 20687.42,
-      "change": -195.86,
-      "up_count": 6,
-      "down_count": 13,
-      "leader": "正业科技"
-    },
-    {
-      "code": "BK1594",
-      "name": "化学制剂",
-      "change_pct": -0.99,
-      "price": 3665.45,
-      "change": -36.75,
-      "up_count": 21,
-      "down_count": 93,
-      "leader": "向日葵"
-    },
-    {
-      "code": "BK1376",
-      "name": "核力发电",
-      "change_pct": -1.03,
-      "price": 625.35,
-      "change": -6.51,
-      "up_count": 0,
-      "down_count": 2,
-      "leader": "中国广核"
-    },
-    {
-      "code": "BK1282",
-      "name": "饮料乳品",
-      "change_pct": -1.04,
-      "price": 2288.55,
-      "change": -24.01,
-      "up_count": 6,
-      "down_count": 21,
-      "leader": "阳光乳业"
-    },
-    {
-      "code": "BK0438",
-      "name": "食品饮料",
-      "change_pct": -1.04,
-      "price": 25865.94,
-      "change": -272.08,
-      "up_count": 28,
-      "down_count": 101,
-      "leader": "阳光乳业"
-    },
-    {
-      "code": "BK1303",
-      "name": "锂电池",
-      "change_pct": -1.05,
-      "price": 16899.2,
-      "change": -178.59,
-      "up_count": 10,
-      "down_count": 23,
-      "leader": "嘉元科技"
-    },
-    {
-      "code": "BK1520",
-      "name": "综合乘用车",
-      "change_pct": -1.06,
-      "price": 2361.29,
-      "change": -25.39,
-      "up_count": 1,
-      "down_count": 5,
-      "leader": "长城汽车"
-    },
-    {
-      "code": "BK1380",
-      "name": "水力发电",
-      "change_pct": -1.08,
-      "price": 4267.86,
-      "change": -46.5,
-      "up_count": 2,
-      "down_count": 9,
-      "leader": "湖南发展"
-    },
-    {
-      "code": "BK1490",
-      "name": "原材料供应链服务",
-      "change_pct": -1.08,
-      "price": 2926.75,
-      "change": -31.99,
-      "up_count": 2,
-      "down_count": 10,
-      "leader": "远大控股"
-    },
-    {
-      "code": "BK1283",
-      "name": "银行",
-      "change_pct": -1.09,
-      "price": 4365.32,
-      "change": -47.93,
-      "up_count": 7,
-      "down_count": 35,
-      "leader": "交通银行"
-    },
-    {
-      "code": "BK0475",
-      "name": "银行Ⅱ",
-      "change_pct": -1.09,
-      "price": 4365.32,
-      "change": -47.93,
-      "up_count": 7,
-      "down_count": 35,
-      "leader": "交通银行"
-    },
-    {
-      "code": "BK1547",
-      "name": "跨境电商",
-      "change_pct": -1.11,
-      "price": 2543.29,
-      "change": -28.58,
-      "up_count": 2,
-      "down_count": 6,
-      "leader": "跨境通"
-    },
-    {
-      "code": "BK1598",
-      "name": "疫苗",
-      "change_pct": -1.11,
-      "price": 4180.11,
-      "change": -47.01,
-      "up_count": 2,
-      "down_count": 11,
-      "leader": "华兰疫苗"
-    },
-    {
-      "code": "BK1361",
-      "name": "期货",
-      "change_pct": -1.12,
-      "price": 504.3,
-      "change": -5.7,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "瑞达期货"
-    },
-    {
-      "code": "BK0727",
-      "name": "医疗服务",
-      "change_pct": -1.12,
-      "price": 1417.14,
-      "change": -16.08,
-      "up_count": 10,
-      "down_count": 44,
-      "leader": "百花医药"
-    },
-    {
-      "code": "BK1266",
-      "name": "文娱用品",
-      "change_pct": -1.15,
-      "price": 3298.58,
-      "change": -38.51,
-      "up_count": 5,
-      "down_count": 16,
-      "leader": "广博股份"
-    },
-    {
-      "code": "BK1280",
-      "name": "食品加工",
-      "change_pct": -1.25,
-      "price": 4120.57,
-      "change": -52.02,
-      "up_count": 3,
-      "down_count": 24,
-      "leader": "五芳斋"
-    },
-    {
-      "code": "BK1576",
-      "name": "调味发酵品Ⅲ",
-      "change_pct": -1.29,
-      "price": 4688.51,
-      "change": -61.17,
-      "up_count": 3,
-      "down_count": 12,
-      "leader": "朱老六"
-    },
-    {
-      "code": "BK1278",
-      "name": "调味发酵品Ⅱ",
-      "change_pct": -1.29,
-      "price": 4688.51,
-      "change": -61.17,
-      "up_count": 3,
-      "down_count": 12,
-      "leader": "朱老六"
-    },
-    {
-      "code": "BK1480",
-      "name": "机场",
-      "change_pct": -1.35,
-      "price": 1753.62,
-      "change": -23.95,
-      "up_count": 0,
-      "down_count": 5,
-      "leader": "白云机场"
-    },
-    {
-      "code": "BK1464",
-      "name": "水泥制造",
-      "change_pct": -1.35,
-      "price": 2008.83,
-      "change": -27.44,
-      "up_count": 3,
-      "down_count": 11,
-      "leader": "尖峰集团"
-    },
-    {
-      "code": "BK1586",
-      "name": "软饮料",
-      "change_pct": -1.36,
-      "price": 1823.5,
-      "change": -25.1,
-      "up_count": 1,
-      "down_count": 7,
-      "leader": "东鹏饮料"
-    },
-    {
-      "code": "BK1560",
-      "name": "酒店",
-      "change_pct": -1.36,
-      "price": 2145.61,
-      "change": -29.57,
-      "up_count": 0,
-      "down_count": 6,
-      "leader": "首旅酒店"
-    },
-    {
-      "code": "BK1608",
-      "name": "中药Ⅲ",
-      "change_pct": -1.38,
-      "price": 1300.17,
-      "change": -18.25,
-      "up_count": 10,
-      "down_count": 54,
-      "leader": "精华制药"
-    },
-    {
-      "code": "BK1040",
-      "name": "中药Ⅱ",
-      "change_pct": -1.38,
-      "price": 1300.17,
-      "change": -18.25,
-      "up_count": 10,
-      "down_count": 54,
-      "leader": "精华制药"
-    },
-    {
-      "code": "BK1449",
-      "name": "冰洗",
-      "change_pct": -1.4,
-      "price": 1770.23,
-      "change": -25.18,
-      "up_count": 1,
-      "down_count": 6,
-      "leader": "TCL智家"
-    },
-    {
-      "code": "BK0465",
-      "name": "化学制药",
-      "change_pct": -1.41,
-      "price": 34577.1,
-      "change": -494.51,
-      "up_count": 23,
-      "down_count": 136,
-      "leader": "向日葵"
-    },
-    {
-      "code": "BK1601",
-      "name": "医院",
-      "change_pct": -1.43,
-      "price": 6201.38,
-      "change": -89.99,
-      "up_count": 3,
-      "down_count": 12,
-      "leader": "普瑞眼科"
-    },
-    {
-      "code": "BK1294",
-      "name": "门户网站",
-      "change_pct": -1.46,
-      "price": 3124.21,
-      "change": -46.16,
-      "up_count": 3,
-      "down_count": 5,
-      "leader": "川网传媒"
-    },
-    {
-      "code": "BK1604",
-      "name": "医疗耗材",
-      "change_pct": -1.46,
-      "price": 4183.83,
-      "change": -61.98,
-      "up_count": 8,
-      "down_count": 45,
-      "leader": "百瑞吉"
-    },
-    {
-      "code": "BK1239",
-      "name": "白色家电",
-      "change_pct": -1.46,
-      "price": 3119.49,
-      "change": -46.32,
-      "up_count": 2,
-      "down_count": 9,
-      "leader": "TCL智家"
-    },
-    {
-      "code": "BK1299",
-      "name": "影视动漫制作",
-      "change_pct": -1.46,
-      "price": 4131.69,
-      "change": -61.42,
-      "up_count": 3,
-      "down_count": 11,
-      "leader": "慈文传媒"
-    },
-    {
-      "code": "BK0420",
-      "name": "航空机场",
-      "change_pct": -1.49,
-      "price": 3843.61,
-      "change": -58.12,
-      "up_count": 1,
-      "down_count": 13,
-      "leader": "春秋航空"
-    },
-    {
-      "code": "BK1042",
-      "name": "医药商业",
-      "change_pct": -1.5,
-      "price": 1097.19,
-      "change": -16.69,
-      "up_count": 2,
-      "down_count": 29,
-      "leader": "一心堂"
-    },
-    {
-      "code": "BK1499",
-      "name": "医美服务",
-      "change_pct": -1.51,
-      "price": 570.78,
-      "change": -8.73,
-      "up_count": 0,
-      "down_count": 2,
-      "leader": "朗姿股份"
-    },
-    {
-      "code": "BK1583",
-      "name": "零食",
-      "change_pct": -1.52,
-      "price": 1722.62,
-      "change": -26.52,
-      "up_count": 1,
-      "down_count": 10,
-      "leader": "万辰集团"
-    },
-    {
-      "code": "BK1216",
-      "name": "医药生物",
-      "change_pct": -1.56,
-      "price": 4469.4,
-      "change": -70.78,
-      "up_count": 66,
-      "down_count": 437,
-      "leader": "百花医药"
-    },
-    {
-      "code": "BK1479",
-      "name": "航空运输",
-      "change_pct": -1.57,
-      "price": 1210.16,
-      "change": -19.28,
-      "up_count": 1,
-      "down_count": 8,
-      "leader": "春秋航空"
-    },
-    {
-      "code": "BK1450",
-      "name": "空调",
-      "change_pct": -1.57,
-      "price": 14961.08,
-      "change": -238.53,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "美的集团"
-    },
-    {
-      "code": "BK1582",
-      "name": "烘焙食品",
-      "change_pct": -1.58,
-      "price": 697.21,
-      "change": -11.17,
-      "up_count": 1,
-      "down_count": 8,
-      "leader": "西麦食品"
-    },
-    {
-      "code": "BK1281",
-      "name": "休闲食品",
-      "change_pct": -1.58,
-      "price": 1966.99,
-      "change": -31.54,
-      "up_count": 3,
-      "down_count": 20,
-      "leader": "西麦食品"
-    },
-    {
-      "code": "BK1543",
-      "name": "娱乐用品",
-      "change_pct": -1.59,
-      "price": 2627.28,
-      "change": -42.5,
-      "up_count": 4,
-      "down_count": 12,
-      "leader": "舒华体育"
-    },
-    {
-      "code": "BK1612",
-      "name": "农商行Ⅲ",
-      "change_pct": -1.63,
-      "price": 465.53,
-      "change": -7.73,
-      "up_count": 0,
-      "down_count": 10,
-      "leader": "沪农商行"
-    },
-    {
-      "code": "BK1363",
-      "name": "信托",
-      "change_pct": -1.63,
-      "price": 1843.37,
-      "change": -30.64,
-      "up_count": 0,
-      "down_count": 3,
-      "leader": "陕国投Ａ"
-    },
-    {
-      "code": "BK0424",
-      "name": "水泥",
-      "change_pct": -1.67,
-      "price": 25348.21,
-      "change": -430.32,
-      "up_count": 4,
-      "down_count": 19,
-      "leader": "尖峰集团"
-    },
-    {
-      "code": "BK1491",
-      "name": "端到端供应链服务",
-      "change_pct": -1.68,
-      "price": 1546.14,
-      "change": -26.44,
-      "up_count": 1,
-      "down_count": 6,
-      "leader": "东方嘉盛"
-    },
-    {
-      "code": "BK1044",
-      "name": "生物制品",
-      "change_pct": -1.7,
-      "price": 979.42,
-      "change": -16.93,
-      "up_count": 7,
-      "down_count": 51,
-      "leader": "近岸蛋白"
-    },
-    {
-      "code": "BK1609",
-      "name": "城商行Ⅲ",
-      "change_pct": -1.71,
-      "price": 1641.22,
-      "change": -28.5,
-      "up_count": 1,
-      "down_count": 16,
-      "leader": "北京银行"
-    },
-    {
-      "code": "BK1033",
-      "name": "电池",
-      "change_pct": -1.71,
-      "price": 1236.86,
-      "change": -21.51,
-      "up_count": 24,
-      "down_count": 83,
-      "leader": "正业科技"
-    },
-    {
-      "code": "BK1318",
-      "name": "光伏主材",
-      "change_pct": -1.74,
-      "price": 9393.64,
-      "change": -165.93,
-      "up_count": 0,
-      "down_count": 2,
-      "leader": "隆基绿能"
-    },
-    {
-      "code": "BK1359",
-      "name": "金融控股",
-      "change_pct": -1.78,
-      "price": 1951.37,
-      "change": -35.4,
-      "up_count": 0,
-      "down_count": 8,
-      "leader": "国投资本"
-    },
-    {
-      "code": "BK1584",
-      "name": "熟食",
-      "change_pct": -1.81,
-      "price": 1887.86,
-      "change": -34.8,
-      "up_count": 1,
-      "down_count": 2,
-      "leader": "ST绝味"
-    },
-    {
-      "code": "BK1262",
-      "name": "乘用车",
-      "change_pct": -1.83,
-      "price": 3304.53,
-      "change": -61.54,
-      "up_count": 2,
-      "down_count": 7,
-      "leader": "长城汽车"
-    },
-    {
-      "code": "BK1222",
-      "name": "影视院线",
-      "change_pct": -1.83,
-      "price": 3893.4,
-      "change": -72.62,
-      "up_count": 3,
-      "down_count": 15,
-      "leader": "慈文传媒"
-    },
-    {
-      "code": "BK0486",
-      "name": "传媒",
-      "change_pct": -1.86,
-      "price": 10528.83,
-      "change": -199.04,
-      "up_count": 21,
-      "down_count": 104,
-      "leader": "慈文传媒"
-    },
-    {
-      "code": "BK1459",
-      "name": "清洁小家电",
-      "change_pct": -1.86,
-      "price": 1871.78,
-      "change": -35.55,
-      "up_count": 2,
-      "down_count": 7,
-      "leader": "石头科技"
-    },
-    {
-      "code": "BK1607",
-      "name": "医药流通",
-      "change_pct": -1.88,
-      "price": 2000.26,
-      "change": -38.23,
-      "up_count": 0,
-      "down_count": 23,
-      "leader": "南京医药"
-    },
-    {
-      "code": "BK1271",
-      "name": "酒店餐饮",
-      "change_pct": -1.9,
-      "price": 2051.1,
-      "change": -39.65,
-      "up_count": 0,
-      "down_count": 10,
-      "leader": "首旅酒店"
-    },
-    {
-      "code": "BK1368",
-      "name": "钢铁管材",
-      "change_pct": -1.9,
-      "price": 559.11,
-      "change": -10.84,
-      "up_count": 0,
-      "down_count": 3,
-      "leader": "新兴铸管"
-    },
-    {
-      "code": "BK1537",
-      "name": "成品家居",
-      "change_pct": -1.9,
-      "price": 2454.21,
-      "change": -47.61,
-      "up_count": 3,
-      "down_count": 14,
-      "leader": "慕思股份"
-    },
-    {
-      "code": "BK1041",
-      "name": "医疗器械",
-      "change_pct": -1.93,
-      "price": 876.24,
-      "change": -17.27,
-      "up_count": 14,
-      "down_count": 123,
-      "leader": "百瑞吉"
-    },
-    {
-      "code": "BK1420",
-      "name": "其他化学原料",
-      "change_pct": -1.96,
-      "price": 3128.34,
-      "change": -62.52,
-      "up_count": 3,
-      "down_count": 15,
-      "leader": "凯盛新材"
-    },
-    {
-      "code": "BK1548",
-      "name": "综合电商",
-      "change_pct": -1.97,
-      "price": 926.84,
-      "change": -18.61,
-      "up_count": 0,
-      "down_count": 2,
-      "leader": "ST易购"
-    },
-    {
-      "code": "BK1489",
-      "name": "快递",
-      "change_pct": -1.97,
-      "price": 5195.76,
-      "change": -104.59,
-      "up_count": 0,
-      "down_count": 4,
-      "leader": "顺丰控股"
-    },
-    {
-      "code": "BK1563",
-      "name": "自然景区",
-      "change_pct": -1.99,
-      "price": 2734.05,
-      "change": -55.51,
-      "up_count": 0,
-      "down_count": 13,
-      "leader": "黄山Ｂ股"
-    },
-    {
-      "code": "BK1417",
-      "name": "纯碱",
-      "change_pct": -2.0,
-      "price": 910.6,
-      "change": -18.55,
-      "up_count": 1,
-      "down_count": 4,
-      "leader": "三友化工"
-    }
-  ],
-  "a_share_board_status": "ok",
-  "a_share_weekly_industry_boards": [
-    {
-      "code": "BK1351",
-      "name": "印染",
-      "change_pct": 0.49,
-      "price": 1549.14,
-      "change": 7.49,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "富春染织",
-      "weekly_pct": 3.27,
-      "weekly_period_start": "2026-10-09",
-      "weekly_period_end": "2026-10-15"
-    },
-    {
-      "code": "BK1575",
-      "name": "白酒Ⅲ",
-      "change_pct": 1.03,
-      "price": 4186.14,
-      "change": 42.7,
-      "up_count": 11,
-      "down_count": 8,
-      "leader": "皇台酒业",
-      "weekly_pct": 0.36,
-      "weekly_period_start": "2026-10-09",
-      "weekly_period_end": "2026-10-15"
-    },
-    {
-      "code": "BK1452",
-      "name": "卫浴电器",
-      "change_pct": 4.57,
-      "price": 1406.37,
-      "change": 61.44,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "万和电气",
-      "weekly_pct": 0.16,
-      "weekly_period_start": "2026-10-09",
-      "weekly_period_end": "2026-10-15"
-    },
-    {
-      "code": "BK1347",
-      "name": "纺织鞋类制造",
-      "change_pct": 3.38,
-      "price": 400.49,
-      "change": 13.1,
-      "up_count": 1,
-      "down_count": 0,
-      "leader": "华利集团",
-      "weekly_pct": -0.21,
-      "weekly_period_start": "2026-10-09",
-      "weekly_period_end": "2026-10-15"
-    }
-  ],
+  "a_share_industry_boards": [],
+  "a_share_board_status": "error:HTTPError",
+  "a_share_weekly_industry_boards": [],
   "weekly_risers": [
     "医疗",
     "必选消费",
-    "房地产",
     "材料",
+    "房地产",
     "能源",
     "金融",
     "可选消费",
-    "公用事业",
-    "通信服务"
+    "公用事业"
   ],
   "weekly_fallers": [
     "科技",
+    "通信服务",
     "工业"
   ],
-  "a_share_weekly_risers": [
-    {
-      "code": "BK1351",
-      "name": "印染",
-      "change_pct": 0.49,
-      "price": 1549.14,
-      "change": 7.49,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "富春染织",
-      "weekly_pct": 3.27,
-      "weekly_period_start": "2026-10-09",
-      "weekly_period_end": "2026-10-15"
-    },
-    {
-      "code": "BK1575",
-      "name": "白酒Ⅲ",
-      "change_pct": 1.03,
-      "price": 4186.14,
-      "change": 42.7,
-      "up_count": 11,
-      "down_count": 8,
-      "leader": "皇台酒业",
-      "weekly_pct": 0.36,
-      "weekly_period_start": "2026-10-09",
-      "weekly_period_end": "2026-10-15"
-    },
-    {
-      "code": "BK1452",
-      "name": "卫浴电器",
-      "change_pct": 4.57,
-      "price": 1406.37,
-      "change": 61.44,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "万和电气",
-      "weekly_pct": 0.16,
-      "weekly_period_start": "2026-10-09",
-      "weekly_period_end": "2026-10-15"
-    }
-  ],
-  "a_share_weekly_fallers": [
-    {
-      "code": "BK1347",
-      "name": "纺织鞋类制造",
-      "change_pct": 3.38,
-      "price": 400.49,
-      "change": 13.1,
-      "up_count": 1,
-      "down_count": 0,
-      "leader": "华利集团",
-      "weekly_pct": -0.21,
-      "weekly_period_start": "2026-10-09",
-      "weekly_period_end": "2026-10-15"
-    }
-  ],
-  "a_share_board_risers": [
-    "卫浴电器",
-    "纺织鞋类制造",
-    "大众出版",
-    "电信运营商",
-    "白酒Ⅲ"
-  ],
-  "a_share_board_fallers": [
-    "纯碱",
-    "自然景区",
-    "快递",
-    "综合电商",
-    "其他化学原料"
-  ],
+  "a_share_weekly_risers": [],
+  "a_share_weekly_fallers": [],
+  "a_share_board_risers": [],
+  "a_share_board_fallers": [],
   "health": {
     "us_sector_count": 11,
     "a_share_index_count": 7,
-    "a_share_board_count": 100,
-    "weekly_board_count": 4,
+    "a_share_board_count": 0,
+    "weekly_board_count": 0,
     "status": "ok"
   }
 }
