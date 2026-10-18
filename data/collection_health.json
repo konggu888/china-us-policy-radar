@@ -136,8 +136,8 @@
   },
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
-    "status": "error:TimeoutError",
-    "count": 0
+    "status": "ok",
+    "count": 18
   },
   "OfficialFeed:IAEA": {
     "method": "direct_first_party_rss",
@@ -177,7 +177,7 @@
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 26
+    "count": 29
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-10-18 06:56 UTC",
+  "updated": "2026-10-18 12:26 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 7095,
+  "total_collected": 7125,
   "new_discovery_count": 299,
-  "official_direct_count": 248,
+  "official_direct_count": 266,
   "official_in_working_set": 986,
   "category_counts": {
-    "政治": 191,
-    "金融": 162,
+    "政治": 192,
+    "金融": 163,
     "经济": 41,
     "产业": 12,
-    "科技 / AI": 666,
-    "国防": 113,
-    "内政": 132,
+    "科技 / AI": 668,
+    "国防": 114,
+    "内政": 137,
     "国家安全": 115,
     "外交": 97,
-    "贸易 / 供应链": 304,
-    "能源 / 资源": 118,
-    "中美博弈": 1437,
-    "全球政策": 3707
+    "贸易 / 供应链": 306,
+    "能源 / 资源": 119,
+    "中美博弈": 1443,
+    "全球政策": 3718
   },
   "region_counts": {
-    "china": 755,
-    "us": 972,
-    "global": 5368
+    "china": 757,
+    "us": 970,
+    "global": 5398
   },
   "sources": {
     "OfficialPage:White House": {
@@ -358,8 +358,8 @@
     },
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
-      "status": "error:TimeoutError",
-      "count": 0
+      "status": "ok",
+      "count": 18
     },
     "OfficialFeed:IAEA": {
       "method": "direct_first_party_rss",
@@ -399,7 +399,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 26
+      "count": 29
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
