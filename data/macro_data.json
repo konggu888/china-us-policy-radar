@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-18T01:55:11.374514+00:00",
+  "updatedAt": "2026-10-18T07:36:33.159909+00:00",
   "china": {
     "source": "国家统计局",
     "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
     "releaseTitle": "8月份国民经济运行平稳、发展向新向优",
     "publishedAt": "2026-09-15",
-    "fetchedAt": "2026-10-18T01:55:07.587843+00:00",
+    "fetchedAt": "2026-10-18T07:36:29.935598+00:00",
     "values": {
       "industrial_yoy_pct": 5.2,
       "industrial_mom_pct": 0.54,
@@ -24,12 +24,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+    "error": "HTTP Error 502: Bad Gateway",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-10-18T01:53:13.382093+00:00",
+    "fetchedAt": "2026-10-18T07:08:19.778703+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",

@@ -67,7 +67,7 @@
   "OfficialPage:China PBOC": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 11
+    "count": 12
   },
   "OfficialPage:China MIIT": {
     "method": "direct_first_party_html",
@@ -136,8 +136,8 @@
   },
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
-    "status": "ok",
-    "count": 18
+    "status": "error:TimeoutError",
+    "count": 0
   },
   "OfficialFeed:IAEA": {
     "method": "direct_first_party_rss",
@@ -172,12 +172,12 @@
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 33
+    "count": 30
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 27
+    "count": 26
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-10-18 01:43 UTC",
+  "updated": "2026-10-18 06:56 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 7077,
+  "total_collected": 7095,
   "new_discovery_count": 299,
-  "official_direct_count": 265,
-  "official_in_working_set": 985,
+  "official_direct_count": 248,
+  "official_in_working_set": 986,
   "category_counts": {
-    "政治": 190,
+    "政治": 191,
     "金融": 162,
-    "经济": 40,
+    "经济": 41,
     "产业": 12,
-    "科技 / AI": 663,
-    "国防": 110,
-    "内政": 131,
+    "科技 / AI": 666,
+    "国防": 113,
+    "内政": 132,
     "国家安全": 115,
     "外交": 97,
-    "贸易 / 供应链": 302,
+    "贸易 / 供应链": 304,
     "能源 / 资源": 118,
-    "中美博弈": 1435,
-    "全球政策": 3702
+    "中美博弈": 1437,
+    "全球政策": 3707
   },
   "region_counts": {
     "china": 755,
-    "us": 967,
-    "global": 5355
+    "us": 972,
+    "global": 5368
   },
   "sources": {
     "OfficialPage:White House": {
@@ -289,7 +289,7 @@
     "OfficialPage:China PBOC": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 11
+      "count": 12
     },
     "OfficialPage:China MIIT": {
       "method": "direct_first_party_html",
@@ -358,8 +358,8 @@
     },
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
-      "status": "ok",
-      "count": 18
+      "status": "error:TimeoutError",
+      "count": 0
     },
     "OfficialFeed:IAEA": {
       "method": "direct_first_party_rss",
@@ -394,12 +394,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 33
+      "count": 30
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 27
+      "count": 26
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
