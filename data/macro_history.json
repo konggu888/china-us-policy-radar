@@ -152641,37 +152641,21 @@
     }
   },
   {
-    "updatedAt": "2026-10-19T01:20:16.205352+00:00",
+    "updatedAt": "2026-10-19T06:13:13.122457+00:00",
     "china": {
       "source": "国家统计局",
-      "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
-      "releaseTitle": "8月份国民经济运行平稳、发展向新向优",
-      "publishedAt": "2026-09-15",
-      "fetchedAt": "2026-10-19T01:20:13.389480+00:00",
-      "values": {
-        "industrial_yoy_pct": 5.2,
-        "industrial_mom_pct": 0.54,
-        "services_production_yoy_pct": 4.1,
-        "fixed_asset_investment_ytd_yoy_pct": 7.2,
-        "retail_yoy_pct": 1.1,
-        "exports_yoy_pct": 19.8,
-        "imports_yoy_pct": 21.7,
-        "unemployment_pct": 5.2,
-        "cpi_yoy_pct": 0.8,
-        "cpi_mom_pct": 0.4,
-        "ppi_yoy_pct": 3.8,
-        "ppi_mom_pct": 0.4
-      },
-      "method": "从国家统计局数据发布页自动发现最新国民经济运行正式发布并解析明确标注的指标；未匹配字段保持缺失。"
+      "status": "MISSING",
+      "error": "NBS latest national-economy release link not found",
+      "method": "官方源暂未成功获取；不使用其他来源冒充。"
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+      "error": "Remote end closed connection without response",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-10-19T01:18:18.501558+00:00",
+      "fetchedAt": "2026-10-19T05:58:32.098529+00:00",
       "records": [
         {
           "indicator": "M2_yoy_pct",
@@ -153270,15 +153254,15 @@
         },
         {
           "indicator": "open_market_7d_reverse_repo_amount_billion",
-          "value": 600.0,
-          "observedAt": "2026-10-16",
+          "value": 800.0,
+          "observedAt": "2026-10-19",
           "source": "中国人民银行",
-          "sourceUrl": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026101608495821786/index.html"
+          "sourceUrl": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026101908495975924/index.html"
         },
         {
           "indicator": "USD/CNY_PBOC_MID",
-          "value": 6.722,
-          "observedAt": "2026-10-16",
+          "value": 6.7208000000000006,
+          "observedAt": "2026-10-19",
           "source": "SAFE/PBOC RMB central parity",
           "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
         }
@@ -153415,10 +153399,10 @@
     },
     "marketSnapshotCount": 23,
     "quality": {
-      "chinaStatus": "OK",
+      "chinaStatus": "MISSING",
       "usSeriesCount": 15,
       "marketVariableCount": 23,
-      "errors": 1
+      "errors": 2
     }
   }
 ]
