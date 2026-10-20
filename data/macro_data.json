@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T22:30:26.339930+00:00",
+  "updatedAt": "2026-10-20T01:52:58.510360+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -8,12 +8,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+    "error": "HTTP Error 502: Bad Gateway",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-10-19T22:26:24.425813+00:00",
+    "fetchedAt": "2026-10-20T01:24:05.106048+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
@@ -611,16 +611,9 @@
         "source": "中国人民银行"
       },
       {
-        "indicator": "open_market_7d_reverse_repo_amount_billion",
-        "value": 800.0,
-        "observedAt": "2026-10-19",
-        "source": "中国人民银行",
-        "sourceUrl": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026101908495975924/index.html"
-      },
-      {
         "indicator": "USD/CNY_PBOC_MID",
-        "value": 6.7208000000000006,
-        "observedAt": "2026-10-19",
+        "value": 6.72,
+        "observedAt": "2026-10-20",
         "source": "SAFE/PBOC RMB central parity",
         "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
       }
