@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-20 07:17 UTC",
+  "updated": "2026-10-20 12:25 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6782,
-      "change_pct": -0.19,
+      "value": 6.6664,
+      "change_pct": -0.37,
       "time": "2026-10-20",
       "name": "USD/CNY"
     },
@@ -61,27 +61,27 @@
       "symbol": "^TNX",
       "value": 5.136,
       "change_pct": 0.75,
-      "time": "2026-10-19",
+      "time": "2026-10-20",
       "name": "美国10年期收益率"
     },
     {
       "symbol": "BZ=F",
-      "value": 110.1,
-      "change_pct": 0.5,
+      "value": 111.29,
+      "change_pct": 1.59,
       "time": "2026-10-20",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4151.7002,
-      "change_pct": -0.2,
+      "value": 4134.3999,
+      "change_pct": -0.62,
       "time": "2026-10-20",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 18.44,
-      "change_pct": -7.75,
+      "value": 18.9,
+      "change_pct": 2.49,
       "time": "2026-10-20",
       "name": "VIX"
     }
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-10-20 07:17 UTC"
+    "asof": "2026-10-20 12:25 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,7 +599,7 @@
     "china": [
       [
         "全球政策",
-        395
+        396
       ],
       [
         "中美博弈",
@@ -629,11 +629,11 @@
       ],
       [
         "中美博弈",
-        197
+        199
       ],
       [
         "科技 / AI",
-        85
+        86
       ],
       [
         "金融",
@@ -651,15 +651,15 @@
     "global": [
       [
         "全球政策",
-        2940
+        2950
       ],
       [
         "中美博弈",
-        1132
+        1142
       ],
       [
         "科技 / AI",
-        574
+        578
       ],
       [
         "贸易 / 供应链",
@@ -667,11 +667,11 @@
       ],
       [
         "政治",
-        152
+        154
       ],
       [
         "内政",
-        140
+        141
       ]
     ]
   },
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 1775
+      "count": 1784
     },
     {
       "keyword": "产业升级",
@@ -698,7 +698,7 @@
     },
     {
       "keyword": "安全",
-      "count": 222
+      "count": 223
     },
     {
       "keyword": "贸易",
@@ -781,11 +781,11 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 801,
+      "total": 802,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 395
+          "count": 396
         },
         {
           "name": "中美博弈",
@@ -812,7 +812,7 @@
     },
     {
       "side": "美国",
-      "total": 997,
+      "total": 1000,
       "top_categories": [
         {
           "name": "全球政策",
@@ -820,11 +820,11 @@
         },
         {
           "name": "中美博弈",
-          "count": 197
+          "count": 199
         },
         {
           "name": "科技 / AI",
-          "count": 85
+          "count": 86
         },
         {
           "name": "金融",
@@ -979,8 +979,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 7400 条；本轮发现 300 条；13类覆盖=13/13；中国/美国/全球=801/997/5602；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-10-20 07:17 UTC",
+  "collection_message": "长期情报库：当前工作集 7432 条；本轮发现 300 条；13类覆盖=13/13；中国/美国/全球=802/1000/5630；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-10-20 12:25 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1045,7 +1045,7 @@
     "OfficialPage:China NDRC": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 25
+      "count": 24
     },
     "OfficialPage:China PBOC": {
       "method": "direct_first_party_html",
@@ -1160,7 +1160,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 31
+      "count": 35
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
