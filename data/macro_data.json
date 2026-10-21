@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T02:10:23.175555+00:00",
+  "updatedAt": "2026-10-21T07:58:27.886324+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -8,12 +8,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+    "error": "<urlopen error [Errno 104] Connection reset by peer>",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-10-21T02:07:11.259388+00:00",
+    "fetchedAt": "2026-10-21T07:50:20.729728+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
