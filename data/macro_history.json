@@ -162096,7 +162096,7 @@
     }
   },
   {
-    "updatedAt": "2026-10-21T13:20:49.441000+00:00",
+    "updatedAt": "2026-10-21T18:34:42.948426+00:00",
     "china": {
       "source": "国家统计局",
       "status": "MISSING",
@@ -162110,7 +162110,7 @@
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-10-21T13:19:53.966961+00:00",
+      "fetchedAt": "2026-10-21T18:31:54.740289+00:00",
       "records": [
         {
           "indicator": "M2_yoy_pct",
@@ -162720,137 +162720,32 @@
     },
     "unitedStates": {
       "source": "FRED",
-      "series": {
-        "real_gdp": {
-          "seriesId": "GDPC1",
-          "observedAt": "2026-04-01",
-          "value": 24408.011,
-          "previousValue": 24274.383,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/GDPC1"
-        },
-        "cpi": {
-          "seriesId": "CPIAUCSL",
-          "observedAt": "2026-09-01",
-          "value": 336.298,
-          "previousValue": 334.131,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/CPIAUCSL"
-        },
-        "core_cpi": {
-          "seriesId": "CPILFESL",
-          "observedAt": "2026-09-01",
-          "value": 338.896,
-          "previousValue": 337.765,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/CPILFESL"
-        },
-        "pce_price": {
-          "seriesId": "PCEPI",
-          "observedAt": "2026-08-01",
-          "value": 131.579,
-          "previousValue": 131.172,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/PCEPI"
-        },
-        "unemployment": {
-          "seriesId": "UNRATE",
-          "observedAt": "2026-09-01",
-          "value": 4.2,
-          "previousValue": 4.1,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/UNRATE"
-        },
-        "nonfarm_payrolls": {
-          "seriesId": "PAYEMS",
-          "observedAt": "2026-09-01",
-          "value": 159044.0,
-          "previousValue": 159015.0,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/PAYEMS"
-        },
-        "industrial_production": {
-          "seriesId": "INDPRO",
-          "observedAt": "2026-09-01",
-          "value": 103.9506,
-          "previousValue": 103.2664,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/INDPRO"
-        },
-        "retail_sales": {
-          "seriesId": "RSAFS",
-          "observedAt": "2026-09-01",
-          "value": 745021.0,
-          "previousValue": 739322.0,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/RSAFS"
-        },
-        "fed_funds": {
-          "seriesId": "FEDFUNDS",
-          "observedAt": "2026-09-01",
-          "value": 3.75,
-          "previousValue": 3.63,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/FEDFUNDS"
-        },
-        "m2": {
-          "seriesId": "M2SL",
-          "observedAt": "2026-08-01",
-          "value": 23342.8,
-          "previousValue": 23217.9,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/M2SL"
-        },
-        "10y_treasury": {
-          "seriesId": "DGS10",
-          "observedAt": "2026-10-19",
-          "value": 5.15,
-          "previousValue": 5.09,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
-        },
-        "2y_treasury": {
-          "seriesId": "DGS2",
-          "observedAt": "2026-10-19",
-          "value": 4.77,
-          "previousValue": 4.74,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
-        },
-        "5y_treasury": {
-          "seriesId": "DGS5",
-          "observedAt": "2026-10-19",
-          "value": 4.94,
-          "previousValue": 4.89,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/DGS5"
-        },
-        "30y_treasury": {
-          "seriesId": "DGS30",
-          "observedAt": "2026-10-19",
-          "value": 5.48,
-          "previousValue": 5.43,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
-        },
-        "usd_index": {
-          "seriesId": "DTWEXBGS",
-          "observedAt": "2026-10-16",
-          "value": 121.4048,
-          "previousValue": 121.5693,
-          "source": "FRED / Federal Reserve Bank of St. Louis",
-          "sourceUrl": "https://fred.stlouisfed.org/series/DTWEXBGS"
-        }
+      "series": {},
+      "errors": {
+        "real_gdp": "empty FRED GDPC1",
+        "cpi": "empty FRED CPIAUCSL",
+        "core_cpi": "empty FRED CPILFESL",
+        "pce_price": "empty FRED PCEPI",
+        "unemployment": "empty FRED UNRATE",
+        "nonfarm_payrolls": "empty FRED PAYEMS",
+        "industrial_production": "empty FRED INDPRO",
+        "retail_sales": "empty FRED RSAFS",
+        "fed_funds": "empty FRED FEDFUNDS",
+        "m2": "empty FRED M2SL",
+        "10y_treasury": "empty FRED DGS10",
+        "2y_treasury": "empty FRED DGS2",
+        "5y_treasury": "empty FRED DGS5",
+        "30y_treasury": "empty FRED DGS30",
+        "usd_index": "empty FRED DTWEXBGS"
       },
-      "errors": {},
       "apiMode": "public fredgraph CSV; no API key"
     },
     "marketSnapshotCount": 23,
     "quality": {
       "chinaStatus": "MISSING",
-      "usSeriesCount": 15,
+      "usSeriesCount": 0,
       "marketVariableCount": 23,
-      "errors": 2
+      "errors": 17
     }
   }
 ]
