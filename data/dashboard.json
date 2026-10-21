@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-21 08:04 UTC",
+  "updated": "2026-10-21 13:24 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6778,
-      "change_pct": -0.2,
+      "value": 6.6753,
+      "change_pct": -0.23,
       "time": "2026-10-21",
       "name": "USD/CNY"
     },
@@ -59,29 +59,29 @@
     },
     {
       "symbol": "^TNX",
-      "value": 5.117,
-      "change_pct": -0.37,
-      "time": "2026-10-20",
+      "value": 5.094,
+      "change_pct": -0.45,
+      "time": "2026-10-21",
       "name": "美国10年期收益率"
     },
     {
       "symbol": "BZ=F",
-      "value": 109.55,
-      "change_pct": 0.7,
+      "value": 108.24,
+      "change_pct": -0.51,
       "time": "2026-10-21",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4141.1001,
-      "change_pct": -0.04,
+      "value": 4153.5,
+      "change_pct": 0.26,
       "time": "2026-10-21",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 17.18,
-      "change_pct": -0.75,
+      "value": 17.11,
+      "change_pct": -1.16,
       "time": "2026-10-21",
       "name": "VIX"
     }
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-10-21 08:04 UTC"
+    "asof": "2026-10-21 13:24 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,11 +599,11 @@
     "china": [
       [
         "全球政策",
-        401
+        402
       ],
       [
         "中美博弈",
-        194
+        196
       ],
       [
         "科技 / AI",
@@ -625,19 +625,15 @@
     "us": [
       [
         "全球政策",
-        476
+        479
       ],
       [
         "中美博弈",
-        201
+        202
       ],
       [
         "科技 / AI",
-        86
-      ],
-      [
-        "政治",
-        51
+        87
       ],
       [
         "金融",
@@ -646,24 +642,28 @@
       [
         "贸易 / 供应链",
         51
+      ],
+      [
+        "政治",
+        50
       ]
     ],
     "global": [
       [
         "全球政策",
-        2983
+        2992
       ],
       [
         "中美博弈",
-        1179
+        1189
       ],
       [
         "科技 / AI",
-        591
+        592
       ],
       [
         "贸易 / 供应链",
-        253
+        254
       ],
       [
         "政治",
@@ -671,7 +671,7 @@
       ],
       [
         "内政",
-        147
+        149
       ]
     ]
   },
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 1810
+      "count": 1815
     },
     {
       "keyword": "产业升级",
@@ -694,7 +694,7 @@
     },
     {
       "keyword": "开放",
-      "count": 184
+      "count": 186
     },
     {
       "keyword": "安全",
@@ -702,7 +702,7 @@
     },
     {
       "keyword": "贸易",
-      "count": 437
+      "count": 438
     }
   ],
   "policy_source_matrix": [
@@ -781,15 +781,15 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 815,
+      "total": 818,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 401
+          "count": 402
         },
         {
           "name": "中美博弈",
-          "count": 194
+          "count": 196
         },
         {
           "name": "科技 / AI",
@@ -808,27 +808,23 @@
           "count": 26
         }
       ],
-      "risk_high": 46
+      "risk_high": 48
     },
     {
       "side": "美国",
-      "total": 1011,
+      "total": 1014,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 476
+          "count": 479
         },
         {
           "name": "中美博弈",
-          "count": 201
+          "count": 202
         },
         {
           "name": "科技 / AI",
-          "count": 86
-        },
-        {
-          "name": "政治",
-          "count": 51
+          "count": 87
         },
         {
           "name": "金融",
@@ -837,6 +833,10 @@
         {
           "name": "贸易 / 供应链",
           "count": 51
+        },
+        {
+          "name": "政治",
+          "count": 50
         }
       ],
       "risk_high": 74
@@ -845,7 +845,7 @@
   "today_focus": [
     {
       "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-      "titleZh": "President Trump Was Right: America Controls the Strait of Hormuz",
+      "titleZh": "特朗普总统是对的：美国控制霍尔木兹海峡",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
       "risk": "极高",
       "category": "国防",
@@ -862,7 +862,7 @@
     },
     {
       "title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
-      "titleZh": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
+      "titleZh": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
       "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
       "risk": "高",
       "category": "能源 / 资源",
@@ -979,8 +979,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 7561 条；本轮发现 245 条；13类覆盖=13/13；中国/美国/全球=815/1010/5736；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-10-21 08:04 UTC",
+  "collection_message": "长期情报库：当前工作集 7598 条；本轮发现 300 条；13类覆盖=13/13；中国/美国/全球=818/1014/5766；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-10-21 13:24 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1075,7 +1075,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 35
+      "count": 36
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -1145,7 +1145,7 @@
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 5
+      "count": 60
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
@@ -1155,12 +1155,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 23
+      "count": 21
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 35
+      "count": 36
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
