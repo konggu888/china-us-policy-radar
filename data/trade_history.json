@@ -21879,7 +21879,7 @@
     }
   },
   {
-    "updatedAt": "2026-10-22T01:03:36.533988+00:00",
+    "updatedAt": "2026-10-22T05:58:47.271862+00:00",
     "focusMapVersion": "2026-09-19",
     "focusSectorCount": 12,
     "focusTrade": {
@@ -22474,42 +22474,56 @@
         "source": "U.S. Census Bureau",
         "sourceUrl": "https://www.census.gov/foreign-trade/balance/c5700.html",
         "available": true,
-        "fetchedAt": "2026-10-22T00:59:22.772312+00:00"
+        "fetchedAt": "2026-10-22T05:58:05.021807+00:00"
       },
       "Malaysia": {
         "countryCode": "5570",
         "source": "U.S. Census Bureau",
         "sourceUrl": "https://www.census.gov/foreign-trade/balance/c5570.html",
         "available": true,
-        "fetchedAt": "2026-10-22T00:59:23.544730+00:00"
+        "fetchedAt": "2026-10-22T05:58:05.067682+00:00"
       },
       "Mexico": {
         "countryCode": "2010",
         "source": "U.S. Census Bureau",
         "sourceUrl": "https://www.census.gov/foreign-trade/balance/c2010.html",
         "available": true,
-        "fetchedAt": "2026-10-22T00:59:23.607080+00:00"
+        "fetchedAt": "2026-10-22T05:58:05.118489+00:00"
       },
       "India": {
         "countryCode": "5330",
         "source": "U.S. Census Bureau",
         "sourceUrl": "https://www.census.gov/foreign-trade/balance/c5330.html",
         "available": true,
-        "fetchedAt": "2026-10-22T00:59:23.651892+00:00"
+        "fetchedAt": "2026-10-22T05:58:05.193088+00:00"
       },
       "Japan": {
         "countryCode": "5880",
         "source": "U.S. Census Bureau",
         "sourceUrl": "https://www.census.gov/foreign-trade/balance/c5880.html",
         "available": true,
-        "fetchedAt": "2026-10-22T00:59:24.438750+00:00"
+        "fetchedAt": "2026-10-22T05:58:05.241418+00:00"
       },
       "Korea": {
         "countryCode": "5800",
         "source": "U.S. Census Bureau",
         "sourceUrl": "https://www.census.gov/foreign-trade/balance/c5800.html",
         "available": true,
-        "fetchedAt": "2026-10-22T00:59:25.380420+00:00"
+        "fetchedAt": "2026-10-22T05:58:05.281065+00:00"
+      },
+      "Thailand": {
+        "countryCode": "5490",
+        "source": "U.S. Census Bureau",
+        "sourceUrl": "https://www.census.gov/foreign-trade/balance/c5490.html",
+        "available": true,
+        "fetchedAt": "2026-10-22T05:58:05.357396+00:00"
+      },
+      "Germany": {
+        "countryCode": "4280",
+        "source": "U.S. Census Bureau",
+        "sourceUrl": "https://www.census.gov/foreign-trade/balance/c4280.html",
+        "available": true,
+        "fetchedAt": "2026-10-22T05:58:05.433685+00:00"
       }
     },
     "chinaCustoms": {
@@ -22518,15 +22532,13 @@
       "sourceUrl": "https://online.customs.gov.cn/"
     },
     "quality": {
-      "errors": 3,
+      "errors": 1,
       "errorDetails": [
-        "US_CENSUS:Census China trade table not parsed",
-        "THIRD_Thailand:HTTP Error 500: Internal Server Error",
-        "THIRD_Germany:HTTP Error 500: Internal Server Error"
+        "US_CENSUS:Census China trade table not parsed"
       ],
       "usChinaStatus": "MISSING",
       "focusTradeStatus": "OK",
-      "thirdCountryCount": 6
+      "thirdCountryCount": 8
     }
   }
 ]
