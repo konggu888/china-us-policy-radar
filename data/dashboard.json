@@ -1,51 +1,51 @@
 {
-  "updated": "2026-10-23 06:48 UTC",
+  "updated": "2026-10-23 12:41 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6716,
-      "change_pct": -0.09,
+      "value": 6.6595,
+      "change_pct": -0.28,
       "time": "2026-10-23",
       "name": "USD/CNY"
     },
     {
       "symbol": "000001.SS",
-      "value": 3680.2412,
-      "change_pct": 0.61,
+      "value": 3690.4753,
+      "change_pct": 0.89,
       "time": "2026-10-23",
       "name": "上证指数"
     },
     {
       "symbol": "399001.SZ",
-      "value": 11654.166,
-      "change_pct": 2.61,
+      "value": 11673.8262,
+      "change_pct": 2.79,
       "time": "2026-10-23",
       "name": "深证成指"
     },
     {
       "symbol": "000300.SS",
-      "value": 4096.1455,
+      "value": 4105.3286,
       "change_pct": 0.0,
       "time": "2026-10-23",
       "name": "沪深300"
     },
     {
       "symbol": "000905.SS",
-      "value": 6798.1387,
+      "value": 6814.4429,
       "change_pct": 0.0,
       "time": "2026-10-23",
       "name": "中证500"
     },
     {
       "symbol": "399006.SZ",
-      "value": 2680.1484,
+      "value": 2684.0972,
       "change_pct": 0.0,
       "time": "2026-10-23",
       "name": "创业板指"
     },
     {
       "symbol": "000688.SS",
-      "value": 1342.9081,
+      "value": 1345.5146,
       "change_pct": 0.0,
       "time": "2026-10-23",
       "name": "科创50"
@@ -59,30 +59,30 @@
     },
     {
       "symbol": "^TNX",
-      "value": 4.953,
-      "change_pct": -3.75,
-      "time": "2026-10-22",
+      "value": 4.988,
+      "change_pct": 0.71,
+      "time": "2026-10-23",
       "name": "美国10年期收益率"
     },
     {
       "symbol": "BZ=F",
-      "value": 114.49,
-      "change_pct": 1.17,
+      "value": 110.29,
+      "change_pct": -2.54,
       "time": "2026-10-23",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4027.5,
-      "change_pct": -0.81,
+      "value": 4040.7,
+      "change_pct": -0.49,
       "time": "2026-10-23",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 19.03,
-      "change_pct": 14.09,
-      "time": "2026-10-22",
+      "value": 19.72,
+      "change_pct": 3.63,
+      "time": "2026-10-23",
       "name": "VIX"
     }
   ],
@@ -223,32 +223,32 @@
   "a_share_market": {
     "上证指数": {
       "ticker": "000001.SS",
-      "latest": 3678.6189,
-      "daily_pct": 0.56,
-      "weekly_pct": -1.01,
-      "monthly_pct": -5.47,
-      "quarterly_pct": -3.1,
-      "six_month_pct": -9.2,
+      "latest": 3690.4753,
+      "daily_pct": 0.89,
+      "weekly_pct": -0.69,
+      "monthly_pct": -5.17,
+      "quarterly_pct": -2.79,
+      "six_month_pct": -8.91,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
       "weekly_rank": 1
     },
     "深证成指": {
       "ticker": "399001.SZ",
-      "latest": 11631.582,
-      "daily_pct": 2.41,
-      "weekly_pct": -1.45,
-      "monthly_pct": -13.55,
-      "quarterly_pct": -14.54,
-      "six_month_pct": -21.86,
+      "latest": 11673.8262,
+      "daily_pct": 2.79,
+      "weekly_pct": -1.09,
+      "monthly_pct": -13.24,
+      "quarterly_pct": -14.23,
+      "six_month_pct": -21.58,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
       "weekly_rank": 2
     },
     "沪深300": {
       "ticker": "000300.SS",
-      "latest": 4104.75,
-      "daily_pct": 1.7,
+      "latest": 4105.33,
+      "daily_pct": 1.71,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -260,8 +260,8 @@
     },
     "中证500": {
       "ticker": "000905.SS",
-      "latest": 6825.49,
-      "daily_pct": 2.56,
+      "latest": 6814.44,
+      "daily_pct": 2.39,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -273,8 +273,8 @@
     },
     "中证1000": {
       "ticker": "000852.SS",
-      "latest": 6748.58,
-      "daily_pct": 2.59,
+      "latest": 6734.55,
+      "daily_pct": 2.38,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -286,8 +286,8 @@
     },
     "创业板指": {
       "ticker": "399006.SZ",
-      "latest": 2689.81,
-      "daily_pct": 4.38,
+      "latest": 2684.1,
+      "daily_pct": 4.16,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -299,8 +299,8 @@
     },
     "科创50": {
       "ticker": "000688.SS",
-      "latest": 1350.66,
-      "daily_pct": 3.43,
+      "latest": 1345.51,
+      "daily_pct": 3.04,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
@@ -450,12 +450,12 @@
       {
         "name": "上证指数",
         "ticker": "000001.SS",
-        "latest": 3678.6189,
-        "daily_pct": 0.56,
-        "weekly_pct": -1.01,
-        "monthly_pct": -5.47,
-        "quarterly_pct": -3.1,
-        "six_month_pct": -9.2,
+        "latest": 3690.4753,
+        "daily_pct": 0.89,
+        "weekly_pct": -0.69,
+        "monthly_pct": -5.17,
+        "quarterly_pct": -2.79,
+        "six_month_pct": -8.91,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 1
@@ -463,12 +463,12 @@
       {
         "name": "深证成指",
         "ticker": "399001.SZ",
-        "latest": 11631.582,
-        "daily_pct": 2.41,
-        "weekly_pct": -1.45,
-        "monthly_pct": -13.55,
-        "quarterly_pct": -14.54,
-        "six_month_pct": -21.86,
+        "latest": 11673.8262,
+        "daily_pct": 2.79,
+        "weekly_pct": -1.09,
+        "monthly_pct": -13.24,
+        "quarterly_pct": -14.23,
+        "six_month_pct": -21.58,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 2
@@ -476,8 +476,8 @@
       {
         "name": "沪深300",
         "ticker": "000300.SS",
-        "latest": 4104.75,
-        "daily_pct": 1.7,
+        "latest": 4105.33,
+        "daily_pct": 1.71,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -490,8 +490,8 @@
       {
         "name": "中证500",
         "ticker": "000905.SS",
-        "latest": 6825.49,
-        "daily_pct": 2.56,
+        "latest": 6814.44,
+        "daily_pct": 2.39,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -504,8 +504,8 @@
       {
         "name": "中证1000",
         "ticker": "000852.SS",
-        "latest": 6748.58,
-        "daily_pct": 2.59,
+        "latest": 6734.55,
+        "daily_pct": 2.38,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -520,8 +520,8 @@
       {
         "name": "科创50",
         "ticker": "000688.SS",
-        "latest": 1350.66,
-        "daily_pct": 3.43,
+        "latest": 1345.51,
+        "daily_pct": 3.04,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -534,8 +534,8 @@
       {
         "name": "创业板指",
         "ticker": "399006.SZ",
-        "latest": 2689.81,
-        "daily_pct": 4.38,
+        "latest": 2684.1,
+        "daily_pct": 4.16,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -548,8 +548,8 @@
       {
         "name": "中证1000",
         "ticker": "000852.SS",
-        "latest": 6748.58,
-        "daily_pct": 2.59,
+        "latest": 6734.55,
+        "daily_pct": 2.38,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -562,8 +562,8 @@
       {
         "name": "中证500",
         "ticker": "000905.SS",
-        "latest": 6825.49,
-        "daily_pct": 2.56,
+        "latest": 6814.44,
+        "daily_pct": 2.39,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -576,8 +576,8 @@
       {
         "name": "沪深300",
         "ticker": "000300.SS",
-        "latest": 4104.75,
-        "daily_pct": 1.7,
+        "latest": 4105.33,
+        "daily_pct": 1.71,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-10-23 06:48 UTC"
+    "asof": "2026-10-23 12:41 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,11 +599,11 @@
     "china": [
       [
         "全球政策",
-        407
+        408
       ],
       [
         "中美博弈",
-        201
+        203
       ],
       [
         "科技 / AI",
@@ -611,25 +611,25 @@
       ],
       [
         "金融",
-        34
+        35
       ],
       [
         "外交",
         30
       ],
       [
-        "国家安全",
-        28
+        "经济",
+        29
       ]
     ],
     "us": [
       [
         "全球政策",
-        483
+        484
       ],
       [
         "中美博弈",
-        217
+        216
       ],
       [
         "科技 / AI",
@@ -637,7 +637,7 @@
       ],
       [
         "政治",
-        52
+        53
       ],
       [
         "金融",
@@ -651,27 +651,27 @@
     "global": [
       [
         "全球政策",
-        3046
+        3058
       ],
       [
         "中美博弈",
-        1267
+        1275
       ],
       [
         "科技 / AI",
-        637
+        639
       ],
       [
         "贸易 / 供应链",
-        275
+        277
       ],
       [
         "政治",
-        170
+        173
       ],
       [
         "内政",
-        154
+        155
       ]
     ]
   },
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 1893
+      "count": 1899
     },
     {
       "keyword": "产业升级",
@@ -694,15 +694,15 @@
     },
     {
       "keyword": "开放",
-      "count": 190
+      "count": 191
     },
     {
       "keyword": "安全",
-      "count": 241
+      "count": 242
     },
     {
       "keyword": "贸易",
-      "count": 458
+      "count": 460
     }
   ],
   "policy_source_matrix": [
@@ -781,15 +781,15 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 839,
+      "total": 844,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 407
+          "count": 408
         },
         {
           "name": "中美博弈",
-          "count": 201
+          "count": 203
         },
         {
           "name": "科技 / AI",
@@ -797,34 +797,38 @@
         },
         {
           "name": "金融",
-          "count": 34
+          "count": 35
         },
         {
           "name": "外交",
           "count": 30
         },
         {
-          "name": "国家安全",
-          "count": 28
+          "name": "经济",
+          "count": 29
         }
       ],
       "risk_high": 50
     },
     {
       "side": "美国",
-      "total": 1047,
+      "total": 1049,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 483
+          "count": 484
         },
         {
           "name": "中美博弈",
-          "count": 217
+          "count": 216
         },
         {
           "name": "科技 / AI",
           "count": 90
+        },
+        {
+          "name": "政治",
+          "count": 53
         },
         {
           "name": "金融",
@@ -832,10 +836,6 @@
         },
         {
           "name": "贸易 / 供应链",
-          "count": 52
-        },
-        {
-          "name": "政治",
           "count": 52
         }
       ],
@@ -845,7 +845,7 @@
   "today_focus": [
     {
       "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-      "titleZh": "特朗普总统是对的：美国控制霍尔木兹海峡",
+      "titleZh": "President Trump Was Right: America Controls the Strait of Hormuz",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
       "risk": "极高",
       "category": "国防",
@@ -862,7 +862,7 @@
     },
     {
       "title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
-      "titleZh": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
+      "titleZh": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
       "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
       "risk": "高",
       "category": "能源 / 资源",
@@ -979,8 +979,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 7896 条；本轮发现 297 条；13类覆盖=13/13；中国/美国/全球=839/1045/6012；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-10-23 06:48 UTC",
+  "collection_message": "长期情报库：当前工作集 7940 条；本轮发现 252 条；13类覆盖=13/13；中国/美国/全球=844/1049/6047；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-10-23 12:41 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -994,8 +994,8 @@
     },
     "OfficialPage:US Defense Department": {
       "method": "direct_first_party_html",
-      "status": "ok",
-      "count": 5
+      "status": "error:HTTPError",
+      "count": 0
     },
     "OfficialPage:US Treasury": {
       "method": "direct_first_party_html",
@@ -1114,8 +1114,8 @@
     },
     "OfficialFeed:BLS": {
       "method": "direct_first_party_rss",
-      "status": "ok",
-      "count": 1
+      "status": "error:HTTPError",
+      "count": 0
     },
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
@@ -1140,7 +1140,7 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 57
+      "count": 12
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -1150,17 +1150,17 @@
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 16
+      "count": 17
     },
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 25
+      "count": 26
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 28
+      "count": 24
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
