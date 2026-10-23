@@ -172919,7 +172919,7 @@
     }
   },
   {
-    "updatedAt": "2026-10-23T01:37:33.448919+00:00",
+    "updatedAt": "2026-10-23T06:40:53.265069+00:00",
     "china": {
       "source": "国家统计局",
       "status": "MISSING",
@@ -172928,12 +172928,12 @@
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+      "error": "<urlopen error [Errno 104] Connection reset by peer>",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-10-23T01:34:42.558690+00:00",
+      "fetchedAt": "2026-10-23T06:38:49.110654+00:00",
       "records": [
         {
           "indicator": "M2_yoy_pct",
