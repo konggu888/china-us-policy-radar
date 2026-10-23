@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-23 17:38 UTC",
+  "updated": "2026-10-23 21:15 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6596,
-      "change_pct": -0.27,
+      "value": 6.6606,
+      "change_pct": -0.26,
       "time": "2026-10-23",
       "name": "USD/CNY"
     },
@@ -52,36 +52,36 @@
     },
     {
       "symbol": "^GSPC",
-      "value": 7628.96,
-      "change_pct": -0.45,
+      "value": 7623.6802,
+      "change_pct": -0.52,
       "time": "2026-10-23",
       "name": "标普500"
     },
     {
       "symbol": "^TNX",
-      "value": 4.99,
-      "change_pct": 0.75,
+      "value": 4.988,
+      "change_pct": 0.71,
       "time": "2026-10-23",
       "name": "美国10年期收益率"
     },
     {
       "symbol": "BZ=F",
-      "value": 111.52,
-      "change_pct": -1.46,
+      "value": 111.66,
+      "change_pct": -1.33,
       "time": "2026-10-23",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4007.8999,
-      "change_pct": -1.29,
+      "value": 4010.0,
+      "change_pct": -1.24,
       "time": "2026-10-23",
       "name": "黄金"
     },
     {
       "symbol": "^VIX",
-      "value": 20.19,
-      "change_pct": 6.1,
+      "value": 19.45,
+      "change_pct": 2.21,
       "time": "2026-10-23",
       "name": "VIX"
     }
@@ -89,135 +89,135 @@
   "us_sector_market": {
     "科技": {
       "ticker": "XLK",
-      "latest": 183.28,
-      "daily_pct": 0.52,
-      "weekly_pct": -0.1,
-      "monthly_pct": -5.87,
-      "quarterly_pct": 5.15,
-      "six_month_pct": 14.14,
+      "latest": 183.23,
+      "daily_pct": 0.49,
+      "weekly_pct": -0.13,
+      "monthly_pct": -5.9,
+      "quarterly_pct": 5.12,
+      "six_month_pct": 14.11,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
       "weekly_rank": 9
     },
     "金融": {
       "ticker": "XLF",
-      "latest": 55.895,
-      "daily_pct": -1.33,
+      "latest": 55.9,
+      "daily_pct": -1.32,
       "weekly_pct": 0.68,
-      "monthly_pct": 2.5,
-      "quarterly_pct": -1.73,
-      "six_month_pct": 7.88,
+      "monthly_pct": 2.51,
+      "quarterly_pct": -1.72,
+      "six_month_pct": 7.89,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
-      "weekly_rank": 6
+      "weekly_rank": 7
     },
     "能源": {
       "ticker": "XLE",
-      "latest": 69.28,
-      "daily_pct": 2.53,
-      "weekly_pct": 1.52,
-      "monthly_pct": 10.67,
-      "quarterly_pct": 18.71,
-      "six_month_pct": 22.04,
+      "latest": 69.33,
+      "daily_pct": 2.6,
+      "weekly_pct": 1.6,
+      "monthly_pct": 10.75,
+      "quarterly_pct": 18.8,
+      "six_month_pct": 22.12,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
-      "weekly_rank": 2
+      "weekly_rank": 1
     },
     "工业": {
       "ticker": "XLI",
-      "latest": 164.77,
-      "daily_pct": -1.18,
-      "weekly_pct": -1.78,
-      "monthly_pct": -2.4,
-      "quarterly_pct": -10.06,
-      "six_month_pct": -4.49,
+      "latest": 164.62,
+      "daily_pct": -1.27,
+      "weekly_pct": -1.87,
+      "monthly_pct": -2.49,
+      "quarterly_pct": -10.14,
+      "six_month_pct": -4.57,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
       "weekly_rank": 10
     },
     "可选消费": {
       "ticker": "XLY",
-      "latest": 113.26,
-      "daily_pct": -1.52,
-      "weekly_pct": 0.71,
-      "monthly_pct": 2.66,
-      "quarterly_pct": 2.18,
-      "six_month_pct": -3.89,
+      "latest": 113.1,
+      "daily_pct": -1.66,
+      "weekly_pct": 0.57,
+      "monthly_pct": 2.52,
+      "quarterly_pct": 2.04,
+      "six_month_pct": -4.02,
+      "asof": "2026-10-23",
+      "provider": "Yahoo Finance",
+      "weekly_rank": 8
+    },
+    "必选消费": {
+      "ticker": "XLP",
+      "latest": 88.26,
+      "daily_pct": -1.92,
+      "weekly_pct": 0.73,
+      "monthly_pct": 8.03,
+      "quarterly_pct": 3.4,
+      "six_month_pct": 7.19,
+      "asof": "2026-10-23",
+      "provider": "Yahoo Finance",
+      "weekly_rank": 6
+    },
+    "医疗": {
+      "ticker": "XLV",
+      "latest": 179.28,
+      "daily_pct": -1.11,
+      "weekly_pct": 1.45,
+      "monthly_pct": 5.54,
+      "quarterly_pct": 9.72,
+      "six_month_pct": 24.97,
+      "asof": "2026-10-23",
+      "provider": "Yahoo Finance",
+      "weekly_rank": 2
+    },
+    "材料": {
+      "ticker": "XLB",
+      "latest": 51.31,
+      "daily_pct": -0.74,
+      "weekly_pct": 0.77,
+      "monthly_pct": 3.28,
+      "quarterly_pct": -0.16,
+      "six_month_pct": -0.91,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
       "weekly_rank": 5
     },
-    "必选消费": {
-      "ticker": "XLP",
-      "latest": 88.155,
-      "daily_pct": -2.04,
-      "weekly_pct": 0.61,
-      "monthly_pct": 7.9,
-      "quarterly_pct": 3.27,
-      "six_month_pct": 7.06,
-      "asof": "2026-10-23",
-      "provider": "Yahoo Finance",
-      "weekly_rank": 7
-    },
-    "医疗": {
-      "ticker": "XLV",
-      "latest": 179.42,
-      "daily_pct": -1.04,
-      "weekly_pct": 1.53,
-      "monthly_pct": 5.62,
-      "quarterly_pct": 9.8,
-      "six_month_pct": 25.07,
-      "asof": "2026-10-23",
-      "provider": "Yahoo Finance",
-      "weekly_rank": 1
-    },
-    "材料": {
-      "ticker": "XLB",
-      "latest": 51.37,
-      "daily_pct": -0.62,
-      "weekly_pct": 0.88,
-      "monthly_pct": 3.4,
-      "quarterly_pct": -0.04,
-      "six_month_pct": -0.79,
+    "房地产": {
+      "ticker": "XLRE",
+      "latest": 42.57,
+      "daily_pct": 0.12,
+      "weekly_pct": 0.97,
+      "monthly_pct": 2.21,
+      "quarterly_pct": -6.97,
+      "six_month_pct": -2.12,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
       "weekly_rank": 3
     },
-    "房地产": {
-      "ticker": "XLRE",
-      "latest": 42.465,
-      "daily_pct": -0.13,
-      "weekly_pct": 0.72,
-      "monthly_pct": 1.96,
-      "quarterly_pct": -7.2,
-      "six_month_pct": -2.36,
-      "asof": "2026-10-23",
-      "provider": "Yahoo Finance",
-      "weekly_rank": 4
-    },
     "通信服务": {
       "ticker": "XLC",
-      "latest": 106.16,
-      "daily_pct": -1.17,
-      "weekly_pct": -3.77,
-      "monthly_pct": -6.87,
-      "quarterly_pct": -1.39,
-      "six_month_pct": -8.33,
+      "latest": 105.51,
+      "daily_pct": -1.78,
+      "weekly_pct": -4.36,
+      "monthly_pct": -7.44,
+      "quarterly_pct": -2.0,
+      "six_month_pct": -8.89,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
       "weekly_rank": 11
     },
     "公用事业": {
       "ticker": "XLU",
-      "latest": 42.445,
-      "daily_pct": -0.99,
-      "weekly_pct": 0.56,
-      "monthly_pct": 7.84,
-      "quarterly_pct": -7.08,
-      "six_month_pct": -8.11,
+      "latest": 42.56,
+      "daily_pct": -0.72,
+      "weekly_pct": 0.83,
+      "monthly_pct": 8.13,
+      "quarterly_pct": -6.83,
+      "six_month_pct": -7.86,
       "asof": "2026-10-23",
       "provider": "Yahoo Finance",
-      "weekly_rank": 8
+      "weekly_rank": 4
     }
   },
   "a_share_market": {
@@ -314,66 +314,66 @@
   "market_highlights": {
     "us_sector_risers": [
       {
-        "name": "医疗",
-        "ticker": "XLV",
-        "latest": 179.42,
-        "daily_pct": -1.04,
-        "weekly_pct": 1.53,
-        "monthly_pct": 5.62,
-        "quarterly_pct": 9.8,
-        "six_month_pct": 25.07,
+        "name": "能源",
+        "ticker": "XLE",
+        "latest": 69.33,
+        "daily_pct": 2.6,
+        "weekly_pct": 1.6,
+        "monthly_pct": 10.75,
+        "quarterly_pct": 18.8,
+        "six_month_pct": 22.12,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 1
       },
       {
-        "name": "能源",
-        "ticker": "XLE",
-        "latest": 69.28,
-        "daily_pct": 2.53,
-        "weekly_pct": 1.52,
-        "monthly_pct": 10.67,
-        "quarterly_pct": 18.71,
-        "six_month_pct": 22.04,
+        "name": "医疗",
+        "ticker": "XLV",
+        "latest": 179.28,
+        "daily_pct": -1.11,
+        "weekly_pct": 1.45,
+        "monthly_pct": 5.54,
+        "quarterly_pct": 9.72,
+        "six_month_pct": 24.97,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 2
       },
       {
-        "name": "材料",
-        "ticker": "XLB",
-        "latest": 51.37,
-        "daily_pct": -0.62,
-        "weekly_pct": 0.88,
-        "monthly_pct": 3.4,
-        "quarterly_pct": -0.04,
-        "six_month_pct": -0.79,
+        "name": "房地产",
+        "ticker": "XLRE",
+        "latest": 42.57,
+        "daily_pct": 0.12,
+        "weekly_pct": 0.97,
+        "monthly_pct": 2.21,
+        "quarterly_pct": -6.97,
+        "six_month_pct": -2.12,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 3
       },
       {
-        "name": "房地产",
-        "ticker": "XLRE",
-        "latest": 42.465,
-        "daily_pct": -0.13,
-        "weekly_pct": 0.72,
-        "monthly_pct": 1.96,
-        "quarterly_pct": -7.2,
-        "six_month_pct": -2.36,
+        "name": "公用事业",
+        "ticker": "XLU",
+        "latest": 42.56,
+        "daily_pct": -0.72,
+        "weekly_pct": 0.83,
+        "monthly_pct": 8.13,
+        "quarterly_pct": -6.83,
+        "six_month_pct": -7.86,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 4
       },
       {
-        "name": "可选消费",
-        "ticker": "XLY",
-        "latest": 113.26,
-        "daily_pct": -1.52,
-        "weekly_pct": 0.71,
-        "monthly_pct": 2.66,
-        "quarterly_pct": 2.18,
-        "six_month_pct": -3.89,
+        "name": "材料",
+        "ticker": "XLB",
+        "latest": 51.31,
+        "daily_pct": -0.74,
+        "weekly_pct": 0.77,
+        "monthly_pct": 3.28,
+        "quarterly_pct": -0.16,
+        "six_month_pct": -0.91,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 5
@@ -383,12 +383,12 @@
       {
         "name": "通信服务",
         "ticker": "XLC",
-        "latest": 106.16,
-        "daily_pct": -1.17,
-        "weekly_pct": -3.77,
-        "monthly_pct": -6.87,
-        "quarterly_pct": -1.39,
-        "six_month_pct": -8.33,
+        "latest": 105.51,
+        "daily_pct": -1.78,
+        "weekly_pct": -4.36,
+        "monthly_pct": -7.44,
+        "quarterly_pct": -2.0,
+        "six_month_pct": -8.89,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 11
@@ -396,12 +396,12 @@
       {
         "name": "工业",
         "ticker": "XLI",
-        "latest": 164.77,
-        "daily_pct": -1.18,
-        "weekly_pct": -1.78,
-        "monthly_pct": -2.4,
-        "quarterly_pct": -10.06,
-        "six_month_pct": -4.49,
+        "latest": 164.62,
+        "daily_pct": -1.27,
+        "weekly_pct": -1.87,
+        "monthly_pct": -2.49,
+        "quarterly_pct": -10.14,
+        "six_month_pct": -4.57,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 10
@@ -409,38 +409,38 @@
       {
         "name": "科技",
         "ticker": "XLK",
-        "latest": 183.28,
-        "daily_pct": 0.52,
-        "weekly_pct": -0.1,
-        "monthly_pct": -5.87,
-        "quarterly_pct": 5.15,
-        "six_month_pct": 14.14,
+        "latest": 183.23,
+        "daily_pct": 0.49,
+        "weekly_pct": -0.13,
+        "monthly_pct": -5.9,
+        "quarterly_pct": 5.12,
+        "six_month_pct": 14.11,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 9
       },
       {
-        "name": "公用事业",
-        "ticker": "XLU",
-        "latest": 42.445,
-        "daily_pct": -0.99,
-        "weekly_pct": 0.56,
-        "monthly_pct": 7.84,
-        "quarterly_pct": -7.08,
-        "six_month_pct": -8.11,
+        "name": "可选消费",
+        "ticker": "XLY",
+        "latest": 113.1,
+        "daily_pct": -1.66,
+        "weekly_pct": 0.57,
+        "monthly_pct": 2.52,
+        "quarterly_pct": 2.04,
+        "six_month_pct": -4.02,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 8
       },
       {
-        "name": "必选消费",
-        "ticker": "XLP",
-        "latest": 88.155,
-        "daily_pct": -2.04,
-        "weekly_pct": 0.61,
-        "monthly_pct": 7.9,
-        "quarterly_pct": 3.27,
-        "six_month_pct": 7.06,
+        "name": "金融",
+        "ticker": "XLF",
+        "latest": 55.9,
+        "daily_pct": -1.32,
+        "weekly_pct": 0.68,
+        "monthly_pct": 2.51,
+        "quarterly_pct": -1.72,
+        "six_month_pct": 7.89,
         "asof": "2026-10-23",
         "provider": "Yahoo Finance",
         "weekly_rank": 7
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-10-23 17:38 UTC"
+    "asof": "2026-10-23 21:15 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,7 +599,7 @@
     "china": [
       [
         "全球政策",
-        408
+        409
       ],
       [
         "中美博弈",
@@ -611,7 +611,7 @@
       ],
       [
         "金融",
-        35
+        36
       ],
       [
         "外交",
@@ -625,7 +625,7 @@
     "us": [
       [
         "全球政策",
-        486
+        488
       ],
       [
         "中美博弈",
@@ -633,45 +633,45 @@
       ],
       [
         "科技 / AI",
-        90
+        91
       ],
       [
         "政治",
-        54
-      ],
-      [
-        "金融",
-        52
+        55
       ],
       [
         "贸易 / 供应链",
+        53
+      ],
+      [
+        "金融",
         52
       ]
     ],
     "global": [
       [
         "全球政策",
-        3068
+        3078
       ],
       [
         "中美博弈",
-        1282
+        1286
       ],
       [
         "科技 / AI",
-        644
+        648
       ],
       [
         "贸易 / 供应链",
-        279
+        280
       ],
       [
         "政治",
-        176
+        177
       ],
       [
         "内政",
-        158
+        157
       ]
     ]
   },
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 1909
+      "count": 1915
     },
     {
       "keyword": "产业升级",
@@ -702,7 +702,7 @@
     },
     {
       "keyword": "贸易",
-      "count": 462
+      "count": 464
     }
   ],
   "policy_source_matrix": [
@@ -781,11 +781,11 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 845,
+      "total": 847,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 408
+          "count": 409
         },
         {
           "name": "中美博弈",
@@ -797,7 +797,7 @@
         },
         {
           "name": "金融",
-          "count": 35
+          "count": 36
         },
         {
           "name": "外交",
@@ -812,11 +812,11 @@
     },
     {
       "side": "美国",
-      "total": 1056,
+      "total": 1061,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 486
+          "count": 488
         },
         {
           "name": "中美博弈",
@@ -824,18 +824,18 @@
         },
         {
           "name": "科技 / AI",
-          "count": 90
+          "count": 91
         },
         {
           "name": "政治",
-          "count": 54
-        },
-        {
-          "name": "金融",
-          "count": 52
+          "count": 55
         },
         {
           "name": "贸易 / 供应链",
+          "count": 53
+        },
+        {
+          "name": "金融",
           "count": 52
         }
       ],
@@ -943,6 +943,23 @@
       "importance_reason": "风险信号较强；包含明确政策/行动信号；可能影响市场、产业或供应链"
     },
     {
+      "title": "West Bank: Guterres alarmed as Israel imposes sweeping closures after deadly Hebron attack The UN said on Friday it was “extremely alarmed” by intensifying violence in the occupied West Bank, as Israel moved to seal off the territory follow",
+      "titleZh": "West Bank: Guterres alarmed as Israel imposes sweeping closures after deadly Hebron attack The UN said on Friday it was “extremely alarmed” by intensifying violence in the occupied West Bank, as Israel moved to seal off the territory follow",
+      "url": "https://news.un.org/en/story/2026/10/1168660",
+      "risk": "高",
+      "category": "科技 / AI",
+      "region": "global",
+      "source": "UN News",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI",
+        "金融"
+      ],
+      "importance_score": 77,
+      "importance_level": "A",
+      "importance_reason": "风险信号较强；包含明确政策/行动信号；可能影响市场、产业或供应链"
+    },
+    {
       "title": "IAEA-led Team Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
       "titleZh": "IAEA-led Team Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
       "url": "http://www.iaea.org/newscenter/pressreleases/iaea-led-team-samples-alps-treated-water-at-fukushima-daiichi-nuclear-power-station-under-additional-measures",
@@ -958,29 +975,13 @@
       "importance_score": 76,
       "importance_level": "A",
       "importance_reason": "风险信号较强；涉及战略安全或关键链条；可能影响市场、产业或供应链"
-    },
-    {
-      "title": "IAEA Lise Meitner Programme Advances Women’s Nuclear Careers through Visit to the Russian Federation",
-      "titleZh": "IAEA Lise Meitner Programme Advances Women’s Nuclear Careers through Visit to the Russian Federation",
-      "url": "http://www.iaea.org/newscenter/news/iaea-lise-meitner-programme-advances-womens-nuclear-careers-through-visit-to-the-russian-federation",
-      "risk": "高",
-      "category": "中美博弈",
-      "region": "global",
-      "source": "IAEA",
-      "verification": "单一官方",
-      "impact_industry": [
-        "中美博弈"
-      ],
-      "importance_score": 76,
-      "importance_level": "A",
-      "importance_reason": "风险信号较强；涉及战略安全或关键链条；可能影响市场、产业或供应链"
     }
   ],
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 7985 条；本轮发现 269 条；13类覆盖=13/13；中国/美国/全球=845/1056/6084；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-10-23 17:38 UTC",
+  "collection_message": "长期情报库：当前工作集 8014 条；本轮发现 296 条；13类覆盖=13/13；中国/美国/全球=847/1061/6106；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-10-23 21:15 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
