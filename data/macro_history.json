@@ -182984,7 +182984,7 @@
     }
   },
   {
-    "updatedAt": "2026-10-24T07:44:01.286302+00:00",
+    "updatedAt": "2026-10-24T12:51:16.546352+00:00",
     "china": {
       "source": "国家统计局",
       "status": "MISSING",
@@ -182993,12 +182993,12 @@
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
+      "error": "<urlopen error [Errno 104] Connection reset by peer>",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-10-24T07:33:17.853297+00:00",
+      "fetchedAt": "2026-10-24T12:38:00.755608+00:00",
       "records": [
         {
           "indicator": "M2_yoy_pct",
