@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24 12:56 UTC",
+  "updated": "2026-10-24 16:51 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -1234,7 +1234,112 @@
     }
   ],
   "a_share_board_status": "ok",
-  "a_share_weekly_industry_boards": [],
+  "a_share_weekly_industry_boards": [
+    {
+      "code": "BK1295",
+      "name": "其他数字媒体",
+      "change_pct": 15.02,
+      "price": 1417.66,
+      "change": 185.12,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "凡拓数创",
+      "weekly_pct": 49.16,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1408",
+      "name": "机器人",
+      "change_pct": 7.98,
+      "price": 9257.45,
+      "change": 684.18,
+      "up_count": 22,
+      "down_count": 0,
+      "leader": "派斯林",
+      "weekly_pct": 14.5,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1030",
+      "name": "电机Ⅱ",
+      "change_pct": 5.18,
+      "price": 2390.77,
+      "change": 117.72,
+      "up_count": 27,
+      "down_count": 0,
+      "leader": "华阳智能",
+      "weekly_pct": 12.6,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1337",
+      "name": "品牌消费电子",
+      "change_pct": 5.39,
+      "price": 2665.18,
+      "change": 136.31,
+      "up_count": 11,
+      "down_count": 0,
+      "leader": "安克创新",
+      "weekly_pct": 10.54,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1237",
+      "name": "自动化设备",
+      "change_pct": 4.97,
+      "price": 10189.68,
+      "change": 482.05,
+      "up_count": 89,
+      "down_count": 6,
+      "leader": "派斯林",
+      "weekly_pct": 7.54,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK0737",
+      "name": "软件开发",
+      "change_pct": 5.02,
+      "price": 1067.58,
+      "change": 51.04,
+      "up_count": 123,
+      "down_count": 10,
+      "leader": "理工能科",
+      "weekly_pct": 5.25,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1304",
+      "name": "锂电专用设备",
+      "change_pct": 5.25,
+      "price": 20185.74,
+      "change": 1006.66,
+      "up_count": 19,
+      "down_count": 0,
+      "leader": "利元亨",
+      "weekly_pct": -0.35,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1296",
+      "name": "视频媒体",
+      "change_pct": 6.56,
+      "price": 1123.0,
+      "change": 69.13,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "芒果超媒",
+      "weekly_pct": -1.61,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    }
+  ],
   "weekly_risers": [
     "能源",
     "医疗",
@@ -1250,8 +1355,114 @@
     "工业",
     "科技"
   ],
-  "a_share_weekly_risers": [],
-  "a_share_weekly_fallers": [],
+  "a_share_weekly_risers": [
+    {
+      "code": "BK1295",
+      "name": "其他数字媒体",
+      "change_pct": 15.02,
+      "price": 1417.66,
+      "change": 185.12,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "凡拓数创",
+      "weekly_pct": 49.16,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1408",
+      "name": "机器人",
+      "change_pct": 7.98,
+      "price": 9257.45,
+      "change": 684.18,
+      "up_count": 22,
+      "down_count": 0,
+      "leader": "派斯林",
+      "weekly_pct": 14.5,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1030",
+      "name": "电机Ⅱ",
+      "change_pct": 5.18,
+      "price": 2390.77,
+      "change": 117.72,
+      "up_count": 27,
+      "down_count": 0,
+      "leader": "华阳智能",
+      "weekly_pct": 12.6,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1337",
+      "name": "品牌消费电子",
+      "change_pct": 5.39,
+      "price": 2665.18,
+      "change": 136.31,
+      "up_count": 11,
+      "down_count": 0,
+      "leader": "安克创新",
+      "weekly_pct": 10.54,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1237",
+      "name": "自动化设备",
+      "change_pct": 4.97,
+      "price": 10189.68,
+      "change": 482.05,
+      "up_count": 89,
+      "down_count": 6,
+      "leader": "派斯林",
+      "weekly_pct": 7.54,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK0737",
+      "name": "软件开发",
+      "change_pct": 5.02,
+      "price": 1067.58,
+      "change": 51.04,
+      "up_count": 123,
+      "down_count": 10,
+      "leader": "理工能科",
+      "weekly_pct": 5.25,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    }
+  ],
+  "a_share_weekly_fallers": [
+    {
+      "code": "BK1296",
+      "name": "视频媒体",
+      "change_pct": 6.56,
+      "price": 1123.0,
+      "change": 69.13,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "芒果超媒",
+      "weekly_pct": -1.61,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    },
+    {
+      "code": "BK1304",
+      "name": "锂电专用设备",
+      "change_pct": 5.25,
+      "price": 20185.74,
+      "change": 1006.66,
+      "up_count": 19,
+      "down_count": 0,
+      "leader": "利元亨",
+      "weekly_pct": -0.35,
+      "weekly_period_start": "2026-10-16",
+      "weekly_period_end": "2026-10-23"
+    }
+  ],
   "a_share_board_risers": [
     "其他数字媒体",
     "机器人",
@@ -1270,7 +1481,7 @@
     "us_sector_count": 11,
     "a_share_index_count": 7,
     "a_share_board_count": 100,
-    "weekly_board_count": 0,
+    "weekly_board_count": 8,
     "status": "ok"
   }
 }
