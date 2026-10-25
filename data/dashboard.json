@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-25 13:00 UTC",
+  "updated": "2026-10-25 17:24 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6702,
-      "change_pct": -0.12,
+      "value": 6.6606,
+      "change_pct": -0.26,
       "time": "2026-10-25",
       "name": "USD/CNY"
     },
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-10-25 13:00 UTC"
+    "asof": "2026-10-25 17:24 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -603,7 +603,7 @@
       ],
       [
         "中美博弈",
-        213
+        212
       ],
       [
         "科技 / AI",
@@ -629,7 +629,7 @@
       ],
       [
         "中美博弈",
-        223
+        224
       ],
       [
         "科技 / AI",
@@ -637,7 +637,7 @@
       ],
       [
         "政治",
-        55
+        56
       ],
       [
         "贸易 / 供应链",
@@ -651,27 +651,27 @@
     "global": [
       [
         "全球政策",
-        3132
+        3143
       ],
       [
         "中美博弈",
-        1329
+        1340
       ],
       [
         "科技 / AI",
-        672
+        675
       ],
       [
         "贸易 / 供应链",
-        290
+        292
       ],
       [
         "政治",
-        190
+        191
       ],
       [
         "内政",
-        165
+        166
       ]
     ]
   },
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 1963
+      "count": 1969
     },
     {
       "keyword": "产业升级",
@@ -702,7 +702,7 @@
     },
     {
       "keyword": "贸易",
-      "count": 477
+      "count": 479
     }
   ],
   "policy_source_matrix": [
@@ -781,7 +781,7 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 865,
+      "total": 863,
       "top_categories": [
         {
           "name": "全球政策",
@@ -789,7 +789,7 @@
         },
         {
           "name": "中美博弈",
-          "count": 213
+          "count": 212
         },
         {
           "name": "科技 / AI",
@@ -812,7 +812,7 @@
     },
     {
       "side": "美国",
-      "total": 1072,
+      "total": 1075,
       "top_categories": [
         {
           "name": "全球政策",
@@ -820,7 +820,7 @@
         },
         {
           "name": "中美博弈",
-          "count": 223
+          "count": 224
         },
         {
           "name": "科技 / AI",
@@ -828,7 +828,7 @@
         },
         {
           "name": "政治",
-          "count": 55
+          "count": 56
         },
         {
           "name": "贸易 / 供应链",
@@ -845,7 +845,7 @@
   "today_focus": [
     {
       "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-      "titleZh": "特朗普总统是对的：美国控制着霍尔木兹海峡",
+      "titleZh": "President Trump Was Right: America Controls the Strait of Hormuz",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
       "risk": "极高",
       "category": "国防",
@@ -862,7 +862,7 @@
     },
     {
       "title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
-      "titleZh": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
+      "titleZh": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
       "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
       "risk": "高",
       "category": "能源 / 资源",
@@ -979,8 +979,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 8217 条；本轮发现 273 条；13类覆盖=13/13；中国/美国/全球=865/1072/6280；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-10-25 13:00 UTC",
+  "collection_message": "长期情报库：当前工作集 8248 条；本轮发现 299 条；13类覆盖=13/13；中国/美国/全球=863/1075/6310；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-10-25 17:24 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1030,7 +1030,7 @@
     "OfficialPage:BEA": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 9
+      "count": 8
     },
     "OfficialPage:China State Council": {
       "method": "direct_first_party_html",
@@ -1160,7 +1160,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 32
+      "count": 31
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",

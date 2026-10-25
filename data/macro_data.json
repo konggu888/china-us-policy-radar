@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T12:59:32.668104+00:00",
+  "updatedAt": "2026-10-25T17:18:16.262030+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -8,12 +8,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
+    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-10-25T12:41:36.523984+00:00",
+    "fetchedAt": "2026-10-25T17:10:31.745672+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
