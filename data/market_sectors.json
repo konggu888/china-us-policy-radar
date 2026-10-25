@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25 20:10 UTC",
+  "updated": "2026-10-25 22:43 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -231,8 +231,1009 @@
       "weekly_rank": 7
     }
   },
-  "a_share_industry_boards": [],
-  "a_share_board_status": "error:HTTPError",
+  "a_share_industry_boards": [
+    {
+      "code": "BK1295",
+      "name": "其他数字媒体",
+      "change_pct": 15.02,
+      "price": 1417.66,
+      "change": 185.12,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "凡拓数创"
+    },
+    {
+      "code": "BK1408",
+      "name": "机器人",
+      "change_pct": 7.98,
+      "price": 9257.45,
+      "change": 684.18,
+      "up_count": 22,
+      "down_count": 0,
+      "leader": "派斯林"
+    },
+    {
+      "code": "BK1296",
+      "name": "视频媒体",
+      "change_pct": 6.56,
+      "price": 1123.0,
+      "change": 69.13,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "芒果超媒"
+    },
+    {
+      "code": "BK1448",
+      "name": "横向通用软件",
+      "change_pct": 5.72,
+      "price": 6558.01,
+      "change": 354.57,
+      "up_count": 32,
+      "down_count": 2,
+      "leader": "绿盟科技"
+    },
+    {
+      "code": "BK1499",
+      "name": "医美服务",
+      "change_pct": 5.49,
+      "price": 594.2,
+      "change": 30.94,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "朗姿股份"
+    },
+    {
+      "code": "BK1337",
+      "name": "品牌消费电子",
+      "change_pct": 5.39,
+      "price": 2665.18,
+      "change": 136.31,
+      "up_count": 11,
+      "down_count": 0,
+      "leader": "安克创新"
+    },
+    {
+      "code": "BK1331",
+      "name": "数字芯片设计",
+      "change_pct": 5.27,
+      "price": 22083.18,
+      "change": 1105.95,
+      "up_count": 56,
+      "down_count": 0,
+      "leader": "峰岹科技"
+    },
+    {
+      "code": "BK1304",
+      "name": "锂电专用设备",
+      "change_pct": 5.25,
+      "price": 20185.74,
+      "change": 1006.66,
+      "up_count": 19,
+      "down_count": 0,
+      "leader": "利元亨"
+    },
+    {
+      "code": "BK1307",
+      "name": "电机Ⅲ",
+      "change_pct": 5.18,
+      "price": 2390.77,
+      "change": 117.72,
+      "up_count": 27,
+      "down_count": 0,
+      "leader": "华阳智能"
+    },
+    {
+      "code": "BK1030",
+      "name": "电机Ⅱ",
+      "change_pct": 5.18,
+      "price": 2390.77,
+      "change": 117.72,
+      "up_count": 27,
+      "down_count": 0,
+      "leader": "华阳智能"
+    },
+    {
+      "code": "BK1329",
+      "name": "集成电路制造",
+      "change_pct": 5.15,
+      "price": 2992.78,
+      "change": 146.49,
+      "up_count": 8,
+      "down_count": 0,
+      "leader": "粤芯半导-U"
+    },
+    {
+      "code": "BK0737",
+      "name": "软件开发",
+      "change_pct": 5.02,
+      "price": 1067.58,
+      "change": 51.04,
+      "up_count": 123,
+      "down_count": 10,
+      "leader": "理工能科"
+    },
+    {
+      "code": "BK1330",
+      "name": "模拟芯片设计",
+      "change_pct": 5.01,
+      "price": 5843.27,
+      "change": 278.85,
+      "up_count": 34,
+      "down_count": 2,
+      "leader": "汇顶科技"
+    },
+    {
+      "code": "BK1454",
+      "name": "其他黑色家电",
+      "change_pct": 4.99,
+      "price": 2789.9,
+      "change": 132.63,
+      "up_count": 5,
+      "down_count": 0,
+      "leader": "创维数字"
+    },
+    {
+      "code": "BK1237",
+      "name": "自动化设备",
+      "change_pct": 4.97,
+      "price": 10189.68,
+      "change": 482.05,
+      "up_count": 89,
+      "down_count": 6,
+      "leader": "派斯林"
+    },
+    {
+      "code": "BK1447",
+      "name": "垂直应用软件",
+      "change_pct": 4.78,
+      "price": 8156.6,
+      "change": 372.43,
+      "up_count": 91,
+      "down_count": 8,
+      "leader": "理工能科"
+    },
+    {
+      "code": "BK1407",
+      "name": "工控设备",
+      "change_pct": 4.76,
+      "price": 5518.61,
+      "change": 250.89,
+      "up_count": 30,
+      "down_count": 2,
+      "leader": "伟创电气"
+    },
+    {
+      "code": "BK1299",
+      "name": "影视动漫制作",
+      "change_pct": 4.61,
+      "price": 4029.98,
+      "change": 177.49,
+      "up_count": 13,
+      "down_count": 1,
+      "leader": "中广天择"
+    },
+    {
+      "code": "BK1298",
+      "name": "文字媒体",
+      "change_pct": 4.58,
+      "price": 2883.84,
+      "change": 126.21,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "中文在线"
+    },
+    {
+      "code": "BK1222",
+      "name": "影视院线",
+      "change_pct": 4.4,
+      "price": 3768.01,
+      "change": 158.66,
+      "up_count": 17,
+      "down_count": 1,
+      "leader": "中广天择"
+    },
+    {
+      "code": "BK1404",
+      "name": "农用机械",
+      "change_pct": 4.27,
+      "price": 1646.34,
+      "change": 67.42,
+      "up_count": 10,
+      "down_count": 0,
+      "leader": "威马农机"
+    },
+    {
+      "code": "BK1297",
+      "name": "图片媒体",
+      "change_pct": 4.26,
+      "price": 2732.16,
+      "change": 111.52,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "视觉中国"
+    },
+    {
+      "code": "BK1221",
+      "name": "数字媒体",
+      "change_pct": 4.18,
+      "price": 7105.38,
+      "change": 284.81,
+      "up_count": 14,
+      "down_count": 1,
+      "leader": "凡拓数创"
+    },
+    {
+      "code": "BK1524",
+      "name": "汽车综合服务",
+      "change_pct": 4.13,
+      "price": 1148.67,
+      "change": 45.57,
+      "up_count": 2,
+      "down_count": 1,
+      "leader": "阿尔特"
+    },
+    {
+      "code": "BK1207",
+      "name": "计算机",
+      "change_pct": 4.08,
+      "price": 7702.37,
+      "change": 302.12,
+      "up_count": 328,
+      "down_count": 28,
+      "leader": "榕基软件"
+    },
+    {
+      "code": "BK1406",
+      "name": "印刷包装机械",
+      "change_pct": 4.08,
+      "price": 2139.45,
+      "change": 83.77,
+      "up_count": 12,
+      "down_count": 0,
+      "leader": "永创智能"
+    },
+    {
+      "code": "BK1589",
+      "name": "通信应用增值服务",
+      "change_pct": 4.05,
+      "price": 4165.48,
+      "change": 162.15,
+      "up_count": 17,
+      "down_count": 0,
+      "leader": "世纪恒通"
+    },
+    {
+      "code": "BK1410",
+      "name": "其他自动化设备",
+      "change_pct": 4.01,
+      "price": 6330.03,
+      "change": 243.82,
+      "up_count": 26,
+      "down_count": 4,
+      "leader": "奥普特"
+    },
+    {
+      "code": "BK1347",
+      "name": "纺织鞋类制造",
+      "change_pct": 3.95,
+      "price": 424.5,
+      "change": 16.13,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "华利集团"
+    },
+    {
+      "code": "BK1393",
+      "name": "工程机械整机",
+      "change_pct": 3.8,
+      "price": 4052.95,
+      "change": 148.21,
+      "up_count": 22,
+      "down_count": 0,
+      "leader": "南方路机"
+    },
+    {
+      "code": "BK1444",
+      "name": "IT服务Ⅲ",
+      "change_pct": 3.78,
+      "price": 7684.03,
+      "change": 279.92,
+      "up_count": 122,
+      "down_count": 14,
+      "leader": "榕基软件"
+    },
+    {
+      "code": "BK1238",
+      "name": "IT服务Ⅱ",
+      "change_pct": 3.78,
+      "price": 7684.03,
+      "change": 279.92,
+      "up_count": 122,
+      "down_count": 14,
+      "leader": "榕基软件"
+    },
+    {
+      "code": "BK1305",
+      "name": "燃料电池",
+      "change_pct": 3.78,
+      "price": 277.87,
+      "change": 10.12,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "亿华通-U"
+    },
+    {
+      "code": "BK1036",
+      "name": "半导体",
+      "change_pct": 3.7,
+      "price": 2312.92,
+      "change": 82.45,
+      "up_count": 172,
+      "down_count": 15,
+      "leader": "大港股份"
+    },
+    {
+      "code": "BK1300",
+      "name": "院线",
+      "change_pct": 3.66,
+      "price": 567.43,
+      "change": 20.02,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "横店影视"
+    },
+    {
+      "code": "BK1396",
+      "name": "金属制品",
+      "change_pct": 3.64,
+      "price": 5086.03,
+      "change": 178.74,
+      "up_count": 73,
+      "down_count": 9,
+      "leader": "赛福天"
+    },
+    {
+      "code": "BK1033",
+      "name": "电池",
+      "change_pct": 3.57,
+      "price": 1184.39,
+      "change": 40.88,
+      "up_count": 105,
+      "down_count": 3,
+      "leader": "尚太科技"
+    },
+    {
+      "code": "BK1301",
+      "name": "游戏Ⅲ",
+      "change_pct": 3.51,
+      "price": 1282.28,
+      "change": 43.43,
+      "up_count": 21,
+      "down_count": 2,
+      "leader": "宝通科技"
+    },
+    {
+      "code": "BK1046",
+      "name": "游戏Ⅱ",
+      "change_pct": 3.51,
+      "price": 1282.28,
+      "change": 43.43,
+      "up_count": 21,
+      "down_count": 2,
+      "leader": "宝通科技"
+    },
+    {
+      "code": "BK1302",
+      "name": "电池化学品",
+      "change_pct": 3.5,
+      "price": 9246.16,
+      "change": 312.64,
+      "up_count": 44,
+      "down_count": 1,
+      "leader": "尚太科技"
+    },
+    {
+      "code": "BK1546",
+      "name": "电商服务",
+      "change_pct": 3.47,
+      "price": 2215.17,
+      "change": 74.31,
+      "up_count": 8,
+      "down_count": 0,
+      "leader": "青木科技"
+    },
+    {
+      "code": "BK1395",
+      "name": "机床工具",
+      "change_pct": 3.45,
+      "price": 1672.62,
+      "change": 55.8,
+      "up_count": 19,
+      "down_count": 0,
+      "leader": "浙海德曼"
+    },
+    {
+      "code": "BK1529",
+      "name": "汽车电子电气系统",
+      "change_pct": 3.45,
+      "price": 3311.24,
+      "change": 110.45,
+      "up_count": 41,
+      "down_count": 1,
+      "leader": "富特科技"
+    },
+    {
+      "code": "BK1605",
+      "name": "医疗设备",
+      "change_pct": 3.37,
+      "price": 5505.24,
+      "change": 179.59,
+      "up_count": 44,
+      "down_count": 0,
+      "leader": "澳华内镜"
+    },
+    {
+      "code": "BK0739",
+      "name": "工程机械",
+      "change_pct": 3.34,
+      "price": 2048.52,
+      "change": 66.19,
+      "up_count": 33,
+      "down_count": 2,
+      "leader": "南方路机"
+    },
+    {
+      "code": "BK1401",
+      "name": "纺织服装设备",
+      "change_pct": 3.25,
+      "price": 3254.52,
+      "change": 102.54,
+      "up_count": 10,
+      "down_count": 4,
+      "leader": "杰克科技"
+    },
+    {
+      "code": "BK1446",
+      "name": "其他计算机设备",
+      "change_pct": 3.24,
+      "price": 7649.42,
+      "change": 240.01,
+      "up_count": 60,
+      "down_count": 2,
+      "leader": "大普微-UW"
+    },
+    {
+      "code": "BK1241",
+      "name": "黑色家电",
+      "change_pct": 3.22,
+      "price": 4019.1,
+      "change": 125.28,
+      "up_count": 9,
+      "down_count": 0,
+      "leader": "创维数字"
+    },
+    {
+      "code": "BK1621",
+      "name": "锂",
+      "change_pct": 3.16,
+      "price": 10943.94,
+      "change": 335.26,
+      "up_count": 8,
+      "down_count": 0,
+      "leader": "永兴材料"
+    },
+    {
+      "code": "BK1293",
+      "name": "营销代理",
+      "change_pct": 3.16,
+      "price": 4414.96,
+      "change": 135.23,
+      "up_count": 23,
+      "down_count": 4,
+      "leader": "天娱数科"
+    },
+    {
+      "code": "BK1555",
+      "name": "专业连锁Ⅲ",
+      "change_pct": 3.16,
+      "price": 1233.28,
+      "change": 37.74,
+      "up_count": 7,
+      "down_count": 0,
+      "leader": "博士眼镜"
+    },
+    {
+      "code": "BK1270",
+      "name": "专业连锁Ⅱ",
+      "change_pct": 3.16,
+      "price": 1233.28,
+      "change": 37.74,
+      "up_count": 7,
+      "down_count": 0,
+      "leader": "博士眼镜"
+    },
+    {
+      "code": "BK1328",
+      "name": "集成电路封测",
+      "change_pct": 3.15,
+      "price": 7246.58,
+      "change": 221.3,
+      "up_count": 12,
+      "down_count": 0,
+      "leader": "大港股份"
+    },
+    {
+      "code": "BK0458",
+      "name": "仪器仪表",
+      "change_pct": 3.14,
+      "price": 20100.86,
+      "change": 612.41,
+      "up_count": 62,
+      "down_count": 3,
+      "leader": "思看科技"
+    },
+    {
+      "code": "BK0735",
+      "name": "计算机设备",
+      "change_pct": 3.14,
+      "price": 1516.35,
+      "change": 46.1,
+      "up_count": 83,
+      "down_count": 4,
+      "leader": "大普微-UW"
+    },
+    {
+      "code": "BK1336",
+      "name": "其他电子Ⅲ",
+      "change_pct": 3.12,
+      "price": 13171.74,
+      "change": 398.64,
+      "up_count": 29,
+      "down_count": 3,
+      "leader": "睿能科技"
+    },
+    {
+      "code": "BK1223",
+      "name": "其他电子Ⅱ",
+      "change_pct": 3.12,
+      "price": 13171.74,
+      "change": 398.64,
+      "up_count": 29,
+      "down_count": 3,
+      "leader": "睿能科技"
+    },
+    {
+      "code": "BK1531",
+      "name": "商用载客车",
+      "change_pct": 3.12,
+      "price": 3132.59,
+      "change": 94.7,
+      "up_count": 5,
+      "down_count": 0,
+      "leader": "曙光股份"
+    },
+    {
+      "code": "BK1334",
+      "name": "光学元件",
+      "change_pct": 3.11,
+      "price": 13532.66,
+      "change": 408.66,
+      "up_count": 23,
+      "down_count": 4,
+      "leader": "奥比中光-W"
+    },
+    {
+      "code": "BK1565",
+      "name": "会展服务",
+      "change_pct": 3.11,
+      "price": 1155.63,
+      "change": 34.87,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "米奥会展"
+    },
+    {
+      "code": "BK1397",
+      "name": "磨具磨料",
+      "change_pct": 3.11,
+      "price": 7866.21,
+      "change": 237.28,
+      "up_count": 14,
+      "down_count": 0,
+      "leader": "沃尔德"
+    },
+    {
+      "code": "BK1015",
+      "name": "能源金属",
+      "change_pct": 3.08,
+      "price": 614.17,
+      "change": 18.36,
+      "up_count": 12,
+      "down_count": 0,
+      "leader": "永兴材料"
+    },
+    {
+      "code": "BK1303",
+      "name": "锂电池",
+      "change_pct": 3.07,
+      "price": 16162.36,
+      "change": 480.71,
+      "up_count": 31,
+      "down_count": 2,
+      "leader": "豪鹏科技"
+    },
+    {
+      "code": "BK1519",
+      "name": "电动乘用车",
+      "change_pct": 3.04,
+      "price": 3818.76,
+      "change": 112.62,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "赛力斯"
+    },
+    {
+      "code": "BK0545",
+      "name": "通用设备",
+      "change_pct": 3.03,
+      "price": 46564.68,
+      "change": 1368.92,
+      "up_count": 227,
+      "down_count": 29,
+      "leader": "赛福天"
+    },
+    {
+      "code": "BK1620",
+      "name": "钴",
+      "change_pct": 3.01,
+      "price": 878.14,
+      "change": 25.66,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "寒锐钴业"
+    },
+    {
+      "code": "BK1205",
+      "name": "机械设备",
+      "change_pct": 3.01,
+      "price": 4340.52,
+      "change": 126.78,
+      "up_count": 545,
+      "down_count": 76,
+      "leader": "赛福天"
+    },
+    {
+      "code": "BK1037",
+      "name": "消费电子",
+      "change_pct": 2.97,
+      "price": 1868.25,
+      "change": 53.93,
+      "up_count": 85,
+      "down_count": 13,
+      "leader": "歌尔股份"
+    },
+    {
+      "code": "BK1618",
+      "name": "磁性材料",
+      "change_pct": 2.93,
+      "price": 4971.0,
+      "change": 141.62,
+      "up_count": 15,
+      "down_count": 0,
+      "leader": "春光集团"
+    },
+    {
+      "code": "BK1445",
+      "name": "安防设备",
+      "change_pct": 2.88,
+      "price": 4873.61,
+      "change": 136.62,
+      "up_count": 23,
+      "down_count": 2,
+      "leader": "觅睿科技"
+    },
+    {
+      "code": "BK1526",
+      "name": "底盘与发动机系统",
+      "change_pct": 2.87,
+      "price": 3938.74,
+      "change": 110.04,
+      "up_count": 104,
+      "down_count": 13,
+      "leader": "正裕工业"
+    },
+    {
+      "code": "BK1220",
+      "name": "广告营销",
+      "change_pct": 2.86,
+      "price": 4661.27,
+      "change": 129.62,
+      "up_count": 25,
+      "down_count": 5,
+      "leader": "天娱数科"
+    },
+    {
+      "code": "BK1360",
+      "name": "金融信息服务",
+      "change_pct": 2.84,
+      "price": 4139.08,
+      "change": 114.49,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "翠微股份"
+    },
+    {
+      "code": "BK1622",
+      "name": "镍",
+      "change_pct": 2.84,
+      "price": 3637.86,
+      "change": 100.56,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "华友钴业"
+    },
+    {
+      "code": "BK1434",
+      "name": "钾肥",
+      "change_pct": 2.82,
+      "price": 1885.51,
+      "change": 51.78,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "东方铁塔"
+    },
+    {
+      "code": "BK1455",
+      "name": "家电零部件Ⅲ",
+      "change_pct": 2.82,
+      "price": 4807.98,
+      "change": 131.85,
+      "up_count": 33,
+      "down_count": 3,
+      "leader": "奇精机械"
+    },
+    {
+      "code": "BK1242",
+      "name": "家电零部件Ⅱ",
+      "change_pct": 2.82,
+      "price": 4807.98,
+      "change": 131.85,
+      "up_count": 33,
+      "down_count": 3,
+      "leader": "奇精机械"
+    },
+    {
+      "code": "BK1525",
+      "name": "车身附件及饰件",
+      "change_pct": 2.82,
+      "price": 4587.6,
+      "change": 125.71,
+      "up_count": 42,
+      "down_count": 3,
+      "leader": "模塑科技"
+    },
+    {
+      "code": "BK1386",
+      "name": "军工电子Ⅲ",
+      "change_pct": 2.78,
+      "price": 5877.68,
+      "change": 158.74,
+      "up_count": 60,
+      "down_count": 1,
+      "leader": "新光光电"
+    },
+    {
+      "code": "BK1233",
+      "name": "军工电子Ⅱ",
+      "change_pct": 2.78,
+      "price": 5877.68,
+      "change": 158.74,
+      "up_count": 60,
+      "down_count": 1,
+      "leader": "新光光电"
+    },
+    {
+      "code": "BK1405",
+      "name": "其他专用设备",
+      "change_pct": 2.77,
+      "price": 5013.42,
+      "change": 135.29,
+      "up_count": 77,
+      "down_count": 12,
+      "leader": "大丰实业"
+    },
+    {
+      "code": "BK1542",
+      "name": "文化用品",
+      "change_pct": 2.76,
+      "price": 2689.13,
+      "change": 72.31,
+      "up_count": 2,
+      "down_count": 3,
+      "leader": "明月镜片"
+    },
+    {
+      "code": "BK0481",
+      "name": "汽车零部件",
+      "change_pct": 2.76,
+      "price": 40972.15,
+      "change": 1099.24,
+      "up_count": 252,
+      "down_count": 29,
+      "leader": "正裕工业"
+    },
+    {
+      "code": "BK1496",
+      "name": "洗护用品",
+      "change_pct": 2.74,
+      "price": 541.78,
+      "change": 14.45,
+      "up_count": 3,
+      "down_count": 1,
+      "leader": "登康口腔"
+    },
+    {
+      "code": "BK1475",
+      "name": "国际工程",
+      "change_pct": 2.72,
+      "price": 2482.33,
+      "change": 65.7,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "中工国际"
+    },
+    {
+      "code": "BK1201",
+      "name": "电子",
+      "change_pct": 2.72,
+      "price": 11488.64,
+      "change": 303.9,
+      "up_count": 442,
+      "down_count": 74,
+      "leader": "睿能科技"
+    },
+    {
+      "code": "BK1338",
+      "name": "消费电子零部件及组装",
+      "change_pct": 2.67,
+      "price": 12011.22,
+      "change": 312.41,
+      "up_count": 74,
+      "down_count": 13,
+      "leader": "歌尔股份"
+    },
+    {
+      "code": "BK1361",
+      "name": "期货",
+      "change_pct": 2.67,
+      "price": 493.19,
+      "change": 12.82,
+      "up_count": 4,
+      "down_count": 0,
+      "leader": "瑞达期货"
+    },
+    {
+      "code": "BK1443",
+      "name": "橡胶助剂",
+      "change_pct": 2.64,
+      "price": 3966.48,
+      "change": 102.13,
+      "up_count": 2,
+      "down_count": 0,
+      "leader": "阳谷华泰"
+    },
+    {
+      "code": "BK0486",
+      "name": "传媒",
+      "change_pct": 2.64,
+      "price": 10162.79,
+      "change": 261.59,
+      "up_count": 99,
+      "down_count": 26,
+      "leader": "天娱数科"
+    },
+    {
+      "code": "BK1568",
+      "name": "人力资源服务",
+      "change_pct": 2.63,
+      "price": 1776.57,
+      "change": 45.5,
+      "up_count": 3,
+      "down_count": 0,
+      "leader": "科锐国际"
+    },
+    {
+      "code": "BK1438",
+      "name": "合成树脂",
+      "change_pct": 2.62,
+      "price": 7843.63,
+      "change": 200.54,
+      "up_count": 12,
+      "down_count": 1,
+      "leader": "上纬新材"
+    },
+    {
+      "code": "BK1521",
+      "name": "摩托车",
+      "change_pct": 2.61,
+      "price": 3344.83,
+      "change": 85.13,
+      "up_count": 9,
+      "down_count": 0,
+      "leader": "千里科技"
+    },
+    {
+      "code": "BK1553",
+      "name": "多业态零售",
+      "change_pct": 2.6,
+      "price": 1429.16,
+      "change": 36.24,
+      "up_count": 15,
+      "down_count": 0,
+      "leader": "上海九百"
+    },
+    {
+      "code": "BK1398",
+      "name": "其他通用设备",
+      "change_pct": 2.6,
+      "price": 5409.15,
+      "change": 137.05,
+      "up_count": 46,
+      "down_count": 10,
+      "leader": "开创电气"
+    },
+    {
+      "code": "BK1211",
+      "name": "汽车",
+      "change_pct": 2.57,
+      "price": 3677.28,
+      "change": 92.29,
+      "up_count": 297,
+      "down_count": 36,
+      "leader": "正裕工业"
+    },
+    {
+      "code": "BK1392",
+      "name": "工程机械器件",
+      "change_pct": 2.57,
+      "price": 14806.51,
+      "change": 370.53,
+      "up_count": 11,
+      "down_count": 2,
+      "leader": "万通液压"
+    },
+    {
+      "code": "BK1575",
+      "name": "白酒Ⅲ",
+      "change_pct": 2.53,
+      "price": 4168.19,
+      "change": 103.04,
+      "up_count": 19,
+      "down_count": 0,
+      "leader": "金徽酒"
+    },
+    {
+      "code": "BK1277",
+      "name": "白酒Ⅱ",
+      "change_pct": 2.53,
+      "price": 4168.19,
+      "change": 103.04,
+      "up_count": 19,
+      "down_count": 0,
+      "leader": "金徽酒"
+    },
+    {
+      "code": "BK1599",
+      "name": "其他医疗服务",
+      "change_pct": 2.52,
+      "price": 4483.75,
+      "change": 110.05,
+      "up_count": 4,
+      "down_count": 1,
+      "leader": "诺禾致源"
+    }
+  ],
+  "a_share_board_status": "ok",
   "a_share_weekly_industry_boards": [],
   "weekly_risers": [
     "能源",
@@ -251,12 +1252,24 @@
   ],
   "a_share_weekly_risers": [],
   "a_share_weekly_fallers": [],
-  "a_share_board_risers": [],
-  "a_share_board_fallers": [],
+  "a_share_board_risers": [
+    "其他数字媒体",
+    "机器人",
+    "视频媒体",
+    "横向通用软件",
+    "医美服务"
+  ],
+  "a_share_board_fallers": [
+    "其他医疗服务",
+    "白酒Ⅱ",
+    "白酒Ⅲ",
+    "工程机械器件",
+    "汽车"
+  ],
   "health": {
     "us_sector_count": 11,
     "a_share_index_count": 7,
-    "a_share_board_count": 0,
+    "a_share_board_count": 100,
     "weekly_board_count": 0,
     "status": "ok"
   }
