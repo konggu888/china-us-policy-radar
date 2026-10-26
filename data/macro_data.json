@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T00:37:00.589130+00:00",
+  "updatedAt": "2026-10-26T05:10:09.805683+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -8,12 +8,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "<urlopen error [Errno 104] Connection reset by peer>",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-10-26T00:29:47.311461+00:00",
+    "fetchedAt": "2026-10-26T04:59:04.601508+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
@@ -611,9 +611,16 @@
         "source": "中国人民银行"
       },
       {
+        "indicator": "open_market_7d_reverse_repo_amount_billion",
+        "value": 560.0,
+        "observedAt": "2026-10-26",
+        "source": "中国人民银行",
+        "sourceUrl": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102608470458194/index.html"
+      },
+      {
         "indicator": "USD/CNY_PBOC_MID",
-        "value": 6.718,
-        "observedAt": "2026-10-23",
+        "value": 6.7162,
+        "observedAt": "2026-10-26",
         "source": "SAFE/PBOC RMB central parity",
         "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
       }
