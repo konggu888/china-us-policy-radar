@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T05:10:09.805683+00:00",
+  "updatedAt": "2026-10-26T10:51:07.618709+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -8,12 +8,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
+    "error": "<urlopen error [Errno 101] Network is unreachable>",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-10-26T04:59:04.601508+00:00",
+    "fetchedAt": "2026-10-26T10:38:29.636906+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
