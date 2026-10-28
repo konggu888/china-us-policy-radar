@@ -204434,7 +204434,7 @@
     }
   },
   {
-    "updatedAt": "2026-10-28T14:46:38.197844+00:00",
+    "updatedAt": "2026-10-28T20:28:15.665125+00:00",
     "china": {
       "source": "国家统计局",
       "status": "MISSING",
@@ -204443,12 +204443,12 @@
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "Remote end closed connection without response",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-10-28T14:36:00.037780+00:00",
+      "fetchedAt": "2026-10-28T20:12:18.242095+00:00",
       "records": [
         {
           "indicator": "M2_yoy_pct",
