@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T01:20:19.943632+00:00",
+  "updatedAt": "2026-10-29T06:19:05.097531+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -8,12 +8,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-10-29T01:10:45.613737+00:00",
+    "fetchedAt": "2026-10-29T05:56:16.132775+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
@@ -612,15 +612,15 @@
       },
       {
         "indicator": "open_market_7d_reverse_repo_amount_billion",
-        "value": 1510.0,
-        "observedAt": "2026-10-28",
+        "value": 1150.0,
+        "observedAt": "2026-10-29",
         "source": "中国人民银行",
-        "sourceUrl": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102808465912088/index.html"
+        "sourceUrl": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102908501935376/index.html"
       },
       {
         "indicator": "USD/CNY_PBOC_MID",
-        "value": 6.7165,
-        "observedAt": "2026-10-28",
+        "value": 6.714700000000001,
+        "observedAt": "2026-10-29",
         "source": "SAFE/PBOC RMB central parity",
         "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
       }
