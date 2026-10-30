@@ -67,7 +67,7 @@
   "OfficialPage:China PBOC": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 10
+    "count": 9
   },
   "OfficialPage:China MIIT": {
     "method": "direct_first_party_html",
@@ -92,7 +92,7 @@
   "OfficialPage:UN News": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 35
+    "count": 38
   },
   "OfficialPage:WTO News": {
     "method": "direct_first_party_html",
@@ -137,7 +137,7 @@
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
     "status": "ok",
-    "count": 21
+    "count": 22
   },
   "OfficialFeed:IAEA": {
     "method": "direct_first_party_rss",
@@ -147,17 +147,17 @@
   "Search:china:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 34
+    "count": 35
   },
   "Search:us:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 32
+    "count": 60
   },
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 60
+    "count": 44
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
@@ -172,12 +172,12 @@
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 27
+    "count": 25
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 34
+    "count": 36
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-10-30 08:56 UTC",
+  "updated": "2026-10-30 16:44 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 9001,
-  "new_discovery_count": 166,
-  "official_direct_count": 262,
-  "official_in_working_set": 1163,
+  "total_collected": 9054,
+  "new_discovery_count": 204,
+  "official_direct_count": 265,
+  "official_in_working_set": 1170,
   "category_counts": {
-    "政治": 342,
+    "政治": 345,
     "金融": 218,
     "经济": 56,
     "产业": 17,
-    "科技 / AI": 911,
-    "国防": 161,
+    "科技 / AI": 916,
+    "国防": 162,
     "内政": 188,
-    "国家安全": 156,
+    "国家安全": 158,
     "外交": 124,
-    "贸易 / 供应链": 410,
-    "能源 / 资源": 168,
-    "中美博弈": 1997,
-    "全球政策": 4253
+    "贸易 / 供应链": 416,
+    "能源 / 资源": 170,
+    "中美博弈": 2018,
+    "全球政策": 4266
   },
   "region_counts": {
-    "china": 894,
-    "us": 1203,
-    "global": 6904
+    "china": 896,
+    "us": 1209,
+    "global": 6949
   },
   "sources": {
     "OfficialPage:White House": {
@@ -289,7 +289,7 @@
     "OfficialPage:China PBOC": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 10
+      "count": 9
     },
     "OfficialPage:China MIIT": {
       "method": "direct_first_party_html",
@@ -314,7 +314,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 35
+      "count": 38
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -359,7 +359,7 @@
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
       "status": "ok",
-      "count": 21
+      "count": 22
     },
     "OfficialFeed:IAEA": {
       "method": "direct_first_party_rss",
@@ -369,17 +369,17 @@
     "Search:china:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 34
+      "count": 35
     },
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 32
+      "count": 60
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 60
+      "count": 44
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -394,12 +394,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 27
+      "count": 25
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 34
+      "count": 36
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
