@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30 22:38 UTC",
+  "updated": "2026-10-31 02:37 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -143,25 +143,25 @@
   "a_share": {
     "上证指数": {
       "ticker": "000001.SS",
-      "latest": 3651.4341,
-      "daily_pct": -0.82,
-      "weekly_pct": -0.18,
-      "monthly_pct": -7.61,
-      "quarterly_pct": -4.27,
-      "six_month_pct": -10.79,
-      "asof": "2026-10-29",
+      "latest": 3599.0171,
+      "daily_pct": -1.44,
+      "weekly_pct": -2.48,
+      "monthly_pct": -8.57,
+      "quarterly_pct": -6.72,
+      "six_month_pct": -11.79,
+      "asof": "2026-10-30",
       "provider": "Yahoo Finance",
       "weekly_rank": 1
     },
     "深证成指": {
       "ticker": "399001.SZ",
-      "latest": 11138.2002,
-      "daily_pct": -2.92,
-      "weekly_pct": -1.93,
-      "monthly_pct": -18.84,
-      "quarterly_pct": -19.14,
-      "six_month_pct": -25.96,
-      "asof": "2026-10-29",
+      "latest": 10833.7803,
+      "daily_pct": -2.73,
+      "weekly_pct": -7.2,
+      "monthly_pct": -20.55,
+      "quarterly_pct": -23.43,
+      "six_month_pct": -27.49,
+      "asof": "2026-10-30",
       "provider": "Yahoo Finance",
       "weekly_rank": 2
     },
@@ -173,7 +173,7 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-30",
+      "asof": "2026-10-31",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 3
@@ -186,7 +186,7 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-30",
+      "asof": "2026-10-31",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 4
@@ -199,7 +199,7 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-30",
+      "asof": "2026-10-31",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 5
@@ -212,7 +212,7 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-30",
+      "asof": "2026-10-31",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 6
@@ -225,7 +225,7 @@
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-10-30",
+      "asof": "2026-10-31",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 7
