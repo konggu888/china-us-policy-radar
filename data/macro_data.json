@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-11-02T02:52:56.367504+00:00",
+  "updatedAt": "2026-11-02T10:44:44.633349+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
-    "error": "NBS latest national-economy release link not found",
+    "error": "<urlopen error _ssl.c:993: The handshake operation timed out>",
     "method": "官方源暂未成功获取；不使用其他来源冒充。"
   },
   "chinaStructured": {
@@ -13,7 +13,7 @@
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-11-02T02:39:19.258777+00:00",
+    "fetchedAt": "2026-11-02T10:18:52.133238+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
