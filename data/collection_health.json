@@ -37,7 +37,7 @@
   "OfficialPage:EIA": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 10
+    "count": 11
   },
   "OfficialPage:BLS": {
     "method": "direct_first_party_html",
@@ -62,12 +62,12 @@
   "OfficialPage:China NDRC": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 25
+    "count": 26
   },
   "OfficialPage:China PBOC": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 9
+    "count": 10
   },
   "OfficialPage:China MIIT": {
     "method": "direct_first_party_html",
@@ -92,7 +92,7 @@
   "OfficialPage:UN News": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 33
+    "count": 35
   },
   "OfficialPage:WTO News": {
     "method": "direct_first_party_html",
@@ -137,7 +137,7 @@
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
     "status": "ok",
-    "count": 22
+    "count": 23
   },
   "OfficialFeed:IAEA": {
     "method": "direct_first_party_rss",
@@ -152,17 +152,17 @@
   "Search:us:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 32
+    "count": 31
   },
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 10
+    "count": 52
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 6
+    "count": 40
   },
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
@@ -172,12 +172,12 @@
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 23
+    "count": 21
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 24
+    "count": 31
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-11-03 09:58 UTC",
+  "updated": "2026-11-03 17:41 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 9523,
-  "new_discovery_count": 116,
-  "official_direct_count": 262,
-  "official_in_working_set": 1206,
+  "total_collected": 9572,
+  "new_discovery_count": 217,
+  "official_direct_count": 268,
+  "official_in_working_set": 1213,
   "category_counts": {
-    "政治": 377,
+    "政治": 379,
     "金融": 230,
     "经济": 58,
     "产业": 17,
-    "科技 / AI": 961,
-    "国防": 166,
+    "科技 / AI": 963,
+    "国防": 167,
     "内政": 203,
-    "国家安全": 163,
+    "国家安全": 167,
     "外交": 127,
-    "贸易 / 供应链": 445,
-    "能源 / 资源": 177,
-    "中美博弈": 2168,
-    "全球政策": 4431
+    "贸易 / 供应链": 447,
+    "能源 / 资源": 178,
+    "中美博弈": 2190,
+    "全球政策": 4446
   },
   "region_counts": {
-    "china": 956,
-    "us": 1239,
-    "global": 7328
+    "china": 959,
+    "us": 1242,
+    "global": 7371
   },
   "sources": {
     "OfficialPage:White House": {
@@ -259,7 +259,7 @@
     "OfficialPage:EIA": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 10
+      "count": 11
     },
     "OfficialPage:BLS": {
       "method": "direct_first_party_html",
@@ -284,12 +284,12 @@
     "OfficialPage:China NDRC": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 25
+      "count": 26
     },
     "OfficialPage:China PBOC": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 9
+      "count": 10
     },
     "OfficialPage:China MIIT": {
       "method": "direct_first_party_html",
@@ -314,7 +314,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 33
+      "count": 35
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -359,7 +359,7 @@
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
       "status": "ok",
-      "count": 22
+      "count": 23
     },
     "OfficialFeed:IAEA": {
       "method": "direct_first_party_rss",
@@ -374,17 +374,17 @@
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 32
+      "count": 31
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 10
+      "count": 52
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 6
+      "count": 40
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
@@ -394,12 +394,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 23
+      "count": 21
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 24
+      "count": 31
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
