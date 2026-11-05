@@ -11,8 +11,8 @@
   },
   "OfficialPage:US Defense Department": {
     "method": "direct_first_party_html",
-    "status": "error:HTTPError",
-    "count": 0
+    "status": "ok",
+    "count": 5
   },
   "OfficialPage:US Treasury": {
     "method": "direct_first_party_html",
@@ -107,7 +107,7 @@
   "OfficialPage:World Bank News": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 17
+    "count": 18
   },
   "OfficialPage:IAEA News": {
     "method": "direct_first_party_html",
@@ -131,8 +131,8 @@
   },
   "OfficialFeed:BLS": {
     "method": "direct_first_party_rss",
-    "status": "error:HTTPError",
-    "count": 0
+    "status": "ok",
+    "count": 1
   },
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
@@ -157,7 +157,7 @@
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 12
+    "count": 41
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
@@ -172,12 +172,12 @@
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 21
+    "count": 23
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 19
+    "count": 21
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-11-05 15:44 UTC",
+  "updated": "2026-11-05 21:54 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 9858,
-  "new_discovery_count": 120,
-  "official_direct_count": 270,
-  "official_in_working_set": 1250,
+  "total_collected": 9905,
+  "new_discovery_count": 149,
+  "official_direct_count": 277,
+  "official_in_working_set": 1256,
   "category_counts": {
-    "政治": 396,
-    "金融": 238,
+    "政治": 397,
+    "金融": 241,
     "经济": 58,
     "产业": 18,
-    "科技 / AI": 989,
-    "国防": 168,
-    "内政": 207,
-    "国家安全": 174,
-    "外交": 130,
-    "贸易 / 供应链": 464,
-    "能源 / 资源": 185,
-    "中美博弈": 2301,
-    "全球政策": 4530
+    "科技 / AI": 998,
+    "国防": 170,
+    "内政": 208,
+    "国家安全": 175,
+    "外交": 131,
+    "贸易 / 供应链": 466,
+    "能源 / 资源": 186,
+    "中美博弈": 2318,
+    "全球政策": 4539
   },
   "region_counts": {
-    "china": 961,
-    "us": 1322,
-    "global": 7575
+    "china": 963,
+    "us": 1332,
+    "global": 7610
   },
   "sources": {
     "OfficialPage:White House": {
@@ -233,8 +233,8 @@
     },
     "OfficialPage:US Defense Department": {
       "method": "direct_first_party_html",
-      "status": "error:HTTPError",
-      "count": 0
+      "status": "ok",
+      "count": 5
     },
     "OfficialPage:US Treasury": {
       "method": "direct_first_party_html",
@@ -329,7 +329,7 @@
     "OfficialPage:World Bank News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 17
+      "count": 18
     },
     "OfficialPage:IAEA News": {
       "method": "direct_first_party_html",
@@ -353,8 +353,8 @@
     },
     "OfficialFeed:BLS": {
       "method": "direct_first_party_rss",
-      "status": "error:HTTPError",
-      "count": 0
+      "status": "ok",
+      "count": 1
     },
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
@@ -379,7 +379,7 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 12
+      "count": 41
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -394,12 +394,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 21
+      "count": 23
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 19
+      "count": 21
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
