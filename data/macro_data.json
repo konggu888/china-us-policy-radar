@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T07:55:30.811205+00:00",
+  "updatedAt": "2026-11-05T16:18:32.839275+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -8,12 +8,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "Remote end closed connection without response",
+    "error": "<urlopen error _ssl.c:994: The handshake operation timed out>",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-11-05T07:39:30.380515+00:00",
+    "fetchedAt": "2026-11-05T16:11:19.383103+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
