@@ -11,8 +11,8 @@
   },
   "OfficialPage:US Defense Department": {
     "method": "direct_first_party_html",
-    "status": "ok",
-    "count": 5
+    "status": "error:HTTPError",
+    "count": 0
   },
   "OfficialPage:US Treasury": {
     "method": "direct_first_party_html",
@@ -62,7 +62,7 @@
   "OfficialPage:China NDRC": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 25
+    "count": 23
   },
   "OfficialPage:China PBOC": {
     "method": "direct_first_party_html",
@@ -131,8 +131,8 @@
   },
   "OfficialFeed:BLS": {
     "method": "direct_first_party_rss",
-    "status": "ok",
-    "count": 1
+    "status": "error:HTTPError",
+    "count": 0
   },
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
@@ -157,12 +157,12 @@
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 17
+    "count": 53
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 7
+    "count": 8
   },
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
@@ -172,12 +172,12 @@
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 24
+    "count": 25
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 22
+    "count": 24
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-11-06 02:13 UTC",
+  "updated": "2026-11-06 09:46 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 9923,
-  "new_discovery_count": 125,
-  "official_direct_count": 277,
-  "official_in_working_set": 1258,
+  "total_collected": 9970,
+  "new_discovery_count": 162,
+  "official_direct_count": 269,
+  "official_in_working_set": 1260,
   "category_counts": {
-    "政治": 400,
-    "金融": 241,
+    "政治": 403,
+    "金融": 242,
     "经济": 58,
     "产业": 18,
-    "科技 / AI": 999,
-    "国防": 170,
+    "科技 / AI": 1003,
+    "国防": 171,
     "内政": 208,
-    "国家安全": 177,
+    "国家安全": 181,
     "外交": 132,
-    "贸易 / 供应链": 466,
+    "贸易 / 供应链": 468,
     "能源 / 资源": 186,
-    "中美博弈": 2322,
-    "全球政策": 4546
+    "中美博弈": 2341,
+    "全球政策": 4559
   },
   "region_counts": {
-    "china": 964,
-    "us": 1336,
-    "global": 7623
+    "china": 970,
+    "us": 1338,
+    "global": 7662
   },
   "sources": {
     "OfficialPage:White House": {
@@ -233,8 +233,8 @@
     },
     "OfficialPage:US Defense Department": {
       "method": "direct_first_party_html",
-      "status": "ok",
-      "count": 5
+      "status": "error:HTTPError",
+      "count": 0
     },
     "OfficialPage:US Treasury": {
       "method": "direct_first_party_html",
@@ -284,7 +284,7 @@
     "OfficialPage:China NDRC": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 25
+      "count": 23
     },
     "OfficialPage:China PBOC": {
       "method": "direct_first_party_html",
@@ -353,8 +353,8 @@
     },
     "OfficialFeed:BLS": {
       "method": "direct_first_party_rss",
-      "status": "ok",
-      "count": 1
+      "status": "error:HTTPError",
+      "count": 0
     },
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
@@ -379,12 +379,12 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 17
+      "count": 53
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 7
+      "count": 8
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
@@ -394,12 +394,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 24
+      "count": 25
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 22
+      "count": 24
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
