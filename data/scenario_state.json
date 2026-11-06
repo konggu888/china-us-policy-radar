@@ -15,22 +15,22 @@
       "market": [
         {
           "symbol": "CNY=X",
-          "value": 6.6602,
-          "change_pct": -0.19,
+          "value": 6.6638,
+          "change_pct": -0.14,
           "time": "2026-11-06",
           "name": "USD/CNY"
         },
         {
           "symbol": "000001.SS",
-          "value": 3649.1775,
-          "change_pct": -1.1,
+          "value": 3689.9109,
+          "change_pct": 0.1,
           "time": "2026-11-06",
           "name": "上证指数"
         },
         {
           "symbol": "399001.SZ",
-          "value": 11175.7803,
-          "change_pct": -2.57,
+          "value": 11471.0898,
+          "change_pct": 1.19,
           "time": "2026-11-06",
           "name": "深证成指"
         },
@@ -43,82 +43,82 @@
         },
         {
           "symbol": "^GSPC",
-          "value": 7353.73,
-          "change_pct": -4.36,
-          "time": "2026-11-05",
+          "value": 7392.27,
+          "change_pct": 0.52,
+          "time": "2026-11-06",
           "name": "标普500"
         },
         {
           "symbol": "^TNX",
-          "value": 4.837,
-          "change_pct": -1.16,
-          "time": "2026-11-05",
+          "value": 4.839,
+          "change_pct": 0.04,
+          "time": "2026-11-06",
           "name": "美国10年期收益率"
         },
         {
           "symbol": "BZ=F",
-          "value": 98.05,
-          "change_pct": -0.24,
+          "value": 97.2,
+          "change_pct": -1.11,
           "time": "2026-11-06",
           "name": "布伦特原油"
         },
         {
           "symbol": "GC=F",
-          "value": 4078.5,
-          "change_pct": -0.85,
+          "value": 4069.5,
+          "change_pct": -1.07,
           "time": "2026-11-06",
           "name": "黄金"
         },
         {
           "symbol": "^VIX",
-          "value": 26.58,
-          "change_pct": -5.68,
+          "value": 25.5,
+          "change_pct": -9.51,
           "time": "2026-11-06",
           "name": "VIX"
         }
       ],
       "us_sector_risers": [
         {
-          "name": "必选消费",
-          "weekly_pct": 3.48
-        },
-        {
           "name": "通信服务",
-          "weekly_pct": 3.09
-        },
-        {
-          "name": "房地产",
-          "weekly_pct": 2.88
+          "weekly_pct": 5.33
         },
         {
           "name": "可选消费",
-          "weekly_pct": 1.24
+          "weekly_pct": 2.43
+        },
+        {
+          "name": "房地产",
+          "weekly_pct": 2.14
         },
         {
           "name": "金融",
-          "weekly_pct": 0.98
+          "weekly_pct": 1.5
+        },
+        {
+          "name": "必选消费",
+          "weekly_pct": 1.39
         }
       ],
       "us_sector_fallers": [
         {
-          "name": "科技",
-          "weekly_pct": -13.97
+          "name": "能源",
+          "weekly_pct": -11.53
         },
         {
-          "name": "能源",
-          "weekly_pct": -10.3
+          "name": "科技",
+          "weekly_pct": -8.58
         },
         {
           "name": "工业",
-          "weekly_pct": -4.5
+          "weekly_pct": -2.84
         },
         {
           "name": "材料",
-          "weekly_pct": -0.38
+          "weekly_pct": -1.02
         },
         {
           "name": "公用事业",
-          "weekly_pct": 0.37
+          "weekly_pct": -0.36
         }
       ]
     }
@@ -133,7 +133,7 @@
     {
       "id": "public",
       "name": "民众体感",
-      "signal": "公开讨论代理信号：就业/收入 3、住房 1、物价 4、消费 15",
+      "signal": "公开讨论代理信号：就业/收入 3、住房 1、物价 3、消费 15",
       "evidence": "social_signals",
       "caveat": "仅代表公开讨论发现，不代表总体民意或民调"
     },
@@ -172,7 +172,7 @@
     {
       "id": "governance",
       "name": "治理与人事网络",
-      "signal": "近90日公开报道中检出 7 条反腐/审查相关信号；人物履历、任职地点与机构关系仅在有来源时记录",
+      "signal": "近90日公开报道中检出 9 条反腐/审查相关信号；人物履历、任职地点与机构关系仅在有来源时记录",
       "evidence": "news",
       "caveat": "系统只记录公开、可核验履历，不据此推断政治派系归属或个人动机"
     },
@@ -204,7 +204,7 @@
       "risk": "极高",
       "source": "White House",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
@@ -213,7 +213,7 @@
       "risk": "极高",
       "source": "US Treasury",
       "url": "https://home.treasury.gov/news/press-releases/sb0613/",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "IAEA’s Grossi Calls for Progress in Deploying Nuclear Power as Ministerial Conference Opens",
@@ -240,7 +240,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/10/1168644",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "World News in Brief: Russian attacks intensify, UN team tours West Bank, ‘unlawful’ elderly deaths",
@@ -249,7 +249,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/10/1168648",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "West Bank: Hebron crackdown displaces thousands, Türk warns of ethnic cleansing",
@@ -258,7 +258,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/10/1168672",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
@@ -276,7 +276,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/10/1168503",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "‘Nowhere is safe’: UN experts detail Ukraine war’s toll and Russia’s reach beyond its borders",
@@ -285,7 +285,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/09/1168386",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
@@ -294,7 +294,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/09/1168416",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "World News in Brief: ‘New intensity’ to Russian attacks on Ukraine, Yemen, Gaza and Colombia updates",
@@ -303,7 +303,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/09/1168427",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "Cuba warns against ‘law of the jungle’ as Foreign Minister denounces US pressure",
@@ -312,7 +312,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/09/1168458",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "DPR Korea tells UN its nuclear status is ‘irreversible’, rejects outside pressure",
@@ -321,7 +321,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/09/1168476",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     },
     {
       "title": "Ukraine war ‘a human rights catastrophe’ that must end, says Türk",
@@ -330,7 +330,7 @@
       "risk": "高",
       "source": "UN News",
       "url": "https://news.un.org/en/story/2026/10/1168513",
-      "time": "2026-11-06 09:46 UTC"
+      "time": "2026-11-06 17:22 UTC"
     }
   ],
   "governance": {
@@ -394,6 +394,24 @@
         "source": "BBC US",
         "url": "https://www.bbc.co.uk/news/articles/c3vgxjex1z9wo?at_medium=RSS&at_campaign=rss",
         "time": "Mon, 26 Oct 2026 14:13:18 GMT",
+        "region": "us",
+        "person_or_entity": "待核实",
+        "role_or_place": "待核实"
+      },
+      {
+        "title": "为什么国际逮捕令没有阻止内塔尼亚胡的美国之行",
+        "source": "BBC US",
+        "url": "https://www.bbc.co.uk/news/videos/ckq633lm11jeo?at_medium=RSS&at_campaign=rss",
+        "time": "Fri, 25 Sep 2026 18:41:13 GMT",
+        "region": "us",
+        "person_or_entity": "待核实",
+        "role_or_place": "待核实"
+      },
+      {
+        "title": "特朗普政府起诉阻止对即将到来的阿拉斯加大选的认证",
+        "source": "BBC US",
+        "url": "https://www.bbc.co.uk/news/articles/c678pv4krx37o?at_medium=RSS&at_campaign=rss",
+        "time": "Fri, 23 Oct 2026 18:49:14 GMT",
         "region": "us",
         "person_or_entity": "待核实",
         "role_or_place": "待核实"
@@ -525,7 +543,7 @@
     "unknown": "尚无足够公开证据验证的部分"
   },
   "social": {
-    "updated": "2026-11-06T10:58:18.338897+00:00",
+    "updated": "2026-11-06T18:24:54.558129+00:00",
     "method": "public discussion discovery proxy via indexed public RSS; not representative survey data",
     "items": [
       {
@@ -641,18 +659,25 @@
         "time": "Tue, 15 Jul 2025 07:00:00 GMT"
       },
       {
-        "title": "中美开启贸易谈判，对比七年前的三大不同：地点、人选、经济压力 - BBC",
-        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBZeE85WTdkaWo3RW5UMk5oQkNvd2VrTWxCakNDbFRxR28yaHhKamJjOERYYWo3MnRHcmlsRmgwZzR3aUdDYzQzckpqUm9rU0JFMjAtWERDWF9qeXZ6UzloQXZvX0wzUdIBa0FVX3lxTE1HZ2lmRnBpVEVrZlotOG9WUkVkYjZ4VlJHTDdUQnFWcEcxbUFVcDBDUEFrNjc2eS1OdGhqc01Ca2ZaN2NNVGkzOF9KMG1fSFlCNUxQTUJremxnZmdTRXdHYkF0ZjBqQ3dNaExB?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "china",
-        "time": "Wed, 07 May 2025 07:00:00 GMT"
-      },
-      {
         "title": "中国民众如何看待“9·3阅兵”：中国排面、忆苦思甜、调侃邻国 - BBC",
         "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9lU0JDVzBWYmx1YVc5cDQtc1NPbnpfS3NscHF3QlRxdHpYV3huTlRrellNczNpaU1kRFhDRHhsc1ZxWXdPNTVZSmE1Q1BHUDQ2TWlrY1B6dndBYjktYlZrWUtVZmpVZ9IBa0FVX3lxTFA0T1lpTkphYVpfUm5YbGRyOG1NT0RtbTJZMjlLM0VBZF9nVE5zNjV3Y3hLU295VXpMcnBSTTZuQ3JlSWlKb2gwekwyTUxBSi03VmFkaUozeS1jRFcwRm9OTXd5UURDeDhMank0?oc=5",
         "source": "Google News discussion proxy",
         "region": "china",
         "time": "Wed, 03 Sep 2025 07:00:00 GMT"
+      },
+      {
+        "title": "中美开启贸易谈判，对比七年前的三大不同：地点、人选、经济压力 - BBC",
+        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBZeE85WTdkaWo3RW5UMk5oQkNvd2VrTWxCakNDbFRxR28yaHhKamJjOERYYWo3MnRHcmlsRmgwZzR3aUdDYzQzckpqUm9rU0JFMjAtWERDWF9qeXZ6UzloQXZvX0wzUQ?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "china",
+        "time": "Wed, 07 May 2025 07:00:00 GMT"
+      },
+      {
+        "title": "How Is the Economy Doing Right Now? - NerdWallet",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1nRU1VZTZjeXA1TTdRU1g5d1Zha0RvU1phVU1LaGIwVmN6Wk5wTk5WRG5fTHMxZUZCZkdrb0oyVk1DU1VhM05Felp2WXNmbHktdzEwSTNYOTlTWmNtMmYyMjV6RkFTYUYwSVEtRWZn?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "us",
+        "time": "Thu, 29 Oct 2026 07:00:00 GMT"
       },
       {
         "title": "Job Market’s Effect on the Economy - U.S. Bank",
@@ -704,18 +729,11 @@
         "time": "Thu, 07 May 2026 07:00:00 GMT"
       },
       {
-        "title": "Iran war upends spring housing market. Here's what real estate agents are seeing - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOeWJWVUJ0eU80eVJYc2ZKZGF0Z0dRWDNlbzV3bVBqNUJWTlpTRnJMWGhYUEo4MzZrbjNPMERSRVkweTdSR0FUX01SYkc0a0d1aElOQ0NNa3lmc2ZDT1VMZGpaRENRMkN3M3NuSWRMWlpvc3dkTlRzck15dFl0Wk9rUnl2V05ta2xGME1OTVQ0SFDSAZYBQVVfeXFMTkdDODk1b0NqbE9fYUJWTnVXRFBiTVIwSFdKSE9nUERSTlE2VFkzc3czZkZlbVVqREZXeHhFTmNhV2dPZ2h4SjZSUVZxbGc1T0FkN0FCQlZiaG52RTNfX2pjUGk4MFl2N3VHam9JVWhiaHZrU0NQLXhPZUljdVF2ZFlET25DZkUyVzByVG45WW4xU1RoTEhn?oc=5",
+        "title": "Consumer optimism slides to lowest since 2014 as fears escalate over rising prices and jobs - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTUVWUUs1WlNQdnZ5RVFXRUpESVZqVDZZSkcxNmRSVTJtZ3ZVZEtPal90OFFhTjZISmJva3FvMTE0NmZVUHRMOEZ0OV93aWNiY3d5SHdBcE44cS1kMnJKOU5TdU9tNGZsU0oxVVRGU3ZzTGZLZ2FlNHVlck1ZQWwyTk9Xd09LWk53X3ROVGFrLWRnMWpGOXcyVGJQcVVmdnhhaEtIUklaWnVxZW0tUEZ3b1ZrVk43QdIBuwFBVV95cUxNRnVxRTM0U0JCVVIxd0xBTW4xb3F6MW4wYXI4ejhiSFdrX1AwblBFak5tNFBKY282Q2dsQmpGOFNfRENsaVhEdWlWMzFMS0hBcktjeDZWdnZTbloyWjNBQ3ZDemVtbVBVbGYtejZXQjlHUnlNeFFOWnlkc0NuNEljdENZWnQwdGZLX25GaF9uRWdmQnd2YWtUNThpb3hlRU40YnhhZzgybWxGSU5IWXdWM2s4SkdnNmd5TG0w?oc=5",
         "source": "Google News discussion proxy",
         "region": "us",
-        "time": "Tue, 07 Apr 2026 07:00:00 GMT"
-      },
-      {
-        "title": "Navigating Uncertainty: Inflation, Labor Markets, and the Stance of Monetary Policy - Philadelphia Federal Reserve Bank",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSk52V3A5Y0FhS05YQ3Vlemw1Ym1ITWw4ZXdnZnlWMGI2M3VmTzRXWmhXOTBIekQ4M3daY2puWV8zNzJTLW9JRVd2aGdjeWNpYkJWbEE3em5PM3lUY0VHV1RnNDMtUTlTUzNIMkRUeXNmdVlJclZGMk5uckZiTTU5dml5YWRNOEJZUVlvTndsYmtObzdfY0JXRkxGS3NMVUtlcmc?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "us",
-        "time": "Tue, 19 May 2026 07:00:00 GMT"
+        "time": "Tue, 29 Sep 2026 07:00:00 GMT"
       },
       {
         "title": "The paradox between the macroeconomy and household sentiment - Brookings",
@@ -739,13 +757,6 @@
         "time": "Wed, 30 Sep 2026 07:00:00 GMT"
       },
       {
-        "title": "Conference Board: Consumer Confidence Rises in October - NerdWallet",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdjQxbHNVZ1h4V1hHalVHX2NKajBrRE1zUkc2dHBMbFU2M1RMOVJ1Q2NDQVVBOXp5c3gzczBrTkVQSzdqX2hZbTd5UVhqZ0ltYmJWOHJLUlhZT21WTWFkblpVdWoxYW1xS2Q2MG1HZ2JKT0lERGF6STB6LXBnd3pCSE1FX25QZ0JOVDVWaDhlUFV5N2pwSXF6cA?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "us",
-        "time": "Tue, 27 Oct 2026 07:00:00 GMT"
-      },
-      {
         "title": "Recent Economic and Financial Developments - Federal Reserve (.gov)",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE03UGNRZnBGUnJOYWw5emJOWlN3Y0JxV0J1SEpwbW5kUXN1VGN5Q2tHZERoRnZRMjRyRERlbEhrWi1pZGxHWkowNHBrMVcyUE8xREVITGtaajRuTV81LTNrUEVzclNiTlJIUE5iV0lLaVpOdHZzMFE?oc=5",
         "source": "Google News discussion proxy",
@@ -767,18 +778,25 @@
         "time": "Tue, 24 Feb 2026 08:00:00 GMT"
       },
       {
-        "title": "Consumer optimism slides to lowest since 2014 as fears escalate over rising prices and jobs - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTUVWUUs1WlNQdnZ5RVFXRUpESVZqVDZZSkcxNmRSVTJtZ3ZVZEtPal90OFFhTjZISmJva3FvMTE0NmZVUHRMOEZ0OV93aWNiY3d5SHdBcE44cS1kMnJKOU5TdU9tNGZsU0oxVVRGU3ZzTGZLZ2FlNHVlck1ZQWwyTk9Xd09LWk53X3ROVGFrLWRnMWpGOXcyVGJQcVVmdnhhaEtIUklaWnVxZW0tUEZ3b1ZrVk43QdIBuwFBVV95cUxNRnVxRTM0U0JCVVIxd0xBTW4xb3F6MW4wYXI4ejhiSFdrX1AwblBFak5tNFBKY282Q2dsQmpGOFNfRENsaVhEdWlWMzFMS0hBcktjeDZWdnZTbloyWjNBQ3ZDemVtbVBVbGYtejZXQjlHUnlNeFFOWnlkc0NuNEljdENZWnQwdGZLX25GaF9uRWdmQnd2YWtUNThpb3hlRU40YnhhZzgybWxGSU5IWXdWM2s4SkdnNmd5TG0w?oc=5",
+        "title": "Conference Board: Consumer Confidence Rises in October - NerdWallet",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdjQxbHNVZ1h4V1hHalVHX2NKajBrRE1zUkc2dHBMbFU2M1RMOVJ1Q2NDQVVBOXp5c3gzczBrTkVQSzdqX2hZbTd5UVhqZ0ltYmJWOHJLUlhZT21WTWFkblpVdWoxYW1xS2Q2MG1HZ2JKT0lERGF6STB6LXBnd3pCSE1FX25QZ0JOVDVWaDhlUFV5N2pwSXF6cA?oc=5",
         "source": "Google News discussion proxy",
         "region": "us",
-        "time": "Tue, 29 Sep 2026 07:00:00 GMT"
+        "time": "Tue, 27 Oct 2026 07:00:00 GMT"
       },
       {
-        "title": "US consumer confidence unexpectedly improves, but higher gasoline prices still a worry - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRWtEbVQ2N3NkMm5LT1hXY2NCaUlnTWhjMTM2eEhDU0l5cS1HTm9nRkJsOHo5bERmY0EtZUUxdGdzV0JXYkZtNnFRbm9LemlQcUZvbWRVaFRKVVNkTGRCMmNTZUlLa0dIY3lnU0RERHNNU1loTTk4UUt0UFFoRUZJbU81QVVXSmVwY29jZHFCWjgwZnRNYjlYdnNPcw?oc=5",
+        "title": "Iran war upends spring housing market. Here's what real estate agents are seeing - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOeWJWVUJ0eU80eVJYc2ZKZGF0Z0dRWDNlbzV3bVBqNUJWTlpTRnJMWGhYUEo4MzZrbjNPMERSRVkweTdSR0FUX01SYkc0a0d1aElOQ0NNa3lmc2ZDT1VMZGpaRENRMkN3M3NuSWRMWlpvc3dkTlRzck15dFl0Wk9rUnl2V05ta2xGME1OTVQ0SFDSAZYBQVVfeXFMTkdDODk1b0NqbE9fYUJWTnVXRFBiTVIwSFdKSE9nUERSTlE2VFkzc3czZkZlbVVqREZXeHhFTmNhV2dPZ2h4SjZSUVZxbGc1T0FkN0FCQlZiaG52RTNfX2pjUGk4MFl2N3VHam9JVWhiaHZrU0NQLXhPZUljdVF2ZFlET25DZkUyVzByVG45WW4xU1RoTEhn?oc=5",
         "source": "Google News discussion proxy",
         "region": "us",
-        "time": "Tue, 28 Apr 2026 07:00:00 GMT"
+        "time": "Tue, 07 Apr 2026 07:00:00 GMT"
+      },
+      {
+        "title": "US consumer confidence slips to six-month low; worries over job availability rising - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOelRRaWdQRTBBbGVFXzNrMkVuN0dmU1lwcmY3WDBBX3dnYlVnbDE4T1dqdUhPREZ5alR4WDdtemdlVVEwa0paeHlVRWQ5aTM5U1Z4bWFhd3NKMENwc3R6TjFJQkVwV2xYQ2hNNkRVS1Bfa3AxMVlEbUd1aGlyZnVmVTRpajVSandfY0RoWVdOVUdJOG1vSHVnellxZVBHcjhsQnZEZlNZaDBTTzA?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "us",
+        "time": "Tue, 28 Oct 2025 07:00:00 GMT"
       },
       {
         "title": "Americans are more dissatisfied with Trump's handling of the economy than ever, poll shows - PBS",
@@ -788,11 +806,11 @@
         "time": "Wed, 17 Dec 2025 08:00:00 GMT"
       },
       {
-        "title": "US consumer confidence slips to six-month low; worries over job availability rising - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOelRRaWdQRTBBbGVFXzNrMkVuN0dmU1lwcmY3WDBBX3dnYlVnbDE4T1dqdUhPREZ5alR4WDdtemdlVVEwa0paeHlVRWQ5aTM5U1Z4bWFhd3NKMENwc3R6TjFJQkVwV2xYQ2hNNkRVS1Bfa3AxMVlEbUd1aGlyZnVmVTRpajVSandfY0RoWVdOVUdJOG1vSHVnellxZVBHcjhsQnZEZlNZaDBTTzA?oc=5",
+        "title": "US consumer confidence unexpectedly improves, but higher gasoline prices still a worry - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRWtEbVQ2N3NkMm5LT1hXY2NCaUlnTWhjMTM2eEhDU0l5cS1HTm9nRkJsOHo5bERmY0EtZUUxdGdzV0JXYkZtNnFRbm9LemlQcUZvbWRVaFRKVVNkTGRCMmNTZUlLa0dIY3lnU0RERHNNU1loTTk4UUt0UFFoRUZJbU81QVVXSmVwY29jZHFCWjgwZnRNYjlYdnNPcw?oc=5",
         "source": "Google News discussion proxy",
         "region": "us",
-        "time": "Tue, 28 Oct 2025 07:00:00 GMT"
+        "time": "Tue, 28 Apr 2026 07:00:00 GMT"
       },
       {
         "title": "Trump’s Final Numbers - FactCheck.org",
@@ -816,39 +834,11 @@
         "time": "Sat, 25 Mar 2017 19:38:39 GMT"
       },
       {
-        "title": "Experts react: Democrats just swept the US midterms. Here’s what it means for the world. - Atlantic Council",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPeE15WFg4U1VydFliejA2dzJLR1pkT0tlNE1hWHpORHVUelN1ZXRoeUNwNTNUSTNwa0JabXhEYjZpcUQ4YU5RaUk2d3JtMWZNa0tobHpPNGxBdWI0eHlDLXFTM0dKaC1mSUVINEdEU1lRam1DOHhZQlFGWWJYenVhTGhDcnJqdkdRQmNRV1VWUnAxMjVRQlY4YU5Lay1jSk5JUkx1bVdHM3A3U0J0MVNKLWFuZENtaHhvbTRlVDY3RE9nV01Ndi1v?oc=5",
+        "title": "Taking the Pulse: Is Canada Leading a Third Way? - Carnegie Endowment for International Peace",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMDk1SW1qcWkzaEItZVgwWElMQlFGLVNEQTNVenE4UUJWZ3gtcm8za0ZEbmRfWWZTbUJ0WVQ3ZmtHaE9RTWw2SnNoLTBLWE9Rdk1GbENFc1pqaWkya2xvVEFNWlgxQklGaDE0OEpVQk8yTGNOOTkwc3BZcWJWYmhFNWhSWVRkUUxndWdwbzUyY0Z6RUZ2TWJUWk0tcnJDWEZ4bkFrWnN5UVljVVo0?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
-        "time": "Wed, 04 Nov 2026 18:27:39 GMT"
-      },
-      {
-        "title": "U.S. midterm results may matter less for India-U.S. ties than for India’s room to manoeuvre in geopolitics - The Hindu",
-        "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQanVYUDdQVUFJZnljSjZLaDZKc2FxZDh4X3hRZmIzUGdNV0dRQWlCMmhMWWVHRGI0bjVSaGRZa0N3YjhNSjRHZWhxMXA1blo0VUF3Rk5DYjBybW1BTExTM0JrZzVuSmszd09VbjVkQWgtSzBQNXc4VTlMVFhBSE56Y1pjcmhpRkk0bVNCVXViUzB1QXA0Ym42QU1ESVNrbTZpdUkxUEtuN2dZekRjTDFhRzlxQV9hSEduR2R6Y1ZYYmVLelY2WmdLQ0UzNTgxM1RFUXV1Rmc0ajZqOHd2MVZObUlfaDFuMkNhVzNWamhudy04d9IB-AFBVV95cUxNODdPOFhLdmFsZzFacEVzd1dyTkw3WjNtb0M0cU5wRkR1aEc1cXFjRFZMMDVZMUk2SFdPeFJFYzZjX3NXNmZpWjlNQmpINzg5VkpUWFB1WVF6cmthTi01MWYtUS05SlhQbWRNS3pKRjh5eUZodDNya0JvNGZtQnBieERIdWdRMWlVWFg5NldkajczVDFlUUFTSjdRN0ZSOWQ3ZUpJN0tkZkFWbVZub2F5cC1BTHJfN3FobDdReHYxNUlUSUNjLWJpRURIX3hGc2tMM2EyWXVaYlFEcDRESVVWUlRtaG9NZUx3NU1wNFF3Ql9NRFpaYlZ1aA?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Wed, 04 Nov 2026 12:17:43 GMT"
-      },
-      {
-        "title": "DW News. . India and Europe are moving closer. Trade is one driver, but strategy matters more. As US reliability is questioned and China’s rise reshapes geopolitics, can they build a lasting partnership? #DWGeopolitics #India #EU - Facebook",
-        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQQVcyMkZBVW1ob1JHYVBjUDhLcGpqOV9xckRzRmJvMVBmdXRyWElPb3RhTHhYMGN4MG5iSVdGZkotd0dFcFNJcGE2R1JhQkdIUHFmUEZ1RWUxM19ORng3SXltenJUSDZ0T2l5M0o5Wm5zdFpwdFZBOWJtaVlYdDJKNHhpeWRhbTFmMFZJRU5xemdHZ2d4dWlwc1g4Sl9qd3NpTTAzSC1NbGdvWVFxM0t2OE1VMlNSSDhsNWp0a1hiXzlPMC1KcWhpTnRoTEEtQ0RmX0IwdnVHQ0ZzNjZhc0FxZmVn?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Wed, 07 Oct 2026 07:00:00 GMT"
-      },
-      {
-        "title": "Power and Geopolitics After Trump - Paul Krugman | Substack",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1QNkxyQTBEZnM4VVZYN2VZYXFKbHIzTTZxS053QlZwVmpnMHUteThXUVcyVWs4aWkxaTNuRmtwVXpaTHF3QWNCU2tpNlk0bXVzVU9rZ19uRzZJNld6NUZVSkN6SnNJWmJ1QzJWMHdYekt1dERfb25Z?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Thu, 18 Jun 2026 07:00:00 GMT"
-      },
-      {
-        "title": "Seven Experts on How Canada Survives Trump’s Trade War - The Walrus",
-        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9nZWNCSHRqVjVRTkRURDhyclZnTS1VbnRYSlBwQmI5bG9nMnJKSGtiMEw2RHB0X2tWQ2RnSnhiQ1V5NHVjZWZBb3hGLWZDTnAxR0VWb0pxSWlUNGtqQkE?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Mon, 24 Aug 2026 07:00:00 GMT"
+        "time": "Thu, 03 Sep 2026 07:00:00 GMT"
       },
       {
         "title": "Will China Dominate the Future? - Chicago Council on Global Affairs",
@@ -879,11 +869,11 @@
         "time": "Wed, 25 Mar 2026 07:00:00 GMT"
       },
       {
-        "title": "At the Trump-Xi Summit, China Will Have the Upper Hand - Council on Foreign Relations",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxON2FRS0xIUXZETUlXXzlndENaZF9kdlliWlQtVWFJRzdPUjJndE5Bd3ZZRFpUVHl1R2NCSjBQMG1tZ05EOS1GN0M0cW9Idk9zMU5xQWFlSkRBeFQxa25pdXV4RkhYRWJQbWFPckRjSUh6VzdWWkNyMTJDMk5CNzNkY3BURmo0ZlJFb0E?oc=5",
+        "title": "Experts react: How the world is responding to the US-Israeli war with Iran - Atlantic Council",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ2MzMWViQ3E2MHdxRzhOLUNqSXNWUTAtOTFGYy1KT0dpUjBfZE1lUXRlU2k4d2FFVTJIWk1YeDdSN3VxdmVmSFVfazFteFlpeUxwTjVwbEZ1Q3U0TDRTVnRQOXZHNUpZODIzdEplVXJzYnhnNzdoTXJNS3pRWm1vZFQ0Ny0zdXNXczhYNnFKdUMyLTZVV29VU3NuVXRWWk1fNEVwSGltMmV4RVJGNHA3Yy1kdDIzMEph?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
-        "time": "Sun, 10 May 2026 07:00:00 GMT"
+        "time": "Tue, 03 Mar 2026 08:00:00 GMT"
       },
       {
         "title": "China's domestic debates under the shadow of geopolitics - Mercator Institute for China Studies",
@@ -900,18 +890,25 @@
         "time": "Mon, 02 Mar 2026 08:00:00 GMT"
       },
       {
-        "title": "U.S.-China Relations for the 2030s: Toward a Realistic Scenario for Coexistence - Carnegie Endowment for International Peace",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPLXgtQm42RDIzUXh3Vnl5YlhBaXFOXzNldF9KVTBWYVpqSnlXTGh4cWRMZ253M1dYREdrVlNfNmgyTGJqRGpCYmFtT054U05FMGRtVFVXVUdFOHR5UGxqTGtkYmxBR1NIV0dpREpsdkZZcjdEX3VJVm8xcWRWQ2t2T25JMUFlSXR3cE4wRUh6bmpvYmVXcDM2cW9HU29BSWRNZ0NDM0ppU0dMYTVhclNjUUlWal8yZjJsUVVKZ0dBekQ?oc=5",
+        "title": "Geopolitics of Trump Tariffs: How U.S. Trade Policy Has Shaken Allies - Council on Foreign Relations",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZE1OWC1LNmJGQXEySEYzRkh6dWl3RWlwWndvSU53N2dOVEMwbnVaT0otY0V1VHdPQXNYMWg4MEUxNXhZSWtBdzVUeHJJTzlYMDFqcXJMUnlHQWl2U1FaZllMUERCSk5nb3NUTUFReXlfOFJNUDNQLUhFLUJJcExBUDdxN0dQamxWRXRuVEk4ZGRhbmpDa3BV?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
-        "time": "Thu, 17 Oct 2024 07:00:00 GMT"
+        "time": "Wed, 10 Sep 2025 07:00:00 GMT"
       },
       {
-        "title": "Escalating Japan-China Tensions: Insights from the Past and Prospects for the Future - CSIS | Center for Strategic and International Studies",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdndpbzY4OTR6NHZrY3VEUmJQYUt1c1BTU3ZPUWJmRWZOeUtUcFpDSmdKNEU3cHZmOFpUcGRMYkdqbE5ueVZlUTlwU1VOaUJDN2hTdHk5Nm5VV21iVW1mZ2pYeUttc0VKZzI0UVBnTXJWeUU4UGUzdTB4Mnh6S1VpOC1RdUFaWEpqUUpFSUd4UnFwUDFTRUFpdDdqSHE?oc=5",
+        "title": "Experts React: What the Epic Fury Iran Strikes Signal to the World - Stimson Center",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPQTBJUWpSNkl3ajBiYTd4Nk5GM1dKZE5mOUdYNkxzS1REM0VGOXJuU1hMNnpkenpyRk9PSlkyRUc4eEp4YXR5ZnNKQ2tqUTljc25NMzRpLUdNUnFmQi1JR3o5RVlOUFNsa21zTTFBQi1vc2JHTVd0RUJEUDlKM2JzTEJQN2lnaTdjTHU5Q1VFMVVqMHptbTFUQndCZw?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
-        "time": "Fri, 05 Dec 2025 08:00:00 GMT"
+        "time": "Sat, 28 Feb 2026 08:00:00 GMT"
+      },
+      {
+        "title": "Power and Geopolitics After Trump - Paul Krugman | Substack",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1QNkxyQTBEZnM4VVZYN2VZYXFKbHIzTTZxS053QlZwVmpnMHUteThXUVcyVWs4aWkxaTNuRmtwVXpaTHF3QWNCU2tpNlk0bXVzVU9rZ19uRzZJNld6NUZVSkN6SnNJWmJ1QzJWMHdYekt1dERfb25Z?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Thu, 18 Jun 2026 07:00:00 GMT"
       },
       {
         "title": "Latin America caught between the U.S. and China - GIS Reports",
@@ -921,18 +918,18 @@
         "time": "Tue, 20 May 2025 07:00:00 GMT"
       },
       {
-        "title": "Experts react: How the world is responding to the US-Israeli war with Iran - Atlantic Council",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ2MzMWViQ3E2MHdxRzhOLUNqSXNWUTAtOTFGYy1KT0dpUjBfZE1lUXRlU2k4d2FFVTJIWk1YeDdSN3VxdmVmSFVfazFteFlpeUxwTjVwbEZ1Q3U0TDRTVnRQOXZHNUpZODIzdEplVXJzYnhnNzdoTXJNS3pRWm1vZFQ0Ny0zdXNXczhYNnFKdUMyLTZVV29VU3NuVXRWWk1fNEVwSGltMmV4RVJGNHA3Yy1kdDIzMEph?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Tue, 03 Mar 2026 08:00:00 GMT"
-      },
-      {
         "title": "In quotes: How leaders at Davos 2025 view Trump's comeback - World Economic Forum",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPS21LMHR4M3NnUHFwOFZoS21mMXBZUjJYYzJCZ05DTFBwSzVOQnB2djFVSWwxX1NkMlZiRjZkRVNWMHZmNHVYZUFZYldXbzd2TVh1b3JsNWthN09QM1dFWlcta1Z4THNhT01CdVVyaDA0aUR3NDE4NDYxaHk1THUwU2dqMzJxbEk1U3BiQkM4MFhvN054cUE?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
         "time": "Thu, 23 Jan 2025 08:00:00 GMT"
+      },
+      {
+        "title": "Escalating Japan-China Tensions: Insights from the Past and Prospects for the Future - CSIS | Center for Strategic and International Studies",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdndpbzY4OTR6NHZrY3VEUmJQYUt1c1BTU3ZPUWJmRWZOeUtUcFpDSmdKNEU3cHZmOFpUcGRMYkdqbE5ueVZlUTlwU1VOaUJDN2hTdHk5Nm5VV21iVW1mZ2pYeUttc0VKZzI0UVBnTXJWeUU4UGUzdTB4Mnh6S1VpOC1RdUFaWEpqUUpFSUd4UnFwUDFTRUFpdDdqSHE?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Fri, 05 Dec 2025 08:00:00 GMT"
       },
       {
         "title": "What Trump's Attack on Venezuela Means for the Region and the World - Chicago Council on Global Affairs",
@@ -942,11 +939,11 @@
         "time": "Sat, 03 Jan 2026 08:00:00 GMT"
       },
       {
-        "title": "Geopolitics of Trump Tariffs: How U.S. Trade Policy Has Shaken Allies - Council on Foreign Relations",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZE1OWC1LNmJGQXEySEYzRkh6dWl3RWlwWndvSU53N2dOVEMwbnVaT0otY0V1VHdPQXNYMWg4MEUxNXhZSWtBdzVUeHJJTzlYMDFqcXJMUnlHQWl2U1FaZllMUERCSk5nb3NUTUFReXlfOFJNUDNQLUhFLUJJcExBUDdxN0dQamxWRXRuVEk4ZGRhbmpDa3BV?oc=5",
+        "title": "U.S.-China Relations for the 2030s: Toward a Realistic Scenario for Coexistence - Carnegie Endowment for International Peace",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPLXgtQm42RDIzUXh3Vnl5YlhBaXFOXzNldF9KVTBWYVpqSnlXTGh4cWRMZ253M1dYREdrVlNfNmgyTGJqRGpCYmFtT054U05FMGRtVFVXVUdFOHR5UGxqTGtkYmxBR1NIV0dpREpsdkZZcjdEX3VJVm8xcWRWQ2t2T25JMUFlSXR3cE4wRUh6bmpvYmVXcDM2cW9HU29BSWRNZ0NDM0ppU0dMYTVhclNjUUlWal8yZjJsUVVKZ0dBekQ?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
-        "time": "Wed, 10 Sep 2025 07:00:00 GMT"
+        "time": "Thu, 17 Oct 2024 07:00:00 GMT"
       },
       {
         "title": "The dependence gap in Russia-China relations - European Union Institute for Security Studies |",
@@ -954,6 +951,13 @@
         "source": "Google News discussion proxy",
         "region": "global",
         "time": "Thu, 02 Oct 2025 07:00:00 GMT"
+      },
+      {
+        "title": "At the Trump-Xi Summit, China Will Have the Upper Hand - Council on Foreign Relations",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxON2FRS0xIUXZETUlXXzlndENaZF9kdlliWlQtVWFJRzdPUjJndE5Bd3ZZRFpUVHl1R2NCSjBQMG1tZ05EOS1GN0M0cW9Idk9zMU5xQWFlSkRBeFQxa25pdXV4RkhYRWJQbWFPckRjSUh6VzdWWkNyMTJDMk5CNzNkY3BURmo0ZlJFb0E?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Sun, 10 May 2026 07:00:00 GMT"
       },
       {
         "title": "Geopolitics and Economic Statecraft in the European Union - Carnegie Endowment for International Peace",
@@ -970,6 +974,13 @@
         "time": "Wed, 08 Oct 2025 07:00:00 GMT"
       },
       {
+        "title": "Experts react: Democrats just swept the US midterms. Here’s what it means for the world. - Atlantic Council",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPeE15WFg4U1VydFliejA2dzJLR1pkT0tlNE1hWHpORHVUelN1ZXRoeUNwNTNUSTNwa0JabXhEYjZpcUQ4YU5RaUk2d3JtMWZNa0tobHpPNGxBdWI0eHlDLXFTM0dKaC1mSUVINEdEU1lRam1DOHhZQlFGWWJYenVhTGhDcnJqdkdRQmNRV1VWUnAxMjVRQlY4YU5Lay1jSk5JUkx1bVdHM3A3U0J0MVNKLWFuZENtaHhvbTRlVDY3RE9nV01Ndi1v?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Wed, 04 Nov 2026 18:27:39 GMT"
+      },
+      {
         "title": "US tariffs: What’s the impact on global trade and the economy? - J.P. Morgan",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQb3lSU0NkcmFUcXpYZlo4eHRfeWVpaUk0QzJTNXdyZV9kaVlyYW9jdmRCeVpKOTVDZzJrNDZxQVdaZFE5S1IyR3E3QVpkaTBiYWtfVjYtWklHUmdRcERTWS1DREJSeDg1SDQwUDFJZ09qQVl6UGYzamtycm9kcjh2MA?oc=5",
         "source": "Google News discussion proxy",
@@ -982,13 +993,6 @@
         "source": "Google News discussion proxy",
         "region": "global",
         "time": "Mon, 06 Oct 2025 07:00:00 GMT"
-      },
-      {
-        "title": "From strategy to doctrine: the next steps for European economic security - Bruegel",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZjJyQkF3Uy1wVE1DYlkwNVJ3amZqN0RPbjZHa0ozVng1am5Ub2tpVXhCc1ZlNFM3VUpvT2xnQnN5dVpKV3pRMVM4SVVPbUJtbHJyNUpUTGxDeXlpZWF6WDMzYzQyX3pQRWJJd0RsTlZyaHFmMWhTVWFxYzBIYUdoOXJpNWJSc3Itblg1NWhOYkRrekw3Rlhr?oc=5",
-        "source": "Google News discussion proxy",
-        "region": "global",
-        "time": "Tue, 02 Dec 2025 08:00:00 GMT"
       },
       {
         "title": "South Korea’s Response to U.S. Demands: Minimize Risk, Maximize Reward - CSIS | Center for Strategic and International Studies",
@@ -1019,6 +1023,20 @@
         "time": "Mon, 12 Feb 2024 08:00:00 GMT"
       },
       {
+        "title": "From strategy to doctrine: the next steps for European economic security - Bruegel",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZjJyQkF3Uy1wVE1DYlkwNVJ3amZqN0RPbjZHa0ozVng1am5Ub2tpVXhCc1ZlNFM3VUpvT2xnQnN5dVpKV3pRMVM4SVVPbUJtbHJyNUpUTGxDeXlpZWF6WDMzYzQyX3pQRWJJd0RsTlZyaHFmMWhTVWFxYzBIYUdoOXJpNWJSc3Itblg1NWhOYkRrekw3Rlhr?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Tue, 02 Dec 2025 08:00:00 GMT"
+      },
+      {
+        "title": "China is playing the long game over Iran - Chatham House",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE53SF93LXQwQl84aS1ndHo3TTJOcnVjbW0zUThpa2NVemV1MWRtUDFaUy1OZzZkLW1vWTUwM0ZrVmxJM29IUjIyY3hzSmtTSWY1X3BGOVNoSVQ4RTEybWxpTTBuYUdhZm8zOHRibHFqNGJKTi1hSmFmUGxR?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Fri, 27 Feb 2026 08:00:00 GMT"
+      },
+      {
         "title": "Public Opinion on Geopolitics and Trade - Cambridge University Press & Assessment",
         "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTEpJeUE1eTdobVk0cWFyMW5TVXl2ZkZ5U3BWalIwOEtvRzlYSGRmdzNvTUsxVkRJRExWUnd5eHBZLTU4R3o0YzdOZFdTZHk2cElXbWc4T3hYRkN3TkxlRmV6d1Q4NVhDb1lPOFUtbWhzRjhDSVpBdEJkRmFMeTlPcGhHaldBcHlZUlcwMlNvenRoYk5RUW5jQjhBYjVMVFVBZ3JfcnI4aWxLYVFpbDNGeEoyT0dXaWptcDcwa1o1Y3RKdG5Ba3QzTG9LbG42LWxy?oc=5",
         "source": "Google News discussion proxy",
@@ -1026,19 +1044,33 @@
         "time": "Mon, 11 Apr 2022 02:23:26 GMT"
       },
       {
+        "title": "Seven Experts on How Canada Survives Trump’s Trade War - The Walrus",
+        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9nZWNCSHRqVjVRTkRURDhyclZnTS1VbnRYSlBwQmI5bG9nMnJKSGtiMEw2RHB0X2tWQ2RnSnhiQ1V5NHVjZWZBb3hGLWZDTnAxR0VWb0pxSWlUNGtqQkE?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Mon, 24 Aug 2026 07:00:00 GMT"
+      },
+      {
         "title": "Bangladesh is helping to create a geopolitical shift in South Asia - Chatham House",
         "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMVVVbjY2X0NnU3RRUjJ0R09oemRzVzd6N1BZb0FYMUtmMVgwbkZleEFMVGdXTzRXVUVIRGIwLUVrYkpUSkdmSU50YlZwT3ZfdmNlb0FaU2RYNWttMlFjSWhNZjVrU0NjMlJ4YmxiYnBCTk42Vlc1M3kyaGc4NzhxZ2dNRkVlajNISGVyNXF1V1VrQS1FQjdR?oc=5",
         "source": "Google News discussion proxy",
         "region": "global",
         "time": "Fri, 13 Jun 2025 07:00:00 GMT"
+      },
+      {
+        "title": "U.S. midterm results may matter less for India-U.S. ties than for India’s room to manoeuvre in geopolitics - The Hindu",
+        "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQanVYUDdQVUFJZnljSjZLaDZKc2FxZDh4X3hRZmIzUGdNV0dRQWlCMmhMWWVHRGI0bjVSaGRZa0N3YjhNSjRHZWhxMXA1blo0VUF3Rk5DYjBybW1BTExTM0JrZzVuSmszd09VbjVkQWgtSzBQNXc4VTlMVFhBSE56Y1pjcmhpRkk0bVNCVXViUzB1QXA0Ym42QU1ESVNrbTZpdUkxUEtuN2dZekRjTDFhRzlxQV9hSEduR2R6Y1ZYYmVLelY2WmdLQ0UzNTgxM1RFUXV1Rmc0ajZqOHd2MVZObUlfaDFuMkNhVzNWamhudy04d9IB-AFBVV95cUxNODdPOFhLdmFsZzFacEVzd1dyTkw3WjNtb0M0cU5wRkR1aEc1cXFjRFZMMDVZMUk2SFdPeFJFYzZjX3NXNmZpWjlNQmpINzg5VkpUWFB1WVF6cmthTi01MWYtUS05SlhQbWRNS3pKRjh5eUZodDNya0JvNGZtQnBieERIdWdRMWlVWFg5NldkajczVDFlUUFTSjdRN0ZSOWQ3ZUpJN0tkZkFWbVZub2F5cC1BTHJfN3FobDdReHYxNUlUSUNjLWJpRURIX3hGc2tMM2EyWXVaYlFEcDRESVVWUlRtaG9NZUx3NU1wNFF3Ql9NRFpaYlZ1aA?oc=5",
+        "source": "Google News discussion proxy",
+        "region": "global",
+        "time": "Wed, 04 Nov 2026 12:17:43 GMT"
       }
     ],
     "theme_counts": {
       "就业/收入": 3,
       "住房/房价": 1,
-      "物价/生活成本": 4,
+      "物价/生活成本": 3,
       "消费": 15,
-      "贸易/关税": 8,
+      "贸易/关税": 7,
       "地缘安全": 10
     },
     "health": {
@@ -1052,7 +1084,7 @@
       },
       "global": {
         "status": "ok",
-        "count": 31
+        "count": 33
       }
     },
     "limitations": [
@@ -1064,22 +1096,22 @@
     "status": "signal_only"
   },
   "data_health": {
-    "news_count": 9970,
+    "news_count": 10021,
     "ai_available": true,
-    "dashboard_updated": "2026-11-06 10:58 UTC",
-    "policy_updated": "2026-11-06 10:58 UTC"
+    "dashboard_updated": "2026-11-06 18:24 UTC",
+    "policy_updated": "2026-11-06 18:24 UTC"
   },
-  "generated_at": "2026-11-06T12:12:58.494870+00:00",
+  "generated_at": "2026-11-06T18:24:54.775847+00:00",
   "engine": "scenario-engine-v3-layered",
   "pipeline": {
     "status": "LIVE_PIPELINE",
-    "updatedAt": "2026-11-06T12:12:58.494870+00:00",
+    "updatedAt": "2026-11-06T18:24:54.775847+00:00",
     "stages": [
       {
         "id": "radar",
         "name": "实时雷达数据",
         "status": "OK",
-        "count": 9970,
+        "count": 10021,
         "source": "data/news.json"
       },
       {
@@ -1157,7 +1189,7 @@
   },
   "scenarioTasks": [],
   "schema_version": "2.0",
-  "generatedAt": "2026-11-06T12:12:58.494870+00:00",
+  "generatedAt": "2026-11-06T18:24:54.775847+00:00",
   "globalEvents": [
     {
       "id": "evt-1",
@@ -1176,8 +1208,8 @@
       "source": {
         "provider": "White House",
         "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1247,8 +1279,8 @@
       "source": {
         "provider": "US Treasury",
         "url": "https://home.treasury.gov/news/press-releases/sb0613/",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.95,
         "tier": "PRIMARY",
         "ageDays": null,
@@ -1320,7 +1352,7 @@
         "provider": "IAEA",
         "url": "http://www.iaea.org/newscenter/news/iaeas-grossi-calls-for-progress-in-deploying-nuclear-power-as-ministerial-conference-opens",
         "publishedAt": "26-10-27  09:00",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1389,7 +1421,7 @@
         "provider": "US Energy",
         "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
         "publishedAt": "20260908T1",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1458,8 +1490,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/10/1168644",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1528,8 +1560,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/10/1168648",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1598,8 +1630,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/10/1168672",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1669,7 +1701,7 @@
         "provider": "IAEA",
         "url": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development",
         "publishedAt": "26-09-25  14:02",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1738,8 +1770,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/09/1168416",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1808,8 +1840,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/09/1168458",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1878,8 +1910,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/09/1168476",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -1948,8 +1980,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/10/1168572",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -2018,8 +2050,8 @@
       "source": {
         "provider": "UN News",
         "url": "https://news.un.org/en/story/2026/10/1168596",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "credibility": 0.75,
         "tier": "KNOWN_MEDIA",
         "ageDays": null,
@@ -2642,8 +2674,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.6602,
-            "change_pct": -0.19,
+            "value": 6.6638,
+            "change_pct": -0.14,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -2652,8 +2684,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4078.5,
-            "change_pct": -0.85,
+            "value": 4069.5,
+            "change_pct": -1.07,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -2662,18 +2694,18 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 4.837,
-            "change_pct": -1.16,
+            "value": 4.839,
+            "change_pct": 0.04,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
-            "observedAt": "2026-11-05",
+            "observedAt": "2026-11-06",
             "interpretation": "同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
           },
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.05,
-            "change_pct": -0.24,
+            "value": 97.2,
+            "change_pct": -1.11,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -2682,8 +2714,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 26.58,
-            "change_pct": -5.68,
+            "value": 25.5,
+            "change_pct": -9.51,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -3991,7 +4023,7 @@
         "dynamicResponseTree": {
           "version": "dynamic-response-v4",
           "rootScenarioId": "scenario-a",
-          "generatedAt": "2026-11-06T12:12:58.746529+00:00",
+          "generatedAt": "2026-11-06T18:24:55.019779+00:00",
           "rounds": [
             {
               "round": 1,
@@ -9133,8 +9165,8 @@
             "url": "https://news.un.org/en/story/2026/10/1168644",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-11-06 09:46 UTC",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "publishedAt": "2026-11-06 17:22 UTC",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -9149,8 +9181,8 @@
             "url": "https://news.un.org/en/story/2026/10/1168648",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-11-06 09:46 UTC",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "publishedAt": "2026-11-06 17:22 UTC",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -9160,8 +9192,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.6602,
-            "change_pct": -0.19,
+            "value": 6.6638,
+            "change_pct": -0.14,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -9170,8 +9202,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4078.5,
-            "change_pct": -0.85,
+            "value": 4069.5,
+            "change_pct": -1.07,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -9180,18 +9212,18 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 4.837,
-            "change_pct": -1.16,
+            "value": 4.839,
+            "change_pct": 0.04,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
-            "observedAt": "2026-11-05",
+            "observedAt": "2026-11-06",
             "interpretation": "同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
           },
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.05,
-            "change_pct": -0.24,
+            "value": 97.2,
+            "change_pct": -1.11,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -9200,8 +9232,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 26.58,
-            "change_pct": -5.68,
+            "value": 25.5,
+            "change_pct": -9.51,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -10510,7 +10542,7 @@
         "dynamicResponseTree": {
           "version": "dynamic-response-v4",
           "rootScenarioId": "scenario-b",
-          "generatedAt": "2026-11-06T12:12:58.756931+00:00",
+          "generatedAt": "2026-11-06T18:24:55.030658+00:00",
           "rounds": [
             {
               "round": 1,
@@ -15653,7 +15685,7 @@
             "role": "CATALYST",
             "category": "ENERGY",
             "publishedAt": "26-10-27  09:00",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -15668,8 +15700,8 @@
             "url": "https://news.un.org/en/story/2026/10/1168644",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-11-06 09:46 UTC",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "publishedAt": "2026-11-06 17:22 UTC",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -15684,8 +15716,8 @@
             "url": "https://news.un.org/en/story/2026/10/1168648",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-11-06 09:46 UTC",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "publishedAt": "2026-11-06 17:22 UTC",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -15695,8 +15727,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.6602,
-            "change_pct": -0.19,
+            "value": 6.6638,
+            "change_pct": -0.14,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -15705,8 +15737,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4078.5,
-            "change_pct": -0.85,
+            "value": 4069.5,
+            "change_pct": -1.07,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -15715,18 +15747,18 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 4.837,
-            "change_pct": -1.16,
+            "value": 4.839,
+            "change_pct": 0.04,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
-            "observedAt": "2026-11-05",
+            "observedAt": "2026-11-06",
             "interpretation": "同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
           },
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.05,
-            "change_pct": -0.24,
+            "value": 97.2,
+            "change_pct": -1.11,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -15735,8 +15767,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 26.58,
-            "change_pct": -5.68,
+            "value": 25.5,
+            "change_pct": -9.51,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -17045,7 +17077,7 @@
         "dynamicResponseTree": {
           "version": "dynamic-response-v4",
           "rootScenarioId": "scenario-c",
-          "generatedAt": "2026-11-06T12:12:58.767218+00:00",
+          "generatedAt": "2026-11-06T18:24:55.041663+00:00",
           "rounds": [
             {
               "round": 1,
@@ -22173,18 +22205,18 @@
         }
       }
     ],
-    "generatedAt": "2026-11-06T12:12:59.377712+00:00",
+    "generatedAt": "2026-11-06T18:24:55.644351+00:00",
     "modelVersion": "dynamic-scenario-v3-response-modes"
   },
   "scenarioSnapshot": {
-    "generatedAt": "2026-11-06T12:12:58.985753+00:00",
+    "generatedAt": "2026-11-06T18:24:55.254972+00:00",
     "evidenceRegistry": [
       {
         "dedupeKey": "presidenttrumpwasright:americacontrolsthestraitofhormuz|us",
         "title": "President Trump Was Right: America Controls the Strait of Hormuz",
         "firstSeenAt": "2026-11-06 09:46 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 3,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 4,
         "sourceIds": [
           "white house"
         ],
@@ -22201,8 +22233,8 @@
         "dedupeKey": "treasurylaunchesunprecedentedcampaignagainstiranianregimeoneconomicdday|us",
         "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
         "firstSeenAt": "2026-11-06 09:46 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 3,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 4,
         "sourceIds": [
           "us treasury"
         ],
@@ -22219,8 +22251,8 @@
         "dedupeKey": "iaeasgrossicallsforprogressindeployingnuclearpowerasministerialconferenceopens|global",
         "title": "IAEA’s Grossi Calls for Progress in Deploying Nuclear Power as Ministerial Conference Opens",
         "firstSeenAt": "26-10-27  09:00",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 94,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 95,
         "sourceIds": [
           "iaea"
         ],
@@ -22237,8 +22269,8 @@
         "dedupeKey": "energydepartmentcloses19billionloantorestartduanearnoldnuclearplant|us",
         "title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
         "firstSeenAt": "20260908T1",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 3,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 4,
         "sourceIds": [
           "us energy"
         ],
@@ -22255,8 +22287,8 @@
         "dedupeKey": "ominousstarttowestbankoliveharvestamidsettlerattacks|global",
         "title": "‘Ominous start’ to West Bank olive harvest amid settler attacks",
         "firstSeenAt": "2026-10-21 21:56 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 170,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 171,
         "sourceIds": [
           "un news"
         ],
@@ -22273,8 +22305,8 @@
         "dedupeKey": "worldnewsinbrief:russianattacksintensifyunteamtourswestbankunlawfulelderlydeaths|global",
         "title": "World News in Brief: Russian attacks intensify, UN team tours West Bank, ‘unlawful’ elderly deaths",
         "firstSeenAt": "2026-10-27 19:03 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 94,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 95,
         "sourceIds": [
           "un news"
         ],
@@ -22291,8 +22323,8 @@
         "dedupeKey": "westbank:hebroncrackdowndisplacesthousandstrkwarnsofethniccleansing|global",
         "title": "West Bank: Hebron crackdown displaces thousands, Türk warns of ethnic cleansing",
         "firstSeenAt": "2026-10-27 19:03 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 94,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 95,
         "sourceIds": [
           "un news"
         ],
@@ -22309,8 +22341,8 @@
         "dedupeKey": "iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
         "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
         "firstSeenAt": "26-09-25  14:02",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 94,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 95,
         "sourceIds": [
           "iaea"
         ],
@@ -22327,8 +22359,8 @@
         "dedupeKey": "zelenskyyurgesstrongerpressureonrussiawarnswarsimpactisspreadingbeyondukraine|global",
         "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
         "firstSeenAt": "2026-09-23 22:11 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 493,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 494,
         "sourceIds": [
           "un news"
         ],
@@ -22345,8 +22377,8 @@
         "dedupeKey": "cubawarnsagainstlawofthejungleasforeignministerdenouncesuspressure|global",
         "title": "Cuba warns against ‘law of the jungle’ as Foreign Minister denounces US pressure",
         "firstSeenAt": "2026-09-26 21:39 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 455,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 456,
         "sourceIds": [
           "un news"
         ],
@@ -22363,8 +22395,8 @@
         "dedupeKey": "dprkoreatellsunitsnuclearstatusisirreversiblerejectsoutsidepressure|global",
         "title": "DPR Korea tells UN its nuclear status is ‘irreversible’, rejects outside pressure",
         "firstSeenAt": "2026-09-29 00:37 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 430,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 431,
         "sourceIds": [
           "un news"
         ],
@@ -22381,8 +22413,8 @@
         "dedupeKey": "theseattacksmustceaseimmediately:guterrescondemnsdeadlyhouthistrikeonriyadhairport|global",
         "title": "‘These attacks must cease immediately’: Guterres condemns deadly Houthi strike on Riyadh airport",
         "firstSeenAt": "2026-10-11 23:34 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 293,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 294,
         "sourceIds": [
           "un news"
         ],
@@ -22399,8 +22431,8 @@
         "dedupeKey": "worldnewsinbrief:gazabracesforwinteramidattacksjointpatrolsincar90citiescommittosustainabledevelopment|global",
         "title": "World News in Brief: Gaza braces for winter amid attacks, joint patrols in CAR, 90 cities commit to sustainable development",
         "firstSeenAt": "2026-10-14 23:23 UTC",
-        "lastSeenAt": "2026-11-06T12:12:58.985644+00:00",
-        "observationCount": 263,
+        "lastSeenAt": "2026-11-06T18:24:55.254855+00:00",
+        "observationCount": 264,
         "sourceIds": [
           "un news"
         ],
@@ -22418,7 +22450,7 @@
       {
         "dedupeKey": "presidenttrumpwasright:americacontrolsthestraitofhormuz|us",
         "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22431,7 +22463,7 @@
       {
         "dedupeKey": "treasurylaunchesunprecedentedcampaignagainstiranianregimeoneconomicdday|us",
         "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.95,
@@ -22470,7 +22502,7 @@
       {
         "dedupeKey": "ominousstarttowestbankoliveharvestamidsettlerattacks|global",
         "title": "‘Ominous start’ to West Bank olive harvest amid settler attacks",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22483,7 +22515,7 @@
       {
         "dedupeKey": "worldnewsinbrief:russianattacksintensifyunteamtourswestbankunlawfulelderlydeaths|global",
         "title": "World News in Brief: Russian attacks intensify, UN team tours West Bank, ‘unlawful’ elderly deaths",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22496,7 +22528,7 @@
       {
         "dedupeKey": "westbank:hebroncrackdowndisplacesthousandstrkwarnsofethniccleansing|global",
         "title": "West Bank: Hebron crackdown displaces thousands, Türk warns of ethnic cleansing",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22522,7 +22554,7 @@
       {
         "dedupeKey": "zelenskyyurgesstrongerpressureonrussiawarnswarsimpactisspreadingbeyondukraine|global",
         "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22535,7 +22567,7 @@
       {
         "dedupeKey": "cubawarnsagainstlawofthejungleasforeignministerdenouncesuspressure|global",
         "title": "Cuba warns against ‘law of the jungle’ as Foreign Minister denounces US pressure",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22548,7 +22580,7 @@
       {
         "dedupeKey": "dprkoreatellsunitsnuclearstatusisirreversiblerejectsoutsidepressure|global",
         "title": "DPR Korea tells UN its nuclear status is ‘irreversible’, rejects outside pressure",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22561,7 +22593,7 @@
       {
         "dedupeKey": "theseattacksmustceaseimmediately:guterrescondemnsdeadlyhouthistrikeonriyadhairport|global",
         "title": "‘These attacks must cease immediately’: Guterres condemns deadly Houthi strike on Riyadh airport",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22574,7 +22606,7 @@
       {
         "dedupeKey": "worldnewsinbrief:gazabracesforwinteramidattacksjointpatrolsincar90citiescommittosustainabledevelopment|global",
         "title": "World News in Brief: Gaza braces for winter amid attacks, joint patrols in CAR, 90 cities commit to sustainable development",
-        "publishedAt": "2026-11-06 09:46 UTC",
+        "publishedAt": "2026-11-06 17:22 UTC",
         "ageDays": null,
         "lifecycle": "UNVERIFIED_TIME",
         "baseEvidenceWeight": 0.75,
@@ -22586,14 +22618,14 @@
       }
     ],
     "evidenceGraph": {
-      "generatedAt": "2026-11-06T12:12:58.985738+00:00",
+      "generatedAt": "2026-11-06T18:24:55.254955+00:00",
       "nodes": [
         {
           "id": "event:presidenttrumpwasright:americacontrolsthestraitofhormuz|us",
           "kind": "EVENT",
           "label": "President Trump Was Right: America Controls the Strait of Hormuz",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "White House",
             "tier": "KNOWN_MEDIA"
           }
@@ -22618,7 +22650,7 @@
           "kind": "EVENT",
           "label": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "US Treasury",
             "tier": "PRIMARY"
           }
@@ -22693,7 +22725,7 @@
           "kind": "EVENT",
           "label": "‘Ominous start’ to West Bank olive harvest amid settler attacks",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22718,7 +22750,7 @@
           "kind": "EVENT",
           "label": "World News in Brief: Russian attacks intensify, UN team tours West Bank, ‘unlawful’ elderly deaths",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22737,7 +22769,7 @@
           "kind": "EVENT",
           "label": "West Bank: Hebron crackdown displaces thousands, Türk warns of ethnic cleansing",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22775,7 +22807,7 @@
           "kind": "EVENT",
           "label": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22794,7 +22826,7 @@
           "kind": "EVENT",
           "label": "Cuba warns against ‘law of the jungle’ as Foreign Minister denounces US pressure",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22813,7 +22845,7 @@
           "kind": "EVENT",
           "label": "DPR Korea tells UN its nuclear status is ‘irreversible’, rejects outside pressure",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22832,7 +22864,7 @@
           "kind": "EVENT",
           "label": "‘These attacks must cease immediately’: Guterres condemns deadly Houthi strike on Riyadh airport",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -22851,7 +22883,7 @@
           "kind": "EVENT",
           "label": "World News in Brief: Gaza braces for winter amid attacks, joint patrols in CAR, 90 cities commit to sustainable development",
           "meta": {
-            "publishedAt": "2026-11-06 09:46 UTC",
+            "publishedAt": "2026-11-06 17:22 UTC",
             "provider": "UN News",
             "tier": "KNOWN_MEDIA"
           }
@@ -23065,8 +23097,8 @@
       {
         "id": "evt-1",
         "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "presidenttrumpwasright:americacontrolsthestraitofhormuz|us",
@@ -23084,8 +23116,8 @@
       {
         "id": "evt-2",
         "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "PRIMARY",
         "freshness": "UNKNOWN",
         "dedupeKey": "treasurylaunchesunprecedentedcampaignagainstiranianregimeoneconomicdday|us",
@@ -23104,7 +23136,7 @@
         "id": "evt-3",
         "title": "IAEA’s Grossi Calls for Progress in Deploying Nuclear Power as Ministerial Conference Opens",
         "publishedAt": "26-10-27  09:00",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "iaeasgrossicallsforprogressindeployingnuclearpowerasministerialconferenceopens|global",
@@ -23123,7 +23155,7 @@
         "id": "evt-4",
         "title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
         "publishedAt": "20260908T1",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "energydepartmentcloses19billionloantorestartduanearnoldnuclearplant|us",
@@ -23141,8 +23173,8 @@
       {
         "id": "evt-5",
         "title": "‘Ominous start’ to West Bank olive harvest amid settler attacks",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "ominousstarttowestbankoliveharvestamidsettlerattacks|global",
@@ -23160,8 +23192,8 @@
       {
         "id": "evt-6",
         "title": "World News in Brief: Russian attacks intensify, UN team tours West Bank, ‘unlawful’ elderly deaths",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "worldnewsinbrief:russianattacksintensifyunteamtourswestbankunlawfulelderlydeaths|global",
@@ -23179,8 +23211,8 @@
       {
         "id": "evt-7",
         "title": "West Bank: Hebron crackdown displaces thousands, Türk warns of ethnic cleansing",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "westbank:hebroncrackdowndisplacesthousandstrkwarnsofethniccleansing|global",
@@ -23199,7 +23231,7 @@
         "id": "evt-8",
         "title": "IAEA and Inter-American Development Bank Sign Partnership Agreement on Nuclear Energy for Development",
         "publishedAt": "26-09-25  14:02",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "iaeaandinteramericandevelopmentbanksignpartnershipagreementonnuclearenergyfordevelopment|global",
@@ -23217,8 +23249,8 @@
       {
         "id": "evt-9",
         "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "zelenskyyurgesstrongerpressureonrussiawarnswarsimpactisspreadingbeyondukraine|global",
@@ -23236,8 +23268,8 @@
       {
         "id": "evt-10",
         "title": "Cuba warns against ‘law of the jungle’ as Foreign Minister denounces US pressure",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "cubawarnsagainstlawofthejungleasforeignministerdenouncesuspressure|global",
@@ -23255,8 +23287,8 @@
       {
         "id": "evt-11",
         "title": "DPR Korea tells UN its nuclear status is ‘irreversible’, rejects outside pressure",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "dprkoreatellsunitsnuclearstatusisirreversiblerejectsoutsidepressure|global",
@@ -23274,8 +23306,8 @@
       {
         "id": "evt-12",
         "title": "‘These attacks must cease immediately’: Guterres condemns deadly Houthi strike on Riyadh airport",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "theseattacksmustceaseimmediately:guterrescondemnsdeadlyhouthistrikeonriyadhairport|global",
@@ -23293,8 +23325,8 @@
       {
         "id": "evt-13",
         "title": "World News in Brief: Gaza braces for winter amid attacks, joint patrols in CAR, 90 cities commit to sustainable development",
-        "publishedAt": "2026-11-06 09:46 UTC",
-        "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+        "publishedAt": "2026-11-06 17:22 UTC",
+        "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
         "tier": "KNOWN_MEDIA",
         "freshness": "UNKNOWN",
         "dedupeKey": "worldnewsinbrief:gazabracesforwinteramidattacksjointpatrolsincar90citiescommittosustainabledevelopment|global",
@@ -23326,8 +23358,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.6602,
-            "change_pct": -0.19,
+            "value": 6.6638,
+            "change_pct": -0.14,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23336,8 +23368,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4078.5,
-            "change_pct": -0.85,
+            "value": 4069.5,
+            "change_pct": -1.07,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23346,18 +23378,18 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 4.837,
-            "change_pct": -1.16,
+            "value": 4.839,
+            "change_pct": 0.04,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
-            "observedAt": "2026-11-05",
+            "observedAt": "2026-11-06",
             "interpretation": "同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
           },
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.05,
-            "change_pct": -0.24,
+            "value": 97.2,
+            "change_pct": -1.11,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23366,8 +23398,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 26.58,
-            "change_pct": -5.68,
+            "value": 25.5,
+            "change_pct": -9.51,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23396,8 +23428,8 @@
             "url": "https://news.un.org/en/story/2026/10/1168644",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-11-06 09:46 UTC",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "publishedAt": "2026-11-06 17:22 UTC",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23412,8 +23444,8 @@
             "url": "https://news.un.org/en/story/2026/10/1168648",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-11-06 09:46 UTC",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "publishedAt": "2026-11-06 17:22 UTC",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23423,8 +23455,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.6602,
-            "change_pct": -0.19,
+            "value": 6.6638,
+            "change_pct": -0.14,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23433,8 +23465,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4078.5,
-            "change_pct": -0.85,
+            "value": 4069.5,
+            "change_pct": -1.07,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23443,18 +23475,18 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 4.837,
-            "change_pct": -1.16,
+            "value": 4.839,
+            "change_pct": 0.04,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
-            "observedAt": "2026-11-05",
+            "observedAt": "2026-11-06",
             "interpretation": "同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
           },
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.05,
-            "change_pct": -0.24,
+            "value": 97.2,
+            "change_pct": -1.11,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23463,8 +23495,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 26.58,
-            "change_pct": -5.68,
+            "value": 25.5,
+            "change_pct": -9.51,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23494,7 +23526,7 @@
             "role": "CATALYST",
             "category": "ENERGY",
             "publishedAt": "26-10-27  09:00",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23509,8 +23541,8 @@
             "url": "https://news.un.org/en/story/2026/10/1168644",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-11-06 09:46 UTC",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "publishedAt": "2026-11-06 17:22 UTC",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23525,8 +23557,8 @@
             "url": "https://news.un.org/en/story/2026/10/1168648",
             "role": "CATALYST",
             "category": "GEOPOLITICS",
-            "publishedAt": "2026-11-06 09:46 UTC",
-            "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+            "publishedAt": "2026-11-06 17:22 UTC",
+            "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
             "tier": "KNOWN_MEDIA",
             "freshness": "UNKNOWN",
             "credibility": 0.75,
@@ -23536,8 +23568,8 @@
           {
             "kind": "MARKET",
             "name": "USD/CNY",
-            "value": 6.6602,
-            "change_pct": -0.19,
+            "value": 6.6638,
+            "change_pct": -0.14,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23546,8 +23578,8 @@
           {
             "kind": "MARKET",
             "name": "黄金",
-            "value": 4078.5,
-            "change_pct": -0.85,
+            "value": 4069.5,
+            "change_pct": -1.07,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23556,18 +23588,18 @@
           {
             "kind": "MARKET",
             "name": "美国10年期收益率",
-            "value": 4.837,
-            "change_pct": -1.16,
+            "value": 4.839,
+            "change_pct": 0.04,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
-            "observedAt": "2026-11-05",
+            "observedAt": "2026-11-06",
             "interpretation": "同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
           },
           {
             "kind": "MARKET",
             "name": "布伦特原油",
-            "value": 98.05,
-            "change_pct": -0.24,
+            "value": 97.2,
+            "change_pct": -1.11,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -23576,8 +23608,8 @@
           {
             "kind": "MARKET",
             "name": "VIX",
-            "value": 26.58,
-            "change_pct": -5.68,
+            "value": 25.5,
+            "change_pct": -9.51,
             "source": "dashboard",
             "observationStatus": "DATA_PRESENT",
             "observedAt": "2026-11-06",
@@ -258207,7 +258239,7 @@
         }
       },
       {
-        "updatedAt": "2026-11-06T10:53:41.635804+00:00",
+        "updatedAt": "2026-11-06T18:17:21.834126+00:00",
         "china": {
           "source": "国家统计局",
           "status": "MISSING",
@@ -258216,7 +258248,7 @@
         },
         "chinaStructured": {
           "status": "OK",
-          "fetchedAt": "2026-11-06T10:47:19.368123+00:00",
+          "fetchedAt": "2026-11-06T18:17:14.312366+00:00",
           "records": [
             {
               "indicatorId": "962228822a9c4001bea4f3254d442dca",
@@ -263093,7 +263125,7 @@
         },
         "pbc": {
           "source": "中国人民银行",
-          "fetchedAt": "2026-11-06T10:10:22.575748+00:00",
+          "fetchedAt": "2026-11-06T17:44:39.539190+00:00",
           "records": [
             {
               "indicator": "M2_yoy_pct",
@@ -263703,32 +263735,137 @@
         },
         "unitedStates": {
           "source": "FRED",
-          "series": {},
-          "errors": {
-            "real_gdp": "The read operation timed out",
-            "cpi": "The read operation timed out",
-            "core_cpi": "The read operation timed out",
-            "pce_price": "The read operation timed out",
-            "unemployment": "The read operation timed out",
-            "nonfarm_payrolls": "The read operation timed out",
-            "industrial_production": "The read operation timed out",
-            "retail_sales": "The read operation timed out",
-            "fed_funds": "The read operation timed out",
-            "m2": "The read operation timed out",
-            "10y_treasury": "The read operation timed out",
-            "2y_treasury": "The read operation timed out",
-            "5y_treasury": "The read operation timed out",
-            "30y_treasury": "The read operation timed out",
-            "usd_index": "The read operation timed out"
+          "series": {
+            "real_gdp": {
+              "seriesId": "GDPC1",
+              "observedAt": "2026-07-01",
+              "value": 24611.077,
+              "previousValue": 24408.011,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/GDPC1"
+            },
+            "cpi": {
+              "seriesId": "CPIAUCSL",
+              "observedAt": "2026-09-01",
+              "value": 336.298,
+              "previousValue": 334.131,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/CPIAUCSL"
+            },
+            "core_cpi": {
+              "seriesId": "CPILFESL",
+              "observedAt": "2026-09-01",
+              "value": 338.896,
+              "previousValue": 337.765,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/CPILFESL"
+            },
+            "pce_price": {
+              "seriesId": "PCEPI",
+              "observedAt": "2026-09-01",
+              "value": 132.257,
+              "previousValue": 131.611,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/PCEPI"
+            },
+            "unemployment": {
+              "seriesId": "UNRATE",
+              "observedAt": "2026-10-01",
+              "value": 4.1,
+              "previousValue": 4.2,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/UNRATE"
+            },
+            "nonfarm_payrolls": {
+              "seriesId": "PAYEMS",
+              "observedAt": "2026-10-01",
+              "value": 159293.0,
+              "previousValue": 159128.0,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/PAYEMS"
+            },
+            "industrial_production": {
+              "seriesId": "INDPRO",
+              "observedAt": "2026-09-01",
+              "value": 103.9506,
+              "previousValue": 103.2664,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/INDPRO"
+            },
+            "retail_sales": {
+              "seriesId": "RSAFS",
+              "observedAt": "2026-09-01",
+              "value": 745021.0,
+              "previousValue": 739322.0,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/RSAFS"
+            },
+            "fed_funds": {
+              "seriesId": "FEDFUNDS",
+              "observedAt": "2026-10-01",
+              "value": 3.88,
+              "previousValue": 3.75,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/FEDFUNDS"
+            },
+            "m2": {
+              "seriesId": "M2SL",
+              "observedAt": "2026-09-01",
+              "value": 23413.9,
+              "previousValue": 23300.9,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/M2SL"
+            },
+            "10y_treasury": {
+              "seriesId": "DGS10",
+              "observedAt": "2026-11-04",
+              "value": 4.9,
+              "previousValue": 4.95,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
+            },
+            "2y_treasury": {
+              "seriesId": "DGS2",
+              "observedAt": "2026-11-04",
+              "value": 4.58,
+              "previousValue": 4.61,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
+            },
+            "5y_treasury": {
+              "seriesId": "DGS5",
+              "observedAt": "2026-11-04",
+              "value": 4.69,
+              "previousValue": 4.74,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/DGS5"
+            },
+            "30y_treasury": {
+              "seriesId": "DGS30",
+              "observedAt": "2026-11-04",
+              "value": 5.28,
+              "previousValue": 5.32,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
+            },
+            "usd_index": {
+              "seriesId": "DTWEXBGS",
+              "observedAt": "2026-10-30",
+              "value": 121.6656,
+              "previousValue": 121.7361,
+              "source": "FRED / Federal Reserve Bank of St. Louis",
+              "sourceUrl": "https://fred.stlouisfed.org/series/DTWEXBGS"
+            }
           },
+          "errors": {},
           "apiMode": "public fredgraph CSV; no API key"
         },
         "marketSnapshotCount": 23,
         "quality": {
           "chinaStatus": "MISSING",
-          "usSeriesCount": 0,
+          "usSeriesCount": 15,
           "marketVariableCount": 23,
-          "errors": 16
+          "errors": 1
         }
       }
     ],
@@ -264527,7 +264664,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -275318,7 +275455,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -276697,7 +276834,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -278076,7 +278213,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -288860,7 +288997,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -290239,7 +290376,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -301030,7 +301167,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -311821,7 +311958,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -322612,7 +322749,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -323991,7 +324128,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -334782,7 +334919,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -340986,7 +341123,7 @@
           ]
         },
         "trade": {
-          "updatedAt": "2026-11-06T10:55:05.590536+00:00",
+          "updatedAt": "2026-11-06T18:21:43.379677+00:00",
           "period": "2026-09",
           "source": "U.S. Census Bureau",
           "rows": [
@@ -508741,7 +508878,7 @@
       {
         "date": "2026-11-06",
         "macro": {
-          "updatedAt": "2026-11-06T10:53:41.635804+00:00",
+          "updatedAt": "2026-11-06T18:17:21.834126+00:00",
           "china": {
             "source": "国家统计局",
             "status": "MISSING",
@@ -508750,7 +508887,7 @@
           },
           "chinaStructured": {
             "status": "OK",
-            "fetchedAt": "2026-11-06T10:47:19.368123+00:00",
+            "fetchedAt": "2026-11-06T18:17:14.312366+00:00",
             "records": [
               {
                 "indicatorId": "962228822a9c4001bea4f3254d442dca",
@@ -513627,7 +513764,7 @@
           },
           "pbc": {
             "source": "中国人民银行",
-            "fetchedAt": "2026-11-06T10:10:22.575748+00:00",
+            "fetchedAt": "2026-11-06T17:44:39.539190+00:00",
             "records": [
               {
                 "indicator": "M2_yoy_pct",
@@ -514237,53 +514374,158 @@
           },
           "unitedStates": {
             "source": "FRED",
-            "series": {},
-            "errors": {
-              "real_gdp": "The read operation timed out",
-              "cpi": "The read operation timed out",
-              "core_cpi": "The read operation timed out",
-              "pce_price": "The read operation timed out",
-              "unemployment": "The read operation timed out",
-              "nonfarm_payrolls": "The read operation timed out",
-              "industrial_production": "The read operation timed out",
-              "retail_sales": "The read operation timed out",
-              "fed_funds": "The read operation timed out",
-              "m2": "The read operation timed out",
-              "10y_treasury": "The read operation timed out",
-              "2y_treasury": "The read operation timed out",
-              "5y_treasury": "The read operation timed out",
-              "30y_treasury": "The read operation timed out",
-              "usd_index": "The read operation timed out"
+            "series": {
+              "real_gdp": {
+                "seriesId": "GDPC1",
+                "observedAt": "2026-07-01",
+                "value": 24611.077,
+                "previousValue": 24408.011,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/GDPC1"
+              },
+              "cpi": {
+                "seriesId": "CPIAUCSL",
+                "observedAt": "2026-09-01",
+                "value": 336.298,
+                "previousValue": 334.131,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/CPIAUCSL"
+              },
+              "core_cpi": {
+                "seriesId": "CPILFESL",
+                "observedAt": "2026-09-01",
+                "value": 338.896,
+                "previousValue": 337.765,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/CPILFESL"
+              },
+              "pce_price": {
+                "seriesId": "PCEPI",
+                "observedAt": "2026-09-01",
+                "value": 132.257,
+                "previousValue": 131.611,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/PCEPI"
+              },
+              "unemployment": {
+                "seriesId": "UNRATE",
+                "observedAt": "2026-10-01",
+                "value": 4.1,
+                "previousValue": 4.2,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/UNRATE"
+              },
+              "nonfarm_payrolls": {
+                "seriesId": "PAYEMS",
+                "observedAt": "2026-10-01",
+                "value": 159293.0,
+                "previousValue": 159128.0,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/PAYEMS"
+              },
+              "industrial_production": {
+                "seriesId": "INDPRO",
+                "observedAt": "2026-09-01",
+                "value": 103.9506,
+                "previousValue": 103.2664,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/INDPRO"
+              },
+              "retail_sales": {
+                "seriesId": "RSAFS",
+                "observedAt": "2026-09-01",
+                "value": 745021.0,
+                "previousValue": 739322.0,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/RSAFS"
+              },
+              "fed_funds": {
+                "seriesId": "FEDFUNDS",
+                "observedAt": "2026-10-01",
+                "value": 3.88,
+                "previousValue": 3.75,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/FEDFUNDS"
+              },
+              "m2": {
+                "seriesId": "M2SL",
+                "observedAt": "2026-09-01",
+                "value": 23413.9,
+                "previousValue": 23300.9,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/M2SL"
+              },
+              "10y_treasury": {
+                "seriesId": "DGS10",
+                "observedAt": "2026-11-04",
+                "value": 4.9,
+                "previousValue": 4.95,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
+              },
+              "2y_treasury": {
+                "seriesId": "DGS2",
+                "observedAt": "2026-11-04",
+                "value": 4.58,
+                "previousValue": 4.61,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
+              },
+              "5y_treasury": {
+                "seriesId": "DGS5",
+                "observedAt": "2026-11-04",
+                "value": 4.69,
+                "previousValue": 4.74,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/DGS5"
+              },
+              "30y_treasury": {
+                "seriesId": "DGS30",
+                "observedAt": "2026-11-04",
+                "value": 5.28,
+                "previousValue": 5.32,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
+              },
+              "usd_index": {
+                "seriesId": "DTWEXBGS",
+                "observedAt": "2026-10-30",
+                "value": 121.6656,
+                "previousValue": 121.7361,
+                "source": "FRED / Federal Reserve Bank of St. Louis",
+                "sourceUrl": "https://fred.stlouisfed.org/series/DTWEXBGS"
+              }
             },
+            "errors": {},
             "apiMode": "public fredgraph CSV; no API key"
           },
           "marketSnapshotCount": 23,
           "quality": {
             "chinaStatus": "MISSING",
-            "usSeriesCount": 0,
+            "usSeriesCount": 15,
             "marketVariableCount": 23,
-            "errors": 16
+            "errors": 1
           }
         },
         "market": {
-          "capturedAt": "2026-11-06T12:12:58.997765+00:00",
+          "capturedAt": "2026-11-06T18:24:55.266084+00:00",
           "markets": [
             {
               "name": "USD/CNY",
-              "value": 6.6602,
-              "change_pct": -0.19,
+              "value": 6.6638,
+              "change_pct": -0.14,
               "observedAt": "2026-11-06"
             },
             {
               "name": "上证指数",
-              "value": 3649.1775,
-              "change_pct": -1.1,
+              "value": 3689.9109,
+              "change_pct": 0.1,
               "observedAt": "2026-11-06"
             },
             {
               "name": "深证成指",
-              "value": 11175.7803,
-              "change_pct": -2.57,
+              "value": 11471.0898,
+              "change_pct": 1.19,
               "observedAt": "2026-11-06"
             },
             {
@@ -514294,32 +514536,32 @@
             },
             {
               "name": "标普500",
-              "value": 7353.73,
-              "change_pct": -4.36,
-              "observedAt": "2026-11-05"
+              "value": 7392.27,
+              "change_pct": 0.52,
+              "observedAt": "2026-11-06"
             },
             {
               "name": "美国10年期收益率",
-              "value": 4.837,
-              "change_pct": -1.16,
-              "observedAt": "2026-11-05"
+              "value": 4.839,
+              "change_pct": 0.04,
+              "observedAt": "2026-11-06"
             },
             {
               "name": "布伦特原油",
-              "value": 98.05,
-              "change_pct": -0.24,
+              "value": 97.2,
+              "change_pct": -1.11,
               "observedAt": "2026-11-06"
             },
             {
               "name": "黄金",
-              "value": 4078.5,
-              "change_pct": -0.85,
+              "value": 4069.5,
+              "change_pct": -1.07,
               "observedAt": "2026-11-06"
             },
             {
               "name": "VIX",
-              "value": 26.58,
-              "change_pct": -5.68,
+              "value": 25.5,
+              "change_pct": -9.51,
               "observedAt": "2026-11-06"
             }
           ]
@@ -514334,7 +514576,7 @@
         "eventId": "evt-1",
         "dedupeKey": "presidenttrumpwasright:americacontrolsthestraitofhormuz|us",
         "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-        "eventPublishedAt": "2026-11-06 09:46 UTC",
+        "eventPublishedAt": "2026-11-06 17:22 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -514385,7 +514627,7 @@
         "eventId": "evt-2",
         "dedupeKey": "treasurylaunchesunprecedentedcampaignagainstiranianregimeoneconomicdday|us",
         "title": "Treasury Launches Unprecedented Campaign Against Iranian Regime on Economic D-Day",
-        "eventPublishedAt": "2026-11-06 09:46 UTC",
+        "eventPublishedAt": "2026-11-06 17:22 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -514538,7 +514780,7 @@
         "eventId": "evt-5",
         "dedupeKey": "ominousstarttowestbankoliveharvestamidsettlerattacks|global",
         "title": "‘Ominous start’ to West Bank olive harvest amid settler attacks",
-        "eventPublishedAt": "2026-11-06 09:46 UTC",
+        "eventPublishedAt": "2026-11-06 17:22 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -514589,7 +514831,7 @@
         "eventId": "evt-6",
         "dedupeKey": "worldnewsinbrief:russianattacksintensifyunteamtourswestbankunlawfulelderlydeaths|global",
         "title": "World News in Brief: Russian attacks intensify, UN team tours West Bank, ‘unlawful’ elderly deaths",
-        "eventPublishedAt": "2026-11-06 09:46 UTC",
+        "eventPublishedAt": "2026-11-06 17:22 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -514640,7 +514882,7 @@
         "eventId": "evt-7",
         "dedupeKey": "westbank:hebroncrackdowndisplacesthousandstrkwarnsofethniccleansing|global",
         "title": "West Bank: Hebron crackdown displaces thousands, Türk warns of ethnic cleansing",
-        "eventPublishedAt": "2026-11-06 09:46 UTC",
+        "eventPublishedAt": "2026-11-06 17:22 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -514742,7 +514984,7 @@
         "eventId": "evt-9",
         "dedupeKey": "zelenskyyurgesstrongerpressureonrussiawarnswarsimpactisspreadingbeyondukraine|global",
         "title": "Zelenskyy urges stronger pressure on Russia, warns war’s impact is spreading beyond Ukraine",
-        "eventPublishedAt": "2026-11-06 09:46 UTC",
+        "eventPublishedAt": "2026-11-06 17:22 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -514793,7 +515035,7 @@
         "eventId": "evt-10",
         "dedupeKey": "cubawarnsagainstlawofthejungleasforeignministerdenouncesuspressure|global",
         "title": "Cuba warns against ‘law of the jungle’ as Foreign Minister denounces US pressure",
-        "eventPublishedAt": "2026-11-06 09:46 UTC",
+        "eventPublishedAt": "2026-11-06 17:22 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -514844,7 +515086,7 @@
         "eventId": "evt-11",
         "dedupeKey": "dprkoreatellsunitsnuclearstatusisirreversiblerejectsoutsidepressure|global",
         "title": "DPR Korea tells UN its nuclear status is ‘irreversible’, rejects outside pressure",
-        "eventPublishedAt": "2026-11-06 09:46 UTC",
+        "eventPublishedAt": "2026-11-06 17:22 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -514895,7 +515137,7 @@
         "eventId": "evt-12",
         "dedupeKey": "theseattacksmustceaseimmediately:guterrescondemnsdeadlyhouthistrikeonriyadhairport|global",
         "title": "‘These attacks must cease immediately’: Guterres condemns deadly Houthi strike on Riyadh airport",
-        "eventPublishedAt": "2026-11-06 09:46 UTC",
+        "eventPublishedAt": "2026-11-06 17:22 UTC",
         "eventTimeKnown": false,
         "windows": [
           {
@@ -514961,8 +515203,8 @@
         "source": {
           "provider": "White House",
           "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515037,8 +515279,8 @@
         "source": {
           "provider": "US Treasury",
           "url": "https://home.treasury.gov/news/press-releases/sb0613/",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.95,
           "tier": "PRIMARY",
           "ageDays": null,
@@ -515115,7 +515357,7 @@
           "provider": "IAEA",
           "url": "http://www.iaea.org/newscenter/news/iaeas-grossi-calls-for-progress-in-deploying-nuclear-power-as-ministerial-conference-opens",
           "publishedAt": "26-10-27  09:00",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515189,7 +515431,7 @@
           "provider": "US Energy",
           "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
           "publishedAt": "20260908T1",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515263,8 +515505,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/10/1168644",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515338,8 +515580,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/10/1168648",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515413,8 +515655,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/10/1168672",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515489,7 +515731,7 @@
           "provider": "IAEA",
           "url": "http://www.iaea.org/newscenter/pressreleases/iaea-and-inter-american-development-bank-sign-partnership-agreement-on-nuclear-energy-for-development",
           "publishedAt": "26-09-25  14:02",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515563,8 +515805,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/09/1168416",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515638,8 +515880,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/09/1168458",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515713,8 +515955,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/09/1168476",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -515788,8 +516030,8 @@
         "source": {
           "provider": "UN News",
           "url": "https://news.un.org/en/story/2026/10/1168572",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "credibility": 0.75,
           "tier": "KNOWN_MEDIA",
           "ageDays": null,
@@ -516020,27 +516262,27 @@
           "marketSignals": [
             {
               "name": "USD/CNY",
-              "change_pct": -0.19,
+              "change_pct": -0.14,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "黄金",
-              "change_pct": -0.85,
+              "change_pct": -1.07,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "美国10年期收益率",
-              "change_pct": -1.16,
+              "change_pct": 0.04,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "布伦特原油",
-              "change_pct": -0.24,
+              "change_pct": -1.11,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "VIX",
-              "change_pct": -5.68,
+              "change_pct": -9.51,
               "observationStatus": "DATA_PRESENT"
             }
           ]
@@ -516050,27 +516292,27 @@
           "marketSignals": [
             {
               "name": "USD/CNY",
-              "change_pct": -0.19,
+              "change_pct": -0.14,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "黄金",
-              "change_pct": -0.85,
+              "change_pct": -1.07,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "美国10年期收益率",
-              "change_pct": -1.16,
+              "change_pct": 0.04,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "布伦特原油",
-              "change_pct": -0.24,
+              "change_pct": -1.11,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "VIX",
-              "change_pct": -5.68,
+              "change_pct": -9.51,
               "observationStatus": "DATA_PRESENT"
             }
           ]
@@ -516080,27 +516322,27 @@
           "marketSignals": [
             {
               "name": "USD/CNY",
-              "change_pct": -0.19,
+              "change_pct": -0.14,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "黄金",
-              "change_pct": -0.85,
+              "change_pct": -1.07,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "美国10年期收益率",
-              "change_pct": -1.16,
+              "change_pct": 0.04,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "布伦特原油",
-              "change_pct": -0.24,
+              "change_pct": -1.11,
               "observationStatus": "DATA_PRESENT"
             },
             {
               "name": "VIX",
-              "change_pct": -5.68,
+              "change_pct": -9.51,
               "observationStatus": "DATA_PRESENT"
             }
           ]
@@ -516110,7 +516352,7 @@
   },
   "scenarioHistory": {
     "baseline": "COMPARISON",
-    "previousGeneratedAt": "2026-11-06T11:27:33.992774+00:00",
+    "previousGeneratedAt": "2026-11-06T12:12:58.985753+00:00",
     "changes": [
       {
         "id": "scenario-a",
@@ -516171,8 +516413,8 @@
         {
           "kind": "MARKET",
           "name": "USD/CNY",
-          "value": 6.6602,
-          "change_pct": -0.19,
+          "value": 6.6638,
+          "change_pct": -0.14,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -516181,8 +516423,8 @@
         {
           "kind": "MARKET",
           "name": "黄金",
-          "value": 4078.5,
-          "change_pct": -0.85,
+          "value": 4069.5,
+          "change_pct": -1.07,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -516191,18 +516433,18 @@
         {
           "kind": "MARKET",
           "name": "美国10年期收益率",
-          "value": 4.837,
-          "change_pct": -1.16,
+          "value": 4.839,
+          "change_pct": 0.04,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
-          "observedAt": "2026-11-05",
+          "observedAt": "2026-11-06",
           "interpretation": "同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
         },
         {
           "kind": "MARKET",
           "name": "布伦特原油",
-          "value": 98.05,
-          "change_pct": -0.24,
+          "value": 97.2,
+          "change_pct": -1.11,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -516211,8 +516453,8 @@
         {
           "kind": "MARKET",
           "name": "VIX",
-          "value": 26.58,
-          "change_pct": -5.68,
+          "value": 25.5,
+          "change_pct": -9.51,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -517520,7 +517762,7 @@
       "dynamicResponseTree": {
         "version": "dynamic-response-v4",
         "rootScenarioId": "scenario-a",
-        "generatedAt": "2026-11-06T12:12:58.746529+00:00",
+        "generatedAt": "2026-11-06T18:24:55.019779+00:00",
         "rounds": [
           {
             "round": 1,
@@ -522662,8 +522904,8 @@
           "url": "https://news.un.org/en/story/2026/10/1168644",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -522678,8 +522920,8 @@
           "url": "https://news.un.org/en/story/2026/10/1168648",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -522689,8 +522931,8 @@
         {
           "kind": "MARKET",
           "name": "USD/CNY",
-          "value": 6.6602,
-          "change_pct": -0.19,
+          "value": 6.6638,
+          "change_pct": -0.14,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -522699,8 +522941,8 @@
         {
           "kind": "MARKET",
           "name": "黄金",
-          "value": 4078.5,
-          "change_pct": -0.85,
+          "value": 4069.5,
+          "change_pct": -1.07,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -522709,18 +522951,18 @@
         {
           "kind": "MARKET",
           "name": "美国10年期收益率",
-          "value": 4.837,
-          "change_pct": -1.16,
+          "value": 4.839,
+          "change_pct": 0.04,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
-          "observedAt": "2026-11-05",
+          "observedAt": "2026-11-06",
           "interpretation": "同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
         },
         {
           "kind": "MARKET",
           "name": "布伦特原油",
-          "value": 98.05,
-          "change_pct": -0.24,
+          "value": 97.2,
+          "change_pct": -1.11,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -522729,8 +522971,8 @@
         {
           "kind": "MARKET",
           "name": "VIX",
-          "value": 26.58,
-          "change_pct": -5.68,
+          "value": 25.5,
+          "change_pct": -9.51,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -524039,7 +524281,7 @@
       "dynamicResponseTree": {
         "version": "dynamic-response-v4",
         "rootScenarioId": "scenario-b",
-        "generatedAt": "2026-11-06T12:12:58.756931+00:00",
+        "generatedAt": "2026-11-06T18:24:55.030658+00:00",
         "rounds": [
           {
             "round": 1,
@@ -529182,7 +529424,7 @@
           "role": "CATALYST",
           "category": "ENERGY",
           "publishedAt": "26-10-27  09:00",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -529197,8 +529439,8 @@
           "url": "https://news.un.org/en/story/2026/10/1168644",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -529213,8 +529455,8 @@
           "url": "https://news.un.org/en/story/2026/10/1168648",
           "role": "CATALYST",
           "category": "GEOPOLITICS",
-          "publishedAt": "2026-11-06 09:46 UTC",
-          "fetchedAt": "2026-11-06T12:12:58.715630+00:00",
+          "publishedAt": "2026-11-06 17:22 UTC",
+          "fetchedAt": "2026-11-06T18:24:54.988967+00:00",
           "tier": "KNOWN_MEDIA",
           "freshness": "UNKNOWN",
           "credibility": 0.75,
@@ -529224,8 +529466,8 @@
         {
           "kind": "MARKET",
           "name": "USD/CNY",
-          "value": 6.6602,
-          "change_pct": -0.19,
+          "value": 6.6638,
+          "change_pct": -0.14,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -529234,8 +529476,8 @@
         {
           "kind": "MARKET",
           "name": "黄金",
-          "value": 4078.5,
-          "change_pct": -0.85,
+          "value": 4069.5,
+          "change_pct": -1.07,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -529244,18 +529486,18 @@
         {
           "kind": "MARKET",
           "name": "美国10年期收益率",
-          "value": 4.837,
-          "change_pct": -1.16,
+          "value": 4.839,
+          "change_pct": 0.04,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
-          "observedAt": "2026-11-05",
+          "observedAt": "2026-11-06",
           "interpretation": "同期市场变化可用于验证是否出现伴随信号；不能单独证明事件造成该变化。"
         },
         {
           "kind": "MARKET",
           "name": "布伦特原油",
-          "value": 98.05,
-          "change_pct": -0.24,
+          "value": 97.2,
+          "change_pct": -1.11,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -529264,8 +529506,8 @@
         {
           "kind": "MARKET",
           "name": "VIX",
-          "value": 26.58,
-          "change_pct": -5.68,
+          "value": 25.5,
+          "change_pct": -9.51,
           "source": "dashboard",
           "observationStatus": "DATA_PRESENT",
           "observedAt": "2026-11-06",
@@ -530574,7 +530816,7 @@
       "dynamicResponseTree": {
         "version": "dynamic-response-v4",
         "rootScenarioId": "scenario-c",
-        "generatedAt": "2026-11-06T12:12:58.767218+00:00",
+        "generatedAt": "2026-11-06T18:24:55.041663+00:00",
         "rounds": [
           {
             "round": 1,

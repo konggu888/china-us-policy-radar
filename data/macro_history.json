@@ -234619,7 +234619,7 @@
     }
   },
   {
-    "updatedAt": "2026-11-06T10:53:41.635804+00:00",
+    "updatedAt": "2026-11-06T18:17:21.834126+00:00",
     "china": {
       "source": "国家统计局",
       "status": "MISSING",
@@ -234628,7 +234628,7 @@
     },
     "chinaStructured": {
       "status": "OK",
-      "fetchedAt": "2026-11-06T10:47:19.368123+00:00",
+      "fetchedAt": "2026-11-06T18:17:14.312366+00:00",
       "records": [
         {
           "indicatorId": "962228822a9c4001bea4f3254d442dca",
@@ -239505,7 +239505,7 @@
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-11-06T10:10:22.575748+00:00",
+      "fetchedAt": "2026-11-06T17:44:39.539190+00:00",
       "records": [
         {
           "indicator": "M2_yoy_pct",
@@ -240115,32 +240115,137 @@
     },
     "unitedStates": {
       "source": "FRED",
-      "series": {},
-      "errors": {
-        "real_gdp": "The read operation timed out",
-        "cpi": "The read operation timed out",
-        "core_cpi": "The read operation timed out",
-        "pce_price": "The read operation timed out",
-        "unemployment": "The read operation timed out",
-        "nonfarm_payrolls": "The read operation timed out",
-        "industrial_production": "The read operation timed out",
-        "retail_sales": "The read operation timed out",
-        "fed_funds": "The read operation timed out",
-        "m2": "The read operation timed out",
-        "10y_treasury": "The read operation timed out",
-        "2y_treasury": "The read operation timed out",
-        "5y_treasury": "The read operation timed out",
-        "30y_treasury": "The read operation timed out",
-        "usd_index": "The read operation timed out"
+      "series": {
+        "real_gdp": {
+          "seriesId": "GDPC1",
+          "observedAt": "2026-07-01",
+          "value": 24611.077,
+          "previousValue": 24408.011,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/GDPC1"
+        },
+        "cpi": {
+          "seriesId": "CPIAUCSL",
+          "observedAt": "2026-09-01",
+          "value": 336.298,
+          "previousValue": 334.131,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/CPIAUCSL"
+        },
+        "core_cpi": {
+          "seriesId": "CPILFESL",
+          "observedAt": "2026-09-01",
+          "value": 338.896,
+          "previousValue": 337.765,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/CPILFESL"
+        },
+        "pce_price": {
+          "seriesId": "PCEPI",
+          "observedAt": "2026-09-01",
+          "value": 132.257,
+          "previousValue": 131.611,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/PCEPI"
+        },
+        "unemployment": {
+          "seriesId": "UNRATE",
+          "observedAt": "2026-10-01",
+          "value": 4.1,
+          "previousValue": 4.2,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/UNRATE"
+        },
+        "nonfarm_payrolls": {
+          "seriesId": "PAYEMS",
+          "observedAt": "2026-10-01",
+          "value": 159293.0,
+          "previousValue": 159128.0,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/PAYEMS"
+        },
+        "industrial_production": {
+          "seriesId": "INDPRO",
+          "observedAt": "2026-09-01",
+          "value": 103.9506,
+          "previousValue": 103.2664,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/INDPRO"
+        },
+        "retail_sales": {
+          "seriesId": "RSAFS",
+          "observedAt": "2026-09-01",
+          "value": 745021.0,
+          "previousValue": 739322.0,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/RSAFS"
+        },
+        "fed_funds": {
+          "seriesId": "FEDFUNDS",
+          "observedAt": "2026-10-01",
+          "value": 3.88,
+          "previousValue": 3.75,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/FEDFUNDS"
+        },
+        "m2": {
+          "seriesId": "M2SL",
+          "observedAt": "2026-09-01",
+          "value": 23413.9,
+          "previousValue": 23300.9,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/M2SL"
+        },
+        "10y_treasury": {
+          "seriesId": "DGS10",
+          "observedAt": "2026-11-04",
+          "value": 4.9,
+          "previousValue": 4.95,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
+        },
+        "2y_treasury": {
+          "seriesId": "DGS2",
+          "observedAt": "2026-11-04",
+          "value": 4.58,
+          "previousValue": 4.61,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
+        },
+        "5y_treasury": {
+          "seriesId": "DGS5",
+          "observedAt": "2026-11-04",
+          "value": 4.69,
+          "previousValue": 4.74,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DGS5"
+        },
+        "30y_treasury": {
+          "seriesId": "DGS30",
+          "observedAt": "2026-11-04",
+          "value": 5.28,
+          "previousValue": 5.32,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
+        },
+        "usd_index": {
+          "seriesId": "DTWEXBGS",
+          "observedAt": "2026-10-30",
+          "value": 121.6656,
+          "previousValue": 121.7361,
+          "source": "FRED / Federal Reserve Bank of St. Louis",
+          "sourceUrl": "https://fred.stlouisfed.org/series/DTWEXBGS"
+        }
       },
+      "errors": {},
       "apiMode": "public fredgraph CSV; no API key"
     },
     "marketSnapshotCount": 23,
     "quality": {
       "chinaStatus": "MISSING",
-      "usSeriesCount": 0,
+      "usSeriesCount": 15,
       "marketVariableCount": 23,
-      "errors": 16
+      "errors": 1
     }
   }
 ]
