@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07 03:07 UTC",
+  "updated": "2026-11-07 09:55 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -1782,6 +1782,19 @@
       "weekly_period_end": "2026-11-06"
     },
     {
+      "code": "BK1418",
+      "name": "氯碱",
+      "change_pct": -0.55,
+      "price": 1921.57,
+      "change": -10.62,
+      "up_count": 5,
+      "down_count": 10,
+      "leader": "英 力 特",
+      "weekly_pct": 5.62,
+      "weekly_period_start": "2026-10-30",
+      "weekly_period_end": "2026-11-06"
+    },
+    {
       "code": "BK1256",
       "name": "农产品加工",
       "change_pct": 0.09,
@@ -2820,7 +2833,7 @@
     "us_sector_count": 11,
     "a_share_index_count": 7,
     "a_share_board_count": 100,
-    "weekly_board_count": 99,
+    "weekly_board_count": 100,
     "status": "ok"
   }
 }

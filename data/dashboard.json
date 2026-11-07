@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-07 03:07 UTC",
+  "updated": "2026-11-07 09:55 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6648,
-      "change_pct": -0.35,
+      "value": 6.671,
+      "change_pct": -0.25,
       "time": "2026-11-07",
       "name": "USD/CNY"
     },
@@ -66,15 +66,15 @@
     },
     {
       "symbol": "BZ=F",
-      "value": 97.76,
-      "change_pct": -0.54,
+      "value": 98.32,
+      "change_pct": 0.03,
       "time": "2026-11-06",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 4079.5,
-      "change_pct": -0.83,
+      "value": 4074.8999,
+      "change_pct": -0.94,
       "time": "2026-11-06",
       "name": "黄金"
     },
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-11-07 03:07 UTC"
+    "asof": "2026-11-07 09:55 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,7 +599,7 @@
     "china": [
       [
         "全球政策",
-        459
+        460
       ],
       [
         "中美博弈",
@@ -625,11 +625,11 @@
     "us": [
       [
         "全球政策",
-        567
+        568
       ],
       [
         "中美博弈",
-        321
+        322
       ],
       [
         "科技 / AI",
@@ -651,27 +651,27 @@
     "global": [
       [
         "全球政策",
-        3571
+        3577
       ],
       [
         "中美博弈",
-        1814
+        1824
       ],
       [
         "科技 / AI",
-        847
+        850
       ],
       [
         "贸易 / 供应链",
-        377
+        379
       ],
       [
         "政治",
-        315
+        317
       ],
       [
         "内政",
-        198
+        199
       ]
     ]
   },
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 2358
+      "count": 2363
     },
     {
       "keyword": "产业升级",
@@ -702,7 +702,7 @@
     },
     {
       "keyword": "贸易",
-      "count": 599
+      "count": 601
     }
   ],
   "policy_source_matrix": [
@@ -781,11 +781,11 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 976,
+      "total": 977,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 459
+          "count": 460
         },
         {
           "name": "中美博弈",
@@ -812,15 +812,15 @@
     },
     {
       "side": "美国",
-      "total": 1358,
+      "total": 1360,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 567
+          "count": 568
         },
         {
           "name": "中美博弈",
-          "count": 321
+          "count": 322
         },
         {
           "name": "科技 / AI",
@@ -845,7 +845,7 @@
   "today_focus": [
     {
       "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-      "titleZh": "President Trump Was Right: America Controls the Strait of Hormuz",
+      "titleZh": "特朗普总统是对的：美国控制霍尔木兹海峡",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
       "risk": "极高",
       "category": "国防",
@@ -878,7 +878,7 @@
     },
     {
       "title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
-      "titleZh": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
+      "titleZh": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
       "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
       "risk": "高",
       "category": "能源 / 资源",
@@ -978,8 +978,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 10083 条；本轮发现 173 条；13类覆盖=13/13；中国/美国/全球=976/1358/7749；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-11-07 03:07 UTC",
+  "collection_message": "长期情报库：当前工作集 10112 条；本轮发现 148 条；13类覆盖=13/13；中国/美国/全球=977/1360/7775；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-11-07 09:55 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1134,12 +1134,12 @@
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 35
+      "count": 34
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 58
+      "count": 34
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -1154,12 +1154,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 25
+      "count": 26
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 25
+      "count": 28
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
