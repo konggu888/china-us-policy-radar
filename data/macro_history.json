@@ -240249,7 +240249,7 @@
     }
   },
   {
-    "updatedAt": "2026-11-07T17:07:15.711422+00:00",
+    "updatedAt": "2026-11-07T21:18:32.851334+00:00",
     "china": {
       "source": "国家统计局",
       "status": "MISSING",
@@ -240258,12 +240258,12 @@
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "HTTP Error 502: Bad Gateway",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Temporarily",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-11-07T16:55:14.559678+00:00",
+      "fetchedAt": "2026-11-07T21:17:32.462836+00:00",
       "records": [
         {
           "indicator": "M2_yoy_pct",
