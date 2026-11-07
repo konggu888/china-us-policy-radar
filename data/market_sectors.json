@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07 09:55 UTC",
+  "updated": "2026-11-07 17:13 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -1301,19 +1301,6 @@
       "weekly_period_end": "2026-11-06"
     },
     {
-      "code": "BK1300",
-      "name": "院线",
-      "change_pct": 0.66,
-      "price": 635.25,
-      "change": 4.19,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "幸福蓝海",
-      "weekly_pct": 14.16,
-      "weekly_period_start": "2026-10-30",
-      "weekly_period_end": "2026-11-06"
-    },
-    {
       "code": "BK1291",
       "name": "电视广播Ⅲ",
       "change_pct": -0.48,
@@ -2042,19 +2029,6 @@
       "weekly_period_end": "2026-11-06"
     },
     {
-      "code": "BK0427",
-      "name": "公用事业",
-      "change_pct": 0.55,
-      "price": 8846.7,
-      "change": 47.99,
-      "up_count": 73,
-      "down_count": 53,
-      "leader": "新能股份",
-      "weekly_pct": 4.37,
-      "weekly_period_start": "2026-10-30",
-      "weekly_period_end": "2026-11-06"
-    },
-    {
       "code": "BK1379",
       "name": "热力服务",
       "change_pct": -0.42,
@@ -2198,19 +2172,6 @@
       "weekly_period_end": "2026-11-06"
     },
     {
-      "code": "BK0421",
-      "name": "铁路公路",
-      "change_pct": 0.7,
-      "price": 8637.34,
-      "change": 59.71,
-      "up_count": 22,
-      "down_count": 9,
-      "leader": "龙江交通",
-      "weekly_pct": 2.94,
-      "weekly_period_start": "2026-10-30",
-      "weekly_period_end": "2026-11-06"
-    },
-    {
       "code": "BK1239",
       "name": "白色家电",
       "change_pct": -0.47,
@@ -2315,19 +2276,6 @@
       "weekly_period_end": "2026-11-06"
     },
     {
-      "code": "BK1450",
-      "name": "空调",
-      "change_pct": 0.54,
-      "price": 14827.19,
-      "change": 79.56,
-      "up_count": 3,
-      "down_count": 1,
-      "leader": "美的集团",
-      "weekly_pct": 1.46,
-      "weekly_period_start": "2026-10-30",
-      "weekly_period_end": "2026-11-06"
-    },
-    {
       "code": "BK1381",
       "name": "燃气Ⅲ",
       "change_pct": -0.23,
@@ -2389,19 +2337,6 @@
       "down_count": 0,
       "leader": "中国电信",
       "weekly_pct": 0.6,
-      "weekly_period_start": "2026-10-30",
-      "weekly_period_end": "2026-11-06"
-    },
-    {
-      "code": "BK1376",
-      "name": "核力发电",
-      "change_pct": 0.65,
-      "price": 654.36,
-      "change": 4.24,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "中国广核",
-      "weekly_pct": -0.05,
       "weekly_period_start": "2026-10-30",
       "weekly_period_end": "2026-11-06"
     },
@@ -2618,19 +2553,6 @@
       "weekly_period_end": "2026-11-06"
     },
     {
-      "code": "BK1300",
-      "name": "院线",
-      "change_pct": 0.66,
-      "price": 635.25,
-      "change": 4.19,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "幸福蓝海",
-      "weekly_pct": 14.16,
-      "weekly_period_start": "2026-10-30",
-      "weekly_period_end": "2026-11-06"
-    },
-    {
       "code": "BK1291",
       "name": "电视广播Ⅲ",
       "change_pct": -0.48,
@@ -2679,6 +2601,19 @@
       "down_count": 1,
       "leader": "分众传媒",
       "weekly_pct": 11.49,
+      "weekly_period_start": "2026-10-30",
+      "weekly_period_end": "2026-11-06"
+    },
+    {
+      "code": "BK1412",
+      "name": "氨纶",
+      "change_pct": 0.42,
+      "price": 2457.54,
+      "change": 10.24,
+      "up_count": 1,
+      "down_count": 0,
+      "leader": "华峰化学",
+      "weekly_pct": 11.24,
       "weekly_period_start": "2026-10-30",
       "weekly_period_end": "2026-11-06"
     }
@@ -2833,7 +2768,7 @@
     "us_sector_count": 11,
     "a_share_index_count": 7,
     "a_share_board_count": 100,
-    "weekly_board_count": 100,
+    "weekly_board_count": 95,
     "status": "ok"
   }
 }
