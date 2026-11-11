@@ -253025,7 +253025,7 @@
     }
   },
   {
-    "updatedAt": "2026-11-11T06:27:14.345023+00:00",
+    "updatedAt": "2026-11-11T14:37:18.662543+00:00",
     "china": {
       "source": "国家统计局",
       "status": "MISSING",
@@ -253034,12 +253034,12 @@
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "Remote end closed connection without response",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-11-11T06:26:00.797646+00:00",
+      "fetchedAt": "2026-11-11T14:28:42.710997+00:00",
       "records": [
         {
           "indicator": "M2_yoy_pct",
