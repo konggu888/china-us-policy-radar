@@ -37,7 +37,7 @@
   "OfficialPage:EIA": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 8
+    "count": 7
   },
   "OfficialPage:BLS": {
     "method": "direct_first_party_html",
@@ -92,7 +92,7 @@
   "OfficialPage:UN News": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 38
+    "count": 36
   },
   "OfficialPage:WTO News": {
     "method": "direct_first_party_html",
@@ -121,8 +121,8 @@
   },
   "OfficialFeed:Federal Reserve": {
     "method": "direct_first_party_rss",
-    "status": "error:HTTPError",
-    "count": 0
+    "status": "ok",
+    "count": 20
   },
   "OfficialFeed:Federal Reserve speeches": {
     "method": "direct_first_party_rss",
@@ -137,7 +137,7 @@
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
     "status": "ok",
-    "count": 25
+    "count": 26
   },
   "OfficialFeed:IAEA": {
     "method": "direct_first_party_rss",
@@ -147,7 +147,7 @@
   "Search:china:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 34
+    "count": 33
   },
   "Search:us:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
@@ -157,12 +157,12 @@
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 55
+    "count": 52
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 5
+    "count": 4
   },
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
@@ -177,7 +177,7 @@
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 32
+    "count": 31
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-11-12 10:10 UTC",
+  "updated": "2026-11-12 18:32 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 10825,
-  "new_discovery_count": 160,
-  "official_direct_count": 259,
-  "official_in_working_set": 1347,
+  "total_collected": 10879,
+  "new_discovery_count": 155,
+  "official_direct_count": 277,
+  "official_in_working_set": 1357,
   "category_counts": {
     "政治": 442,
-    "金融": 262,
+    "金融": 264,
     "经济": 60,
     "产业": 22,
-    "科技 / AI": 1125,
-    "国防": 181,
-    "内政": 224,
-    "国家安全": 202,
+    "科技 / AI": 1137,
+    "国防": 182,
+    "内政": 225,
+    "国家安全": 203,
     "外交": 144,
-    "贸易 / 供应链": 519,
-    "能源 / 资源": 203,
-    "中美博弈": 2628,
-    "全球政策": 4813
+    "贸易 / 供应链": 521,
+    "能源 / 资源": 206,
+    "中美博弈": 2647,
+    "全球政策": 4826
   },
   "region_counts": {
     "china": 1036,
-    "us": 1443,
-    "global": 8346
+    "us": 1454,
+    "global": 8389
   },
   "sources": {
     "OfficialPage:White House": {
@@ -259,7 +259,7 @@
     "OfficialPage:EIA": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 8
+      "count": 7
     },
     "OfficialPage:BLS": {
       "method": "direct_first_party_html",
@@ -314,7 +314,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 38
+      "count": 36
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -343,8 +343,8 @@
     },
     "OfficialFeed:Federal Reserve": {
       "method": "direct_first_party_rss",
-      "status": "error:HTTPError",
-      "count": 0
+      "status": "ok",
+      "count": 20
     },
     "OfficialFeed:Federal Reserve speeches": {
       "method": "direct_first_party_rss",
@@ -359,7 +359,7 @@
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
       "status": "ok",
-      "count": 25
+      "count": 26
     },
     "OfficialFeed:IAEA": {
       "method": "direct_first_party_rss",
@@ -369,7 +369,7 @@
     "Search:china:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 34
+      "count": 33
     },
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -379,12 +379,12 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 55
+      "count": 52
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 5
+      "count": 4
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
@@ -399,7 +399,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 32
+      "count": 31
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
