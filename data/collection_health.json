@@ -121,8 +121,8 @@
   },
   "OfficialFeed:Federal Reserve": {
     "method": "direct_first_party_rss",
-    "status": "ok",
-    "count": 20
+    "status": "error:HTTPError",
+    "count": 0
   },
   "OfficialFeed:Federal Reserve speeches": {
     "method": "direct_first_party_rss",
@@ -152,12 +152,12 @@
   "Search:us:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 33
+    "count": 32
   },
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 60
+    "count": 55
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
@@ -167,17 +167,17 @@
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 17
+    "count": 16
   },
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 24
+    "count": 22
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 29
+    "count": 32
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-11-12 02:27 UTC",
+  "updated": "2026-11-12 10:10 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 10783,
-  "new_discovery_count": 166,
-  "official_direct_count": 279,
-  "official_in_working_set": 1346,
+  "total_collected": 10825,
+  "new_discovery_count": 160,
+  "official_direct_count": 259,
+  "official_in_working_set": 1347,
   "category_counts": {
-    "政治": 440,
-    "金融": 261,
+    "政治": 442,
+    "金融": 262,
     "经济": 60,
     "产业": 22,
-    "科技 / AI": 1121,
+    "科技 / AI": 1125,
     "国防": 181,
-    "内政": 223,
-    "国家安全": 201,
-    "外交": 141,
-    "贸易 / 供应链": 517,
+    "内政": 224,
+    "国家安全": 202,
+    "外交": 144,
+    "贸易 / 供应链": 519,
     "能源 / 资源": 203,
-    "中美博弈": 2613,
-    "全球政策": 4800
+    "中美博弈": 2628,
+    "全球政策": 4813
   },
   "region_counts": {
-    "china": 1032,
-    "us": 1441,
-    "global": 8310
+    "china": 1036,
+    "us": 1443,
+    "global": 8346
   },
   "sources": {
     "OfficialPage:White House": {
@@ -343,8 +343,8 @@
     },
     "OfficialFeed:Federal Reserve": {
       "method": "direct_first_party_rss",
-      "status": "ok",
-      "count": 20
+      "status": "error:HTTPError",
+      "count": 0
     },
     "OfficialFeed:Federal Reserve speeches": {
       "method": "direct_first_party_rss",
@@ -374,12 +374,12 @@
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 33
+      "count": 32
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 60
+      "count": 55
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -389,17 +389,17 @@
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 17
+      "count": 16
     },
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 24
+      "count": 22
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 29
+      "count": 32
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
