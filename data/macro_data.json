@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T15:28:50.612840+00:00",
+  "updatedAt": "2026-11-13T22:09:04.999850+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -8,12 +8,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
+    "error": "HTTP Error 502: Bad Gateway",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-11-13T15:19:12.594101+00:00",
+    "fetchedAt": "2026-11-13T21:55:28.086531+00:00",
     "records": [
       {
         "indicator": "M2_balance_trillion",
@@ -797,33 +797,33 @@
       },
       "10y_treasury": {
         "seriesId": "DGS10",
-        "observedAt": "2026-11-10",
-        "value": 4.98,
-        "previousValue": 4.88,
+        "observedAt": "2026-11-12",
+        "value": 5.1,
+        "previousValue": 4.98,
         "source": "FRED / Federal Reserve Bank of St. Louis",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
       },
       "2y_treasury": {
         "seriesId": "DGS2",
-        "observedAt": "2026-11-10",
-        "value": 4.73,
-        "previousValue": 4.56,
+        "observedAt": "2026-11-12",
+        "value": 4.86,
+        "previousValue": 4.73,
         "source": "FRED / Federal Reserve Bank of St. Louis",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
       },
       "5y_treasury": {
         "seriesId": "DGS5",
-        "observedAt": "2026-11-10",
-        "value": 4.81,
-        "previousValue": 4.67,
+        "observedAt": "2026-11-12",
+        "value": 4.95,
+        "previousValue": 4.81,
         "source": "FRED / Federal Reserve Bank of St. Louis",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS5"
       },
       "30y_treasury": {
         "seriesId": "DGS30",
-        "observedAt": "2026-11-10",
-        "value": 5.35,
-        "previousValue": 5.26,
+        "observedAt": "2026-11-12",
+        "value": 5.43,
+        "previousValue": 5.35,
         "source": "FRED / Federal Reserve Bank of St. Louis",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
       },
