@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T00:40:14.405710+00:00",
+  "updatedAt": "2026-11-13T06:47:23.247017+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -13,7 +13,7 @@
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-11-13T00:15:50.943144+00:00",
+    "fetchedAt": "2026-11-13T06:43:03.998554+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
@@ -611,9 +611,16 @@
         "source": "中国人民银行"
       },
       {
+        "indicator": "open_market_7d_reverse_repo_amount_billion",
+        "value": 3000.0,
+        "observedAt": "2026-11-13",
+        "source": "中国人民银行",
+        "sourceUrl": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026111308562844801/index.html"
+      },
+      {
         "indicator": "USD/CNY_PBOC_MID",
-        "value": 6.7174000000000005,
-        "observedAt": "2026-11-12",
+        "value": 6.715199999999999,
+        "observedAt": "2026-11-13",
         "source": "SAFE/PBOC RMB central parity",
         "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
       }
