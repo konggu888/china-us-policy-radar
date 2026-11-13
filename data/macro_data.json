@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T18:57:46.730129+00:00",
+  "updatedAt": "2026-11-13T00:40:14.405710+00:00",
   "china": {
     "source": "国家统计局",
     "status": "MISSING",
@@ -8,12 +8,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "<urlopen error [Errno 101] Network is unreachable>",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-11-12T18:45:22.796388+00:00",
+    "fetchedAt": "2026-11-13T00:15:50.943144+00:00",
     "records": [
       {
         "indicator": "M2_yoy_pct",
@@ -609,11 +609,16 @@
         "publishedAt": "2026-02-13",
         "sourceUrl": "https://www.pbc.gov.cn/diaochatongjisi/116219/116225/2026021317031040775/index.html",
         "source": "中国人民银行"
+      },
+      {
+        "indicator": "USD/CNY_PBOC_MID",
+        "value": 6.7174000000000005,
+        "observedAt": "2026-11-12",
+        "source": "SAFE/PBOC RMB central parity",
+        "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
       }
     ],
-    "errors": [
-      "RMB_MID:<urlopen error [Errno 104] Connection reset by peer>"
-    ],
+    "errors": [],
     "status": "OK"
   },
   "unitedStates": {
@@ -701,32 +706,32 @@
       },
       "10y_treasury": {
         "seriesId": "DGS10",
-        "observedAt": "2026-11-09",
-        "value": 4.88,
-        "previousValue": 4.86,
+        "observedAt": "2026-11-10",
+        "value": 4.98,
+        "previousValue": 4.88,
         "source": "FRED / Federal Reserve Bank of St. Louis",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
       },
       "2y_treasury": {
         "seriesId": "DGS2",
-        "observedAt": "2026-11-09",
-        "value": 4.56,
-        "previousValue": 4.51,
+        "observedAt": "2026-11-10",
+        "value": 4.73,
+        "previousValue": 4.56,
         "source": "FRED / Federal Reserve Bank of St. Louis",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
       },
       "5y_treasury": {
         "seriesId": "DGS5",
-        "observedAt": "2026-11-09",
-        "value": 4.67,
-        "previousValue": 4.64,
+        "observedAt": "2026-11-10",
+        "value": 4.81,
+        "previousValue": 4.67,
         "source": "FRED / Federal Reserve Bank of St. Louis",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS5"
       },
       "30y_treasury": {
         "seriesId": "DGS30",
-        "observedAt": "2026-11-09",
-        "value": 5.26,
+        "observedAt": "2026-11-10",
+        "value": 5.35,
         "previousValue": 5.26,
         "source": "FRED / Federal Reserve Bank of St. Louis",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
