@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-14 10:05 UTC",
+  "updated": "2026-11-14 16:51 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6712,
-      "change_pct": 0.01,
+      "value": 6.6621,
+      "change_pct": -0.12,
       "time": "2026-11-14",
       "name": "USD/CNY"
     },
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-11-14 10:05 UTC"
+    "asof": "2026-11-14 16:51 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -603,7 +603,7 @@
       ],
       [
         "中美博弈",
-        260
+        262
       ],
       [
         "科技 / AI",
@@ -629,7 +629,7 @@
       ],
       [
         "中美博弈",
-        360
+        359
       ],
       [
         "科技 / AI",
@@ -651,15 +651,15 @@
     "global": [
       [
         "全球政策",
-        3806
+        3817
       ],
       [
         "中美博弈",
-        2115
+        2126
       ],
       [
         "科技 / AI",
-        977
+        982
       ],
       [
         "贸易 / 供应链",
@@ -667,7 +667,7 @@
       ],
       [
         "政治",
-        340
+        341
       ],
       [
         "内政",
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 2623
+      "count": 2632
     },
     {
       "keyword": "产业升级",
@@ -698,7 +698,7 @@
     },
     {
       "keyword": "安全",
-      "count": 347
+      "count": 349
     },
     {
       "keyword": "贸易",
@@ -781,7 +781,7 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 1050,
+      "total": 1052,
       "top_categories": [
         {
           "name": "全球政策",
@@ -789,7 +789,7 @@
         },
         {
           "name": "中美博弈",
-          "count": 260
+          "count": 262
         },
         {
           "name": "科技 / AI",
@@ -812,7 +812,7 @@
     },
     {
       "side": "美国",
-      "total": 1491,
+      "total": 1490,
       "top_categories": [
         {
           "name": "全球政策",
@@ -820,7 +820,7 @@
         },
         {
           "name": "中美博弈",
-          "count": 360
+          "count": 359
         },
         {
           "name": "科技 / AI",
@@ -978,8 +978,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 11115 条；本轮发现 162 条；13类覆盖=13/13；中国/美国/全球=1050/1491/8574；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-11-14 10:05 UTC",
+  "collection_message": "长期情报库：当前工作集 11145 条；本轮发现 161 条；13类覆盖=13/13；中国/美国/全球=1052/1490/8603；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-11-14 16:51 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1074,7 +1074,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 38
+      "count": 36
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -1139,7 +1139,7 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 53
+      "count": 52
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -1159,7 +1159,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 25
+      "count": 27
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
