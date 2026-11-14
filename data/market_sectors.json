@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14 02:34 UTC",
+  "updated": "2026-11-14 10:05 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -1275,32 +1275,6 @@
       "weekly_period_end": "2026-11-13"
     },
     {
-      "code": "BK1299",
-      "name": "影视动漫制作",
-      "change_pct": 2.08,
-      "price": 4640.42,
-      "change": 94.53,
-      "up_count": 8,
-      "down_count": 6,
-      "leader": "中国电影",
-      "weekly_pct": 6.86,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1514",
-      "name": "水产养殖",
-      "change_pct": 1.23,
-      "price": 648.61,
-      "change": 7.89,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "好当家",
-      "weekly_pct": 6.33,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
       "code": "BK1512",
       "name": "生猪养殖",
       "change_pct": 3.46,
@@ -1327,54 +1301,28 @@
       "weekly_period_end": "2026-11-13"
     },
     {
-      "code": "BK1259",
-      "name": "养殖业",
-      "change_pct": 1.68,
-      "price": 3843.29,
-      "change": 63.63,
-      "up_count": 15,
-      "down_count": 6,
-      "leader": "天邦食品",
-      "weekly_pct": 1.6,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1292",
-      "name": "广告媒体",
-      "change_pct": 1.03,
-      "price": 2401.17,
-      "change": 24.4,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "分众传媒",
-      "weekly_pct": 1.42,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1365",
-      "name": "租赁",
-      "change_pct": 0.98,
-      "price": 3028.93,
-      "change": 29.32,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "江苏金租",
-      "weekly_pct": -2.22,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1587",
-      "name": "电信运营商",
-      "change_pct": 1.55,
-      "price": 1070.11,
-      "change": 16.33,
-      "up_count": 3,
+      "code": "BK1283",
+      "name": "银行",
+      "change_pct": 1.43,
+      "price": 4581.06,
+      "change": 64.75,
+      "up_count": 40,
       "down_count": 0,
-      "leader": "中国移动",
-      "weekly_pct": -3.3,
+      "leader": "青岛银行",
+      "weekly_pct": 2.13,
+      "weekly_period_start": "2026-11-06",
+      "weekly_period_end": "2026-11-13"
+    },
+    {
+      "code": "BK0475",
+      "name": "银行Ⅱ",
+      "change_pct": 1.43,
+      "price": 4581.06,
+      "change": 64.75,
+      "up_count": 40,
+      "down_count": 0,
+      "leader": "青岛银行",
+      "weekly_pct": 2.13,
       "weekly_period_start": "2026-11-06",
       "weekly_period_end": "2026-11-13"
     }
@@ -1434,32 +1382,6 @@
       "weekly_period_end": "2026-11-13"
     },
     {
-      "code": "BK1299",
-      "name": "影视动漫制作",
-      "change_pct": 2.08,
-      "price": 4640.42,
-      "change": 94.53,
-      "up_count": 8,
-      "down_count": 6,
-      "leader": "中国电影",
-      "weekly_pct": 6.86,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1514",
-      "name": "水产养殖",
-      "change_pct": 1.23,
-      "price": 648.61,
-      "change": 7.89,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "好当家",
-      "weekly_pct": 6.33,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
       "code": "BK1512",
       "name": "生猪养殖",
       "change_pct": 3.46,
@@ -1486,60 +1408,33 @@
       "weekly_period_end": "2026-11-13"
     },
     {
-      "code": "BK1259",
-      "name": "养殖业",
-      "change_pct": 1.68,
-      "price": 3843.29,
-      "change": 63.63,
-      "up_count": 15,
-      "down_count": 6,
-      "leader": "天邦食品",
-      "weekly_pct": 1.6,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1292",
-      "name": "广告媒体",
-      "change_pct": 1.03,
-      "price": 2401.17,
-      "change": 24.4,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "分众传媒",
-      "weekly_pct": 1.42,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    }
-  ],
-  "a_share_weekly_fallers": [
-    {
-      "code": "BK1587",
-      "name": "电信运营商",
-      "change_pct": 1.55,
-      "price": 1070.11,
-      "change": 16.33,
-      "up_count": 3,
+      "code": "BK1283",
+      "name": "银行",
+      "change_pct": 1.43,
+      "price": 4581.06,
+      "change": 64.75,
+      "up_count": 40,
       "down_count": 0,
-      "leader": "中国移动",
-      "weekly_pct": -3.3,
+      "leader": "青岛银行",
+      "weekly_pct": 2.13,
       "weekly_period_start": "2026-11-06",
       "weekly_period_end": "2026-11-13"
     },
     {
-      "code": "BK1365",
-      "name": "租赁",
-      "change_pct": 0.98,
-      "price": 3028.93,
-      "change": 29.32,
-      "up_count": 2,
-      "down_count": 1,
-      "leader": "江苏金租",
-      "weekly_pct": -2.22,
+      "code": "BK0475",
+      "name": "银行Ⅱ",
+      "change_pct": 1.43,
+      "price": 4581.06,
+      "change": 64.75,
+      "up_count": 40,
+      "down_count": 0,
+      "leader": "青岛银行",
+      "weekly_pct": 2.13,
       "weekly_period_start": "2026-11-06",
       "weekly_period_end": "2026-11-13"
     }
   ],
+  "a_share_weekly_fallers": [],
   "a_share_board_risers": [
     "院线",
     "影视院线",
@@ -1558,7 +1453,7 @@
     "us_sector_count": 11,
     "a_share_index_count": 7,
     "a_share_board_count": 100,
-    "weekly_board_count": 11,
+    "weekly_board_count": 7,
     "status": "ok"
   }
 }
