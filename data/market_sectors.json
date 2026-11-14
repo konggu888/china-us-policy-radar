@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14 16:51 UTC",
+  "updated": "2026-11-14 21:23 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -1301,6 +1301,19 @@
       "weekly_period_end": "2026-11-13"
     },
     {
+      "code": "BK1291",
+      "name": "电视广播Ⅲ",
+      "change_pct": 1.9,
+      "price": 1322.84,
+      "change": 24.63,
+      "up_count": 11,
+      "down_count": 1,
+      "leader": "湖北广电",
+      "weekly_pct": 3.87,
+      "weekly_period_start": "2026-11-06",
+      "weekly_period_end": "2026-11-13"
+    },
+    {
       "code": "BK1219",
       "name": "电视广播Ⅱ",
       "change_pct": 1.9,
@@ -1327,8 +1340,34 @@
       "weekly_period_end": "2026-11-13"
     },
     {
+      "code": "BK1612",
+      "name": "农商行Ⅲ",
+      "change_pct": 1.29,
+      "price": 495.6,
+      "change": 6.32,
+      "up_count": 10,
+      "down_count": 0,
+      "leader": "沪农商行",
+      "weekly_pct": 2.16,
+      "weekly_period_start": "2026-11-06",
+      "weekly_period_end": "2026-11-13"
+    },
+    {
       "code": "BK1283",
       "name": "银行",
+      "change_pct": 1.43,
+      "price": 4581.06,
+      "change": 64.75,
+      "up_count": 40,
+      "down_count": 0,
+      "leader": "青岛银行",
+      "weekly_pct": 2.13,
+      "weekly_period_start": "2026-11-06",
+      "weekly_period_end": "2026-11-13"
+    },
+    {
+      "code": "BK0475",
+      "name": "银行Ⅱ",
       "change_pct": 1.43,
       "price": 4581.06,
       "change": 64.75,
@@ -1349,19 +1388,6 @@
       "down_count": 0,
       "leader": "青岛银行",
       "weekly_pct": 2.08,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1587",
-      "name": "电信运营商",
-      "change_pct": 1.55,
-      "price": 1070.11,
-      "change": 16.33,
-      "up_count": 3,
-      "down_count": 0,
-      "leader": "中国移动",
-      "weekly_pct": -3.3,
       "weekly_period_start": "2026-11-06",
       "weekly_period_end": "2026-11-13"
     }
@@ -1447,6 +1473,19 @@
       "weekly_period_end": "2026-11-13"
     },
     {
+      "code": "BK1291",
+      "name": "电视广播Ⅲ",
+      "change_pct": 1.9,
+      "price": 1322.84,
+      "change": 24.63,
+      "up_count": 11,
+      "down_count": 1,
+      "leader": "湖北广电",
+      "weekly_pct": 3.87,
+      "weekly_period_start": "2026-11-06",
+      "weekly_period_end": "2026-11-13"
+    },
+    {
       "code": "BK1219",
       "name": "电视广播Ⅱ",
       "change_pct": 1.9,
@@ -1473,6 +1512,19 @@
       "weekly_period_end": "2026-11-13"
     },
     {
+      "code": "BK1612",
+      "name": "农商行Ⅲ",
+      "change_pct": 1.29,
+      "price": 495.6,
+      "change": 6.32,
+      "up_count": 10,
+      "down_count": 0,
+      "leader": "沪农商行",
+      "weekly_pct": 2.16,
+      "weekly_period_start": "2026-11-06",
+      "weekly_period_end": "2026-11-13"
+    },
+    {
       "code": "BK1283",
       "name": "银行",
       "change_pct": 1.43,
@@ -1484,36 +1536,9 @@
       "weekly_pct": 2.13,
       "weekly_period_start": "2026-11-06",
       "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1609",
-      "name": "城商行Ⅲ",
-      "change_pct": 1.51,
-      "price": 1722.76,
-      "change": 25.71,
-      "up_count": 15,
-      "down_count": 0,
-      "leader": "青岛银行",
-      "weekly_pct": 2.08,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
     }
   ],
-  "a_share_weekly_fallers": [
-    {
-      "code": "BK1587",
-      "name": "电信运营商",
-      "change_pct": 1.55,
-      "price": 1070.11,
-      "change": 16.33,
-      "up_count": 3,
-      "down_count": 0,
-      "leader": "中国移动",
-      "weekly_pct": -3.3,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    }
-  ],
+  "a_share_weekly_fallers": [],
   "a_share_board_risers": [
     "院线",
     "影视院线",
@@ -1532,7 +1557,7 @@
     "us_sector_count": 11,
     "a_share_index_count": 7,
     "a_share_board_count": 100,
-    "weekly_board_count": 10,
+    "weekly_board_count": 12,
     "status": "ok"
   }
 }
