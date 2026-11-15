@@ -272098,7 +272098,7 @@
     }
   },
   {
-    "updatedAt": "2026-11-15T15:04:52.214456+00:00",
+    "updatedAt": "2026-11-15T20:45:34.429765+00:00",
     "china": {
       "source": "国家统计局",
       "status": "MISSING",
@@ -272107,12 +272107,12 @@
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
+      "error": "HTTP Error 502: Bad Gateway",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-11-15T14:53:12.731073+00:00",
+      "fetchedAt": "2026-11-15T20:40:23.682475+00:00",
       "records": [
         {
           "indicator": "M2_balance_trillion",
