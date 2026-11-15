@@ -146,23 +146,23 @@
   },
   "Search:china:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:GoogleNews",
-    "count": 36
+    "status": "error:HTTPError",
+    "count": 0
   },
   "Search:us:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:GoogleNews",
-    "count": 34
+    "status": "ok:BingNews",
+    "count": 2
   },
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:GoogleNews",
-    "count": 49
+    "status": "ok:BingNews",
+    "count": 9
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:GoogleNews",
-    "count": 5
+    "status": "ok:BingNews",
+    "count": 3
   },
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
@@ -177,7 +177,7 @@
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 23
+    "count": 24
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-11-15 07:04 UTC",
+  "updated": "2026-11-15 14:41 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
-  "total_collected": 11202,
-  "new_discovery_count": 158,
+  "total_collected": 11247,
+  "new_discovery_count": 14,
   "official_direct_count": 279,
-  "official_in_working_set": 1389,
+  "official_in_working_set": 1390,
   "category_counts": {
-    "政治": 449,
-    "金融": 271,
+    "政治": 451,
+    "金融": 272,
     "经济": 60,
     "产业": 23,
-    "科技 / AI": 1185,
+    "科技 / AI": 1195,
     "国防": 185,
-    "内政": 227,
+    "内政": 228,
     "国家安全": 212,
-    "外交": 148,
+    "外交": 150,
     "贸易 / 供应链": 537,
-    "能源 / 资源": 213,
-    "中美博弈": 2761,
-    "全球政策": 4931
+    "能源 / 资源": 215,
+    "中美博弈": 2777,
+    "全球政策": 4942
   },
   "region_counts": {
-    "china": 1052,
-    "us": 1494,
-    "global": 8656
+    "china": 1056,
+    "us": 1496,
+    "global": 8695
   },
   "sources": {
     "OfficialPage:White House": {
@@ -368,23 +368,23 @@
     },
     "Search:china:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:GoogleNews",
-      "count": 36
+      "status": "error:HTTPError",
+      "count": 0
     },
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:GoogleNews",
-      "count": 34
+      "status": "ok:BingNews",
+      "count": 2
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:GoogleNews",
-      "count": 49
+      "status": "ok:BingNews",
+      "count": 9
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:GoogleNews",
-      "count": 5
+      "status": "ok:BingNews",
+      "count": 3
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
@@ -399,7 +399,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 23
+      "count": 24
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15 07:51 UTC",
+  "updated": "2026-11-15 15:09 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -1234,99 +1234,7 @@
     }
   ],
   "a_share_board_status": "ok",
-  "a_share_weekly_industry_boards": [
-    {
-      "code": "BK1300",
-      "name": "院线",
-      "change_pct": 12.5,
-      "price": 733.42,
-      "change": 81.49,
-      "up_count": 4,
-      "down_count": 0,
-      "leader": "金逸影视",
-      "weekly_pct": 15.45,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1222",
-      "name": "影视院线",
-      "change_pct": 4.39,
-      "price": 4459.09,
-      "change": 187.72,
-      "up_count": 12,
-      "down_count": 6,
-      "leader": "金逸影视",
-      "weekly_pct": 8.86,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1299",
-      "name": "影视动漫制作",
-      "change_pct": 2.08,
-      "price": 4640.42,
-      "change": 94.53,
-      "up_count": 8,
-      "down_count": 6,
-      "leader": "中国电影",
-      "weekly_pct": 6.86,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1512",
-      "name": "生猪养殖",
-      "change_pct": 3.46,
-      "price": 4179.35,
-      "change": 139.96,
-      "up_count": 10,
-      "down_count": 1,
-      "leader": "天邦食品",
-      "weekly_pct": 4.25,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1611",
-      "name": "国有大型银行Ⅲ",
-      "change_pct": 1.49,
-      "price": 3696.37,
-      "change": 54.39,
-      "up_count": 6,
-      "down_count": 0,
-      "leader": "中国银行",
-      "weekly_pct": 3.14,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1508",
-      "name": "畜禽饲料",
-      "change_pct": 2.96,
-      "price": 1888.31,
-      "change": 54.24,
-      "up_count": 8,
-      "down_count": 1,
-      "leader": "金新农",
-      "weekly_pct": 2.67,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1609",
-      "name": "城商行Ⅲ",
-      "change_pct": 1.51,
-      "price": 1722.76,
-      "change": 25.71,
-      "up_count": 15,
-      "down_count": 0,
-      "leader": "青岛银行",
-      "weekly_pct": 2.08,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    }
-  ],
+  "a_share_weekly_industry_boards": [],
   "weekly_risers": [
     "能源",
     "工业",
@@ -1341,99 +1249,7 @@
     "材料"
   ],
   "weekly_fallers": [],
-  "a_share_weekly_risers": [
-    {
-      "code": "BK1300",
-      "name": "院线",
-      "change_pct": 12.5,
-      "price": 733.42,
-      "change": 81.49,
-      "up_count": 4,
-      "down_count": 0,
-      "leader": "金逸影视",
-      "weekly_pct": 15.45,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1222",
-      "name": "影视院线",
-      "change_pct": 4.39,
-      "price": 4459.09,
-      "change": 187.72,
-      "up_count": 12,
-      "down_count": 6,
-      "leader": "金逸影视",
-      "weekly_pct": 8.86,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1299",
-      "name": "影视动漫制作",
-      "change_pct": 2.08,
-      "price": 4640.42,
-      "change": 94.53,
-      "up_count": 8,
-      "down_count": 6,
-      "leader": "中国电影",
-      "weekly_pct": 6.86,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1512",
-      "name": "生猪养殖",
-      "change_pct": 3.46,
-      "price": 4179.35,
-      "change": 139.96,
-      "up_count": 10,
-      "down_count": 1,
-      "leader": "天邦食品",
-      "weekly_pct": 4.25,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1611",
-      "name": "国有大型银行Ⅲ",
-      "change_pct": 1.49,
-      "price": 3696.37,
-      "change": 54.39,
-      "up_count": 6,
-      "down_count": 0,
-      "leader": "中国银行",
-      "weekly_pct": 3.14,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1508",
-      "name": "畜禽饲料",
-      "change_pct": 2.96,
-      "price": 1888.31,
-      "change": 54.24,
-      "up_count": 8,
-      "down_count": 1,
-      "leader": "金新农",
-      "weekly_pct": 2.67,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    },
-    {
-      "code": "BK1609",
-      "name": "城商行Ⅲ",
-      "change_pct": 1.51,
-      "price": 1722.76,
-      "change": 25.71,
-      "up_count": 15,
-      "down_count": 0,
-      "leader": "青岛银行",
-      "weekly_pct": 2.08,
-      "weekly_period_start": "2026-11-06",
-      "weekly_period_end": "2026-11-13"
-    }
-  ],
+  "a_share_weekly_risers": [],
   "a_share_weekly_fallers": [],
   "a_share_board_risers": [
     "院线",
@@ -1453,7 +1269,7 @@
     "us_sector_count": 11,
     "a_share_index_count": 7,
     "a_share_board_count": 100,
-    "weekly_board_count": 7,
+    "weekly_board_count": 0,
     "status": "ok"
   }
 }
