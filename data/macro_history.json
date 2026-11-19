@@ -300794,13 +300794,13 @@
     }
   },
   {
-    "updatedAt": "2026-11-19T00:48:25.154307+00:00",
+    "updatedAt": "2026-11-19T08:24:28.777383+00:00",
     "china": {
       "source": "国家统计局",
       "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965844.html",
       "releaseTitle": "10月份国民经济运行总体平稳、向新向优",
       "publishedAt": "2026-11-16",
-      "fetchedAt": "2026-11-19T00:48:23.203247+00:00",
+      "fetchedAt": "2026-11-19T08:24:26.411669+00:00",
       "values": {
         "industrial_yoy_pct": 4.8,
         "industrial_mom_pct": 0.21,
@@ -300818,12 +300818,12 @@
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
+      "error": "Remote end closed connection without response",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-11-19T00:43:01.803249+00:00",
+      "fetchedAt": "2026-11-19T08:19:52.358459+00:00",
       "records": [
         {
           "indicator": "M2_balance_trillion",
@@ -301506,8 +301506,8 @@
         },
         {
           "indicator": "USD/CNY_PBOC_MID",
-          "value": 6.711799999999999,
-          "observedAt": "2026-11-18",
+          "value": 6.7128,
+          "observedAt": "2026-11-19",
           "source": "SAFE/PBOC RMB central parity",
           "sourceUrl": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do"
         }
