@@ -311063,13 +311063,13 @@
     }
   },
   {
-    "updatedAt": "2026-11-20T17:25:04.400511+00:00",
+    "updatedAt": "2026-11-20T23:51:03.789103+00:00",
     "china": {
       "source": "国家统计局",
       "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965844.html",
       "releaseTitle": "10月份国民经济运行总体平稳、向新向优",
       "publishedAt": "2026-11-16",
-      "fetchedAt": "2026-11-20T17:25:01.387159+00:00",
+      "fetchedAt": "2026-11-20T23:51:00.733381+00:00",
       "values": {
         "industrial_yoy_pct": 4.8,
         "industrial_mom_pct": 0.21,
@@ -311087,12 +311087,12 @@
     },
     "chinaStructured": {
       "status": "MISSING",
-      "error": "Remote end closed connection without response",
+      "error": "HTTP Error 307: Temporary Redirect",
       "records": []
     },
     "pbc": {
       "source": "中国人民银行",
-      "fetchedAt": "2026-11-20T17:14:16.670033+00:00",
+      "fetchedAt": "2026-11-20T23:36:42.103901+00:00",
       "records": [
         {
           "indicator": "M2_balance_trillion",
@@ -311869,33 +311869,33 @@
         },
         "10y_treasury": {
           "seriesId": "DGS10",
-          "observedAt": "2026-11-18",
-          "value": 5.07,
-          "previousValue": 5.1,
+          "observedAt": "2026-11-19",
+          "value": 5.04,
+          "previousValue": 5.07,
           "source": "FRED / Federal Reserve Bank of St. Louis",
           "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
         },
         "2y_treasury": {
           "seriesId": "DGS2",
-          "observedAt": "2026-11-18",
-          "value": 4.8,
+          "observedAt": "2026-11-19",
+          "value": 4.76,
           "previousValue": 4.8,
           "source": "FRED / Federal Reserve Bank of St. Louis",
           "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
         },
         "5y_treasury": {
           "seriesId": "DGS5",
-          "observedAt": "2026-11-18",
-          "value": 4.89,
-          "previousValue": 4.9,
+          "observedAt": "2026-11-19",
+          "value": 4.86,
+          "previousValue": 4.89,
           "source": "FRED / Federal Reserve Bank of St. Louis",
           "sourceUrl": "https://fred.stlouisfed.org/series/DGS5"
         },
         "30y_treasury": {
           "seriesId": "DGS30",
-          "observedAt": "2026-11-18",
-          "value": 5.41,
-          "previousValue": 5.46,
+          "observedAt": "2026-11-19",
+          "value": 5.4,
+          "previousValue": 5.41,
           "source": "FRED / Federal Reserve Bank of St. Louis",
           "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
         },
