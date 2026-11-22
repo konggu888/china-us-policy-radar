@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-22 07:12 UTC",
+  "updated": "2026-11-22 15:16 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6772,
-      "change_pct": 0.16,
+      "value": 6.6765,
+      "change_pct": 0.15,
       "time": "2026-11-22",
       "name": "USD/CNY"
     },
@@ -588,7 +588,7 @@
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-11-22 07:12 UTC"
+    "asof": "2026-11-22 15:16 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,11 +599,11 @@
     "china": [
       [
         "全球政策",
-        488
+        482
       ],
       [
         "中美博弈",
-        281
+        282
       ],
       [
         "科技 / AI",
@@ -615,7 +615,7 @@
       ],
       [
         "金融",
-        38
+        36
       ],
       [
         "国家安全",
@@ -625,7 +625,7 @@
     "us": [
       [
         "全球政策",
-        609
+        605
       ],
       [
         "中美博弈",
@@ -636,12 +636,12 @@
         143
       ],
       [
-        "贸易 / 供应链",
-        83
+        "政治",
+        81
       ],
       [
-        "政治",
-        82
+        "贸易 / 供应链",
+        80
       ],
       [
         "金融",
@@ -651,15 +651,15 @@
     "global": [
       [
         "全球政策",
-        4012
+        4019
       ],
       [
         "中美博弈",
-        2406
+        2411
       ],
       [
         "科技 / AI",
-        1136
+        1135
       ],
       [
         "贸易 / 供应链",
@@ -671,7 +671,7 @@
       ],
       [
         "内政",
-        224
+        226
       ]
     ]
   },
@@ -686,11 +686,11 @@
     },
     {
       "keyword": "人工智能",
-      "count": 2931
+      "count": 2932
     },
     {
       "keyword": "产业升级",
-      "count": 15
+      "count": 16
     },
     {
       "keyword": "开放",
@@ -698,11 +698,11 @@
     },
     {
       "keyword": "安全",
-      "count": 370
+      "count": 369
     },
     {
       "keyword": "贸易",
-      "count": 719
+      "count": 715
     }
   ],
   "policy_source_matrix": [
@@ -781,15 +781,15 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 1096,
+      "total": 1087,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 488
+          "count": 482
         },
         {
           "name": "中美博弈",
-          "count": 281
+          "count": 282
         },
         {
           "name": "科技 / AI",
@@ -801,7 +801,7 @@
         },
         {
           "name": "金融",
-          "count": 38
+          "count": 36
         },
         {
           "name": "国家安全",
@@ -812,11 +812,11 @@
     },
     {
       "side": "美国",
-      "total": 1530,
+      "total": 1522,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 609
+          "count": 605
         },
         {
           "name": "中美博弈",
@@ -827,25 +827,25 @@
           "count": 143
         },
         {
-          "name": "贸易 / 供应链",
-          "count": 83
+          "name": "政治",
+          "count": 81
         },
         {
-          "name": "政治",
-          "count": 82
+          "name": "贸易 / 供应链",
+          "count": 80
         },
         {
           "name": "金融",
           "count": 64
         }
       ],
-      "risk_high": 117
+      "risk_high": 116
     }
   ],
   "today_focus": [
     {
       "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-      "titleZh": "President Trump Was Right: America Controls the Strait of Hormuz",
+      "titleZh": "特朗普总统是对的：美国控制霍尔木兹海峡",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
       "risk": "极高",
       "category": "国防",
@@ -878,7 +878,7 @@
     },
     {
       "title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
-      "titleZh": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
+      "titleZh": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
       "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
       "risk": "高",
       "category": "能源 / 资源",
@@ -978,8 +978,8 @@
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 12000 条；本轮发现 189 条；13类覆盖=13/13；中国/美国/全球=1096/1530/9374；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-11-22 07:12 UTC",
+  "collection_message": "长期情报库：当前工作集 12000 条；本轮发现 159 条；13类覆盖=13/13；中国/美国/全球=1087/1522/9391；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-11-22 15:16 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1139,12 +1139,12 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 54
+      "count": 52
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 8
+      "count": 6
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
@@ -1159,7 +1159,7 @@
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 27
+      "count": 28
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
