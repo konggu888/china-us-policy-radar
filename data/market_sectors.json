@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22 15:16 UTC",
+  "updated": "2026-11-22 21:26 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -1275,15 +1275,41 @@
       "weekly_period_end": "2026-11-20"
     },
     {
-      "code": "BK1518",
-      "name": "种子",
-      "change_pct": 0.55,
-      "price": 3666.38,
-      "change": 20.05,
-      "up_count": 3,
-      "down_count": 7,
-      "leader": "万向德农",
-      "weekly_pct": -8.1,
+      "code": "BK1609",
+      "name": "城商行Ⅲ",
+      "change_pct": -0.33,
+      "price": 1734.73,
+      "change": -5.76,
+      "up_count": 7,
+      "down_count": 10,
+      "leader": "北京银行",
+      "weekly_pct": 0.69,
+      "weekly_period_start": "2026-11-13",
+      "weekly_period_end": "2026-11-20"
+    },
+    {
+      "code": "BK1514",
+      "name": "水产养殖",
+      "change_pct": 0.9,
+      "price": 607.77,
+      "change": 5.43,
+      "up_count": 1,
+      "down_count": 3,
+      "leader": "好当家",
+      "weekly_pct": -6.3,
+      "weekly_period_start": "2026-11-13",
+      "weekly_period_end": "2026-11-20"
+    },
+    {
+      "code": "BK1260",
+      "name": "渔业",
+      "change_pct": -0.32,
+      "price": 885.09,
+      "change": -2.8,
+      "up_count": 1,
+      "down_count": 5,
+      "leader": "好当家",
+      "weekly_pct": -7.26,
       "weekly_period_start": "2026-11-13",
       "weekly_period_end": "2026-11-20"
     },
@@ -1367,6 +1393,19 @@
       "weekly_pct": 1.37,
       "weekly_period_start": "2026-11-13",
       "weekly_period_end": "2026-11-20"
+    },
+    {
+      "code": "BK1609",
+      "name": "城商行Ⅲ",
+      "change_pct": -0.33,
+      "price": 1734.73,
+      "change": -5.76,
+      "up_count": 7,
+      "down_count": 10,
+      "leader": "北京银行",
+      "weekly_pct": 0.69,
+      "weekly_period_start": "2026-11-13",
+      "weekly_period_end": "2026-11-20"
     }
   ],
   "a_share_weekly_fallers": [
@@ -1397,15 +1436,28 @@
       "weekly_period_end": "2026-11-20"
     },
     {
-      "code": "BK1518",
-      "name": "种子",
-      "change_pct": 0.55,
-      "price": 3666.38,
-      "change": 20.05,
-      "up_count": 3,
-      "down_count": 7,
-      "leader": "万向德农",
-      "weekly_pct": -8.1,
+      "code": "BK1260",
+      "name": "渔业",
+      "change_pct": -0.32,
+      "price": 885.09,
+      "change": -2.8,
+      "up_count": 1,
+      "down_count": 5,
+      "leader": "好当家",
+      "weekly_pct": -7.26,
+      "weekly_period_start": "2026-11-13",
+      "weekly_period_end": "2026-11-20"
+    },
+    {
+      "code": "BK1514",
+      "name": "水产养殖",
+      "change_pct": 0.9,
+      "price": 607.77,
+      "change": 5.43,
+      "up_count": 1,
+      "down_count": 3,
+      "leader": "好当家",
+      "weekly_pct": -6.3,
       "weekly_period_start": "2026-11-13",
       "weekly_period_end": "2026-11-20"
     }
@@ -1428,7 +1480,7 @@
     "us_sector_count": 11,
     "a_share_index_count": 7,
     "a_share_board_count": 100,
-    "weekly_board_count": 6,
+    "weekly_board_count": 8,
     "status": "ok"
   }
 }
