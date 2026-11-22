@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22 00:39 UTC",
+  "updated": "2026-11-22 07:12 UTC",
   "method": "Yahoo Finance with Tencent quote fallback for A-share indices + Eastmoney industry boards; no API token required",
   "providers": {
     "us_sector": "Yahoo Finance public chart endpoint",
@@ -1262,6 +1262,19 @@
       "weekly_period_end": "2026-11-20"
     },
     {
+      "code": "BK1610",
+      "name": "股份制银行Ⅲ",
+      "change_pct": 1.05,
+      "price": 2596.43,
+      "change": 27.04,
+      "up_count": 8,
+      "down_count": 1,
+      "leader": "XD中信银",
+      "weekly_pct": 2.26,
+      "weekly_period_start": "2026-11-13",
+      "weekly_period_end": "2026-11-20"
+    },
+    {
       "code": "BK1376",
       "name": "核力发电",
       "change_pct": 1.49,
@@ -1284,19 +1297,6 @@
       "down_count": 19,
       "leader": "工商银行",
       "weekly_pct": 1.1,
-      "weekly_period_start": "2026-11-13",
-      "weekly_period_end": "2026-11-20"
-    },
-    {
-      "code": "BK1514",
-      "name": "水产养殖",
-      "change_pct": 0.9,
-      "price": 607.77,
-      "change": 5.43,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "好当家",
-      "weekly_pct": -6.3,
       "weekly_period_start": "2026-11-13",
       "weekly_period_end": "2026-11-20"
     },
@@ -1382,6 +1382,19 @@
       "weekly_period_end": "2026-11-20"
     },
     {
+      "code": "BK1610",
+      "name": "股份制银行Ⅲ",
+      "change_pct": 1.05,
+      "price": 2596.43,
+      "change": 27.04,
+      "up_count": 8,
+      "down_count": 1,
+      "leader": "XD中信银",
+      "weekly_pct": 2.26,
+      "weekly_period_start": "2026-11-13",
+      "weekly_period_end": "2026-11-20"
+    },
+    {
       "code": "BK1376",
       "name": "核力发电",
       "change_pct": 1.49,
@@ -1445,19 +1458,6 @@
       "down_count": 2,
       "leader": "华媒控股",
       "weekly_pct": -10.42,
-      "weekly_period_start": "2026-11-13",
-      "weekly_period_end": "2026-11-20"
-    },
-    {
-      "code": "BK1514",
-      "name": "水产养殖",
-      "change_pct": 0.9,
-      "price": 607.77,
-      "change": 5.43,
-      "up_count": 1,
-      "down_count": 3,
-      "leader": "好当家",
-      "weekly_pct": -6.3,
       "weekly_period_start": "2026-11-13",
       "weekly_period_end": "2026-11-20"
     }
