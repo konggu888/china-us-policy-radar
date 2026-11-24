@@ -92,7 +92,7 @@
   "OfficialPage:UN News": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 35
+    "count": 36
   },
   "OfficialPage:WTO News": {
     "method": "direct_first_party_html",
@@ -137,22 +137,22 @@
   "OfficialFeed:EIA": {
     "method": "direct_first_party_rss",
     "status": "ok",
-    "count": 30
+    "count": 31
   },
   "OfficialFeed:IAEA": {
     "method": "direct_first_party_rss",
     "status": "ok",
-    "count": 0
+    "count": 15
   },
   "Search:china:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 60
+    "count": 34
   },
   "Search:us:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 60
+    "count": 33
   },
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
@@ -167,17 +167,17 @@
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 15
+    "count": 16
   },
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 22
+    "count": 23
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 22
+    "count": 28
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-11-24 05:53 UTC",
+  "updated": "2026-11-24 17:28 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
   "total_collected": 12000,
-  "new_discovery_count": 300,
-  "official_direct_count": 263,
-  "official_in_working_set": 1060,
+  "new_discovery_count": 247,
+  "official_direct_count": 280,
+  "official_in_working_set": 1005,
   "category_counts": {
-    "政治": 461,
-    "金融": 265,
-    "经济": 54,
+    "政治": 457,
+    "金融": 262,
+    "经济": 50,
     "产业": 16,
-    "科技 / AI": 1349,
+    "科技 / AI": 1351,
     "国防": 210,
-    "内政": 240,
-    "国家安全": 211,
-    "外交": 169,
-    "贸易 / 供应链": 569,
+    "内政": 239,
+    "国家安全": 214,
+    "外交": 170,
+    "贸易 / 供应链": 564,
     "能源 / 资源": 236,
-    "中美博弈": 3117,
-    "全球政策": 5103
+    "中美博弈": 3131,
+    "全球政策": 5100
   },
   "region_counts": {
-    "china": 1074,
-    "us": 1474,
-    "global": 9452
+    "china": 1066,
+    "us": 1456,
+    "global": 9478
   },
   "sources": {
     "OfficialPage:White House": {
@@ -314,7 +314,7 @@
     "OfficialPage:UN News": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 35
+      "count": 36
     },
     "OfficialPage:WTO News": {
       "method": "direct_first_party_html",
@@ -359,22 +359,22 @@
     "OfficialFeed:EIA": {
       "method": "direct_first_party_rss",
       "status": "ok",
-      "count": 30
+      "count": 31
     },
     "OfficialFeed:IAEA": {
       "method": "direct_first_party_rss",
       "status": "ok",
-      "count": 0
+      "count": 15
     },
     "Search:china:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 60
+      "count": 34
     },
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 60
+      "count": 33
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -389,17 +389,17 @@
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 15
+      "count": 16
     },
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 22
+      "count": 23
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 22
+      "count": 28
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
