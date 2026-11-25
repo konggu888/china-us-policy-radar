@@ -62,7 +62,7 @@
   "OfficialPage:China NDRC": {
     "method": "direct_first_party_html",
     "status": "ok",
-    "count": 27
+    "count": 28
   },
   "OfficialPage:China PBOC": {
     "method": "direct_first_party_html",
@@ -147,22 +147,22 @@
   "Search:china:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 60
+    "count": 34
   },
   "Search:us:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 60
+    "count": 33
   },
   "Search:global:en-US": {
     "method": "GoogleNews/Bing RSS fallback",
-    "status": "ok:BingNews",
-    "count": 8
+    "status": "ok:GoogleNews",
+    "count": 60
   },
   "Search:china:zh-CN": {
     "method": "GoogleNews/Bing RSS fallback",
     "status": "ok:GoogleNews",
-    "count": 7
+    "count": 6
   },
   "MediaFeed:BBC Asia": {
     "method": "public_media_rss",
@@ -172,12 +172,12 @@
   "MediaFeed:BBC US": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 25
+    "count": 24
   },
   "MediaFeed:BBC World": {
     "method": "public_media_rss",
     "status": "ok",
-    "count": 31
+    "count": 35
   },
   "MediaFeed:DW World": {
     "method": "public_media_rss",
@@ -194,31 +194,31 @@
     "status": "ok",
     "count": 10
   },
-  "updated": "2026-11-25 01:32 UTC",
+  "updated": "2026-11-25 10:22 UTC",
   "method": "direct first-party HTML/RSS + Google/Bing RSS fallback + public media RSS + retained archive feed",
   "total_collected": 12000,
-  "new_discovery_count": 170,
-  "official_direct_count": 277,
-  "official_in_working_set": 959,
+  "new_discovery_count": 168,
+  "official_direct_count": 278,
+  "official_in_working_set": 907,
   "category_counts": {
-    "政治": 456,
-    "金融": 257,
+    "政治": 453,
+    "金融": 255,
     "经济": 49,
-    "产业": 16,
+    "产业": 14,
     "科技 / AI": 1350,
     "国防": 211,
-    "内政": 239,
-    "国家安全": 213,
+    "内政": 241,
+    "国家安全": 211,
     "外交": 169,
-    "贸易 / 供应链": 563,
+    "贸易 / 供应链": 557,
     "能源 / 资源": 235,
-    "中美博弈": 3148,
+    "中美博弈": 3161,
     "全球政策": 5094
   },
   "region_counts": {
-    "china": 1058,
-    "us": 1457,
-    "global": 9485
+    "china": 1060,
+    "us": 1441,
+    "global": 9499
   },
   "sources": {
     "OfficialPage:White House": {
@@ -284,7 +284,7 @@
     "OfficialPage:China NDRC": {
       "method": "direct_first_party_html",
       "status": "ok",
-      "count": 27
+      "count": 28
     },
     "OfficialPage:China PBOC": {
       "method": "direct_first_party_html",
@@ -369,22 +369,22 @@
     "Search:china:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 60
+      "count": 34
     },
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 60
+      "count": 33
     },
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
-      "status": "ok:BingNews",
-      "count": 8
+      "status": "ok:GoogleNews",
+      "count": 60
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 7
+      "count": 6
     },
     "MediaFeed:BBC Asia": {
       "method": "public_media_rss",
@@ -394,12 +394,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 25
+      "count": 24
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 31
+      "count": 35
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
