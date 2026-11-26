@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-26T03:17:28.882891+00:00",
+  "updatedAt": "2026-11-26T13:13:50.024617+00:00",
   "china": {
     "source": "国家统计局",
     "sourceUrl": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965844.html",
     "releaseTitle": "10月份国民经济运行总体平稳、向新向优",
     "publishedAt": "2026-11-16",
-    "fetchedAt": "2026-11-26T03:17:26.250061+00:00",
+    "fetchedAt": "2026-11-26T13:13:47.835655+00:00",
     "values": {
       "industrial_yoy_pct": 4.8,
       "industrial_mom_pct": 0.21,
@@ -23,12 +23,12 @@
   },
   "chinaStructured": {
     "status": "MISSING",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
+    "error": "<urlopen error _ssl.c:994: The handshake operation timed out>",
     "records": []
   },
   "pbc": {
     "source": "中国人民银行",
-    "fetchedAt": "2026-11-26T03:13:59.777872+00:00",
+    "fetchedAt": "2026-11-26T12:41:59.123092+00:00",
     "records": [
       {
         "indicator": "M2_balance_trillion",
