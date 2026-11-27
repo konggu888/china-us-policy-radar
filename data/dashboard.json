@@ -1,53 +1,53 @@
 {
-  "updated": "2026-11-26 22:51 UTC",
+  "updated": "2026-11-27 05:19 UTC",
   "market": [
     {
       "symbol": "CNY=X",
-      "value": 6.6592,
-      "change_pct": -0.07,
-      "time": "2026-11-26",
+      "value": 6.6571,
+      "change_pct": -0.1,
+      "time": "2026-11-27",
       "name": "USD/CNY"
     },
     {
       "symbol": "000001.SS",
-      "value": 3476.47,
-      "change_pct": -2.03,
-      "time": "2026-11-26",
+      "value": 3529.8125,
+      "change_pct": 1.52,
+      "time": "2026-11-27",
       "name": "上证指数"
     },
     {
       "symbol": "399001.SZ",
-      "value": 10086.3604,
-      "change_pct": -3.24,
-      "time": "2026-11-26",
+      "value": 10527.5537,
+      "change_pct": 4.4,
+      "time": "2026-11-27",
       "name": "深证成指"
     },
     {
       "symbol": "000300.SS",
-      "value": 3900.5483,
+      "value": 3967.9888,
       "change_pct": 0.0,
-      "time": "2026-11-26",
+      "time": "2026-11-27",
       "name": "沪深300"
     },
     {
       "symbol": "000905.SS",
-      "value": 5863.3364,
+      "value": 6141.1943,
       "change_pct": 0.0,
-      "time": "2026-11-26",
+      "time": "2026-11-27",
       "name": "中证500"
     },
     {
       "symbol": "399006.SZ",
-      "value": 2189.8235,
+      "value": 2346.9553,
       "change_pct": 0.0,
-      "time": "2026-11-26",
+      "time": "2026-11-27",
       "name": "创业板指"
     },
     {
       "symbol": "000688.SS",
-      "value": 1169.9913,
+      "value": 1276.3668,
       "change_pct": 0.0,
-      "time": "2026-11-26",
+      "time": "2026-11-27",
       "name": "科创50"
     },
     {
@@ -66,16 +66,16 @@
     },
     {
       "symbol": "BZ=F",
-      "value": 91.73,
-      "change_pct": -3.04,
-      "time": "2026-11-26",
+      "value": 92.38,
+      "change_pct": -2.36,
+      "time": "2026-11-27",
       "name": "布伦特原油"
     },
     {
       "symbol": "GC=F",
-      "value": 3593.3999,
-      "change_pct": 1.63,
-      "time": "2026-11-26",
+      "value": 3666.0,
+      "change_pct": 3.68,
+      "time": "2026-11-27",
       "name": "黄金"
     },
     {
@@ -223,89 +223,89 @@
   "a_share_market": {
     "上证指数": {
       "ticker": "000001.SS",
-      "latest": 3476.47,
-      "daily_pct": -2.03,
-      "weekly_pct": -3.1,
-      "monthly_pct": -4.71,
-      "quarterly_pct": -10.94,
-      "six_month_pct": -16.28,
-      "asof": "2026-11-25",
-      "provider": "Yahoo Finance",
-      "weekly_rank": 1
-    },
-    "深证成指": {
-      "ticker": "399001.SZ",
-      "latest": 10086.3604,
-      "daily_pct": -3.24,
-      "weekly_pct": -5.38,
-      "monthly_pct": -10.31,
-      "quarterly_pct": -27.81,
-      "six_month_pct": -36.39,
-      "asof": "2026-11-25",
+      "latest": 3516.0562,
+      "daily_pct": 1.13,
+      "weekly_pct": -0.5,
+      "monthly_pct": -3.71,
+      "quarterly_pct": -9.43,
+      "six_month_pct": -14.11,
+      "asof": "2026-11-27",
       "provider": "Yahoo Finance",
       "weekly_rank": 2
     },
+    "深证成指": {
+      "ticker": "399001.SZ",
+      "latest": 10455.9219,
+      "daily_pct": 3.69,
+      "weekly_pct": 1.95,
+      "monthly_pct": -6.13,
+      "quarterly_pct": -24.2,
+      "six_month_pct": -33.56,
+      "asof": "2026-11-27",
+      "provider": "Yahoo Finance",
+      "weekly_rank": 1
+    },
     "沪深300": {
       "ticker": "000300.SS",
-      "latest": 3900.55,
-      "daily_pct": 0.06,
+      "latest": 3977.75,
+      "daily_pct": 1.98,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-11-26",
+      "asof": "2026-11-27",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 3
     },
     "中证500": {
       "ticker": "000905.SS",
-      "latest": 5863.34,
-      "daily_pct": -0.46,
+      "latest": 6158.67,
+      "daily_pct": 5.04,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-11-26",
+      "asof": "2026-11-27",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 4
     },
     "中证1000": {
       "ticker": "000852.SS",
-      "latest": 5531.84,
-      "daily_pct": -0.18,
+      "latest": 5841.84,
+      "daily_pct": 5.6,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-11-26",
+      "asof": "2026-11-27",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 5
     },
     "创业板指": {
       "ticker": "399006.SZ",
-      "latest": 2189.82,
-      "daily_pct": 0.29,
+      "latest": 2343.07,
+      "daily_pct": 7.0,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-11-26",
+      "asof": "2026-11-27",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 6
     },
     "科创50": {
       "ticker": "000688.SS",
-      "latest": 1169.99,
-      "daily_pct": -1.36,
+      "latest": 1284.87,
+      "daily_pct": 9.82,
       "weekly_pct": null,
       "monthly_pct": null,
       "quarterly_pct": null,
       "six_month_pct": null,
-      "asof": "2026-11-26",
+      "asof": "2026-11-27",
       "provider": "Tencent quote fallback",
       "fallback": true,
       "weekly_rank": 7
@@ -448,41 +448,41 @@
     ],
     "a_share_risers": [
       {
-        "name": "上证指数",
-        "ticker": "000001.SS",
-        "latest": 3476.47,
-        "daily_pct": -2.03,
-        "weekly_pct": -3.1,
-        "monthly_pct": -4.71,
-        "quarterly_pct": -10.94,
-        "six_month_pct": -16.28,
-        "asof": "2026-11-25",
+        "name": "深证成指",
+        "ticker": "399001.SZ",
+        "latest": 10455.9219,
+        "daily_pct": 3.69,
+        "weekly_pct": 1.95,
+        "monthly_pct": -6.13,
+        "quarterly_pct": -24.2,
+        "six_month_pct": -33.56,
+        "asof": "2026-11-27",
         "provider": "Yahoo Finance",
         "weekly_rank": 1
       },
       {
-        "name": "深证成指",
-        "ticker": "399001.SZ",
-        "latest": 10086.3604,
-        "daily_pct": -3.24,
-        "weekly_pct": -5.38,
-        "monthly_pct": -10.31,
-        "quarterly_pct": -27.81,
-        "six_month_pct": -36.39,
-        "asof": "2026-11-25",
+        "name": "上证指数",
+        "ticker": "000001.SS",
+        "latest": 3516.0562,
+        "daily_pct": 1.13,
+        "weekly_pct": -0.5,
+        "monthly_pct": -3.71,
+        "quarterly_pct": -9.43,
+        "six_month_pct": -14.11,
+        "asof": "2026-11-27",
         "provider": "Yahoo Finance",
         "weekly_rank": 2
       },
       {
         "name": "沪深300",
         "ticker": "000300.SS",
-        "latest": 3900.55,
-        "daily_pct": 0.06,
+        "latest": 3977.75,
+        "daily_pct": 1.98,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
         "six_month_pct": null,
-        "asof": "2026-11-26",
+        "asof": "2026-11-27",
         "provider": "Tencent quote fallback",
         "fallback": true,
         "weekly_rank": 3
@@ -490,13 +490,13 @@
       {
         "name": "中证500",
         "ticker": "000905.SS",
-        "latest": 5863.34,
-        "daily_pct": -0.46,
+        "latest": 6158.67,
+        "daily_pct": 5.04,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
         "six_month_pct": null,
-        "asof": "2026-11-26",
+        "asof": "2026-11-27",
         "provider": "Tencent quote fallback",
         "fallback": true,
         "weekly_rank": 4
@@ -504,13 +504,13 @@
       {
         "name": "中证1000",
         "ticker": "000852.SS",
-        "latest": 5531.84,
-        "daily_pct": -0.18,
+        "latest": 5841.84,
+        "daily_pct": 5.6,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
         "six_month_pct": null,
-        "asof": "2026-11-26",
+        "asof": "2026-11-27",
         "provider": "Tencent quote fallback",
         "fallback": true,
         "weekly_rank": 5
@@ -520,13 +520,13 @@
       {
         "name": "科创50",
         "ticker": "000688.SS",
-        "latest": 1169.99,
-        "daily_pct": -1.36,
+        "latest": 1284.87,
+        "daily_pct": 9.82,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
         "six_month_pct": null,
-        "asof": "2026-11-26",
+        "asof": "2026-11-27",
         "provider": "Tencent quote fallback",
         "fallback": true,
         "weekly_rank": 7
@@ -534,13 +534,13 @@
       {
         "name": "创业板指",
         "ticker": "399006.SZ",
-        "latest": 2189.82,
-        "daily_pct": 0.29,
+        "latest": 2343.07,
+        "daily_pct": 7.0,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
         "six_month_pct": null,
-        "asof": "2026-11-26",
+        "asof": "2026-11-27",
         "provider": "Tencent quote fallback",
         "fallback": true,
         "weekly_rank": 6
@@ -548,13 +548,13 @@
       {
         "name": "中证1000",
         "ticker": "000852.SS",
-        "latest": 5531.84,
-        "daily_pct": -0.18,
+        "latest": 5841.84,
+        "daily_pct": 5.6,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
         "six_month_pct": null,
-        "asof": "2026-11-26",
+        "asof": "2026-11-27",
         "provider": "Tencent quote fallback",
         "fallback": true,
         "weekly_rank": 5
@@ -562,13 +562,13 @@
       {
         "name": "中证500",
         "ticker": "000905.SS",
-        "latest": 5863.34,
-        "daily_pct": -0.46,
+        "latest": 6158.67,
+        "daily_pct": 5.04,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
         "six_month_pct": null,
-        "asof": "2026-11-26",
+        "asof": "2026-11-27",
         "provider": "Tencent quote fallback",
         "fallback": true,
         "weekly_rank": 4
@@ -576,19 +576,19 @@
       {
         "name": "沪深300",
         "ticker": "000300.SS",
-        "latest": 3900.55,
-        "daily_pct": 0.06,
+        "latest": 3977.75,
+        "daily_pct": 1.98,
         "weekly_pct": null,
         "monthly_pct": null,
         "quarterly_pct": null,
         "six_month_pct": null,
-        "asof": "2026-11-26",
+        "asof": "2026-11-27",
         "provider": "Tencent quote fallback",
         "fallback": true,
         "weekly_rank": 3
       }
     ],
-    "asof": "2026-11-26 22:51 UTC"
+    "asof": "2026-11-27 05:19 UTC"
   },
   "globalization_temperature": {
     "score": 100,
@@ -599,15 +599,15 @@
     "china": [
       [
         "全球政策",
-        418
+        420
       ],
       [
         "中美博弈",
-        292
+        293
       ],
       [
         "科技 / AI",
-        73
+        74
       ],
       [
         "外交",
@@ -615,7 +615,7 @@
       ],
       [
         "国家安全",
-        36
+        37
       ],
       [
         "贸易 / 供应链",
@@ -625,41 +625,41 @@
     "us": [
       [
         "全球政策",
-        596
+        595
       ],
       [
         "中美博弈",
-        395
+        394
       ],
       [
         "科技 / AI",
-        141
-      ],
-      [
-        "贸易 / 供应链",
-        67
+        138
       ],
       [
         "金融",
-        66
+        67
+      ],
+      [
+        "贸易 / 供应链",
+        63
       ],
       [
         "能源 / 资源",
-        46
+        47
       ]
     ],
     "global": [
       [
         "全球政策",
-        4075
+        4076
       ],
       [
         "中美博弈",
-        2507
+        2512
       ],
       [
         "科技 / AI",
-        1143
+        1142
       ],
       [
         "贸易 / 供应链",
@@ -671,7 +671,7 @@
       ],
       [
         "内政",
-        232
+        231
       ]
     ]
   },
@@ -686,7 +686,7 @@
     },
     {
       "keyword": "人工智能",
-      "count": 2986
+      "count": 2980
     },
     {
       "keyword": "产业升级",
@@ -698,11 +698,11 @@
     },
     {
       "keyword": "安全",
-      "count": 360
+      "count": 358
     },
     {
       "keyword": "贸易",
-      "count": 714
+      "count": 710
     }
   ],
   "policy_source_matrix": [
@@ -781,19 +781,19 @@
   "policy_comparison": [
     {
       "side": "中国",
-      "total": 1003,
+      "total": 1009,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 418
+          "count": 420
         },
         {
           "name": "中美博弈",
-          "count": 292
+          "count": 293
         },
         {
           "name": "科技 / AI",
-          "count": 73
+          "count": 74
         },
         {
           "name": "外交",
@@ -801,7 +801,7 @@
         },
         {
           "name": "国家安全",
-          "count": 36
+          "count": 37
         },
         {
           "name": "贸易 / 供应链",
@@ -812,31 +812,31 @@
     },
     {
       "side": "美国",
-      "total": 1441,
+      "total": 1430,
       "top_categories": [
         {
           "name": "全球政策",
-          "count": 596
+          "count": 595
         },
         {
           "name": "中美博弈",
-          "count": 395
+          "count": 394
         },
         {
           "name": "科技 / AI",
-          "count": 141
-        },
-        {
-          "name": "贸易 / 供应链",
-          "count": 67
+          "count": 138
         },
         {
           "name": "金融",
-          "count": 66
+          "count": 67
+        },
+        {
+          "name": "贸易 / 供应链",
+          "count": 63
         },
         {
           "name": "能源 / 资源",
-          "count": 46
+          "count": 47
         }
       ],
       "risk_high": 112
@@ -845,7 +845,7 @@
   "today_focus": [
     {
       "title": "President Trump Was Right: America Controls the Strait of Hormuz",
-      "titleZh": "特朗普总统是对的：美国控制着霍尔木兹海峡",
+      "titleZh": "President Trump Was Right: America Controls the Strait of Hormuz",
       "url": "https://www.whitehouse.gov/releases/2026/08/president-trump-was-right-america-controls-the-strait-of-hormuz/",
       "risk": "极高",
       "category": "国防",
@@ -878,7 +878,7 @@
     },
     {
       "title": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
-      "titleZh": "能源部收盘 1 美元。 90亿贷款用于重启杜安阿诺德核电站",
+      "titleZh": "Energy Department Closes $1 . 9 Billion Loan to Restart Duane Arnold Nuclear Plant",
       "url": "https://www.energy.gov/articles/energy-department-closes-19-billion-loan-restart-duane-arnold-nuclear-plant",
       "risk": "高",
       "category": "能源 / 资源",
@@ -907,23 +907,6 @@
       ],
       "importance_score": 78,
       "importance_level": "S",
-      "importance_reason": "风险信号较强；包含明确政策/行动信号；可能影响市场、产业或供应链"
-    },
-    {
-      "title": "World News in Brief: Marshall Islands nuclear legacy, FlyDubai attack condemned, Ukraine update, breast cancer treatment expanded in West Bank",
-      "titleZh": "World News in Brief: Marshall Islands nuclear legacy, FlyDubai attack condemned, Ukraine update, breast cancer treatment expanded in West Bank",
-      "url": "https://news.un.org/en/story/2026/10/1168503",
-      "risk": "高",
-      "category": "科技 / AI",
-      "region": "global",
-      "source": "UN News",
-      "verification": "单一官方",
-      "impact_industry": [
-        "科技 / AI",
-        "金融"
-      ],
-      "importance_score": 77,
-      "importance_level": "A",
       "importance_reason": "风险信号较强；包含明确政策/行动信号；可能影响市场、产业或供应链"
     },
     {
@@ -973,13 +956,30 @@
       "importance_score": 76,
       "importance_level": "A",
       "importance_reason": "风险信号较强；涉及战略安全或关键链条；可能影响市场、产业或供应链"
+    },
+    {
+      "title": "IAEA-led Team Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
+      "titleZh": "IAEA-led Team Samples ALPS-Treated Water at Fukushima Daiichi Nuclear Power Station under Additional Measures",
+      "url": "http://www.iaea.org/newscenter/pressreleases/iaea-led-team-samples-alps-treated-water-at-fukushima-daiichi-nuclear-power-station-under-additional-measures",
+      "risk": "高",
+      "category": "中美博弈",
+      "region": "global",
+      "source": "IAEA",
+      "verification": "单一官方",
+      "impact_industry": [
+        "科技 / AI",
+        "能源 / 资源"
+      ],
+      "importance_score": 76,
+      "importance_level": "A",
+      "importance_reason": "风险信号较强；涉及战略安全或关键链条；可能影响市场、产业或供应链"
     }
   ],
   "focus_method": "重要度排序：风险 + 战略领域 + 政策行动 + 潜在产业/市场影响 + 来源层级/交叉验证；不是简单按最新时间排序。",
   "importance_method": "系统启发式重要度，不替代人工分析；S/A/B/C分别代表高优先级、重要、值得跟踪、常规。",
   "collection_status": "success",
-  "collection_message": "长期情报库：当前工作集 12000 条；本轮发现 244 条；13类覆盖=13/13；中国/美国/全球=1003/1440/9557；历史库按月归档，支持7/30/180日分析。",
-  "collection_time_utc": "2026-11-26 22:51 UTC",
+  "collection_message": "长期情报库：当前工作集 12000 条；本轮发现 242 条；13类覆盖=13/13；中国/美国/全球=1009/1430/9561；历史库按月归档，支持7/30/180日分析。",
+  "collection_time_utc": "2026-11-27 05:19 UTC",
   "source_health": {
     "OfficialPage:White House": {
       "method": "direct_first_party_html",
@@ -1018,8 +1018,8 @@
     },
     "OfficialPage:EIA": {
       "method": "direct_first_party_html",
-      "status": "ok",
-      "count": 6
+      "status": "error:TimeoutError",
+      "count": 0
     },
     "OfficialPage:BLS": {
       "method": "direct_first_party_html",
@@ -1129,7 +1129,7 @@
     "Search:china:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 35
+      "count": 34
     },
     "Search:us:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -1139,7 +1139,7 @@
     "Search:global:en-US": {
       "method": "GoogleNews/Bing RSS fallback",
       "status": "ok:GoogleNews",
-      "count": 55
+      "count": 54
     },
     "Search:china:zh-CN": {
       "method": "GoogleNews/Bing RSS fallback",
@@ -1154,12 +1154,12 @@
     "MediaFeed:BBC US": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 22
+      "count": 23
     },
     "MediaFeed:BBC World": {
       "method": "public_media_rss",
       "status": "ok",
-      "count": 28
+      "count": 31
     },
     "MediaFeed:DW World": {
       "method": "public_media_rss",
